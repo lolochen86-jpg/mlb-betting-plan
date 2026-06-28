@@ -27,6 +27,7 @@ TOTALS_CSV = DATA_DIR / "totals_predictions_{date}.csv"
 MC_JSON = DATA_DIR / "monte_carlo_{date}.json"
 MC_CSV = DATA_DIR / "monte_carlo_{date}.csv"
 MC_HTML = DOCS_DIR / "monte_carlo.html"
+SIM_DATA_JSON = DATA_DIR / "game_simulator_{date}.json"
 
 OUTCOMES = {
     "single": 15.2,
@@ -356,7 +357,11 @@ def summarize_game(game: dict, simulations: int, totals: dict, moneyline: dict) 
 
 
 def build_report(target_date: str, simulations: int) -> dict:
-    sim_data = build_sim_data(target_date)
+    sim_path = Path(str(SIM_DATA_JSON).format(date=target_date))
+    if sim_path.exists():
+        sim_data = json.loads(sim_path.read_text(encoding="utf-8"))
+    else:
+        sim_data = build_sim_data(target_date)
     moneyline = load_moneyline(target_date)
     totals = load_totals(target_date)
     games = [summarize_game(game, simulations, totals, moneyline) for game in sim_data["games"]]
@@ -417,6 +422,7 @@ def render_html(report: dict) -> str:
         )
         source_label = {
             "official_mlb_boxscore": "官方先發打線",
+            "projected_recent_lineup_order": "先發未公布，使用近期固定打序預估",
             "projected_roster_stats_lineup": "先發未公布，使用 active roster 與本季打擊資料預估",
             "fallback_role_lineup": "先發未公布，使用角色打線",
         }.get(game.get("lineup_source", ""), game.get("lineup_source", "") or "未標記")

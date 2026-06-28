@@ -3,7 +3,9 @@
 from __future__ import annotations
 
 import json
+import urllib.parse
 import urllib.request
+from collections import Counter, defaultdict
 from functools import lru_cache
 
 from name_localization import player_zh
@@ -132,7 +134,7 @@ def _person_hitting_stat(person: dict) -> dict:
     return (splits[0].get("stat") if splits else {}) or {}
 
 
-def _roster_player_row(entry: dict, batting_order: int) -> dict:
+def _roster_player_row(entry: dict, batting_order: int, source: str = "projected_roster_stats_lineup") -> dict:
     person = entry.get("person") or {}
     position = (entry.get("position") or {}).get("abbreviation") or (person.get("primaryPosition") or {}).get("abbreviation") or LINEUP_POSITIONS[(batting_order - 1) % 9]
     full_name = person.get("fullName", "")
@@ -143,7 +145,7 @@ def _roster_player_row(entry: dict, batting_order: int) -> dict:
         "name_en": full_name,
         "pos": position,
         "batting_order": batting_order,
-        "source": "projected_roster_stats_lineup",
+        "source": source,
         **hitter_profile_from_stat(stat),
     }
 
@@ -170,7 +172,75 @@ def _extract_lineup(team_box: dict, season: str) -> list[dict]:
     return ordered[:9]
 
 
-def fetch_projected_lineup(team_id: int | str | None, season: str) -> list[dict]:
+def _date_before(target_date: str, days: int) -> str:
+    from datetime import date, timedelta
+
+    return (date.fromisoformat(target_date) - timedelta(days=days)).isoformat()
+
+
+@lru_cache(maxsize=256)
+def _team_recent_game_pks(team_id: int, target_date: str, lookback_days: int, max_games: int) -> tuple[str, ...]:
+    params = {
+        "sportId": "1",
+        "teamId": str(team_id),
+        "startDate": _date_before(target_date, lookback_days),
+        "endDate": _date_before(target_date, 1),
+        "gameTypes": "R",
+    }
+    payload = request_json(f"{MLB_API}/schedule?{urllib.parse.urlencode(params)}")
+    games = []
+    for day in payload.get("dates", []):
+        for game in day.get("games", []):
+            if game.get("status", {}).get("abstractGameState") != "Final":
+                continue
+            games.append((game.get("gameDate", ""), str(game.get("gamePk") or "")))
+    games.sort(reverse=True)
+    return tuple(game_pk for _, game_pk in games[:max_games] if game_pk)
+
+
+@lru_cache(maxsize=512)
+def _team_box_from_game(game_pk: str, team_id: int) -> dict:
+    payload = request_json(f"{MLB_API}/game/{game_pk}/boxscore")
+    for side in ("away", "home"):
+        team_box = (payload.get("teams") or {}).get(side) or {}
+        if ((team_box.get("team") or {}).get("id")) == team_id:
+            return team_box
+    return {}
+
+
+@lru_cache(maxsize=256)
+def recent_batting_order(team_id: int, target_date: str, lookback_days: int = 10, max_games: int = 6) -> dict[int, dict]:
+    order_counts: dict[int, Counter] = defaultdict(Counter)
+    latest_seen = {}
+    for game_pk in _team_recent_game_pks(team_id, target_date, lookback_days, max_games):
+        team_box = _team_box_from_game(game_pk, team_id)
+        players = team_box.get("players") or {}
+        for key, player in players.items():
+            order = player.get("battingOrder")
+            if not order:
+                continue
+            try:
+                player_id = int(str(key).replace("ID", ""))
+                batting_order = int(str(order)[:1])
+            except ValueError:
+                continue
+            if not 1 <= batting_order <= 9:
+                continue
+            order_counts[player_id][batting_order] += 1
+            latest_seen.setdefault(player_id, batting_order)
+    out = {}
+    for player_id, counts in order_counts.items():
+        common_order, starts = counts.most_common(1)[0]
+        out[player_id] = {
+            "recent_order": common_order,
+            "recent_starts": sum(counts.values()),
+            "recent_order_starts": starts,
+            "latest_order": latest_seen.get(player_id, common_order),
+        }
+    return out
+
+
+def fetch_projected_lineup(team_id: int | str | None, season: str, target_date: str | None = None) -> list[dict]:
     try:
         tid = int(team_id or 0)
     except (TypeError, ValueError):
@@ -179,17 +249,50 @@ def fetch_projected_lineup(team_id: int | str | None, season: str) -> list[dict]
         return []
     url = f"{MLB_API}/teams/{tid}/roster?rosterType=active&hydrate=person(stats(type=season,group=hitting,season={season}))"
     payload = request_json(url)
+    recent_orders = recent_batting_order(tid, target_date or f"{season}-06-30") if target_date else {}
     candidates = []
     for entry in payload.get("roster", []):
         position = entry.get("position") or {}
         if position.get("type") == "Pitcher" or position.get("abbreviation") == "P":
             continue
+        player_id = (entry.get("person") or {}).get("id")
         stat = _person_hitting_stat(entry.get("person") or {})
         plate_appearances = safe_float(stat.get("plateAppearances"))
         ops = safe_float(stat.get("ops"), safe_float(stat.get("obp"), 0.315) + safe_float(stat.get("slg"), 0.400))
-        candidates.append((plate_appearances, ops, entry))
-    candidates.sort(key=lambda item: (item[0] >= 40, item[0], item[1]), reverse=True)
-    return [_roster_player_row(entry, idx) for idx, (_, _, entry) in enumerate(candidates[:9], start=1)]
+        order_info = recent_orders.get(int(player_id or 0), {})
+        candidates.append(
+            {
+                "entry": entry,
+                "plate_appearances": plate_appearances,
+                "ops": ops,
+                "recent_order": order_info.get("recent_order"),
+                "recent_starts": order_info.get("recent_starts", 0),
+                "recent_order_starts": order_info.get("recent_order_starts", 0),
+            }
+        )
+    if recent_orders:
+        candidates.sort(
+            key=lambda row: (
+                row["recent_order"] is None,
+                row["recent_order"] or 99,
+                -row["recent_order_starts"],
+                -row["recent_starts"],
+                -row["plate_appearances"],
+            )
+        )
+        selected = candidates[:9]
+        rows = []
+        for idx, row in enumerate(selected, start=1):
+            item = _roster_player_row(row["entry"], idx, "projected_recent_lineup_order")
+            item["projected_order_basis"] = {
+                "recent_order": row["recent_order"],
+                "recent_starts": row["recent_starts"],
+                "recent_order_starts": row["recent_order_starts"],
+            }
+            rows.append(item)
+        return rows
+    candidates.sort(key=lambda row: (row["plate_appearances"] >= 40, row["plate_appearances"], row["ops"]), reverse=True)
+    return [_roster_player_row(row["entry"], idx) for idx, row in enumerate(candidates[:9], start=1)]
 
 
 def fetch_game_player_context(game_pk: str, season: str) -> dict:

@@ -129,12 +129,12 @@ def build_sim_data(target_date: str) -> dict:
                 home_lineup = context["home_lineup"]
                 lineup_source = context["lineup_source"]
             else:
-                projected_away = fetch_projected_lineup(row.get("away_team_id"), season)
-                projected_home = fetch_projected_lineup(row.get("home_team_id"), season)
+                projected_away = fetch_projected_lineup(row.get("away_team_id"), season, target_date)
+                projected_home = fetch_projected_lineup(row.get("home_team_id"), season, target_date)
                 if projected_away and projected_home:
                     away_lineup = projected_away
                     home_lineup = projected_home
-                    lineup_source = "projected_roster_stats_lineup"
+                    lineup_source = "projected_recent_lineup_order" if any(p.get("source") == "projected_recent_lineup_order" for p in projected_away + projected_home) else "projected_roster_stats_lineup"
         except Exception as exc:
             lineup_source = f"fallback_role_lineup: {exc}"
         away_pitcher_profile = default_pitcher_profile()
@@ -487,7 +487,7 @@ def render_html(data: dict) -> str:
       document.getElementById('base1').classList.toggle('on', !!state.bases[0]);
       document.getElementById('base2').classList.toggle('on', !!state.bases[1]);
       document.getElementById('base3').classList.toggle('on', !!state.bases[2]);
-      const sourceText = g.lineup_source === 'official_mlb_boxscore' ? '官方先發打線' : (g.lineup_source === 'projected_roster_stats_lineup' ? '先發未公布，使用球員本季打擊資料預估打線' : '先發未公布，使用角色打線');
+      const sourceText = g.lineup_source === 'official_mlb_boxscore' ? '官方先發打線' : (g.lineup_source === 'projected_recent_lineup_order' ? '先發未公布，使用近期固定打序預估' : (g.lineup_source === 'projected_roster_stats_lineup' ? '先發未公布，使用球員本季打擊資料預估打線' : '先發未公布，使用角色打線'));
       document.getElementById('caption').textContent = (state.events[0] && state.events[0].desc) || ('預測勝方：' + g.prediction + '，信心 ' + (Math.round(g.confidence*1000)/10) + '% / ' + sourceText);
       document.getElementById('eventLog').innerHTML = state.events.map((e,i)=>'<div class="event"><div class="event-num">' + (state.events.length-i) + '</div><div><small>' + e.inning + ' · ' + e.pitch + ' · ' + e.score + ' · ' + e.outs + ' 出局</small><br>' + e.desc + '</div></div>').join('');
       renderLineScore(); renderDueUp();
