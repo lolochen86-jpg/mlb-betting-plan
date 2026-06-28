@@ -9,8 +9,9 @@ import json
 import urllib.parse
 import urllib.request
 from collections import defaultdict
-from datetime import date, datetime, timedelta
+from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
 from fetch_real_mlb_data import MLB_SCHEDULE_URL
 from name_localization import player_zh, team_zh
@@ -32,6 +33,7 @@ DOCS_DIR = ROOT / "docs"
 DAILY_PLAN_JSON = DATA_DIR / "daily_predictions_{date}.json"
 DAILY_PLAN_CSV = DATA_DIR / "daily_predictions_{date}.csv"
 DAILY_PLAN_HTML = DOCS_DIR / "daily_predictions.html"
+TW_TZ = ZoneInfo("Asia/Taipei")
 
 
 def request_json(url: str, timeout: int = 30) -> dict:
@@ -68,6 +70,8 @@ def fetch_schedule(target_date: str) -> list[dict]:
                 {
                     "date": target_date,
                     "game_pk": str(game.get("gamePk") or ""),
+                    "game_time_utc": game.get("gameDate", ""),
+                    "game_time_tw": game_time_tw(game.get("gameDate", "")),
                     "status": game.get("status", {}).get("detailedState", ""),
                     "home": home_team.get("name", ""),
                     "home_team_id": home_team.get("id"),
@@ -83,8 +87,18 @@ def fetch_schedule(target_date: str) -> list[dict]:
                     "away_probable_pitcher_zh": player_zh(away_pitcher.get("fullName", "")),
                 }
             )
-    games.sort(key=lambda row: int(row["game_pk"] or 0))
+    games.sort(key=lambda row: (row.get("game_time_utc") or "", int(row["game_pk"] or 0)))
     return games
+
+
+def game_time_tw(game_date: str) -> str:
+    if not game_date:
+        return "未公布"
+    try:
+        parsed = datetime.fromisoformat(game_date.replace("Z", "+00:00"))
+    except ValueError:
+        return "未公布"
+    return parsed.astimezone(TW_TZ).strftime("%m/%d %H:%M")
 
 
 def train_models(games: list[dict]) -> tuple[TeamStats, dict[str, object]]:
@@ -143,6 +157,8 @@ def build_daily_plan(target_date: str, games_csv: Path, min_confidence: float) -
             {
                 "date": target_date,
                 "game_pk": game["game_pk"],
+                "game_time_utc": game.get("game_time_utc", ""),
+                "game_time_tw": game.get("game_time_tw", "未公布"),
                 "status": game["status"],
                 "matchup_zh": f"{game['away_zh']} @ {game['home_zh']}",
                 "away_zh": game["away_zh"],
@@ -213,6 +229,8 @@ def write_outputs(plan: dict) -> None:
     fields = [
         "date",
         "game_pk",
+        "game_time_tw",
+        "game_time_utc",
         "decision",
         "matchup_zh",
         "away_probable_pitcher_zh",
@@ -236,13 +254,14 @@ def write_outputs(plan: dict) -> None:
 
 def render_rows(rows: list[dict]) -> str:
     if not rows:
-        return '<tr><td colspan="6">沒有符合條件的場次</td></tr>'
+        return '<tr><td colspan="7">沒有符合條件的場次</td></tr>'
     parts = []
     for row in rows:
         parts.append(
             f"""
             <tr>
               <td>{row['decision']}</td>
+              <td>{row.get('game_time_tw', '未公布')}</td>
               <td>{row['matchup_zh']}</td>
               <td>{row['away_probable_pitcher_zh']} / {row['home_probable_pitcher_zh']}</td>
               <td>{row['prediction_zh']}</td>
@@ -255,13 +274,14 @@ def render_rows(rows: list[dict]) -> str:
 
 def render_schedule_rows(rows: list[dict]) -> str:
     if not rows:
-        return '<tr><td colspan="8">沒有賽程</td></tr>'
+        return '<tr><td colspan="9">沒有賽程</td></tr>'
     parts = []
     for row in rows:
         parts.append(
             f"""
             <tr>
               <td>{row['game_pk']}</td>
+              <td>{row.get('game_time_tw', '未公布')}</td>
               <td>{row['status']}</td>
               <td>{row['matchup_zh']}</td>
               <td>{row['away_probable_pitcher_zh']} / {row['home_probable_pitcher_zh']}</td>
@@ -277,7 +297,14 @@ def render_schedule_rows(rows: list[dict]) -> str:
 def render_html(plan: dict) -> str:
     rec_rows = render_rows(plan["high_confidence_predictions"])
     watch_rows = render_rows(plan["watchlist"])
-    schedule_rows = render_schedule_rows(plan["all_predictions"])
+    schedule_rows_recommendation = render_schedule_rows(plan["all_predictions"])
+    schedule_rows_time = render_schedule_rows(
+        sorted(plan["all_predictions"], key=lambda row: (row.get("game_time_utc") or "", int(row.get("game_pk") or 0)))
+    )
+    schedule_payload = json.dumps(
+        {"recommendation": schedule_rows_recommendation, "time": schedule_rows_time},
+        ensure_ascii=False,
+    )
     warning = plan["data_source"].get("warning") or ""
     freshness_note = plan["data_source"].get("freshness_note") or ""
     return f"""<!doctype html>
@@ -293,6 +320,10 @@ def render_html(plan: dict) -> str:
     h2 {{ margin: 24px 0 12px; font-size: 18px; }}
     .meta {{ color: #68736d; line-height: 1.6; font-size: 14px; }}
     .warning {{ margin-top: 16px; padding: 12px 14px; border: 1px solid #e2c47a; background: #fff8e6; border-radius: 8px; color: #765315; }}
+    .toolbar {{ display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin: 14px 0 10px; }}
+    .toolbar span {{ color: #68736d; font-size: 13px; font-weight: 700; }}
+    .sort-btn {{ border: 1px solid #dfe5df; border-radius: 8px; background: white; color: #24433b; padding: 8px 10px; font: inherit; font-weight: 800; cursor: pointer; }}
+    .sort-btn.active {{ background: #165f56; border-color: #165f56; color: white; }}
     table {{ width: 100%; border-collapse: collapse; background: white; border: 1px solid #dfe5df; border-radius: 8px; overflow: hidden; }}
     th, td {{ text-align: left; border-bottom: 1px solid #dfe5df; padding: 12px 10px; white-space: nowrap; font-size: 14px; }}
     th {{ color: #68736d; font-size: 12px; }}
@@ -311,23 +342,42 @@ def render_html(plan: dict) -> str:
     </div>
     {f'<div class="warning">{warning}</div>' if warning else ''}
     <h2>完整賽程表</h2>
+    <div class="toolbar">
+      <span>排序方式</span>
+      <button class="sort-btn active" id="sortRecommendation" type="button">推薦高低</button>
+      <button class="sort-btn" id="sortTime" type="button">比賽時間</button>
+    </div>
     <table>
-      <thead><tr><th>GamePk</th><th>狀態</th><th>對戰</th><th>先發投手</th><th>模型預測</th><th>信心</th><th>確認模型</th><th>分類</th></tr></thead>
-      <tbody>{schedule_rows}</tbody>
+      <thead><tr><th>GamePk</th><th>台灣時間</th><th>狀態</th><th>對戰</th><th>先發投手</th><th>模型預測</th><th>信心</th><th>確認模型</th><th>分類</th></tr></thead>
+      <tbody id="scheduleRows">{schedule_rows_recommendation}</tbody>
     </table>
     <div class="warning">投注單請看 <a href="betting_ticket.html">今日投注單</a>。該頁只列入真實盤口與 edge 條件通過的場次。</div>
     <h2>高信心預測</h2>
     <table>
-      <thead><tr><th>決策</th><th>對戰</th><th>先發投手</th><th>預測勝方</th><th>信心</th><th>確認模型</th></tr></thead>
+      <thead><tr><th>決策</th><th>台灣時間</th><th>對戰</th><th>先發投手</th><th>預測勝方</th><th>信心</th><th>確認模型</th></tr></thead>
       <tbody>{rec_rows}</tbody>
     </table>
     <h2>一般預測</h2>
     <table>
-      <thead><tr><th>決策</th><th>對戰</th><th>先發投手</th><th>預測勝方</th><th>信心</th><th>確認模型</th></tr></thead>
+      <thead><tr><th>決策</th><th>台灣時間</th><th>對戰</th><th>先發投手</th><th>預測勝方</th><th>信心</th><th>確認模型</th></tr></thead>
       <tbody>{watch_rows}</tbody>
     </table>
     <div class="warning">此頁只做勝方預測，不使用盤口、不產生下注金額、不計算 ROI。盤口資料補上後，再進入投注 ROI 層。</div>
   </main>
+  <script>
+    const SCHEDULE_ROWS = {schedule_payload};
+    const buttons = {{
+      recommendation: document.getElementById('sortRecommendation'),
+      time: document.getElementById('sortTime')
+    }};
+    function setScheduleSort(mode) {{
+      document.getElementById('scheduleRows').innerHTML = SCHEDULE_ROWS[mode];
+      buttons.recommendation.classList.toggle('active', mode === 'recommendation');
+      buttons.time.classList.toggle('active', mode === 'time');
+    }}
+    buttons.recommendation.addEventListener('click', () => setScheduleSort('recommendation'));
+    buttons.time.addEventListener('click', () => setScheduleSort('time'));
+  </script>
 </body>
 </html>"""
 

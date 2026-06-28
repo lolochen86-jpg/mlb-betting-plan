@@ -11,6 +11,10 @@
     h2 { margin: 24px 0 12px; font-size: 18px; }
     .meta { color: #68736d; line-height: 1.6; font-size: 14px; }
     .warning { margin-top: 16px; padding: 12px 14px; border: 1px solid #e2c47a; background: #fff8e6; border-radius: 8px; color: #765315; }
+    .toolbar { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin: 14px 0 10px; }
+    .toolbar span { color: #68736d; font-size: 13px; font-weight: 700; }
+    .sort-btn { border: 1px solid #dfe5df; border-radius: 8px; background: white; color: #24433b; padding: 8px 10px; font: inherit; font-weight: 800; cursor: pointer; }
+    .sort-btn.active { background: #165f56; border-color: #165f56; color: white; }
     table { width: 100%; border-collapse: collapse; background: white; border: 1px solid #dfe5df; border-radius: 8px; overflow: hidden; }
     th, td { text-align: left; border-bottom: 1px solid #dfe5df; padding: 12px 10px; white-space: nowrap; font-size: 14px; }
     th { color: #68736d; font-size: 12px; }
@@ -24,16 +28,22 @@
       目標日期：2026-06-28<br />
       主模型：A-畢氏勝率 / 確認模型：E-對照組(Ensemble)<br />
       訓練場數：3659 / 訓練截止：2026-06-27 / 賽程場數：15<br />
-      產生時間：2026-06-28T17:15:44<br />
+      產生時間：2026-06-28T21:22:25<br />
       訓練資料已更新到目標日前一天 2026-06-27。
     </div>
     
     <h2>完整賽程表</h2>
+    <div class="toolbar">
+      <span>排序方式</span>
+      <button class="sort-btn active" id="sortRecommendation" type="button">推薦高低</button>
+      <button class="sort-btn" id="sortTime" type="button">比賽時間</button>
+    </div>
     <table>
-      <thead><tr><th>GamePk</th><th>狀態</th><th>對戰</th><th>先發投手</th><th>模型預測</th><th>信心</th><th>確認模型</th><th>分類</th></tr></thead>
-      <tbody>
+      <thead><tr><th>GamePk</th><th>台灣時間</th><th>狀態</th><th>對戰</th><th>先發投手</th><th>模型預測</th><th>信心</th><th>確認模型</th><th>分類</th></tr></thead>
+      <tbody id="scheduleRows">
             <tr>
               <td>823686</td>
+              <td>06/29 02:10</td>
               <td>Scheduled</td>
               <td>科羅拉多洛磯 @ 明尼蘇達雙城</td>
               <td>萊恩 菲 / 柯 里</td>
@@ -45,6 +55,7 @@
 
             <tr>
               <td>823769</td>
+              <td>06/29 02:10</td>
               <td>Scheduled</td>
               <td>芝加哥小熊 @ 密爾瓦基釀酒人</td>
               <td>萊恩 羅里索 / 布蘭登 伍德拉夫</td>
@@ -56,6 +67,7 @@
 
             <tr>
               <td>824256</td>
+              <td>06/29 01:40</td>
               <td>Scheduled</td>
               <td>休士頓太空人 @ 底特律老虎</td>
               <td>杭特 布朗 / 傑克 赫</td>
@@ -67,6 +79,7 @@
 
             <tr>
               <td>822959</td>
+              <td>06/29 01:40</td>
               <td>Scheduled</td>
               <td>亞利桑那響尾蛇 @ 坦帕灣光芒</td>
               <td>梅 凱 / 德爾伊沃 拉</td>
@@ -78,6 +91,7 @@
 
             <tr>
               <td>824821</td>
+              <td>06/29 01:35</td>
               <td>Scheduled</td>
               <td>華盛頓國民 @ 巴爾的摩金鶯</td>
               <td>札 里 / 凱爾 布迪</td>
@@ -89,6 +103,7 @@
 
             <tr>
               <td>823037</td>
+              <td>06/29 02:15</td>
               <td>Scheduled</td>
               <td>邁阿密馬林魚 @ 聖路易紅雀</td>
               <td>泰勒 普赫伊爾爾伊普斯 / 凱爾 雷</td>
@@ -100,6 +115,7 @@
 
             <tr>
               <td>824580</td>
+              <td>06/29 02:10</td>
               <td>Scheduled</td>
               <td>堪薩斯市皇家 @ 芝加哥白襪</td>
               <td>路 阿維拉 / 安東尼 卡</td>
@@ -111,6 +127,7 @@
 
             <tr>
               <td>823362</td>
+              <td>06/29 01:35</td>
               <td>Scheduled</td>
               <td>辛辛那提紅人 @ 匹茲堡海盜</td>
               <td>布雷迪 西 / 米 凱勒</td>
@@ -122,6 +139,7 @@
 
             <tr>
               <td>822795</td>
+              <td>06/29 01:37</td>
               <td>Scheduled</td>
               <td>德州遊騎兵 @ 多倫多藍鳥</td>
               <td>馬 羅 / 謝恩 比貝</td>
@@ -133,6 +151,7 @@
 
             <tr>
               <td>823281</td>
+              <td>06/29 04:10</td>
               <td>Scheduled</td>
               <td>洛杉磯道奇 @ 聖地牙哥教士</td>
               <td>艾 哈 / 麥可 金恩</td>
@@ -144,6 +163,7 @@
 
             <tr>
               <td>823608</td>
+              <td>06/29 01:40</td>
               <td>Scheduled</td>
               <td>費城費城人 @ 紐約大都會</td>
               <td>赫蘇斯 路札 / 西內 佩雷</td>
@@ -155,6 +175,7 @@
 
             <tr>
               <td>824744</td>
+              <td>06/29 07:20</td>
               <td>Scheduled</td>
               <td>紐約洋基 @ 波士頓紅襪</td>
               <td>卡洛斯 羅多 / 桑尼 葛雷</td>
@@ -166,6 +187,7 @@
 
             <tr>
               <td>823204</td>
+              <td>06/29 04:05</td>
               <td>Scheduled</td>
               <td>亞特蘭大勇士 @ 舊金山巨人</td>
               <td>克里斯 塞爾 / 羅 拉</td>
@@ -177,6 +199,7 @@
 
             <tr>
               <td>824011</td>
+              <td>06/29 03:15</td>
               <td>Scheduled</td>
               <td>運動家 @ 洛杉磯天使</td>
               <td>亞倫 西瓦雷 / 薩 阿里</td>
@@ -188,6 +211,7 @@
 
             <tr>
               <td>824422</td>
+              <td>06/29 01:40</td>
               <td>Scheduled</td>
               <td>西雅圖水手 @ 克里夫蘭守護者</td>
               <td>艾梅 哈 / 加維 威</td>
@@ -200,10 +224,11 @@
     <div class="warning">投注單請看 <a href="betting_ticket.html">今日投注單</a>。該頁只列入真實盤口與 edge 條件通過的場次。</div>
     <h2>高信心預測</h2>
     <table>
-      <thead><tr><th>決策</th><th>對戰</th><th>先發投手</th><th>預測勝方</th><th>信心</th><th>確認模型</th></tr></thead>
+      <thead><tr><th>決策</th><th>台灣時間</th><th>對戰</th><th>先發投手</th><th>預測勝方</th><th>信心</th><th>確認模型</th></tr></thead>
       <tbody>
             <tr>
               <td>高信心預測</td>
+              <td>06/29 02:10</td>
               <td>科羅拉多洛磯 @ 明尼蘇達雙城</td>
               <td>萊恩 菲 / 柯 里</td>
               <td>明尼蘇達雙城</td>
@@ -213,10 +238,11 @@
     </table>
     <h2>一般預測</h2>
     <table>
-      <thead><tr><th>決策</th><th>對戰</th><th>先發投手</th><th>預測勝方</th><th>信心</th><th>確認模型</th></tr></thead>
+      <thead><tr><th>決策</th><th>台灣時間</th><th>對戰</th><th>先發投手</th><th>預測勝方</th><th>信心</th><th>確認模型</th></tr></thead>
       <tbody>
             <tr>
               <td>一般預測</td>
+              <td>06/29 02:10</td>
               <td>芝加哥小熊 @ 密爾瓦基釀酒人</td>
               <td>萊恩 羅里索 / 布蘭登 伍德拉夫</td>
               <td>密爾瓦基釀酒人</td>
@@ -226,6 +252,7 @@
 
             <tr>
               <td>一般預測</td>
+              <td>06/29 01:40</td>
               <td>休士頓太空人 @ 底特律老虎</td>
               <td>杭特 布朗 / 傑克 赫</td>
               <td>底特律老虎</td>
@@ -235,6 +262,7 @@
 
             <tr>
               <td>一般預測</td>
+              <td>06/29 01:40</td>
               <td>亞利桑那響尾蛇 @ 坦帕灣光芒</td>
               <td>梅 凱 / 德爾伊沃 拉</td>
               <td>坦帕灣光芒</td>
@@ -244,6 +272,7 @@
 
             <tr>
               <td>一般預測</td>
+              <td>06/29 01:35</td>
               <td>華盛頓國民 @ 巴爾的摩金鶯</td>
               <td>札 里 / 凱爾 布迪</td>
               <td>巴爾的摩金鶯</td>
@@ -253,6 +282,7 @@
 
             <tr>
               <td>一般預測</td>
+              <td>06/29 02:15</td>
               <td>邁阿密馬林魚 @ 聖路易紅雀</td>
               <td>泰勒 普赫伊爾爾伊普斯 / 凱爾 雷</td>
               <td>聖路易紅雀</td>
@@ -262,6 +292,7 @@
 
             <tr>
               <td>一般預測</td>
+              <td>06/29 02:10</td>
               <td>堪薩斯市皇家 @ 芝加哥白襪</td>
               <td>路 阿維拉 / 安東尼 卡</td>
               <td>芝加哥白襪</td>
@@ -271,6 +302,7 @@
 
             <tr>
               <td>一般預測</td>
+              <td>06/29 01:35</td>
               <td>辛辛那提紅人 @ 匹茲堡海盜</td>
               <td>布雷迪 西 / 米 凱勒</td>
               <td>匹茲堡海盜</td>
@@ -280,6 +312,7 @@
 
             <tr>
               <td>一般預測</td>
+              <td>06/29 01:37</td>
               <td>德州遊騎兵 @ 多倫多藍鳥</td>
               <td>馬 羅 / 謝恩 比貝</td>
               <td>多倫多藍鳥</td>
@@ -289,6 +322,7 @@
 
             <tr>
               <td>一般預測</td>
+              <td>06/29 04:10</td>
               <td>洛杉磯道奇 @ 聖地牙哥教士</td>
               <td>艾 哈 / 麥可 金恩</td>
               <td>洛杉磯道奇</td>
@@ -298,6 +332,7 @@
 
             <tr>
               <td>一般預測</td>
+              <td>06/29 01:40</td>
               <td>費城費城人 @ 紐約大都會</td>
               <td>赫蘇斯 路札 / 西內 佩雷</td>
               <td>費城費城人</td>
@@ -307,6 +342,7 @@
 
             <tr>
               <td>一般預測</td>
+              <td>06/29 07:20</td>
               <td>紐約洋基 @ 波士頓紅襪</td>
               <td>卡洛斯 羅多 / 桑尼 葛雷</td>
               <td>紐約洋基</td>
@@ -316,6 +352,7 @@
 
             <tr>
               <td>一般預測</td>
+              <td>06/29 04:05</td>
               <td>亞特蘭大勇士 @ 舊金山巨人</td>
               <td>克里斯 塞爾 / 羅 拉</td>
               <td>亞特蘭大勇士</td>
@@ -325,6 +362,7 @@
 
             <tr>
               <td>一般預測</td>
+              <td>06/29 03:15</td>
               <td>運動家 @ 洛杉磯天使</td>
               <td>亞倫 西瓦雷 / 薩 阿里</td>
               <td>洛杉磯天使</td>
@@ -334,6 +372,7 @@
 
             <tr>
               <td>一般預測</td>
+              <td>06/29 01:40</td>
               <td>西雅圖水手 @ 克里夫蘭守護者</td>
               <td>艾梅 哈 / 加維 威</td>
               <td>西雅圖水手</td>
@@ -343,5 +382,19 @@
     </table>
     <div class="warning">此頁只做勝方預測，不使用盤口、不產生下注金額、不計算 ROI。盤口資料補上後，再進入投注 ROI 層。</div>
   </main>
+  <script>
+    const SCHEDULE_ROWS = {"recommendation": "\n            <tr>\n              <td>823686</td>\n              <td>06/29 02:10</td>\n              <td>Scheduled</td>\n              <td>科羅拉多洛磯 @ 明尼蘇達雙城</td>\n              <td>萊恩 菲 / 柯 里</td>\n              <td>明尼蘇達雙城</td>\n              <td>60.9%</td>\n              <td>明尼蘇達雙城</td>\n              <td>高信心預測</td>\n            </tr>\n\n            <tr>\n              <td>823769</td>\n              <td>06/29 02:10</td>\n              <td>Scheduled</td>\n              <td>芝加哥小熊 @ 密爾瓦基釀酒人</td>\n              <td>萊恩 羅里索 / 布蘭登 伍德拉夫</td>\n              <td>密爾瓦基釀酒人</td>\n              <td>54.1%</td>\n              <td>密爾瓦基釀酒人</td>\n              <td>一般預測</td>\n            </tr>\n\n            <tr>\n              <td>824256</td>\n              <td>06/29 01:40</td>\n              <td>Scheduled</td>\n              <td>休士頓太空人 @ 底特律老虎</td>\n              <td>杭特 布朗 / 傑克 赫</td>\n              <td>底特律老虎</td>\n              <td>54.0%</td>\n              <td>底特律老虎</td>\n              <td>一般預測</td>\n            </tr>\n\n            <tr>\n              <td>822959</td>\n              <td>06/29 01:40</td>\n              <td>Scheduled</td>\n              <td>亞利桑那響尾蛇 @ 坦帕灣光芒</td>\n              <td>梅 凱 / 德爾伊沃 拉</td>\n              <td>坦帕灣光芒</td>\n              <td>53.4%</td>\n              <td>坦帕灣光芒</td>\n              <td>一般預測</td>\n            </tr>\n\n            <tr>\n              <td>824821</td>\n              <td>06/29 01:35</td>\n              <td>Scheduled</td>\n              <td>華盛頓國民 @ 巴爾的摩金鶯</td>\n              <td>札 里 / 凱爾 布迪</td>\n              <td>巴爾的摩金鶯</td>\n              <td>53.3%</td>\n              <td>巴爾的摩金鶯</td>\n              <td>一般預測</td>\n            </tr>\n\n            <tr>\n              <td>823037</td>\n              <td>06/29 02:15</td>\n              <td>Scheduled</td>\n              <td>邁阿密馬林魚 @ 聖路易紅雀</td>\n              <td>泰勒 普赫伊爾爾伊普斯 / 凱爾 雷</td>\n              <td>聖路易紅雀</td>\n              <td>52.2%</td>\n              <td>邁阿密馬林魚</td>\n              <td>一般預測</td>\n            </tr>\n\n            <tr>\n              <td>824580</td>\n              <td>06/29 02:10</td>\n              <td>Scheduled</td>\n              <td>堪薩斯市皇家 @ 芝加哥白襪</td>\n              <td>路 阿維拉 / 安東尼 卡</td>\n              <td>芝加哥白襪</td>\n              <td>51.6%</td>\n              <td>芝加哥白襪</td>\n              <td>一般預測</td>\n            </tr>\n\n            <tr>\n              <td>823362</td>\n              <td>06/29 01:35</td>\n              <td>Scheduled</td>\n              <td>辛辛那提紅人 @ 匹茲堡海盜</td>\n              <td>布雷迪 西 / 米 凱勒</td>\n              <td>匹茲堡海盜</td>\n              <td>51.5%</td>\n              <td>匹茲堡海盜</td>\n              <td>一般預測</td>\n            </tr>\n\n            <tr>\n              <td>822795</td>\n              <td>06/29 01:37</td>\n              <td>Scheduled</td>\n              <td>德州遊騎兵 @ 多倫多藍鳥</td>\n              <td>馬 羅 / 謝恩 比貝</td>\n              <td>多倫多藍鳥</td>\n              <td>51.4%</td>\n              <td>多倫多藍鳥</td>\n              <td>一般預測</td>\n            </tr>\n\n            <tr>\n              <td>823281</td>\n              <td>06/29 04:10</td>\n              <td>Scheduled</td>\n              <td>洛杉磯道奇 @ 聖地牙哥教士</td>\n              <td>艾 哈 / 麥可 金恩</td>\n              <td>洛杉磯道奇</td>\n              <td>51.2%</td>\n              <td>聖地牙哥教士</td>\n              <td>一般預測</td>\n            </tr>\n\n            <tr>\n              <td>823608</td>\n              <td>06/29 01:40</td>\n              <td>Scheduled</td>\n              <td>費城費城人 @ 紐約大都會</td>\n              <td>赫蘇斯 路札 / 西內 佩雷</td>\n              <td>費城費城人</td>\n              <td>50.6%</td>\n              <td>費城費城人</td>\n              <td>一般預測</td>\n            </tr>\n\n            <tr>\n              <td>824744</td>\n              <td>06/29 07:20</td>\n              <td>Scheduled</td>\n              <td>紐約洋基 @ 波士頓紅襪</td>\n              <td>卡洛斯 羅多 / 桑尼 葛雷</td>\n              <td>紐約洋基</td>\n              <td>50.6%</td>\n              <td>波士頓紅襪</td>\n              <td>一般預測</td>\n            </tr>\n\n            <tr>\n              <td>823204</td>\n              <td>06/29 04:05</td>\n              <td>Scheduled</td>\n              <td>亞特蘭大勇士 @ 舊金山巨人</td>\n              <td>克里斯 塞爾 / 羅 拉</td>\n              <td>亞特蘭大勇士</td>\n              <td>50.3%</td>\n              <td>舊金山巨人</td>\n              <td>一般預測</td>\n            </tr>\n\n            <tr>\n              <td>824011</td>\n              <td>06/29 03:15</td>\n              <td>Scheduled</td>\n              <td>運動家 @ 洛杉磯天使</td>\n              <td>亞倫 西瓦雷 / 薩 阿里</td>\n              <td>洛杉磯天使</td>\n              <td>50.2%</td>\n              <td>運動家</td>\n              <td>一般預測</td>\n            </tr>\n\n            <tr>\n              <td>824422</td>\n              <td>06/29 01:40</td>\n              <td>Scheduled</td>\n              <td>西雅圖水手 @ 克里夫蘭守護者</td>\n              <td>艾梅 哈 / 加維 威</td>\n              <td>西雅圖水手</td>\n              <td>50.0%</td>\n              <td>西雅圖水手</td>\n              <td>一般預測</td>\n            </tr>", "time": "\n            <tr>\n              <td>823362</td>\n              <td>06/29 01:35</td>\n              <td>Scheduled</td>\n              <td>辛辛那提紅人 @ 匹茲堡海盜</td>\n              <td>布雷迪 西 / 米 凱勒</td>\n              <td>匹茲堡海盜</td>\n              <td>51.5%</td>\n              <td>匹茲堡海盜</td>\n              <td>一般預測</td>\n            </tr>\n\n            <tr>\n              <td>824821</td>\n              <td>06/29 01:35</td>\n              <td>Scheduled</td>\n              <td>華盛頓國民 @ 巴爾的摩金鶯</td>\n              <td>札 里 / 凱爾 布迪</td>\n              <td>巴爾的摩金鶯</td>\n              <td>53.3%</td>\n              <td>巴爾的摩金鶯</td>\n              <td>一般預測</td>\n            </tr>\n\n            <tr>\n              <td>822795</td>\n              <td>06/29 01:37</td>\n              <td>Scheduled</td>\n              <td>德州遊騎兵 @ 多倫多藍鳥</td>\n              <td>馬 羅 / 謝恩 比貝</td>\n              <td>多倫多藍鳥</td>\n              <td>51.4%</td>\n              <td>多倫多藍鳥</td>\n              <td>一般預測</td>\n            </tr>\n\n            <tr>\n              <td>822959</td>\n              <td>06/29 01:40</td>\n              <td>Scheduled</td>\n              <td>亞利桑那響尾蛇 @ 坦帕灣光芒</td>\n              <td>梅 凱 / 德爾伊沃 拉</td>\n              <td>坦帕灣光芒</td>\n              <td>53.4%</td>\n              <td>坦帕灣光芒</td>\n              <td>一般預測</td>\n            </tr>\n\n            <tr>\n              <td>823608</td>\n              <td>06/29 01:40</td>\n              <td>Scheduled</td>\n              <td>費城費城人 @ 紐約大都會</td>\n              <td>赫蘇斯 路札 / 西內 佩雷</td>\n              <td>費城費城人</td>\n              <td>50.6%</td>\n              <td>費城費城人</td>\n              <td>一般預測</td>\n            </tr>\n\n            <tr>\n              <td>824256</td>\n              <td>06/29 01:40</td>\n              <td>Scheduled</td>\n              <td>休士頓太空人 @ 底特律老虎</td>\n              <td>杭特 布朗 / 傑克 赫</td>\n              <td>底特律老虎</td>\n              <td>54.0%</td>\n              <td>底特律老虎</td>\n              <td>一般預測</td>\n            </tr>\n\n            <tr>\n              <td>824422</td>\n              <td>06/29 01:40</td>\n              <td>Scheduled</td>\n              <td>西雅圖水手 @ 克里夫蘭守護者</td>\n              <td>艾梅 哈 / 加維 威</td>\n              <td>西雅圖水手</td>\n              <td>50.0%</td>\n              <td>西雅圖水手</td>\n              <td>一般預測</td>\n            </tr>\n\n            <tr>\n              <td>823686</td>\n              <td>06/29 02:10</td>\n              <td>Scheduled</td>\n              <td>科羅拉多洛磯 @ 明尼蘇達雙城</td>\n              <td>萊恩 菲 / 柯 里</td>\n              <td>明尼蘇達雙城</td>\n              <td>60.9%</td>\n              <td>明尼蘇達雙城</td>\n              <td>高信心預測</td>\n            </tr>\n\n            <tr>\n              <td>823769</td>\n              <td>06/29 02:10</td>\n              <td>Scheduled</td>\n              <td>芝加哥小熊 @ 密爾瓦基釀酒人</td>\n              <td>萊恩 羅里索 / 布蘭登 伍德拉夫</td>\n              <td>密爾瓦基釀酒人</td>\n              <td>54.1%</td>\n              <td>密爾瓦基釀酒人</td>\n              <td>一般預測</td>\n            </tr>\n\n            <tr>\n              <td>824580</td>\n              <td>06/29 02:10</td>\n              <td>Scheduled</td>\n              <td>堪薩斯市皇家 @ 芝加哥白襪</td>\n              <td>路 阿維拉 / 安東尼 卡</td>\n              <td>芝加哥白襪</td>\n              <td>51.6%</td>\n              <td>芝加哥白襪</td>\n              <td>一般預測</td>\n            </tr>\n\n            <tr>\n              <td>823037</td>\n              <td>06/29 02:15</td>\n              <td>Scheduled</td>\n              <td>邁阿密馬林魚 @ 聖路易紅雀</td>\n              <td>泰勒 普赫伊爾爾伊普斯 / 凱爾 雷</td>\n              <td>聖路易紅雀</td>\n              <td>52.2%</td>\n              <td>邁阿密馬林魚</td>\n              <td>一般預測</td>\n            </tr>\n\n            <tr>\n              <td>824011</td>\n              <td>06/29 03:15</td>\n              <td>Scheduled</td>\n              <td>運動家 @ 洛杉磯天使</td>\n              <td>亞倫 西瓦雷 / 薩 阿里</td>\n              <td>洛杉磯天使</td>\n              <td>50.2%</td>\n              <td>運動家</td>\n              <td>一般預測</td>\n            </tr>\n\n            <tr>\n              <td>823204</td>\n              <td>06/29 04:05</td>\n              <td>Scheduled</td>\n              <td>亞特蘭大勇士 @ 舊金山巨人</td>\n              <td>克里斯 塞爾 / 羅 拉</td>\n              <td>亞特蘭大勇士</td>\n              <td>50.3%</td>\n              <td>舊金山巨人</td>\n              <td>一般預測</td>\n            </tr>\n\n            <tr>\n              <td>823281</td>\n              <td>06/29 04:10</td>\n              <td>Scheduled</td>\n              <td>洛杉磯道奇 @ 聖地牙哥教士</td>\n              <td>艾 哈 / 麥可 金恩</td>\n              <td>洛杉磯道奇</td>\n              <td>51.2%</td>\n              <td>聖地牙哥教士</td>\n              <td>一般預測</td>\n            </tr>\n\n            <tr>\n              <td>824744</td>\n              <td>06/29 07:20</td>\n              <td>Scheduled</td>\n              <td>紐約洋基 @ 波士頓紅襪</td>\n              <td>卡洛斯 羅多 / 桑尼 葛雷</td>\n              <td>紐約洋基</td>\n              <td>50.6%</td>\n              <td>波士頓紅襪</td>\n              <td>一般預測</td>\n            </tr>"};
+    const buttons = {
+      recommendation: document.getElementById('sortRecommendation'),
+      time: document.getElementById('sortTime')
+    };
+    function setScheduleSort(mode) {
+      document.getElementById('scheduleRows').innerHTML = SCHEDULE_ROWS[mode];
+      buttons.recommendation.classList.toggle('active', mode === 'recommendation');
+      buttons.time.classList.toggle('active', mode === 'time');
+    }
+    buttons.recommendation.addEventListener('click', () => setScheduleSort('recommendation'));
+    buttons.time.addEventListener('click', () => setScheduleSort('time'));
+  </script>
 </body>
 </html>
