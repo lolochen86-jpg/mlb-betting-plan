@@ -101,6 +101,7 @@ def main() -> None:
     run_step("大小分 v1", [py, "scripts/run_totals_v1.py", "--date", target_date])
     run_step("進階因子勝方 v1", [py, "scripts/run_advanced_factors_model.py", "--date", target_date])
     run_step("逐打席賽程模擬", [py, "scripts/generate_game_simulator.py", "--date", target_date])
+    run_step("蒙地卡羅模擬", [py, "scripts/generate_monte_carlo.py", "--date", target_date, "--simulations", "10000"])
     run_step("首頁重建", [py, "scripts/generate_plan.py"])
     run_step("狀態報告", [py, "scripts/generate_status_report.py"])
     print("\nworkflow completed")
