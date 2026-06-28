@@ -7,4 +7,4 @@ if not exist "%LINKDIR%" mklink /J "%LINKDIR%" "%~dp0"
 > "%LAUNCHER%" echo @echo off
 >> "%LAUNCHER%" echo cd /d "%LINKDIR%"
 >> "%LAUNCHER%" echo call "%LINKDIR%\run_auto_once.cmd"
-echo 已建立排程啟動器：%LAUNCHER%
+echo Created scheduler launcher: %LAUNCHER%

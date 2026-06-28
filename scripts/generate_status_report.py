@@ -175,9 +175,12 @@ def build_status() -> dict:
         },
         "next_commands": [
             ".\\open_dashboard.cmd",
+            ".\\run_auto_once.cmd",
             ".\\start_auto_runner.cmd",
             ".\\install_windows_auto_runner.cmd",
             ".\\uninstall_windows_auto_runner.cmd",
+            ".\\安裝晚上9點和12點自動排程.cmd",
+            ".\\移除晚上9點和12點自動排程.cmd",
             "python scripts\\run_daily_workflow.py --date YYYY-MM-DD --all-predictions --skip-backtest-refresh",
             "python scripts\\run_daily_workflow.py --date YYYY-MM-DD --all-predictions",
         ],

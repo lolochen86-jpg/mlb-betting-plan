@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-28T17:02:02",
+  "generated_at": "2026-06-28T18:43:18",
   "history": {
     "games_written": 3659,
     "actual_first_game_date": "2025-03-27",
@@ -109,18 +109,21 @@
     }
   ],
   "auto_runner": {
-    "mode": "running",
+    "mode": "success",
     "target_date": "2026-06-28",
-    "last_started_at_tw": "2026-06-28T17:00:01+08:00",
-    "last_finished_at_tw": "2026-06-28T16:42:22+08:00",
+    "last_started_at_tw": "2026-06-28T18:00:01+08:00",
+    "last_finished_at_tw": "2026-06-28T18:04:47+08:00",
     "last_return_code": 0,
     "log": "C:\\Users\\I5-10400F\\Documents\\投注計畫\\logs\\auto_runner\\2026-06-28.workflow.log"
   },
   "next_commands": [
     ".\\open_dashboard.cmd",
+    ".\\run_auto_once.cmd",
     ".\\start_auto_runner.cmd",
     ".\\install_windows_auto_runner.cmd",
     ".\\uninstall_windows_auto_runner.cmd",
+    ".\\安裝晚上9點和12點自動排程.cmd",
+    ".\\移除晚上9點和12點自動排程.cmd",
     "python scripts\\run_daily_workflow.py --date YYYY-MM-DD --all-predictions --skip-backtest-refresh",
     "python scripts\\run_daily_workflow.py --date YYYY-MM-DD --all-predictions"
   ],
