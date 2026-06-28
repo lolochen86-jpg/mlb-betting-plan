@@ -21,7 +21,8 @@
 - `scripts/generate_betting_ticket.py`：從 ROI 候選產生今日投注單。
 - `scripts/run_totals_v1.py`：產生台灣運彩全場大小分 v1 預測與候選。
 - `scripts/run_advanced_factors_model.py`：產生打擊率/壘包/雙殺/三振/四壞/投手型態/牛棚/連勝連敗/對戰/場地代理的進階因子勝方模型。
-- `scripts/generate_game_simulator.py`：產生逐打席賽程模擬器，可每局每個打席往下跑。
+- `scripts/mlb_player_context.py`：從 MLB Stats API 取得官方先發打線、active roster 球員打擊資料與先發投手型態。
+- `scripts/generate_game_simulator.py`：產生逐打席賽程模擬器，可每局每個打席往下跑；官方先發未公布時會用 active roster 與本季打擊資料預估打線。
 - `scripts/generate_monte_carlo.py`：用逐打席機率引擎將每場比賽模擬 10,000 次，輸出獨贏勝率、大小分機率與球員安打期望值。
 - `scripts/backtest_train_2024_2025_test_2026.py`：用 2024-2025 訓練、2026 已完賽資料測試獨贏準確率與大小分總分模型品質。
 - `scripts/generate_plan.py`：讀取回測資料並產生實戰計畫。

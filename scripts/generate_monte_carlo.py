@@ -102,22 +102,34 @@ def fresh_box(game: dict) -> dict[str, list[dict]]:
     }
 
 
-def weighted_outcome(rng: random.Random, batter: dict, batting_profile: dict, pitching_profile: dict, bases: list[dict | None], outs: int) -> str:
+def weighted_outcome(
+    rng: random.Random,
+    batter: dict,
+    batting_profile: dict,
+    pitching_profile: dict,
+    pitcher_profile: dict,
+    bases: list[dict | None],
+    outs: int,
+) -> str:
     offense = batting_profile["offense"] / 4.45
-    prevention = pitching_profile["prevention"] / 4.45
+    prevention = (pitching_profile["prevention"] / 4.45) * pitcher_profile.get("run_prevention_factor", 1)
+    k_factor = pitcher_profile.get("k_factor", 1)
+    bb_factor = pitcher_profile.get("bb_factor", 1)
+    hr_factor = pitcher_profile.get("hr_factor", 1)
+    gb_factor = pitcher_profile.get("gb_factor", 1)
     weights = {
         "single": OUTCOMES["single"] * offense * batter["contact"],
         "double": OUTCOMES["double"] * offense * batter["power"],
         "triple": OUTCOMES["triple"] * offense * batter["power"],
-        "homer": OUTCOMES["homer"] * offense * batter["power"] * batting_profile["power"],
-        "walk": OUTCOMES["walk"] * batter["patience"],
-        "strikeout": OUTCOMES["strikeout"] * (1.02 / batter["contact"]) * prevention,
-        "groundout": OUTCOMES["groundout"] * prevention,
+        "homer": OUTCOMES["homer"] * offense * batter["power"] * batting_profile["power"] * hr_factor,
+        "walk": OUTCOMES["walk"] * batter["patience"] * bb_factor,
+        "strikeout": OUTCOMES["strikeout"] * (1.02 / batter["contact"]) * prevention * k_factor,
+        "groundout": OUTCOMES["groundout"] * prevention * gb_factor,
         "flyout": OUTCOMES["flyout"],
         "lineout": OUTCOMES["lineout"],
     }
     if bases[0] and outs < 2:
-        weights["gidp"] = 5.8 * batter["gidp"] * prevention
+        weights["gidp"] = 5.8 * batter["gidp"] * prevention * gb_factor
     roll = rng.random() * sum(weights.values())
     for outcome, weight in weights.items():
         roll -= weight
@@ -187,7 +199,8 @@ def simulate_game(game: dict, rng: random.Random) -> dict:
         batter = box[side][batting_index[side] % 9]
         batting_profile = game[f"{side}_profile"]
         pitching_profile = game[f"{fielding}_profile"]
-        outcome = weighted_outcome(rng, batter, batting_profile, pitching_profile, bases, outs)
+        pitcher_profile = game.get(f"{fielding}_pitcher_profile", {})
+        outcome = weighted_outcome(rng, batter, batting_profile, pitching_profile, pitcher_profile, bases, outs)
         runs = 0
 
         if outcome in {"single", "double", "triple", "homer"}:
@@ -316,6 +329,7 @@ def summarize_game(game: dict, simulations: int, totals: dict, moneyline: dict) 
         "matchup_zh": f"{game['away']} @ {game['home']}",
         "away_zh": game["away"],
         "home_zh": game["home"],
+        "lineup_source": game.get("lineup_source", ""),
         "simulations": simulations,
         "avg_away_score": round(avg_away, 2),
         "avg_home_score": round(avg_home, 2),
@@ -375,6 +389,7 @@ def write_csv(report: dict) -> None:
         "away_edge",
         "home_edge",
         "moneyline_pick",
+        "lineup_source",
         "total_line",
         "over_prob",
         "under_prob",
@@ -400,6 +415,11 @@ def render_html(report: dict) -> str:
             f"<tr><td>{html.escape(player['name'])}</td><td>{html.escape(player['team'])}</td><td>{player['position']}</td><td>{player['expected_hits']:.3f}</td></tr>"
             for player in game["top_hitters"]
         )
+        source_label = {
+            "official_mlb_boxscore": "官方先發打線",
+            "projected_roster_stats_lineup": "先發未公布，使用 active roster 與本季打擊資料預估",
+            "fallback_role_lineup": "先發未公布，使用角色打線",
+        }.get(game.get("lineup_source", ""), game.get("lineup_source", "") or "未標記")
         cards.append(
             f"""
       <section class="game-card">
@@ -407,6 +427,7 @@ def render_html(report: dict) -> str:
           <div>
             <h2>{html.escape(game['matchup_zh'])}</h2>
             <p>平均比分 {game['away_zh']} {game['avg_away_score']:.2f}：{game['home_zh']} {game['avg_home_score']:.2f}，平均總分 {game['avg_total']:.2f}</p>
+            <p>打線來源：{html.escape(source_label)}</p>
           </div>
           <div class="pick">{html.escape(game['moneyline_pick'])}</div>
         </div>

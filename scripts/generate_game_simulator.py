@@ -9,6 +9,7 @@ from collections import defaultdict
 from datetime import date, datetime
 from pathlib import Path
 
+from mlb_player_context import fetch_game_player_context, fetch_pitcher_profile, fetch_projected_lineup
 from run_real_mlb_backtest import DEFAULT_GAMES_CSV, load_games
 
 
@@ -73,15 +74,36 @@ def pseudo_lineup(team: str) -> list[dict]:
     ]
     return [
         {
+            "id": None,
             "name": f"{team}{label}",
             "pos": LINEUP_POSITIONS[idx],
             "contact": contact,
             "power": power,
             "patience": patience,
             "gidp": gidp,
+            "avg": 0.245,
+            "obp": 0.315,
+            "slg": 0.400,
+            "k_rate": 0.22,
+            "bb_rate": 0.08,
+            "sample_pa": 0,
+            "source": "fallback_role_lineup",
         }
         for idx, (label, contact, power, patience, gidp) in enumerate(roles)
     ]
+
+
+def default_pitcher_profile() -> dict:
+    return {
+        "era": 4.50,
+        "whip": 1.350,
+        "k_factor": 1.0,
+        "bb_factor": 1.0,
+        "hr_factor": 1.0,
+        "gb_factor": 1.0,
+        "run_prevention_factor": 1.0,
+        "sample_ip": 0,
+    }
 
 
 def build_sim_data(target_date: str) -> dict:
@@ -91,32 +113,64 @@ def build_sim_data(target_date: str) -> dict:
     daily = json.loads(daily_path.read_text(encoding="utf-8"))
     history = [game for game in load_games(DEFAULT_GAMES_CSV) if game["date"] < target_date]
     profiles = team_profiles(history)
+    season = target_date[:4]
     games = []
     for row in daily.get("all_predictions", []):
         away = row.get("away_zh", "")
         home = row.get("home_zh", "")
+        game_pk = str(row.get("game_pk", ""))
+        away_lineup = pseudo_lineup(away)
+        home_lineup = pseudo_lineup(home)
+        lineup_source = "fallback_role_lineup"
+        try:
+            context = fetch_game_player_context(game_pk, season)
+            if context.get("away_lineup") and context.get("home_lineup"):
+                away_lineup = context["away_lineup"]
+                home_lineup = context["home_lineup"]
+                lineup_source = context["lineup_source"]
+            else:
+                projected_away = fetch_projected_lineup(row.get("away_team_id"), season)
+                projected_home = fetch_projected_lineup(row.get("home_team_id"), season)
+                if projected_away and projected_home:
+                    away_lineup = projected_away
+                    home_lineup = projected_home
+                    lineup_source = "projected_roster_stats_lineup"
+        except Exception as exc:
+            lineup_source = f"fallback_role_lineup: {exc}"
+        away_pitcher_profile = default_pitcher_profile()
+        home_pitcher_profile = default_pitcher_profile()
+        try:
+            away_pitcher_profile = {**away_pitcher_profile, **fetch_pitcher_profile(row.get("away_probable_pitcher_id"), season)}
+            home_pitcher_profile = {**home_pitcher_profile, **fetch_pitcher_profile(row.get("home_probable_pitcher_id"), season)}
+        except Exception:
+            pass
         games.append(
             {
                 "date": target_date,
-                "game_pk": row.get("game_pk", ""),
+                "game_pk": game_pk,
                 "status": row.get("status", ""),
                 "away": away,
                 "home": home,
                 "away_pitcher": row.get("away_probable_pitcher_zh") or "未公布",
                 "home_pitcher": row.get("home_probable_pitcher_zh") or "未公布",
+                "away_pitcher_id": row.get("away_probable_pitcher_id"),
+                "home_pitcher_id": row.get("home_probable_pitcher_id"),
+                "away_pitcher_profile": away_pitcher_profile,
+                "home_pitcher_profile": home_pitcher_profile,
+                "lineup_source": lineup_source,
                 "prediction": row.get("prediction_zh", ""),
                 "confidence": row.get("confidence", 0),
                 "away_profile": profiles.get(away, {"offense": 4.4, "prevention": 4.4, "power": 1, "contact": 1}),
                 "home_profile": profiles.get(home, {"offense": 4.4, "prevention": 4.4, "power": 1, "contact": 1}),
-                "away_lineup": pseudo_lineup(away),
-                "home_lineup": pseudo_lineup(home),
+                "away_lineup": away_lineup,
+                "home_lineup": home_lineup,
             }
         )
     return {
         "generated_at": datetime.now().isoformat(timespec="seconds"),
         "target_date": target_date,
         "games": games,
-        "note": "This is a stochastic plate-appearance simulator using team run profiles and role-based pseudo lineups. It is not official MLB play-by-play.",
+        "note": "This is a stochastic plate-appearance simulator using MLB official lineups when available, season hitter stats, probable pitcher style, and team run profiles. It is not official MLB play-by-play.",
     }
 
 
@@ -291,21 +345,30 @@ def render_html(data: dict) -> str:
     function batter() {{ const side = battingSide(); return state.box[side][state.battingIndex[side] % 9]; }}
     function randPick(arr) {{ return arr[Math.floor(Math.random()*arr.length)]; }}
 
-    function weightedOutcome(b, battingProfile, pitchingProfile, runners) {{
+    function pitcherStyle(side) {{
+      const g = currentGame();
+      return side === 'away' ? (g.away_pitcher_profile || {{}}) : (g.home_pitcher_profile || {{}});
+    }}
+
+    function weightedOutcome(b, battingProfile, pitchingProfile, pitcherProfile, runners) {{
       const offense = battingProfile.offense / 4.45;
-      const prevention = pitchingProfile.prevention / 4.45;
+      const prevention = (pitchingProfile.prevention / 4.45) * (pitcherProfile.run_prevention_factor || 1);
+      const kFactor = pitcherProfile.k_factor || 1;
+      const bbFactor = pitcherProfile.bb_factor || 1;
+      const hrFactor = pitcherProfile.hr_factor || 1;
+      const gbFactor = pitcherProfile.gb_factor || 1;
       let weights = {{
         single: 15.2 * offense * b.contact,
         double: 4.7 * offense * b.power,
         triple: 0.5 * offense * b.power,
-        homer: 3.3 * offense * b.power * battingProfile.power,
-        walk: 8.2 * b.patience,
-        strikeout: 22.0 * (1.02 / b.contact) * prevention,
-        groundout: 20.0 * prevention,
+        homer: 3.3 * offense * b.power * battingProfile.power * hrFactor,
+        walk: 8.2 * b.patience * bbFactor,
+        strikeout: 22.0 * (1.02 / b.contact) * prevention * kFactor,
+        groundout: 20.0 * prevention * gbFactor,
         flyout: 17.0,
         lineout: 7.0
       }};
-      if (runners[0] && state.outs < 2) weights.gidp = 5.8 * b.gidp * prevention;
+      if (runners[0] && state.outs < 2) weights.gidp = 5.8 * b.gidp * prevention * gbFactor;
       const total = Object.values(weights).reduce((a,v)=>a+v,0);
       let roll = Math.random()*total;
       for (const [key,val] of Object.entries(weights)) {{ roll -= val; if (roll <= 0) return key; }}
@@ -356,7 +419,7 @@ def render_html(data: dict) -> str:
       const b = batter();
       const battingProfile = side === 'away' ? g.away_profile : g.home_profile;
       const pitchingProfile = field === 'away' ? g.away_profile : g.home_profile;
-      const outcome = weightedOutcome(b, battingProfile, pitchingProfile, state.bases);
+      const outcome = weightedOutcome(b, battingProfile, pitchingProfile, pitcherStyle(field), state.bases);
       let runs = 0, desc = '', pitch = ['速球','滑球','曲球','變速球','伸卡球'][Math.floor(Math.random()*5)];
       if (['single','double','triple','homer'].includes(outcome)) {{
         b.AB++; b.H++; b.TB += outcome === 'single' ? 1 : outcome === 'double' ? 2 : outcome === 'triple' ? 3 : 4;
@@ -424,7 +487,8 @@ def render_html(data: dict) -> str:
       document.getElementById('base1').classList.toggle('on', !!state.bases[0]);
       document.getElementById('base2').classList.toggle('on', !!state.bases[1]);
       document.getElementById('base3').classList.toggle('on', !!state.bases[2]);
-      document.getElementById('caption').textContent = (state.events[0] && state.events[0].desc) || ('預測勝方：' + g.prediction + '，信心 ' + (Math.round(g.confidence*1000)/10) + '%');
+      const sourceText = g.lineup_source === 'official_mlb_boxscore' ? '官方先發打線' : (g.lineup_source === 'projected_roster_stats_lineup' ? '先發未公布，使用球員本季打擊資料預估打線' : '先發未公布，使用角色打線');
+      document.getElementById('caption').textContent = (state.events[0] && state.events[0].desc) || ('預測勝方：' + g.prediction + '，信心 ' + (Math.round(g.confidence*1000)/10) + '% / ' + sourceText);
       document.getElementById('eventLog').innerHTML = state.events.map((e,i)=>'<div class="event"><div class="event-num">' + (state.events.length-i) + '</div><div><small>' + e.inning + ' · ' + e.pitch + ' · ' + e.score + ' · ' + e.outs + ' 出局</small><br>' + e.desc + '</div></div>').join('');
       renderLineScore(); renderDueUp();
       document.getElementById('awayBox').innerHTML = renderBox('away');
