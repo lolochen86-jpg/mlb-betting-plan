@@ -134,9 +134,9 @@ def _person_hitting_stat(person: dict) -> dict:
     return (splits[0].get("stat") if splits else {}) or {}
 
 
-def _roster_player_row(entry: dict, batting_order: int, source: str = "projected_roster_stats_lineup") -> dict:
+def _roster_player_row(entry: dict, batting_order: int, source: str = "projected_roster_stats_lineup", position_override: str | None = None) -> dict:
     person = entry.get("person") or {}
-    position = (entry.get("position") or {}).get("abbreviation") or (person.get("primaryPosition") or {}).get("abbreviation") or LINEUP_POSITIONS[(batting_order - 1) % 9]
+    position = position_override or (entry.get("position") or {}).get("abbreviation") or (person.get("primaryPosition") or {}).get("abbreviation") or LINEUP_POSITIONS[(batting_order - 1) % 9]
     full_name = person.get("fullName", "")
     stat = _person_hitting_stat(person)
     return {
@@ -170,6 +170,23 @@ def _extract_lineup(team_box: dict, season: str) -> list[dict]:
             ordered.append(_person_row(int(player_id), player, idx, season))
     ordered.sort(key=lambda row: row["batting_order"])
     return ordered[:9]
+
+
+def _dedupe_projected_positions(rows: list[dict]) -> list[dict]:
+    regular_slots = ["C", "1B", "2B", "3B", "SS", "LF", "CF", "RF", "DH"]
+    seen = set()
+    for row in rows:
+        pos = row.get("pos")
+        if pos in regular_slots and pos not in seen:
+            seen.add(pos)
+            continue
+        row["pos"] = None
+    unused = [pos for pos in regular_slots if pos not in seen]
+    for row in rows:
+        if row.get("pos"):
+            continue
+        row["pos"] = unused.pop(0) if unused else LINEUP_POSITIONS[(row["batting_order"] - 1) % 9]
+    return rows
 
 
 def _date_before(target_date: str, days: int) -> str:
@@ -211,7 +228,9 @@ def _team_box_from_game(game_pk: str, team_id: int) -> dict:
 @lru_cache(maxsize=256)
 def recent_batting_order(team_id: int, target_date: str, lookback_days: int = 10, max_games: int = 6) -> dict[int, dict]:
     order_counts: dict[int, Counter] = defaultdict(Counter)
+    position_counts: dict[int, Counter] = defaultdict(Counter)
     latest_seen = {}
+    latest_position = {}
     for game_pk in _team_recent_game_pks(team_id, target_date, lookback_days, max_games):
         team_box = _team_box_from_game(game_pk, team_id)
         players = team_box.get("players") or {}
@@ -221,21 +240,34 @@ def recent_batting_order(team_id: int, target_date: str, lookback_days: int = 10
                 continue
             try:
                 player_id = int(str(key).replace("ID", ""))
-                batting_order = int(str(order)[:1])
+                order_number = int(str(order))
+                if order_number % 100 != 0:
+                    continue
+                batting_order = order_number // 100
             except ValueError:
                 continue
             if not 1 <= batting_order <= 9:
                 continue
+            position = (player.get("position") or {}).get("abbreviation")
             order_counts[player_id][batting_order] += 1
+            if position:
+                position_counts[player_id][position] += 1
             latest_seen.setdefault(player_id, batting_order)
+            if position and player_id not in latest_position:
+                latest_position[player_id] = position
     out = {}
     for player_id, counts in order_counts.items():
         common_order, starts = counts.most_common(1)[0]
+        common_position = None
+        if position_counts.get(player_id):
+            common_position = position_counts[player_id].most_common(1)[0][0]
         out[player_id] = {
             "recent_order": common_order,
+            "recent_position": common_position,
             "recent_starts": sum(counts.values()),
             "recent_order_starts": starts,
             "latest_order": latest_seen.get(player_id, common_order),
+            "latest_position": latest_position.get(player_id, common_position),
         }
     return out
 
@@ -263,34 +295,66 @@ def fetch_projected_lineup(team_id: int | str | None, season: str, target_date: 
         candidates.append(
             {
                 "entry": entry,
+                "player_id": int(player_id or 0),
                 "plate_appearances": plate_appearances,
                 "ops": ops,
                 "recent_order": order_info.get("recent_order"),
+                "recent_position": order_info.get("recent_position"),
                 "recent_starts": order_info.get("recent_starts", 0),
                 "recent_order_starts": order_info.get("recent_order_starts", 0),
             }
         )
     if recent_orders:
-        candidates.sort(
-            key=lambda row: (
-                row["recent_order"] is None,
-                row["recent_order"] or 99,
-                -row["recent_order_starts"],
-                -row["recent_starts"],
-                -row["plate_appearances"],
+        selected = []
+        used_ids = set()
+        used_positions = set()
+        regular_slots = {"C", "1B", "2B", "3B", "SS", "LF", "CF", "RF", "DH"}
+        for slot in range(1, 10):
+            slot_candidates = [row for row in candidates if row["player_id"] not in used_ids and row["recent_order"] == slot]
+            unique_slot_candidates = [row for row in slot_candidates if row.get("recent_position") in regular_slots and row.get("recent_position") not in used_positions]
+            if unique_slot_candidates:
+                slot_candidates = unique_slot_candidates
+            if not slot_candidates:
+                slot_candidates = [
+                    row
+                    for row in candidates
+                    if row["player_id"] not in used_ids
+                    and row["recent_order"] is not None
+                    and row.get("recent_position") in regular_slots
+                    and row.get("recent_position") not in used_positions
+                ]
+            if not slot_candidates:
+                slot_candidates = [row for row in candidates if row["player_id"] not in used_ids and row["recent_order"] is not None]
+            if not slot_candidates:
+                slot_candidates = [row for row in candidates if row["player_id"] not in used_ids]
+            if not slot_candidates:
+                continue
+            choice = max(
+                slot_candidates,
+                key=lambda row: (
+                    row["recent_order_starts"],
+                    row["recent_starts"],
+                    row["plate_appearances"],
+                    row["ops"],
+                ),
             )
-        )
-        selected = candidates[:9]
+            choice = {**choice, "projected_slot": slot}
+            selected.append(choice)
+            used_ids.add(choice["player_id"])
+            if choice.get("recent_position") in regular_slots:
+                used_positions.add(choice["recent_position"])
         rows = []
-        for idx, row in enumerate(selected, start=1):
-            item = _roster_player_row(row["entry"], idx, "projected_recent_lineup_order")
+        for row in selected[:9]:
+            slot = row["projected_slot"]
+            item = _roster_player_row(row["entry"], slot, "projected_recent_lineup_order", row.get("recent_position"))
             item["projected_order_basis"] = {
                 "recent_order": row["recent_order"],
+                "recent_position": row["recent_position"],
                 "recent_starts": row["recent_starts"],
                 "recent_order_starts": row["recent_order_starts"],
             }
             rows.append(item)
-        return rows
+        return _dedupe_projected_positions(rows)
     candidates.sort(key=lambda row: (row["plate_appearances"] >= 40, row["plate_appearances"], row["ops"]), reverse=True)
     return [_roster_player_row(row["entry"], idx) for idx, row in enumerate(candidates[:9], start=1)]
 
