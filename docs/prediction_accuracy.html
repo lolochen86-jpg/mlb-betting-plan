@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MLB 真實預測準確率</title>
+  <style>
+    body { margin: 0; background: #f7f8f6; color: #202421; font-family: "Microsoft JhengHei", "Noto Sans TC", system-ui, sans-serif; }
+    main { max-width: 1040px; margin: 0 auto; padding: 28px; }
+    h1 { margin: 0 0 6px; font-size: 30px; }
+    .meta { color: #68736d; line-height: 1.6; font-size: 14px; margin-bottom: 20px; }
+    .kpis { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 18px; }
+    .card { background: white; border: 1px solid #dfe5df; border-radius: 8px; padding: 18px; }
+    .label { color: #68736d; font-size: 13px; margin-bottom: 8px; }
+    .value { font-size: 28px; font-weight: 800; }
+    table { width: 100%; border-collapse: collapse; background: white; border: 1px solid #dfe5df; border-radius: 8px; overflow: hidden; }
+    th, td { text-align: left; border-bottom: 1px solid #dfe5df; padding: 12px 10px; white-space: nowrap; font-size: 14px; }
+    th { color: #68736d; font-size: 12px; }
+    .note { margin-top: 16px; padding: 12px 14px; border: 1px solid #dfe5df; border-radius: 8px; background: white; color: #68736d; line-height: 1.6; }
+    @media (max-width: 720px) { main { padding: 18px; } .kpis { grid-template-columns: 1fr; } table { display: block; overflow-x: auto; } }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>MLB 真實預測準確率</h1>
+    <div class="meta">
+      回測期間：2025-03-27 至 2026-06-27<br />
+      真實比分場數：3659 / 產生時間：2026-06-28T00:47:14
+    </div>
+    <section class="kpis">
+      <div class="card"><div class="label">準確率最佳模型</div><div class="value">A-畢氏勝率</div></div>
+      <div class="card"><div class="label">最佳準確率</div><div class="value">54.22%</div></div>
+      <div class="card"><div class="label">最佳模型預測場次</div><div class="value">3580</div></div>
+    </section>
+    <table>
+      <thead><tr><th>模型</th><th>預測場次</th><th>正確</th><th>錯誤</th><th>準確率</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>A-畢氏勝率</td>
+          <td>3580</td>
+          <td>1941</td>
+          <td>1639</td>
+          <td>54.22%</td>
+        </tr>
+
+        <tr>
+          <td>C-ELO評分</td>
+          <td>3659</td>
+          <td>1964</td>
+          <td>1695</td>
+          <td>53.68%</td>
+        </tr>
+
+        <tr>
+          <td>B-近期狀態</td>
+          <td>3580</td>
+          <td>1910</td>
+          <td>1670</td>
+          <td>53.35%</td>
+        </tr>
+
+        <tr>
+          <td>E-對照組(Ensemble)</td>
+          <td>3659</td>
+          <td>1947</td>
+          <td>1712</td>
+          <td>53.21%</td>
+        </tr>
+
+        <tr>
+          <td>D-近期失分代理</td>
+          <td>3580</td>
+          <td>1865</td>
+          <td>1715</td>
+          <td>52.09%</td>
+        </tr></tbody>
+    </table>
+    <div class="note">此頁只統計真實比分下的勝方預測準確率，尚未使用真實盤口，因此不計算投注 ROI。盤口資料補齊後，ROI 應在獨立投注績效層計算。</div>
+  </main>
+</body>
+</html>

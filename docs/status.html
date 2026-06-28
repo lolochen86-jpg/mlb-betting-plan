@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MLB 投注計畫狀態</title>
+  <style>
+    body { margin: 0; background: #f7f8f6; color: #202421; font-family: "Microsoft JhengHei", "Noto Sans TC", system-ui, sans-serif; }
+    main { max-width: 1180px; margin: 0 auto; padding: 28px; }
+    h1 { margin: 0 0 8px; font-size: 30px; }
+    h2 { margin: 24px 0 12px; font-size: 18px; }
+    .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 18px 0; }
+    .card { background: white; border: 1px solid #dfe5df; border-radius: 8px; padding: 16px; }
+    .label { color: #68736d; font-size: 13px; margin-bottom: 8px; }
+    .value { font-size: 26px; font-weight: 800; }
+    table { width: 100%; border-collapse: collapse; background: white; border: 1px solid #dfe5df; border-radius: 8px; overflow: hidden; margin-bottom: 16px; }
+    th, td { text-align: left; border-bottom: 1px solid #dfe5df; padding: 12px 10px; vertical-align: top; font-size: 14px; }
+    th { color: #68736d; font-size: 12px; }
+    ul { margin: 0; padding-left: 18px; }
+    code { display: block; background: #fff; border: 1px solid #dfe5df; border-radius: 8px; padding: 10px 12px; margin-bottom: 8px; overflow-x: auto; }
+    @media (max-width: 800px) { main { padding: 18px; } .grid { grid-template-columns: 1fr; } table { display: block; overflow-x: auto; } }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>MLB 投注計畫狀態</h1>
+    <div>產生時間：2026-06-28T09:02:11</div>
+    <section class="grid">
+      <div class="card"><div class="label">系統完成度</div><div class="value">100%</div></div>
+      <div class="card"><div class="label">真實比分</div><div class="value">3659</div></div>
+      <div class="card"><div class="label">最佳準確率</div><div class="value">54.22%</div></div>
+      <div class="card"><div class="label">最新每日預測</div><div class="value">15</div></div>
+    </section>
+    <h2>目前狀態</h2>
+    <table><thead><tr><th>專案狀態</th><th>外部等待項目</th></tr></thead><tbody><tr><td>系統完成，等待外部賽果/盤口</td><td><ul><li>2026-06-25 尚有 6 場比賽未結算</li><li>2026-06-26 尚有 15 場比賽未結算</li><li>2026-06-27 尚有 15 場比賽未結算</li><li>2026-06-28 尚有 15 場比賽未結算</li><li>2026-06-25 費城費城人 @ 華盛頓國民 (In Progress) 尚未取得真實盤口</li><li>2026-06-25 德州遊騎兵 @ 多倫多藍鳥 (In Progress) 尚未取得真實盤口</li><li>2026-06-25 亞利桑那響尾蛇 @ 聖路易紅雀 (Postponed) 尚未取得真實盤口</li><li>2026-06-25 芝加哥小熊 @ 紐約大都會 (In Progress) 尚未取得真實盤口</li><li>2026-06-25 休士頓太空人 @ 底特律老虎 (In Progress) 尚未取得真實盤口</li><li>2026-06-25 紐約洋基 @ 波士頓紅襪 (In Progress) 尚未取得真實盤口</li><li>2026-06-26 尚有 2 注 ROI 待賽果結算</li><li>2026-06-28 尚有 1 注 ROI 待賽果結算</li></ul></td></tr></tbody></table>
+    <h2>自動更新</h2>
+    <table>
+      <thead><tr><th>狀態</th><th>日期</th><th>開始時間</th><th>完成時間</th><th>返回碼</th><th>Log</th></tr></thead>
+      <tbody><tr>
+        <td>running</td>
+        <td>2026-06-28</td>
+        <td>2026-06-28T09:00:02+08:00</td>
+        <td>2026-06-28T08:26:49+08:00</td>
+        <td>0</td>
+        <td>C:\Users\I5-10400F\Documents\投注計畫\logs\auto_runner\2026-06-28.workflow.log</td>
+      </tr></tbody>
+    </table>
+    <h2>盤口完整度</h2>
+    <table><thead><tr><th>日期</th><th>已填 / 場次</th><th>缺盤口</th></tr></thead><tbody>
+        <tr>
+          <td>2026-06-25</td>
+          <td>0 / 9</td>
+          <td><ul><li>費城費城人 @ 華盛頓國民 (In Progress)</li><li>德州遊騎兵 @ 多倫多藍鳥 (In Progress)</li><li>堪薩斯市皇家 @ 坦帕灣光芒 (Final)</li><li>亞利桑那響尾蛇 @ 聖路易紅雀 (Postponed)</li><li>運動家 @ 舊金山巨人 (Final)</li><li>西雅圖水手 @ 匹茲堡海盜 (Final)</li><li>芝加哥小熊 @ 紐約大都會 (In Progress)</li><li>休士頓太空人 @ 底特律老虎 (In Progress)</li><li>紐約洋基 @ 波士頓紅襪 (In Progress)</li></ul></td>
+        </tr>
+
+        <tr>
+          <td>2026-06-26</td>
+          <td>15 / 15</td>
+          <td><span>無</span></td>
+        </tr>
+
+        <tr>
+          <td>2026-06-27</td>
+          <td>15 / 15</td>
+          <td><span>無</span></td>
+        </tr>
+
+        <tr>
+          <td>2026-06-28</td>
+          <td>15 / 15</td>
+          <td><span>無</span></td>
+        </tr></tbody></table>
+    <h2>準確率結算</h2>
+    <table><thead><tr><th>日期</th><th>預測</th><th>已完賽</th><th>待結算</th><th>準確率</th></tr></thead><tbody>
+        <tr>
+          <td>2026-06-25</td>
+          <td>9</td>
+          <td>3</td>
+          <td>6</td>
+          <td>33.33%</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-26</td>
+          <td>15</td>
+          <td>0</td>
+          <td>15</td>
+          <td>0.00%</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-27</td>
+          <td>15</td>
+          <td>0</td>
+          <td>15</td>
+          <td>0.00%</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-28</td>
+          <td>15</td>
+          <td>0</td>
+          <td>15</td>
+          <td>0.00%</td>
+        </tr></tbody></table>
+    <h2>投注 ROI</h2>
+    <table><thead><tr><th>日期</th><th>追蹤注數</th><th>已結算</th><th>待結算</th><th>PnL</th><th>ROI</th></tr></thead><tbody>
+        <tr>
+          <td>2026-06-26</td>
+          <td>2</td>
+          <td>0</td>
+          <td>2</td>
+          <td>0.00</td>
+          <td>0.00%</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-27</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0.00</td>
+          <td>0.00%</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-28</td>
+          <td>1</td>
+          <td>0</td>
+          <td>1</td>
+          <td>0.00</td>
+          <td>0.00%</td>
+        </tr></tbody></table>
+    <h2>下一步指令</h2>
+    <code>.\open_dashboard.cmd</code><code>.\start_auto_runner.cmd</code><code>.\install_windows_auto_runner.cmd</code><code>.\uninstall_windows_auto_runner.cmd</code><code>python scripts\run_daily_workflow.py --date YYYY-MM-DD --all-predictions --skip-backtest-refresh</code><code>python scripts\run_daily_workflow.py --date YYYY-MM-DD --all-predictions</code>
+  </main>
+</body>
+</html>

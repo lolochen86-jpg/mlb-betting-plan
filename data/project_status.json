@@ -1,0 +1,143 @@
+{
+  "generated_at": "2026-06-28T09:02:11",
+  "history": {
+    "games_written": 3659,
+    "actual_first_game_date": "2025-03-27",
+    "actual_last_game_date": "2026-06-27"
+  },
+  "accuracy": {
+    "best_model": "A-畢氏勝率",
+    "predictions": 3580,
+    "correct": 1941,
+    "accuracy_pct": 54.22
+  },
+  "daily": {
+    "target_date": "2026-06-28",
+    "predictions": 15,
+    "high_confidence": 1
+  },
+  "settlements": [
+    {
+      "date": "2026-06-25",
+      "predictions": 9,
+      "final_games": 3,
+      "pending_games": 6,
+      "accuracy_pct": 33.33
+    },
+    {
+      "date": "2026-06-26",
+      "predictions": 15,
+      "final_games": 0,
+      "pending_games": 15,
+      "accuracy_pct": 0
+    },
+    {
+      "date": "2026-06-27",
+      "predictions": 15,
+      "final_games": 0,
+      "pending_games": 15,
+      "accuracy_pct": 0
+    },
+    {
+      "date": "2026-06-28",
+      "predictions": 15,
+      "final_games": 0,
+      "pending_games": 15,
+      "accuracy_pct": 0
+    }
+  ],
+  "odds": [
+    {
+      "date": "2026-06-25",
+      "rows": 9,
+      "filled": 0,
+      "missing": [
+        "費城費城人 @ 華盛頓國民 (In Progress)",
+        "德州遊騎兵 @ 多倫多藍鳥 (In Progress)",
+        "堪薩斯市皇家 @ 坦帕灣光芒 (Final)",
+        "亞利桑那響尾蛇 @ 聖路易紅雀 (Postponed)",
+        "運動家 @ 舊金山巨人 (Final)",
+        "西雅圖水手 @ 匹茲堡海盜 (Final)",
+        "芝加哥小熊 @ 紐約大都會 (In Progress)",
+        "休士頓太空人 @ 底特律老虎 (In Progress)",
+        "紐約洋基 @ 波士頓紅襪 (In Progress)"
+      ]
+    },
+    {
+      "date": "2026-06-26",
+      "rows": 15,
+      "filled": 15,
+      "missing": []
+    },
+    {
+      "date": "2026-06-27",
+      "rows": 15,
+      "filled": 15,
+      "missing": []
+    },
+    {
+      "date": "2026-06-28",
+      "rows": 15,
+      "filled": 15,
+      "missing": []
+    }
+  ],
+  "roi": [
+    {
+      "date": "2026-06-26",
+      "bets": 2,
+      "final_bets": 0,
+      "pending_bets": 2,
+      "total_pnl": 0,
+      "roi_pct": 0
+    },
+    {
+      "date": "2026-06-27",
+      "bets": 0,
+      "final_bets": 0,
+      "pending_bets": 0,
+      "total_pnl": 0,
+      "roi_pct": 0
+    },
+    {
+      "date": "2026-06-28",
+      "bets": 1,
+      "final_bets": 0,
+      "pending_bets": 1,
+      "total_pnl": 0,
+      "roi_pct": 0
+    }
+  ],
+  "auto_runner": {
+    "mode": "running",
+    "target_date": "2026-06-28",
+    "last_started_at_tw": "2026-06-28T09:00:02+08:00",
+    "last_finished_at_tw": "2026-06-28T08:26:49+08:00",
+    "last_return_code": 0,
+    "log": "C:\\Users\\I5-10400F\\Documents\\投注計畫\\logs\\auto_runner\\2026-06-28.workflow.log"
+  },
+  "next_commands": [
+    ".\\open_dashboard.cmd",
+    ".\\start_auto_runner.cmd",
+    ".\\install_windows_auto_runner.cmd",
+    ".\\uninstall_windows_auto_runner.cmd",
+    "python scripts\\run_daily_workflow.py --date YYYY-MM-DD --all-predictions --skip-backtest-refresh",
+    "python scripts\\run_daily_workflow.py --date YYYY-MM-DD --all-predictions"
+  ],
+  "system_completion_pct": 100,
+  "external_waiting_items": [
+    "2026-06-25 尚有 6 場比賽未結算",
+    "2026-06-26 尚有 15 場比賽未結算",
+    "2026-06-27 尚有 15 場比賽未結算",
+    "2026-06-28 尚有 15 場比賽未結算",
+    "2026-06-25 費城費城人 @ 華盛頓國民 (In Progress) 尚未取得真實盤口",
+    "2026-06-25 德州遊騎兵 @ 多倫多藍鳥 (In Progress) 尚未取得真實盤口",
+    "2026-06-25 亞利桑那響尾蛇 @ 聖路易紅雀 (Postponed) 尚未取得真實盤口",
+    "2026-06-25 芝加哥小熊 @ 紐約大都會 (In Progress) 尚未取得真實盤口",
+    "2026-06-25 休士頓太空人 @ 底特律老虎 (In Progress) 尚未取得真實盤口",
+    "2026-06-25 紐約洋基 @ 波士頓紅襪 (In Progress) 尚未取得真實盤口",
+    "2026-06-26 尚有 2 注 ROI 待賽果結算",
+    "2026-06-28 尚有 1 注 ROI 待賽果結算"
+  ],
+  "project_state": "系統完成，等待外部賽果/盤口"
+}

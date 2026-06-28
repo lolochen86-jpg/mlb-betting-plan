@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MLB 更佳模型搜尋</title>
+  <style>
+    body { margin: 0; background: #f7f8f6; color: #202421; font-family: "Microsoft JhengHei", "Noto Sans TC", system-ui, sans-serif; }
+    main { max-width: 1180px; margin: 0 auto; padding: 28px; }
+    h1 { margin: 0 0 6px; font-size: 30px; }
+    h2 { margin: 24px 0 12px; font-size: 18px; }
+    .meta, .note { color: #68736d; line-height: 1.6; font-size: 14px; }
+    table { width: 100%; border-collapse: collapse; background: white; border: 1px solid #dfe5df; border-radius: 8px; overflow: hidden; margin-bottom: 16px; }
+    th, td { text-align: left; border-bottom: 1px solid #dfe5df; padding: 12px 10px; white-space: nowrap; font-size: 14px; }
+    th { color: #68736d; font-size: 12px; }
+    .note { padding: 12px 14px; border: 1px solid #dfe5df; border-radius: 8px; background: white; }
+    @media (max-width: 720px) { main { padding: 18px; } table { display: block; overflow-x: auto; } }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>MLB 更佳模型搜尋</h1>
+    <div class="meta">
+      方法：2024 train -> 2025 validation weight search -> 2026 untouched test<br />
+      2024 訓練：2024-03-20 至 2024-09-30，2432 場<br />
+      2025 驗證：2025-03-18 至 2025-09-28，2434 場<br />
+      2026 測試：2026-03-25 至 2026-06-27，1226 場<br />
+      產生時間：2026-06-28T00:34:39
+    </div>
+    <h2>驗證集選出的混合權重</h2>
+    <table><thead><tr><th>模型</th><th>權重</th></tr></thead><tbody><tr><td>A-畢氏勝率</td><td>1.00</td></tr></tbody></table>
+    <h2>2026 測試比較</h2>
+    <table>
+      <thead><tr><th>模型</th><th>預測場次</th><th>正確</th><th>錯誤</th><th>準確率</th><th>高信心場次</th><th>高信心準確率</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>G-驗證集最佳混合</td>
+          <td>1225</td>
+          <td>664</td>
+          <td>561</td>
+          <td>54.20%</td>
+          <td>397</td>
+          <td>56.42%</td>
+        </tr>
+
+        <tr>
+          <td>A-畢氏勝率</td>
+          <td>1225</td>
+          <td>664</td>
+          <td>561</td>
+          <td>54.20%</td>
+          <td>397</td>
+          <td>56.42%</td>
+        </tr>
+
+        <tr>
+          <td>F-進階因子代理</td>
+          <td>1225</td>
+          <td>652</td>
+          <td>573</td>
+          <td>53.22%</td>
+          <td>954</td>
+          <td>52.73%</td>
+        </tr>
+
+        <tr>
+          <td>B-近期狀態</td>
+          <td>1225</td>
+          <td>644</td>
+          <td>581</td>
+          <td>52.57%</td>
+          <td>877</td>
+          <td>53.25%</td>
+        </tr>
+
+        <tr>
+          <td>E-對照組(Ensemble)</td>
+          <td>1225</td>
+          <td>643</td>
+          <td>582</td>
+          <td>52.49%</td>
+          <td>627</td>
+          <td>55.02%</td>
+        </tr>
+
+        <tr>
+          <td>C-ELO評分</td>
+          <td>1225</td>
+          <td>637</td>
+          <td>588</td>
+          <td>52.00%</td>
+          <td>802</td>
+          <td>53.99%</td>
+        </tr>
+
+        <tr>
+          <td>D-近期失分代理</td>
+          <td>1225</td>
+          <td>637</td>
+          <td>588</td>
+          <td>52.00%</td>
+          <td>813</td>
+          <td>52.52%</td>
+        </tr></tbody>
+    </table>
+    <div class="note">這不是在 2026 上調參；權重只用 2025 驗證集選出，2026 作保留測試。</div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MLB 進階因子勝方模型</title>
+  <style>
+    body { margin: 0; background: #f7f8f6; color: #202421; font-family: "Microsoft JhengHei", "Noto Sans TC", system-ui, sans-serif; }
+    main { max-width: 1180px; margin: 0 auto; padding: 28px; }
+    h1 { margin: 0 0 6px; font-size: 30px; }
+    h2 { margin: 24px 0 12px; font-size: 18px; }
+    .meta, .note { color: #68736d; line-height: 1.6; font-size: 14px; }
+    table { width: 100%; border-collapse: collapse; background: white; border: 1px solid #dfe5df; border-radius: 8px; overflow: hidden; }
+    th, td { text-align: left; border-bottom: 1px solid #dfe5df; padding: 12px 10px; white-space: nowrap; font-size: 14px; }
+    th { color: #68736d; font-size: 12px; }
+    .note { margin-top: 16px; padding: 12px 14px; border: 1px solid #dfe5df; border-radius: 8px; background: white; }
+    @media (max-width: 720px) { main { padding: 18px; } table { display: block; overflow-x: auto; } }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>MLB 進階因子勝方模型</h1>
+    <div class="meta">
+      日期：2026-06-28<br />
+      模型：進階因子勝方 v1<br />
+      台灣運彩盤口覆蓋：15 / 15<br />
+      候選：9<br />
+      產生時間：2026-06-28T09:02:10
+    </div>
+    <h2>進階模型候選</h2>
+    <table>
+      <thead><tr><th>GamePk</th><th>對戰</th><th>預測勝方</th><th>信心</th><th>台灣運彩賠率</th><th>市場隱含</th><th>Edge</th><th>主/客分數</th><th>決策</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>822795</td>
+          <td>德州遊騎兵 @ 多倫多藍鳥</td>
+          <td>德州遊騎兵</td>
+          <td>70.0%</td>
+          <td>1.92</td>
+          <td>52.1%</td>
+          <td>17.9%</td>
+          <td>-2.6348 / -0.1974</td>
+          <td>進階模型候選</td>
+        </tr>
+
+        <tr>
+          <td>823608</td>
+          <td>費城費城人 @ 紐約大都會</td>
+          <td>費城費城人</td>
+          <td>70.0%</td>
+          <td>1.87</td>
+          <td>53.5%</td>
+          <td>16.5%</td>
+          <td>-0.8956 / 0.3438</td>
+          <td>進階模型候選</td>
+        </tr>
+
+        <tr>
+          <td>823037</td>
+          <td>邁阿密馬林魚 @ 聖路易紅雀</td>
+          <td>邁阿密馬林魚</td>
+          <td>63.8%</td>
+          <td>1.98</td>
+          <td>50.5%</td>
+          <td>13.3%</td>
+          <td>-0.5506 / 0.016</td>
+          <td>進階模型候選</td>
+        </tr>
+
+        <tr>
+          <td>823281</td>
+          <td>洛杉磯道奇 @ 聖地牙哥教士</td>
+          <td>聖地牙哥教士</td>
+          <td>54.4%</td>
+          <td>2.10</td>
+          <td>47.6%</td>
+          <td>6.8%</td>
+          <td>0.0669 / -0.1108</td>
+          <td>進階模型候選</td>
+        </tr>
+
+        <tr>
+          <td>824580</td>
+          <td>堪薩斯市皇家 @ 芝加哥白襪</td>
+          <td>芝加哥白襪</td>
+          <td>70.0%</td>
+          <td>1.56</td>
+          <td>64.1%</td>
+          <td>5.9%</td>
+          <td>-0.118 / -1.1855</td>
+          <td>進階模型候選</td>
+        </tr>
+
+        <tr>
+          <td>824011</td>
+          <td>運動家 @ 洛杉磯天使</td>
+          <td>運動家</td>
+          <td>58.5%</td>
+          <td>1.82</td>
+          <td>54.9%</td>
+          <td>3.5%</td>
+          <td>-0.9913 / -0.6481</td>
+          <td>進階模型候選</td>
+        </tr>
+
+        <tr>
+          <td>824256</td>
+          <td>休士頓太空人 @ 底特律老虎</td>
+          <td>休士頓太空人</td>
+          <td>65.5%</td>
+          <td>1.58</td>
+          <td>63.3%</td>
+          <td>2.1%</td>
+          <td>-0.4315 / 0.2072</td>
+          <td>進階模型候選</td>
+        </tr>
+
+        <tr>
+          <td>823362</td>
+          <td>辛辛那提紅人 @ 匹茲堡海盜</td>
+          <td>匹茲堡海盜</td>
+          <td>65.8%</td>
+          <td>1.55</td>
+          <td>64.5%</td>
+          <td>1.3%</td>
+          <td>-0.2153 / -0.8709</td>
+          <td>進階模型候選</td>
+        </tr>
+
+        <tr>
+          <td>823769</td>
+          <td>芝加哥小熊 @ 密爾瓦基釀酒人</td>
+          <td>密爾瓦基釀酒人</td>
+          <td>70.0%</td>
+          <td>1.43</td>
+          <td>69.9%</td>
+          <td>0.1%</td>
+          <td>0.8194 / -0.2098</td>
+          <td>進階模型候選</td>
+        </tr></tbody>
+    </table>
+    <h2>全部進階預測</h2>
+    <table>
+      <thead><tr><th>GamePk</th><th>對戰</th><th>預測勝方</th><th>信心</th><th>台灣運彩賠率</th><th>市場隱含</th><th>Edge</th><th>主/客分數</th><th>決策</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>822795</td>
+          <td>德州遊騎兵 @ 多倫多藍鳥</td>
+          <td>德州遊騎兵</td>
+          <td>70.0%</td>
+          <td>1.92</td>
+          <td>52.1%</td>
+          <td>17.9%</td>
+          <td>-2.6348 / -0.1974</td>
+          <td>進階模型候選</td>
+        </tr>
+
+        <tr>
+          <td>823608</td>
+          <td>費城費城人 @ 紐約大都會</td>
+          <td>費城費城人</td>
+          <td>70.0%</td>
+          <td>1.87</td>
+          <td>53.5%</td>
+          <td>16.5%</td>
+          <td>-0.8956 / 0.3438</td>
+          <td>進階模型候選</td>
+        </tr>
+
+        <tr>
+          <td>823037</td>
+          <td>邁阿密馬林魚 @ 聖路易紅雀</td>
+          <td>邁阿密馬林魚</td>
+          <td>63.8%</td>
+          <td>1.98</td>
+          <td>50.5%</td>
+          <td>13.3%</td>
+          <td>-0.5506 / 0.016</td>
+          <td>進階模型候選</td>
+        </tr>
+
+        <tr>
+          <td>823281</td>
+          <td>洛杉磯道奇 @ 聖地牙哥教士</td>
+          <td>聖地牙哥教士</td>
+          <td>54.4%</td>
+          <td>2.10</td>
+          <td>47.6%</td>
+          <td>6.8%</td>
+          <td>0.0669 / -0.1108</td>
+          <td>進階模型候選</td>
+        </tr>
+
+        <tr>
+          <td>824580</td>
+          <td>堪薩斯市皇家 @ 芝加哥白襪</td>
+          <td>芝加哥白襪</td>
+          <td>70.0%</td>
+          <td>1.56</td>
+          <td>64.1%</td>
+          <td>5.9%</td>
+          <td>-0.118 / -1.1855</td>
+          <td>進階模型候選</td>
+        </tr>
+
+        <tr>
+          <td>824011</td>
+          <td>運動家 @ 洛杉磯天使</td>
+          <td>運動家</td>
+          <td>58.5%</td>
+          <td>1.82</td>
+          <td>54.9%</td>
+          <td>3.5%</td>
+          <td>-0.9913 / -0.6481</td>
+          <td>進階模型候選</td>
+        </tr>
+
+        <tr>
+          <td>824256</td>
+          <td>休士頓太空人 @ 底特律老虎</td>
+          <td>休士頓太空人</td>
+          <td>65.5%</td>
+          <td>1.58</td>
+          <td>63.3%</td>
+          <td>2.1%</td>
+          <td>-0.4315 / 0.2072</td>
+          <td>進階模型候選</td>
+        </tr>
+
+        <tr>
+          <td>823362</td>
+          <td>辛辛那提紅人 @ 匹茲堡海盜</td>
+          <td>匹茲堡海盜</td>
+          <td>65.8%</td>
+          <td>1.55</td>
+          <td>64.5%</td>
+          <td>1.3%</td>
+          <td>-0.2153 / -0.8709</td>
+          <td>進階模型候選</td>
+        </tr>
+
+        <tr>
+          <td>823769</td>
+          <td>芝加哥小熊 @ 密爾瓦基釀酒人</td>
+          <td>密爾瓦基釀酒人</td>
+          <td>70.0%</td>
+          <td>1.43</td>
+          <td>69.9%</td>
+          <td>0.1%</td>
+          <td>0.8194 / -0.2098</td>
+          <td>進階模型候選</td>
+        </tr>
+
+        <tr>
+          <td>822959</td>
+          <td>亞利桑那響尾蛇 @ 坦帕灣光芒</td>
+          <td>坦帕灣光芒</td>
+          <td>70.0%</td>
+          <td>1.42</td>
+          <td>70.4%</td>
+          <td>-0.4%</td>
+          <td>0.9801 / -1.1428</td>
+          <td>不推薦</td>
+        </tr>
+
+        <tr>
+          <td>823204</td>
+          <td>亞特蘭大勇士 @ 舊金山巨人</td>
+          <td>亞特蘭大勇士</td>
+          <td>65.4%</td>
+          <td>1.46</td>
+          <td>68.5%</td>
+          <td>-3.1%</td>
+          <td>-0.0523 / 0.5845</td>
+          <td>不推薦</td>
+        </tr>
+
+        <tr>
+          <td>824821</td>
+          <td>華盛頓國民 @ 巴爾的摩金鶯</td>
+          <td>巴爾的摩金鶯</td>
+          <td>68.0%</td>
+          <td>1.38</td>
+          <td>72.5%</td>
+          <td>-4.5%</td>
+          <td>-0.1597 / -0.9132</td>
+          <td>不推薦</td>
+        </tr>
+
+        <tr>
+          <td>824744</td>
+          <td>紐約洋基 @ 波士頓紅襪</td>
+          <td>波士頓紅襪</td>
+          <td>54.5%</td>
+          <td>1.68</td>
+          <td>59.5%</td>
+          <td>-5.0%</td>
+          <td>0.2306 / 0.0481</td>
+          <td>不推薦</td>
+        </tr>
+
+        <tr>
+          <td>824422</td>
+          <td>西雅圖水手 @ 克里夫蘭守護者</td>
+          <td>克里夫蘭守護者</td>
+          <td>51.5%</td>
+          <td>1.70</td>
+          <td>58.8%</td>
+          <td>-7.3%</td>
+          <td>0.0856 / 0.0243</td>
+          <td>不推薦</td>
+        </tr>
+
+        <tr>
+          <td>823686</td>
+          <td>科羅拉多洛磯 @ 明尼蘇達雙城</td>
+          <td>明尼蘇達雙城</td>
+          <td>56.5%</td>
+          <td>1.50</td>
+          <td>66.7%</td>
+          <td>-10.2%</td>
+          <td>-0.4691 / -0.7313</td>
+          <td>不推薦</td>
+        </tr></tbody>
+    </table>
+    <div class="note"><strong>因子說明</strong><ul><li>打擊率壘包：AVG/OBP/SLG、推估壘包率、三振率、四壞率、雙殺打率。</li><li>投手型態：ERA/WHIP、K/9、BB/9、HR/9、滾地/飛球出局比例。</li><li>牛棚深度：目前用全隊投球與近期失分代理，球員層牛棚可在 v2 加入。</li><li>代打厚度與教練調度：目前以全隊打擊深度與近期一分差/連勝連敗代理，v2 需接每日名單與用人紀錄。</li><li>場地天氣：目前用主場歷史總分代理，v2 可接球場座標與即時天氣。</li></ul></div>
+  </main>
+</body>
+</html>
