@@ -394,6 +394,7 @@ def render_html(plan: dict, line_chart: str, bar_chart: str) -> str:
         <a href="betting_ticket.html">投注單</a>
         <a href="totals_predictions.html">大小分</a>
         <a href="advanced_factors.html">進階因子</a>
+        <a href="game_simulator.html">逐打席模擬</a>
         <a href="backtest_2026_report.html">2026 回測</a>
         <a href="winner_model_search.html">模型搜尋</a>
         <a href="prediction_log.html">結算紀錄</a>
