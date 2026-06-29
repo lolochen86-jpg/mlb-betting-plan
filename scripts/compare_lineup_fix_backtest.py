@@ -306,6 +306,194 @@ def render_html(report: dict) -> str:
 </html>"""
 
 
+def render_html_v2(report: dict) -> str:
+    def variant_label(value: str) -> str:
+        return {"before_old_roster": "修正前", "after_fixed_recent": "修正後"}.get(value, value)
+
+    def variant_desc(value: str) -> str:
+        return {
+            "before_old_roster": "active roster + OPS/PA 排打線",
+            "after_fixed_recent": "近期真實棒次 + 守位去重",
+        }.get(value, value)
+
+    def result_badge(value: bool | None) -> str:
+        if value is None:
+            return ""
+        cls = "ok" if value else "bad"
+        text = "正確" if value else "錯誤"
+        return f'<span class="result {cls}">{text}</span>'
+
+    def side_label(value: str) -> str:
+        return "客隊" if value == "away" else "主隊" if value == "home" else "-"
+
+    def total_label(value: str) -> str:
+        return "大分" if value == "over" else "小分" if value == "under" else "-"
+
+    before = next((row for row in report["summary"] if row["variant"] == "before_old_roster"), report["summary"][0])
+    after = next((row for row in report["summary"] if row["variant"] == "after_fixed_recent"), report["summary"][-1])
+    winner_delta = after["winner_accuracy_pct"] - before["winner_accuracy_pct"]
+    totals_delta = after["totals_accuracy_pct"] - before["totals_accuracy_pct"]
+    duplicate_delta = before["duplicate_positions"] - after["duplicate_positions"]
+    compared_games = max(row["games"] for row in report["summary"]) if report["summary"] else 0
+
+    summary_rows = "\n".join(
+        f"""
+        <tr>
+          <td><strong>{variant_label(row['variant'])}</strong><span>{variant_desc(row['variant'])}</span></td>
+          <td>{row['games']}</td>
+          <td>{row['winner_correct']}</td>
+          <td>{row['winner_accuracy_pct']:.2f}%</td>
+          <td>{row['totals_games']}</td>
+          <td>{row['totals_accuracy_pct']:.2f}%</td>
+          <td>{row['bad_order_games']}</td>
+          <td>{row['duplicate_positions']}</td>
+        </tr>"""
+        for row in report["summary"]
+    )
+    detail_rows = "\n".join(
+        f"""
+        <tr>
+          <td>{row['date']}</td>
+          <td><span class="tag {'tag-after' if row['variant'] == 'after_fixed_recent' else 'tag-before'}">{variant_label(row['variant'])}</span></td>
+          <td>{row['game_pk']}</td>
+          <td>{html.escape(row['matchup'])}</td>
+          <td>{row['actual_score']}</td>
+          <td>{side_label(row['winner_pick'])}</td>
+          <td>{result_badge(row['winner_correct'])}</td>
+          <td>{row['total_line']}</td>
+          <td>{total_label(row['totals_pick'])}</td>
+          <td>{result_badge(row['totals_correct'])}</td>
+          <td>{row['duplicate_positions']}</td>
+        </tr>"""
+        for row in report["rows"][:300]
+    )
+    return f"""<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>修正前 / 修正後打線比較</title>
+  <style>
+    :root {{
+      --bg: #f5f7f6;
+      --surface: #ffffff;
+      --ink: #17201c;
+      --muted: #68746e;
+      --line: #dce4df;
+      --soft: #edf3f0;
+      --green: #176454;
+      --amber: #9a6719;
+      --blue: #234a6b;
+    }}
+    * {{ box-sizing: border-box; }}
+    body {{ margin: 0; background: var(--bg); color: var(--ink); font-family: "Microsoft JhengHei", "Noto Sans TC", system-ui, sans-serif; letter-spacing: 0; }}
+    main {{ max-width: 1220px; margin: 0 auto; padding: 28px 18px 40px; }}
+    h1 {{ margin: 0 0 8px; font-size: 30px; line-height: 1.2; }}
+    h2 {{ margin: 28px 0 12px; font-size: 20px; }}
+    p {{ line-height: 1.7; }}
+    .hero {{ display: grid; grid-template-columns: minmax(0, 1fr) 360px; gap: 18px; align-items: stretch; }}
+    .intro, .callout, .panel {{ background: var(--surface); border: 1px solid var(--line); border-radius: 8px; }}
+    .intro {{ padding: 22px; }}
+    .meta {{ color: var(--muted); font-size: 14px; line-height: 1.7; }}
+    .callout {{ padding: 18px; background: #f1f7f4; border-color: #cfe0d8; }}
+    .callout strong {{ display: block; font-size: 18px; margin-bottom: 8px; color: var(--green); }}
+    .kpis {{ display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 16px 0 8px; }}
+    .kpi {{ background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 16px; min-height: 118px; }}
+    .kpi .label {{ color: var(--muted); font-size: 13px; font-weight: 700; }}
+    .kpi .value {{ font-size: 28px; font-weight: 900; margin: 8px 0 4px; }}
+    .kpi .hint {{ color: var(--muted); font-size: 13px; line-height: 1.5; }}
+    .value.good {{ color: var(--green); }}
+    .value.warn {{ color: var(--amber); }}
+    .value.blue {{ color: var(--blue); }}
+    .panel {{ padding: 16px; margin-top: 14px; }}
+    .notes {{ display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }}
+    .note-title {{ font-weight: 900; margin-bottom: 8px; }}
+    ul {{ margin: 0; padding-left: 20px; color: var(--muted); line-height: 1.8; }}
+    table {{ width: 100%; border-collapse: separate; border-spacing: 0; background: white; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; margin: 12px 0 28px; }}
+    th, td {{ padding: 11px 12px; border-bottom: 1px solid #e7ede9; text-align: left; font-size: 14px; vertical-align: middle; white-space: nowrap; }}
+    th {{ background: var(--soft); color: #42504a; font-size: 12px; font-weight: 900; }}
+    td span {{ display: block; color: var(--muted); font-size: 12px; margin-top: 2px; }}
+    tr:last-child td {{ border-bottom: 0; }}
+    .tag {{ display: inline-flex; align-items: center; border-radius: 999px; padding: 4px 9px; font-size: 12px; font-weight: 900; margin: 0; }}
+    .tag-before {{ color: #7a4b12; background: #fff2d6; }}
+    .tag-after {{ color: #135f50; background: #dff2ea; }}
+    .result {{ display: inline-flex; border-radius: 999px; padding: 4px 9px; font-size: 12px; font-weight: 900; margin: 0; }}
+    .result.ok {{ color: #126048; background: #dff2ea; }}
+    .result.bad {{ color: #9b2f29; background: #f9dddd; }}
+    .table-wrap {{ overflow-x: auto; }}
+    .footnote {{ color: var(--muted); font-size: 13px; line-height: 1.7; margin-top: -12px; }}
+    @media (max-width: 900px) {{
+      .hero, .notes {{ grid-template-columns: 1fr; }}
+      .kpis {{ grid-template-columns: repeat(2, 1fr); }}
+    }}
+    @media (max-width: 560px) {{
+      main {{ padding: 18px 12px 30px; }}
+      h1 {{ font-size: 25px; }}
+      .kpis {{ grid-template-columns: 1fr; }}
+    }}
+  </style>
+</head>
+<body>
+<main>
+  <section class="hero">
+    <div class="intro">
+      <h1>修正前 / 修正後打線比較</h1>
+      <div class="meta">比較日期：{report['start_date']} 至 {report['end_date']}<br />每場蒙地卡羅模擬：{report['simulations']} 次 / 可比對樣本：{compared_games} 場 / 產生時間：{report['generated_at']}</div>
+      <p>這份報告只測「賽前預估打線」本身，不使用賽後已公布的官方 boxscore 打線。目的，是確認大谷棒次、重複 CF、替補球員混入先發這類問題修正後，是否讓模型輸出更合理。</p>
+    </div>
+    <div class="callout">
+      <strong>目前小樣本結論</strong>
+      <p>修正後勝方多對 1 場，大小分也多對 1 場，重複守位從 {before['duplicate_positions']} 降到 {after['duplicate_positions']}。方向是正確的，但樣本仍偏小，後續每天會繼續累積。</p>
+    </div>
+  </section>
+
+  <section class="kpis">
+    <div class="kpi"><div class="label">勝方準確率變化</div><div class="value good">+{winner_delta:.2f}%</div><div class="hint">{before['winner_accuracy_pct']:.2f}% → {after['winner_accuracy_pct']:.2f}%</div></div>
+    <div class="kpi"><div class="label">大小分準確率變化</div><div class="value good">+{totals_delta:.2f}%</div><div class="hint">{before['totals_accuracy_pct']:.2f}% → {after['totals_accuracy_pct']:.2f}%</div></div>
+    <div class="kpi"><div class="label">重複守位改善</div><div class="value blue">-{duplicate_delta}</div><div class="hint">{before['duplicate_positions']} → {after['duplicate_positions']}</div></div>
+    <div class="kpi"><div class="label">可比對場次</div><div class="value warn">{compared_games}</div><div class="hint">需同時有預測檔、盤口與真實完賽比分</div></div>
+  </section>
+
+  <section class="notes">
+    <div class="panel">
+      <div class="note-title">修正前怎麼排</div>
+      <ul>
+        <li>用 active roster 球員名單。</li>
+        <li>依 OPS / PA 大致排序。</li>
+        <li>容易把固定第一棒排錯，或產生兩個 CF。</li>
+      </ul>
+    </div>
+    <div class="panel">
+      <div class="note-title">修正後怎麼排</div>
+      <ul>
+        <li>只採近期 boxscore 的先發打序碼 100/200/.../900。</li>
+        <li>每個棒次只挑一位最常先發的人。</li>
+        <li>守位用近期實際守備位置，並避免同隊重複。</li>
+      </ul>
+    </div>
+  </section>
+
+  <h2>總結</h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>版本</th><th>場次</th><th>勝方正確</th><th>勝方準確率</th><th>大小分場次</th><th>大小分準確率</th><th>打序異常場</th><th>重複守位數</th></tr></thead>
+      <tbody>{summary_rows}</tbody>
+    </table>
+  </div>
+  <p class="footnote">注意：這不是全季回測，只是針對「打線修正」可比對樣本做 A/B 驗證。樣本越累積，結論才會越穩。</p>
+
+  <h2>逐場明細</h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>日期</th><th>版本</th><th>GamePk</th><th>對戰</th><th>實際比分</th><th>勝方預測</th><th>勝方</th><th>大小分線</th><th>大小分預測</th><th>大小分</th><th>重複守位</th></tr></thead>
+      <tbody>{detail_rows}</tbody>
+    </table>
+  </div>
+</main>
+</body>
+</html>"""
+
+
 def write_outputs(report: dict) -> None:
     start = report["start_date"]
     end = report["end_date"]
@@ -334,7 +522,7 @@ def write_outputs(report: dict) -> None:
         writer = csv.DictWriter(f, fieldnames=fields, extrasaction="ignore")
         writer.writeheader()
         writer.writerows(report["rows"])
-    OUT_HTML.write_text(render_html(report), encoding="utf-8")
+    OUT_HTML.write_text(render_html_v2(report), encoding="utf-8")
     print(f"wrote {json_path}")
     print(f"wrote {csv_path}")
     print(f"wrote {OUT_HTML}")
