@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-29T08:04:11",
+  "generated_at": "2026-06-29T21:20:08",
   "target_date": "2026-06-29",
   "source_files": {
     "predictions": "data\\daily_predictions_2026-06-29.json",
@@ -13,7 +13,7 @@
     "require_sportsbook": "台灣運彩"
   },
   "summary": {
-    "odds_rows": 10,
+    "odds_rows": 13,
     "bets": 0,
     "final_bets": 0,
     "pending_bets": 0,
@@ -42,36 +42,12 @@
       "home_probable_pitcher_id": 624133,
       "prediction_zh": "波士頓紅襪",
       "pick_side": "home",
-      "confidence": 0.5851,
+      "confidence": 0.5848,
       "confirmation_pick_zh": "波士頓紅襪",
       "confirmation_same_direction": true,
       "confidence_pass": true,
       "decision": "高信心預測",
-      "skip_reason": "edge -0.1292 低於門檻"
-    },
-    {
-      "date": "2026-06-29",
-      "game_pk": "823121",
-      "game_time_utc": "2026-06-30T01:40:00Z",
-      "game_time_tw": "06/30 09:40",
-      "status": "Scheduled",
-      "matchup_zh": "洛杉磯天使 @ 西雅圖水手",
-      "away_zh": "洛杉磯天使",
-      "away_team_id": 108,
-      "home_zh": "西雅圖水手",
-      "home_team_id": 136,
-      "away_probable_pitcher_zh": "萊恩 喬",
-      "away_probable_pitcher_id": 696270,
-      "home_probable_pitcher_zh": "傑 柯比",
-      "home_probable_pitcher_id": 669923,
-      "prediction_zh": "西雅圖水手",
-      "pick_side": "home",
-      "confidence": 0.5803,
-      "confirmation_pick_zh": "西雅圖水手",
-      "confirmation_same_direction": true,
-      "confidence_pass": true,
-      "decision": "高信心預測",
-      "skip_reason": "盤口來源不是 台灣運彩"
+      "skip_reason": "edge -0.1194 低於門檻"
     },
     {
       "date": "2026-06-29",
@@ -90,12 +66,12 @@
       "home_probable_pitcher_id": 688107,
       "prediction_zh": "密爾瓦基釀酒人",
       "pick_side": "home",
-      "confidence": 0.5793,
+      "confidence": 0.5784,
       "confirmation_pick_zh": "密爾瓦基釀酒人",
       "confirmation_same_direction": true,
       "confidence_pass": true,
       "decision": "高信心預測",
-      "skip_reason": "edge -0.0964 低於門檻"
+      "skip_reason": "edge -0.0973 低於門檻"
     },
     {
       "date": "2026-06-29",
@@ -114,12 +90,12 @@
       "home_probable_pitcher_id": null,
       "prediction_zh": "邁阿密馬林魚",
       "pick_side": "away",
-      "confidence": 0.5767,
+      "confidence": 0.5759,
       "confirmation_pick_zh": "邁阿密馬林魚",
       "confirmation_same_direction": true,
       "confidence_pass": true,
       "decision": "高信心預測",
-      "skip_reason": "找不到真實盤口"
+      "skip_reason": "edge -0.0777 低於門檻"
     },
     {
       "date": "2026-06-29",
@@ -138,12 +114,12 @@
       "home_probable_pitcher_id": 695611,
       "prediction_zh": "洛杉磯道奇",
       "pick_side": "away",
-      "confidence": 0.5569,
+      "confidence": 0.5598,
       "confirmation_pick_zh": "洛杉磯道奇",
       "confirmation_same_direction": true,
       "confidence_pass": true,
       "decision": "高信心預測",
-      "skip_reason": "盤口來源不是 台灣運彩"
+      "skip_reason": "edge -0.0981 低於門檻"
     },
     {
       "date": "2026-06-29",
@@ -162,12 +138,36 @@
       "home_probable_pitcher_id": 605400,
       "prediction_zh": "費城費城人",
       "pick_side": "home",
-      "confidence": 0.5556,
+      "confidence": 0.554,
       "confirmation_pick_zh": "費城費城人",
       "confirmation_same_direction": true,
       "confidence_pass": true,
       "decision": "高信心預測",
-      "skip_reason": "edge -0.0396 低於門檻"
+      "skip_reason": "edge -0.0016 低於門檻"
+    },
+    {
+      "date": "2026-06-29",
+      "game_pk": "823121",
+      "game_time_utc": "2026-06-30T01:40:00Z",
+      "game_time_tw": "06/30 09:40",
+      "status": "Scheduled",
+      "matchup_zh": "洛杉磯天使 @ 西雅圖水手",
+      "away_zh": "洛杉磯天使",
+      "away_team_id": 108,
+      "home_zh": "西雅圖水手",
+      "home_team_id": 136,
+      "away_probable_pitcher_zh": "萊恩 喬",
+      "away_probable_pitcher_id": 696270,
+      "home_probable_pitcher_zh": "傑 柯比",
+      "home_probable_pitcher_id": 669923,
+      "prediction_zh": "西雅圖水手",
+      "pick_side": "home",
+      "confidence": 0.5782,
+      "confirmation_pick_zh": "洛杉磯天使",
+      "confirmation_same_direction": false,
+      "confidence_pass": true,
+      "decision": "一般預測",
+      "skip_reason": "edge -0.1737 低於門檻"
     },
     {
       "date": "2026-06-29",
@@ -187,11 +187,11 @@
       "prediction_zh": "紐約洋基",
       "pick_side": "home",
       "confidence": 0.5549,
-      "confirmation_pick_zh": "紐約洋基",
-      "confirmation_same_direction": true,
+      "confirmation_pick_zh": "底特律老虎",
+      "confirmation_same_direction": false,
       "confidence_pass": true,
-      "decision": "高信心預測",
-      "skip_reason": "edge -0.1030 低於門檻"
+      "decision": "一般預測",
+      "skip_reason": "edge -0.1348 低於門檻"
     },
     {
       "date": "2026-06-29",
@@ -210,12 +210,12 @@
       "home_probable_pitcher_id": 663567,
       "prediction_zh": "休士頓太空人",
       "pick_side": "home",
-      "confidence": 0.5401,
+      "confidence": 0.5412,
       "confirmation_pick_zh": "休士頓太空人",
       "confirmation_same_direction": true,
       "confidence_pass": false,
       "decision": "一般預測",
-      "skip_reason": "盤口來源不是 台灣運彩"
+      "skip_reason": "edge -0.0838 低於門檻"
     },
     {
       "date": "2026-06-29",
@@ -234,12 +234,12 @@
       "home_probable_pitcher_id": 684007,
       "prediction_zh": "芝加哥小熊",
       "pick_side": "home",
-      "confidence": 0.5368,
-      "confirmation_pick_zh": "聖地牙哥教士",
-      "confirmation_same_direction": false,
+      "confidence": 0.541,
+      "confirmation_pick_zh": "芝加哥小熊",
+      "confirmation_same_direction": true,
       "confidence_pass": false,
       "decision": "一般預測",
-      "skip_reason": "找不到真實盤口"
+      "skip_reason": "edge -0.1439 低於門檻"
     },
     {
       "date": "2026-06-29",
@@ -258,12 +258,12 @@
       "home_probable_pitcher_id": 702056,
       "prediction_zh": "多倫多藍鳥",
       "pick_side": "home",
-      "confidence": 0.5291,
+      "confidence": 0.5276,
       "confirmation_pick_zh": "多倫多藍鳥",
       "confirmation_same_direction": true,
       "confidence_pass": false,
       "decision": "一般預測",
-      "skip_reason": "edge -0.0882 低於門檻"
+      "skip_reason": "edge -0.0974 低於門檻"
     },
     {
       "date": "2026-06-29",
@@ -282,12 +282,12 @@
       "home_probable_pitcher_id": 593958,
       "prediction_zh": "亞利桑那響尾蛇",
       "pick_side": "home",
-      "confidence": 0.5226,
-      "confirmation_pick_zh": "亞利桑那響尾蛇",
-      "confirmation_same_direction": true,
+      "confidence": 0.52,
+      "confirmation_pick_zh": "舊金山巨人",
+      "confirmation_same_direction": false,
       "confidence_pass": false,
       "decision": "一般預測",
-      "skip_reason": "盤口來源不是 台灣運彩"
+      "skip_reason": "edge -0.1336 低於門檻"
     },
     {
       "date": "2026-06-29",
@@ -306,12 +306,12 @@
       "home_probable_pitcher_id": 669358,
       "prediction_zh": "巴爾的摩金鶯",
       "pick_side": "home",
-      "confidence": 0.5083,
-      "confirmation_pick_zh": "巴爾的摩金鶯",
-      "confirmation_same_direction": true,
+      "confidence": 0.5078,
+      "confirmation_pick_zh": "芝加哥白襪",
+      "confirmation_same_direction": false,
       "confidence_pass": false,
       "decision": "一般預測",
-      "skip_reason": "edge -0.1167 低於門檻"
+      "skip_reason": "edge -0.1095 低於門檻"
     },
     {
       "date": "2026-06-29",
@@ -330,12 +330,12 @@
       "home_probable_pitcher_id": 800048,
       "prediction_zh": "克里夫蘭守護者",
       "pick_side": "home",
-      "confidence": 0.5009,
-      "confirmation_pick_zh": "克里夫蘭守護者",
-      "confirmation_same_direction": true,
+      "confidence": 0.5006,
+      "confirmation_pick_zh": "德州遊騎兵",
+      "confirmation_same_direction": false,
       "confidence_pass": false,
       "decision": "一般預測",
-      "skip_reason": "找不到真實盤口"
+      "skip_reason": "edge -0.1661 低於門檻"
     }
   ],
   "note": "ROI uses imported real odds only. Taiwan Sports Lottery decimal odds and American moneyline are supported. Fixed -110 reference results are excluded."

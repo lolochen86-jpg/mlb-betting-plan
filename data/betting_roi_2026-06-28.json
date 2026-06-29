@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-29T08:56:09",
+  "generated_at": "2026-06-29T21:20:07",
   "target_date": "2026-06-28",
   "source_files": {
     "predictions": "data\\daily_predictions_2026-06-28.json",
@@ -15,12 +15,12 @@
   "summary": {
     "odds_rows": 15,
     "bets": 1,
-    "final_bets": 0,
-    "pending_bets": 1,
+    "final_bets": 1,
+    "pending_bets": 0,
     "wins": 0,
-    "losses": 0,
-    "total_pnl": 0,
-    "roi_pct": 0,
+    "losses": 1,
+    "total_pnl": -100.0,
+    "roi_pct": -100.0,
     "skipped": 14
   },
   "bets": [
@@ -38,12 +38,12 @@
       "market_implied_prob": 0.5348,
       "edge": 0.0049,
       "unit": 100.0,
-      "status": "Pre-Game",
-      "score": "",
-      "actual_winner_zh": "",
-      "settlement": "pending",
-      "pnl": 0,
-      "is_final": false
+      "status": "Final",
+      "score": "7-5",
+      "actual_winner_zh": "休士頓太空人",
+      "settlement": "loss",
+      "pnl": -100.0,
+      "is_final": true
     }
   ],
   "skipped": [

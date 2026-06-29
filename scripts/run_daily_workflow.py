@@ -37,6 +37,17 @@ def previous_date(target_date: str) -> str:
     return (date.fromisoformat(target_date) - timedelta(days=1)).isoformat()
 
 
+def date_range(start_date: str, end_date: str) -> list[str]:
+    start = date.fromisoformat(start_date)
+    end = date.fromisoformat(end_date)
+    days = []
+    cursor = start
+    while cursor <= end:
+        days.append(cursor.isoformat())
+        cursor += timedelta(days=1)
+    return days
+
+
 def roi_args(py: str, target_date: str, unit: float, min_edge: float, all_predictions: bool) -> list[str]:
     args = [
         py,
@@ -61,7 +72,13 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--settle-date",
         default=None,
-        help="Settlement date in YYYY-MM-DD. Defaults to the day before --date.",
+        help="Last settlement date in YYYY-MM-DD. Defaults to the day before --date.",
+    )
+    parser.add_argument(
+        "--settlement-lookback-days",
+        type=int,
+        default=7,
+        help="Backfill prediction settlement for recent dates with local prediction files.",
     )
     parser.add_argument("--unit", type=float, default=100)
     parser.add_argument("--min-edge", type=float, default=0.0)
@@ -73,7 +90,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--skip-odds-fetch",
         action="store_true",
-        help="Do not fetch ESPN moneyline odds; use the existing local odds CSV.",
+        help="Do not fetch ESPN/Taiwan odds; use existing local odds CSV.",
     )
     parser.add_argument(
         "--skip-backtest-refresh",
@@ -83,25 +100,34 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--skip-history-refresh",
         action="store_true",
-        help="Do not refresh real final-score history before settling yesterday.",
+        help="Do not refresh real final-score history before settlement backfill.",
     )
     return parser.parse_args()
 
 
-def settle_previous_day(py: str, settle_date: str, args: argparse.Namespace) -> None:
-    if not prediction_json_path(settle_date).exists():
-        print(f"\n== 前一天勝方預測印證 ==\nmissing prediction file, skipped: {prediction_json_path(settle_date)}")
-        return
+def settlement_dates(target_date: str, settle_date: str, lookback_days: int) -> list[str]:
+    end = date.fromisoformat(settle_date)
+    start = end - timedelta(days=max(0, lookback_days - 1))
+    dates = [item for item in date_range(start.isoformat(), end.isoformat()) if prediction_json_path(item).exists()]
+    if target_date not in dates and prediction_json_path(target_date).exists():
+        dates.append(target_date)
+    return sorted(set(dates))
 
-    run_step("前一天勝方預測印證", [py, "scripts/settle_daily_predictions.py", "--date", settle_date])
-    if odds_csv_path(settle_date).exists():
-        run_step(
-            "前一天投注 ROI 印證",
-            roi_args(py, settle_date, args.unit, args.min_edge, args.all_predictions),
-            allow_fail=True,
-        )
-    else:
-        print(f"\n== 前一天投注 ROI 印證 ==\nmissing odds file, skipped: {odds_csv_path(settle_date)}")
+
+def settle_recent_predictions(py: str, dates: list[str], args: argparse.Namespace) -> None:
+    if not dates:
+        print("\n== 回補近期預測印證 ==\nno local prediction files found")
+        return
+    for item in dates:
+        run_step(f"回補勝方預測印證 {item}", [py, "scripts/settle_daily_predictions.py", "--date", item])
+        if odds_csv_path(item).exists():
+            run_step(
+                f"回補投注 ROI 印證 {item}",
+                roi_args(py, item, args.unit, args.min_edge, args.all_predictions),
+                allow_fail=True,
+            )
+        else:
+            print(f"\n== 回補投注 ROI 印證 {item} ==\nmissing odds file, skipped: {odds_csv_path(item)}")
 
 
 def main() -> None:
@@ -117,7 +143,8 @@ def main() -> None:
         run_step("真實預測準確率", [py, "scripts/run_real_mlb_prediction_accuracy.py"])
         run_step("固定賠率參考回測", [py, "scripts/run_real_mlb_backtest.py"])
 
-    settle_previous_day(py, settle_date, args)
+    dates_to_settle = settlement_dates(target_date, settle_date, args.settlement_lookback_days)
+    settle_recent_predictions(py, dates_to_settle, args)
 
     run_step("產生今天勝方預測", [py, "scripts/generate_daily_plan.py", "--date", target_date])
     run_step("今天預測建立待結算檔", [py, "scripts/settle_daily_predictions.py", "--date", target_date])

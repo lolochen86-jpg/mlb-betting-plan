@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-26T23:16:31",
+  "generated_at": "2026-06-29T21:20:04",
   "target_date": "2026-06-26",
   "source_files": {
     "predictions": "data\\daily_predictions_2026-06-26.json",
@@ -9,63 +9,21 @@
   "settings": {
     "unit": 100.0,
     "min_edge": 0.0,
-    "only_high_confidence": false
+    "only_high_confidence": false,
+    "require_sportsbook": "台灣運彩"
   },
   "summary": {
     "odds_rows": 15,
-    "bets": 2,
+    "bets": 0,
     "final_bets": 0,
-    "pending_bets": 2,
+    "pending_bets": 0,
     "wins": 0,
     "losses": 0,
     "total_pnl": 0,
     "roi_pct": 0,
-    "skipped": 13
+    "skipped": 15
   },
-  "bets": [
-    {
-      "date": "2026-06-26",
-      "game_pk": "824255",
-      "sportsbook": "DraftKings",
-      "captured_at_tw": "2026-06-26T23:16:30",
-      "decision": "一般預測",
-      "matchup_zh": "休士頓太空人 @ 底特律老虎",
-      "prediction_zh": "底特律老虎",
-      "pick_side": "home",
-      "moneyline": -115,
-      "confidence": 0.5364,
-      "market_implied_prob": 0.5349,
-      "edge": 0.0015,
-      "unit": 100.0,
-      "status": "Scheduled",
-      "score": "",
-      "actual_winner_zh": "",
-      "settlement": "pending",
-      "pnl": 0,
-      "is_final": false
-    },
-    {
-      "date": "2026-06-26",
-      "game_pk": "824014",
-      "sportsbook": "DraftKings",
-      "captured_at_tw": "2026-06-26T23:16:30",
-      "decision": "一般預測",
-      "matchup_zh": "運動家 @ 洛杉磯天使",
-      "prediction_zh": "洛杉磯天使",
-      "pick_side": "home",
-      "moneyline": 109,
-      "confidence": 0.5051,
-      "market_implied_prob": 0.4785,
-      "edge": 0.0266,
-      "unit": 100.0,
-      "status": "Scheduled",
-      "score": "",
-      "actual_winner_zh": "",
-      "settlement": "pending",
-      "pnl": 0,
-      "is_final": false
-    }
-  ],
+  "bets": [],
   "skipped": [
     {
       "date": "2026-06-26",
@@ -83,7 +41,7 @@
       "confirmation_same_direction": true,
       "confidence_pass": true,
       "decision": "高信心預測",
-      "skip_reason": "edge -0.0257 低於門檻"
+      "skip_reason": "盤口來源不是 台灣運彩"
     },
     {
       "date": "2026-06-26",
@@ -101,7 +59,25 @@
       "confirmation_same_direction": true,
       "confidence_pass": false,
       "decision": "一般預測",
-      "skip_reason": "edge -0.1880 低於門檻"
+      "skip_reason": "盤口來源不是 台灣運彩"
+    },
+    {
+      "date": "2026-06-26",
+      "game_pk": "824255",
+      "status": "Scheduled",
+      "matchup_zh": "休士頓太空人 @ 底特律老虎",
+      "away_zh": "休士頓太空人",
+      "home_zh": "底特律老虎",
+      "away_probable_pitcher_zh": "史賓塞 阿",
+      "home_probable_pitcher_zh": "凱德 莫羅",
+      "prediction_zh": "底特律老虎",
+      "pick_side": "home",
+      "confidence": 0.5364,
+      "confirmation_pick_zh": "休士頓太空人",
+      "confirmation_same_direction": false,
+      "confidence_pass": false,
+      "decision": "一般預測",
+      "skip_reason": "盤口來源不是 台灣運彩"
     },
     {
       "date": "2026-06-26",
@@ -119,7 +95,7 @@
       "confirmation_same_direction": true,
       "confidence_pass": false,
       "decision": "一般預測",
-      "skip_reason": "edge -0.0456 低於門檻"
+      "skip_reason": "盤口來源不是 台灣運彩"
     },
     {
       "date": "2026-06-26",
@@ -137,7 +113,7 @@
       "confirmation_same_direction": true,
       "confidence_pass": false,
       "decision": "一般預測",
-      "skip_reason": "edge -0.0452 低於門檻"
+      "skip_reason": "盤口來源不是 台灣運彩"
     },
     {
       "date": "2026-06-26",
@@ -155,7 +131,7 @@
       "confirmation_same_direction": false,
       "confidence_pass": false,
       "decision": "一般預測",
-      "skip_reason": "edge -0.0085 低於門檻"
+      "skip_reason": "盤口來源不是 台灣運彩"
     },
     {
       "date": "2026-06-26",
@@ -173,7 +149,7 @@
       "confirmation_same_direction": true,
       "confidence_pass": false,
       "decision": "一般預測",
-      "skip_reason": "edge -0.1441 低於門檻"
+      "skip_reason": "盤口來源不是 台灣運彩"
     },
     {
       "date": "2026-06-26",
@@ -191,7 +167,7 @@
       "confirmation_same_direction": true,
       "confidence_pass": false,
       "decision": "一般預測",
-      "skip_reason": "edge -0.0823 低於門檻"
+      "skip_reason": "盤口來源不是 台灣運彩"
     },
     {
       "date": "2026-06-26",
@@ -209,7 +185,7 @@
       "confirmation_same_direction": true,
       "confidence_pass": false,
       "decision": "一般預測",
-      "skip_reason": "edge -0.0028 低於門檻"
+      "skip_reason": "盤口來源不是 台灣運彩"
     },
     {
       "date": "2026-06-26",
@@ -227,7 +203,7 @@
       "confirmation_same_direction": true,
       "confidence_pass": false,
       "decision": "一般預測",
-      "skip_reason": "edge -0.0253 低於門檻"
+      "skip_reason": "盤口來源不是 台灣運彩"
     },
     {
       "date": "2026-06-26",
@@ -245,7 +221,25 @@
       "confirmation_same_direction": true,
       "confidence_pass": false,
       "decision": "一般預測",
-      "skip_reason": "edge -0.0704 低於門檻"
+      "skip_reason": "盤口來源不是 台灣運彩"
+    },
+    {
+      "date": "2026-06-26",
+      "game_pk": "824014",
+      "status": "Scheduled",
+      "matchup_zh": "運動家 @ 洛杉磯天使",
+      "away_zh": "運動家",
+      "home_zh": "洛杉磯天使",
+      "away_probable_pitcher_zh": "傑 特 吉",
+      "home_probable_pitcher_zh": "瓦 雷納",
+      "prediction_zh": "洛杉磯天使",
+      "pick_side": "home",
+      "confidence": 0.5051,
+      "confirmation_pick_zh": "洛杉磯天使",
+      "confirmation_same_direction": true,
+      "confidence_pass": false,
+      "decision": "一般預測",
+      "skip_reason": "盤口來源不是 台灣運彩"
     },
     {
       "date": "2026-06-26",
@@ -263,7 +257,7 @@
       "confirmation_same_direction": true,
       "confidence_pass": false,
       "decision": "一般預測",
-      "skip_reason": "edge -0.1151 低於門檻"
+      "skip_reason": "盤口來源不是 台灣運彩"
     },
     {
       "date": "2026-06-26",
@@ -281,7 +275,7 @@
       "confirmation_same_direction": false,
       "confidence_pass": false,
       "decision": "一般預測",
-      "skip_reason": "edge -0.0431 低於門檻"
+      "skip_reason": "盤口來源不是 台灣運彩"
     },
     {
       "date": "2026-06-26",
@@ -299,8 +293,8 @@
       "confirmation_same_direction": true,
       "confidence_pass": false,
       "decision": "一般預測",
-      "skip_reason": "edge -0.0232 低於門檻"
+      "skip_reason": "盤口來源不是 台灣運彩"
     }
   ],
-  "note": "ROI uses imported real moneyline odds only. Fixed -110 reference results are excluded."
+  "note": "ROI uses imported real odds only. Taiwan Sports Lottery decimal odds and American moneyline are supported. Fixed -110 reference results are excluded."
 }
