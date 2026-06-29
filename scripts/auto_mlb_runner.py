@@ -113,7 +113,61 @@ def run_workflow(args: argparse.Namespace) -> int:
         betting_ticket=str(ROOT / "docs" / "betting_ticket.html"),
         log=str(child_log),
     )
+    if return_code == 0 and args.publish:
+        publish_site(target_date)
     return return_code
+
+
+def git_output(command: list[str]) -> subprocess.CompletedProcess[str]:
+    return subprocess.run(
+        command,
+        cwd=ROOT,
+        text=True,
+        encoding="utf-8",
+        errors="replace",
+        stdout=subprocess.PIPE,
+        stderr=subprocess.STDOUT,
+    )
+
+
+def publish_site(target_date: str) -> None:
+    append_log("publish check: git status")
+    status = git_output(["git", "status", "--porcelain", "--", "data", "docs"])
+    if status.returncode != 0:
+        append_log(f"publish skipped: git status failed return_code={status.returncode}")
+        append_log(status.stdout.strip())
+        write_state(publish_status="failed", publish_message="git status failed")
+        return
+    if not status.stdout.strip():
+        append_log("publish skipped: no data/docs changes")
+        write_state(publish_status="skipped", publish_message="no changes")
+        return
+
+    steps = [
+        ["git", "add", "data", "docs"],
+        ["git", "commit", "-m", f"Auto update MLB site {target_date}"],
+        ["git", "push", "origin", "main"],
+    ]
+    for command in steps:
+        append_log("publish command: " + " ".join(command))
+        result = git_output(command)
+        if result.stdout.strip():
+            append_log(result.stdout.strip())
+        if result.returncode != 0:
+            append_log(f"publish failed return_code={result.returncode}")
+            write_state(
+                publish_status="failed",
+                publish_message=" ".join(command),
+                publish_finished_at_tw=now_local().isoformat(timespec="seconds"),
+            )
+            return
+
+    append_log("publish success")
+    write_state(
+        publish_status="success",
+        publish_message=f"pushed Auto update MLB site {target_date}",
+        publish_finished_at_tw=now_local().isoformat(timespec="seconds"),
+    )
 
 
 def open_dashboard() -> None:
@@ -130,6 +184,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--once", action="store_true", help="Run once and exit.")
     parser.add_argument("--start-now", action="store_true", help="Run immediately before sleeping.")
     parser.add_argument("--open-dashboard", action="store_true", help="Open docs/index.html after successful run.")
+    parser.add_argument("--publish", action="store_true", help="Commit and push data/docs changes after a successful run.")
     parser.add_argument("--unit", type=float, default=100.0)
     parser.add_argument("--min-edge", type=float, default=0.0)
     parser.add_argument("--skip-odds-fetch", action="store_true")
