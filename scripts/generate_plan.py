@@ -400,6 +400,7 @@ def render_html(plan: dict, line_chart: str, bar_chart: str) -> str:
         <a href="backtest_2026_report.html">2026 回測</a>
         <a href="winner_model_search.html">模型搜尋</a>
         <a href="prediction_log.html">結算紀錄</a>
+        <a href="postgame_review.html">賽後檢討</a>
         <a href="betting_roi.html">投注 ROI</a>
         <a href="status.html">狀態</a>
       </nav>
