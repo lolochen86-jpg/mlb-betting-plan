@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-06-29T21:20:24",
+  "generated_at": "2026-06-30T05:42:52",
   "history": {
-    "games_written": 3686,
+    "games_written": 3696,
     "actual_first_game_date": "2025-03-27",
-    "actual_last_game_date": "2026-06-28"
+    "actual_last_game_date": "2026-06-29"
   },
   "accuracy": {
     "best_model": "A-畢氏勝率",
@@ -12,9 +12,9 @@
     "accuracy_pct": 54.22
   },
   "daily": {
-    "target_date": "2026-06-29",
-    "predictions": 13,
-    "high_confidence": 5
+    "target_date": "2026-06-30",
+    "predictions": 15,
+    "high_confidence": 6
   },
   "settlements": [
     {
@@ -50,6 +50,13 @@
       "predictions": 13,
       "final_games": 0,
       "pending_games": 13,
+      "accuracy_pct": 0
+    },
+    {
+      "date": "2026-06-30",
+      "predictions": 15,
+      "final_games": 0,
+      "pending_games": 15,
       "accuracy_pct": 0
     }
   ],
@@ -93,6 +100,12 @@
       "rows": 13,
       "filled": 13,
       "missing": []
+    },
+    {
+      "date": "2026-06-30",
+      "rows": 15,
+      "filled": 15,
+      "missing": []
     }
   ],
   "roi": [
@@ -135,15 +148,23 @@
       "pending_bets": 0,
       "total_pnl": 0,
       "roi_pct": 0
+    },
+    {
+      "date": "2026-06-30",
+      "bets": 0,
+      "final_bets": 0,
+      "pending_bets": 0,
+      "total_pnl": 0,
+      "roi_pct": 0
     }
   ],
   "auto_runner": {
-    "mode": "success",
-    "target_date": "2026-06-29",
-    "last_started_at_tw": "2026-06-29T21:00:02+08:00",
-    "last_finished_at_tw": "2026-06-29T21:07:56+08:00",
+    "mode": "running",
+    "target_date": "2026-06-30",
+    "last_started_at_tw": "2026-06-30T05:34:25+08:00",
+    "last_finished_at_tw": "2026-06-30T04:34:25+08:00",
     "last_return_code": 0,
-    "log": "C:\\Users\\I5-10400F\\Documents\\投注計畫\\logs\\auto_runner\\2026-06-29.workflow.log"
+    "log": "C:\\Users\\I5-10400F\\Documents\\投注計畫\\logs\\auto_runner\\2026-06-30.workflow.log"
   },
   "next_commands": [
     ".\\open_dashboard.cmd",
@@ -160,6 +181,7 @@
   "external_waiting_items": [
     "2026-06-25 尚有 1 場比賽未結算",
     "2026-06-29 尚有 13 場比賽未結算",
+    "2026-06-30 尚有 15 場比賽未結算",
     "2026-06-25 亞利桑那響尾蛇 @ 聖路易紅雀 (Postponed) 尚未取得真實盤口"
   ],
   "project_state": "系統完成，等待外部賽果/盤口"
