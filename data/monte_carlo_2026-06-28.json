@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-28T22:33:45",
+  "generated_at": "2026-06-28T23:18:29",
   "target_date": "2026-06-28",
   "simulations_per_game": 10000,
   "games": [
@@ -104,12 +104,12 @@
       "away_fair_odds": "4.20",
       "home_fair_odds": "1.31",
       "sportsbook": "台灣運彩",
-      "away_market_odds": "1.92",
-      "home_market_odds": "1.58",
-      "away_market_implied": 0.5208,
-      "home_market_implied": 0.6329,
-      "away_edge": -0.2825,
-      "home_edge": 0.1288,
+      "away_market_odds": "1.90",
+      "home_market_odds": "1.60",
+      "away_market_implied": 0.5263,
+      "home_market_implied": 0.625,
+      "away_edge": -0.288,
+      "home_edge": 0.1367,
       "moneyline_pick": "聖路易紅雀",
       "total_line": 9.5,
       "over_prob": 0.3117,
@@ -180,84 +180,84 @@
       "matchup_zh": "辛辛那提紅人 @ 匹茲堡海盜",
       "away_zh": "辛辛那提紅人",
       "home_zh": "匹茲堡海盜",
-      "lineup_source": "projected_recent_lineup_order",
+      "lineup_source": "official_mlb_boxscore",
       "simulations": 10000,
-      "avg_away_score": 2.35,
-      "avg_home_score": 3.55,
-      "avg_total": 5.91,
-      "away_win_prob": 0.3209,
-      "home_win_prob": 0.6791,
-      "away_fair_odds": "3.12",
-      "home_fair_odds": "1.47",
+      "avg_away_score": 2.2,
+      "avg_home_score": 3.52,
+      "avg_total": 5.72,
+      "away_win_prob": 0.2983,
+      "home_win_prob": 0.7017,
+      "away_fair_odds": "3.35",
+      "home_fair_odds": "1.43",
       "sportsbook": "台灣運彩",
       "away_market_odds": "1.95",
       "home_market_odds": "1.55",
       "away_market_implied": 0.5128,
       "home_market_implied": 0.6452,
-      "away_edge": -0.1919,
-      "home_edge": 0.0339,
+      "away_edge": -0.2145,
+      "home_edge": 0.0565,
       "moneyline_pick": "匹茲堡海盜",
       "total_line": 8.5,
-      "over_prob": 0.21,
-      "under_prob": 0.79,
+      "over_prob": 0.192,
+      "under_prob": 0.808,
       "push_prob": 0.0,
       "totals_pick": "小分",
       "top_hitters": [
         {
           "team": "匹茲堡海盜",
           "side": "home",
+          "name": "柯 葛里芬",
+          "position": "SS",
+          "expected_hits": 1.057
+        },
+        {
+          "team": "匹茲堡海盜",
+          "side": "home",
           "name": "布萊恩 雷諾",
-          "position": "RF",
-          "expected_hits": 1.069
+          "position": "DH",
+          "expected_hits": 1.046
         },
         {
           "team": "匹茲堡海盜",
           "side": "home",
           "name": "布蘭登 羅韋",
           "position": "2B",
-          "expected_hits": 1.046
-        },
-        {
-          "team": "匹茲堡海盜",
-          "side": "home",
-          "name": "柯 葛里芬",
-          "position": "SS",
-          "expected_hits": 1.044
-        },
-        {
-          "team": "匹茲堡海盜",
-          "side": "home",
-          "name": "萊恩 歐赫",
-          "position": "1B",
-          "expected_hits": 1.004
+          "expected_hits": 1.029
         },
         {
           "team": "匹茲堡海盜",
           "side": "home",
           "name": "尼克 戈雷",
           "position": "3B",
-          "expected_hits": 0.972
+          "expected_hits": 0.998
         },
         {
           "team": "匹茲堡海盜",
           "side": "home",
-          "name": "傑克 馬",
-          "position": "LF",
-          "expected_hits": 0.918
-        },
-        {
-          "team": "匹茲堡海盜",
-          "side": "home",
-          "name": "艾 羅",
-          "position": "C",
-          "expected_hits": 0.901
+          "name": "萊恩 歐赫",
+          "position": "1B",
+          "expected_hits": 0.976
         },
         {
           "team": "辛辛那提紅人",
           "side": "away",
           "name": "艾 德 拉 克爾優茲",
           "position": "SS",
-          "expected_hits": 0.896
+          "expected_hits": 0.899
+        },
+        {
+          "team": "匹茲堡海盜",
+          "side": "home",
+          "name": "傑克 馬",
+          "position": "CF",
+          "expected_hits": 0.899
+        },
+        {
+          "team": "匹茲堡海盜",
+          "side": "home",
+          "name": "艾 瓦德茲",
+          "position": "RF",
+          "expected_hits": 0.88
         }
       ]
     },
@@ -344,6 +344,92 @@
           "name": "塞 拉法拉",
           "position": "CF",
           "expected_hits": 1.097
+        }
+      ]
+    },
+    {
+      "game_pk": "823608",
+      "matchup_zh": "費城費城人 @ 紐約大都會",
+      "away_zh": "費城費城人",
+      "home_zh": "紐約大都會",
+      "lineup_source": "official_mlb_boxscore",
+      "simulations": 10000,
+      "avg_away_score": 3.85,
+      "avg_home_score": 2.3,
+      "avg_total": 6.15,
+      "away_win_prob": 0.652,
+      "home_win_prob": 0.348,
+      "away_fair_odds": "1.53",
+      "home_fair_odds": "2.87",
+      "sportsbook": "台灣運彩",
+      "away_market_odds": "1.46",
+      "home_market_odds": "2.07",
+      "away_market_implied": 0.6849,
+      "home_market_implied": 0.4831,
+      "away_edge": -0.0329,
+      "home_edge": -0.1351,
+      "moneyline_pick": "不推薦",
+      "total_line": 8.5,
+      "over_prob": 0.2328,
+      "under_prob": 0.7672,
+      "push_prob": 0.0,
+      "totals_pick": "小分",
+      "top_hitters": [
+        {
+          "team": "費城費城人",
+          "side": "away",
+          "name": "布萊斯 哈",
+          "position": "1B",
+          "expected_hits": 1.205
+        },
+        {
+          "team": "費城費城人",
+          "side": "away",
+          "name": "布蘭登 馬",
+          "position": "LF",
+          "expected_hits": 1.184
+        },
+        {
+          "team": "費城費城人",
+          "side": "away",
+          "name": "凱爾 斯克赫沃阿爾布伊爾",
+          "position": "DH",
+          "expected_hits": 1.137
+        },
+        {
+          "team": "紐約大都會",
+          "side": "home",
+          "name": "胡安 索托",
+          "position": "LF",
+          "expected_hits": 1.043
+        },
+        {
+          "team": "費城費城人",
+          "side": "away",
+          "name": "崔 特優爾恩伊爾",
+          "position": "SS",
+          "expected_hits": 1.032
+        },
+        {
+          "team": "費城費城人",
+          "side": "away",
+          "name": "亞歷克 波",
+          "position": "3B",
+          "expected_hits": 0.976
+        },
+        {
+          "team": "費城費城人",
+          "side": "away",
+          "name": "布 史",
+          "position": "2B",
+          "expected_hits": 0.93
+        },
+        {
+          "team": "紐約大都會",
+          "side": "home",
+          "name": "卡 貝",
+          "position": "RF",
+          "expected_hits": 0.898
         }
       ]
     },
@@ -520,178 +606,6 @@
       ]
     },
     {
-      "game_pk": "823608",
-      "matchup_zh": "費城費城人 @ 紐約大都會",
-      "away_zh": "費城費城人",
-      "home_zh": "紐約大都會",
-      "lineup_source": "projected_recent_lineup_order",
-      "simulations": 10000,
-      "avg_away_score": 3.66,
-      "avg_home_score": 2.38,
-      "avg_total": 6.04,
-      "away_win_prob": 0.6175,
-      "home_win_prob": 0.3825,
-      "away_fair_odds": "1.62",
-      "home_fair_odds": "2.61",
-      "sportsbook": "台灣運彩",
-      "away_market_odds": "1.50",
-      "home_market_odds": "2.00",
-      "away_market_implied": 0.6667,
-      "home_market_implied": 0.5,
-      "away_edge": -0.0492,
-      "home_edge": -0.1175,
-      "moneyline_pick": "不推薦",
-      "total_line": 8.5,
-      "over_prob": 0.2178,
-      "under_prob": 0.7822,
-      "push_prob": 0.0,
-      "totals_pick": "小分",
-      "top_hitters": [
-        {
-          "team": "費城費城人",
-          "side": "away",
-          "name": "布萊斯 哈",
-          "position": "1B",
-          "expected_hits": 1.186
-        },
-        {
-          "team": "費城費城人",
-          "side": "away",
-          "name": "凱爾 斯克赫沃阿爾布伊爾",
-          "position": "DH",
-          "expected_hits": 1.137
-        },
-        {
-          "team": "紐約大都會",
-          "side": "home",
-          "name": "胡安 索托",
-          "position": "LF",
-          "expected_hits": 1.058
-        },
-        {
-          "team": "費城費城人",
-          "side": "away",
-          "name": "崔 特優爾恩伊爾",
-          "position": "SS",
-          "expected_hits": 1.028
-        },
-        {
-          "team": "費城費城人",
-          "side": "away",
-          "name": "布 史",
-          "position": "2B",
-          "expected_hits": 0.976
-        },
-        {
-          "team": "費城費城人",
-          "side": "away",
-          "name": "亞歷克 波",
-          "position": "3B",
-          "expected_hits": 0.969
-        },
-        {
-          "team": "費城費城人",
-          "side": "away",
-          "name": "德雷 希",
-          "position": "RF",
-          "expected_hits": 0.926
-        },
-        {
-          "team": "紐約大都會",
-          "side": "home",
-          "name": "卡 貝",
-          "position": "RF",
-          "expected_hits": 0.877
-        }
-      ]
-    },
-    {
-      "game_pk": "824580",
-      "matchup_zh": "堪薩斯市皇家 @ 芝加哥白襪",
-      "away_zh": "堪薩斯市皇家",
-      "home_zh": "芝加哥白襪",
-      "lineup_source": "projected_recent_lineup_order",
-      "simulations": 10000,
-      "avg_away_score": 3.84,
-      "avg_home_score": 2.57,
-      "avg_total": 6.41,
-      "away_win_prob": 0.6121,
-      "home_win_prob": 0.3879,
-      "away_fair_odds": "1.63",
-      "home_fair_odds": "2.58",
-      "sportsbook": "台灣運彩",
-      "away_market_odds": "1.95",
-      "home_market_odds": "1.55",
-      "away_market_implied": 0.5128,
-      "home_market_implied": 0.6452,
-      "away_edge": 0.0993,
-      "home_edge": -0.2573,
-      "moneyline_pick": "堪薩斯市皇家",
-      "total_line": 8.5,
-      "over_prob": 0.2635,
-      "under_prob": 0.7365,
-      "push_prob": 0.0,
-      "totals_pick": "小分",
-      "top_hitters": [
-        {
-          "team": "堪薩斯市皇家",
-          "side": "away",
-          "name": "波 威 傑爾",
-          "position": "SS",
-          "expected_hits": 1.224
-        },
-        {
-          "team": "堪薩斯市皇家",
-          "side": "away",
-          "name": "卡 傑",
-          "position": "C",
-          "expected_hits": 1.119
-        },
-        {
-          "team": "堪薩斯市皇家",
-          "side": "away",
-          "name": "麥可 馬",
-          "position": "2B",
-          "expected_hits": 1.108
-        },
-        {
-          "team": "堪薩斯市皇家",
-          "side": "away",
-          "name": "賈 卡諾內",
-          "position": "1B",
-          "expected_hits": 1.091
-        },
-        {
-          "team": "堪薩斯市皇家",
-          "side": "away",
-          "name": "喬 拉維",
-          "position": "RF",
-          "expected_hits": 1.064
-        },
-        {
-          "team": "芝加哥白襪",
-          "side": "home",
-          "name": "薩 阿納",
-          "position": "LF",
-          "expected_hits": 0.952
-        },
-        {
-          "team": "堪薩斯市皇家",
-          "side": "away",
-          "name": "尼克 羅",
-          "position": "3B",
-          "expected_hits": 0.934
-        },
-        {
-          "team": "堪薩斯市皇家",
-          "side": "away",
-          "name": "拉內 馬",
-          "position": "CF",
-          "expected_hits": 0.893
-        }
-      ]
-    },
-    {
       "game_pk": "822795",
       "matchup_zh": "德州遊騎兵 @ 多倫多藍鳥",
       "away_zh": "德州遊騎兵",
@@ -864,6 +778,92 @@
       ]
     },
     {
+      "game_pk": "824821",
+      "matchup_zh": "華盛頓國民 @ 巴爾的摩金鶯",
+      "away_zh": "華盛頓國民",
+      "home_zh": "巴爾的摩金鶯",
+      "lineup_source": "official_mlb_boxscore",
+      "simulations": 10000,
+      "avg_away_score": 4.41,
+      "avg_home_score": 3.34,
+      "avg_total": 7.75,
+      "away_win_prob": 0.5793,
+      "home_win_prob": 0.4207,
+      "away_fair_odds": "1.73",
+      "home_fair_odds": "2.38",
+      "sportsbook": "台灣運彩",
+      "away_market_odds": "2.33",
+      "home_market_odds": "1.38",
+      "away_market_implied": 0.4292,
+      "home_market_implied": 0.7246,
+      "away_edge": 0.1501,
+      "home_edge": -0.3039,
+      "moneyline_pick": "華盛頓國民",
+      "total_line": 8.5,
+      "over_prob": 0.3815,
+      "under_prob": 0.6185,
+      "push_prob": 0.0,
+      "totals_pick": "小分",
+      "top_hitters": [
+        {
+          "team": "華盛頓國民",
+          "side": "away",
+          "name": "路易斯 加 傑爾",
+          "position": "1B",
+          "expected_hits": 1.312
+        },
+        {
+          "team": "華盛頓國民",
+          "side": "away",
+          "name": "克傑 阿布",
+          "position": "SS",
+          "expected_hits": 1.209
+        },
+        {
+          "team": "華盛頓國民",
+          "side": "away",
+          "name": "詹姆斯 沃歐歐德",
+          "position": "DH",
+          "expected_hits": 1.197
+        },
+        {
+          "team": "華盛頓國民",
+          "side": "away",
+          "name": "庫 梅",
+          "position": "3B",
+          "expected_hits": 1.11
+        },
+        {
+          "team": "華盛頓國民",
+          "side": "away",
+          "name": "凱貝 魯",
+          "position": "C",
+          "expected_hits": 1.101
+        },
+        {
+          "team": "華盛頓國民",
+          "side": "away",
+          "name": "達雷 里雷",
+          "position": "LF",
+          "expected_hits": 1.071
+        },
+        {
+          "team": "華盛頓國民",
+          "side": "away",
+          "name": "喬 維瓦",
+          "position": "2B",
+          "expected_hits": 1.033
+        },
+        {
+          "team": "巴爾的摩金鶯",
+          "side": "home",
+          "name": "阿 魯",
+          "position": "C",
+          "expected_hits": 1.028
+        }
+      ]
+    },
+    {
       "game_pk": "824422",
       "matchup_zh": "西雅圖水手 @ 克里夫蘭守護者",
       "away_zh": "西雅圖水手",
@@ -878,13 +878,13 @@
       "away_fair_odds": "1.73",
       "home_fair_odds": "2.37",
       "sportsbook": "台灣運彩",
-      "away_market_odds": "1.80",
-      "home_market_odds": "1.70",
-      "away_market_implied": 0.5556,
-      "home_market_implied": 0.5882,
-      "away_edge": 0.0223,
-      "home_edge": -0.1661,
-      "moneyline_pick": "西雅圖水手",
+      "away_market_odds": "1.68",
+      "home_market_odds": "1.82",
+      "away_market_implied": 0.5952,
+      "home_market_implied": 0.5495,
+      "away_edge": -0.0173,
+      "home_edge": -0.1274,
+      "moneyline_pick": "不推薦",
       "total_line": 7.5,
       "over_prob": 0.1869,
       "under_prob": 0.8131,
@@ -954,56 +954,49 @@
       "matchup_zh": "科羅拉多洛磯 @ 明尼蘇達雙城",
       "away_zh": "科羅拉多洛磯",
       "home_zh": "明尼蘇達雙城",
-      "lineup_source": "projected_recent_lineup_order",
+      "lineup_source": "official_mlb_boxscore",
       "simulations": 10000,
-      "avg_away_score": 2.89,
-      "avg_home_score": 3.14,
-      "avg_total": 6.03,
-      "away_win_prob": 0.4291,
-      "home_win_prob": 0.5709,
-      "away_fair_odds": "2.33",
-      "home_fair_odds": "1.75",
+      "avg_away_score": 2.86,
+      "avg_home_score": 3.15,
+      "avg_total": 6.01,
+      "away_win_prob": 0.4227,
+      "home_win_prob": 0.5773,
+      "away_fair_odds": "2.37",
+      "home_fair_odds": "1.73",
       "sportsbook": "台灣運彩",
       "away_market_odds": "2.15",
       "home_market_odds": "1.43",
       "away_market_implied": 0.4651,
       "home_market_implied": 0.6993,
-      "away_edge": -0.036,
-      "home_edge": -0.1284,
+      "away_edge": -0.0424,
+      "home_edge": -0.122,
       "moneyline_pick": "不推薦",
       "total_line": 8.5,
-      "over_prob": 0.2192,
-      "under_prob": 0.7808,
+      "over_prob": 0.2166,
+      "under_prob": 0.7834,
       "push_prob": 0.0,
       "totals_pick": "小分",
       "top_hitters": [
         {
-          "team": "科羅拉多洛磯",
-          "side": "away",
-          "name": "傑克 姆克克阿爾特赫伊",
-          "position": "LF",
-          "expected_hits": 1.093
-        },
-        {
           "team": "明尼蘇達雙城",
           "side": "home",
           "name": "布伊爾歐恩 布優克斯特歐恩",
-          "position": "CF",
-          "expected_hits": 1.058
+          "position": "DH",
+          "expected_hits": 1.074
         },
         {
           "team": "明尼蘇達雙城",
           "side": "home",
           "name": "崔 拉查",
           "position": "LF",
-          "expected_hits": 1.039
+          "expected_hits": 1.04
         },
         {
           "team": "科羅拉多洛磯",
           "side": "away",
           "name": "特傑 魯",
           "position": "1B",
-          "expected_hits": 0.989
+          "expected_hits": 0.984
         },
         {
           "team": "科羅拉多洛磯",
@@ -1013,111 +1006,118 @@
           "expected_hits": 0.959
         },
         {
+          "team": "科羅拉多洛磯",
+          "side": "away",
+          "name": "威 卡史",
+          "position": "2B",
+          "expected_hits": 0.951
+        },
+        {
+          "team": "明尼蘇達雙城",
+          "side": "home",
+          "name": "萊恩 克爾伊伊德爾伊爾",
+          "position": "SS",
+          "expected_hits": 0.934
+        },
+        {
           "team": "明尼蘇達雙城",
           "side": "home",
           "name": "柯 梅",
-          "position": "RF",
-          "expected_hits": 0.939
-        },
-        {
-          "team": "科羅拉多洛磯",
-          "side": "away",
-          "name": "崔 喬",
-          "position": "DH",
-          "expected_hits": 0.93
+          "position": "2B",
+          "expected_hits": 0.932
         },
         {
           "team": "科羅拉多洛磯",
           "side": "away",
           "name": "杭特 戈",
-          "position": "C",
-          "expected_hits": 0.903
+          "position": "DH",
+          "expected_hits": 0.915
         }
       ]
     },
     {
-      "game_pk": "824821",
-      "matchup_zh": "華盛頓國民 @ 巴爾的摩金鶯",
-      "away_zh": "華盛頓國民",
-      "home_zh": "巴爾的摩金鶯",
-      "lineup_source": "projected_recent_lineup_order",
+      "game_pk": "824580",
+      "matchup_zh": "堪薩斯市皇家 @ 芝加哥白襪",
+      "away_zh": "堪薩斯市皇家",
+      "home_zh": "芝加哥白襪",
+      "lineup_source": "official_mlb_boxscore",
       "simulations": 10000,
-      "avg_away_score": 3.98,
-      "avg_home_score": 3.13,
-      "avg_total": 7.11,
-      "away_win_prob": 0.5567,
-      "home_win_prob": 0.4433,
-      "away_fair_odds": "1.80",
-      "home_fair_odds": "2.26",
+      "avg_away_score": 3.42,
+      "avg_home_score": 2.6,
+      "avg_total": 6.02,
+      "away_win_prob": 0.5615,
+      "home_win_prob": 0.4385,
+      "away_fair_odds": "1.78",
+      "home_fair_odds": "2.28",
       "sportsbook": "台灣運彩",
-      "away_market_odds": "2.33",
-      "home_market_odds": "1.38",
-      "away_market_implied": 0.4292,
-      "home_market_implied": 0.7246,
-      "away_edge": 0.1275,
-      "home_edge": -0.2813,
-      "moneyline_pick": "華盛頓國民",
+      "away_market_odds": "1.97",
+      "home_market_odds": "1.53",
+      "away_market_implied": 0.5076,
+      "home_market_implied": 0.6536,
+      "away_edge": 0.0539,
+      "home_edge": -0.2151,
+      "moneyline_pick": "堪薩斯市皇家",
       "total_line": 8.5,
-      "over_prob": 0.327,
-      "under_prob": 0.673,
+      "over_prob": 0.2229,
+      "under_prob": 0.7771,
       "push_prob": 0.0,
       "totals_pick": "小分",
       "top_hitters": [
         {
-          "team": "華盛頓國民",
+          "team": "堪薩斯市皇家",
           "side": "away",
-          "name": "克傑 阿布",
+          "name": "波 威 傑爾",
           "position": "SS",
-          "expected_hits": 1.189
+          "expected_hits": 1.21
         },
         {
-          "team": "華盛頓國民",
+          "team": "堪薩斯市皇家",
           "side": "away",
-          "name": "詹姆斯 沃歐歐德",
+          "name": "賈 卡諾內",
           "position": "RF",
-          "expected_hits": 1.188
+          "expected_hits": 1.075
         },
         {
-          "team": "華盛頓國民",
+          "team": "堪薩斯市皇家",
           "side": "away",
-          "name": "庫 梅",
-          "position": "3B",
-          "expected_hits": 1.138
+          "name": "麥可 馬",
+          "position": "2B",
+          "expected_hits": 0.986
         },
         {
-          "team": "華盛頓國民",
+          "team": "堪薩斯市皇家",
           "side": "away",
-          "name": "凱貝 魯",
-          "position": "C",
-          "expected_hits": 1.07
-        },
-        {
-          "team": "華盛頓國民",
-          "side": "away",
-          "name": "達雷 里雷",
-          "position": "LF",
-          "expected_hits": 1.058
-        },
-        {
-          "team": "華盛頓國民",
-          "side": "away",
-          "name": "喬 維瓦",
+          "name": "史 馬",
           "position": "DH",
-          "expected_hits": 1.034
+          "expected_hits": 0.973
         },
         {
-          "team": "巴爾的摩金鶯",
-          "side": "home",
-          "name": "佩特 阿羅",
-          "position": "1B",
-          "expected_hits": 1.008
-        },
-        {
-          "team": "華盛頓國民",
+          "team": "堪薩斯市皇家",
           "side": "away",
-          "name": "迪倫 克爾伊沃斯",
+          "name": "卡 傑",
+          "position": "C",
+          "expected_hits": 0.957
+        },
+        {
+          "team": "芝加哥白襪",
+          "side": "home",
+          "name": "薩 阿納",
+          "position": "LF",
+          "expected_hits": 0.957
+        },
+        {
+          "team": "堪薩斯市皇家",
+          "side": "away",
+          "name": "拉內 馬",
           "position": "CF",
-          "expected_hits": 0.996
+          "expected_hits": 0.945
+        },
+        {
+          "team": "芝加哥白襪",
+          "side": "home",
+          "name": "米 瓦",
+          "position": "3B",
+          "expected_hits": 0.892
         }
       ]
     },
@@ -1222,12 +1222,12 @@
       "away_fair_odds": "1.98",
       "home_fair_odds": "2.02",
       "sportsbook": "台灣運彩",
-      "away_market_odds": "2.20",
-      "home_market_odds": "1.42",
-      "away_market_implied": 0.4545,
-      "home_market_implied": 0.7042,
-      "away_edge": 0.0497,
-      "home_edge": -0.2084,
+      "away_market_odds": "2.15",
+      "home_market_odds": "1.43",
+      "away_market_implied": 0.4651,
+      "home_market_implied": 0.6993,
+      "away_edge": 0.0391,
+      "home_edge": -0.2035,
       "moneyline_pick": "芝加哥小熊",
       "total_line": 8.5,
       "over_prob": 0.772,

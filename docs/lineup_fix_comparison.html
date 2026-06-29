@@ -1,0 +1,447 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>修正前 / 修正後打線比較</title>
+  <style>
+    body { margin: 0; background: #f4f6f5; color: #17201c; font-family: "Microsoft JhengHei", system-ui, sans-serif; }
+    main { max-width: 1180px; margin: 0 auto; padding: 28px 18px; }
+    h1 { margin: 0 0 8px; font-size: 28px; }
+    .meta { color: #66736c; margin-bottom: 18px; }
+    table { width: 100%; border-collapse: collapse; background: white; border: 1px solid #dce3df; margin: 14px 0 28px; }
+    th, td { padding: 10px 12px; border-bottom: 1px solid #e5ebe7; text-align: left; font-size: 14px; }
+    th { background: #eef3f0; font-weight: 800; }
+    .note { background: #fff8e8; border: 1px solid #ead49d; padding: 12px 14px; border-radius: 8px; }
+  </style>
+</head>
+<body>
+<main>
+  <h1>修正前 / 修正後打線比較</h1>
+  <div class="meta">日期：2026-06-25 至 2026-06-29，每場模擬 1000 次，產生時間 2026-06-29T08:40:29</div>
+  <div class="note">此報告強制使用賽前 projected lineup，不使用賽後官方 boxscore 打線，目的在衡量打線推估修正本身。</div>
+  <h2>總結</h2>
+  <table>
+    <thead><tr><th>版本</th><th>場次</th><th>勝方正確</th><th>勝方準確率</th><th>大小分場次</th><th>大小分準確率</th><th>打序異常場</th><th>重複守位數</th></tr></thead>
+    <tbody>
+        <tr>
+          <td>before_old_roster</td>
+          <td>14</td>
+          <td>8</td>
+          <td>57.14%</td>
+          <td>14</td>
+          <td>35.71%</td>
+          <td>0</td>
+          <td>37</td>
+        </tr>
+
+        <tr>
+          <td>after_fixed_recent</td>
+          <td>14</td>
+          <td>9</td>
+          <td>64.29%</td>
+          <td>14</td>
+          <td>42.86%</td>
+          <td>0</td>
+          <td>0</td>
+        </tr></tbody>
+  </table>
+  <h2>明細</h2>
+  <table>
+    <thead><tr><th>日期</th><th>版本</th><th>GamePk</th><th>對戰</th><th>實際比分</th><th>勝方預測</th><th>勝方</th><th>大小分線</th><th>大小分預測</th><th>大小分</th><th>重複守位</th></tr></thead>
+    <tbody>
+        <tr>
+          <td>2026-06-28</td>
+          <td>before_old_roster</td>
+          <td>823686</td>
+          <td>科羅拉多洛磯 @ 明尼蘇達雙城</td>
+          <td>2-3</td>
+          <td>home</td>
+          <td>Y</td>
+          <td>8.5</td>
+          <td>under</td>
+          <td>Y</td>
+          <td>2</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-28</td>
+          <td>before_old_roster</td>
+          <td>823769</td>
+          <td>芝加哥小熊 @ 密爾瓦基釀酒人</td>
+          <td>4-3</td>
+          <td>home</td>
+          <td>N</td>
+          <td>8.5</td>
+          <td>over</td>
+          <td>N</td>
+          <td>1</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-28</td>
+          <td>before_old_roster</td>
+          <td>824256</td>
+          <td>休士頓太空人 @ 底特律老虎</td>
+          <td>7-5</td>
+          <td>home</td>
+          <td>N</td>
+          <td>8.5</td>
+          <td>under</td>
+          <td>N</td>
+          <td>2</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-28</td>
+          <td>before_old_roster</td>
+          <td>822959</td>
+          <td>亞利桑那響尾蛇 @ 坦帕灣光芒</td>
+          <td>1-5</td>
+          <td>away</td>
+          <td>N</td>
+          <td>7.5</td>
+          <td>under</td>
+          <td>Y</td>
+          <td>1</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-28</td>
+          <td>before_old_roster</td>
+          <td>824821</td>
+          <td>華盛頓國民 @ 巴爾的摩金鶯</td>
+          <td>6-4</td>
+          <td>away</td>
+          <td>Y</td>
+          <td>8.5</td>
+          <td>under</td>
+          <td>N</td>
+          <td>3</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-28</td>
+          <td>before_old_roster</td>
+          <td>823037</td>
+          <td>邁阿密馬林魚 @ 聖路易紅雀</td>
+          <td>1-2</td>
+          <td>home</td>
+          <td>Y</td>
+          <td>9.5</td>
+          <td>under</td>
+          <td>Y</td>
+          <td>4</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-28</td>
+          <td>before_old_roster</td>
+          <td>824580</td>
+          <td>堪薩斯市皇家 @ 芝加哥白襪</td>
+          <td>5-4</td>
+          <td>away</td>
+          <td>Y</td>
+          <td>8.5</td>
+          <td>under</td>
+          <td>N</td>
+          <td>5</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-28</td>
+          <td>before_old_roster</td>
+          <td>823362</td>
+          <td>辛辛那提紅人 @ 匹茲堡海盜</td>
+          <td>4-9</td>
+          <td>home</td>
+          <td>Y</td>
+          <td>8.5</td>
+          <td>under</td>
+          <td>N</td>
+          <td>4</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-28</td>
+          <td>before_old_roster</td>
+          <td>822795</td>
+          <td>德州遊騎兵 @ 多倫多藍鳥</td>
+          <td>3-2</td>
+          <td>home</td>
+          <td>N</td>
+          <td>8.5</td>
+          <td>under</td>
+          <td>Y</td>
+          <td>2</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-28</td>
+          <td>before_old_roster</td>
+          <td>823281</td>
+          <td>洛杉磯道奇 @ 聖地牙哥教士</td>
+          <td>4-2</td>
+          <td>away</td>
+          <td>Y</td>
+          <td>7.5</td>
+          <td>over</td>
+          <td>N</td>
+          <td>2</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-28</td>
+          <td>before_old_roster</td>
+          <td>823608</td>
+          <td>費城費城人 @ 紐約大都會</td>
+          <td>5-4</td>
+          <td>away</td>
+          <td>Y</td>
+          <td>8.5</td>
+          <td>under</td>
+          <td>N</td>
+          <td>3</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-28</td>
+          <td>before_old_roster</td>
+          <td>823204</td>
+          <td>亞特蘭大勇士 @ 舊金山巨人</td>
+          <td>2-3</td>
+          <td>home</td>
+          <td>Y</td>
+          <td>7.5</td>
+          <td>over</td>
+          <td>N</td>
+          <td>2</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-28</td>
+          <td>before_old_roster</td>
+          <td>824011</td>
+          <td>運動家 @ 洛杉磯天使</td>
+          <td>1-4</td>
+          <td>away</td>
+          <td>N</td>
+          <td>9.5</td>
+          <td>under</td>
+          <td>Y</td>
+          <td>3</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-28</td>
+          <td>before_old_roster</td>
+          <td>824422</td>
+          <td>西雅圖水手 @ 克里夫蘭守護者</td>
+          <td>5-6</td>
+          <td>away</td>
+          <td>N</td>
+          <td>7.5</td>
+          <td>under</td>
+          <td>N</td>
+          <td>3</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-28</td>
+          <td>after_fixed_recent</td>
+          <td>823686</td>
+          <td>科羅拉多洛磯 @ 明尼蘇達雙城</td>
+          <td>2-3</td>
+          <td>home</td>
+          <td>Y</td>
+          <td>8.5</td>
+          <td>under</td>
+          <td>Y</td>
+          <td>0</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-28</td>
+          <td>after_fixed_recent</td>
+          <td>823769</td>
+          <td>芝加哥小熊 @ 密爾瓦基釀酒人</td>
+          <td>4-3</td>
+          <td>away</td>
+          <td>Y</td>
+          <td>8.5</td>
+          <td>over</td>
+          <td>N</td>
+          <td>0</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-28</td>
+          <td>after_fixed_recent</td>
+          <td>824256</td>
+          <td>休士頓太空人 @ 底特律老虎</td>
+          <td>7-5</td>
+          <td>home</td>
+          <td>N</td>
+          <td>8.5</td>
+          <td>under</td>
+          <td>N</td>
+          <td>0</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-28</td>
+          <td>after_fixed_recent</td>
+          <td>822959</td>
+          <td>亞利桑那響尾蛇 @ 坦帕灣光芒</td>
+          <td>1-5</td>
+          <td>away</td>
+          <td>N</td>
+          <td>7.5</td>
+          <td>under</td>
+          <td>Y</td>
+          <td>0</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-28</td>
+          <td>after_fixed_recent</td>
+          <td>824821</td>
+          <td>華盛頓國民 @ 巴爾的摩金鶯</td>
+          <td>6-4</td>
+          <td>away</td>
+          <td>Y</td>
+          <td>8.5</td>
+          <td>under</td>
+          <td>N</td>
+          <td>0</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-28</td>
+          <td>after_fixed_recent</td>
+          <td>823037</td>
+          <td>邁阿密馬林魚 @ 聖路易紅雀</td>
+          <td>1-2</td>
+          <td>home</td>
+          <td>Y</td>
+          <td>9.5</td>
+          <td>under</td>
+          <td>Y</td>
+          <td>0</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-28</td>
+          <td>after_fixed_recent</td>
+          <td>824580</td>
+          <td>堪薩斯市皇家 @ 芝加哥白襪</td>
+          <td>5-4</td>
+          <td>away</td>
+          <td>Y</td>
+          <td>8.5</td>
+          <td>under</td>
+          <td>N</td>
+          <td>0</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-28</td>
+          <td>after_fixed_recent</td>
+          <td>823362</td>
+          <td>辛辛那提紅人 @ 匹茲堡海盜</td>
+          <td>4-9</td>
+          <td>home</td>
+          <td>Y</td>
+          <td>8.5</td>
+          <td>under</td>
+          <td>N</td>
+          <td>0</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-28</td>
+          <td>after_fixed_recent</td>
+          <td>822795</td>
+          <td>德州遊騎兵 @ 多倫多藍鳥</td>
+          <td>3-2</td>
+          <td>home</td>
+          <td>N</td>
+          <td>8.5</td>
+          <td>under</td>
+          <td>Y</td>
+          <td>0</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-28</td>
+          <td>after_fixed_recent</td>
+          <td>823281</td>
+          <td>洛杉磯道奇 @ 聖地牙哥教士</td>
+          <td>4-2</td>
+          <td>away</td>
+          <td>Y</td>
+          <td>7.5</td>
+          <td>over</td>
+          <td>N</td>
+          <td>0</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-28</td>
+          <td>after_fixed_recent</td>
+          <td>823608</td>
+          <td>費城費城人 @ 紐約大都會</td>
+          <td>5-4</td>
+          <td>away</td>
+          <td>Y</td>
+          <td>8.5</td>
+          <td>under</td>
+          <td>N</td>
+          <td>0</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-28</td>
+          <td>after_fixed_recent</td>
+          <td>823204</td>
+          <td>亞特蘭大勇士 @ 舊金山巨人</td>
+          <td>2-3</td>
+          <td>home</td>
+          <td>Y</td>
+          <td>7.5</td>
+          <td>under</td>
+          <td>Y</td>
+          <td>0</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-28</td>
+          <td>after_fixed_recent</td>
+          <td>824011</td>
+          <td>運動家 @ 洛杉磯天使</td>
+          <td>1-4</td>
+          <td>away</td>
+          <td>N</td>
+          <td>9.5</td>
+          <td>under</td>
+          <td>Y</td>
+          <td>0</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-28</td>
+          <td>after_fixed_recent</td>
+          <td>824422</td>
+          <td>西雅圖水手 @ 克里夫蘭守護者</td>
+          <td>5-6</td>
+          <td>away</td>
+          <td>N</td>
+          <td>7.5</td>
+          <td>under</td>
+          <td>N</td>
+          <td>0</td>
+        </tr></tbody>
+  </table>
+</main>
+</body>
+</html>

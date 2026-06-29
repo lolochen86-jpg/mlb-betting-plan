@@ -396,6 +396,7 @@ def render_html(plan: dict, line_chart: str, bar_chart: str) -> str:
         <a href="advanced_factors.html">進階因子</a>
         <a href="game_simulator.html">逐打席模擬</a>
         <a href="monte_carlo.html">蒙地卡羅</a>
+        <a href="lineup_fix_comparison.html">修正前後</a>
         <a href="backtest_2026_report.html">2026 回測</a>
         <a href="winner_model_search.html">模型搜尋</a>
         <a href="prediction_log.html">結算紀錄</a>

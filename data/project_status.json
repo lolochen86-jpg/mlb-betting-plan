@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-28T22:29:13",
+  "generated_at": "2026-06-29T08:11:56",
   "history": {
     "games_written": 3659,
     "actual_first_game_date": "2025-03-27",
@@ -12,9 +12,9 @@
     "accuracy_pct": 54.22
   },
   "daily": {
-    "target_date": "2026-06-28",
-    "predictions": 15,
-    "high_confidence": 1
+    "target_date": "2026-06-29",
+    "predictions": 13,
+    "high_confidence": 7
   },
   "settlements": [
     {
@@ -43,6 +43,13 @@
       "predictions": 15,
       "final_games": 0,
       "pending_games": 15,
+      "accuracy_pct": 0
+    },
+    {
+      "date": "2026-06-29",
+      "predictions": 13,
+      "final_games": 0,
+      "pending_games": 13,
       "accuracy_pct": 0
     }
   ],
@@ -80,6 +87,16 @@
       "rows": 15,
       "filled": 15,
       "missing": []
+    },
+    {
+      "date": "2026-06-29",
+      "rows": 13,
+      "filled": 10,
+      "missing": [
+        "邁阿密馬林魚 @ 科羅拉多洛磯 (Scheduled)",
+        "德州遊騎兵 @ 克里夫蘭守護者 (Scheduled)",
+        "聖地牙哥教士 @ 芝加哥小熊 (Scheduled)"
+      ]
     }
   ],
   "roi": [
@@ -106,15 +123,23 @@
       "pending_bets": 1,
       "total_pnl": 0,
       "roi_pct": 0
+    },
+    {
+      "date": "2026-06-29",
+      "bets": 0,
+      "final_bets": 0,
+      "pending_bets": 0,
+      "total_pnl": 0,
+      "roi_pct": 0
     }
   ],
   "auto_runner": {
     "mode": "running",
-    "target_date": "2026-06-28",
-    "last_started_at_tw": "2026-06-28T22:21:04+08:00",
-    "last_finished_at_tw": "2026-06-28T22:10:27+08:00",
+    "target_date": "2026-06-29",
+    "last_started_at_tw": "2026-06-29T08:04:07+08:00",
+    "last_finished_at_tw": "2026-06-29T07:04:07+08:00",
     "last_return_code": 0,
-    "log": "C:\\Users\\I5-10400F\\Documents\\投注計畫\\logs\\auto_runner\\2026-06-28.workflow.log"
+    "log": "C:\\Users\\I5-10400F\\Documents\\投注計畫\\logs\\auto_runner\\2026-06-29.workflow.log"
   },
   "next_commands": [
     ".\\open_dashboard.cmd",
@@ -133,12 +158,16 @@
     "2026-06-26 尚有 15 場比賽未結算",
     "2026-06-27 尚有 15 場比賽未結算",
     "2026-06-28 尚有 15 場比賽未結算",
+    "2026-06-29 尚有 13 場比賽未結算",
     "2026-06-25 費城費城人 @ 華盛頓國民 (In Progress) 尚未取得真實盤口",
     "2026-06-25 德州遊騎兵 @ 多倫多藍鳥 (In Progress) 尚未取得真實盤口",
     "2026-06-25 亞利桑那響尾蛇 @ 聖路易紅雀 (Postponed) 尚未取得真實盤口",
     "2026-06-25 芝加哥小熊 @ 紐約大都會 (In Progress) 尚未取得真實盤口",
     "2026-06-25 休士頓太空人 @ 底特律老虎 (In Progress) 尚未取得真實盤口",
     "2026-06-25 紐約洋基 @ 波士頓紅襪 (In Progress) 尚未取得真實盤口",
+    "2026-06-29 邁阿密馬林魚 @ 科羅拉多洛磯 (Scheduled) 尚未開打或來源尚未開盤",
+    "2026-06-29 德州遊騎兵 @ 克里夫蘭守護者 (Scheduled) 尚未開打或來源尚未開盤",
+    "2026-06-29 聖地牙哥教士 @ 芝加哥小熊 (Scheduled) 尚未開打或來源尚未開盤",
     "2026-06-26 尚有 2 注 ROI 待賽果結算",
     "2026-06-28 尚有 1 注 ROI 待賽果結算"
   ],

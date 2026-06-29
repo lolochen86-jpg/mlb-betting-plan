@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-06-28T22:32:26",
+  "generated_at": "2026-06-28T23:17:22",
   "target_date": "2026-06-28",
   "games": [
     {
       "date": "2026-06-28",
       "game_pk": "823686",
-      "status": "Scheduled",
+      "status": "Pre-Game",
       "away": "科羅拉多洛磯",
       "home": "明尼蘇達雙城",
       "away_pitcher": "萊恩 菲",
@@ -32,7 +32,7 @@
         "run_prevention_factor": 1.117,
         "sample_ip": 55.2
       },
-      "lineup_source": "projected_recent_lineup_order",
+      "lineup_source": "official_mlb_boxscore",
       "prediction": "明尼蘇達雙城",
       "confidence": 0.609,
       "away_profile": {
@@ -49,28 +49,22 @@
       },
       "away_lineup": [
         {
-          "id": 664983,
-          "name": "傑克 姆克克阿爾特赫伊",
-          "name_en": "Jake McCarthy",
-          "pos": "LF",
+          "id": 650489,
+          "name": "威 卡史",
+          "name_en": "Willi Castro",
+          "pos": "2B",
           "batting_order": 1,
-          "source": "projected_recent_lineup_order",
-          "avg": 0.305,
-          "obp": 0.344,
-          "slg": 0.493,
-          "contact": 1.045,
-          "power": 1.209,
-          "patience": 1.121,
-          "gidp": 1.098,
-          "k_rate": 0.18,
-          "bb_rate": 0.057,
-          "sample_pa": 244,
-          "projected_order_basis": {
-            "recent_order": 1,
-            "recent_position": "LF",
-            "recent_starts": 6,
-            "recent_order_starts": 4
-          }
+          "source": "official_lineup",
+          "avg": 0.275,
+          "obp": 0.346,
+          "slg": 0.398,
+          "contact": 0.933,
+          "power": 0.996,
+          "patience": 1.157,
+          "gidp": 1.086,
+          "k_rate": 0.254,
+          "bb_rate": 0.089,
+          "sample_pa": 280
         },
         {
           "id": 671289,
@@ -78,7 +72,7 @@
           "name_en": "Tyler Freeman",
           "pos": "RF",
           "batting_order": 2,
-          "source": "projected_recent_lineup_order",
+          "source": "official_lineup",
           "avg": 0.28,
           "obp": 0.358,
           "slg": 0.374,
@@ -88,21 +82,15 @@
           "gidp": 1.35,
           "k_rate": 0.124,
           "bb_rate": 0.043,
-          "sample_pa": 209,
-          "projected_order_basis": {
-            "recent_order": 2,
-            "recent_position": "RF",
-            "recent_starts": 5,
-            "recent_order_starts": 2
-          }
+          "sample_pa": 209
         },
         {
           "id": 696100,
           "name": "杭特 戈",
           "name_en": "Hunter Goodman",
-          "pos": "C",
+          "pos": "DH",
           "batting_order": 3,
-          "source": "projected_recent_lineup_order",
+          "source": "official_lineup",
           "avg": 0.246,
           "obp": 0.312,
           "slg": 0.543,
@@ -112,13 +100,7 @@
           "gidp": 1.074,
           "k_rate": 0.327,
           "bb_rate": 0.077,
-          "sample_pa": 324,
-          "projected_order_basis": {
-            "recent_order": 3,
-            "recent_position": "C",
-            "recent_starts": 5,
-            "recent_order_starts": 3
-          }
+          "sample_pa": 324
         },
         {
           "id": 681198,
@@ -126,7 +108,7 @@
           "name_en": "TJ Rumfield",
           "pos": "1B",
           "batting_order": 4,
-          "source": "projected_recent_lineup_order",
+          "source": "official_lineup",
           "avg": 0.291,
           "obp": 0.37,
           "slg": 0.491,
@@ -136,13 +118,7 @@
           "gidp": 1.049,
           "k_rate": 0.145,
           "bb_rate": 0.096,
-          "sample_pa": 324,
-          "projected_order_basis": {
-            "recent_order": 4,
-            "recent_position": "1B",
-            "recent_starts": 6,
-            "recent_order_starts": 3
-          }
+          "sample_pa": 324
         },
         {
           "id": 694249,
@@ -150,7 +126,7 @@
           "name_en": "Cole Carrigg",
           "pos": "CF",
           "batting_order": 5,
-          "source": "projected_recent_lineup_order",
+          "source": "official_lineup",
           "avg": 0.245,
           "obp": 0.369,
           "slg": 0.491,
@@ -160,69 +136,15 @@
           "gidp": 1.123,
           "k_rate": 0.215,
           "bb_rate": 0.154,
-          "sample_pa": 65,
-          "projected_order_basis": {
-            "recent_order": 5,
-            "recent_position": "CF",
-            "recent_starts": 4,
-            "recent_order_starts": 3
-          }
-        },
-        {
-          "id": 678662,
-          "name": "艾 托瓦",
-          "name_en": "Ezequiel Tovar",
-          "pos": "SS",
-          "batting_order": 6,
-          "source": "projected_recent_lineup_order",
-          "avg": 0.211,
-          "obp": 0.258,
-          "slg": 0.333,
-          "contact": 0.763,
-          "power": 0.849,
-          "patience": 0.93,
-          "gidp": 1.137,
-          "k_rate": 0.282,
-          "bb_rate": 0.055,
-          "sample_pa": 291,
-          "projected_order_basis": {
-            "recent_order": 8,
-            "recent_position": "SS",
-            "recent_starts": 4,
-            "recent_order_starts": 3
-          }
-        },
-        {
-          "id": 687859,
-          "name": "崔 喬",
-          "name_en": "Troy Johnston",
-          "pos": "DH",
-          "batting_order": 7,
-          "source": "projected_recent_lineup_order",
-          "avg": 0.312,
-          "obp": 0.375,
-          "slg": 0.437,
-          "contact": 1.067,
-          "power": 1.083,
-          "patience": 1.212,
-          "gidp": 1.058,
-          "k_rate": 0.17,
-          "bb_rate": 0.08,
-          "sample_pa": 276,
-          "projected_order_basis": {
-            "recent_order": 7,
-            "recent_position": "DH",
-            "recent_starts": 3,
-            "recent_order_starts": 2
-          }
+          "sample_pa": 65
         },
         {
           "id": 691720,
           "name": "凱爾 卡",
           "name_en": "Kyle Karros",
           "pos": "3B",
-          "batting_order": 8,
-          "source": "projected_recent_lineup_order",
+          "batting_order": 6,
+          "source": "official_lineup",
           "avg": 0.253,
           "obp": 0.344,
           "slg": 0.391,
@@ -232,37 +154,61 @@
           "gidp": 1.062,
           "k_rate": 0.212,
           "bb_rate": 0.12,
-          "sample_pa": 259,
-          "projected_order_basis": {
-            "recent_order": 8,
-            "recent_position": "3B",
-            "recent_starts": 4,
-            "recent_order_starts": 3
-          }
+          "sample_pa": 259
         },
         {
-          "id": 666397,
-          "name": "艾多 里",
-          "name_en": "Edouard Julien",
-          "pos": "2B",
+          "id": 687859,
+          "name": "崔 喬",
+          "name_en": "Troy Johnston",
+          "pos": "LF",
+          "batting_order": 7,
+          "source": "official_lineup",
+          "avg": 0.312,
+          "obp": 0.375,
+          "slg": 0.437,
+          "contact": 1.067,
+          "power": 1.083,
+          "patience": 1.212,
+          "gidp": 1.058,
+          "k_rate": 0.17,
+          "bb_rate": 0.08,
+          "sample_pa": 276
+        },
+        {
+          "id": 690924,
+          "name": "布 夫優爾夫歐爾德",
+          "name_en": "Braxton Fulford",
+          "pos": "C",
+          "batting_order": 8,
+          "source": "official_lineup",
+          "avg": 0.231,
+          "obp": 0.319,
+          "slg": 0.385,
+          "contact": 0.767,
+          "power": 0.966,
+          "patience": 1.136,
+          "gidp": 1.0,
+          "k_rate": 0.362,
+          "bb_rate": 0.128,
+          "sample_pa": 47
+        },
+        {
+          "id": 678662,
+          "name": "艾 托瓦",
+          "name_en": "Ezequiel Tovar",
+          "pos": "SS",
           "batting_order": 9,
-          "source": "projected_recent_lineup_order",
-          "avg": 0.223,
-          "obp": 0.324,
-          "slg": 0.298,
-          "contact": 0.8,
-          "power": 0.77,
-          "patience": 1.145,
-          "gidp": 1.222,
-          "k_rate": 0.269,
-          "bb_rate": 0.125,
-          "sample_pa": 216,
-          "projected_order_basis": {
-            "recent_order": 9,
-            "recent_position": "2B",
-            "recent_starts": 3,
-            "recent_order_starts": 2
-          }
+          "source": "official_lineup",
+          "avg": 0.211,
+          "obp": 0.258,
+          "slg": 0.333,
+          "contact": 0.763,
+          "power": 0.849,
+          "patience": 0.93,
+          "gidp": 1.137,
+          "k_rate": 0.282,
+          "bb_rate": 0.055,
+          "sample_pa": 291
         }
       ],
       "home_lineup": [
@@ -272,7 +218,7 @@
           "name_en": "Trevor Larnach",
           "pos": "LF",
           "batting_order": 1,
-          "source": "projected_recent_lineup_order",
+          "source": "official_lineup",
           "avg": 0.288,
           "obp": 0.381,
           "slg": 0.434,
@@ -282,21 +228,15 @@
           "gidp": 1.196,
           "k_rate": 0.18,
           "bb_rate": 0.118,
-          "sample_pa": 245,
-          "projected_order_basis": {
-            "recent_order": 1,
-            "recent_position": "LF",
-            "recent_starts": 5,
-            "recent_order_starts": 5
-          }
+          "sample_pa": 245
         },
         {
           "id": 621439,
           "name": "布伊爾歐恩 布優克斯特歐恩",
           "name_en": "Byron Buxton",
-          "pos": "CF",
+          "pos": "DH",
           "batting_order": 2,
-          "source": "projected_recent_lineup_order",
+          "source": "official_lineup",
           "avg": 0.272,
           "obp": 0.329,
           "slg": 0.581,
@@ -306,21 +246,15 @@
           "gidp": 1.049,
           "k_rate": 0.246,
           "bb_rate": 0.068,
-          "sample_pa": 325,
-          "projected_order_basis": {
-            "recent_order": 2,
-            "recent_position": "CF",
-            "recent_starts": 6,
-            "recent_order_starts": 6
-          }
+          "sample_pa": 325
         },
         {
           "id": 665019,
           "name": "柯 梅",
           "name_en": "Kody Clemens",
-          "pos": "RF",
+          "pos": "2B",
           "batting_order": 3,
-          "source": "projected_recent_lineup_order",
+          "source": "official_lineup",
           "avg": 0.242,
           "obp": 0.309,
           "slg": 0.468,
@@ -330,69 +264,15 @@
           "gidp": 1.146,
           "k_rate": 0.212,
           "bb_rate": 0.069,
-          "sample_pa": 274,
-          "projected_order_basis": {
-            "recent_order": 3,
-            "recent_position": "RF",
-            "recent_starts": 5,
-            "recent_order_starts": 5
-          }
-        },
-        {
-          "id": 605137,
-          "name": "喬 貝",
-          "name_en": "Josh Bell",
-          "pos": "DH",
-          "batting_order": 4,
-          "source": "projected_recent_lineup_order",
-          "avg": 0.244,
-          "obp": 0.301,
-          "slg": 0.397,
-          "contact": 0.876,
-          "power": 0.993,
-          "patience": 1.041,
-          "gidp": 1.124,
-          "k_rate": 0.22,
-          "bb_rate": 0.071,
-          "sample_pa": 322,
-          "projected_order_basis": {
-            "recent_order": 4,
-            "recent_position": "DH",
-            "recent_starts": 5,
-            "recent_order_starts": 4
-          }
-        },
-        {
-          "id": 605170,
-          "name": "維 卡拉提尼",
-          "name_en": "Victor Caratini",
-          "pos": "C",
-          "batting_order": 5,
-          "source": "projected_recent_lineup_order",
-          "avg": 0.238,
-          "obp": 0.329,
-          "slg": 0.363,
-          "contact": 0.878,
-          "power": 0.917,
-          "patience": 1.126,
-          "gidp": 1.139,
-          "k_rate": 0.19,
-          "bb_rate": 0.095,
-          "sample_pa": 231,
-          "projected_order_basis": {
-            "recent_order": 5,
-            "recent_position": "C",
-            "recent_starts": 5,
-            "recent_order_starts": 3
-          }
+          "sample_pa": 274
         },
         {
           "id": 668904,
           "name": "羅塞 雷威",
           "name_en": "Royce Lewis",
           "pos": "1B",
-          "batting_order": 6,
-          "source": "projected_recent_lineup_order",
+          "batting_order": 4,
+          "source": "official_lineup",
           "avg": 0.212,
           "obp": 0.289,
           "slg": 0.369,
@@ -402,21 +282,15 @@
           "gidp": 1.08,
           "k_rate": 0.274,
           "bb_rate": 0.09,
-          "sample_pa": 201,
-          "projected_order_basis": {
-            "recent_order": 6,
-            "recent_position": "1B",
-            "recent_starts": 6,
-            "recent_order_starts": 3
-          }
+          "sample_pa": 201
         },
         {
           "id": 686797,
           "name": "布 雷",
           "name_en": "Brooks Lee",
           "pos": "3B",
-          "batting_order": 7,
-          "source": "projected_recent_lineup_order",
+          "batting_order": 5,
+          "source": "official_lineup",
           "avg": 0.244,
           "obp": 0.301,
           "slg": 0.443,
@@ -426,45 +300,33 @@
           "gidp": 1.101,
           "k_rate": 0.151,
           "bb_rate": 0.069,
-          "sample_pa": 317,
-          "projected_order_basis": {
-            "recent_order": 7,
-            "recent_position": "3B",
-            "recent_starts": 6,
-            "recent_order_starts": 4
-          }
+          "sample_pa": 317
         },
         {
-          "id": 656484,
-          "name": "崔史 葛雷",
-          "name_en": "Tristan Gray",
-          "pos": "2B",
-          "batting_order": 8,
-          "source": "projected_recent_lineup_order",
-          "avg": 0.248,
-          "obp": 0.287,
-          "slg": 0.366,
-          "contact": 0.837,
-          "power": 0.923,
-          "patience": 0.989,
-          "gidp": 1.051,
-          "k_rate": 0.31,
-          "bb_rate": 0.051,
-          "sample_pa": 158,
-          "projected_order_basis": {
-            "recent_order": 8,
-            "recent_position": "2B",
-            "recent_starts": 3,
-            "recent_order_starts": 3
-          }
+          "id": 807712,
+          "name": "路凱 凱",
+          "name_en": "Luke Keaschall",
+          "pos": "RF",
+          "batting_order": 6,
+          "source": "official_lineup",
+          "avg": 0.247,
+          "obp": 0.33,
+          "slg": 0.321,
+          "contact": 0.919,
+          "power": 0.822,
+          "patience": 1.13,
+          "gidp": 1.104,
+          "k_rate": 0.155,
+          "bb_rate": 0.097,
+          "sample_pa": 309
         },
         {
           "id": 668952,
           "name": "萊恩 克爾伊伊德爾伊爾",
           "name_en": "Ryan Kreidler",
           "pos": "SS",
-          "batting_order": 9,
-          "source": "projected_recent_lineup_order",
+          "batting_order": 7,
+          "source": "official_lineup",
           "avg": 0.289,
           "obp": 0.366,
           "slg": 0.5,
@@ -474,13 +336,43 @@
           "gidp": 1.238,
           "k_rate": 0.168,
           "bb_rate": 0.099,
-          "sample_pa": 101,
-          "projected_order_basis": {
-            "recent_order": 9,
-            "recent_position": "SS",
-            "recent_starts": 4,
-            "recent_order_starts": 2
-          }
+          "sample_pa": 101
+        },
+        {
+          "id": 668885,
+          "name": "阿史 馬",
+          "name_en": "Austin Martin",
+          "pos": "CF",
+          "batting_order": 8,
+          "source": "official_lineup",
+          "avg": 0.243,
+          "obp": 0.351,
+          "slg": 0.322,
+          "contact": 0.897,
+          "power": 0.825,
+          "patience": 1.203,
+          "gidp": 1.127,
+          "k_rate": 0.179,
+          "bb_rate": 0.124,
+          "sample_pa": 251
+        },
+        {
+          "id": 656577,
+          "name": "亞歷克斯 賈",
+          "name_en": "Alex Jackson",
+          "pos": "C",
+          "batting_order": 9,
+          "source": "official_lineup",
+          "avg": 0.317,
+          "obp": 0.349,
+          "slg": 0.39,
+          "contact": 1.007,
+          "power": 0.978,
+          "patience": 1.075,
+          "gidp": 1.0,
+          "k_rate": 0.302,
+          "bb_rate": 0.0,
+          "sample_pa": 43
         }
       ]
     },
@@ -1451,7 +1343,7 @@
     {
       "date": "2026-06-28",
       "game_pk": "822959",
-      "status": "Scheduled",
+      "status": "Pre-Game",
       "away": "亞利桑那響尾蛇",
       "home": "坦帕灣光芒",
       "away_pitcher": "梅 凱",
@@ -1933,7 +1825,7 @@
     {
       "date": "2026-06-28",
       "game_pk": "824821",
-      "status": "Scheduled",
+      "status": "Pre-Game",
       "away": "華盛頓國民",
       "home": "巴爾的摩金鶯",
       "away_pitcher": "札 里",
@@ -1960,7 +1852,7 @@
         "run_prevention_factor": 0.972,
         "sample_ip": 89.0
       },
-      "lineup_source": "projected_recent_lineup_order",
+      "lineup_source": "official_mlb_boxscore",
       "prediction": "巴爾的摩金鶯",
       "confidence": 0.5335,
       "away_profile": {
@@ -1980,9 +1872,9 @@
           "id": 695578,
           "name": "詹姆斯 沃歐歐德",
           "name_en": "James Wood",
-          "pos": "RF",
+          "pos": "DH",
           "batting_order": 1,
-          "source": "projected_recent_lineup_order",
+          "source": "official_lineup",
           "avg": 0.257,
           "obp": 0.381,
           "slg": 0.505,
@@ -1992,21 +1884,33 @@
           "gidp": 1.041,
           "k_rate": 0.307,
           "bb_rate": 0.159,
-          "sample_pa": 391,
-          "projected_order_basis": {
-            "recent_order": 1,
-            "recent_position": "RF",
-            "recent_starts": 6,
-            "recent_order_starts": 6
-          }
+          "sample_pa": 391
+        },
+        {
+          "id": 671277,
+          "name": "路易斯 加 傑爾",
+          "name_en": "Luis García Jr.",
+          "pos": "1B",
+          "batting_order": 2,
+          "source": "official_lineup",
+          "avg": 0.273,
+          "obp": 0.302,
+          "slg": 0.514,
+          "contact": 0.982,
+          "power": 1.256,
+          "patience": 1.013,
+          "gidp": 1.151,
+          "k_rate": 0.155,
+          "bb_rate": 0.042,
+          "sample_pa": 265
         },
         {
           "id": 678554,
           "name": "庫 梅",
           "name_en": "Curtis Mead",
           "pos": "3B",
-          "batting_order": 2,
-          "source": "projected_recent_lineup_order",
+          "batting_order": 3,
+          "source": "official_lineup",
           "avg": 0.222,
           "obp": 0.321,
           "slg": 0.467,
@@ -2016,37 +1920,7 @@
           "gidp": 1.198,
           "k_rate": 0.185,
           "bb_rate": 0.111,
-          "sample_pa": 243,
-          "projected_order_basis": {
-            "recent_order": 2,
-            "recent_position": "3B",
-            "recent_starts": 4,
-            "recent_order_starts": 4
-          }
-        },
-        {
-          "id": 665953,
-          "name": "阿 查帕",
-          "name_en": "Andrés Chaparro",
-          "pos": "1B",
-          "batting_order": 3,
-          "source": "projected_recent_lineup_order",
-          "avg": 0.146,
-          "obp": 0.314,
-          "slg": 0.22,
-          "contact": 0.72,
-          "power": 0.7,
-          "patience": 1.174,
-          "gidp": 1.157,
-          "k_rate": 0.235,
-          "bb_rate": 0.176,
-          "sample_pa": 51,
-          "projected_order_basis": {
-            "recent_order": 3,
-            "recent_position": "1B",
-            "recent_starts": 3,
-            "recent_order_starts": 3
-          }
+          "sample_pa": 243
         },
         {
           "id": 682928,
@@ -2054,7 +1928,7 @@
           "name_en": "CJ Abrams",
           "pos": "SS",
           "batting_order": 4,
-          "source": "projected_recent_lineup_order",
+          "source": "official_lineup",
           "avg": 0.279,
           "obp": 0.363,
           "slg": 0.513,
@@ -2064,21 +1938,15 @@
           "gidp": 1.094,
           "k_rate": 0.213,
           "bb_rate": 0.091,
-          "sample_pa": 342,
-          "projected_order_basis": {
-            "recent_order": 4,
-            "recent_position": "SS",
-            "recent_starts": 4,
-            "recent_order_starts": 4
-          }
+          "sample_pa": 342
         },
         {
           "id": 686611,
           "name": "迪倫 克爾伊沃斯",
           "name_en": "Dylan Crews",
-          "pos": "CF",
+          "pos": "RF",
           "batting_order": 5,
-          "source": "projected_recent_lineup_order",
+          "source": "official_lineup",
           "avg": 0.223,
           "obp": 0.263,
           "slg": 0.377,
@@ -2088,13 +1956,7 @@
           "gidp": 1.117,
           "k_rate": 0.212,
           "bb_rate": 0.022,
-          "sample_pa": 137,
-          "projected_order_basis": {
-            "recent_order": 5,
-            "recent_position": "CF",
-            "recent_starts": 6,
-            "recent_order_starts": 2
-          }
+          "sample_pa": 137
         },
         {
           "id": 695734,
@@ -2102,7 +1964,7 @@
           "name_en": "Daylen Lile",
           "pos": "LF",
           "batting_order": 6,
-          "source": "projected_recent_lineup_order",
+          "source": "official_lineup",
           "avg": 0.252,
           "obp": 0.308,
           "slg": 0.401,
@@ -2112,21 +1974,33 @@
           "gidp": 1.09,
           "k_rate": 0.169,
           "bb_rate": 0.068,
-          "sample_pa": 354,
-          "projected_order_basis": {
-            "recent_order": 6,
-            "recent_position": "LF",
-            "recent_starts": 5,
-            "recent_order_starts": 3
-          }
+          "sample_pa": 354
+        },
+        {
+          "id": 696285,
+          "name": "雅各布 尤",
+          "name_en": "Jacob Young",
+          "pos": "CF",
+          "batting_order": 7,
+          "source": "official_lineup",
+          "avg": 0.228,
+          "obp": 0.275,
+          "slg": 0.378,
+          "contact": 0.857,
+          "power": 0.951,
+          "patience": 0.958,
+          "gidp": 1.122,
+          "k_rate": 0.186,
+          "bb_rate": 0.046,
+          "sample_pa": 263
         },
         {
           "id": 678391,
           "name": "喬 維瓦",
           "name_en": "Jorbit Vivas",
-          "pos": "DH",
-          "batting_order": 7,
-          "source": "projected_recent_lineup_order",
+          "pos": "2B",
+          "batting_order": 8,
+          "source": "official_lineup",
           "avg": 0.265,
           "obp": 0.339,
           "slg": 0.371,
@@ -2136,37 +2010,7 @@
           "gidp": 1.138,
           "k_rate": 0.126,
           "bb_rate": 0.08,
-          "sample_pa": 174,
-          "projected_order_basis": {
-            "recent_order": 7,
-            "recent_position": "3B",
-            "recent_starts": 4,
-            "recent_order_starts": 2
-          }
-        },
-        {
-          "id": 683083,
-          "name": "納西 內",
-          "name_en": "Nasim Nuñez",
-          "pos": "2B",
-          "batting_order": 8,
-          "source": "projected_recent_lineup_order",
-          "avg": 0.237,
-          "obp": 0.32,
-          "slg": 0.28,
-          "contact": 0.851,
-          "power": 0.73,
-          "patience": 1.114,
-          "gidp": 1.059,
-          "k_rate": 0.235,
-          "bb_rate": 0.103,
-          "sample_pa": 272,
-          "projected_order_basis": {
-            "recent_order": 8,
-            "recent_position": "2B",
-            "recent_starts": 6,
-            "recent_order_starts": 2
-          }
+          "sample_pa": 174
         },
         {
           "id": 660688,
@@ -2174,7 +2018,7 @@
           "name_en": "Keibert Ruiz",
           "pos": "C",
           "batting_order": 9,
-          "source": "projected_recent_lineup_order",
+          "source": "official_lineup",
           "avg": 0.276,
           "obp": 0.302,
           "slg": 0.471,
@@ -2184,13 +2028,7 @@
           "gidp": 1.223,
           "k_rate": 0.134,
           "bb_rate": 0.028,
-          "sample_pa": 179,
-          "projected_order_basis": {
-            "recent_order": 9,
-            "recent_position": "C",
-            "recent_starts": 4,
-            "recent_order_starts": 3
-          }
+          "sample_pa": 179
         }
       ],
       "home_lineup": [
@@ -2200,7 +2038,7 @@
           "name_en": "Taylor Ward",
           "pos": "LF",
           "batting_order": 1,
-          "source": "projected_recent_lineup_order",
+          "source": "official_lineup",
           "avg": 0.259,
           "obp": 0.389,
           "slg": 0.364,
@@ -2210,13 +2048,7 @@
           "gidp": 1.146,
           "k_rate": 0.211,
           "bb_rate": 0.17,
-          "sample_pa": 383,
-          "projected_order_basis": {
-            "recent_order": 1,
-            "recent_position": "LF",
-            "recent_starts": 6,
-            "recent_order_starts": 6
-          }
+          "sample_pa": 383
         },
         {
           "id": 683002,
@@ -2224,7 +2056,7 @@
           "name_en": "Gunnar Henderson",
           "pos": "SS",
           "batting_order": 2,
-          "source": "projected_recent_lineup_order",
+          "source": "official_lineup",
           "avg": 0.223,
           "obp": 0.294,
           "slg": 0.414,
@@ -2234,21 +2066,33 @@
           "gidp": 1.063,
           "k_rate": 0.239,
           "bb_rate": 0.079,
-          "sample_pa": 381,
-          "projected_order_basis": {
-            "recent_order": 2,
-            "recent_position": "SS",
-            "recent_starts": 6,
-            "recent_order_starts": 6
-          }
+          "sample_pa": 381
+        },
+        {
+          "id": 668939,
+          "name": "阿 魯",
+          "name_en": "Adley Rutschman",
+          "pos": "C",
+          "batting_order": 3,
+          "source": "official_lineup",
+          "avg": 0.254,
+          "obp": 0.329,
+          "slg": 0.458,
+          "contact": 0.942,
+          "power": 1.13,
+          "patience": 1.132,
+          "gidp": 1.175,
+          "k_rate": 0.145,
+          "bb_rate": 0.101,
+          "sample_pa": 228
         },
         {
           "id": 624413,
           "name": "佩特 阿羅",
           "name_en": "Pete Alonso",
-          "pos": "1B",
-          "batting_order": 3,
-          "source": "projected_recent_lineup_order",
+          "pos": "DH",
+          "batting_order": 4,
+          "source": "official_lineup",
           "avg": 0.252,
           "obp": 0.343,
           "slg": 0.471,
@@ -2258,21 +2102,51 @@
           "gidp": 1.176,
           "k_rate": 0.239,
           "bb_rate": 0.118,
-          "sample_pa": 364,
-          "projected_order_basis": {
-            "recent_order": 3,
-            "recent_position": "1B",
-            "recent_starts": 6,
-            "recent_order_starts": 5
-          }
+          "sample_pa": 364
+        },
+        {
+          "id": 694212,
+          "name": "薩 巴薩",
+          "name_en": "Samuel Basallo",
+          "pos": "1B",
+          "batting_order": 5,
+          "source": "official_lineup",
+          "avg": 0.254,
+          "obp": 0.314,
+          "slg": 0.457,
+          "contact": 0.879,
+          "power": 1.128,
+          "patience": 1.08,
+          "gidp": 1.125,
+          "k_rate": 0.259,
+          "bb_rate": 0.082,
+          "sample_pa": 255
+        },
+        {
+          "id": 687637,
+          "name": "迪倫 貝維",
+          "name_en": "Dylan Beavers",
+          "pos": "RF",
+          "batting_order": 6,
+          "source": "official_lineup",
+          "avg": 0.243,
+          "obp": 0.331,
+          "slg": 0.369,
+          "contact": 0.866,
+          "power": 0.93,
+          "patience": 1.153,
+          "gidp": 1.067,
+          "k_rate": 0.235,
+          "bb_rate": 0.118,
+          "sample_pa": 119
         },
         {
           "id": 691723,
           "name": "柯 馬",
           "name_en": "Coby Mayo",
-          "pos": "DH",
-          "batting_order": 4,
-          "source": "projected_recent_lineup_order",
+          "pos": "3B",
+          "batting_order": 7,
+          "source": "official_lineup",
           "avg": 0.193,
           "obp": 0.26,
           "slg": 0.382,
@@ -2282,133 +2156,43 @@
           "gidp": 1.106,
           "k_rate": 0.335,
           "bb_rate": 0.075,
-          "sample_pa": 227,
-          "projected_order_basis": {
-            "recent_order": 4,
-            "recent_position": "DH",
-            "recent_starts": 6,
-            "recent_order_starts": 3
-          }
+          "sample_pa": 227
         },
         {
-          "id": 641933,
-          "name": "泰勒 歐內",
-          "name_en": "Tyler O'Neill",
-          "pos": "RF",
-          "batting_order": 5,
-          "source": "projected_recent_lineup_order",
-          "avg": 0.184,
-          "obp": 0.284,
-          "slg": 0.272,
-          "contact": 0.72,
-          "power": 0.712,
-          "patience": 1.041,
-          "gidp": 1.103,
-          "k_rate": 0.277,
-          "bb_rate": 0.11,
-          "sample_pa": 155,
-          "projected_order_basis": {
-            "recent_order": 5,
-            "recent_position": "RF",
-            "recent_starts": 4,
-            "recent_order_starts": 3
-          }
-        },
-        {
-          "id": 677942,
-          "name": "布爾阿茲伊 阿雷",
-          "name_en": "Blaze Alexander",
-          "pos": "3B",
-          "batting_order": 6,
-          "source": "projected_recent_lineup_order",
-          "avg": 0.304,
-          "obp": 0.359,
-          "slg": 0.431,
-          "contact": 1.019,
-          "power": 1.07,
-          "patience": 1.161,
-          "gidp": 1.198,
-          "k_rate": 0.223,
-          "bb_rate": 0.064,
-          "sample_pa": 202,
-          "projected_order_basis": {
-            "recent_order": 6,
-            "recent_position": "3B",
-            "recent_starts": 5,
-            "recent_order_starts": 2
-          }
-        },
-        {
-          "id": 665750,
-          "name": "雷 塔維拉",
-          "name_en": "Leody Taveras",
+          "id": 681297,
+          "name": "柯 柯",
+          "name_en": "Colton Cowser",
           "pos": "CF",
-          "batting_order": 7,
-          "source": "projected_recent_lineup_order",
-          "avg": 0.248,
-          "obp": 0.324,
-          "slg": 0.363,
-          "contact": 0.872,
-          "power": 0.917,
-          "patience": 1.116,
-          "gidp": 1.062,
-          "k_rate": 0.246,
-          "bb_rate": 0.096,
-          "sample_pa": 260,
-          "projected_order_basis": {
-            "recent_order": 7,
-            "recent_position": "RF",
-            "recent_starts": 5,
-            "recent_order_starts": 3
-          }
-        },
-        {
-          "id": 669236,
-          "name": "傑雷米 賈",
-          "name_en": "Jeremiah Jackson",
-          "pos": "2B",
           "batting_order": 8,
-          "source": "projected_recent_lineup_order",
-          "avg": 0.251,
-          "obp": 0.267,
-          "slg": 0.397,
-          "contact": 0.908,
-          "power": 0.993,
-          "patience": 0.914,
-          "gidp": 1.35,
-          "k_rate": 0.194,
-          "bb_rate": 0.019,
-          "sample_pa": 206,
-          "projected_order_basis": {
-            "recent_order": 8,
-            "recent_position": "2B",
-            "recent_starts": 5,
-            "recent_order_starts": 3
-          }
+          "source": "official_lineup",
+          "avg": 0.227,
+          "obp": 0.313,
+          "slg": 0.381,
+          "contact": 0.799,
+          "power": 0.957,
+          "patience": 1.105,
+          "gidp": 1.04,
+          "k_rate": 0.287,
+          "bb_rate": 0.109,
+          "sample_pa": 202
         },
         {
-          "id": 644433,
-          "name": "查 崔",
-          "name_en": "Chadwick Tromp",
-          "pos": "C",
+          "id": 702616,
+          "name": "賈 霍達",
+          "name_en": "Jackson Holliday",
+          "pos": "2B",
           "batting_order": 9,
-          "source": "projected_recent_lineup_order",
-          "avg": 0.25,
-          "obp": 0.241,
-          "slg": 0.286,
-          "contact": 0.884,
-          "power": 0.743,
-          "patience": 0.837,
-          "gidp": 1.0,
-          "k_rate": 0.233,
-          "bb_rate": 0.0,
-          "sample_pa": 30,
-          "projected_order_basis": {
-            "recent_order": 9,
-            "recent_position": "C",
-            "recent_starts": 1,
-            "recent_order_starts": 1
-          }
+          "source": "official_lineup",
+          "avg": 0.2,
+          "obp": 0.288,
+          "slg": 0.378,
+          "contact": 0.723,
+          "power": 0.95,
+          "patience": 1.056,
+          "gidp": 1.077,
+          "k_rate": 0.308,
+          "bb_rate": 0.115,
+          "sample_pa": 104
         }
       ]
     },
@@ -2897,7 +2681,7 @@
     {
       "date": "2026-06-28",
       "game_pk": "824580",
-      "status": "Scheduled",
+      "status": "Pre-Game",
       "away": "堪薩斯市皇家",
       "home": "芝加哥白襪",
       "away_pitcher": "路 阿維拉",
@@ -2924,7 +2708,7 @@
         "run_prevention_factor": 1.016,
         "sample_ip": 76.1
       },
-      "lineup_source": "projected_recent_lineup_order",
+      "lineup_source": "official_mlb_boxscore",
       "prediction": "芝加哥白襪",
       "confidence": 0.5158,
       "away_profile": {
@@ -2941,84 +2725,12 @@
       },
       "away_lineup": [
         {
-          "id": 695600,
-          "name": "卡 傑",
-          "name_en": "Carter Jensen",
-          "pos": "C",
-          "batting_order": 1,
-          "source": "projected_recent_lineup_order",
-          "avg": 0.244,
-          "obp": 0.312,
-          "slg": 0.431,
-          "contact": 0.852,
-          "power": 1.07,
-          "patience": 1.085,
-          "gidp": 1.081,
-          "k_rate": 0.264,
-          "bb_rate": 0.092,
-          "sample_pa": 295,
-          "projected_order_basis": {
-            "recent_order": 1,
-            "recent_position": "C",
-            "recent_starts": 6,
-            "recent_order_starts": 5
-          }
-        },
-        {
-          "id": 677951,
-          "name": "波 威 傑爾",
-          "name_en": "Bobby Witt Jr.",
-          "pos": "SS",
-          "batting_order": 2,
-          "source": "projected_recent_lineup_order",
-          "avg": 0.291,
-          "obp": 0.365,
-          "slg": 0.461,
-          "contact": 1.018,
-          "power": 1.137,
-          "patience": 1.214,
-          "gidp": 1.139,
-          "k_rate": 0.168,
-          "bb_rate": 0.104,
-          "sample_pa": 345,
-          "projected_order_basis": {
-            "recent_order": 2,
-            "recent_position": "SS",
-            "recent_starts": 2,
-            "recent_order_starts": 2
-          }
-        },
-        {
-          "id": 695506,
-          "name": "賈 卡諾內",
-          "name_en": "Jac Caglianone",
-          "pos": "1B",
-          "batting_order": 3,
-          "source": "projected_recent_lineup_order",
-          "avg": 0.265,
-          "obp": 0.337,
-          "slg": 0.481,
-          "contact": 0.881,
-          "power": 1.182,
-          "patience": 1.133,
-          "gidp": 1.081,
-          "k_rate": 0.303,
-          "bb_rate": 0.084,
-          "sample_pa": 297,
-          "projected_order_basis": {
-            "recent_order": 3,
-            "recent_position": "1B",
-            "recent_starts": 6,
-            "recent_order_starts": 6
-          }
-        },
-        {
           "id": 657041,
           "name": "拉內 馬",
           "name_en": "Lane Thomas",
           "pos": "CF",
-          "batting_order": 4,
-          "source": "projected_recent_lineup_order",
+          "batting_order": 1,
+          "source": "official_lineup",
           "avg": 0.211,
           "obp": 0.327,
           "slg": 0.333,
@@ -3028,45 +2740,69 @@
           "gidp": 1.112,
           "k_rate": 0.22,
           "bb_rate": 0.14,
-          "sample_pa": 214,
-          "projected_order_basis": {
-            "recent_order": 4,
-            "recent_position": "CF",
-            "recent_starts": 5,
-            "recent_order_starts": 3
-          }
+          "sample_pa": 214
         },
         {
-          "id": 686681,
-          "name": "麥可 馬",
-          "name_en": "Michael Massey",
-          "pos": "2B",
-          "batting_order": 5,
-          "source": "projected_recent_lineup_order",
-          "avg": 0.268,
-          "obp": 0.294,
-          "slg": 0.453,
-          "contact": 0.966,
-          "power": 1.119,
-          "patience": 0.993,
+          "id": 677951,
+          "name": "波 威 傑爾",
+          "name_en": "Bobby Witt Jr.",
+          "pos": "SS",
+          "batting_order": 2,
+          "source": "official_lineup",
+          "avg": 0.291,
+          "obp": 0.365,
+          "slg": 0.461,
+          "contact": 1.018,
+          "power": 1.137,
+          "patience": 1.214,
+          "gidp": 1.139,
+          "k_rate": 0.168,
+          "bb_rate": 0.104,
+          "sample_pa": 345
+        },
+        {
+          "id": 695506,
+          "name": "賈 卡諾內",
+          "name_en": "Jac Caglianone",
+          "pos": "RF",
+          "batting_order": 3,
+          "source": "official_lineup",
+          "avg": 0.265,
+          "obp": 0.337,
+          "slg": 0.481,
+          "contact": 0.881,
+          "power": 1.182,
+          "patience": 1.133,
+          "gidp": 1.081,
+          "k_rate": 0.303,
+          "bb_rate": 0.084,
+          "sample_pa": 297
+        },
+        {
+          "id": 516782,
+          "name": "史 馬",
+          "name_en": "Starling Marte",
+          "pos": "DH",
+          "batting_order": 4,
+          "source": "official_lineup",
+          "avg": 0.258,
+          "obp": 0.327,
+          "slg": 0.337,
+          "contact": 0.884,
+          "power": 0.858,
+          "patience": 1.106,
           "gidp": 1.158,
-          "k_rate": 0.163,
-          "bb_rate": 0.039,
-          "sample_pa": 203,
-          "projected_order_basis": {
-            "recent_order": 5,
-            "recent_position": "2B",
-            "recent_starts": 5,
-            "recent_order_starts": 4
-          }
+          "k_rate": 0.267,
+          "bb_rate": 0.079,
+          "sample_pa": 101
         },
         {
           "id": 521692,
           "name": "薩多 佩雷",
           "name_en": "Salvador Perez",
-          "pos": "DH",
-          "batting_order": 6,
-          "source": "projected_recent_lineup_order",
+          "pos": "1B",
+          "batting_order": 5,
+          "source": "official_lineup",
           "avg": 0.2,
           "obp": 0.242,
           "slg": 0.331,
@@ -3076,69 +2812,33 @@
           "gidp": 1.245,
           "k_rate": 0.196,
           "bb_rate": 0.037,
-          "sample_pa": 327,
-          "projected_order_basis": {
-            "recent_order": 6,
-            "recent_position": "C",
-            "recent_starts": 6,
-            "recent_order_starts": 3
-          }
+          "sample_pa": 327
         },
         {
-          "id": 670231,
-          "name": "喬 拉維",
-          "name_en": "John Rave",
-          "pos": "RF",
-          "batting_order": 7,
-          "source": "projected_recent_lineup_order",
-          "avg": 0.267,
-          "obp": 0.389,
-          "slg": 0.733,
-          "contact": 0.869,
-          "power": 1.45,
-          "patience": 1.329,
-          "gidp": 1.0,
-          "k_rate": 0.333,
-          "bb_rate": 0.167,
-          "sample_pa": 18,
-          "projected_order_basis": {
-            "recent_order": 7,
-            "recent_position": "RF",
-            "recent_starts": 3,
-            "recent_order_starts": 3
-          }
-        },
-        {
-          "id": 679845,
-          "name": "尼克 羅",
-          "name_en": "Nick Loftin",
-          "pos": "3B",
-          "batting_order": 8,
-          "source": "projected_recent_lineup_order",
-          "avg": 0.237,
-          "obp": 0.331,
-          "slg": 0.403,
-          "contact": 0.907,
-          "power": 1.007,
-          "patience": 1.139,
-          "gidp": 1.098,
-          "k_rate": 0.134,
-          "bb_rate": 0.104,
-          "sample_pa": 164,
-          "projected_order_basis": {
-            "recent_order": 8,
-            "recent_position": "3B",
-            "recent_starts": 6,
-            "recent_order_starts": 3
-          }
+          "id": 695600,
+          "name": "卡 傑",
+          "name_en": "Carter Jensen",
+          "pos": "C",
+          "batting_order": 6,
+          "source": "official_lineup",
+          "avg": 0.244,
+          "obp": 0.312,
+          "slg": 0.431,
+          "contact": 0.852,
+          "power": 1.07,
+          "patience": 1.085,
+          "gidp": 1.081,
+          "k_rate": 0.264,
+          "bb_rate": 0.092,
+          "sample_pa": 295
         },
         {
           "id": 686555,
           "name": "薩 柯",
           "name_en": "Isaac Collins",
           "pos": "LF",
-          "batting_order": 9,
-          "source": "projected_recent_lineup_order",
+          "batting_order": 7,
+          "source": "official_lineup",
           "avg": 0.228,
           "obp": 0.337,
           "slg": 0.319,
@@ -3148,13 +2848,43 @@
           "gidp": 1.116,
           "k_rate": 0.236,
           "bb_rate": 0.124,
-          "sample_pa": 275,
-          "projected_order_basis": {
-            "recent_order": 9,
-            "recent_position": "LF",
-            "recent_starts": 5,
-            "recent_order_starts": 3
-          }
+          "sample_pa": 275
+        },
+        {
+          "id": 686475,
+          "name": "泰勒 托",
+          "name_en": "Tyler Tolbert",
+          "pos": "3B",
+          "batting_order": 8,
+          "source": "official_lineup",
+          "avg": 0.241,
+          "obp": 0.324,
+          "slg": 0.241,
+          "contact": 0.833,
+          "power": 0.7,
+          "patience": 1.134,
+          "gidp": 1.35,
+          "k_rate": 0.286,
+          "bb_rate": 0.114,
+          "sample_pa": 35
+        },
+        {
+          "id": 686681,
+          "name": "麥可 馬",
+          "name_en": "Michael Massey",
+          "pos": "2B",
+          "batting_order": 9,
+          "source": "official_lineup",
+          "avg": 0.268,
+          "obp": 0.294,
+          "slg": 0.453,
+          "contact": 0.966,
+          "power": 1.119,
+          "patience": 0.993,
+          "gidp": 1.158,
+          "k_rate": 0.163,
+          "bb_rate": 0.039,
+          "sample_pa": 203
         }
       ],
       "home_lineup": [
@@ -3164,7 +2894,7 @@
           "name_en": "Sam Antonacci",
           "pos": "LF",
           "batting_order": 1,
-          "source": "projected_recent_lineup_order",
+          "source": "official_lineup",
           "avg": 0.293,
           "obp": 0.39,
           "slg": 0.414,
@@ -3174,21 +2904,15 @@
           "gidp": 1.032,
           "k_rate": 0.15,
           "bb_rate": 0.075,
-          "sample_pa": 253,
-          "projected_order_basis": {
-            "recent_order": 1,
-            "recent_position": "LF",
-            "recent_starts": 6,
-            "recent_order_starts": 5
-          }
+          "sample_pa": 253
         },
         {
           "id": 678246,
           "name": "米 瓦",
           "name_en": "Miguel Vargas",
-          "pos": "1B",
+          "pos": "3B",
           "batting_order": 2,
-          "source": "projected_recent_lineup_order",
+          "source": "official_lineup",
           "avg": 0.247,
           "obp": 0.358,
           "slg": 0.483,
@@ -3198,45 +2922,15 @@
           "gidp": 1.092,
           "k_rate": 0.17,
           "bb_rate": 0.135,
-          "sample_pa": 347,
-          "projected_order_basis": {
-            "recent_order": 2,
-            "recent_position": "1B",
-            "recent_starts": 5,
-            "recent_order_starts": 4
-          }
-        },
-        {
-          "id": 643217,
-          "name": "安德魯 貝尼",
-          "name_en": "Andrew Benintendi",
-          "pos": "DH",
-          "batting_order": 3,
-          "source": "projected_recent_lineup_order",
-          "avg": 0.238,
-          "obp": 0.293,
-          "slg": 0.436,
-          "contact": 0.842,
-          "power": 1.081,
-          "patience": 1.028,
-          "gidp": 1.096,
-          "k_rate": 0.256,
-          "bb_rate": 0.076,
-          "sample_pa": 250,
-          "projected_order_basis": {
-            "recent_order": 3,
-            "recent_position": "DH",
-            "recent_starts": 5,
-            "recent_order_starts": 3
-          }
+          "sample_pa": 347
         },
         {
           "id": 691019,
           "name": "凱爾 特",
           "name_en": "Kyle Teel",
           "pos": "C",
-          "batting_order": 4,
-          "source": "projected_recent_lineup_order",
+          "batting_order": 3,
+          "source": "official_lineup",
           "avg": 0.231,
           "obp": 0.375,
           "slg": 0.462,
@@ -3246,13 +2940,25 @@
           "gidp": 1.35,
           "k_rate": 0.312,
           "bb_rate": 0.125,
-          "sample_pa": 16,
-          "projected_order_basis": {
-            "recent_order": 4,
-            "recent_position": "C",
-            "recent_starts": 3,
-            "recent_order_starts": 2
-          }
+          "sample_pa": 16
+        },
+        {
+          "id": 643217,
+          "name": "安德魯 貝尼",
+          "name_en": "Andrew Benintendi",
+          "pos": "DH",
+          "batting_order": 4,
+          "source": "official_lineup",
+          "avg": 0.238,
+          "obp": 0.293,
+          "slg": 0.436,
+          "contact": 0.842,
+          "power": 1.081,
+          "patience": 1.028,
+          "gidp": 1.096,
+          "k_rate": 0.256,
+          "bb_rate": 0.076,
+          "sample_pa": 250
         },
         {
           "id": 695657,
@@ -3260,7 +2966,7 @@
           "name_en": "Colson Montgomery",
           "pos": "SS",
           "batting_order": 5,
-          "source": "projected_recent_lineup_order",
+          "source": "official_lineup",
           "avg": 0.225,
           "obp": 0.318,
           "slg": 0.484,
@@ -3270,13 +2976,7 @@
           "gidp": 1.099,
           "k_rate": 0.315,
           "bb_rate": 0.093,
-          "sample_pa": 324,
-          "projected_order_basis": {
-            "recent_order": 5,
-            "recent_position": "SS",
-            "recent_starts": 6,
-            "recent_order_starts": 3
-          }
+          "sample_pa": 324
         },
         {
           "id": 805367,
@@ -3284,7 +2984,7 @@
           "name_en": "Chase Meidroth",
           "pos": "2B",
           "batting_order": 6,
-          "source": "projected_recent_lineup_order",
+          "source": "official_lineup",
           "avg": 0.279,
           "obp": 0.342,
           "slg": 0.386,
@@ -3294,13 +2994,7 @@
           "gidp": 1.096,
           "k_rate": 0.248,
           "bb_rate": 0.084,
-          "sample_pa": 335,
-          "projected_order_basis": {
-            "recent_order": 6,
-            "recent_position": "2B",
-            "recent_starts": 6,
-            "recent_order_starts": 3
-          }
+          "sample_pa": 335
         },
         {
           "id": 695731,
@@ -3308,7 +3002,7 @@
           "name_en": "Braden Montgomery",
           "pos": "RF",
           "batting_order": 7,
-          "source": "projected_recent_lineup_order",
+          "source": "official_lineup",
           "avg": 0.246,
           "obp": 0.302,
           "slg": 0.439,
@@ -3318,13 +3012,7 @@
           "gidp": 1.35,
           "k_rate": 0.254,
           "bb_rate": 0.079,
-          "sample_pa": 63,
-          "projected_order_basis": {
-            "recent_order": 7,
-            "recent_position": "RF",
-            "recent_starts": 6,
-            "recent_order_starts": 3
-          }
+          "sample_pa": 63
         },
         {
           "id": 671976,
@@ -3332,7 +3020,7 @@
           "name_en": "Tristan Peters",
           "pos": "CF",
           "batting_order": 8,
-          "source": "projected_recent_lineup_order",
+          "source": "official_lineup",
           "avg": 0.284,
           "obp": 0.347,
           "slg": 0.446,
@@ -3342,21 +3030,15 @@
           "gidp": 1.0,
           "k_rate": 0.183,
           "bb_rate": 0.074,
-          "sample_pa": 229,
-          "projected_order_basis": {
-            "recent_order": 8,
-            "recent_position": "CF",
-            "recent_starts": 5,
-            "recent_order_starts": 4
-          }
+          "sample_pa": 229
         },
         {
           "id": 694378,
           "name": "雅各布 戈雷",
           "name_en": "Jacob Gonzalez",
-          "pos": "3B",
+          "pos": "1B",
           "batting_order": 9,
-          "source": "projected_recent_lineup_order",
+          "source": "official_lineup",
           "avg": 0.23,
           "obp": 0.319,
           "slg": 0.344,
@@ -3366,20 +3048,14 @@
           "gidp": 1.0,
           "k_rate": 0.246,
           "bb_rate": 0.087,
-          "sample_pa": 69,
-          "projected_order_basis": {
-            "recent_order": 9,
-            "recent_position": "1B",
-            "recent_starts": 4,
-            "recent_order_starts": 2
-          }
+          "sample_pa": 69
         }
       ]
     },
     {
       "date": "2026-06-28",
       "game_pk": "823362",
-      "status": "Scheduled",
+      "status": "Pre-Game",
       "away": "辛辛那提紅人",
       "home": "匹茲堡海盜",
       "away_pitcher": "布雷迪 西",
@@ -3406,7 +3082,7 @@
         "run_prevention_factor": 1.064,
         "sample_ip": 88.1
       },
-      "lineup_source": "projected_recent_lineup_order",
+      "lineup_source": "official_mlb_boxscore",
       "prediction": "匹茲堡海盜",
       "confidence": 0.515,
       "away_profile": {
@@ -3423,36 +3099,12 @@
       },
       "away_lineup": [
         {
-          "id": 553993,
-          "name": "艾傑尼 雷",
-          "name_en": "Eugenio Suárez",
-          "pos": "3B",
-          "batting_order": 1,
-          "source": "projected_recent_lineup_order",
-          "avg": 0.21,
-          "obp": 0.276,
-          "slg": 0.379,
-          "contact": 0.734,
-          "power": 0.953,
-          "patience": 0.994,
-          "gidp": 1.075,
-          "k_rate": 0.332,
-          "bb_rate": 0.079,
-          "sample_pa": 214,
-          "projected_order_basis": {
-            "recent_order": 6,
-            "recent_position": "3B",
-            "recent_starts": 6,
-            "recent_order_starts": 5
-          }
-        },
-        {
           "id": 682829,
           "name": "艾 德 拉 克爾優茲",
           "name_en": "Elly De La Cruz",
           "pos": "SS",
-          "batting_order": 2,
-          "source": "projected_recent_lineup_order",
+          "batting_order": 1,
+          "source": "official_lineup",
           "avg": 0.268,
           "obp": 0.338,
           "slg": 0.484,
@@ -3462,45 +3114,15 @@
           "gidp": 1.087,
           "k_rate": 0.291,
           "bb_rate": 0.091,
-          "sample_pa": 275,
-          "projected_order_basis": {
-            "recent_order": 2,
-            "recent_position": "SS",
-            "recent_starts": 4,
-            "recent_order_starts": 3
-          }
-        },
-        {
-          "id": 668709,
-          "name": "傑傑 達",
-          "name_en": "JJ Bleday",
-          "pos": "LF",
-          "batting_order": 3,
-          "source": "projected_recent_lineup_order",
-          "avg": 0.24,
-          "obp": 0.348,
-          "slg": 0.51,
-          "contact": 0.879,
-          "power": 1.248,
-          "patience": 1.209,
-          "gidp": 1.105,
-          "k_rate": 0.197,
-          "bb_rate": 0.136,
-          "sample_pa": 228,
-          "projected_order_basis": {
-            "recent_order": 3,
-            "recent_position": "LF",
-            "recent_starts": 5,
-            "recent_order_starts": 3
-          }
+          "sample_pa": 275
         },
         {
           "id": 701398,
           "name": "薩 史瓦",
           "name_en": "Sal Stewart",
-          "pos": "1B",
-          "batting_order": 4,
-          "source": "projected_recent_lineup_order",
+          "pos": "3B",
+          "batting_order": 2,
+          "source": "official_lineup",
           "avg": 0.252,
           "obp": 0.341,
           "slg": 0.454,
@@ -3510,37 +3132,61 @@
           "gidp": 1.159,
           "k_rate": 0.216,
           "bb_rate": 0.119,
-          "sample_pa": 352,
-          "projected_order_basis": {
-            "recent_order": 4,
-            "recent_position": "1B",
-            "recent_starts": 6,
-            "recent_order_starts": 3
-          }
+          "sample_pa": 352
         },
         {
-          "id": 663993,
-          "name": "納尼 羅韋",
-          "name_en": "Nathaniel Lowe",
+          "id": 668709,
+          "name": "傑傑 達",
+          "name_en": "JJ Bleday",
+          "pos": "LF",
+          "batting_order": 3,
+          "source": "official_lineup",
+          "avg": 0.24,
+          "obp": 0.348,
+          "slg": 0.51,
+          "contact": 0.879,
+          "power": 1.248,
+          "patience": 1.209,
+          "gidp": 1.105,
+          "k_rate": 0.197,
+          "bb_rate": 0.136,
+          "sample_pa": 228
+        },
+        {
+          "id": 553993,
+          "name": "艾傑尼 雷",
+          "name_en": "Eugenio Suárez",
           "pos": "DH",
+          "batting_order": 4,
+          "source": "official_lineup",
+          "avg": 0.21,
+          "obp": 0.276,
+          "slg": 0.379,
+          "contact": 0.734,
+          "power": 0.953,
+          "patience": 0.994,
+          "gidp": 1.075,
+          "k_rate": 0.332,
+          "bb_rate": 0.079,
+          "sample_pa": 214
+        },
+        {
+          "id": 668715,
+          "name": "史賓塞 史",
+          "name_en": "Spencer Steer",
+          "pos": "1B",
           "batting_order": 5,
-          "source": "projected_recent_lineup_order",
-          "avg": 0.254,
-          "obp": 0.347,
-          "slg": 0.475,
-          "contact": 0.883,
-          "power": 1.169,
-          "patience": 1.194,
-          "gidp": 1.04,
-          "k_rate": 0.252,
-          "bb_rate": 0.124,
-          "sample_pa": 202,
-          "projected_order_basis": {
-            "recent_order": 5,
-            "recent_position": "DH",
-            "recent_starts": 5,
-            "recent_order_starts": 3
-          }
+          "source": "official_lineup",
+          "avg": 0.242,
+          "obp": 0.319,
+          "slg": 0.429,
+          "contact": 0.866,
+          "power": 1.065,
+          "patience": 1.103,
+          "gidp": 1.208,
+          "k_rate": 0.231,
+          "bb_rate": 0.094,
+          "sample_pa": 308
         },
         {
           "id": 682622,
@@ -3548,7 +3194,7 @@
           "name_en": "Noelvi Marte",
           "pos": "RF",
           "batting_order": 6,
-          "source": "projected_recent_lineup_order",
+          "source": "official_lineup",
           "avg": 0.198,
           "obp": 0.258,
           "slg": 0.384,
@@ -3558,45 +3204,15 @@
           "gidp": 1.172,
           "k_rate": 0.258,
           "bb_rate": 0.075,
-          "sample_pa": 93,
-          "projected_order_basis": {
-            "recent_order": 7,
-            "recent_position": "RF",
-            "recent_starts": 5,
-            "recent_order_starts": 4
-          }
-        },
-        {
-          "id": 667472,
-          "name": "達內 姆伊伊爾斯",
-          "name_en": "Dane Myers",
-          "pos": "CF",
-          "batting_order": 7,
-          "source": "projected_recent_lineup_order",
-          "avg": 0.252,
-          "obp": 0.356,
-          "slg": 0.374,
-          "contact": 0.874,
-          "power": 0.941,
-          "patience": 1.216,
-          "gidp": 1.237,
-          "k_rate": 0.259,
-          "bb_rate": 0.126,
-          "sample_pa": 135,
-          "projected_order_basis": {
-            "recent_order": 7,
-            "recent_position": "CF",
-            "recent_starts": 2,
-            "recent_order_starts": 1
-          }
+          "sample_pa": 93
         },
         {
           "id": 663886,
           "name": "泰勒 史",
           "name_en": "Tyler Stephenson",
           "pos": "C",
-          "batting_order": 8,
-          "source": "projected_recent_lineup_order",
+          "batting_order": 7,
+          "source": "official_lineup",
           "avg": 0.218,
           "obp": 0.308,
           "slg": 0.347,
@@ -3606,37 +3222,43 @@
           "gidp": 1.145,
           "k_rate": 0.258,
           "bb_rate": 0.118,
-          "sample_pa": 221,
-          "projected_order_basis": {
-            "recent_order": 8,
-            "recent_position": "C",
-            "recent_starts": 4,
-            "recent_order_starts": 4
-          }
+          "sample_pa": 221
         },
         {
-          "id": 680574,
-          "name": "馬 姆克爾阿伊恩",
-          "name_en": "Matt McLain",
+          "id": 670770,
+          "name": "特傑 夫爾伊伊德爾",
+          "name_en": "TJ Friedl",
+          "pos": "CF",
+          "batting_order": 8,
+          "source": "official_lineup",
+          "avg": 0.179,
+          "obp": 0.259,
+          "slg": 0.256,
+          "contact": 0.72,
+          "power": 0.7,
+          "patience": 0.95,
+          "gidp": 1.045,
+          "k_rate": 0.236,
+          "bb_rate": 0.073,
+          "sample_pa": 178
+        },
+        {
+          "id": 695490,
+          "name": "艾 阿",
+          "name_en": "Edwin Arroyo",
           "pos": "2B",
           "batting_order": 9,
-          "source": "projected_recent_lineup_order",
-          "avg": 0.198,
-          "obp": 0.302,
-          "slg": 0.344,
-          "contact": 0.744,
-          "power": 0.874,
-          "patience": 1.091,
-          "gidp": 1.082,
-          "k_rate": 0.26,
-          "bb_rate": 0.12,
-          "sample_pa": 292,
-          "projected_order_basis": {
-            "recent_order": 9,
-            "recent_position": "2B",
-            "recent_starts": 3,
-            "recent_order_starts": 3
-          }
+          "source": "official_lineup",
+          "avg": 0.263,
+          "obp": 0.328,
+          "slg": 0.316,
+          "contact": 0.925,
+          "power": 0.811,
+          "patience": 1.075,
+          "gidp": 1.0,
+          "k_rate": 0.215,
+          "bb_rate": 0.046,
+          "sample_pa": 65
         }
       ],
       "home_lineup": [
@@ -3646,7 +3268,7 @@
           "name_en": "Konnor Griffin",
           "pos": "SS",
           "batting_order": 1,
-          "source": "projected_recent_lineup_order",
+          "source": "official_lineup",
           "avg": 0.275,
           "obp": 0.333,
           "slg": 0.42,
@@ -3656,13 +3278,7 @@
           "gidp": 1.075,
           "k_rate": 0.263,
           "bb_rate": 0.066,
-          "sample_pa": 213,
-          "projected_order_basis": {
-            "recent_order": 1,
-            "recent_position": "SS",
-            "recent_starts": 1,
-            "recent_order_starts": 1
-          }
+          "sample_pa": 213
         },
         {
           "id": 664040,
@@ -3670,7 +3286,7 @@
           "name_en": "Brandon Lowe",
           "pos": "2B",
           "batting_order": 2,
-          "source": "projected_recent_lineup_order",
+          "source": "official_lineup",
           "avg": 0.246,
           "obp": 0.32,
           "slg": 0.515,
@@ -3680,21 +3296,15 @@
           "gidp": 1.07,
           "k_rate": 0.252,
           "bb_rate": 0.097,
-          "sample_pa": 341,
-          "projected_order_basis": {
-            "recent_order": 2,
-            "recent_position": "2B",
-            "recent_starts": 6,
-            "recent_order_starts": 6
-          }
+          "sample_pa": 341
         },
         {
           "id": 668804,
           "name": "布萊恩 雷諾",
           "name_en": "Bryan Reynolds",
-          "pos": "RF",
+          "pos": "DH",
           "batting_order": 3,
-          "source": "projected_recent_lineup_order",
+          "source": "official_lineup",
           "avg": 0.289,
           "obp": 0.402,
           "slg": 0.477,
@@ -3704,13 +3314,7 @@
           "gidp": 1.089,
           "k_rate": 0.215,
           "bb_rate": 0.148,
-          "sample_pa": 358,
-          "projected_order_basis": {
-            "recent_order": 3,
-            "recent_position": "RF",
-            "recent_starts": 6,
-            "recent_order_starts": 6
-          }
+          "sample_pa": 358
         },
         {
           "id": 693304,
@@ -3718,7 +3322,7 @@
           "name_en": "Nick Gonzales",
           "pos": "3B",
           "batting_order": 4,
-          "source": "projected_recent_lineup_order",
+          "source": "official_lineup",
           "avg": 0.295,
           "obp": 0.346,
           "slg": 0.372,
@@ -3728,13 +3332,7 @@
           "gidp": 1.231,
           "k_rate": 0.186,
           "bb_rate": 0.058,
-          "sample_pa": 312,
-          "projected_order_basis": {
-            "recent_order": 4,
-            "recent_position": "3B",
-            "recent_starts": 5,
-            "recent_order_starts": 4
-          }
+          "sample_pa": 312
         },
         {
           "id": 656811,
@@ -3742,7 +3340,7 @@
           "name_en": "Ryan O'Hearn",
           "pos": "1B",
           "batting_order": 5,
-          "source": "projected_recent_lineup_order",
+          "source": "official_lineup",
           "avg": 0.28,
           "obp": 0.337,
           "slg": 0.453,
@@ -3752,45 +3350,33 @@
           "gidp": 1.315,
           "k_rate": 0.222,
           "bb_rate": 0.075,
-          "sample_pa": 279,
-          "projected_order_basis": {
-            "recent_order": 5,
-            "recent_position": "1B",
-            "recent_starts": 6,
-            "recent_order_starts": 5
-          }
+          "sample_pa": 279
         },
         {
-          "id": 682848,
-          "name": "艾 羅",
-          "name_en": "Endy Rodríguez",
-          "pos": "C",
+          "id": 699013,
+          "name": "艾 瓦德茲",
+          "name_en": "Esmerlyn Valdez",
+          "pos": "RF",
           "batting_order": 6,
-          "source": "projected_recent_lineup_order",
-          "avg": 0.256,
-          "obp": 0.384,
-          "slg": 0.439,
-          "contact": 0.9,
-          "power": 1.088,
-          "patience": 1.322,
-          "gidp": 1.24,
-          "k_rate": 0.23,
-          "bb_rate": 0.17,
-          "sample_pa": 100,
-          "projected_order_basis": {
-            "recent_order": 6,
-            "recent_position": "C",
-            "recent_starts": 4,
-            "recent_order_starts": 3
-          }
+          "source": "official_lineup",
+          "avg": 0.211,
+          "obp": 0.25,
+          "slg": 0.579,
+          "contact": 0.72,
+          "power": 1.403,
+          "patience": 0.907,
+          "gidp": 1.2,
+          "k_rate": 0.45,
+          "bb_rate": 0.05,
+          "sample_pa": 40
         },
         {
           "id": 682997,
           "name": "泰勒 卡哈",
           "name_en": "Tyler Callihan",
-          "pos": "CF",
+          "pos": "LF",
           "batting_order": 7,
-          "source": "projected_recent_lineup_order",
+          "source": "official_lineup",
           "avg": 0.24,
           "obp": 0.339,
           "slg": 0.48,
@@ -3800,21 +3386,15 @@
           "gidp": 1.0,
           "k_rate": 0.322,
           "bb_rate": 0.119,
-          "sample_pa": 59,
-          "projected_order_basis": {
-            "recent_order": 7,
-            "recent_position": "RF",
-            "recent_starts": 4,
-            "recent_order_starts": 3
-          }
+          "sample_pa": 59
         },
         {
           "id": 663968,
           "name": "傑克 馬",
           "name_en": "Jake Mangum",
-          "pos": "LF",
+          "pos": "CF",
           "batting_order": 8,
-          "source": "projected_recent_lineup_order",
+          "source": "official_lineup",
           "avg": 0.304,
           "obp": 0.345,
           "slg": 0.359,
@@ -3824,44 +3404,32 @@
           "gidp": 1.162,
           "k_rate": 0.178,
           "bb_rate": 0.051,
-          "sample_pa": 197,
-          "projected_order_basis": {
-            "recent_order": 8,
-            "recent_position": "LF",
-            "recent_starts": 6,
-            "recent_order_starts": 4
-          }
+          "sample_pa": 197
         },
         {
-          "id": 669707,
-          "name": "賈雷 崔羅",
-          "name_en": "Jared Triolo",
-          "pos": "DH",
+          "id": 680779,
+          "name": "赫 達維",
+          "name_en": "Henry Davis",
+          "pos": "C",
           "batting_order": 9,
-          "source": "projected_recent_lineup_order",
-          "avg": 0.238,
-          "obp": 0.307,
-          "slg": 0.285,
-          "contact": 0.849,
-          "power": 0.741,
-          "patience": 1.06,
-          "gidp": 1.19,
-          "k_rate": 0.244,
-          "bb_rate": 0.077,
-          "sample_pa": 168,
-          "projected_order_basis": {
-            "recent_order": 9,
-            "recent_position": "SS",
-            "recent_starts": 6,
-            "recent_order_starts": 4
-          }
+          "source": "official_lineup",
+          "avg": 0.146,
+          "obp": 0.244,
+          "slg": 0.314,
+          "contact": 0.72,
+          "power": 0.806,
+          "patience": 0.933,
+          "gidp": 1.153,
+          "k_rate": 0.204,
+          "bb_rate": 0.089,
+          "sample_pa": 157
         }
       ]
     },
     {
       "date": "2026-06-28",
       "game_pk": "822795",
-      "status": "Scheduled",
+      "status": "Pre-Game",
       "away": "德州遊騎兵",
       "home": "多倫多藍鳥",
       "away_pitcher": "馬 羅",
@@ -4825,7 +4393,7 @@
     {
       "date": "2026-06-28",
       "game_pk": "823608",
-      "status": "Scheduled",
+      "status": "Pre-Game",
       "away": "費城費城人",
       "home": "紐約大都會",
       "away_pitcher": "赫蘇斯 路札",
@@ -4852,7 +4420,7 @@
         "run_prevention_factor": 1.087,
         "sample_ip": 30.2
       },
-      "lineup_source": "projected_recent_lineup_order",
+      "lineup_source": "official_mlb_boxscore",
       "prediction": "費城費城人",
       "confidence": 0.5065,
       "away_profile": {
@@ -4874,7 +4442,7 @@
           "name_en": "Trea Turner",
           "pos": "SS",
           "batting_order": 1,
-          "source": "projected_recent_lineup_order",
+          "source": "official_lineup",
           "avg": 0.233,
           "obp": 0.284,
           "slg": 0.338,
@@ -4884,13 +4452,7 @@
           "gidp": 1.09,
           "k_rate": 0.228,
           "bb_rate": 0.062,
-          "sample_pa": 356,
-          "projected_order_basis": {
-            "recent_order": 1,
-            "recent_position": "SS",
-            "recent_starts": 6,
-            "recent_order_starts": 6
-          }
+          "sample_pa": 356
         },
         {
           "id": 656941,
@@ -4898,7 +4460,7 @@
           "name_en": "Kyle Schwarber",
           "pos": "DH",
           "batting_order": 2,
-          "source": "projected_recent_lineup_order",
+          "source": "official_lineup",
           "avg": 0.253,
           "obp": 0.37,
           "slg": 0.584,
@@ -4908,13 +4470,7 @@
           "gidp": 1.023,
           "k_rate": 0.339,
           "bb_rate": 0.145,
-          "sample_pa": 351,
-          "projected_order_basis": {
-            "recent_order": 2,
-            "recent_position": "DH",
-            "recent_starts": 4,
-            "recent_order_starts": 4
-          }
+          "sample_pa": 351
         },
         {
           "id": 547180,
@@ -4922,7 +4478,7 @@
           "name_en": "Bryce Harper",
           "pos": "1B",
           "batting_order": 3,
-          "source": "projected_recent_lineup_order",
+          "source": "official_lineup",
           "avg": 0.278,
           "obp": 0.379,
           "slg": 0.536,
@@ -4932,13 +4488,7 @@
           "gidp": 1.185,
           "k_rate": 0.188,
           "bb_rate": 0.145,
-          "sample_pa": 346,
-          "projected_order_basis": {
-            "recent_order": 3,
-            "recent_position": "1B",
-            "recent_starts": 6,
-            "recent_order_starts": 6
-          }
+          "sample_pa": 346
         },
         {
           "id": 664761,
@@ -4946,7 +4496,7 @@
           "name_en": "Alec Bohm",
           "pos": "3B",
           "batting_order": 4,
-          "source": "projected_recent_lineup_order",
+          "source": "official_lineup",
           "avg": 0.22,
           "obp": 0.275,
           "slg": 0.35,
@@ -4956,69 +4506,33 @@
           "gidp": 1.281,
           "k_rate": 0.144,
           "bb_rate": 0.064,
-          "sample_pa": 313,
-          "projected_order_basis": {
-            "recent_order": 4,
-            "recent_position": "3B",
-            "recent_starts": 5,
-            "recent_order_starts": 4
-          }
+          "sample_pa": 313
         },
         {
-          "id": 681082,
-          "name": "布 史",
-          "name_en": "Bryson Stott",
-          "pos": "2B",
+          "id": 669016,
+          "name": "布蘭登 馬",
+          "name_en": "Brandon Marsh",
+          "pos": "LF",
           "batting_order": 5,
-          "source": "projected_recent_lineup_order",
-          "avg": 0.236,
-          "obp": 0.298,
-          "slg": 0.393,
-          "contact": 0.885,
-          "power": 0.984,
-          "patience": 1.037,
-          "gidp": 1.19,
-          "k_rate": 0.17,
-          "bb_rate": 0.075,
-          "sample_pa": 294,
-          "projected_order_basis": {
-            "recent_order": 5,
-            "recent_position": "2B",
-            "recent_starts": 6,
-            "recent_order_starts": 3
-          }
-        },
-        {
-          "id": 656537,
-          "name": "德雷 希",
-          "name_en": "Derek Hill",
-          "pos": "RF",
-          "batting_order": 6,
-          "source": "projected_recent_lineup_order",
-          "avg": 0.25,
-          "obp": 0.302,
-          "slg": 0.435,
-          "contact": 0.816,
-          "power": 1.079,
-          "patience": 1.031,
-          "gidp": 1.068,
-          "k_rate": 0.356,
-          "bb_rate": 0.059,
-          "sample_pa": 118,
-          "projected_order_basis": {
-            "recent_order": 6,
-            "recent_position": "RF",
-            "recent_starts": 2,
-            "recent_order_starts": 1
-          }
+          "source": "official_lineup",
+          "avg": 0.318,
+          "obp": 0.351,
+          "slg": 0.507,
+          "contact": 1.035,
+          "power": 1.241,
+          "patience": 1.125,
+          "gidp": 1.052,
+          "k_rate": 0.256,
+          "bb_rate": 0.046,
+          "sample_pa": 305
         },
         {
           "id": 592663,
           "name": "傑 特 雷托",
           "name_en": "J.T. Realmuto",
           "pos": "C",
-          "batting_order": 7,
-          "source": "projected_recent_lineup_order",
+          "batting_order": 6,
+          "source": "official_lineup",
           "avg": 0.204,
           "obp": 0.284,
           "slg": 0.33,
@@ -5028,37 +4542,43 @@
           "gidp": 1.112,
           "k_rate": 0.191,
           "bb_rate": 0.079,
-          "sample_pa": 215,
-          "projected_order_basis": {
-            "recent_order": 7,
-            "recent_position": "C",
-            "recent_starts": 4,
-            "recent_order_starts": 2
-          }
+          "sample_pa": 215
         },
         {
-          "id": 624641,
-          "name": "艾 索薩",
-          "name_en": "Edmundo Sosa",
-          "pos": "LF",
+          "id": 681082,
+          "name": "布 史",
+          "name_en": "Bryson Stott",
+          "pos": "2B",
+          "batting_order": 7,
+          "source": "official_lineup",
+          "avg": 0.236,
+          "obp": 0.298,
+          "slg": 0.393,
+          "contact": 0.885,
+          "power": 0.984,
+          "patience": 1.037,
+          "gidp": 1.19,
+          "k_rate": 0.17,
+          "bb_rate": 0.075,
+          "sample_pa": 294
+        },
+        {
+          "id": 656537,
+          "name": "德雷 希",
+          "name_en": "Derek Hill",
+          "pos": "RF",
           "batting_order": 8,
-          "source": "projected_recent_lineup_order",
-          "avg": 0.222,
-          "obp": 0.257,
-          "slg": 0.385,
-          "contact": 0.823,
-          "power": 0.966,
-          "patience": 0.893,
-          "gidp": 1.11,
-          "k_rate": 0.221,
-          "bb_rate": 0.021,
-          "sample_pa": 145,
-          "projected_order_basis": {
-            "recent_order": 8,
-            "recent_position": "3B",
-            "recent_starts": 5,
-            "recent_order_starts": 2
-          }
+          "source": "official_lineup",
+          "avg": 0.25,
+          "obp": 0.302,
+          "slg": 0.435,
+          "contact": 0.816,
+          "power": 1.079,
+          "patience": 1.031,
+          "gidp": 1.068,
+          "k_rate": 0.356,
+          "bb_rate": 0.059,
+          "sample_pa": 118
         },
         {
           "id": 702222,
@@ -5066,7 +4586,7 @@
           "name_en": "Justin Crawford",
           "pos": "CF",
           "batting_order": 9,
-          "source": "projected_recent_lineup_order",
+          "source": "official_lineup",
           "avg": 0.242,
           "obp": 0.297,
           "slg": 0.333,
@@ -5076,13 +4596,7 @@
           "gidp": 1.032,
           "k_rate": 0.217,
           "bb_rate": 0.064,
-          "sample_pa": 249,
-          "projected_order_basis": {
-            "recent_order": 9,
-            "recent_position": "CF",
-            "recent_starts": 4,
-            "recent_order_starts": 3
-          }
+          "sample_pa": 249
         }
       ],
       "home_lineup": [
@@ -5092,7 +4606,7 @@
           "name_en": "Carson Benge",
           "pos": "RF",
           "batting_order": 1,
-          "source": "projected_recent_lineup_order",
+          "source": "official_lineup",
           "avg": 0.258,
           "obp": 0.32,
           "slg": 0.396,
@@ -5102,13 +4616,7 @@
           "gidp": 1.049,
           "k_rate": 0.215,
           "bb_rate": 0.071,
-          "sample_pa": 325,
-          "projected_order_basis": {
-            "recent_order": 1,
-            "recent_position": "RF",
-            "recent_starts": 6,
-            "recent_order_starts": 6
-          }
+          "sample_pa": 325
         },
         {
           "id": 665742,
@@ -5116,7 +4624,7 @@
           "name_en": "Juan Soto",
           "pos": "LF",
           "batting_order": 2,
-          "source": "projected_recent_lineup_order",
+          "source": "official_lineup",
           "avg": 0.299,
           "obp": 0.399,
           "slg": 0.567,
@@ -5126,21 +4634,15 @@
           "gidp": 1.088,
           "k_rate": 0.129,
           "bb_rate": 0.143,
-          "sample_pa": 272,
-          "projected_order_basis": {
-            "recent_order": 2,
-            "recent_position": "LF",
-            "recent_starts": 4,
-            "recent_order_starts": 2
-          }
+          "sample_pa": 272
         },
         {
           "id": 666182,
           "name": "波 比查",
           "name_en": "Bo Bichette",
-          "pos": "3B",
+          "pos": "SS",
           "batting_order": 3,
-          "source": "projected_recent_lineup_order",
+          "source": "official_lineup",
           "avg": 0.254,
           "obp": 0.298,
           "slg": 0.389,
@@ -5150,141 +4652,33 @@
           "gidp": 1.199,
           "k_rate": 0.185,
           "bb_rate": 0.058,
-          "sample_pa": 362,
-          "projected_order_basis": {
-            "recent_order": 3,
-            "recent_position": "3B",
-            "recent_starts": 6,
-            "recent_order_starts": 4
-          }
+          "sample_pa": 362
         },
         {
-          "id": 668901,
-          "name": "馬 維",
-          "name_en": "Mark Vientos",
+          "id": 676572,
+          "name": "艾里 瓦加馬",
+          "name_en": "Eric Wagaman",
           "pos": "1B",
           "batting_order": 4,
-          "source": "projected_recent_lineup_order",
-          "avg": 0.214,
-          "obp": 0.255,
-          "slg": 0.388,
-          "contact": 0.797,
-          "power": 0.973,
-          "patience": 0.914,
-          "gidp": 1.335,
-          "k_rate": 0.234,
-          "bb_rate": 0.046,
-          "sample_pa": 239,
-          "projected_order_basis": {
-            "recent_order": 4,
-            "recent_position": "1B",
-            "recent_starts": 3,
-            "recent_order_starts": 2
-          }
-        },
-        {
-          "id": 676724,
-          "name": "賈雷 尤",
-          "name_en": "Jared Young",
-          "pos": "SS",
-          "batting_order": 5,
-          "source": "projected_recent_lineup_order",
-          "avg": 0.238,
-          "obp": 0.31,
-          "slg": 0.455,
-          "contact": 0.862,
-          "power": 1.124,
-          "patience": 1.077,
-          "gidp": 1.142,
-          "k_rate": 0.221,
-          "bb_rate": 0.088,
-          "sample_pa": 113,
-          "projected_order_basis": {
-            "recent_order": 5,
-            "recent_position": "1B",
-            "recent_starts": 4,
-            "recent_order_starts": 2
-          }
-        },
-        {
-          "id": 805999,
-          "name": "阿 傑 艾威",
-          "name_en": "A.J. Ewing",
-          "pos": "CF",
-          "batting_order": 6,
-          "source": "projected_recent_lineup_order",
-          "avg": 0.271,
-          "obp": 0.354,
-          "slg": 0.396,
-          "contact": 0.923,
-          "power": 0.991,
-          "patience": 1.2,
-          "gidp": 1.048,
-          "k_rate": 0.253,
-          "bb_rate": 0.114,
-          "sample_pa": 166,
-          "projected_order_basis": {
-            "recent_order": 6,
-            "recent_position": "CF",
-            "recent_starts": 6,
-            "recent_order_starts": 2
-          }
-        },
-        {
-          "id": 677595,
-          "name": "羅 馬里西",
-          "name_en": "Ronny Mauricio",
-          "pos": "2B",
-          "batting_order": 7,
-          "source": "projected_recent_lineup_order",
-          "avg": 0.2,
-          "obp": 0.2,
-          "slg": 0.3,
-          "contact": 0.72,
-          "power": 0.775,
-          "patience": 0.747,
-          "gidp": 1.2,
-          "k_rate": 0.35,
-          "bb_rate": 0.0,
-          "sample_pa": 40,
-          "projected_order_basis": {
-            "recent_order": 7,
-            "recent_position": "2B",
-            "recent_starts": 2,
-            "recent_order_starts": 2
-          }
-        },
-        {
-          "id": 683146,
-          "name": "布 巴",
-          "name_en": "Brett Baty",
-          "pos": "DH",
-          "batting_order": 8,
-          "source": "projected_recent_lineup_order",
-          "avg": 0.212,
-          "obp": 0.292,
-          "slg": 0.295,
-          "contact": 0.765,
-          "power": 0.764,
-          "patience": 1.041,
-          "gidp": 1.059,
-          "k_rate": 0.283,
-          "bb_rate": 0.092,
-          "sample_pa": 272,
-          "projected_order_basis": {
-            "recent_order": 8,
-            "recent_position": "3B",
-            "recent_starts": 6,
-            "recent_order_starts": 2
-          }
+          "source": "official_lineup",
+          "avg": 0.217,
+          "obp": 0.308,
+          "slg": 0.478,
+          "contact": 0.806,
+          "power": 1.176,
+          "patience": 1.062,
+          "gidp": 1.308,
+          "k_rate": 0.231,
+          "bb_rate": 0.077,
+          "sample_pa": 26
         },
         {
           "id": 682626,
           "name": "夫爾阿恩克伊斯克歐 阿雷",
           "name_en": "Francisco Alvarez",
-          "pos": "C",
-          "batting_order": 9,
-          "source": "projected_recent_lineup_order",
+          "pos": "DH",
+          "batting_order": 5,
+          "source": "official_lineup",
           "avg": 0.25,
           "obp": 0.317,
           "slg": 0.423,
@@ -5294,13 +4688,79 @@
           "gidp": 1.35,
           "k_rate": 0.25,
           "bb_rate": 0.08,
-          "sample_pa": 188,
-          "projected_order_basis": {
-            "recent_order": 9,
-            "recent_position": "C",
-            "recent_starts": 5,
-            "recent_order_starts": 2
-          }
+          "sample_pa": 188
+        },
+        {
+          "id": 668901,
+          "name": "馬 維",
+          "name_en": "Mark Vientos",
+          "pos": "3B",
+          "batting_order": 6,
+          "source": "official_lineup",
+          "avg": 0.214,
+          "obp": 0.255,
+          "slg": 0.388,
+          "contact": 0.797,
+          "power": 0.973,
+          "patience": 0.914,
+          "gidp": 1.335,
+          "k_rate": 0.234,
+          "bb_rate": 0.046,
+          "sample_pa": 239
+        },
+        {
+          "id": 621438,
+          "name": "內 塔羅",
+          "name_en": "Tyrone Taylor",
+          "pos": "CF",
+          "batting_order": 7,
+          "source": "official_lineup",
+          "avg": 0.186,
+          "obp": 0.21,
+          "slg": 0.32,
+          "contact": 0.758,
+          "power": 0.82,
+          "patience": 0.798,
+          "gidp": 1.0,
+          "k_rate": 0.183,
+          "bb_rate": 0.029,
+          "sample_pa": 104
+        },
+        {
+          "id": 683146,
+          "name": "布 巴",
+          "name_en": "Brett Baty",
+          "pos": "2B",
+          "batting_order": 8,
+          "source": "official_lineup",
+          "avg": 0.212,
+          "obp": 0.292,
+          "slg": 0.295,
+          "contact": 0.765,
+          "power": 0.764,
+          "patience": 1.041,
+          "gidp": 1.059,
+          "k_rate": 0.283,
+          "bb_rate": 0.092,
+          "sample_pa": 272
+        },
+        {
+          "id": 620443,
+          "name": "路易斯 托",
+          "name_en": "Luis Torrens",
+          "pos": "C",
+          "batting_order": 9,
+          "source": "official_lineup",
+          "avg": 0.213,
+          "obp": 0.267,
+          "slg": 0.301,
+          "contact": 0.801,
+          "power": 0.778,
+          "patience": 0.935,
+          "gidp": 1.054,
+          "k_rate": 0.223,
+          "bb_rate": 0.041,
+          "sample_pa": 148
         }
       ]
     },
@@ -6753,7 +6213,7 @@
     {
       "date": "2026-06-28",
       "game_pk": "824422",
-      "status": "Scheduled",
+      "status": "Pre-Game",
       "away": "西雅圖水手",
       "home": "克里夫蘭守護者",
       "away_pitcher": "艾梅 哈",
