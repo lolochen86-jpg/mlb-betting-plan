@@ -33,6 +33,7 @@ DOCS_DIR = ROOT / "docs"
 DAILY_PLAN_JSON = DATA_DIR / "daily_predictions_{date}.json"
 DAILY_PLAN_CSV = DATA_DIR / "daily_predictions_{date}.csv"
 DAILY_PLAN_HTML = DOCS_DIR / "daily_predictions.html"
+MONTE_CARLO_JSON = DATA_DIR / "monte_carlo_{date}.json"
 TW_TZ = ZoneInfo("Asia/Taipei")
 
 
@@ -134,6 +135,49 @@ def pick_from_probability(home_zh: str, away_zh: str, prob_home: float) -> dict:
     return {"side": "away", "team_zh": away_zh, "confidence": 1 - prob_home}
 
 
+def load_score_predictions(target_date: str) -> dict[str, dict]:
+    path = Path(str(MONTE_CARLO_JSON).format(date=target_date))
+    if not path.exists():
+        return {}
+    try:
+        payload = json.loads(path.read_text(encoding="utf-8-sig"))
+    except json.JSONDecodeError:
+        return {}
+    rows = payload.get("games", [])
+    return {str(row.get("game_pk", "")): row for row in rows if str(row.get("game_pk", ""))}
+
+
+def merge_score_predictions(rows: list[dict], target_date: str) -> None:
+    scores = load_score_predictions(target_date)
+    for row in rows:
+        score = scores.get(str(row.get("game_pk", "")))
+        if not score:
+            row.update(
+                {
+                    "predicted_away_score": None,
+                    "predicted_home_score": None,
+                    "predicted_total": None,
+                    "score_prediction_zh": "-",
+                    "total_prediction_zh": "-",
+                    "monte_carlo_pick_zh": "-",
+                }
+            )
+            continue
+        away_score = score.get("avg_away_score")
+        home_score = score.get("avg_home_score")
+        total = score.get("avg_total")
+        row.update(
+            {
+                "predicted_away_score": away_score,
+                "predicted_home_score": home_score,
+                "predicted_total": total,
+                "score_prediction_zh": f"{row['away_zh']} {away_score:.2f} : {row['home_zh']} {home_score:.2f}",
+                "total_prediction_zh": f"{total:.2f}",
+                "monte_carlo_pick_zh": score.get("moneyline_pick", "-"),
+            }
+        )
+
+
 def build_daily_plan(target_date: str, games_csv: Path, min_confidence: float) -> dict:
     history = [game for game in load_games(games_csv) if game["date"] < target_date]
     schedule = fetch_schedule(target_date)
@@ -179,6 +223,7 @@ def build_daily_plan(target_date: str, games_csv: Path, min_confidence: float) -
             }
         )
 
+    merge_score_predictions(candidates, target_date)
     candidates.sort(key=lambda row: (row["decision"] == "高信心預測", row["confidence"]), reverse=True)
     recommendations = [row for row in candidates if row["decision"] == "高信心預測"]
     watchlist = [row for row in candidates if row not in recommendations]
@@ -239,6 +284,11 @@ def write_outputs(plan: dict) -> None:
         "confidence",
         "confirmation_pick_zh",
         "confirmation_same_direction",
+        "score_prediction_zh",
+        "predicted_away_score",
+        "predicted_home_score",
+        "predicted_total",
+        "monte_carlo_pick_zh",
         "status",
     ]
     with csv_path.open("w", encoding="utf-8", newline="") as f:
@@ -254,7 +304,7 @@ def write_outputs(plan: dict) -> None:
 
 def render_rows(rows: list[dict]) -> str:
     if not rows:
-        return '<tr><td colspan="7">沒有符合條件的場次</td></tr>'
+        return '<tr><td colspan="9">沒有符合條件的場次</td></tr>'
     parts = []
     for row in rows:
         parts.append(
@@ -265,6 +315,8 @@ def render_rows(rows: list[dict]) -> str:
               <td>{row['matchup_zh']}</td>
               <td>{row['away_probable_pitcher_zh']} / {row['home_probable_pitcher_zh']}</td>
               <td>{row['prediction_zh']}</td>
+              <td>{row.get('score_prediction_zh', '-')}</td>
+              <td>{row.get('total_prediction_zh', '-')}</td>
               <td>{row['confidence'] * 100:.1f}%</td>
               <td>{row['confirmation_pick_zh']}</td>
             </tr>"""
@@ -274,7 +326,7 @@ def render_rows(rows: list[dict]) -> str:
 
 def render_schedule_rows(rows: list[dict]) -> str:
     if not rows:
-        return '<tr><td colspan="9">沒有賽程</td></tr>'
+        return '<tr><td colspan="11">沒有賽程</td></tr>'
     parts = []
     for row in rows:
         parts.append(
@@ -286,6 +338,8 @@ def render_schedule_rows(rows: list[dict]) -> str:
               <td>{row['matchup_zh']}</td>
               <td>{row['away_probable_pitcher_zh']} / {row['home_probable_pitcher_zh']}</td>
               <td>{row['prediction_zh']}</td>
+              <td>{row.get('score_prediction_zh', '-')}</td>
+              <td>{row.get('total_prediction_zh', '-')}</td>
               <td>{row['confidence'] * 100:.1f}%</td>
               <td>{row['confirmation_pick_zh']}</td>
               <td>{row['decision']}</td>
@@ -348,21 +402,22 @@ def render_html(plan: dict) -> str:
       <button class="sort-btn" id="sortTime" type="button">比賽時間</button>
     </div>
     <table>
-      <thead><tr><th>GamePk</th><th>台灣時間</th><th>狀態</th><th>對戰</th><th>先發投手</th><th>模型預測</th><th>信心</th><th>確認模型</th><th>分類</th></tr></thead>
+      <thead><tr><th>GamePk</th><th>台灣時間</th><th>狀態</th><th>對戰</th><th>先發投手</th><th>模型預測</th><th>預測比分</th><th>預測總分</th><th>信心</th><th>確認模型</th><th>分類</th></tr></thead>
       <tbody id="scheduleRows">{schedule_rows_recommendation}</tbody>
     </table>
     <div class="warning">投注單請看 <a href="betting_ticket.html">今日投注單</a>。該頁只列入真實盤口與 edge 條件通過的場次。</div>
     <h2>高信心預測</h2>
     <table>
-      <thead><tr><th>決策</th><th>台灣時間</th><th>對戰</th><th>先發投手</th><th>預測勝方</th><th>信心</th><th>確認模型</th></tr></thead>
+      <thead><tr><th>決策</th><th>台灣時間</th><th>對戰</th><th>先發投手</th><th>預測勝方</th><th>預測比分</th><th>預測總分</th><th>信心</th><th>確認模型</th></tr></thead>
       <tbody>{rec_rows}</tbody>
     </table>
     <h2>一般預測</h2>
     <table>
-      <thead><tr><th>決策</th><th>台灣時間</th><th>對戰</th><th>先發投手</th><th>預測勝方</th><th>信心</th><th>確認模型</th></tr></thead>
+      <thead><tr><th>決策</th><th>台灣時間</th><th>對戰</th><th>先發投手</th><th>預測勝方</th><th>預測比分</th><th>預測總分</th><th>信心</th><th>確認模型</th></tr></thead>
       <tbody>{watch_rows}</tbody>
     </table>
-    <div class="warning">此頁只做勝方預測，不使用盤口、不產生下注金額、不計算 ROI。盤口資料補上後，再進入投注 ROI 層。</div>
+    <div class="warning">比分預測取自蒙地卡羅 10,000 次單場模擬平均值；完整模擬分布請看 <a href="monte_carlo.html">蒙地卡羅模擬</a>。投注單請看 <a href="betting_ticket.html">今日投注單</a>。該頁只列入真實盤口與 edge 條件通過的場次。</div>
+    <div class="warning">之前做的預測驗證：<a href="prediction_log.html">結算紀錄</a> 看每場命中/錯誤；<a href="postgame_review.html">賽後檢討</a> 看每日總結；<a href="winner_model_search.html">模型搜尋</a> 看歷史模型驗證。</div>
   </main>
   <script>
     const SCHEDULE_ROWS = {schedule_payload};

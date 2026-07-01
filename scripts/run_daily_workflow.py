@@ -169,6 +169,7 @@ def main() -> None:
     run_step("產生今天進階因子 v1", [py, "scripts/run_advanced_factors_model.py", "--date", target_date])
     run_step("產生今天逐打席模擬", [py, "scripts/generate_game_simulator.py", "--date", target_date])
     run_step("產生今天蒙地卡羅模擬", [py, "scripts/generate_monte_carlo.py", "--date", target_date, "--simulations", "10000"])
+    run_step("重建今日勝方預測比分欄位", [py, "scripts/generate_daily_plan.py", "--date", target_date])
     run_step("產生賽後檢討", [py, "scripts/generate_postgame_review.py"])
     run_step("重建首頁", [py, "scripts/generate_plan.py"])
     run_step("重建狀態頁", [py, "scripts/generate_status_report.py"])
