@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-01T21:04:51",
+  "generated_at": "2026-07-01T23:13:49",
   "target_date": "2026-07-01",
   "model": "進階因子勝方 v1",
   "settings": {
@@ -15,7 +15,7 @@
   ],
   "summary": {
     "games": 14,
-    "candidates": 9,
+    "candidates": 8,
     "with_taiwan_odds": 14
   },
   "candidates": [
@@ -52,7 +52,7 @@
         "場地天氣代理": 0.001929166666666662
       },
       "decision": "進階模型候選",
-      "status": "Scheduled"
+      "status": "Pre-Game"
     },
     {
       "date": "2026-07-01",
@@ -62,9 +62,9 @@
       "prediction_zh": "德州遊騎兵",
       "pick_side": "away",
       "confidence": 0.6371,
-      "odds": "1.77",
-      "market_implied_prob": 0.565,
-      "edge": 0.0721,
+      "odds": "1.82",
+      "market_implied_prob": 0.5495,
+      "edge": 0.0876,
       "advanced_score_home": -0.3882,
       "advanced_score_away": 0.1745,
       "home_components": {
@@ -87,7 +87,42 @@
         "場地天氣代理": -0.005570833333333334
       },
       "decision": "進階模型候選",
-      "status": "Scheduled"
+      "status": "Pre-Game"
+    },
+    {
+      "date": "2026-07-01",
+      "game_pk": "824660",
+      "sportsbook": "台灣運彩",
+      "matchup_zh": "聖地牙哥教士 @ 芝加哥小熊",
+      "prediction_zh": "芝加哥小熊",
+      "pick_side": "home",
+      "confidence": 0.6745,
+      "odds": "1.60",
+      "market_implied_prob": 0.625,
+      "edge": 0.0495,
+      "advanced_score_home": 0.0522,
+      "advanced_score_away": -0.6765,
+      "home_components": {
+        "打擊率壘包": -0.15620349529184913,
+        "先發投手": -0.2234921736418393,
+        "牛棚深度": 0.018311920010456187,
+        "近期戰績": 0.165,
+        "隊史連勝連敗": 0.14,
+        "對戰組合": 0.017999999999999995,
+        "場地天氣代理": 0.000554166666666669,
+        "主場": 0.09
+      },
+      "away_components": {
+        "打擊率壘包": -0.5136288553139621,
+        "先發投手": 0.1520946204122674,
+        "牛棚深度": -0.1483942219833378,
+        "近期戰績": -0.009166666666666667,
+        "隊史連勝連敗": -0.14,
+        "對戰組合": -0.017999999999999995,
+        "場地天氣代理": 0.000554166666666669
+      },
+      "decision": "進階模型候選",
+      "status": "Pre-Game"
     },
     {
       "date": "2026-07-01",
@@ -97,9 +132,9 @@
       "prediction_zh": "坦帕灣光芒",
       "pick_side": "away",
       "confidence": 0.7,
-      "odds": "1.55",
-      "market_implied_prob": 0.6452,
-      "edge": 0.0548,
+      "odds": "1.50",
+      "market_implied_prob": 0.6667,
+      "edge": 0.0333,
       "advanced_score_home": -0.6941,
       "advanced_score_away": 0.7352,
       "home_components": {
@@ -132,9 +167,9 @@
       "prediction_zh": "多倫多藍鳥",
       "pick_side": "home",
       "confidence": 0.5978,
-      "odds": "1.82",
-      "market_implied_prob": 0.5495,
-      "edge": 0.0483,
+      "odds": "1.77",
+      "market_implied_prob": 0.565,
+      "edge": 0.0328,
       "advanced_score_home": -0.0555,
       "advanced_score_away": -0.4517,
       "home_components": {
@@ -155,41 +190,6 @@
         "隊史連勝連敗": 0.035,
         "對戰組合": 0.054000000000000006,
         "場地天氣代理": -0.001945833333333331
-      },
-      "decision": "進階模型候選",
-      "status": "Scheduled"
-    },
-    {
-      "date": "2026-07-01",
-      "game_pk": "824660",
-      "sportsbook": "台灣運彩",
-      "matchup_zh": "聖地牙哥教士 @ 芝加哥小熊",
-      "prediction_zh": "芝加哥小熊",
-      "pick_side": "home",
-      "confidence": 0.6745,
-      "odds": "1.58",
-      "market_implied_prob": 0.6329,
-      "edge": 0.0416,
-      "advanced_score_home": 0.0522,
-      "advanced_score_away": -0.6765,
-      "home_components": {
-        "打擊率壘包": -0.15620349529184913,
-        "先發投手": -0.2234921736418393,
-        "牛棚深度": 0.018311920010456187,
-        "近期戰績": 0.165,
-        "隊史連勝連敗": 0.14,
-        "對戰組合": 0.017999999999999995,
-        "場地天氣代理": 0.000554166666666669,
-        "主場": 0.09
-      },
-      "away_components": {
-        "打擊率壘包": -0.5136288553139621,
-        "先發投手": 0.1520946204122674,
-        "牛棚深度": -0.1483942219833378,
-        "近期戰績": -0.009166666666666667,
-        "隊史連勝連敗": -0.14,
-        "對戰組合": -0.017999999999999995,
-        "場地天氣代理": 0.000554166666666669
       },
       "decision": "進階模型候選",
       "status": "Scheduled"
@@ -225,41 +225,6 @@
         "隊史連勝連敗": -0.035,
         "對戰組合": -0.017999999999999995,
         "場地天氣代理": 0.002429166666666669
-      },
-      "decision": "進階模型候選",
-      "status": "Scheduled"
-    },
-    {
-      "date": "2026-07-01",
-      "game_pk": "824818",
-      "sportsbook": "台灣運彩",
-      "matchup_zh": "芝加哥白襪 @ 巴爾的摩金鶯",
-      "prediction_zh": "芝加哥白襪",
-      "pick_side": "away",
-      "confidence": 0.5179,
-      "odds": "1.97",
-      "market_implied_prob": 0.5076,
-      "edge": 0.0103,
-      "advanced_score_home": -0.5755,
-      "advanced_score_away": -0.504,
-      "home_components": {
-        "打擊率壘包": -0.32554515206484,
-        "先發投手": 0.0,
-        "牛棚深度": -0.23476006224066379,
-        "近期戰績": -0.02291666666666667,
-        "隊史連勝連敗": -0.14,
-        "對戰組合": 0.054000000000000006,
-        "場地天氣代理": 0.003679166666666669,
-        "主場": 0.09
-      },
-      "away_components": {
-        "打擊率壘包": -0.21213395239774702,
-        "先發投手": -0.46973961826496136,
-        "牛棚深度": 0.006935743079817279,
-        "近期戰績": 0.15125,
-        "隊史連勝連敗": 0.07,
-        "對戰組合": -0.054,
-        "場地天氣代理": 0.003679166666666669
       },
       "decision": "進階模型候選",
       "status": "Scheduled"
@@ -369,7 +334,7 @@
         "場地天氣代理": 0.001929166666666662
       },
       "decision": "進階模型候選",
-      "status": "Scheduled"
+      "status": "Pre-Game"
     },
     {
       "date": "2026-07-01",
@@ -379,9 +344,9 @@
       "prediction_zh": "德州遊騎兵",
       "pick_side": "away",
       "confidence": 0.6371,
-      "odds": "1.77",
-      "market_implied_prob": 0.565,
-      "edge": 0.0721,
+      "odds": "1.82",
+      "market_implied_prob": 0.5495,
+      "edge": 0.0876,
       "advanced_score_home": -0.3882,
       "advanced_score_away": 0.1745,
       "home_components": {
@@ -404,7 +369,42 @@
         "場地天氣代理": -0.005570833333333334
       },
       "decision": "進階模型候選",
-      "status": "Scheduled"
+      "status": "Pre-Game"
+    },
+    {
+      "date": "2026-07-01",
+      "game_pk": "824660",
+      "sportsbook": "台灣運彩",
+      "matchup_zh": "聖地牙哥教士 @ 芝加哥小熊",
+      "prediction_zh": "芝加哥小熊",
+      "pick_side": "home",
+      "confidence": 0.6745,
+      "odds": "1.60",
+      "market_implied_prob": 0.625,
+      "edge": 0.0495,
+      "advanced_score_home": 0.0522,
+      "advanced_score_away": -0.6765,
+      "home_components": {
+        "打擊率壘包": -0.15620349529184913,
+        "先發投手": -0.2234921736418393,
+        "牛棚深度": 0.018311920010456187,
+        "近期戰績": 0.165,
+        "隊史連勝連敗": 0.14,
+        "對戰組合": 0.017999999999999995,
+        "場地天氣代理": 0.000554166666666669,
+        "主場": 0.09
+      },
+      "away_components": {
+        "打擊率壘包": -0.5136288553139621,
+        "先發投手": 0.1520946204122674,
+        "牛棚深度": -0.1483942219833378,
+        "近期戰績": -0.009166666666666667,
+        "隊史連勝連敗": -0.14,
+        "對戰組合": -0.017999999999999995,
+        "場地天氣代理": 0.000554166666666669
+      },
+      "decision": "進階模型候選",
+      "status": "Pre-Game"
     },
     {
       "date": "2026-07-01",
@@ -414,9 +414,9 @@
       "prediction_zh": "坦帕灣光芒",
       "pick_side": "away",
       "confidence": 0.7,
-      "odds": "1.55",
-      "market_implied_prob": 0.6452,
-      "edge": 0.0548,
+      "odds": "1.50",
+      "market_implied_prob": 0.6667,
+      "edge": 0.0333,
       "advanced_score_home": -0.6941,
       "advanced_score_away": 0.7352,
       "home_components": {
@@ -449,9 +449,9 @@
       "prediction_zh": "多倫多藍鳥",
       "pick_side": "home",
       "confidence": 0.5978,
-      "odds": "1.82",
-      "market_implied_prob": 0.5495,
-      "edge": 0.0483,
+      "odds": "1.77",
+      "market_implied_prob": 0.565,
+      "edge": 0.0328,
       "advanced_score_home": -0.0555,
       "advanced_score_away": -0.4517,
       "home_components": {
@@ -472,41 +472,6 @@
         "隊史連勝連敗": 0.035,
         "對戰組合": 0.054000000000000006,
         "場地天氣代理": -0.001945833333333331
-      },
-      "decision": "進階模型候選",
-      "status": "Scheduled"
-    },
-    {
-      "date": "2026-07-01",
-      "game_pk": "824660",
-      "sportsbook": "台灣運彩",
-      "matchup_zh": "聖地牙哥教士 @ 芝加哥小熊",
-      "prediction_zh": "芝加哥小熊",
-      "pick_side": "home",
-      "confidence": 0.6745,
-      "odds": "1.58",
-      "market_implied_prob": 0.6329,
-      "edge": 0.0416,
-      "advanced_score_home": 0.0522,
-      "advanced_score_away": -0.6765,
-      "home_components": {
-        "打擊率壘包": -0.15620349529184913,
-        "先發投手": -0.2234921736418393,
-        "牛棚深度": 0.018311920010456187,
-        "近期戰績": 0.165,
-        "隊史連勝連敗": 0.14,
-        "對戰組合": 0.017999999999999995,
-        "場地天氣代理": 0.000554166666666669,
-        "主場": 0.09
-      },
-      "away_components": {
-        "打擊率壘包": -0.5136288553139621,
-        "先發投手": 0.1520946204122674,
-        "牛棚深度": -0.1483942219833378,
-        "近期戰績": -0.009166666666666667,
-        "隊史連勝連敗": -0.14,
-        "對戰組合": -0.017999999999999995,
-        "場地天氣代理": 0.000554166666666669
       },
       "decision": "進階模型候選",
       "status": "Scheduled"
@@ -542,41 +507,6 @@
         "隊史連勝連敗": -0.035,
         "對戰組合": -0.017999999999999995,
         "場地天氣代理": 0.002429166666666669
-      },
-      "decision": "進階模型候選",
-      "status": "Scheduled"
-    },
-    {
-      "date": "2026-07-01",
-      "game_pk": "824818",
-      "sportsbook": "台灣運彩",
-      "matchup_zh": "芝加哥白襪 @ 巴爾的摩金鶯",
-      "prediction_zh": "芝加哥白襪",
-      "pick_side": "away",
-      "confidence": 0.5179,
-      "odds": "1.97",
-      "market_implied_prob": 0.5076,
-      "edge": 0.0103,
-      "advanced_score_home": -0.5755,
-      "advanced_score_away": -0.504,
-      "home_components": {
-        "打擊率壘包": -0.32554515206484,
-        "先發投手": 0.0,
-        "牛棚深度": -0.23476006224066379,
-        "近期戰績": -0.02291666666666667,
-        "隊史連勝連敗": -0.14,
-        "對戰組合": 0.054000000000000006,
-        "場地天氣代理": 0.003679166666666669,
-        "主場": 0.09
-      },
-      "away_components": {
-        "打擊率壘包": -0.21213395239774702,
-        "先發投手": -0.46973961826496136,
-        "牛棚深度": 0.006935743079817279,
-        "近期戰績": 0.15125,
-        "隊史連勝連敗": 0.07,
-        "對戰組合": -0.054,
-        "場地天氣代理": 0.003679166666666669
       },
       "decision": "進階模型候選",
       "status": "Scheduled"
@@ -659,9 +589,9 @@
       "prediction_zh": "舊金山巨人",
       "pick_side": "away",
       "confidence": 0.5319,
-      "odds": "1.82",
-      "market_implied_prob": 0.5495,
-      "edge": -0.0176,
+      "odds": "1.88",
+      "market_implied_prob": 0.5319,
+      "edge": -0.0,
       "advanced_score_home": -0.7224,
       "advanced_score_away": -0.5947,
       "home_components": {
@@ -719,7 +649,7 @@
         "場地天氣代理": -0.007445833333333334
       },
       "decision": "不推薦",
-      "status": "Scheduled"
+      "status": "Pre-Game"
     },
     {
       "date": "2026-07-01",
@@ -793,15 +723,50 @@
     },
     {
       "date": "2026-07-01",
+      "game_pk": "824818",
+      "sportsbook": "台灣運彩",
+      "matchup_zh": "芝加哥白襪 @ 巴爾的摩金鶯",
+      "prediction_zh": "巴爾的摩金鶯",
+      "pick_side": "home",
+      "confidence": 0.5547,
+      "odds": "1.58",
+      "market_implied_prob": 0.6329,
+      "edge": -0.0782,
+      "advanced_score_home": -0.2842,
+      "advanced_score_away": -0.504,
+      "home_components": {
+        "打擊率壘包": -0.32554515206484,
+        "先發投手": 0.291392513368984,
+        "牛棚深度": -0.23476006224066379,
+        "近期戰績": -0.02291666666666667,
+        "隊史連勝連敗": -0.14,
+        "對戰組合": 0.054000000000000006,
+        "場地天氣代理": 0.003679166666666669,
+        "主場": 0.09
+      },
+      "away_components": {
+        "打擊率壘包": -0.21213395239774702,
+        "先發投手": -0.46973961826496136,
+        "牛棚深度": 0.006935743079817279,
+        "近期戰績": 0.15125,
+        "隊史連勝連敗": 0.07,
+        "對戰組合": -0.054,
+        "場地天氣代理": 0.003679166666666669
+      },
+      "decision": "不推薦",
+      "status": "Pre-Game"
+    },
+    {
+      "date": "2026-07-01",
       "game_pk": "823446",
       "sportsbook": "台灣運彩",
       "matchup_zh": "匹茲堡海盜 @ 費城費城人",
       "prediction_zh": "費城費城人",
       "pick_side": "home",
       "confidence": 0.5744,
-      "odds": "1.55",
-      "market_implied_prob": 0.6452,
-      "edge": -0.0708,
+      "odds": "1.52",
+      "market_implied_prob": 0.6579,
+      "edge": -0.0835,
       "advanced_score_home": 0.6651,
       "advanced_score_away": 0.3655,
       "home_components": {
