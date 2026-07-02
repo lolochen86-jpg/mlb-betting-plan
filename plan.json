@@ -1,0 +1,2527 @@
+{
+  "generated_at": "2026-07-03T00:08:06",
+  "period": {
+    "start": "2025-03-27",
+    "end": "2026-07-01"
+  },
+  "settings": {
+    "unit": 100,
+    "odds": -110,
+    "max_bets_per_day": 5,
+    "min_confidence": 0.55,
+    "min_edge": 0.03
+  },
+  "data_source": {
+    "type": "real_mlb_final_scores",
+    "games_csv": "data\\real_mlb_games.csv",
+    "games_evaluated": 3728,
+    "actual_first_game_date": "2025-03-27",
+    "actual_last_game_date": "2026-07-01",
+    "game_types": [
+      "R"
+    ],
+    "coverage_warning": null,
+    "generated_at": "2026-07-02T17:27:09",
+    "note": "Backtest uses real MLB final scores from saved MLB Stats API schedule data. Odds are still the configured fixed market assumption."
+  },
+  "bankroll_assumption": 10000,
+  "production_model": "A-畢氏勝率",
+  "confirmation_model": "E-對照組(Ensemble)",
+  "ranking": [
+    {
+      "模型": "A-畢氏勝率",
+      "總注": 1124,
+      "勝": 667,
+      "敗": 457,
+      "勝率%": 59.34,
+      "總損益$": 14936.97,
+      "ROI%": 13.29
+    },
+    {
+      "模型": "E-對照組(Ensemble)",
+      "總注": 1301,
+      "勝": 763,
+      "敗": 538,
+      "勝率%": 58.65,
+      "總損益$": 15564.33,
+      "ROI%": 11.96
+    },
+    {
+      "模型": "C-ELO評分",
+      "總注": 1331,
+      "勝": 777,
+      "敗": 554,
+      "勝率%": 58.38,
+      "總損益$": 15237.07,
+      "ROI%": 11.45
+    },
+    {
+      "模型": "B-近期狀態",
+      "總注": 1346,
+      "勝": 756,
+      "敗": 590,
+      "勝率%": 56.17,
+      "總損益$": 9727.96,
+      "ROI%": 7.23
+    },
+    {
+      "模型": "D-近期失分代理",
+      "總注": 1331,
+      "勝": 736,
+      "敗": 595,
+      "勝率%": 55.3,
+      "總損益$": 7409.76,
+      "ROI%": 5.57
+    }
+  ],
+  "accuracy_ranking": [
+    {
+      "模型": "A-畢氏勝率",
+      "預測場次": 3649,
+      "正確": 1977,
+      "錯誤": 1672,
+      "準確率%": 54.18
+    },
+    {
+      "模型": "C-ELO評分",
+      "預測場次": 3728,
+      "正確": 2001,
+      "錯誤": 1727,
+      "準確率%": 53.67
+    },
+    {
+      "模型": "B-近期狀態",
+      "預測場次": 3649,
+      "正確": 1952,
+      "錯誤": 1697,
+      "準確率%": 53.49
+    },
+    {
+      "模型": "E-對照組(Ensemble)",
+      "預測場次": 3728,
+      "正確": 1990,
+      "錯誤": 1738,
+      "準確率%": 53.38
+    },
+    {
+      "模型": "D-近期失分代理",
+      "預測場次": 3649,
+      "正確": 1908,
+      "錯誤": 1741,
+      "準確率%": 52.29
+    }
+  ],
+  "accuracy_source": {
+    "type": "real_mlb_final_scores",
+    "games_csv": "data\\real_mlb_games.csv",
+    "games_evaluated": 3728,
+    "note": "Pure winner-prediction accuracy only. Odds, edge, stake, and ROI are intentionally excluded."
+  },
+  "accuracy_metrics": {
+    "predictions": 3649,
+    "correct": 1977,
+    "wrong": 1672,
+    "accuracy_pct": 54.18
+  },
+  "production_metrics": {
+    "total_bets": 1124,
+    "wins": 667,
+    "losses": 457,
+    "win_rate_pct": 59.34,
+    "total_pnl": 14936.97,
+    "roi_pct": 13.29,
+    "active_days": 272,
+    "winning_days": 159,
+    "losing_days": 113,
+    "positive_day_rate_pct": 58.46,
+    "max_drawdown": -1354.51,
+    "last_14_active_day_pnl": 645.48,
+    "last_record_date": "2026-07-01"
+  },
+  "recent_bets": [
+    {
+      "date": "2026-07-01",
+      "matchup_zh": "匹茲堡海盜 @ 費城費城人",
+      "pitchers_zh": "保羅 史基恩斯 / 札 惠勒",
+      "pick_zh": "費城費城人",
+      "score": "6-10",
+      "confidence": 0.5553,
+      "edge": 0.0315,
+      "result": "win"
+    },
+    {
+      "date": "2026-07-01",
+      "matchup_zh": "洛杉磯道奇 @ 運動家",
+      "pitchers_zh": "傑 特 吉",
+      "pick_zh": "洛杉磯道奇",
+      "score": "1-7",
+      "confidence": 0.5629,
+      "edge": 0.0391,
+      "result": "loss"
+    },
+    {
+      "date": "2026-07-01",
+      "matchup_zh": "辛辛那提紅人 @ 密爾瓦基釀酒人",
+      "pitchers_zh": "安德魯 阿 / 謝恩 哈",
+      "pick_zh": "密爾瓦基釀酒人",
+      "score": "2-4",
+      "confidence": 0.5806,
+      "edge": 0.0568,
+      "result": "win"
+    },
+    {
+      "date": "2026-07-01",
+      "matchup_zh": "邁阿密馬林魚 @ 科羅拉多洛磯",
+      "pitchers_zh": "麥斯 梅 / 凱爾 拉",
+      "pick_zh": "邁阿密馬林魚",
+      "score": "3-6",
+      "confidence": 0.5808,
+      "edge": 0.057,
+      "result": "loss"
+    },
+    {
+      "date": "2026-07-01",
+      "matchup_zh": "華盛頓國民 @ 波士頓紅襪",
+      "pitchers_zh": "布 羅 / 帕托 托",
+      "pick_zh": "波士頓紅襪",
+      "score": "10-2",
+      "confidence": 0.5827,
+      "edge": 0.0589,
+      "result": "loss"
+    },
+    {
+      "date": "2026-06-30",
+      "matchup_zh": "洛杉磯道奇 @ 運動家",
+      "pitchers_zh": "賈斯汀 沃爾歐布爾伊斯克伊 / 傑 斯普爾伊恩格斯",
+      "pick_zh": "洛杉磯道奇",
+      "score": "9-3",
+      "confidence": 0.5612,
+      "edge": 0.0373,
+      "result": "win"
+    },
+    {
+      "date": "2026-06-30",
+      "matchup_zh": "邁阿密馬林魚 @ 科羅拉多洛磯",
+      "pitchers_zh": "艾 佩雷 / 坦納 戈",
+      "pick_zh": "邁阿密馬林魚",
+      "score": "14-3",
+      "confidence": 0.5765,
+      "edge": 0.0527,
+      "result": "win"
+    },
+    {
+      "date": "2026-06-30",
+      "matchup_zh": "辛辛那提紅人 @ 密爾瓦基釀酒人",
+      "pitchers_zh": "爾赫伊特特 羅 / 布蘭登 斯普爾歐阿特",
+      "pick_zh": "密爾瓦基釀酒人",
+      "score": "2-7",
+      "confidence": 0.579,
+      "edge": 0.0552,
+      "result": "win"
+    },
+    {
+      "date": "2026-06-30",
+      "matchup_zh": "洛杉磯天使 @ 西雅圖水手",
+      "pitchers_zh": "荷西 索里諾 / 布萊恩 沃歐歐",
+      "pick_zh": "西雅圖水手",
+      "score": "3-8",
+      "confidence": 0.5796,
+      "edge": 0.0558,
+      "result": "win"
+    },
+    {
+      "date": "2026-06-30",
+      "matchup_zh": "華盛頓國民 @ 波士頓紅襪",
+      "pitchers_zh": "卡德 卡瓦 / 柯 艾",
+      "pick_zh": "波士頓紅襪",
+      "score": "8-1",
+      "confidence": 0.5858,
+      "edge": 0.062,
+      "result": "loss"
+    },
+    {
+      "date": "2026-06-29",
+      "matchup_zh": "洛杉磯道奇 @ 運動家",
+      "pitchers_zh": "艾里 拉 / 加傑 傑優姆普",
+      "pick_zh": "洛杉磯道奇",
+      "score": "9-4",
+      "confidence": 0.5598,
+      "edge": 0.036,
+      "result": "win"
+    },
+    {
+      "date": "2026-06-29",
+      "matchup_zh": "邁阿密馬林魚 @ 科羅拉多洛磯",
+      "pitchers_zh": "桑迪 阿爾坎塔拉 / 西恩 瓦",
+      "pick_zh": "邁阿密馬林魚",
+      "score": "10-7",
+      "confidence": 0.5759,
+      "edge": 0.0521,
+      "result": "win"
+    }
+  ],
+  "money_rules": [
+    "每注固定 100，單日最多 5 注，單日曝險上限 500。",
+    "只採用 A-畢氏勝率 作為主模型；E-對照組(Ensemble) 可作為方向確認，不另外加倍。",
+    "任一日達到 -2U 即停止追加下注；連續三個活躍日虧損時，隔日降為 2 注上限。",
+    "當主模型信心值低於 0.55 或沒有正優勢時，不為了湊場次下注。",
+    "回測是模型篩選依據，不代表未來保證獲利；實戰必須記錄盤口、時間與實際成交賠率。"
+  ],
+  "daily_workflow": [
+    "賽前取得當日賽程、先發投手、近期戰績與盤口。",
+    "第一層只做勝方預測，先追蹤模型準確率與信心值。",
+    "若確認模型與主模型方向相反，該場標記為一般預測，不進入高信心名單。",
+    "等真實盤口與成交賠率補齊後，再啟用投注金額、PnL 與 ROI 計算。",
+    "每日結束先更新預測正確率；盤口層完成後再更新投注績效。"
+  ],
+  "equity_curve": [
+    {
+      "date": "2025-03-27",
+      "bets": 0,
+      "wins": 0,
+      "losses": 0,
+      "pnl": 0.0,
+      "cumulative_pnl": 0.0
+    },
+    {
+      "date": "2025-03-28",
+      "bets": 0,
+      "wins": 0,
+      "losses": 0,
+      "pnl": 0.0,
+      "cumulative_pnl": 0.0
+    },
+    {
+      "date": "2025-03-29",
+      "bets": 0,
+      "wins": 0,
+      "losses": 0,
+      "pnl": 0.0,
+      "cumulative_pnl": 0.0
+    },
+    {
+      "date": "2025-03-30",
+      "bets": 0,
+      "wins": 0,
+      "losses": 0,
+      "pnl": 0.0,
+      "cumulative_pnl": 0.0
+    },
+    {
+      "date": "2025-03-31",
+      "bets": 0,
+      "wins": 0,
+      "losses": 0,
+      "pnl": 0.0,
+      "cumulative_pnl": 0.0
+    },
+    {
+      "date": "2025-04-01",
+      "bets": 1,
+      "wins": 1,
+      "losses": 0,
+      "pnl": 90.91,
+      "cumulative_pnl": 90.91
+    },
+    {
+      "date": "2025-04-02",
+      "bets": 5,
+      "wins": 2,
+      "losses": 3,
+      "pnl": -118.18,
+      "cumulative_pnl": -27.27
+    },
+    {
+      "date": "2025-04-03",
+      "bets": 4,
+      "wins": 2,
+      "losses": 2,
+      "pnl": -18.18,
+      "cumulative_pnl": -45.45
+    },
+    {
+      "date": "2025-04-04",
+      "bets": 5,
+      "wins": 2,
+      "losses": 3,
+      "pnl": -118.18,
+      "cumulative_pnl": -163.63
+    },
+    {
+      "date": "2025-04-05",
+      "bets": 5,
+      "wins": 4,
+      "losses": 1,
+      "pnl": 263.64,
+      "cumulative_pnl": 100.01
+    },
+    {
+      "date": "2025-04-06",
+      "bets": 5,
+      "wins": 2,
+      "losses": 3,
+      "pnl": -118.18,
+      "cumulative_pnl": -18.17
+    },
+    {
+      "date": "2025-04-07",
+      "bets": 5,
+      "wins": 2,
+      "losses": 3,
+      "pnl": -118.18,
+      "cumulative_pnl": -136.35
+    },
+    {
+      "date": "2025-04-08",
+      "bets": 5,
+      "wins": 3,
+      "losses": 2,
+      "pnl": 72.73,
+      "cumulative_pnl": -63.62
+    },
+    {
+      "date": "2025-04-09",
+      "bets": 5,
+      "wins": 2,
+      "losses": 3,
+      "pnl": -118.18,
+      "cumulative_pnl": -181.8
+    },
+    {
+      "date": "2025-04-10",
+      "bets": 4,
+      "wins": 1,
+      "losses": 3,
+      "pnl": -209.09,
+      "cumulative_pnl": -390.89
+    },
+    {
+      "date": "2025-04-11",
+      "bets": 5,
+      "wins": 4,
+      "losses": 1,
+      "pnl": 263.64,
+      "cumulative_pnl": -127.25
+    },
+    {
+      "date": "2025-04-12",
+      "bets": 5,
+      "wins": 3,
+      "losses": 2,
+      "pnl": 72.73,
+      "cumulative_pnl": -54.52
+    },
+    {
+      "date": "2025-04-13",
+      "bets": 5,
+      "wins": 4,
+      "losses": 1,
+      "pnl": 263.64,
+      "cumulative_pnl": 209.12
+    },
+    {
+      "date": "2025-04-14",
+      "bets": 5,
+      "wins": 3,
+      "losses": 2,
+      "pnl": 72.73,
+      "cumulative_pnl": 281.85
+    },
+    {
+      "date": "2025-04-15",
+      "bets": 5,
+      "wins": 2,
+      "losses": 3,
+      "pnl": -118.18,
+      "cumulative_pnl": 163.67
+    },
+    {
+      "date": "2025-04-16",
+      "bets": 5,
+      "wins": 2,
+      "losses": 3,
+      "pnl": -118.18,
+      "cumulative_pnl": 45.49
+    },
+    {
+      "date": "2025-04-17",
+      "bets": 5,
+      "wins": 3,
+      "losses": 2,
+      "pnl": 72.73,
+      "cumulative_pnl": 118.22
+    },
+    {
+      "date": "2025-04-18",
+      "bets": 5,
+      "wins": 3,
+      "losses": 2,
+      "pnl": 72.73,
+      "cumulative_pnl": 190.95
+    },
+    {
+      "date": "2025-04-19",
+      "bets": 5,
+      "wins": 5,
+      "losses": 0,
+      "pnl": 454.55,
+      "cumulative_pnl": 645.5
+    },
+    {
+      "date": "2025-04-20",
+      "bets": 5,
+      "wins": 1,
+      "losses": 4,
+      "pnl": -309.09,
+      "cumulative_pnl": 336.41
+    },
+    {
+      "date": "2025-04-21",
+      "bets": 4,
+      "wins": 3,
+      "losses": 1,
+      "pnl": 172.73,
+      "cumulative_pnl": 509.14
+    },
+    {
+      "date": "2025-04-22",
+      "bets": 5,
+      "wins": 3,
+      "losses": 2,
+      "pnl": 72.73,
+      "cumulative_pnl": 581.87
+    },
+    {
+      "date": "2025-04-23",
+      "bets": 5,
+      "wins": 5,
+      "losses": 0,
+      "pnl": 454.55,
+      "cumulative_pnl": 1036.42
+    },
+    {
+      "date": "2025-04-24",
+      "bets": 4,
+      "wins": 2,
+      "losses": 2,
+      "pnl": -18.18,
+      "cumulative_pnl": 1018.24
+    },
+    {
+      "date": "2025-04-25",
+      "bets": 5,
+      "wins": 2,
+      "losses": 3,
+      "pnl": -118.18,
+      "cumulative_pnl": 900.06
+    },
+    {
+      "date": "2025-04-26",
+      "bets": 5,
+      "wins": 4,
+      "losses": 1,
+      "pnl": 263.64,
+      "cumulative_pnl": 1163.7
+    },
+    {
+      "date": "2025-04-27",
+      "bets": 5,
+      "wins": 5,
+      "losses": 0,
+      "pnl": 454.55,
+      "cumulative_pnl": 1618.25
+    },
+    {
+      "date": "2025-04-28",
+      "bets": 5,
+      "wins": 4,
+      "losses": 1,
+      "pnl": 263.64,
+      "cumulative_pnl": 1881.89
+    },
+    {
+      "date": "2025-04-29",
+      "bets": 5,
+      "wins": 5,
+      "losses": 0,
+      "pnl": 454.55,
+      "cumulative_pnl": 2336.44
+    },
+    {
+      "date": "2025-04-30",
+      "bets": 5,
+      "wins": 2,
+      "losses": 3,
+      "pnl": -118.18,
+      "cumulative_pnl": 2218.26
+    },
+    {
+      "date": "2025-05-01",
+      "bets": 5,
+      "wins": 2,
+      "losses": 3,
+      "pnl": -118.18,
+      "cumulative_pnl": 2100.08
+    },
+    {
+      "date": "2025-05-02",
+      "bets": 5,
+      "wins": 5,
+      "losses": 0,
+      "pnl": 454.55,
+      "cumulative_pnl": 2554.63
+    },
+    {
+      "date": "2025-05-03",
+      "bets": 5,
+      "wins": 2,
+      "losses": 3,
+      "pnl": -118.18,
+      "cumulative_pnl": 2436.45
+    },
+    {
+      "date": "2025-05-04",
+      "bets": 5,
+      "wins": 3,
+      "losses": 2,
+      "pnl": 72.73,
+      "cumulative_pnl": 2509.18
+    },
+    {
+      "date": "2025-05-05",
+      "bets": 3,
+      "wins": 3,
+      "losses": 0,
+      "pnl": 272.73,
+      "cumulative_pnl": 2781.91
+    },
+    {
+      "date": "2025-05-06",
+      "bets": 5,
+      "wins": 3,
+      "losses": 2,
+      "pnl": 72.73,
+      "cumulative_pnl": 2854.64
+    },
+    {
+      "date": "2025-05-07",
+      "bets": 5,
+      "wins": 5,
+      "losses": 0,
+      "pnl": 454.55,
+      "cumulative_pnl": 3309.19
+    },
+    {
+      "date": "2025-05-08",
+      "bets": 5,
+      "wins": 5,
+      "losses": 0,
+      "pnl": 454.55,
+      "cumulative_pnl": 3763.74
+    },
+    {
+      "date": "2025-05-09",
+      "bets": 5,
+      "wins": 3,
+      "losses": 2,
+      "pnl": 72.73,
+      "cumulative_pnl": 3836.47
+    },
+    {
+      "date": "2025-05-10",
+      "bets": 5,
+      "wins": 2,
+      "losses": 3,
+      "pnl": -118.18,
+      "cumulative_pnl": 3718.29
+    },
+    {
+      "date": "2025-05-11",
+      "bets": 5,
+      "wins": 1,
+      "losses": 4,
+      "pnl": -309.09,
+      "cumulative_pnl": 3409.2
+    },
+    {
+      "date": "2025-05-12",
+      "bets": 5,
+      "wins": 4,
+      "losses": 1,
+      "pnl": 263.64,
+      "cumulative_pnl": 3672.84
+    },
+    {
+      "date": "2025-05-13",
+      "bets": 5,
+      "wins": 4,
+      "losses": 1,
+      "pnl": 263.64,
+      "cumulative_pnl": 3936.48
+    },
+    {
+      "date": "2025-05-14",
+      "bets": 5,
+      "wins": 3,
+      "losses": 2,
+      "pnl": 72.73,
+      "cumulative_pnl": 4009.21
+    },
+    {
+      "date": "2025-05-15",
+      "bets": 4,
+      "wins": 4,
+      "losses": 0,
+      "pnl": 363.64,
+      "cumulative_pnl": 4372.85
+    },
+    {
+      "date": "2025-05-16",
+      "bets": 5,
+      "wins": 4,
+      "losses": 1,
+      "pnl": 263.64,
+      "cumulative_pnl": 4636.49
+    },
+    {
+      "date": "2025-05-17",
+      "bets": 5,
+      "wins": 3,
+      "losses": 2,
+      "pnl": 72.73,
+      "cumulative_pnl": 4709.22
+    },
+    {
+      "date": "2025-05-18",
+      "bets": 5,
+      "wins": 4,
+      "losses": 1,
+      "pnl": 263.64,
+      "cumulative_pnl": 4972.86
+    },
+    {
+      "date": "2025-05-19",
+      "bets": 5,
+      "wins": 4,
+      "losses": 1,
+      "pnl": 263.64,
+      "cumulative_pnl": 5236.5
+    },
+    {
+      "date": "2025-05-20",
+      "bets": 5,
+      "wins": 4,
+      "losses": 1,
+      "pnl": 263.64,
+      "cumulative_pnl": 5500.14
+    },
+    {
+      "date": "2025-05-21",
+      "bets": 5,
+      "wins": 3,
+      "losses": 2,
+      "pnl": 72.73,
+      "cumulative_pnl": 5572.87
+    },
+    {
+      "date": "2025-05-22",
+      "bets": 4,
+      "wins": 3,
+      "losses": 1,
+      "pnl": 172.73,
+      "cumulative_pnl": 5745.6
+    },
+    {
+      "date": "2025-05-23",
+      "bets": 5,
+      "wins": 2,
+      "losses": 3,
+      "pnl": -118.18,
+      "cumulative_pnl": 5627.42
+    },
+    {
+      "date": "2025-05-24",
+      "bets": 5,
+      "wins": 3,
+      "losses": 2,
+      "pnl": 72.73,
+      "cumulative_pnl": 5700.15
+    },
+    {
+      "date": "2025-05-25",
+      "bets": 5,
+      "wins": 3,
+      "losses": 2,
+      "pnl": 72.73,
+      "cumulative_pnl": 5772.88
+    },
+    {
+      "date": "2025-05-26",
+      "bets": 5,
+      "wins": 4,
+      "losses": 1,
+      "pnl": 263.64,
+      "cumulative_pnl": 6036.52
+    },
+    {
+      "date": "2025-05-27",
+      "bets": 5,
+      "wins": 4,
+      "losses": 1,
+      "pnl": 263.64,
+      "cumulative_pnl": 6300.16
+    },
+    {
+      "date": "2025-05-28",
+      "bets": 5,
+      "wins": 3,
+      "losses": 2,
+      "pnl": 72.73,
+      "cumulative_pnl": 6372.89
+    },
+    {
+      "date": "2025-05-29",
+      "bets": 2,
+      "wins": 1,
+      "losses": 1,
+      "pnl": -9.09,
+      "cumulative_pnl": 6363.8
+    },
+    {
+      "date": "2025-05-30",
+      "bets": 5,
+      "wins": 4,
+      "losses": 1,
+      "pnl": 263.64,
+      "cumulative_pnl": 6627.44
+    },
+    {
+      "date": "2025-05-31",
+      "bets": 5,
+      "wins": 3,
+      "losses": 2,
+      "pnl": 72.73,
+      "cumulative_pnl": 6700.17
+    },
+    {
+      "date": "2025-06-01",
+      "bets": 5,
+      "wins": 5,
+      "losses": 0,
+      "pnl": 454.55,
+      "cumulative_pnl": 7154.72
+    },
+    {
+      "date": "2025-06-02",
+      "bets": 4,
+      "wins": 2,
+      "losses": 2,
+      "pnl": -18.18,
+      "cumulative_pnl": 7136.54
+    },
+    {
+      "date": "2025-06-03",
+      "bets": 5,
+      "wins": 2,
+      "losses": 3,
+      "pnl": -118.18,
+      "cumulative_pnl": 7018.36
+    },
+    {
+      "date": "2025-06-04",
+      "bets": 5,
+      "wins": 2,
+      "losses": 3,
+      "pnl": -118.18,
+      "cumulative_pnl": 6900.18
+    },
+    {
+      "date": "2025-06-05",
+      "bets": 5,
+      "wins": 2,
+      "losses": 3,
+      "pnl": -118.18,
+      "cumulative_pnl": 6782.0
+    },
+    {
+      "date": "2025-06-06",
+      "bets": 4,
+      "wins": 3,
+      "losses": 1,
+      "pnl": 172.73,
+      "cumulative_pnl": 6954.73
+    },
+    {
+      "date": "2025-06-07",
+      "bets": 4,
+      "wins": 1,
+      "losses": 3,
+      "pnl": -209.09,
+      "cumulative_pnl": 6745.64
+    },
+    {
+      "date": "2025-06-08",
+      "bets": 5,
+      "wins": 3,
+      "losses": 2,
+      "pnl": 72.73,
+      "cumulative_pnl": 6818.37
+    },
+    {
+      "date": "2025-06-09",
+      "bets": 1,
+      "wins": 1,
+      "losses": 0,
+      "pnl": 90.91,
+      "cumulative_pnl": 6909.28
+    },
+    {
+      "date": "2025-06-10",
+      "bets": 5,
+      "wins": 4,
+      "losses": 1,
+      "pnl": 263.64,
+      "cumulative_pnl": 7172.92
+    },
+    {
+      "date": "2025-06-11",
+      "bets": 5,
+      "wins": 4,
+      "losses": 1,
+      "pnl": 263.64,
+      "cumulative_pnl": 7436.56
+    },
+    {
+      "date": "2025-06-12",
+      "bets": 5,
+      "wins": 4,
+      "losses": 1,
+      "pnl": 263.64,
+      "cumulative_pnl": 7700.2
+    },
+    {
+      "date": "2025-06-13",
+      "bets": 5,
+      "wins": 3,
+      "losses": 2,
+      "pnl": 72.73,
+      "cumulative_pnl": 7772.93
+    },
+    {
+      "date": "2025-06-14",
+      "bets": 5,
+      "wins": 3,
+      "losses": 2,
+      "pnl": 72.73,
+      "cumulative_pnl": 7845.66
+    },
+    {
+      "date": "2025-06-15",
+      "bets": 4,
+      "wins": 2,
+      "losses": 2,
+      "pnl": -18.18,
+      "cumulative_pnl": 7827.48
+    },
+    {
+      "date": "2025-06-16",
+      "bets": 5,
+      "wins": 2,
+      "losses": 3,
+      "pnl": -118.18,
+      "cumulative_pnl": 7709.3
+    },
+    {
+      "date": "2025-06-17",
+      "bets": 5,
+      "wins": 2,
+      "losses": 3,
+      "pnl": -118.18,
+      "cumulative_pnl": 7591.12
+    },
+    {
+      "date": "2025-06-18",
+      "bets": 5,
+      "wins": 2,
+      "losses": 3,
+      "pnl": -118.18,
+      "cumulative_pnl": 7472.94
+    },
+    {
+      "date": "2025-06-19",
+      "bets": 5,
+      "wins": 3,
+      "losses": 2,
+      "pnl": 72.73,
+      "cumulative_pnl": 7545.67
+    },
+    {
+      "date": "2025-06-20",
+      "bets": 5,
+      "wins": 2,
+      "losses": 3,
+      "pnl": -118.18,
+      "cumulative_pnl": 7427.49
+    },
+    {
+      "date": "2025-06-21",
+      "bets": 5,
+      "wins": 4,
+      "losses": 1,
+      "pnl": 263.64,
+      "cumulative_pnl": 7691.13
+    },
+    {
+      "date": "2025-06-22",
+      "bets": 5,
+      "wins": 2,
+      "losses": 3,
+      "pnl": -118.18,
+      "cumulative_pnl": 7572.95
+    },
+    {
+      "date": "2025-06-23",
+      "bets": 3,
+      "wins": 0,
+      "losses": 3,
+      "pnl": -300.0,
+      "cumulative_pnl": 7272.95
+    },
+    {
+      "date": "2025-06-24",
+      "bets": 5,
+      "wins": 4,
+      "losses": 1,
+      "pnl": 263.64,
+      "cumulative_pnl": 7536.59
+    },
+    {
+      "date": "2025-06-25",
+      "bets": 5,
+      "wins": 3,
+      "losses": 2,
+      "pnl": 72.73,
+      "cumulative_pnl": 7609.32
+    },
+    {
+      "date": "2025-06-26",
+      "bets": 3,
+      "wins": 2,
+      "losses": 1,
+      "pnl": 81.82,
+      "cumulative_pnl": 7691.14
+    },
+    {
+      "date": "2025-06-27",
+      "bets": 5,
+      "wins": 2,
+      "losses": 3,
+      "pnl": -118.18,
+      "cumulative_pnl": 7572.96
+    },
+    {
+      "date": "2025-06-28",
+      "bets": 5,
+      "wins": 2,
+      "losses": 3,
+      "pnl": -118.18,
+      "cumulative_pnl": 7454.78
+    },
+    {
+      "date": "2025-06-29",
+      "bets": 5,
+      "wins": 2,
+      "losses": 3,
+      "pnl": -118.18,
+      "cumulative_pnl": 7336.6
+    },
+    {
+      "date": "2025-06-30",
+      "bets": 3,
+      "wins": 1,
+      "losses": 2,
+      "pnl": -109.09,
+      "cumulative_pnl": 7227.51
+    },
+    {
+      "date": "2025-07-01",
+      "bets": 5,
+      "wins": 4,
+      "losses": 1,
+      "pnl": 263.64,
+      "cumulative_pnl": 7491.15
+    },
+    {
+      "date": "2025-07-02",
+      "bets": 5,
+      "wins": 5,
+      "losses": 0,
+      "pnl": 454.55,
+      "cumulative_pnl": 7945.7
+    },
+    {
+      "date": "2025-07-03",
+      "bets": 5,
+      "wins": 2,
+      "losses": 3,
+      "pnl": -118.18,
+      "cumulative_pnl": 7827.52
+    },
+    {
+      "date": "2025-07-04",
+      "bets": 5,
+      "wins": 3,
+      "losses": 2,
+      "pnl": 72.73,
+      "cumulative_pnl": 7900.25
+    },
+    {
+      "date": "2025-07-05",
+      "bets": 5,
+      "wins": 3,
+      "losses": 2,
+      "pnl": 72.73,
+      "cumulative_pnl": 7972.98
+    },
+    {
+      "date": "2025-07-06",
+      "bets": 5,
+      "wins": 3,
+      "losses": 2,
+      "pnl": 72.73,
+      "cumulative_pnl": 8045.71
+    },
+    {
+      "date": "2025-07-07",
+      "bets": 3,
+      "wins": 1,
+      "losses": 2,
+      "pnl": -109.09,
+      "cumulative_pnl": 7936.62
+    },
+    {
+      "date": "2025-07-08",
+      "bets": 5,
+      "wins": 2,
+      "losses": 3,
+      "pnl": -118.18,
+      "cumulative_pnl": 7818.44
+    },
+    {
+      "date": "2025-07-09",
+      "bets": 5,
+      "wins": 3,
+      "losses": 2,
+      "pnl": 72.73,
+      "cumulative_pnl": 7891.17
+    },
+    {
+      "date": "2025-07-10",
+      "bets": 5,
+      "wins": 3,
+      "losses": 2,
+      "pnl": 72.73,
+      "cumulative_pnl": 7963.9
+    },
+    {
+      "date": "2025-07-11",
+      "bets": 4,
+      "wins": 2,
+      "losses": 2,
+      "pnl": -18.18,
+      "cumulative_pnl": 7945.72
+    },
+    {
+      "date": "2025-07-12",
+      "bets": 4,
+      "wins": 2,
+      "losses": 2,
+      "pnl": -18.18,
+      "cumulative_pnl": 7927.54
+    },
+    {
+      "date": "2025-07-13",
+      "bets": 4,
+      "wins": 2,
+      "losses": 2,
+      "pnl": -18.18,
+      "cumulative_pnl": 7909.36
+    },
+    {
+      "date": "2025-07-18",
+      "bets": 4,
+      "wins": 2,
+      "losses": 2,
+      "pnl": -18.18,
+      "cumulative_pnl": 7891.18
+    },
+    {
+      "date": "2025-07-19",
+      "bets": 4,
+      "wins": 2,
+      "losses": 2,
+      "pnl": -18.18,
+      "cumulative_pnl": 7873.0
+    },
+    {
+      "date": "2025-07-20",
+      "bets": 5,
+      "wins": 2,
+      "losses": 3,
+      "pnl": -118.18,
+      "cumulative_pnl": 7754.82
+    },
+    {
+      "date": "2025-07-21",
+      "bets": 5,
+      "wins": 3,
+      "losses": 2,
+      "pnl": 72.73,
+      "cumulative_pnl": 7827.55
+    },
+    {
+      "date": "2025-07-22",
+      "bets": 5,
+      "wins": 4,
+      "losses": 1,
+      "pnl": 263.64,
+      "cumulative_pnl": 8091.19
+    },
+    {
+      "date": "2025-07-23",
+      "bets": 5,
+      "wins": 2,
+      "losses": 3,
+      "pnl": -118.18,
+      "cumulative_pnl": 7973.01
+    },
+    {
+      "date": "2025-07-24",
+      "bets": 2,
+      "wins": 0,
+      "losses": 2,
+      "pnl": -200.0,
+      "cumulative_pnl": 7773.01
+    },
+    {
+      "date": "2025-07-25",
+      "bets": 5,
+      "wins": 1,
+      "losses": 4,
+      "pnl": -309.09,
+      "cumulative_pnl": 7463.92
+    },
+    {
+      "date": "2025-07-26",
+      "bets": 5,
+      "wins": 2,
+      "losses": 3,
+      "pnl": -118.18,
+      "cumulative_pnl": 7345.74
+    },
+    {
+      "date": "2025-07-27",
+      "bets": 5,
+      "wins": 3,
+      "losses": 2,
+      "pnl": 72.73,
+      "cumulative_pnl": 7418.47
+    },
+    {
+      "date": "2025-07-28",
+      "bets": 4,
+      "wins": 0,
+      "losses": 4,
+      "pnl": -400.0,
+      "cumulative_pnl": 7018.47
+    },
+    {
+      "date": "2025-07-29",
+      "bets": 3,
+      "wins": 2,
+      "losses": 1,
+      "pnl": 81.82,
+      "cumulative_pnl": 7100.29
+    },
+    {
+      "date": "2025-07-30",
+      "bets": 4,
+      "wins": 3,
+      "losses": 1,
+      "pnl": 172.73,
+      "cumulative_pnl": 7273.02
+    },
+    {
+      "date": "2025-07-31",
+      "bets": 0,
+      "wins": 0,
+      "losses": 0,
+      "pnl": 0.0,
+      "cumulative_pnl": 7273.02
+    },
+    {
+      "date": "2025-08-01",
+      "bets": 3,
+      "wins": 2,
+      "losses": 1,
+      "pnl": 81.82,
+      "cumulative_pnl": 7354.84
+    },
+    {
+      "date": "2025-08-02",
+      "bets": 3,
+      "wins": 1,
+      "losses": 2,
+      "pnl": -109.09,
+      "cumulative_pnl": 7245.75
+    },
+    {
+      "date": "2025-08-03",
+      "bets": 3,
+      "wins": 3,
+      "losses": 0,
+      "pnl": 272.73,
+      "cumulative_pnl": 7518.48
+    },
+    {
+      "date": "2025-08-04",
+      "bets": 4,
+      "wins": 4,
+      "losses": 0,
+      "pnl": 363.64,
+      "cumulative_pnl": 7882.12
+    },
+    {
+      "date": "2025-08-05",
+      "bets": 5,
+      "wins": 4,
+      "losses": 1,
+      "pnl": 263.64,
+      "cumulative_pnl": 8145.76
+    },
+    {
+      "date": "2025-08-06",
+      "bets": 5,
+      "wins": 2,
+      "losses": 3,
+      "pnl": -118.18,
+      "cumulative_pnl": 8027.58
+    },
+    {
+      "date": "2025-08-07",
+      "bets": 1,
+      "wins": 1,
+      "losses": 0,
+      "pnl": 90.91,
+      "cumulative_pnl": 8118.49
+    },
+    {
+      "date": "2025-08-08",
+      "bets": 4,
+      "wins": 4,
+      "losses": 0,
+      "pnl": 363.64,
+      "cumulative_pnl": 8482.13
+    },
+    {
+      "date": "2025-08-09",
+      "bets": 4,
+      "wins": 2,
+      "losses": 2,
+      "pnl": -18.18,
+      "cumulative_pnl": 8463.95
+    },
+    {
+      "date": "2025-08-10",
+      "bets": 4,
+      "wins": 3,
+      "losses": 1,
+      "pnl": 172.73,
+      "cumulative_pnl": 8636.68
+    },
+    {
+      "date": "2025-08-11",
+      "bets": 4,
+      "wins": 4,
+      "losses": 0,
+      "pnl": 363.64,
+      "cumulative_pnl": 9000.32
+    },
+    {
+      "date": "2025-08-12",
+      "bets": 4,
+      "wins": 3,
+      "losses": 1,
+      "pnl": 172.73,
+      "cumulative_pnl": 9173.05
+    },
+    {
+      "date": "2025-08-13",
+      "bets": 4,
+      "wins": 1,
+      "losses": 3,
+      "pnl": -209.09,
+      "cumulative_pnl": 8963.96
+    },
+    {
+      "date": "2025-08-14",
+      "bets": 2,
+      "wins": 1,
+      "losses": 1,
+      "pnl": -9.09,
+      "cumulative_pnl": 8954.87
+    },
+    {
+      "date": "2025-08-15",
+      "bets": 5,
+      "wins": 2,
+      "losses": 3,
+      "pnl": -118.18,
+      "cumulative_pnl": 8836.69
+    },
+    {
+      "date": "2025-08-16",
+      "bets": 5,
+      "wins": 3,
+      "losses": 2,
+      "pnl": 72.73,
+      "cumulative_pnl": 8909.42
+    },
+    {
+      "date": "2025-08-17",
+      "bets": 5,
+      "wins": 2,
+      "losses": 3,
+      "pnl": -118.18,
+      "cumulative_pnl": 8791.24
+    },
+    {
+      "date": "2025-08-18",
+      "bets": 3,
+      "wins": 0,
+      "losses": 3,
+      "pnl": -300.0,
+      "cumulative_pnl": 8491.24
+    },
+    {
+      "date": "2025-08-19",
+      "bets": 3,
+      "wins": 2,
+      "losses": 1,
+      "pnl": 81.82,
+      "cumulative_pnl": 8573.06
+    },
+    {
+      "date": "2025-08-20",
+      "bets": 2,
+      "wins": 0,
+      "losses": 2,
+      "pnl": -200.0,
+      "cumulative_pnl": 8373.06
+    },
+    {
+      "date": "2025-08-21",
+      "bets": 2,
+      "wins": 1,
+      "losses": 1,
+      "pnl": -9.09,
+      "cumulative_pnl": 8363.97
+    },
+    {
+      "date": "2025-08-22",
+      "bets": 5,
+      "wins": 4,
+      "losses": 1,
+      "pnl": 263.64,
+      "cumulative_pnl": 8627.61
+    },
+    {
+      "date": "2025-08-23",
+      "bets": 5,
+      "wins": 3,
+      "losses": 2,
+      "pnl": 72.73,
+      "cumulative_pnl": 8700.34
+    },
+    {
+      "date": "2025-08-24",
+      "bets": 5,
+      "wins": 4,
+      "losses": 1,
+      "pnl": 263.64,
+      "cumulative_pnl": 8963.98
+    },
+    {
+      "date": "2025-08-25",
+      "bets": 4,
+      "wins": 3,
+      "losses": 1,
+      "pnl": 172.73,
+      "cumulative_pnl": 9136.71
+    },
+    {
+      "date": "2025-08-26",
+      "bets": 5,
+      "wins": 3,
+      "losses": 2,
+      "pnl": 72.73,
+      "cumulative_pnl": 9209.44
+    },
+    {
+      "date": "2025-08-27",
+      "bets": 5,
+      "wins": 4,
+      "losses": 1,
+      "pnl": 263.64,
+      "cumulative_pnl": 9473.08
+    },
+    {
+      "date": "2025-08-28",
+      "bets": 3,
+      "wins": 1,
+      "losses": 2,
+      "pnl": -109.09,
+      "cumulative_pnl": 9363.99
+    },
+    {
+      "date": "2025-08-29",
+      "bets": 5,
+      "wins": 4,
+      "losses": 1,
+      "pnl": 263.64,
+      "cumulative_pnl": 9627.63
+    },
+    {
+      "date": "2025-08-30",
+      "bets": 5,
+      "wins": 2,
+      "losses": 3,
+      "pnl": -118.18,
+      "cumulative_pnl": 9509.45
+    },
+    {
+      "date": "2025-08-31",
+      "bets": 5,
+      "wins": 2,
+      "losses": 3,
+      "pnl": -118.18,
+      "cumulative_pnl": 9391.27
+    },
+    {
+      "date": "2025-09-01",
+      "bets": 5,
+      "wins": 4,
+      "losses": 1,
+      "pnl": 263.64,
+      "cumulative_pnl": 9654.91
+    },
+    {
+      "date": "2025-09-02",
+      "bets": 5,
+      "wins": 3,
+      "losses": 2,
+      "pnl": 72.73,
+      "cumulative_pnl": 9727.64
+    },
+    {
+      "date": "2025-09-03",
+      "bets": 5,
+      "wins": 1,
+      "losses": 4,
+      "pnl": -309.09,
+      "cumulative_pnl": 9418.55
+    },
+    {
+      "date": "2025-09-04",
+      "bets": 2,
+      "wins": 2,
+      "losses": 0,
+      "pnl": 181.82,
+      "cumulative_pnl": 9600.37
+    },
+    {
+      "date": "2025-09-05",
+      "bets": 5,
+      "wins": 2,
+      "losses": 3,
+      "pnl": -118.18,
+      "cumulative_pnl": 9482.19
+    },
+    {
+      "date": "2025-09-06",
+      "bets": 5,
+      "wins": 3,
+      "losses": 2,
+      "pnl": 72.73,
+      "cumulative_pnl": 9554.92
+    },
+    {
+      "date": "2025-09-07",
+      "bets": 5,
+      "wins": 2,
+      "losses": 3,
+      "pnl": -118.18,
+      "cumulative_pnl": 9436.74
+    },
+    {
+      "date": "2025-09-08",
+      "bets": 1,
+      "wins": 1,
+      "losses": 0,
+      "pnl": 90.91,
+      "cumulative_pnl": 9527.65
+    },
+    {
+      "date": "2025-09-09",
+      "bets": 1,
+      "wins": 1,
+      "losses": 0,
+      "pnl": 90.91,
+      "cumulative_pnl": 9618.56
+    },
+    {
+      "date": "2025-09-10",
+      "bets": 1,
+      "wins": 1,
+      "losses": 0,
+      "pnl": 90.91,
+      "cumulative_pnl": 9709.47
+    },
+    {
+      "date": "2025-09-11",
+      "bets": 2,
+      "wins": 2,
+      "losses": 0,
+      "pnl": 181.82,
+      "cumulative_pnl": 9891.29
+    },
+    {
+      "date": "2025-09-12",
+      "bets": 5,
+      "wins": 4,
+      "losses": 1,
+      "pnl": 263.64,
+      "cumulative_pnl": 10154.93
+    },
+    {
+      "date": "2025-09-13",
+      "bets": 5,
+      "wins": 5,
+      "losses": 0,
+      "pnl": 454.55,
+      "cumulative_pnl": 10609.48
+    },
+    {
+      "date": "2025-09-14",
+      "bets": 5,
+      "wins": 3,
+      "losses": 2,
+      "pnl": 72.73,
+      "cumulative_pnl": 10682.21
+    },
+    {
+      "date": "2025-09-15",
+      "bets": 0,
+      "wins": 0,
+      "losses": 0,
+      "pnl": 0.0,
+      "cumulative_pnl": 10682.21
+    },
+    {
+      "date": "2025-09-16",
+      "bets": 4,
+      "wins": 2,
+      "losses": 2,
+      "pnl": -18.18,
+      "cumulative_pnl": 10664.03
+    },
+    {
+      "date": "2025-09-17",
+      "bets": 5,
+      "wins": 4,
+      "losses": 1,
+      "pnl": 263.64,
+      "cumulative_pnl": 10927.67
+    },
+    {
+      "date": "2025-09-18",
+      "bets": 4,
+      "wins": 2,
+      "losses": 2,
+      "pnl": -18.18,
+      "cumulative_pnl": 10909.49
+    },
+    {
+      "date": "2025-09-19",
+      "bets": 5,
+      "wins": 1,
+      "losses": 4,
+      "pnl": -309.09,
+      "cumulative_pnl": 10600.4
+    },
+    {
+      "date": "2025-09-20",
+      "bets": 3,
+      "wins": 1,
+      "losses": 2,
+      "pnl": -109.09,
+      "cumulative_pnl": 10491.31
+    },
+    {
+      "date": "2025-09-21",
+      "bets": 3,
+      "wins": 0,
+      "losses": 3,
+      "pnl": -300.0,
+      "cumulative_pnl": 10191.31
+    },
+    {
+      "date": "2025-09-22",
+      "bets": 1,
+      "wins": 1,
+      "losses": 0,
+      "pnl": 90.91,
+      "cumulative_pnl": 10282.22
+    },
+    {
+      "date": "2025-09-23",
+      "bets": 5,
+      "wins": 3,
+      "losses": 2,
+      "pnl": 72.73,
+      "cumulative_pnl": 10354.95
+    },
+    {
+      "date": "2025-09-24",
+      "bets": 5,
+      "wins": 4,
+      "losses": 1,
+      "pnl": 263.64,
+      "cumulative_pnl": 10618.59
+    },
+    {
+      "date": "2025-09-25",
+      "bets": 5,
+      "wins": 4,
+      "losses": 1,
+      "pnl": 263.64,
+      "cumulative_pnl": 10882.23
+    },
+    {
+      "date": "2025-09-26",
+      "bets": 5,
+      "wins": 4,
+      "losses": 1,
+      "pnl": 263.64,
+      "cumulative_pnl": 11145.87
+    },
+    {
+      "date": "2025-09-27",
+      "bets": 5,
+      "wins": 3,
+      "losses": 2,
+      "pnl": 72.73,
+      "cumulative_pnl": 11218.6
+    },
+    {
+      "date": "2025-09-28",
+      "bets": 5,
+      "wins": 5,
+      "losses": 0,
+      "pnl": 454.55,
+      "cumulative_pnl": 11673.15
+    },
+    {
+      "date": "2026-03-25",
+      "bets": 0,
+      "wins": 0,
+      "losses": 0,
+      "pnl": 0.0,
+      "cumulative_pnl": 11673.15
+    },
+    {
+      "date": "2026-03-26",
+      "bets": 5,
+      "wins": 3,
+      "losses": 2,
+      "pnl": 72.73,
+      "cumulative_pnl": 11745.88
+    },
+    {
+      "date": "2026-03-27",
+      "bets": 4,
+      "wins": 3,
+      "losses": 1,
+      "pnl": 172.73,
+      "cumulative_pnl": 11918.61
+    },
+    {
+      "date": "2026-03-28",
+      "bets": 5,
+      "wins": 5,
+      "losses": 0,
+      "pnl": 454.55,
+      "cumulative_pnl": 12373.16
+    },
+    {
+      "date": "2026-03-29",
+      "bets": 5,
+      "wins": 4,
+      "losses": 1,
+      "pnl": 263.64,
+      "cumulative_pnl": 12636.8
+    },
+    {
+      "date": "2026-03-30",
+      "bets": 5,
+      "wins": 1,
+      "losses": 4,
+      "pnl": -309.09,
+      "cumulative_pnl": 12327.71
+    },
+    {
+      "date": "2026-03-31",
+      "bets": 5,
+      "wins": 4,
+      "losses": 1,
+      "pnl": 263.64,
+      "cumulative_pnl": 12591.35
+    },
+    {
+      "date": "2026-04-01",
+      "bets": 5,
+      "wins": 3,
+      "losses": 2,
+      "pnl": 72.73,
+      "cumulative_pnl": 12664.08
+    },
+    {
+      "date": "2026-04-02",
+      "bets": 1,
+      "wins": 0,
+      "losses": 1,
+      "pnl": -100.0,
+      "cumulative_pnl": 12564.08
+    },
+    {
+      "date": "2026-04-03",
+      "bets": 5,
+      "wins": 5,
+      "losses": 0,
+      "pnl": 454.55,
+      "cumulative_pnl": 13018.63
+    },
+    {
+      "date": "2026-04-04",
+      "bets": 5,
+      "wins": 4,
+      "losses": 1,
+      "pnl": 263.64,
+      "cumulative_pnl": 13282.27
+    },
+    {
+      "date": "2026-04-05",
+      "bets": 5,
+      "wins": 1,
+      "losses": 4,
+      "pnl": -309.09,
+      "cumulative_pnl": 12973.18
+    },
+    {
+      "date": "2026-04-06",
+      "bets": 1,
+      "wins": 0,
+      "losses": 1,
+      "pnl": -100.0,
+      "cumulative_pnl": 12873.18
+    },
+    {
+      "date": "2026-04-07",
+      "bets": 2,
+      "wins": 1,
+      "losses": 1,
+      "pnl": -9.09,
+      "cumulative_pnl": 12864.09
+    },
+    {
+      "date": "2026-04-08",
+      "bets": 2,
+      "wins": 0,
+      "losses": 2,
+      "pnl": -200.0,
+      "cumulative_pnl": 12664.09
+    },
+    {
+      "date": "2026-04-09",
+      "bets": 3,
+      "wins": 1,
+      "losses": 2,
+      "pnl": -109.09,
+      "cumulative_pnl": 12555.0
+    },
+    {
+      "date": "2026-04-10",
+      "bets": 5,
+      "wins": 1,
+      "losses": 4,
+      "pnl": -309.09,
+      "cumulative_pnl": 12245.91
+    },
+    {
+      "date": "2026-04-11",
+      "bets": 5,
+      "wins": 2,
+      "losses": 3,
+      "pnl": -118.18,
+      "cumulative_pnl": 12127.73
+    },
+    {
+      "date": "2026-04-12",
+      "bets": 5,
+      "wins": 3,
+      "losses": 2,
+      "pnl": 72.73,
+      "cumulative_pnl": 12200.46
+    },
+    {
+      "date": "2026-04-13",
+      "bets": 3,
+      "wins": 2,
+      "losses": 1,
+      "pnl": 81.82,
+      "cumulative_pnl": 12282.28
+    },
+    {
+      "date": "2026-04-14",
+      "bets": 4,
+      "wins": 1,
+      "losses": 3,
+      "pnl": -209.09,
+      "cumulative_pnl": 12073.19
+    },
+    {
+      "date": "2026-04-15",
+      "bets": 3,
+      "wins": 3,
+      "losses": 0,
+      "pnl": 272.73,
+      "cumulative_pnl": 12345.92
+    },
+    {
+      "date": "2026-04-16",
+      "bets": 4,
+      "wins": 1,
+      "losses": 3,
+      "pnl": -209.09,
+      "cumulative_pnl": 12136.83
+    },
+    {
+      "date": "2026-04-17",
+      "bets": 3,
+      "wins": 2,
+      "losses": 1,
+      "pnl": 81.82,
+      "cumulative_pnl": 12218.65
+    },
+    {
+      "date": "2026-04-18",
+      "bets": 3,
+      "wins": 2,
+      "losses": 1,
+      "pnl": 81.82,
+      "cumulative_pnl": 12300.47
+    },
+    {
+      "date": "2026-04-19",
+      "bets": 4,
+      "wins": 2,
+      "losses": 2,
+      "pnl": -18.18,
+      "cumulative_pnl": 12282.29
+    },
+    {
+      "date": "2026-04-20",
+      "bets": 3,
+      "wins": 2,
+      "losses": 1,
+      "pnl": 81.82,
+      "cumulative_pnl": 12364.11
+    },
+    {
+      "date": "2026-04-21",
+      "bets": 5,
+      "wins": 2,
+      "losses": 3,
+      "pnl": -118.18,
+      "cumulative_pnl": 12245.93
+    },
+    {
+      "date": "2026-04-22",
+      "bets": 4,
+      "wins": 2,
+      "losses": 2,
+      "pnl": -18.18,
+      "cumulative_pnl": 12227.75
+    },
+    {
+      "date": "2026-04-23",
+      "bets": 3,
+      "wins": 2,
+      "losses": 1,
+      "pnl": 81.82,
+      "cumulative_pnl": 12309.57
+    },
+    {
+      "date": "2026-04-24",
+      "bets": 4,
+      "wins": 1,
+      "losses": 3,
+      "pnl": -209.09,
+      "cumulative_pnl": 12100.48
+    },
+    {
+      "date": "2026-04-25",
+      "bets": 3,
+      "wins": 2,
+      "losses": 1,
+      "pnl": 81.82,
+      "cumulative_pnl": 12182.3
+    },
+    {
+      "date": "2026-04-26",
+      "bets": 5,
+      "wins": 2,
+      "losses": 3,
+      "pnl": -118.18,
+      "cumulative_pnl": 12064.12
+    },
+    {
+      "date": "2026-04-27",
+      "bets": 1,
+      "wins": 1,
+      "losses": 0,
+      "pnl": 90.91,
+      "cumulative_pnl": 12155.03
+    },
+    {
+      "date": "2026-04-28",
+      "bets": 4,
+      "wins": 3,
+      "losses": 1,
+      "pnl": 172.73,
+      "cumulative_pnl": 12327.76
+    },
+    {
+      "date": "2026-04-29",
+      "bets": 4,
+      "wins": 0,
+      "losses": 4,
+      "pnl": -400.0,
+      "cumulative_pnl": 11927.76
+    },
+    {
+      "date": "2026-04-30",
+      "bets": 3,
+      "wins": 2,
+      "losses": 1,
+      "pnl": 81.82,
+      "cumulative_pnl": 12009.58
+    },
+    {
+      "date": "2026-05-01",
+      "bets": 5,
+      "wins": 4,
+      "losses": 1,
+      "pnl": 263.64,
+      "cumulative_pnl": 12273.22
+    },
+    {
+      "date": "2026-05-02",
+      "bets": 5,
+      "wins": 4,
+      "losses": 1,
+      "pnl": 263.64,
+      "cumulative_pnl": 12536.86
+    },
+    {
+      "date": "2026-05-03",
+      "bets": 5,
+      "wins": 4,
+      "losses": 1,
+      "pnl": 263.64,
+      "cumulative_pnl": 12800.5
+    },
+    {
+      "date": "2026-05-04",
+      "bets": 3,
+      "wins": 3,
+      "losses": 0,
+      "pnl": 272.73,
+      "cumulative_pnl": 13073.23
+    },
+    {
+      "date": "2026-05-05",
+      "bets": 2,
+      "wins": 2,
+      "losses": 0,
+      "pnl": 181.82,
+      "cumulative_pnl": 13255.05
+    },
+    {
+      "date": "2026-05-06",
+      "bets": 3,
+      "wins": 3,
+      "losses": 0,
+      "pnl": 272.73,
+      "cumulative_pnl": 13527.78
+    },
+    {
+      "date": "2026-05-07",
+      "bets": 4,
+      "wins": 1,
+      "losses": 3,
+      "pnl": -209.09,
+      "cumulative_pnl": 13318.69
+    },
+    {
+      "date": "2026-05-08",
+      "bets": 3,
+      "wins": 1,
+      "losses": 2,
+      "pnl": -109.09,
+      "cumulative_pnl": 13209.6
+    },
+    {
+      "date": "2026-05-09",
+      "bets": 3,
+      "wins": 3,
+      "losses": 0,
+      "pnl": 272.73,
+      "cumulative_pnl": 13482.33
+    },
+    {
+      "date": "2026-05-10",
+      "bets": 3,
+      "wins": 2,
+      "losses": 1,
+      "pnl": 81.82,
+      "cumulative_pnl": 13564.15
+    },
+    {
+      "date": "2026-05-11",
+      "bets": 3,
+      "wins": 1,
+      "losses": 2,
+      "pnl": -109.09,
+      "cumulative_pnl": 13455.06
+    },
+    {
+      "date": "2026-05-12",
+      "bets": 5,
+      "wins": 3,
+      "losses": 2,
+      "pnl": 72.73,
+      "cumulative_pnl": 13527.79
+    },
+    {
+      "date": "2026-05-13",
+      "bets": 5,
+      "wins": 2,
+      "losses": 3,
+      "pnl": -118.18,
+      "cumulative_pnl": 13409.61
+    },
+    {
+      "date": "2026-05-14",
+      "bets": 3,
+      "wins": 3,
+      "losses": 0,
+      "pnl": 272.73,
+      "cumulative_pnl": 13682.34
+    },
+    {
+      "date": "2026-05-15",
+      "bets": 4,
+      "wins": 4,
+      "losses": 0,
+      "pnl": 363.64,
+      "cumulative_pnl": 14045.98
+    },
+    {
+      "date": "2026-05-16",
+      "bets": 4,
+      "wins": 2,
+      "losses": 2,
+      "pnl": -18.18,
+      "cumulative_pnl": 14027.8
+    },
+    {
+      "date": "2026-05-17",
+      "bets": 4,
+      "wins": 3,
+      "losses": 1,
+      "pnl": 172.73,
+      "cumulative_pnl": 14200.53
+    },
+    {
+      "date": "2026-05-18",
+      "bets": 3,
+      "wins": 2,
+      "losses": 1,
+      "pnl": 81.82,
+      "cumulative_pnl": 14282.35
+    },
+    {
+      "date": "2026-05-19",
+      "bets": 3,
+      "wins": 2,
+      "losses": 1,
+      "pnl": 81.82,
+      "cumulative_pnl": 14364.17
+    },
+    {
+      "date": "2026-05-20",
+      "bets": 4,
+      "wins": 3,
+      "losses": 1,
+      "pnl": 172.73,
+      "cumulative_pnl": 14536.9
+    },
+    {
+      "date": "2026-05-21",
+      "bets": 1,
+      "wins": 1,
+      "losses": 0,
+      "pnl": 90.91,
+      "cumulative_pnl": 14627.81
+    },
+    {
+      "date": "2026-05-22",
+      "bets": 5,
+      "wins": 1,
+      "losses": 4,
+      "pnl": -309.09,
+      "cumulative_pnl": 14318.72
+    },
+    {
+      "date": "2026-05-23",
+      "bets": 5,
+      "wins": 2,
+      "losses": 3,
+      "pnl": -118.18,
+      "cumulative_pnl": 14200.54
+    },
+    {
+      "date": "2026-05-24",
+      "bets": 5,
+      "wins": 1,
+      "losses": 4,
+      "pnl": -309.09,
+      "cumulative_pnl": 13891.45
+    },
+    {
+      "date": "2026-05-25",
+      "bets": 4,
+      "wins": 2,
+      "losses": 2,
+      "pnl": -18.18,
+      "cumulative_pnl": 13873.27
+    },
+    {
+      "date": "2026-05-26",
+      "bets": 5,
+      "wins": 3,
+      "losses": 2,
+      "pnl": 72.73,
+      "cumulative_pnl": 13946.0
+    },
+    {
+      "date": "2026-05-27",
+      "bets": 5,
+      "wins": 5,
+      "losses": 0,
+      "pnl": 454.55,
+      "cumulative_pnl": 14400.55
+    },
+    {
+      "date": "2026-05-28",
+      "bets": 1,
+      "wins": 0,
+      "losses": 1,
+      "pnl": -100.0,
+      "cumulative_pnl": 14300.55
+    },
+    {
+      "date": "2026-05-29",
+      "bets": 3,
+      "wins": 2,
+      "losses": 1,
+      "pnl": 81.82,
+      "cumulative_pnl": 14382.37
+    },
+    {
+      "date": "2026-05-30",
+      "bets": 3,
+      "wins": 0,
+      "losses": 3,
+      "pnl": -300.0,
+      "cumulative_pnl": 14082.37
+    },
+    {
+      "date": "2026-05-31",
+      "bets": 3,
+      "wins": 3,
+      "losses": 0,
+      "pnl": 272.73,
+      "cumulative_pnl": 14355.1
+    },
+    {
+      "date": "2026-06-01",
+      "bets": 2,
+      "wins": 1,
+      "losses": 1,
+      "pnl": -9.09,
+      "cumulative_pnl": 14346.01
+    },
+    {
+      "date": "2026-06-02",
+      "bets": 5,
+      "wins": 1,
+      "losses": 4,
+      "pnl": -309.09,
+      "cumulative_pnl": 14036.92
+    },
+    {
+      "date": "2026-06-03",
+      "bets": 5,
+      "wins": 2,
+      "losses": 3,
+      "pnl": -118.18,
+      "cumulative_pnl": 13918.74
+    },
+    {
+      "date": "2026-06-04",
+      "bets": 4,
+      "wins": 2,
+      "losses": 2,
+      "pnl": -18.18,
+      "cumulative_pnl": 13900.56
+    },
+    {
+      "date": "2026-06-05",
+      "bets": 5,
+      "wins": 2,
+      "losses": 3,
+      "pnl": -118.18,
+      "cumulative_pnl": 13782.38
+    },
+    {
+      "date": "2026-06-06",
+      "bets": 5,
+      "wins": 3,
+      "losses": 2,
+      "pnl": 72.73,
+      "cumulative_pnl": 13855.11
+    },
+    {
+      "date": "2026-06-07",
+      "bets": 5,
+      "wins": 4,
+      "losses": 1,
+      "pnl": 263.64,
+      "cumulative_pnl": 14118.75
+    },
+    {
+      "date": "2026-06-08",
+      "bets": 2,
+      "wins": 1,
+      "losses": 1,
+      "pnl": -9.09,
+      "cumulative_pnl": 14109.66
+    },
+    {
+      "date": "2026-06-09",
+      "bets": 4,
+      "wins": 1,
+      "losses": 3,
+      "pnl": -209.09,
+      "cumulative_pnl": 13900.57
+    },
+    {
+      "date": "2026-06-10",
+      "bets": 4,
+      "wins": 1,
+      "losses": 3,
+      "pnl": -209.09,
+      "cumulative_pnl": 13691.48
+    },
+    {
+      "date": "2026-06-11",
+      "bets": 2,
+      "wins": 2,
+      "losses": 0,
+      "pnl": 181.82,
+      "cumulative_pnl": 13873.3
+    },
+    {
+      "date": "2026-06-12",
+      "bets": 1,
+      "wins": 1,
+      "losses": 0,
+      "pnl": 90.91,
+      "cumulative_pnl": 13964.21
+    },
+    {
+      "date": "2026-06-13",
+      "bets": 1,
+      "wins": 1,
+      "losses": 0,
+      "pnl": 90.91,
+      "cumulative_pnl": 14055.12
+    },
+    {
+      "date": "2026-06-14",
+      "bets": 1,
+      "wins": 0,
+      "losses": 1,
+      "pnl": -100.0,
+      "cumulative_pnl": 13955.12
+    },
+    {
+      "date": "2026-06-15",
+      "bets": 5,
+      "wins": 4,
+      "losses": 1,
+      "pnl": 263.64,
+      "cumulative_pnl": 14218.76
+    },
+    {
+      "date": "2026-06-16",
+      "bets": 5,
+      "wins": 3,
+      "losses": 2,
+      "pnl": 72.73,
+      "cumulative_pnl": 14291.49
+    },
+    {
+      "date": "2026-06-17",
+      "bets": 5,
+      "wins": 3,
+      "losses": 2,
+      "pnl": 72.73,
+      "cumulative_pnl": 14364.22
+    },
+    {
+      "date": "2026-06-18",
+      "bets": 4,
+      "wins": 1,
+      "losses": 3,
+      "pnl": -209.09,
+      "cumulative_pnl": 14155.13
+    },
+    {
+      "date": "2026-06-19",
+      "bets": 5,
+      "wins": 4,
+      "losses": 1,
+      "pnl": 263.64,
+      "cumulative_pnl": 14418.77
+    },
+    {
+      "date": "2026-06-20",
+      "bets": 5,
+      "wins": 1,
+      "losses": 4,
+      "pnl": -309.09,
+      "cumulative_pnl": 14109.68
+    },
+    {
+      "date": "2026-06-21",
+      "bets": 5,
+      "wins": 3,
+      "losses": 2,
+      "pnl": 72.73,
+      "cumulative_pnl": 14182.41
+    },
+    {
+      "date": "2026-06-22",
+      "bets": 1,
+      "wins": 0,
+      "losses": 1,
+      "pnl": -100.0,
+      "cumulative_pnl": 14082.41
+    },
+    {
+      "date": "2026-06-23",
+      "bets": 2,
+      "wins": 2,
+      "losses": 0,
+      "pnl": 181.82,
+      "cumulative_pnl": 14264.23
+    },
+    {
+      "date": "2026-06-24",
+      "bets": 2,
+      "wins": 1,
+      "losses": 1,
+      "pnl": -9.09,
+      "cumulative_pnl": 14255.14
+    },
+    {
+      "date": "2026-06-25",
+      "bets": 0,
+      "wins": 0,
+      "losses": 0,
+      "pnl": 0.0,
+      "cumulative_pnl": 14255.14
+    },
+    {
+      "date": "2026-06-26",
+      "bets": 1,
+      "wins": 1,
+      "losses": 0,
+      "pnl": 90.91,
+      "cumulative_pnl": 14346.05
+    },
+    {
+      "date": "2026-06-27",
+      "bets": 1,
+      "wins": 0,
+      "losses": 1,
+      "pnl": -100.0,
+      "cumulative_pnl": 14246.05
+    },
+    {
+      "date": "2026-06-28",
+      "bets": 1,
+      "wins": 1,
+      "losses": 0,
+      "pnl": 90.91,
+      "cumulative_pnl": 14336.96
+    },
+    {
+      "date": "2026-06-29",
+      "bets": 5,
+      "wins": 5,
+      "losses": 0,
+      "pnl": 454.55,
+      "cumulative_pnl": 14791.51
+    },
+    {
+      "date": "2026-06-30",
+      "bets": 5,
+      "wins": 4,
+      "losses": 1,
+      "pnl": 263.64,
+      "cumulative_pnl": 15055.15
+    },
+    {
+      "date": "2026-07-01",
+      "bets": 5,
+      "wins": 2,
+      "losses": 3,
+      "pnl": -118.18,
+      "cumulative_pnl": 14936.97
+    }
+  ]
+}

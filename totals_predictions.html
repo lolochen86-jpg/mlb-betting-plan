@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MLB 大小分 v1</title>
+  <style>
+    body { margin: 0; background: #f7f8f6; color: #202421; font-family: "Microsoft JhengHei", "Noto Sans TC", system-ui, sans-serif; }
+    main { max-width: 1180px; margin: 0 auto; padding: 28px; }
+    h1 { margin: 0 0 6px; font-size: 30px; }
+    h2 { margin: 24px 0 12px; font-size: 18px; }
+    .meta, .note { color: #68736d; line-height: 1.6; font-size: 14px; }
+    table { width: 100%; border-collapse: collapse; background: white; border: 1px solid #dfe5df; border-radius: 8px; overflow: hidden; }
+    th, td { text-align: left; border-bottom: 1px solid #dfe5df; padding: 12px 10px; white-space: nowrap; font-size: 14px; }
+    th { color: #68736d; font-size: 12px; }
+    .note { margin-top: 16px; padding: 12px 14px; border: 1px solid #dfe5df; border-radius: 8px; background: white; }
+    @media (max-width: 720px) { main { padding: 18px; } table { display: block; overflow-x: auto; } }
+  
+    /* site navigation */
+    .site-shell { min-height: 100vh; display: grid; grid-template-columns: 220px minmax(0, 1fr); background: inherit; }
+    .site-sidebar { position: sticky; top: 0; align-self: start; height: 100vh; box-sizing: border-box; overflow-y: auto; border-right: 1px solid #dfe5df; background: #ffffff; padding: 22px 14px; z-index: 10; }
+    .site-brand { color: #163b34; font-size: 15px; font-weight: 900; letter-spacing: 0; margin: 0 0 14px; }
+    .site-sidebar nav { display: grid; gap: 6px; }
+    .site-nav-link { display: block; color: #40514b; text-decoration: none; border-radius: 8px; padding: 9px 10px; font-size: 14px; font-weight: 750; line-height: 1.25; }
+    .site-nav-link:hover { background: #eef4f1; color: #123d35; }
+    .site-nav-link.active { background: #165f56; color: #ffffff; }
+    .site-shell > main { width: min(1180px, calc(100% - 56px)); margin-left: auto; margin-right: auto; }
+    @media (max-width: 900px) {
+      .site-shell { display: block; }
+      .site-sidebar { position: static; height: auto; border-right: 0; border-bottom: 1px solid #dfe5df; }
+      .site-sidebar nav { grid-template-columns: repeat(auto-fit, minmax(112px, 1fr)); }
+      .site-shell > main { width: auto; }
+    }
+  </style>
+</head>
+<body>
+  <div class="site-shell" data-site-nav="true">
+    <aside class="site-sidebar">
+      <div class="site-brand">MLB 投注計畫</div>
+      <nav aria-label="主要頁面">
+        <a class="site-nav-link" href="index.html">總覽</a>
+        <a class="site-nav-link" href="daily_predictions.html">今日預測</a>
+        <a class="site-nav-link" href="betting_ticket.html">投注單</a>
+        <a class="site-nav-link active" href="totals_predictions.html">大小分</a>
+        <a class="site-nav-link" href="advanced_factors.html">進階因子</a>
+        <a class="site-nav-link" href="game_simulator.html">逐打席模擬</a>
+        <a class="site-nav-link" href="monte_carlo.html">蒙地卡羅</a>
+        <a class="site-nav-link" href="market_research.html">盤口研究</a>
+        <a class="site-nav-link" href="prediction_log.html">結算紀錄</a>
+        <a class="site-nav-link" href="postgame_review.html">賽後檢討</a>
+        <a class="site-nav-link" href="betting_roi.html">投注 ROI</a>
+        <a class="site-nav-link" href="lineup_fix_comparison.html">修正前後</a>
+        <a class="site-nav-link" href="winner_model_search.html">模型搜尋</a>
+        <a class="site-nav-link" href="prediction_accuracy.html">準確率</a>
+        <a class="site-nav-link" href="status.html">狀態</a>
+      </nav>
+    </aside>
+  <main>
+    <h1>MLB 大小分 v1</h1>
+    <div class="meta">
+      MLB日期：2026-07-03<br />
+      模型：大小分 v1 - 近期/整季得失分混合<br />
+      訓練場數：3730 / 訓練截止：2026-07-02<br />
+      台灣運彩全場大小分盤：2 / 候選：0<br />
+      聯盟平均總分：8.93 / 波動參數：4.57<br />
+      產生時間：2026-07-03T00:00:56
+    </div>
+    <h2>大小分候選</h2>
+    <table>
+      <thead><tr><th>GamePk</th><th>台灣開賽時間</th><th>對戰</th><th>台灣運彩線</th><th>模型總分</th><th>方向</th><th>賠率</th><th>模型機率</th><th>市場隱含</th><th>Edge</th><th>決策</th></tr></thead>
+      <tbody><tr><td colspan="11">目前沒有大小分候選。</td></tr></tbody>
+    </table>
+    <h2>全部大小分預測</h2>
+    <table>
+      <thead><tr><th>GamePk</th><th>台灣開賽時間</th><th>對戰</th><th>台灣運彩線</th><th>模型總分</th><th>方向</th><th>賠率</th><th>模型機率</th><th>市場隱含</th><th>Edge</th><th>決策</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>824417</td>
+          <td>2026-07-04 07:10</td>
+          <td>芝加哥白襪 @ 克里夫蘭守護者</td>
+          <td>8.5</td>
+          <td>8.44</td>
+          <td>小分</td>
+          <td>1.75</td>
+          <td>50.5%</td>
+          <td>57.1%</td>
+          <td>-6.7%</td>
+          <td>不推薦</td>
+        </tr>
+
+        <tr>
+          <td>823933</td>
+          <td>2026-07-04 10:10</td>
+          <td>聖地牙哥教士 @ 洛杉磯道奇</td>
+          <td>9.5</td>
+          <td>9.32</td>
+          <td>小分</td>
+          <td>1.63</td>
+          <td>51.5%</td>
+          <td>61.4%</td>
+          <td>-9.8%</td>
+          <td>不推薦</td>
+        </tr></tbody>
+    </table>
+    <div class="note">大小分 v1 只使用台灣運彩全場總分大小盤，不使用 ESPN 備援；目前是模型驗證層，尚未併入主投注單。</div>
+  </main>
+  </div>
+</body>
+</html>

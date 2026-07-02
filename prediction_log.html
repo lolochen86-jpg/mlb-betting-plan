@@ -1,0 +1,1483 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MLB 實戰預測結算紀錄</title>
+  <style>
+    body { margin: 0; background: #f7f8f6; color: #202421; font-family: "Microsoft JhengHei", "Noto Sans TC", system-ui, sans-serif; }
+    main { max-width: 1180px; margin: 0 auto; padding: 28px; }
+    h1 { margin: 0 0 6px; font-size: 30px; }
+    .meta { color: #68736d; line-height: 1.6; font-size: 14px; margin-bottom: 18px; }
+    table { width: 100%; border-collapse: collapse; background: white; border: 1px solid #dfe5df; border-radius: 8px; overflow: hidden; }
+    th, td { text-align: left; border-bottom: 1px solid #dfe5df; padding: 12px 10px; white-space: nowrap; font-size: 14px; }
+    th { color: #68736d; font-size: 12px; }
+    .note { margin-top: 16px; padding: 12px 14px; border: 1px solid #dfe5df; border-radius: 8px; background: white; color: #68736d; }
+    @media (max-width: 720px) { main { padding: 18px; } table { display: block; overflow-x: auto; } }
+  
+    /* site navigation */
+    .site-shell { min-height: 100vh; display: grid; grid-template-columns: 220px minmax(0, 1fr); background: inherit; }
+    .site-sidebar { position: sticky; top: 0; align-self: start; height: 100vh; box-sizing: border-box; overflow-y: auto; border-right: 1px solid #dfe5df; background: #ffffff; padding: 22px 14px; z-index: 10; }
+    .site-brand { color: #163b34; font-size: 15px; font-weight: 900; letter-spacing: 0; margin: 0 0 14px; }
+    .site-sidebar nav { display: grid; gap: 6px; }
+    .site-nav-link { display: block; color: #40514b; text-decoration: none; border-radius: 8px; padding: 9px 10px; font-size: 14px; font-weight: 750; line-height: 1.25; }
+    .site-nav-link:hover { background: #eef4f1; color: #123d35; }
+    .site-nav-link.active { background: #165f56; color: #ffffff; }
+    .site-shell > main { width: min(1180px, calc(100% - 56px)); margin-left: auto; margin-right: auto; }
+    @media (max-width: 900px) {
+      .site-shell { display: block; }
+      .site-sidebar { position: static; height: auto; border-right: 0; border-bottom: 1px solid #dfe5df; }
+      .site-sidebar nav { grid-template-columns: repeat(auto-fit, minmax(112px, 1fr)); }
+      .site-shell > main { width: auto; }
+    }
+  </style>
+</head>
+<body>
+  <div class="site-shell" data-site-nav="true">
+    <aside class="site-sidebar">
+      <div class="site-brand">MLB 投注計畫</div>
+      <nav aria-label="主要頁面">
+        <a class="site-nav-link" href="index.html">總覽</a>
+        <a class="site-nav-link" href="daily_predictions.html">今日預測</a>
+        <a class="site-nav-link" href="betting_ticket.html">投注單</a>
+        <a class="site-nav-link" href="totals_predictions.html">大小分</a>
+        <a class="site-nav-link" href="advanced_factors.html">進階因子</a>
+        <a class="site-nav-link" href="game_simulator.html">逐打席模擬</a>
+        <a class="site-nav-link" href="monte_carlo.html">蒙地卡羅</a>
+        <a class="site-nav-link" href="market_research.html">盤口研究</a>
+        <a class="site-nav-link active" href="prediction_log.html">結算紀錄</a>
+        <a class="site-nav-link" href="postgame_review.html">賽後檢討</a>
+        <a class="site-nav-link" href="betting_roi.html">投注 ROI</a>
+        <a class="site-nav-link" href="lineup_fix_comparison.html">修正前後</a>
+        <a class="site-nav-link" href="winner_model_search.html">模型搜尋</a>
+        <a class="site-nav-link" href="prediction_accuracy.html">準確率</a>
+        <a class="site-nav-link" href="status.html">狀態</a>
+      </nav>
+    </aside>
+  <main>
+    <h1>MLB 實戰預測結算紀錄</h1>
+    <div class="meta">已完賽：95 / 正確：48 / 準確率：50.53%</div>
+    <table>
+      <thead><tr><th>MLB日期</th><th>台灣開賽時間</th><th>類型</th><th>對戰</th><th>預測勝方</th><th>信心</th><th>比分</th><th>實際勝方</th><th>結果</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>2026-07-03</td>
+          <td>2026-07-04 10:10</td>
+          <td>高信心預測</td>
+          <td>聖地牙哥教士 @ 洛杉磯道奇</td>
+          <td>洛杉磯道奇</td>
+          <td>56.2%</td>
+          <td></td>
+          <td></td>
+          <td>待結算</td>
+        </tr>
+
+        <tr>
+          <td>2026-07-03</td>
+          <td>2026-07-04 10:10</td>
+          <td>一般預測</td>
+          <td>多倫多藍鳥 @ 西雅圖水手</td>
+          <td>西雅圖水手</td>
+          <td>52.8%</td>
+          <td></td>
+          <td></td>
+          <td>待結算</td>
+        </tr>
+
+        <tr>
+          <td>2026-07-03</td>
+          <td>2026-07-04 09:45</td>
+          <td>一般預測</td>
+          <td>密爾瓦基釀酒人 @ 亞利桑那響尾蛇</td>
+          <td>密爾瓦基釀酒人</td>
+          <td>53.9%</td>
+          <td></td>
+          <td></td>
+          <td>待結算</td>
+        </tr>
+
+        <tr>
+          <td>2026-07-03</td>
+          <td>2026-07-04 09:40</td>
+          <td>一般預測</td>
+          <td>邁阿密馬林魚 @ 運動家</td>
+          <td>運動家</td>
+          <td>50.5%</td>
+          <td></td>
+          <td></td>
+          <td>待結算</td>
+        </tr>
+
+        <tr>
+          <td>2026-07-03</td>
+          <td>2026-07-04 09:38</td>
+          <td>一般預測</td>
+          <td>波士頓紅襪 @ 洛杉磯天使</td>
+          <td>波士頓紅襪</td>
+          <td>54.5%</td>
+          <td></td>
+          <td></td>
+          <td>待結算</td>
+        </tr>
+
+        <tr>
+          <td>2026-07-03</td>
+          <td>2026-07-04 08:15</td>
+          <td>一般預測</td>
+          <td>坦帕灣光芒 @ 休士頓太空人</td>
+          <td>休士頓太空人</td>
+          <td>50.1%</td>
+          <td></td>
+          <td></td>
+          <td>待結算</td>
+        </tr>
+
+        <tr>
+          <td>2026-07-03</td>
+          <td>2026-07-04 08:10</td>
+          <td>高信心預測</td>
+          <td>舊金山巨人 @ 科羅拉多洛磯</td>
+          <td>舊金山巨人</td>
+          <td>58.7%</td>
+          <td></td>
+          <td></td>
+          <td>待結算</td>
+        </tr>
+
+        <tr>
+          <td>2026-07-03</td>
+          <td>2026-07-04 07:15</td>
+          <td>一般預測</td>
+          <td>紐約大都會 @ 亞特蘭大勇士</td>
+          <td>亞特蘭大勇士</td>
+          <td>53.5%</td>
+          <td></td>
+          <td></td>
+          <td>待結算</td>
+        </tr>
+
+        <tr>
+          <td>2026-07-03</td>
+          <td>2026-07-04 07:10</td>
+          <td>一般預測</td>
+          <td>巴爾的摩金鶯 @ 辛辛那提紅人</td>
+          <td>辛辛那提紅人</td>
+          <td>54.4%</td>
+          <td></td>
+          <td></td>
+          <td>待結算</td>
+        </tr>
+
+        <tr>
+          <td>2026-07-03</td>
+          <td>2026-07-04 07:10</td>
+          <td>一般預測</td>
+          <td>芝加哥白襪 @ 克里夫蘭守護者</td>
+          <td>克里夫蘭守護者</td>
+          <td>53.2%</td>
+          <td></td>
+          <td></td>
+          <td>待結算</td>
+        </tr>
+
+        <tr>
+          <td>2026-07-03</td>
+          <td>2026-07-04 07:05</td>
+          <td>一般預測</td>
+          <td>明尼蘇達雙城 @ 紐約洋基</td>
+          <td>紐約洋基</td>
+          <td>59.0%</td>
+          <td></td>
+          <td></td>
+          <td>待結算</td>
+        </tr>
+
+        <tr>
+          <td>2026-07-03</td>
+          <td>2026-07-04 06:45</td>
+          <td>一般預測</td>
+          <td>匹茲堡海盜 @ 華盛頓國民</td>
+          <td>匹茲堡海盜</td>
+          <td>50.9%</td>
+          <td></td>
+          <td></td>
+          <td>待結算</td>
+        </tr>
+
+        <tr>
+          <td>2026-07-03</td>
+          <td>2026-07-04 04:05</td>
+          <td>高信心預測</td>
+          <td>聖路易紅雀 @ 芝加哥小熊</td>
+          <td>芝加哥小熊</td>
+          <td>57.6%</td>
+          <td></td>
+          <td></td>
+          <td>待結算</td>
+        </tr>
+
+        <tr>
+          <td>2026-07-02</td>
+          <td>2026-07-03 10:10</td>
+          <td>高信心預測</td>
+          <td>聖地牙哥教士 @ 洛杉磯道奇</td>
+          <td>洛杉磯道奇</td>
+          <td>56.2%</td>
+          <td></td>
+          <td></td>
+          <td>待結算</td>
+        </tr>
+
+        <tr>
+          <td>2026-07-02</td>
+          <td>2026-07-03 09:40</td>
+          <td>高信心預測</td>
+          <td>洛杉磯天使 @ 西雅圖水手</td>
+          <td>西雅圖水手</td>
+          <td>58.1%</td>
+          <td></td>
+          <td></td>
+          <td>待結算</td>
+        </tr>
+
+        <tr>
+          <td>2026-07-02</td>
+          <td>2026-07-03 08:05</td>
+          <td>一般預測</td>
+          <td>底特律老虎 @ 德州遊騎兵</td>
+          <td>德州遊騎兵</td>
+          <td>52.0%</td>
+          <td></td>
+          <td></td>
+          <td>待結算</td>
+        </tr>
+
+        <tr>
+          <td>2026-07-02</td>
+          <td>2026-07-03 07:40</td>
+          <td>一般預測</td>
+          <td>坦帕灣光芒 @ 堪薩斯市皇家</td>
+          <td>坦帕灣光芒</td>
+          <td>50.8%</td>
+          <td></td>
+          <td></td>
+          <td>待結算</td>
+        </tr>
+
+        <tr>
+          <td>2026-07-02</td>
+          <td>2026-07-03 07:15</td>
+          <td>高信心預測</td>
+          <td>聖路易紅雀 @ 亞特蘭大勇士</td>
+          <td>亞特蘭大勇士</td>
+          <td>55.2%</td>
+          <td></td>
+          <td></td>
+          <td>待結算</td>
+        </tr>
+
+        <tr>
+          <td>2026-07-02</td>
+          <td>2026-07-03 06:40</td>
+          <td>一般預測</td>
+          <td>芝加哥白襪 @ 克里夫蘭守護者</td>
+          <td>克里夫蘭守護者</td>
+          <td>53.2%</td>
+          <td></td>
+          <td></td>
+          <td>待結算</td>
+        </tr>
+
+        <tr>
+          <td>2026-07-02</td>
+          <td>2026-07-03 03:10</td>
+          <td>高信心預測</td>
+          <td>邁阿密馬林魚 @ 科羅拉多洛磯</td>
+          <td>邁阿密馬林魚</td>
+          <td>57.9%</td>
+          <td></td>
+          <td></td>
+          <td>待結算</td>
+        </tr>
+
+        <tr>
+          <td>2026-07-02</td>
+          <td>2026-07-03 02:10</td>
+          <td>高信心預測</td>
+          <td>辛辛那提紅人 @ 密爾瓦基釀酒人</td>
+          <td>密爾瓦基釀酒人</td>
+          <td>58.1%</td>
+          <td></td>
+          <td></td>
+          <td>待結算</td>
+        </tr>
+
+        <tr>
+          <td>2026-07-02</td>
+          <td>2026-07-03 00:35</td>
+          <td>高信心預測</td>
+          <td>匹茲堡海盜 @ 費城費城人</td>
+          <td>費城費城人</td>
+          <td>55.7%</td>
+          <td></td>
+          <td></td>
+          <td>待結算</td>
+        </tr>
+
+        <tr>
+          <td>2026-07-01</td>
+          <td>2026-07-02 09:40</td>
+          <td>一般預測</td>
+          <td>舊金山巨人 @ 亞利桑那響尾蛇</td>
+          <td>亞利桑那響尾蛇</td>
+          <td>52.3%</td>
+          <td>6-4</td>
+          <td>舊金山巨人</td>
+          <td>錯誤</td>
+        </tr>
+
+        <tr>
+          <td>2026-07-01</td>
+          <td>2026-07-02 09:40</td>
+          <td>高信心預測</td>
+          <td>洛杉磯道奇 @ 運動家</td>
+          <td>洛杉磯道奇</td>
+          <td>56.3%</td>
+          <td>1-7</td>
+          <td>運動家</td>
+          <td>錯誤</td>
+        </tr>
+
+        <tr>
+          <td>2026-07-01</td>
+          <td>2026-07-02 08:40</td>
+          <td>高信心預測</td>
+          <td>邁阿密馬林魚 @ 科羅拉多洛磯</td>
+          <td>邁阿密馬林魚</td>
+          <td>58.1%</td>
+          <td>3-6</td>
+          <td>科羅拉多洛磯</td>
+          <td>錯誤</td>
+        </tr>
+
+        <tr>
+          <td>2026-07-01</td>
+          <td>2026-07-02 08:10</td>
+          <td>一般預測</td>
+          <td>明尼蘇達雙城 @ 休士頓太空人</td>
+          <td>休士頓太空人</td>
+          <td>54.1%</td>
+          <td>8-3</td>
+          <td>明尼蘇達雙城</td>
+          <td>錯誤</td>
+        </tr>
+
+        <tr>
+          <td>2026-07-01</td>
+          <td>2026-07-02 08:10</td>
+          <td>高信心預測</td>
+          <td>辛辛那提紅人 @ 密爾瓦基釀酒人</td>
+          <td>密爾瓦基釀酒人</td>
+          <td>58.1%</td>
+          <td>2-4</td>
+          <td>密爾瓦基釀酒人</td>
+          <td>正確</td>
+        </tr>
+
+        <tr>
+          <td>2026-07-01</td>
+          <td>2026-07-02 07:40</td>
+          <td>一般預測</td>
+          <td>坦帕灣光芒 @ 堪薩斯市皇家</td>
+          <td>坦帕灣光芒</td>
+          <td>50.7%</td>
+          <td>4-0</td>
+          <td>坦帕灣光芒</td>
+          <td>正確</td>
+        </tr>
+
+        <tr>
+          <td>2026-07-01</td>
+          <td>2026-07-02 07:15</td>
+          <td>高信心預測</td>
+          <td>聖路易紅雀 @ 亞特蘭大勇士</td>
+          <td>亞特蘭大勇士</td>
+          <td>55.0%</td>
+          <td>1-5</td>
+          <td>亞特蘭大勇士</td>
+          <td>正確</td>
+        </tr>
+
+        <tr>
+          <td>2026-07-01</td>
+          <td>2026-07-02 06:40</td>
+          <td>高信心預測</td>
+          <td>匹茲堡海盜 @ 費城費城人</td>
+          <td>費城費城人</td>
+          <td>55.5%</td>
+          <td>6-10</td>
+          <td>費城費城人</td>
+          <td>正確</td>
+        </tr>
+
+        <tr>
+          <td>2026-07-01</td>
+          <td>2026-07-02 03:07</td>
+          <td>一般預測</td>
+          <td>紐約大都會 @ 多倫多藍鳥</td>
+          <td>多倫多藍鳥</td>
+          <td>52.7%</td>
+          <td>3-9</td>
+          <td>多倫多藍鳥</td>
+          <td>正確</td>
+        </tr>
+
+        <tr>
+          <td>2026-07-01</td>
+          <td>2026-07-02 02:20</td>
+          <td>一般預測</td>
+          <td>聖地牙哥教士 @ 芝加哥小熊</td>
+          <td>芝加哥小熊</td>
+          <td>54.2%</td>
+          <td>3-23</td>
+          <td>芝加哥小熊</td>
+          <td>正確</td>
+        </tr>
+
+        <tr>
+          <td>2026-07-01</td>
+          <td>2026-07-02 01:35</td>
+          <td>高信心預測</td>
+          <td>華盛頓國民 @ 波士頓紅襪</td>
+          <td>波士頓紅襪</td>
+          <td>58.3%</td>
+          <td>10-2</td>
+          <td>華盛頓國民</td>
+          <td>錯誤</td>
+        </tr>
+
+        <tr>
+          <td>2026-07-01</td>
+          <td>2026-07-02 01:35</td>
+          <td>一般預測</td>
+          <td>底特律老虎 @ 紐約洋基</td>
+          <td>紐約洋基</td>
+          <td>55.1%</td>
+          <td>6-2</td>
+          <td>底特律老虎</td>
+          <td>錯誤</td>
+        </tr>
+
+        <tr>
+          <td>2026-07-01</td>
+          <td>2026-07-02 01:10</td>
+          <td>一般預測</td>
+          <td>德州遊騎兵 @ 克里夫蘭守護者</td>
+          <td>德州遊騎兵</td>
+          <td>50.1%</td>
+          <td>4-9</td>
+          <td>克里夫蘭守護者</td>
+          <td>錯誤</td>
+        </tr>
+
+        <tr>
+          <td>2026-07-01</td>
+          <td>2026-07-02 00:35</td>
+          <td>一般預測</td>
+          <td>芝加哥白襪 @ 巴爾的摩金鶯</td>
+          <td>巴爾的摩金鶯</td>
+          <td>50.3%</td>
+          <td>1-6</td>
+          <td>巴爾的摩金鶯</td>
+          <td>正確</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-30</td>
+          <td>2026-07-01 09:40</td>
+          <td>一般預測</td>
+          <td>舊金山巨人 @ 亞利桑那響尾蛇</td>
+          <td>亞利桑那響尾蛇</td>
+          <td>52.0%</td>
+          <td>2-8</td>
+          <td>亞利桑那響尾蛇</td>
+          <td>正確</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-30</td>
+          <td>2026-07-01 09:40</td>
+          <td>高信心預測</td>
+          <td>洛杉磯道奇 @ 運動家</td>
+          <td>洛杉磯道奇</td>
+          <td>56.1%</td>
+          <td>9-3</td>
+          <td>洛杉磯道奇</td>
+          <td>正確</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-30</td>
+          <td>2026-07-01 09:40</td>
+          <td>高信心預測</td>
+          <td>洛杉磯天使 @ 西雅圖水手</td>
+          <td>西雅圖水手</td>
+          <td>58.0%</td>
+          <td>3-8</td>
+          <td>西雅圖水手</td>
+          <td>正確</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-30</td>
+          <td>2026-07-01 08:40</td>
+          <td>高信心預測</td>
+          <td>邁阿密馬林魚 @ 科羅拉多洛磯</td>
+          <td>邁阿密馬林魚</td>
+          <td>57.6%</td>
+          <td>14-3</td>
+          <td>邁阿密馬林魚</td>
+          <td>正確</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-30</td>
+          <td>2026-07-01 08:10</td>
+          <td>一般預測</td>
+          <td>明尼蘇達雙城 @ 休士頓太空人</td>
+          <td>休士頓太空人</td>
+          <td>54.1%</td>
+          <td>4-6</td>
+          <td>休士頓太空人</td>
+          <td>正確</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-30</td>
+          <td>2026-07-01 08:05</td>
+          <td>一般預測</td>
+          <td>聖地牙哥教士 @ 芝加哥小熊</td>
+          <td>芝加哥小熊</td>
+          <td>54.1%</td>
+          <td>7-9</td>
+          <td>芝加哥小熊</td>
+          <td>正確</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-30</td>
+          <td>2026-07-01 07:40</td>
+          <td>一般預測</td>
+          <td>坦帕灣光芒 @ 堪薩斯市皇家</td>
+          <td>坦帕灣光芒</td>
+          <td>50.4%</td>
+          <td>10-4</td>
+          <td>坦帕灣光芒</td>
+          <td>正確</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-30</td>
+          <td>2026-07-01 07:40</td>
+          <td>高信心預測</td>
+          <td>辛辛那提紅人 @ 密爾瓦基釀酒人</td>
+          <td>密爾瓦基釀酒人</td>
+          <td>57.9%</td>
+          <td>2-7</td>
+          <td>密爾瓦基釀酒人</td>
+          <td>正確</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-30</td>
+          <td>2026-07-01 07:15</td>
+          <td>高信心預測</td>
+          <td>聖路易紅雀 @ 亞特蘭大勇士</td>
+          <td>亞特蘭大勇士</td>
+          <td>55.1%</td>
+          <td>5-3</td>
+          <td>聖路易紅雀</td>
+          <td>錯誤</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-30</td>
+          <td>2026-07-01 07:10</td>
+          <td>高信心預測</td>
+          <td>華盛頓國民 @ 波士頓紅襪</td>
+          <td>波士頓紅襪</td>
+          <td>58.6%</td>
+          <td>8-1</td>
+          <td>華盛頓國民</td>
+          <td>錯誤</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-30</td>
+          <td>2026-07-01 07:07</td>
+          <td>一般預測</td>
+          <td>紐約大都會 @ 多倫多藍鳥</td>
+          <td>多倫多藍鳥</td>
+          <td>52.8%</td>
+          <td>3-0</td>
+          <td>紐約大都會</td>
+          <td>錯誤</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-30</td>
+          <td>2026-07-01 07:05</td>
+          <td>一般預測</td>
+          <td>底特律老虎 @ 紐約洋基</td>
+          <td>紐約洋基</td>
+          <td>55.3%</td>
+          <td>9-3</td>
+          <td>底特律老虎</td>
+          <td>錯誤</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-30</td>
+          <td>2026-07-01 06:40</td>
+          <td>一般預測</td>
+          <td>德州遊騎兵 @ 克里夫蘭守護者</td>
+          <td>德州遊騎兵</td>
+          <td>50.1%</td>
+          <td>4-2</td>
+          <td>德州遊騎兵</td>
+          <td>正確</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-30</td>
+          <td>2026-07-01 06:40</td>
+          <td>高信心預測</td>
+          <td>匹茲堡海盜 @ 費城費城人</td>
+          <td>費城費城人</td>
+          <td>55.2%</td>
+          <td>0-8</td>
+          <td>費城費城人</td>
+          <td>正確</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-30</td>
+          <td>2026-07-01 06:35</td>
+          <td>一般預測</td>
+          <td>芝加哥白襪 @ 巴爾的摩金鶯</td>
+          <td>巴爾的摩金鶯</td>
+          <td>50.5%</td>
+          <td>9-3</td>
+          <td>芝加哥白襪</td>
+          <td>錯誤</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-29</td>
+          <td>2026-06-30 09:40</td>
+          <td>一般預測</td>
+          <td>舊金山巨人 @ 亞利桑那響尾蛇</td>
+          <td>亞利桑那響尾蛇</td>
+          <td>52.0%</td>
+          <td>4-5</td>
+          <td>亞利桑那響尾蛇</td>
+          <td>正確</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-29</td>
+          <td>2026-06-30 09:40</td>
+          <td>高信心預測</td>
+          <td>洛杉磯道奇 @ 運動家</td>
+          <td>洛杉磯道奇</td>
+          <td>56.0%</td>
+          <td>9-4</td>
+          <td>洛杉磯道奇</td>
+          <td>正確</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-29</td>
+          <td>2026-06-30 09:40</td>
+          <td>一般預測</td>
+          <td>洛杉磯天使 @ 西雅圖水手</td>
+          <td>西雅圖水手</td>
+          <td>57.8%</td>
+          <td>2-6</td>
+          <td>西雅圖水手</td>
+          <td>正確</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-29</td>
+          <td>2026-06-30 08:40</td>
+          <td>高信心預測</td>
+          <td>邁阿密馬林魚 @ 科羅拉多洛磯</td>
+          <td>邁阿密馬林魚</td>
+          <td>57.6%</td>
+          <td>10-7</td>
+          <td>邁阿密馬林魚</td>
+          <td>正確</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-29</td>
+          <td>2026-06-30 08:10</td>
+          <td>一般預測</td>
+          <td>明尼蘇達雙城 @ 休士頓太空人</td>
+          <td>休士頓太空人</td>
+          <td>54.1%</td>
+          <td>5-4</td>
+          <td>明尼蘇達雙城</td>
+          <td>錯誤</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-29</td>
+          <td>2026-06-30 08:05</td>
+          <td>一般預測</td>
+          <td>聖地牙哥教士 @ 芝加哥小熊</td>
+          <td>芝加哥小熊</td>
+          <td>54.1%</td>
+          <td>2-3</td>
+          <td>芝加哥小熊</td>
+          <td>正確</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-29</td>
+          <td>2026-06-30 07:40</td>
+          <td>高信心預測</td>
+          <td>辛辛那提紅人 @ 密爾瓦基釀酒人</td>
+          <td>密爾瓦基釀酒人</td>
+          <td>57.8%</td>
+          <td>3-5</td>
+          <td>密爾瓦基釀酒人</td>
+          <td>正確</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-29</td>
+          <td>2026-06-30 07:10</td>
+          <td>高信心預測</td>
+          <td>華盛頓國民 @ 波士頓紅襪</td>
+          <td>波士頓紅襪</td>
+          <td>58.5%</td>
+          <td>3-6</td>
+          <td>波士頓紅襪</td>
+          <td>正確</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-29</td>
+          <td>2026-06-30 07:10</td>
+          <td>一般預測</td>
+          <td>德州遊騎兵 @ 克里夫蘭守護者</td>
+          <td>克里夫蘭守護者</td>
+          <td>50.1%</td>
+          <td>6-3</td>
+          <td>德州遊騎兵</td>
+          <td>錯誤</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-29</td>
+          <td>2026-06-30 07:07</td>
+          <td>一般預測</td>
+          <td>紐約大都會 @ 多倫多藍鳥</td>
+          <td>多倫多藍鳥</td>
+          <td>52.8%</td>
+          <td>1-2</td>
+          <td>多倫多藍鳥</td>
+          <td>正確</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-29</td>
+          <td>2026-06-30 07:05</td>
+          <td>一般預測</td>
+          <td>底特律老虎 @ 紐約洋基</td>
+          <td>紐約洋基</td>
+          <td>55.5%</td>
+          <td>7-3</td>
+          <td>底特律老虎</td>
+          <td>錯誤</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-29</td>
+          <td>2026-06-30 06:40</td>
+          <td>高信心預測</td>
+          <td>匹茲堡海盜 @ 費城費城人</td>
+          <td>費城費城人</td>
+          <td>55.4%</td>
+          <td>11-7</td>
+          <td>匹茲堡海盜</td>
+          <td>錯誤</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-29</td>
+          <td>2026-06-30 06:35</td>
+          <td>一般預測</td>
+          <td>芝加哥白襪 @ 巴爾的摩金鶯</td>
+          <td>巴爾的摩金鶯</td>
+          <td>50.8%</td>
+          <td>8-2</td>
+          <td>芝加哥白襪</td>
+          <td>錯誤</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-28</td>
+          <td>2026-06-29 07:20</td>
+          <td>一般預測</td>
+          <td>紐約洋基 @ 波士頓紅襪</td>
+          <td>紐約洋基</td>
+          <td>50.6%</td>
+          <td>4-5</td>
+          <td>波士頓紅襪</td>
+          <td>錯誤</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-28</td>
+          <td>2026-06-29 04:10</td>
+          <td>一般預測</td>
+          <td>洛杉磯道奇 @ 聖地牙哥教士</td>
+          <td>洛杉磯道奇</td>
+          <td>51.2%</td>
+          <td>4-2</td>
+          <td>洛杉磯道奇</td>
+          <td>正確</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-28</td>
+          <td>2026-06-29 04:05</td>
+          <td>一般預測</td>
+          <td>亞特蘭大勇士 @ 舊金山巨人</td>
+          <td>亞特蘭大勇士</td>
+          <td>50.3%</td>
+          <td>2-3</td>
+          <td>舊金山巨人</td>
+          <td>錯誤</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-28</td>
+          <td>2026-06-29 03:15</td>
+          <td>一般預測</td>
+          <td>運動家 @ 洛杉磯天使</td>
+          <td>洛杉磯天使</td>
+          <td>50.2%</td>
+          <td>1-4</td>
+          <td>洛杉磯天使</td>
+          <td>正確</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-28</td>
+          <td>2026-06-29 02:15</td>
+          <td>一般預測</td>
+          <td>邁阿密馬林魚 @ 聖路易紅雀</td>
+          <td>聖路易紅雀</td>
+          <td>52.2%</td>
+          <td>1-2</td>
+          <td>聖路易紅雀</td>
+          <td>正確</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-28</td>
+          <td>2026-06-29 02:10</td>
+          <td>一般預測</td>
+          <td>堪薩斯市皇家 @ 芝加哥白襪</td>
+          <td>芝加哥白襪</td>
+          <td>51.6%</td>
+          <td>5-4</td>
+          <td>堪薩斯市皇家</td>
+          <td>錯誤</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-28</td>
+          <td>2026-06-29 02:10</td>
+          <td>一般預測</td>
+          <td>芝加哥小熊 @ 密爾瓦基釀酒人</td>
+          <td>密爾瓦基釀酒人</td>
+          <td>54.1%</td>
+          <td>4-3</td>
+          <td>芝加哥小熊</td>
+          <td>錯誤</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-28</td>
+          <td>2026-06-29 02:10</td>
+          <td>高信心預測</td>
+          <td>科羅拉多洛磯 @ 明尼蘇達雙城</td>
+          <td>明尼蘇達雙城</td>
+          <td>60.9%</td>
+          <td>2-3</td>
+          <td>明尼蘇達雙城</td>
+          <td>正確</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-28</td>
+          <td>2026-06-29 01:40</td>
+          <td>一般預測</td>
+          <td>西雅圖水手 @ 克里夫蘭守護者</td>
+          <td>西雅圖水手</td>
+          <td>50.0%</td>
+          <td>5-6</td>
+          <td>克里夫蘭守護者</td>
+          <td>錯誤</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-28</td>
+          <td>2026-06-29 01:40</td>
+          <td>一般預測</td>
+          <td>休士頓太空人 @ 底特律老虎</td>
+          <td>底特律老虎</td>
+          <td>54.0%</td>
+          <td>7-5</td>
+          <td>休士頓太空人</td>
+          <td>錯誤</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-28</td>
+          <td>2026-06-29 01:40</td>
+          <td>一般預測</td>
+          <td>費城費城人 @ 紐約大都會</td>
+          <td>費城費城人</td>
+          <td>50.6%</td>
+          <td>5-4</td>
+          <td>費城費城人</td>
+          <td>正確</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-28</td>
+          <td>2026-06-29 01:40</td>
+          <td>一般預測</td>
+          <td>亞利桑那響尾蛇 @ 坦帕灣光芒</td>
+          <td>坦帕灣光芒</td>
+          <td>53.4%</td>
+          <td>1-5</td>
+          <td>坦帕灣光芒</td>
+          <td>正確</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-28</td>
+          <td>2026-06-29 01:37</td>
+          <td>一般預測</td>
+          <td>德州遊騎兵 @ 多倫多藍鳥</td>
+          <td>多倫多藍鳥</td>
+          <td>51.4%</td>
+          <td>3-2</td>
+          <td>德州遊騎兵</td>
+          <td>錯誤</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-28</td>
+          <td>2026-06-29 01:35</td>
+          <td>一般預測</td>
+          <td>華盛頓國民 @ 巴爾的摩金鶯</td>
+          <td>巴爾的摩金鶯</td>
+          <td>53.3%</td>
+          <td>6-4</td>
+          <td>華盛頓國民</td>
+          <td>錯誤</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-28</td>
+          <td>2026-06-29 01:35</td>
+          <td>一般預測</td>
+          <td>辛辛那提紅人 @ 匹茲堡海盜</td>
+          <td>匹茲堡海盜</td>
+          <td>51.5%</td>
+          <td>4-9</td>
+          <td>匹茲堡海盜</td>
+          <td>正確</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-27</td>
+          <td>未公布</td>
+          <td>一般預測</td>
+          <td>華盛頓國民 @ 巴爾的摩金鶯</td>
+          <td>巴爾的摩金鶯</td>
+          <td>53.3%</td>
+          <td>4-3</td>
+          <td>華盛頓國民</td>
+          <td>錯誤</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-27</td>
+          <td>未公布</td>
+          <td>一般預測</td>
+          <td>紐約洋基 @ 波士頓紅襪</td>
+          <td>紐約洋基</td>
+          <td>50.6%</td>
+          <td>1-4</td>
+          <td>波士頓紅襪</td>
+          <td>錯誤</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-27</td>
+          <td>未公布</td>
+          <td>一般預測</td>
+          <td>堪薩斯市皇家 @ 芝加哥白襪</td>
+          <td>芝加哥白襪</td>
+          <td>51.6%</td>
+          <td>1-2</td>
+          <td>芝加哥白襪</td>
+          <td>正確</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-27</td>
+          <td>未公布</td>
+          <td>一般預測</td>
+          <td>西雅圖水手 @ 克里夫蘭守護者</td>
+          <td>西雅圖水手</td>
+          <td>50.0%</td>
+          <td>3-4</td>
+          <td>克里夫蘭守護者</td>
+          <td>錯誤</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-27</td>
+          <td>未公布</td>
+          <td>一般預測</td>
+          <td>休士頓太空人 @ 底特律老虎</td>
+          <td>底特律老虎</td>
+          <td>54.0%</td>
+          <td>8-6</td>
+          <td>休士頓太空人</td>
+          <td>錯誤</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-27</td>
+          <td>未公布</td>
+          <td>一般預測</td>
+          <td>運動家 @ 洛杉磯天使</td>
+          <td>洛杉磯天使</td>
+          <td>50.2%</td>
+          <td>2-5</td>
+          <td>洛杉磯天使</td>
+          <td>正確</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-27</td>
+          <td>未公布</td>
+          <td>一般預測</td>
+          <td>芝加哥小熊 @ 密爾瓦基釀酒人</td>
+          <td>密爾瓦基釀酒人</td>
+          <td>54.1%</td>
+          <td>8-2</td>
+          <td>芝加哥小熊</td>
+          <td>錯誤</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-27</td>
+          <td>未公布</td>
+          <td>高信心預測</td>
+          <td>科羅拉多洛磯 @ 明尼蘇達雙城</td>
+          <td>明尼蘇達雙城</td>
+          <td>60.9%</td>
+          <td>8-5</td>
+          <td>科羅拉多洛磯</td>
+          <td>錯誤</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-27</td>
+          <td>未公布</td>
+          <td>一般預測</td>
+          <td>費城費城人 @ 紐約大都會</td>
+          <td>費城費城人</td>
+          <td>50.6%</td>
+          <td>2-6</td>
+          <td>紐約大都會</td>
+          <td>錯誤</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-27</td>
+          <td>未公布</td>
+          <td>一般預測</td>
+          <td>辛辛那提紅人 @ 匹茲堡海盜</td>
+          <td>匹茲堡海盜</td>
+          <td>51.5%</td>
+          <td>9-7</td>
+          <td>辛辛那提紅人</td>
+          <td>錯誤</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-27</td>
+          <td>未公布</td>
+          <td>一般預測</td>
+          <td>洛杉磯道奇 @ 聖地牙哥教士</td>
+          <td>洛杉磯道奇</td>
+          <td>51.2%</td>
+          <td>15-3</td>
+          <td>洛杉磯道奇</td>
+          <td>正確</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-27</td>
+          <td>未公布</td>
+          <td>一般預測</td>
+          <td>亞特蘭大勇士 @ 舊金山巨人</td>
+          <td>亞特蘭大勇士</td>
+          <td>50.3%</td>
+          <td>0-5</td>
+          <td>舊金山巨人</td>
+          <td>錯誤</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-27</td>
+          <td>未公布</td>
+          <td>一般預測</td>
+          <td>邁阿密馬林魚 @ 聖路易紅雀</td>
+          <td>聖路易紅雀</td>
+          <td>52.2%</td>
+          <td>5-1</td>
+          <td>邁阿密馬林魚</td>
+          <td>錯誤</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-27</td>
+          <td>未公布</td>
+          <td>一般預測</td>
+          <td>亞利桑那響尾蛇 @ 坦帕灣光芒</td>
+          <td>坦帕灣光芒</td>
+          <td>53.4%</td>
+          <td>2-4</td>
+          <td>坦帕灣光芒</td>
+          <td>正確</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-27</td>
+          <td>未公布</td>
+          <td>一般預測</td>
+          <td>德州遊騎兵 @ 多倫多藍鳥</td>
+          <td>多倫多藍鳥</td>
+          <td>51.4%</td>
+          <td>7-4</td>
+          <td>德州遊騎兵</td>
+          <td>錯誤</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-26</td>
+          <td>未公布</td>
+          <td>一般預測</td>
+          <td>華盛頓國民 @ 巴爾的摩金鶯</td>
+          <td>巴爾的摩金鶯</td>
+          <td>53.1%</td>
+          <td>1-3</td>
+          <td>巴爾的摩金鶯</td>
+          <td>正確</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-26</td>
+          <td>未公布</td>
+          <td>一般預測</td>
+          <td>紐約洋基 @ 波士頓紅襪</td>
+          <td>紐約洋基</td>
+          <td>51.0%</td>
+          <td>1-6</td>
+          <td>波士頓紅襪</td>
+          <td>錯誤</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-26</td>
+          <td>未公布</td>
+          <td>一般預測</td>
+          <td>堪薩斯市皇家 @ 芝加哥白襪</td>
+          <td>芝加哥白襪</td>
+          <td>50.6%</td>
+          <td>1-22</td>
+          <td>芝加哥白襪</td>
+          <td>正確</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-26</td>
+          <td>未公布</td>
+          <td>一般預測</td>
+          <td>西雅圖水手 @ 克里夫蘭守護者</td>
+          <td>克里夫蘭守護者</td>
+          <td>50.1%</td>
+          <td>3-1</td>
+          <td>西雅圖水手</td>
+          <td>錯誤</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-26</td>
+          <td>未公布</td>
+          <td>一般預測</td>
+          <td>休士頓太空人 @ 底特律老虎</td>
+          <td>底特律老虎</td>
+          <td>53.6%</td>
+          <td>0-8</td>
+          <td>底特律老虎</td>
+          <td>正確</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-26</td>
+          <td>未公布</td>
+          <td>一般預測</td>
+          <td>運動家 @ 洛杉磯天使</td>
+          <td>洛杉磯天使</td>
+          <td>50.5%</td>
+          <td>9-3</td>
+          <td>運動家</td>
+          <td>錯誤</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-26</td>
+          <td>未公布</td>
+          <td>一般預測</td>
+          <td>芝加哥小熊 @ 密爾瓦基釀酒人</td>
+          <td>密爾瓦基釀酒人</td>
+          <td>53.9%</td>
+          <td>2-6</td>
+          <td>密爾瓦基釀酒人</td>
+          <td>正確</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-26</td>
+          <td>未公布</td>
+          <td>高信心預測</td>
+          <td>科羅拉多洛磯 @ 明尼蘇達雙城</td>
+          <td>明尼蘇達雙城</td>
+          <td>60.9%</td>
+          <td>8-9</td>
+          <td>明尼蘇達雙城</td>
+          <td>正確</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-26</td>
+          <td>未公布</td>
+          <td>一般預測</td>
+          <td>費城費城人 @ 紐約大都會</td>
+          <td>費城費城人</td>
+          <td>50.5%</td>
+          <td>2-1</td>
+          <td>費城費城人</td>
+          <td>正確</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-26</td>
+          <td>未公布</td>
+          <td>一般預測</td>
+          <td>辛辛那提紅人 @ 匹茲堡海盜</td>
+          <td>匹茲堡海盜</td>
+          <td>51.6%</td>
+          <td>6-4</td>
+          <td>辛辛那提紅人</td>
+          <td>錯誤</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-26</td>
+          <td>未公布</td>
+          <td>一般預測</td>
+          <td>洛杉磯道奇 @ 聖地牙哥教士</td>
+          <td>洛杉磯道奇</td>
+          <td>51.4%</td>
+          <td>1-7</td>
+          <td>聖地牙哥教士</td>
+          <td>錯誤</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-26</td>
+          <td>未公布</td>
+          <td>一般預測</td>
+          <td>亞特蘭大勇士 @ 舊金山巨人</td>
+          <td>亞特蘭大勇士</td>
+          <td>50.2%</td>
+          <td>3-1</td>
+          <td>亞特蘭大勇士</td>
+          <td>正確</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-26</td>
+          <td>未公布</td>
+          <td>一般預測</td>
+          <td>邁阿密馬林魚 @ 聖路易紅雀</td>
+          <td>聖路易紅雀</td>
+          <td>52.4%</td>
+          <td>4-0</td>
+          <td>邁阿密馬林魚</td>
+          <td>錯誤</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-26</td>
+          <td>未公布</td>
+          <td>一般預測</td>
+          <td>亞利桑那響尾蛇 @ 坦帕灣光芒</td>
+          <td>坦帕灣光芒</td>
+          <td>53.2%</td>
+          <td>1-6</td>
+          <td>坦帕灣光芒</td>
+          <td>正確</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-26</td>
+          <td>未公布</td>
+          <td>一般預測</td>
+          <td>德州遊騎兵 @ 多倫多藍鳥</td>
+          <td>多倫多藍鳥</td>
+          <td>51.4%</td>
+          <td>5-4</td>
+          <td>德州遊騎兵</td>
+          <td>錯誤</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-25</td>
+          <td>未公布</td>
+          <td>一般預測</td>
+          <td>紐約洋基 @ 波士頓紅襪</td>
+          <td>波士頓紅襪</td>
+          <td>50.7%</td>
+          <td>3-6</td>
+          <td>波士頓紅襪</td>
+          <td>正確</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-25</td>
+          <td>未公布</td>
+          <td>一般預測</td>
+          <td>休士頓太空人 @ 底特律老虎</td>
+          <td>底特律老虎</td>
+          <td>53.8%</td>
+          <td>2-1</td>
+          <td>休士頓太空人</td>
+          <td>錯誤</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-25</td>
+          <td>未公布</td>
+          <td>一般預測</td>
+          <td>芝加哥小熊 @ 紐約大都會</td>
+          <td>芝加哥小熊</td>
+          <td>50.5%</td>
+          <td>4-3</td>
+          <td>芝加哥小熊</td>
+          <td>正確</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-25</td>
+          <td>未公布</td>
+          <td>一般預測</td>
+          <td>西雅圖水手 @ 匹茲堡海盜</td>
+          <td>西雅圖水手</td>
+          <td>52.7%</td>
+          <td>1-5</td>
+          <td>匹茲堡海盜</td>
+          <td>錯誤</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-25</td>
+          <td>未公布</td>
+          <td>一般預測</td>
+          <td>運動家 @ 舊金山巨人</td>
+          <td>舊金山巨人</td>
+          <td>55.0%</td>
+          <td>9-6</td>
+          <td>運動家</td>
+          <td>錯誤</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-25</td>
+          <td>未公布</td>
+          <td>一般預測</td>
+          <td>亞利桑那響尾蛇 @ 聖路易紅雀</td>
+          <td>聖路易紅雀</td>
+          <td>50.0%</td>
+          <td></td>
+          <td></td>
+          <td>待結算</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-25</td>
+          <td>未公布</td>
+          <td>一般預測</td>
+          <td>堪薩斯市皇家 @ 坦帕灣光芒</td>
+          <td>坦帕灣光芒</td>
+          <td>52.6%</td>
+          <td>2-13</td>
+          <td>坦帕灣光芒</td>
+          <td>正確</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-25</td>
+          <td>未公布</td>
+          <td>一般預測</td>
+          <td>德州遊騎兵 @ 多倫多藍鳥</td>
+          <td>多倫多藍鳥</td>
+          <td>51.7%</td>
+          <td>6-5</td>
+          <td>德州遊騎兵</td>
+          <td>錯誤</td>
+        </tr>
+
+        <tr>
+          <td>2026-06-25</td>
+          <td>未公布</td>
+          <td>高信心預測</td>
+          <td>費城費城人 @ 華盛頓國民</td>
+          <td>費城費城人</td>
+          <td>58.3%</td>
+          <td>10-5</td>
+          <td>費城費城人</td>
+          <td>正確</td>
+        </tr></tbody>
+    </table>
+    <div class="note">此頁只追蹤勝方預測準確率；盤口與投注 ROI 將在真實盤口資料補上後另行計算。</div>
+  </main>
+  </div>
+</body>
+</html>

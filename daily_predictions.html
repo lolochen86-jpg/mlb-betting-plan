@@ -1,0 +1,447 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>每日 MLB 勝方預測</title>
+  <style>
+    body { margin: 0; background: #f7f8f6; color: #202421; font-family: "Microsoft JhengHei", "Noto Sans TC", system-ui, sans-serif; }
+    main { max-width: 1180px; margin: 0 auto; padding: 28px; }
+    h1 { margin: 0 0 6px; font-size: 30px; }
+    h2 { margin: 24px 0 12px; font-size: 18px; }
+    .meta { color: #68736d; line-height: 1.6; font-size: 14px; }
+    .warning { margin-top: 16px; padding: 12px 14px; border: 1px solid #e2c47a; background: #fff8e6; border-radius: 8px; color: #765315; }
+    .toolbar { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin: 14px 0 10px; }
+    .toolbar span { color: #68736d; font-size: 13px; font-weight: 700; }
+    .sort-btn { border: 1px solid #dfe5df; border-radius: 8px; background: white; color: #24433b; padding: 8px 10px; font: inherit; font-weight: 800; cursor: pointer; }
+    .sort-btn.active { background: #165f56; border-color: #165f56; color: white; }
+    table { width: 100%; border-collapse: collapse; background: white; border: 1px solid #dfe5df; border-radius: 8px; overflow: hidden; }
+    th, td { text-align: left; border-bottom: 1px solid #dfe5df; padding: 12px 10px; white-space: nowrap; font-size: 14px; }
+    th { color: #68736d; font-size: 12px; }
+    @media (max-width: 720px) { main { padding: 18px; } table { display: block; overflow-x: auto; } h1 { font-size: 25px; } }
+  
+    /* site navigation */
+    .site-shell { min-height: 100vh; display: grid; grid-template-columns: 220px minmax(0, 1fr); background: inherit; }
+    .site-sidebar { position: sticky; top: 0; align-self: start; height: 100vh; box-sizing: border-box; overflow-y: auto; border-right: 1px solid #dfe5df; background: #ffffff; padding: 22px 14px; z-index: 10; }
+    .site-brand { color: #163b34; font-size: 15px; font-weight: 900; letter-spacing: 0; margin: 0 0 14px; }
+    .site-sidebar nav { display: grid; gap: 6px; }
+    .site-nav-link { display: block; color: #40514b; text-decoration: none; border-radius: 8px; padding: 9px 10px; font-size: 14px; font-weight: 750; line-height: 1.25; }
+    .site-nav-link:hover { background: #eef4f1; color: #123d35; }
+    .site-nav-link.active { background: #165f56; color: #ffffff; }
+    .site-shell > main { width: min(1180px, calc(100% - 56px)); margin-left: auto; margin-right: auto; }
+    @media (max-width: 900px) {
+      .site-shell { display: block; }
+      .site-sidebar { position: static; height: auto; border-right: 0; border-bottom: 1px solid #dfe5df; }
+      .site-sidebar nav { grid-template-columns: repeat(auto-fit, minmax(112px, 1fr)); }
+      .site-shell > main { width: auto; }
+    }
+  </style>
+</head>
+<body>
+  <div class="site-shell" data-site-nav="true">
+    <aside class="site-sidebar">
+      <div class="site-brand">MLB 投注計畫</div>
+      <nav aria-label="主要頁面">
+        <a class="site-nav-link" href="index.html">總覽</a>
+        <a class="site-nav-link active" href="daily_predictions.html">今日預測</a>
+        <a class="site-nav-link" href="betting_ticket.html">投注單</a>
+        <a class="site-nav-link" href="totals_predictions.html">大小分</a>
+        <a class="site-nav-link" href="advanced_factors.html">進階因子</a>
+        <a class="site-nav-link" href="game_simulator.html">逐打席模擬</a>
+        <a class="site-nav-link" href="monte_carlo.html">蒙地卡羅</a>
+        <a class="site-nav-link" href="market_research.html">盤口研究</a>
+        <a class="site-nav-link" href="prediction_log.html">結算紀錄</a>
+        <a class="site-nav-link" href="postgame_review.html">賽後檢討</a>
+        <a class="site-nav-link" href="betting_roi.html">投注 ROI</a>
+        <a class="site-nav-link" href="lineup_fix_comparison.html">修正前後</a>
+        <a class="site-nav-link" href="winner_model_search.html">模型搜尋</a>
+        <a class="site-nav-link" href="prediction_accuracy.html">準確率</a>
+        <a class="site-nav-link" href="status.html">狀態</a>
+      </nav>
+    </aside>
+  <main>
+    <h1>每日 MLB 勝方預測</h1>
+    <div class="meta">
+      MLB日期：2026-07-03<br />
+      主模型：A-畢氏勝率 / 確認模型：E-對照組(Ensemble)<br />
+      訓練場數：3730 / 訓練截止：2026-07-02 / 賽程場數：13<br />
+      產生時間：2026-07-03T00:08:06<br />
+      訓練資料已更新到目標日前一天 2026-07-02。
+    </div>
+    
+    <h2>完整賽程表</h2>
+    <div class="toolbar">
+      <span>排序方式</span>
+      <button class="sort-btn active" id="sortRecommendation" type="button">推薦高低</button>
+      <button class="sort-btn" id="sortTime" type="button">比賽時間</button>
+    </div>
+    <table>
+      <thead><tr><th>GamePk</th><th>台灣開賽時間</th><th>狀態</th><th>對戰</th><th>先發投手</th><th>模型預測</th><th>預測比分</th><th>預測總分</th><th>信心</th><th>確認模型</th><th>分類</th></tr></thead>
+      <tbody id="scheduleRows">
+            <tr>
+              <td>824336</td>
+              <td>2026-07-04 08:10</td>
+              <td>Scheduled</td>
+              <td>舊金山巨人 @ 科羅拉多洛磯</td>
+              <td>未公布 / 未公布</td>
+              <td>舊金山巨人</td>
+              <td>舊金山巨人 2.46 : 科羅拉多洛磯 4.49</td>
+              <td>6.95</td>
+              <td>58.7%</td>
+              <td>舊金山巨人</td>
+              <td>高信心預測</td>
+            </tr>
+
+            <tr>
+              <td>824659</td>
+              <td>2026-07-04 04:05</td>
+              <td>Scheduled</td>
+              <td>聖路易紅雀 @ 芝加哥小熊</td>
+              <td>阿 帕 / 達維 佩特</td>
+              <td>芝加哥小熊</td>
+              <td>聖路易紅雀 2.75 : 芝加哥小熊 5.33</td>
+              <td>8.08</td>
+              <td>57.6%</td>
+              <td>芝加哥小熊</td>
+              <td>高信心預測</td>
+            </tr>
+
+            <tr>
+              <td>823933</td>
+              <td>2026-07-04 10:10</td>
+              <td>Scheduled</td>
+              <td>聖地牙哥教士 @ 洛杉磯道奇</td>
+              <td>麥可 金恩 / 大谷翔平</td>
+              <td>洛杉磯道奇</td>
+              <td>聖地牙哥教士 3.02 : 洛杉磯道奇 5.27</td>
+              <td>8.29</td>
+              <td>56.2%</td>
+              <td>洛杉磯道奇</td>
+              <td>高信心預測</td>
+            </tr>
+
+            <tr>
+              <td>823527</td>
+              <td>2026-07-04 07:05</td>
+              <td>Scheduled</td>
+              <td>明尼蘇達雙城 @ 紐約洋基</td>
+              <td>麥克 帕雷德 / 格里特 柯爾</td>
+              <td>紐約洋基</td>
+              <td>明尼蘇達雙城 5.27 : 紐約洋基 2.99</td>
+              <td>8.26</td>
+              <td>59.0%</td>
+              <td>明尼蘇達雙城</td>
+              <td>一般預測</td>
+            </tr>
+
+            <tr>
+              <td>824013</td>
+              <td>2026-07-04 09:38</td>
+              <td>Scheduled</td>
+              <td>波士頓紅襪 @ 洛杉磯天使</td>
+              <td>傑克 貝 / 未公布</td>
+              <td>波士頓紅襪</td>
+              <td>波士頓紅襪 2.84 : 洛杉磯天使 3.75</td>
+              <td>6.60</td>
+              <td>54.5%</td>
+              <td>波士頓紅襪</td>
+              <td>一般預測</td>
+            </tr>
+
+            <tr>
+              <td>824498</td>
+              <td>2026-07-04 07:10</td>
+              <td>Scheduled</td>
+              <td>巴爾的摩金鶯 @ 辛辛那提紅人</td>
+              <td>崔 羅傑 / 布雷迪 西</td>
+              <td>辛辛那提紅人</td>
+              <td>巴爾的摩金鶯 2.89 : 辛辛那提紅人 2.39</td>
+              <td>5.28</td>
+              <td>54.4%</td>
+              <td>巴爾的摩金鶯</td>
+              <td>一般預測</td>
+            </tr>
+
+            <tr>
+              <td>825062</td>
+              <td>2026-07-04 09:45</td>
+              <td>Scheduled</td>
+              <td>密爾瓦基釀酒人 @ 亞利桑那響尾蛇</td>
+              <td>凱爾 哈索 / 荷西 卡布拉</td>
+              <td>密爾瓦基釀酒人</td>
+              <td>密爾瓦基釀酒人 4.91 : 亞利桑那響尾蛇 4.24</td>
+              <td>9.15</td>
+              <td>53.9%</td>
+              <td>密爾瓦基釀酒人</td>
+              <td>一般預測</td>
+            </tr>
+
+            <tr>
+              <td>824904</td>
+              <td>2026-07-04 07:15</td>
+              <td>Scheduled</td>
+              <td>紐約大都會 @ 亞特蘭大勇士</td>
+              <td>查史 斯克歐特特 / 葛 霍</td>
+              <td>亞特蘭大勇士</td>
+              <td>紐約大都會 3.09 : 亞特蘭大勇士 2.14</td>
+              <td>5.22</td>
+              <td>53.5%</td>
+              <td>亞特蘭大勇士</td>
+              <td>一般預測</td>
+            </tr>
+
+            <tr>
+              <td>824417</td>
+              <td>2026-07-04 07:10</td>
+              <td>Scheduled</td>
+              <td>芝加哥白襪 @ 克里夫蘭守護者</td>
+              <td>安東尼 卡 / 加維 威</td>
+              <td>克里夫蘭守護者</td>
+              <td>芝加哥白襪 4.32 : 克里夫蘭守護者 2.25</td>
+              <td>6.57</td>
+              <td>53.2%</td>
+              <td>芝加哥白襪</td>
+              <td>一般預測</td>
+            </tr>
+
+            <tr>
+              <td>823120</td>
+              <td>2026-07-04 10:10</td>
+              <td>Scheduled</td>
+              <td>多倫多藍鳥 @ 西雅圖水手</td>
+              <td>迪倫 希斯 / 未公布</td>
+              <td>西雅圖水手</td>
+              <td>多倫多藍鳥 3.22 : 西雅圖水手 2.48</td>
+              <td>5.70</td>
+              <td>52.8%</td>
+              <td>西雅圖水手</td>
+              <td>一般預測</td>
+            </tr>
+
+            <tr>
+              <td>822714</td>
+              <td>2026-07-04 06:45</td>
+              <td>Scheduled</td>
+              <td>匹茲堡海盜 @ 華盛頓國民</td>
+              <td>米 凱勒 / 佛史 葛里芬</td>
+              <td>匹茲堡海盜</td>
+              <td>匹茲堡海盜 4.04 : 華盛頓國民 3.91</td>
+              <td>7.96</td>
+              <td>50.9%</td>
+              <td>華盛頓國民</td>
+              <td>一般預測</td>
+            </tr>
+
+            <tr>
+              <td>824982</td>
+              <td>2026-07-04 09:40</td>
+              <td>Scheduled</td>
+              <td>邁阿密馬林魚 @ 運動家</td>
+              <td>未公布 / 傑克 佩</td>
+              <td>運動家</td>
+              <td>邁阿密馬林魚 2.00 : 運動家 4.38</td>
+              <td>6.38</td>
+              <td>50.5%</td>
+              <td>邁阿密馬林魚</td>
+              <td>一般預測</td>
+            </tr>
+
+            <tr>
+              <td>824173</td>
+              <td>2026-07-04 08:15</td>
+              <td>Scheduled</td>
+              <td>坦帕灣光芒 @ 休士頓太空人</td>
+              <td>未公布 / 史賓塞 阿</td>
+              <td>休士頓太空人</td>
+              <td>坦帕灣光芒 3.51 : 休士頓太空人 3.68</td>
+              <td>7.19</td>
+              <td>50.1%</td>
+              <td>坦帕灣光芒</td>
+              <td>一般預測</td>
+            </tr></tbody>
+    </table>
+    <div class="warning">投注單請看 <a href="betting_ticket.html">今日投注單</a>。該頁只列入真實盤口與 edge 條件通過的場次。</div>
+    <h2>高信心預測</h2>
+    <table>
+      <thead><tr><th>決策</th><th>台灣開賽時間</th><th>對戰</th><th>先發投手</th><th>預測勝方</th><th>預測比分</th><th>預測總分</th><th>信心</th><th>確認模型</th></tr></thead>
+      <tbody>
+            <tr>
+              <td>高信心預測</td>
+              <td>2026-07-04 08:10</td>
+              <td>舊金山巨人 @ 科羅拉多洛磯</td>
+              <td>未公布 / 未公布</td>
+              <td>舊金山巨人</td>
+              <td>舊金山巨人 2.46 : 科羅拉多洛磯 4.49</td>
+              <td>6.95</td>
+              <td>58.7%</td>
+              <td>舊金山巨人</td>
+            </tr>
+
+            <tr>
+              <td>高信心預測</td>
+              <td>2026-07-04 04:05</td>
+              <td>聖路易紅雀 @ 芝加哥小熊</td>
+              <td>阿 帕 / 達維 佩特</td>
+              <td>芝加哥小熊</td>
+              <td>聖路易紅雀 2.75 : 芝加哥小熊 5.33</td>
+              <td>8.08</td>
+              <td>57.6%</td>
+              <td>芝加哥小熊</td>
+            </tr>
+
+            <tr>
+              <td>高信心預測</td>
+              <td>2026-07-04 10:10</td>
+              <td>聖地牙哥教士 @ 洛杉磯道奇</td>
+              <td>麥可 金恩 / 大谷翔平</td>
+              <td>洛杉磯道奇</td>
+              <td>聖地牙哥教士 3.02 : 洛杉磯道奇 5.27</td>
+              <td>8.29</td>
+              <td>56.2%</td>
+              <td>洛杉磯道奇</td>
+            </tr></tbody>
+    </table>
+    <h2>一般預測</h2>
+    <table>
+      <thead><tr><th>決策</th><th>台灣開賽時間</th><th>對戰</th><th>先發投手</th><th>預測勝方</th><th>預測比分</th><th>預測總分</th><th>信心</th><th>確認模型</th></tr></thead>
+      <tbody>
+            <tr>
+              <td>一般預測</td>
+              <td>2026-07-04 07:05</td>
+              <td>明尼蘇達雙城 @ 紐約洋基</td>
+              <td>麥克 帕雷德 / 格里特 柯爾</td>
+              <td>紐約洋基</td>
+              <td>明尼蘇達雙城 5.27 : 紐約洋基 2.99</td>
+              <td>8.26</td>
+              <td>59.0%</td>
+              <td>明尼蘇達雙城</td>
+            </tr>
+
+            <tr>
+              <td>一般預測</td>
+              <td>2026-07-04 09:38</td>
+              <td>波士頓紅襪 @ 洛杉磯天使</td>
+              <td>傑克 貝 / 未公布</td>
+              <td>波士頓紅襪</td>
+              <td>波士頓紅襪 2.84 : 洛杉磯天使 3.75</td>
+              <td>6.60</td>
+              <td>54.5%</td>
+              <td>波士頓紅襪</td>
+            </tr>
+
+            <tr>
+              <td>一般預測</td>
+              <td>2026-07-04 07:10</td>
+              <td>巴爾的摩金鶯 @ 辛辛那提紅人</td>
+              <td>崔 羅傑 / 布雷迪 西</td>
+              <td>辛辛那提紅人</td>
+              <td>巴爾的摩金鶯 2.89 : 辛辛那提紅人 2.39</td>
+              <td>5.28</td>
+              <td>54.4%</td>
+              <td>巴爾的摩金鶯</td>
+            </tr>
+
+            <tr>
+              <td>一般預測</td>
+              <td>2026-07-04 09:45</td>
+              <td>密爾瓦基釀酒人 @ 亞利桑那響尾蛇</td>
+              <td>凱爾 哈索 / 荷西 卡布拉</td>
+              <td>密爾瓦基釀酒人</td>
+              <td>密爾瓦基釀酒人 4.91 : 亞利桑那響尾蛇 4.24</td>
+              <td>9.15</td>
+              <td>53.9%</td>
+              <td>密爾瓦基釀酒人</td>
+            </tr>
+
+            <tr>
+              <td>一般預測</td>
+              <td>2026-07-04 07:15</td>
+              <td>紐約大都會 @ 亞特蘭大勇士</td>
+              <td>查史 斯克歐特特 / 葛 霍</td>
+              <td>亞特蘭大勇士</td>
+              <td>紐約大都會 3.09 : 亞特蘭大勇士 2.14</td>
+              <td>5.22</td>
+              <td>53.5%</td>
+              <td>亞特蘭大勇士</td>
+            </tr>
+
+            <tr>
+              <td>一般預測</td>
+              <td>2026-07-04 07:10</td>
+              <td>芝加哥白襪 @ 克里夫蘭守護者</td>
+              <td>安東尼 卡 / 加維 威</td>
+              <td>克里夫蘭守護者</td>
+              <td>芝加哥白襪 4.32 : 克里夫蘭守護者 2.25</td>
+              <td>6.57</td>
+              <td>53.2%</td>
+              <td>芝加哥白襪</td>
+            </tr>
+
+            <tr>
+              <td>一般預測</td>
+              <td>2026-07-04 10:10</td>
+              <td>多倫多藍鳥 @ 西雅圖水手</td>
+              <td>迪倫 希斯 / 未公布</td>
+              <td>西雅圖水手</td>
+              <td>多倫多藍鳥 3.22 : 西雅圖水手 2.48</td>
+              <td>5.70</td>
+              <td>52.8%</td>
+              <td>西雅圖水手</td>
+            </tr>
+
+            <tr>
+              <td>一般預測</td>
+              <td>2026-07-04 06:45</td>
+              <td>匹茲堡海盜 @ 華盛頓國民</td>
+              <td>米 凱勒 / 佛史 葛里芬</td>
+              <td>匹茲堡海盜</td>
+              <td>匹茲堡海盜 4.04 : 華盛頓國民 3.91</td>
+              <td>7.96</td>
+              <td>50.9%</td>
+              <td>華盛頓國民</td>
+            </tr>
+
+            <tr>
+              <td>一般預測</td>
+              <td>2026-07-04 09:40</td>
+              <td>邁阿密馬林魚 @ 運動家</td>
+              <td>未公布 / 傑克 佩</td>
+              <td>運動家</td>
+              <td>邁阿密馬林魚 2.00 : 運動家 4.38</td>
+              <td>6.38</td>
+              <td>50.5%</td>
+              <td>邁阿密馬林魚</td>
+            </tr>
+
+            <tr>
+              <td>一般預測</td>
+              <td>2026-07-04 08:15</td>
+              <td>坦帕灣光芒 @ 休士頓太空人</td>
+              <td>未公布 / 史賓塞 阿</td>
+              <td>休士頓太空人</td>
+              <td>坦帕灣光芒 3.51 : 休士頓太空人 3.68</td>
+              <td>7.19</td>
+              <td>50.1%</td>
+              <td>坦帕灣光芒</td>
+            </tr></tbody>
+    </table>
+    <div class="warning">比分預測取自蒙地卡羅 10,000 次單場模擬平均值；完整模擬分布請看 <a href="monte_carlo.html">蒙地卡羅模擬</a>。投注單請看 <a href="betting_ticket.html">今日投注單</a>。該頁只列入真實盤口與 edge 條件通過的場次。</div>
+    <div class="warning">之前做的預測驗證：<a href="prediction_log.html">結算紀錄</a> 看每場命中/錯誤；<a href="postgame_review.html">賽後檢討</a> 看每日總結；<a href="winner_model_search.html">模型搜尋</a> 看歷史模型驗證。</div>
+  </main>
+  <script>
+    const SCHEDULE_ROWS = {"recommendation": "\n            <tr>\n              <td>824336</td>\n              <td>2026-07-04 08:10</td>\n              <td>Scheduled</td>\n              <td>舊金山巨人 @ 科羅拉多洛磯</td>\n              <td>未公布 / 未公布</td>\n              <td>舊金山巨人</td>\n              <td>舊金山巨人 2.46 : 科羅拉多洛磯 4.49</td>\n              <td>6.95</td>\n              <td>58.7%</td>\n              <td>舊金山巨人</td>\n              <td>高信心預測</td>\n            </tr>\n\n            <tr>\n              <td>824659</td>\n              <td>2026-07-04 04:05</td>\n              <td>Scheduled</td>\n              <td>聖路易紅雀 @ 芝加哥小熊</td>\n              <td>阿 帕 / 達維 佩特</td>\n              <td>芝加哥小熊</td>\n              <td>聖路易紅雀 2.75 : 芝加哥小熊 5.33</td>\n              <td>8.08</td>\n              <td>57.6%</td>\n              <td>芝加哥小熊</td>\n              <td>高信心預測</td>\n            </tr>\n\n            <tr>\n              <td>823933</td>\n              <td>2026-07-04 10:10</td>\n              <td>Scheduled</td>\n              <td>聖地牙哥教士 @ 洛杉磯道奇</td>\n              <td>麥可 金恩 / 大谷翔平</td>\n              <td>洛杉磯道奇</td>\n              <td>聖地牙哥教士 3.02 : 洛杉磯道奇 5.27</td>\n              <td>8.29</td>\n              <td>56.2%</td>\n              <td>洛杉磯道奇</td>\n              <td>高信心預測</td>\n            </tr>\n\n            <tr>\n              <td>823527</td>\n              <td>2026-07-04 07:05</td>\n              <td>Scheduled</td>\n              <td>明尼蘇達雙城 @ 紐約洋基</td>\n              <td>麥克 帕雷德 / 格里特 柯爾</td>\n              <td>紐約洋基</td>\n              <td>明尼蘇達雙城 5.27 : 紐約洋基 2.99</td>\n              <td>8.26</td>\n              <td>59.0%</td>\n              <td>明尼蘇達雙城</td>\n              <td>一般預測</td>\n            </tr>\n\n            <tr>\n              <td>824013</td>\n              <td>2026-07-04 09:38</td>\n              <td>Scheduled</td>\n              <td>波士頓紅襪 @ 洛杉磯天使</td>\n              <td>傑克 貝 / 未公布</td>\n              <td>波士頓紅襪</td>\n              <td>波士頓紅襪 2.84 : 洛杉磯天使 3.75</td>\n              <td>6.60</td>\n              <td>54.5%</td>\n              <td>波士頓紅襪</td>\n              <td>一般預測</td>\n            </tr>\n\n            <tr>\n              <td>824498</td>\n              <td>2026-07-04 07:10</td>\n              <td>Scheduled</td>\n              <td>巴爾的摩金鶯 @ 辛辛那提紅人</td>\n              <td>崔 羅傑 / 布雷迪 西</td>\n              <td>辛辛那提紅人</td>\n              <td>巴爾的摩金鶯 2.89 : 辛辛那提紅人 2.39</td>\n              <td>5.28</td>\n              <td>54.4%</td>\n              <td>巴爾的摩金鶯</td>\n              <td>一般預測</td>\n            </tr>\n\n            <tr>\n              <td>825062</td>\n              <td>2026-07-04 09:45</td>\n              <td>Scheduled</td>\n              <td>密爾瓦基釀酒人 @ 亞利桑那響尾蛇</td>\n              <td>凱爾 哈索 / 荷西 卡布拉</td>\n              <td>密爾瓦基釀酒人</td>\n              <td>密爾瓦基釀酒人 4.91 : 亞利桑那響尾蛇 4.24</td>\n              <td>9.15</td>\n              <td>53.9%</td>\n              <td>密爾瓦基釀酒人</td>\n              <td>一般預測</td>\n            </tr>\n\n            <tr>\n              <td>824904</td>\n              <td>2026-07-04 07:15</td>\n              <td>Scheduled</td>\n              <td>紐約大都會 @ 亞特蘭大勇士</td>\n              <td>查史 斯克歐特特 / 葛 霍</td>\n              <td>亞特蘭大勇士</td>\n              <td>紐約大都會 3.09 : 亞特蘭大勇士 2.14</td>\n              <td>5.22</td>\n              <td>53.5%</td>\n              <td>亞特蘭大勇士</td>\n              <td>一般預測</td>\n            </tr>\n\n            <tr>\n              <td>824417</td>\n              <td>2026-07-04 07:10</td>\n              <td>Scheduled</td>\n              <td>芝加哥白襪 @ 克里夫蘭守護者</td>\n              <td>安東尼 卡 / 加維 威</td>\n              <td>克里夫蘭守護者</td>\n              <td>芝加哥白襪 4.32 : 克里夫蘭守護者 2.25</td>\n              <td>6.57</td>\n              <td>53.2%</td>\n              <td>芝加哥白襪</td>\n              <td>一般預測</td>\n            </tr>\n\n            <tr>\n              <td>823120</td>\n              <td>2026-07-04 10:10</td>\n              <td>Scheduled</td>\n              <td>多倫多藍鳥 @ 西雅圖水手</td>\n              <td>迪倫 希斯 / 未公布</td>\n              <td>西雅圖水手</td>\n              <td>多倫多藍鳥 3.22 : 西雅圖水手 2.48</td>\n              <td>5.70</td>\n              <td>52.8%</td>\n              <td>西雅圖水手</td>\n              <td>一般預測</td>\n            </tr>\n\n            <tr>\n              <td>822714</td>\n              <td>2026-07-04 06:45</td>\n              <td>Scheduled</td>\n              <td>匹茲堡海盜 @ 華盛頓國民</td>\n              <td>米 凱勒 / 佛史 葛里芬</td>\n              <td>匹茲堡海盜</td>\n              <td>匹茲堡海盜 4.04 : 華盛頓國民 3.91</td>\n              <td>7.96</td>\n              <td>50.9%</td>\n              <td>華盛頓國民</td>\n              <td>一般預測</td>\n            </tr>\n\n            <tr>\n              <td>824982</td>\n              <td>2026-07-04 09:40</td>\n              <td>Scheduled</td>\n              <td>邁阿密馬林魚 @ 運動家</td>\n              <td>未公布 / 傑克 佩</td>\n              <td>運動家</td>\n              <td>邁阿密馬林魚 2.00 : 運動家 4.38</td>\n              <td>6.38</td>\n              <td>50.5%</td>\n              <td>邁阿密馬林魚</td>\n              <td>一般預測</td>\n            </tr>\n\n            <tr>\n              <td>824173</td>\n              <td>2026-07-04 08:15</td>\n              <td>Scheduled</td>\n              <td>坦帕灣光芒 @ 休士頓太空人</td>\n              <td>未公布 / 史賓塞 阿</td>\n              <td>休士頓太空人</td>\n              <td>坦帕灣光芒 3.51 : 休士頓太空人 3.68</td>\n              <td>7.19</td>\n              <td>50.1%</td>\n              <td>坦帕灣光芒</td>\n              <td>一般預測</td>\n            </tr>", "time": "\n            <tr>\n              <td>824659</td>\n              <td>2026-07-04 04:05</td>\n              <td>Scheduled</td>\n              <td>聖路易紅雀 @ 芝加哥小熊</td>\n              <td>阿 帕 / 達維 佩特</td>\n              <td>芝加哥小熊</td>\n              <td>聖路易紅雀 2.75 : 芝加哥小熊 5.33</td>\n              <td>8.08</td>\n              <td>57.6%</td>\n              <td>芝加哥小熊</td>\n              <td>高信心預測</td>\n            </tr>\n\n            <tr>\n              <td>822714</td>\n              <td>2026-07-04 06:45</td>\n              <td>Scheduled</td>\n              <td>匹茲堡海盜 @ 華盛頓國民</td>\n              <td>米 凱勒 / 佛史 葛里芬</td>\n              <td>匹茲堡海盜</td>\n              <td>匹茲堡海盜 4.04 : 華盛頓國民 3.91</td>\n              <td>7.96</td>\n              <td>50.9%</td>\n              <td>華盛頓國民</td>\n              <td>一般預測</td>\n            </tr>\n\n            <tr>\n              <td>823527</td>\n              <td>2026-07-04 07:05</td>\n              <td>Scheduled</td>\n              <td>明尼蘇達雙城 @ 紐約洋基</td>\n              <td>麥克 帕雷德 / 格里特 柯爾</td>\n              <td>紐約洋基</td>\n              <td>明尼蘇達雙城 5.27 : 紐約洋基 2.99</td>\n              <td>8.26</td>\n              <td>59.0%</td>\n              <td>明尼蘇達雙城</td>\n              <td>一般預測</td>\n            </tr>\n\n            <tr>\n              <td>824417</td>\n              <td>2026-07-04 07:10</td>\n              <td>Scheduled</td>\n              <td>芝加哥白襪 @ 克里夫蘭守護者</td>\n              <td>安東尼 卡 / 加維 威</td>\n              <td>克里夫蘭守護者</td>\n              <td>芝加哥白襪 4.32 : 克里夫蘭守護者 2.25</td>\n              <td>6.57</td>\n              <td>53.2%</td>\n              <td>芝加哥白襪</td>\n              <td>一般預測</td>\n            </tr>\n\n            <tr>\n              <td>824498</td>\n              <td>2026-07-04 07:10</td>\n              <td>Scheduled</td>\n              <td>巴爾的摩金鶯 @ 辛辛那提紅人</td>\n              <td>崔 羅傑 / 布雷迪 西</td>\n              <td>辛辛那提紅人</td>\n              <td>巴爾的摩金鶯 2.89 : 辛辛那提紅人 2.39</td>\n              <td>5.28</td>\n              <td>54.4%</td>\n              <td>巴爾的摩金鶯</td>\n              <td>一般預測</td>\n            </tr>\n\n            <tr>\n              <td>824904</td>\n              <td>2026-07-04 07:15</td>\n              <td>Scheduled</td>\n              <td>紐約大都會 @ 亞特蘭大勇士</td>\n              <td>查史 斯克歐特特 / 葛 霍</td>\n              <td>亞特蘭大勇士</td>\n              <td>紐約大都會 3.09 : 亞特蘭大勇士 2.14</td>\n              <td>5.22</td>\n              <td>53.5%</td>\n              <td>亞特蘭大勇士</td>\n              <td>一般預測</td>\n            </tr>\n\n            <tr>\n              <td>824336</td>\n              <td>2026-07-04 08:10</td>\n              <td>Scheduled</td>\n              <td>舊金山巨人 @ 科羅拉多洛磯</td>\n              <td>未公布 / 未公布</td>\n              <td>舊金山巨人</td>\n              <td>舊金山巨人 2.46 : 科羅拉多洛磯 4.49</td>\n              <td>6.95</td>\n              <td>58.7%</td>\n              <td>舊金山巨人</td>\n              <td>高信心預測</td>\n            </tr>\n\n            <tr>\n              <td>824173</td>\n              <td>2026-07-04 08:15</td>\n              <td>Scheduled</td>\n              <td>坦帕灣光芒 @ 休士頓太空人</td>\n              <td>未公布 / 史賓塞 阿</td>\n              <td>休士頓太空人</td>\n              <td>坦帕灣光芒 3.51 : 休士頓太空人 3.68</td>\n              <td>7.19</td>\n              <td>50.1%</td>\n              <td>坦帕灣光芒</td>\n              <td>一般預測</td>\n            </tr>\n\n            <tr>\n              <td>824013</td>\n              <td>2026-07-04 09:38</td>\n              <td>Scheduled</td>\n              <td>波士頓紅襪 @ 洛杉磯天使</td>\n              <td>傑克 貝 / 未公布</td>\n              <td>波士頓紅襪</td>\n              <td>波士頓紅襪 2.84 : 洛杉磯天使 3.75</td>\n              <td>6.60</td>\n              <td>54.5%</td>\n              <td>波士頓紅襪</td>\n              <td>一般預測</td>\n            </tr>\n\n            <tr>\n              <td>824982</td>\n              <td>2026-07-04 09:40</td>\n              <td>Scheduled</td>\n              <td>邁阿密馬林魚 @ 運動家</td>\n              <td>未公布 / 傑克 佩</td>\n              <td>運動家</td>\n              <td>邁阿密馬林魚 2.00 : 運動家 4.38</td>\n              <td>6.38</td>\n              <td>50.5%</td>\n              <td>邁阿密馬林魚</td>\n              <td>一般預測</td>\n            </tr>\n\n            <tr>\n              <td>825062</td>\n              <td>2026-07-04 09:45</td>\n              <td>Scheduled</td>\n              <td>密爾瓦基釀酒人 @ 亞利桑那響尾蛇</td>\n              <td>凱爾 哈索 / 荷西 卡布拉</td>\n              <td>密爾瓦基釀酒人</td>\n              <td>密爾瓦基釀酒人 4.91 : 亞利桑那響尾蛇 4.24</td>\n              <td>9.15</td>\n              <td>53.9%</td>\n              <td>密爾瓦基釀酒人</td>\n              <td>一般預測</td>\n            </tr>\n\n            <tr>\n              <td>823120</td>\n              <td>2026-07-04 10:10</td>\n              <td>Scheduled</td>\n              <td>多倫多藍鳥 @ 西雅圖水手</td>\n              <td>迪倫 希斯 / 未公布</td>\n              <td>西雅圖水手</td>\n              <td>多倫多藍鳥 3.22 : 西雅圖水手 2.48</td>\n              <td>5.70</td>\n              <td>52.8%</td>\n              <td>西雅圖水手</td>\n              <td>一般預測</td>\n            </tr>\n\n            <tr>\n              <td>823933</td>\n              <td>2026-07-04 10:10</td>\n              <td>Scheduled</td>\n              <td>聖地牙哥教士 @ 洛杉磯道奇</td>\n              <td>麥可 金恩 / 大谷翔平</td>\n              <td>洛杉磯道奇</td>\n              <td>聖地牙哥教士 3.02 : 洛杉磯道奇 5.27</td>\n              <td>8.29</td>\n              <td>56.2%</td>\n              <td>洛杉磯道奇</td>\n              <td>高信心預測</td>\n            </tr>"};
+    const buttons = {
+      recommendation: document.getElementById('sortRecommendation'),
+      time: document.getElementById('sortTime')
+    };
+    function setScheduleSort(mode) {
+      document.getElementById('scheduleRows').innerHTML = SCHEDULE_ROWS[mode];
+      buttons.recommendation.classList.toggle('active', mode === 'recommendation');
+      buttons.time.classList.toggle('active', mode === 'time');
+    }
+    buttons.recommendation.addEventListener('click', () => setScheduleSort('recommendation'));
+    buttons.time.addEventListener('click', () => setScheduleSort('time'));
+  </script>
+  </div>
+</body>
+</html>

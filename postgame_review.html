@@ -1,0 +1,1419 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MLB 賽後檢討</title>
+  <style>
+    :root { --bg:#f5f7f6; --surface:#fff; --ink:#17201c; --muted:#66736d; --line:#dfe6e1; --soft:#eef4f1; --green:#176454; --red:#a33b33; --amber:#9a6719; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--bg); color:var(--ink); font-family:"Microsoft JhengHei","Noto Sans TC",system-ui,sans-serif; letter-spacing:0; }
+    main { max-width:1240px; margin:0 auto; padding:28px 18px 44px; }
+    h1 { margin:0 0 8px; font-size:30px; }
+    h2 { margin:0; font-size:22px; }
+    h3 { margin:0 0 10px; font-size:16px; }
+    p { color:var(--muted); line-height:1.7; margin:0; }
+    .hero { background:var(--surface); border:1px solid var(--line); border-radius:8px; padding:22px; margin-bottom:14px; display:flex; justify-content:space-between; gap:16px; align-items:flex-start; }
+    .tabs { display:flex; flex-wrap:wrap; gap:8px; margin:12px 0 20px; }
+    .tab { text-decoration:none; color:var(--muted); border:1px solid var(--line); background:#fff; border-radius:8px; padding:8px 11px; font-weight:800; font-size:13px; }
+    .tab.active, .tab:hover { color:var(--green); background:#e8f3ee; border-color:#c7ded3; }
+    .day { margin-top:22px; }
+    .day-head { display:flex; justify-content:space-between; align-items:flex-end; gap:16px; margin-bottom:12px; }
+    .kpis { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-bottom:14px; }
+    .kpi { background:#fff; border:1px solid var(--line); border-radius:8px; padding:15px; }
+    .label { color:var(--muted); font-size:13px; font-weight:800; }
+    .value { font-size:28px; font-weight:900; margin:7px 0 3px; }
+    .value.good { color:var(--green); } .value.bad { color:var(--red); } .value.muted { color:var(--amber); }
+    .hint { color:var(--muted); font-size:13px; }
+    .discussion { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin:14px 0; }
+    .discussion > div { background:#fff; border:1px solid var(--line); border-radius:8px; padding:16px; }
+    ul { margin:0; padding-left:20px; color:var(--muted); line-height:1.8; }
+    .table-wrap { overflow-x:auto; }
+    table { width:100%; border-collapse:separate; border-spacing:0; background:#fff; border:1px solid var(--line); border-radius:8px; overflow:hidden; }
+    th,td { padding:11px 12px; text-align:left; border-bottom:1px solid #e8eee9; font-size:14px; vertical-align:top; white-space:nowrap; }
+    th { background:var(--soft); color:#405049; font-size:12px; font-weight:900; }
+    td span { display:block; color:var(--muted); font-size:12px; margin-top:3px; }
+    tr:last-child td { border-bottom:0; }
+    .badge { display:inline-flex; border-radius:999px; padding:4px 9px; font-size:12px; font-weight:900; margin:0; }
+    .badge.ok { color:#126048; background:#dff2ea; } .badge.bad { color:#9b2f29; background:#f9dddd; } .badge.wait { color:#7a4b12; background:#fff2d6; }
+    @media(max-width:900px) { .hero,.day-head { display:block; } .kpis,.discussion { grid-template-columns:1fr; } main { padding:18px 12px 34px; } }
+  
+    /* site navigation */
+    .site-shell { min-height: 100vh; display: grid; grid-template-columns: 220px minmax(0, 1fr); background: inherit; }
+    .site-sidebar { position: sticky; top: 0; align-self: start; height: 100vh; box-sizing: border-box; overflow-y: auto; border-right: 1px solid #dfe5df; background: #ffffff; padding: 22px 14px; z-index: 10; }
+    .site-brand { color: #163b34; font-size: 15px; font-weight: 900; letter-spacing: 0; margin: 0 0 14px; }
+    .site-sidebar nav { display: grid; gap: 6px; }
+    .site-nav-link { display: block; color: #40514b; text-decoration: none; border-radius: 8px; padding: 9px 10px; font-size: 14px; font-weight: 750; line-height: 1.25; }
+    .site-nav-link:hover { background: #eef4f1; color: #123d35; }
+    .site-nav-link.active { background: #165f56; color: #ffffff; }
+    .site-shell > main { width: min(1180px, calc(100% - 56px)); margin-left: auto; margin-right: auto; }
+    @media (max-width: 900px) {
+      .site-shell { display: block; }
+      .site-sidebar { position: static; height: auto; border-right: 0; border-bottom: 1px solid #dfe5df; }
+      .site-sidebar nav { grid-template-columns: repeat(auto-fit, minmax(112px, 1fr)); }
+      .site-shell > main { width: auto; }
+    }
+  </style>
+</head>
+<body>
+  <div class="site-shell" data-site-nav="true">
+    <aside class="site-sidebar">
+      <div class="site-brand">MLB 投注計畫</div>
+      <nav aria-label="主要頁面">
+        <a class="site-nav-link" href="index.html">總覽</a>
+        <a class="site-nav-link" href="daily_predictions.html">今日預測</a>
+        <a class="site-nav-link" href="betting_ticket.html">投注單</a>
+        <a class="site-nav-link" href="totals_predictions.html">大小分</a>
+        <a class="site-nav-link" href="advanced_factors.html">進階因子</a>
+        <a class="site-nav-link" href="game_simulator.html">逐打席模擬</a>
+        <a class="site-nav-link" href="monte_carlo.html">蒙地卡羅</a>
+        <a class="site-nav-link" href="market_research.html">盤口研究</a>
+        <a class="site-nav-link" href="prediction_log.html">結算紀錄</a>
+        <a class="site-nav-link active" href="postgame_review.html">賽後檢討</a>
+        <a class="site-nav-link" href="betting_roi.html">投注 ROI</a>
+        <a class="site-nav-link" href="lineup_fix_comparison.html">修正前後</a>
+        <a class="site-nav-link" href="winner_model_search.html">模型搜尋</a>
+        <a class="site-nav-link" href="prediction_accuracy.html">準確率</a>
+        <a class="site-nav-link" href="status.html">狀態</a>
+      </nav>
+    </aside>
+<main>
+  <section class="hero">
+    <div>
+      <h1>MLB 賽後檢討</h1>
+      <p>把賽前預測和賽後結果放在同一張檢討表，追蹤勝方、大小分、投注 ROI 與失準原因。</p>
+    </div>
+    <p>最近MLB賽事日：2026-07-01<br />產生時間：2026-07-03T00:08:06</p>
+  </section>
+  <nav class="tabs"><a class="tab active" href="#day-2026-07-01">2026-07-01</a>
+<a class="tab " href="#day-2026-06-30">2026-06-30</a>
+<a class="tab " href="#day-2026-06-29">2026-06-29</a>
+<a class="tab " href="#day-2026-06-28">2026-06-28</a>
+<a class="tab " href="#day-2026-06-27">2026-06-27</a>
+<a class="tab " href="#day-2026-06-26">2026-06-26</a>
+<a class="tab " href="#day-2026-06-25">2026-06-25</a></nav>
+  
+            <section class="day" id="day-2026-07-01">
+              <div class="day-head">
+                <div>
+                  <h2>2026-07-01 賽後檢討</h2>
+                  <p>賽前預測與賽後結果對照，包含勝方、大小分與投注結果。</p>
+                </div>
+              </div>
+              
+    <section class="kpis">
+      <div class="kpi"><div class="label">勝方準確率</div><div class="value">50.00%</div><div class="hint">7 / 14 已完賽</div></div>
+      <div class="kpi"><div class="label">大小分準確率</div><div class="value">71.43%</div><div class="hint">10 / 14 有盤口</div></div>
+      <div class="kpi"><div class="label">投注損益</div><div class="value ">0</div><div class="hint">0 筆投注紀錄</div></div>
+      <div class="kpi"><div class="label">待結算</div><div class="value muted">0</div><div class="hint">延賽或尚未完賽</div></div>
+    </section>
+              <div class="discussion">
+                <div><h3>命中重點</h3><ul><li>辛辛那提紅人 @ 密爾瓦基釀酒人：高信心勝方命中。</li><li>匹茲堡海盜 @ 費城費城人：高信心勝方命中。</li><li>聖路易紅雀 @ 亞特蘭大勇士：高信心勝方命中。</li></ul></div>
+                <div><h3>失準檢討</h3><ul><li>華盛頓國民 @ 波士頓紅襪：波士頓紅襪 未命中，比分 10-2。</li><li>邁阿密馬林魚 @ 科羅拉多洛磯：邁阿密馬林魚 未命中，比分 3-6。</li><li>洛杉磯道奇 @ 運動家：洛杉磯道奇 未命中，比分 1-7。</li><li>底特律老虎 @ 紐約洋基：紐約洋基 未命中，比分 6-2。</li></ul></div>
+              </div>
+              <div class="table-wrap">
+                <table>
+                  <thead><tr><th>台灣開賽時間</th><th>對戰</th><th>賽前勝方</th><th>比分</th><th>實際勝方</th><th>勝方</th><th>大小分</th><th>大小分結果</th><th>檢討重點</th></tr></thead>
+                  <tbody>
+            <tr>
+              <td>2026-07-02 01:35</td>
+              <td>華盛頓國民 @ 波士頓紅襪<span>GamePk 824740</span></td>
+              <td>波士頓紅襪<span>58.3%</span></td>
+              <td>10-2</td>
+              <td>華盛頓國民</td>
+              <td><span class="badge bad">錯誤</span></td>
+              <td>小分<span>9.5</span></td>
+              <td><span class="badge bad">錯誤</span></td>
+              <td>高信心失準，需要回看先發投手、牛棚或打線是否有臨場變化。<br>大小分偏差 2.8 分，需檢查投手/天氣/打線係數。</td>
+            </tr>
+
+            <tr>
+              <td>2026-07-02 08:40</td>
+              <td>邁阿密馬林魚 @ 科羅拉多洛磯<span>GamePk 824337</span></td>
+              <td>邁阿密馬林魚<span>58.1%</span></td>
+              <td>3-6</td>
+              <td>科羅拉多洛磯</td>
+              <td><span class="badge bad">錯誤</span></td>
+              <td>小分<span>10.5</span></td>
+              <td><span class="badge ok">正確</span></td>
+              <td>高信心失準，需要回看先發投手、牛棚或打線是否有臨場變化。</td>
+            </tr>
+
+            <tr>
+              <td>2026-07-02 08:10</td>
+              <td>辛辛那提紅人 @ 密爾瓦基釀酒人<span>GamePk 823767</span></td>
+              <td>密爾瓦基釀酒人<span>58.1%</span></td>
+              <td>2-4</td>
+              <td>密爾瓦基釀酒人</td>
+              <td><span class="badge ok">正確</span></td>
+              <td>大分<span>8.5</span></td>
+              <td><span class="badge bad">錯誤</span></td>
+              <td>高信心方向有命中，這類條件可列為穩定樣本繼續追蹤。<br>大小分偏差 2.8 分，需檢查投手/天氣/打線係數。</td>
+            </tr>
+
+            <tr>
+              <td>2026-07-02 09:40</td>
+              <td>洛杉磯道奇 @ 運動家<span>GamePk 824985</span></td>
+              <td>洛杉磯道奇<span>56.3%</span></td>
+              <td>1-7</td>
+              <td>運動家</td>
+              <td><span class="badge bad">錯誤</span></td>
+              <td>小分<span>10.5</span></td>
+              <td><span class="badge ok">正確</span></td>
+              <td>高信心失準，需要回看先發投手、牛棚或打線是否有臨場變化。</td>
+            </tr>
+
+            <tr>
+              <td>2026-07-02 06:40</td>
+              <td>匹茲堡海盜 @ 費城費城人<span>GamePk 823446</span></td>
+              <td>費城費城人<span>55.5%</span></td>
+              <td>6-10</td>
+              <td>費城費城人</td>
+              <td><span class="badge ok">正確</span></td>
+              <td>大分<span>7.5</span></td>
+              <td><span class="badge ok">正確</span></td>
+              <td>高信心方向有命中，這類條件可列為穩定樣本繼續追蹤。</td>
+            </tr>
+
+            <tr>
+              <td>2026-07-02 07:15</td>
+              <td>聖路易紅雀 @ 亞特蘭大勇士<span>GamePk 824905</span></td>
+              <td>亞特蘭大勇士<span>55.0%</span></td>
+              <td>1-5</td>
+              <td>亞特蘭大勇士</td>
+              <td><span class="badge ok">正確</span></td>
+              <td>小分<span>9.5</span></td>
+              <td><span class="badge ok">正確</span></td>
+              <td>高信心方向有命中，這類條件可列為穩定樣本繼續追蹤。</td>
+            </tr>
+
+            <tr>
+              <td>2026-07-02 01:35</td>
+              <td>底特律老虎 @ 紐約洋基<span>GamePk 823530</span></td>
+              <td>紐約洋基<span>55.1%</span></td>
+              <td>6-2</td>
+              <td>底特律老虎</td>
+              <td><span class="badge bad">錯誤</span></td>
+              <td>小分<span>9.5</span></td>
+              <td><span class="badge ok">正確</span></td>
+              <td>高信心失準，需要回看先發投手、牛棚或打線是否有臨場變化。</td>
+            </tr>
+
+            <tr>
+              <td>2026-07-02 02:20</td>
+              <td>聖地牙哥教士 @ 芝加哥小熊<span>GamePk 824660</span></td>
+              <td>芝加哥小熊<span>54.2%</span></td>
+              <td>3-23</td>
+              <td>芝加哥小熊</td>
+              <td><span class="badge ok">正確</span></td>
+              <td>小分<span>12.5</span></td>
+              <td><span class="badge bad">錯誤</span></td>
+              <td>方向正確，但信心不高，較適合作為觀察而非重注。<br>大小分偏差 16.8 分，需檢查投手/天氣/打線係數。</td>
+            </tr>
+
+            <tr>
+              <td>2026-07-02 08:10</td>
+              <td>明尼蘇達雙城 @ 休士頓太空人<span>GamePk 824174</span></td>
+              <td>休士頓太空人<span>54.1%</span></td>
+              <td>8-3</td>
+              <td>明尼蘇達雙城</td>
+              <td><span class="badge bad">錯誤</span></td>
+              <td>大分<span>8.5</span></td>
+              <td><span class="badge ok">正確</span></td>
+              <td></td>
+            </tr>
+
+            <tr>
+              <td>2026-07-02 03:07</td>
+              <td>紐約大都會 @ 多倫多藍鳥<span>GamePk 822791</span></td>
+              <td>多倫多藍鳥<span>52.7%</span></td>
+              <td>3-9</td>
+              <td>多倫多藍鳥</td>
+              <td><span class="badge ok">正確</span></td>
+              <td>大分<span>8.5</span></td>
+              <td><span class="badge ok">正確</span></td>
+              <td>方向正確，但信心不高，較適合作為觀察而非重注。</td>
+            </tr>
+
+            <tr>
+              <td>2026-07-02 09:40</td>
+              <td>舊金山巨人 @ 亞利桑那響尾蛇<span>GamePk 825064</span></td>
+              <td>亞利桑那響尾蛇<span>52.3%</span></td>
+              <td>6-4</td>
+              <td>舊金山巨人</td>
+              <td><span class="badge bad">錯誤</span></td>
+              <td>小分<span>9.5</span></td>
+              <td><span class="badge bad">錯誤</span></td>
+              <td>信心接近五五波，賽前應降權或避免當主推。<br>大小分偏差 1.4 分，需檢查投手/天氣/打線係數。</td>
+            </tr>
+
+            <tr>
+              <td>2026-07-02 07:40</td>
+              <td>坦帕灣光芒 @ 堪薩斯市皇家<span>GamePk 824094</span></td>
+              <td>坦帕灣光芒<span>50.7%</span></td>
+              <td>4-0</td>
+              <td>坦帕灣光芒</td>
+              <td><span class="badge ok">正確</span></td>
+              <td>小分<span>10.5</span></td>
+              <td><span class="badge ok">正確</span></td>
+              <td>方向正確，但信心不高，較適合作為觀察而非重注。</td>
+            </tr>
+
+            <tr>
+              <td>2026-07-02 00:35</td>
+              <td>芝加哥白襪 @ 巴爾的摩金鶯<span>GamePk 824818</span></td>
+              <td>巴爾的摩金鶯<span>50.3%</span></td>
+              <td>1-6</td>
+              <td>巴爾的摩金鶯</td>
+              <td><span class="badge ok">正確</span></td>
+              <td>小分<span>10.5</span></td>
+              <td><span class="badge ok">正確</span></td>
+              <td>方向正確，但信心不高，較適合作為觀察而非重注。</td>
+            </tr>
+
+            <tr>
+              <td>2026-07-02 01:10</td>
+              <td>德州遊騎兵 @ 克里夫蘭守護者<span>GamePk 824419</span></td>
+              <td>德州遊騎兵<span>50.1%</span></td>
+              <td>4-9</td>
+              <td>克里夫蘭守護者</td>
+              <td><span class="badge bad">錯誤</span></td>
+              <td>大分<span>7.5</span></td>
+              <td><span class="badge ok">正確</span></td>
+              <td>信心接近五五波，賽前應降權或避免當主推。</td>
+            </tr></tbody>
+                </table>
+              </div>
+            </section>
+            <section class="day" id="day-2026-06-30">
+              <div class="day-head">
+                <div>
+                  <h2>2026-06-30 賽後檢討</h2>
+                  <p>賽前預測與賽後結果對照，包含勝方、大小分與投注結果。</p>
+                </div>
+              </div>
+              
+    <section class="kpis">
+      <div class="kpi"><div class="label">勝方準確率</div><div class="value">66.67%</div><div class="hint">10 / 15 已完賽</div></div>
+      <div class="kpi"><div class="label">大小分準確率</div><div class="value">46.67%</div><div class="hint">7 / 15 有盤口</div></div>
+      <div class="kpi"><div class="label">投注損益</div><div class="value ">0</div><div class="hint">0 筆投注紀錄</div></div>
+      <div class="kpi"><div class="label">待結算</div><div class="value muted">0</div><div class="hint">延賽或尚未完賽</div></div>
+    </section>
+              <div class="discussion">
+                <div><h3>命中重點</h3><ul><li>洛杉磯天使 @ 西雅圖水手：高信心勝方命中。</li><li>辛辛那提紅人 @ 密爾瓦基釀酒人：高信心勝方命中。</li><li>邁阿密馬林魚 @ 科羅拉多洛磯：高信心勝方命中。</li></ul></div>
+                <div><h3>失準檢討</h3><ul><li>華盛頓國民 @ 波士頓紅襪：波士頓紅襪 未命中，比分 8-1。</li><li>聖路易紅雀 @ 亞特蘭大勇士：亞特蘭大勇士 未命中，比分 5-3。</li><li>底特律老虎 @ 紐約洋基：紐約洋基 未命中，比分 9-3。</li></ul></div>
+              </div>
+              <div class="table-wrap">
+                <table>
+                  <thead><tr><th>台灣開賽時間</th><th>對戰</th><th>賽前勝方</th><th>比分</th><th>實際勝方</th><th>勝方</th><th>大小分</th><th>大小分結果</th><th>檢討重點</th></tr></thead>
+                  <tbody>
+            <tr>
+              <td>2026-07-01 07:10</td>
+              <td>華盛頓國民 @ 波士頓紅襪<span>GamePk 824742</span></td>
+              <td>波士頓紅襪<span>58.6%</span></td>
+              <td>8-1</td>
+              <td>華盛頓國民</td>
+              <td><span class="badge bad">錯誤</span></td>
+              <td>小分<span>9.5</span></td>
+              <td><span class="badge ok">正確</span></td>
+              <td>高信心失準，需要回看先發投手、牛棚或打線是否有臨場變化。</td>
+            </tr>
+
+            <tr>
+              <td>2026-07-01 09:40</td>
+              <td>洛杉磯天使 @ 西雅圖水手<span>GamePk 823122</span></td>
+              <td>西雅圖水手<span>58.0%</span></td>
+              <td>3-8</td>
+              <td>西雅圖水手</td>
+              <td><span class="badge ok">正確</span></td>
+              <td>大分<span>7.5</span></td>
+              <td><span class="badge ok">正確</span></td>
+              <td>高信心方向有命中，這類條件可列為穩定樣本繼續追蹤。</td>
+            </tr>
+
+            <tr>
+              <td>2026-07-01 07:40</td>
+              <td>辛辛那提紅人 @ 密爾瓦基釀酒人<span>GamePk 823768</span></td>
+              <td>密爾瓦基釀酒人<span>57.9%</span></td>
+              <td>2-7</td>
+              <td>密爾瓦基釀酒人</td>
+              <td><span class="badge ok">正確</span></td>
+              <td>大分<span>8.5</span></td>
+              <td><span class="badge ok">正確</span></td>
+              <td>高信心方向有命中，這類條件可列為穩定樣本繼續追蹤。</td>
+            </tr>
+
+            <tr>
+              <td>2026-07-01 08:40</td>
+              <td>邁阿密馬林魚 @ 科羅拉多洛磯<span>GamePk 824338</span></td>
+              <td>邁阿密馬林魚<span>57.6%</span></td>
+              <td>14-3</td>
+              <td>邁阿密馬林魚</td>
+              <td><span class="badge ok">正確</span></td>
+              <td>小分<span>11.5</span></td>
+              <td><span class="badge bad">錯誤</span></td>
+              <td>高信心方向有命中，這類條件可列為穩定樣本繼續追蹤。<br>大小分偏差 7.4 分，需檢查投手/天氣/打線係數。</td>
+            </tr>
+
+            <tr>
+              <td>2026-07-01 09:40</td>
+              <td>洛杉磯道奇 @ 運動家<span>GamePk 824984</span></td>
+              <td>洛杉磯道奇<span>56.1%</span></td>
+              <td>9-3</td>
+              <td>洛杉磯道奇</td>
+              <td><span class="badge ok">正確</span></td>
+              <td>大分<span>10.5</span></td>
+              <td><span class="badge ok">正確</span></td>
+              <td>高信心方向有命中，這類條件可列為穩定樣本繼續追蹤。</td>
+            </tr>
+
+            <tr>
+              <td>2026-07-01 06:40</td>
+              <td>匹茲堡海盜 @ 費城費城人<span>GamePk 823445</span></td>
+              <td>費城費城人<span>55.2%</span></td>
+              <td>0-8</td>
+              <td>費城費城人</td>
+              <td><span class="badge ok">正確</span></td>
+              <td>大分<span>8.5</span></td>
+              <td><span class="badge bad">錯誤</span></td>
+              <td>高信心方向有命中，這類條件可列為穩定樣本繼續追蹤。<br>大小分偏差 1.9 分，需檢查投手/天氣/打線係數。</td>
+            </tr>
+
+            <tr>
+              <td>2026-07-01 07:15</td>
+              <td>聖路易紅雀 @ 亞特蘭大勇士<span>GamePk 824907</span></td>
+              <td>亞特蘭大勇士<span>55.1%</span></td>
+              <td>5-3</td>
+              <td>聖路易紅雀</td>
+              <td><span class="badge bad">錯誤</span></td>
+              <td>小分<span>9.5</span></td>
+              <td><span class="badge ok">正確</span></td>
+              <td>高信心失準，需要回看先發投手、牛棚或打線是否有臨場變化。</td>
+            </tr>
+
+            <tr>
+              <td>2026-07-01 07:05</td>
+              <td>底特律老虎 @ 紐約洋基<span>GamePk 823528</span></td>
+              <td>紐約洋基<span>55.3%</span></td>
+              <td>9-3</td>
+              <td>底特律老虎</td>
+              <td><span class="badge bad">錯誤</span></td>
+              <td>大分<span>7.5</span></td>
+              <td><span class="badge ok">正確</span></td>
+              <td>高信心失準，需要回看先發投手、牛棚或打線是否有臨場變化。</td>
+            </tr>
+
+            <tr>
+              <td>2026-07-01 08:05</td>
+              <td>聖地牙哥教士 @ 芝加哥小熊<span>GamePk 824661</span></td>
+              <td>芝加哥小熊<span>54.1%</span></td>
+              <td>7-9</td>
+              <td>芝加哥小熊</td>
+              <td><span class="badge ok">正確</span></td>
+              <td>小分<span>11.5</span></td>
+              <td><span class="badge bad">錯誤</span></td>
+              <td>方向正確，但信心不高，較適合作為觀察而非重注。<br>大小分偏差 7.1 分，需檢查投手/天氣/打線係數。</td>
+            </tr>
+
+            <tr>
+              <td>2026-07-01 08:10</td>
+              <td>明尼蘇達雙城 @ 休士頓太空人<span>GamePk 824175</span></td>
+              <td>休士頓太空人<span>54.1%</span></td>
+              <td>4-6</td>
+              <td>休士頓太空人</td>
+              <td><span class="badge ok">正確</span></td>
+              <td>大分<span>8.5</span></td>
+              <td><span class="badge ok">正確</span></td>
+              <td>方向正確，但信心不高，較適合作為觀察而非重注。</td>
+            </tr>
+
+            <tr>
+              <td>2026-07-01 07:07</td>
+              <td>紐約大都會 @ 多倫多藍鳥<span>GamePk 822793</span></td>
+              <td>多倫多藍鳥<span>52.8%</span></td>
+              <td>3-0</td>
+              <td>紐約大都會</td>
+              <td><span class="badge bad">錯誤</span></td>
+              <td>大分<span>7.5</span></td>
+              <td><span class="badge bad">錯誤</span></td>
+              <td>信心接近五五波，賽前應降權或避免當主推。<br>大小分偏差 6.0 分，需檢查投手/天氣/打線係數。</td>
+            </tr>
+
+            <tr>
+              <td>2026-07-01 09:40</td>
+              <td>舊金山巨人 @ 亞利桑那響尾蛇<span>GamePk 825066</span></td>
+              <td>亞利桑那響尾蛇<span>52.0%</span></td>
+              <td>2-8</td>
+              <td>亞利桑那響尾蛇</td>
+              <td><span class="badge ok">正確</span></td>
+              <td>小分<span>8.5</span></td>
+              <td><span class="badge bad">錯誤</span></td>
+              <td>方向正確，但信心不高，較適合作為觀察而非重注。<br>大小分偏差 1.6 分，需檢查投手/天氣/打線係數。</td>
+            </tr>
+
+            <tr>
+              <td>2026-07-01 06:35</td>
+              <td>芝加哥白襪 @ 巴爾的摩金鶯<span>GamePk 824819</span></td>
+              <td>巴爾的摩金鶯<span>50.5%</span></td>
+              <td>9-3</td>
+              <td>芝加哥白襪</td>
+              <td><span class="badge bad">錯誤</span></td>
+              <td>小分<span>10.5</span></td>
+              <td><span class="badge bad">錯誤</span></td>
+              <td>信心接近五五波，賽前應降權或避免當主推。<br>大小分偏差 3.0 分，需檢查投手/天氣/打線係數。</td>
+            </tr>
+
+            <tr>
+              <td>2026-07-01 07:40</td>
+              <td>坦帕灣光芒 @ 堪薩斯市皇家<span>GamePk 824096</span></td>
+              <td>坦帕灣光芒<span>50.4%</span></td>
+              <td>10-4</td>
+              <td>坦帕灣光芒</td>
+              <td><span class="badge ok">正確</span></td>
+              <td>小分<span>9.5</span></td>
+              <td><span class="badge bad">錯誤</span></td>
+              <td>方向正確，但信心不高，較適合作為觀察而非重注。<br>大小分偏差 4.8 分，需檢查投手/天氣/打線係數。</td>
+            </tr>
+
+            <tr>
+              <td>2026-07-01 06:40</td>
+              <td>德州遊騎兵 @ 克里夫蘭守護者<span>GamePk 824418</span></td>
+              <td>德州遊騎兵<span>50.1%</span></td>
+              <td>4-2</td>
+              <td>德州遊騎兵</td>
+              <td><span class="badge ok">正確</span></td>
+              <td>大分<span>7.5</span></td>
+              <td><span class="badge bad">錯誤</span></td>
+              <td>方向正確，但信心不高，較適合作為觀察而非重注。<br>大小分偏差 2.2 分，需檢查投手/天氣/打線係數。</td>
+            </tr></tbody>
+                </table>
+              </div>
+            </section>
+            <section class="day" id="day-2026-06-29">
+              <div class="day-head">
+                <div>
+                  <h2>2026-06-29 賽後檢討</h2>
+                  <p>賽前預測與賽後結果對照，包含勝方、大小分與投注結果。</p>
+                </div>
+              </div>
+              
+    <section class="kpis">
+      <div class="kpi"><div class="label">勝方準確率</div><div class="value">61.54%</div><div class="hint">8 / 13 已完賽</div></div>
+      <div class="kpi"><div class="label">大小分準確率</div><div class="value">69.23%</div><div class="hint">9 / 13 有盤口</div></div>
+      <div class="kpi"><div class="label">投注損益</div><div class="value ">0</div><div class="hint">0 筆投注紀錄</div></div>
+      <div class="kpi"><div class="label">待結算</div><div class="value muted">0</div><div class="hint">延賽或尚未完賽</div></div>
+    </section>
+              <div class="discussion">
+                <div><h3>命中重點</h3><ul><li>華盛頓國民 @ 波士頓紅襪：高信心勝方命中。</li><li>辛辛那提紅人 @ 密爾瓦基釀酒人：高信心勝方命中。</li><li>邁阿密馬林魚 @ 科羅拉多洛磯：高信心勝方命中。</li></ul></div>
+                <div><h3>失準檢討</h3><ul><li>匹茲堡海盜 @ 費城費城人：費城費城人 未命中，比分 11-7。</li><li>底特律老虎 @ 紐約洋基：紐約洋基 未命中，比分 7-3。</li><li>明尼蘇達雙城 @ 休士頓太空人：休士頓太空人 未命中，比分 5-4。</li></ul></div>
+              </div>
+              <div class="table-wrap">
+                <table>
+                  <thead><tr><th>台灣開賽時間</th><th>對戰</th><th>賽前勝方</th><th>比分</th><th>實際勝方</th><th>勝方</th><th>大小分</th><th>大小分結果</th><th>檢討重點</th></tr></thead>
+                  <tbody>
+            <tr>
+              <td>2026-06-30 07:10</td>
+              <td>華盛頓國民 @ 波士頓紅襪<span>GamePk 824741</span></td>
+              <td>波士頓紅襪<span>58.5%</span></td>
+              <td>3-6</td>
+              <td>波士頓紅襪</td>
+              <td><span class="badge ok">正確</span></td>
+              <td>大分<span>8.5</span></td>
+              <td><span class="badge ok">正確</span></td>
+              <td>高信心方向有命中，這類條件可列為穩定樣本繼續追蹤。</td>
+            </tr>
+
+            <tr>
+              <td>2026-06-30 07:40</td>
+              <td>辛辛那提紅人 @ 密爾瓦基釀酒人<span>GamePk 823771</span></td>
+              <td>密爾瓦基釀酒人<span>57.8%</span></td>
+              <td>3-5</td>
+              <td>密爾瓦基釀酒人</td>
+              <td><span class="badge ok">正確</span></td>
+              <td>大分<span>8.5</span></td>
+              <td><span class="badge bad">錯誤</span></td>
+              <td>高信心方向有命中，這類條件可列為穩定樣本繼續追蹤。<br>大小分偏差 0.9 分，需檢查投手/天氣/打線係數。</td>
+            </tr>
+
+            <tr>
+              <td>2026-06-30 08:40</td>
+              <td>邁阿密馬林魚 @ 科羅拉多洛磯<span>GamePk 824339</span></td>
+              <td>邁阿密馬林魚<span>57.6%</span></td>
+              <td>10-7</td>
+              <td>邁阿密馬林魚</td>
+              <td><span class="badge ok">正確</span></td>
+              <td>小分<span>11.5</span></td>
+              <td><span class="badge bad">錯誤</span></td>
+              <td>高信心方向有命中，這類條件可列為穩定樣本繼續追蹤。<br>大小分偏差 7.7 分，需檢查投手/天氣/打線係數。</td>
+            </tr>
+
+            <tr>
+              <td>2026-06-30 09:40</td>
+              <td>洛杉磯道奇 @ 運動家<span>GamePk 824986</span></td>
+              <td>洛杉磯道奇<span>56.0%</span></td>
+              <td>9-4</td>
+              <td>洛杉磯道奇</td>
+              <td><span class="badge ok">正確</span></td>
+              <td>大分<span>10.5</span></td>
+              <td><span class="badge ok">正確</span></td>
+              <td>高信心方向有命中，這類條件可列為穩定樣本繼續追蹤。</td>
+            </tr>
+
+            <tr>
+              <td>2026-06-30 06:40</td>
+              <td>匹茲堡海盜 @ 費城費城人<span>GamePk 823444</span></td>
+              <td>費城費城人<span>55.4%</span></td>
+              <td>11-7</td>
+              <td>匹茲堡海盜</td>
+              <td><span class="badge bad">錯誤</span></td>
+              <td>大分<span>8.5</span></td>
+              <td><span class="badge ok">正確</span></td>
+              <td>高信心失準，需要回看先發投手、牛棚或打線是否有臨場變化。</td>
+            </tr>
+
+            <tr>
+              <td>2026-06-30 09:40</td>
+              <td>洛杉磯天使 @ 西雅圖水手<span>GamePk 823121</span></td>
+              <td>西雅圖水手<span>57.8%</span></td>
+              <td>2-6</td>
+              <td>西雅圖水手</td>
+              <td><span class="badge ok">正確</span></td>
+              <td>大分<span>7.5</span></td>
+              <td><span class="badge ok">正確</span></td>
+              <td>高信心方向有命中，這類條件可列為穩定樣本繼續追蹤。</td>
+            </tr>
+
+            <tr>
+              <td>2026-06-30 07:05</td>
+              <td>底特律老虎 @ 紐約洋基<span>GamePk 823529</span></td>
+              <td>紐約洋基<span>55.5%</span></td>
+              <td>7-3</td>
+              <td>底特律老虎</td>
+              <td><span class="badge bad">錯誤</span></td>
+              <td>大分<span>7.5</span></td>
+              <td><span class="badge ok">正確</span></td>
+              <td>高信心失準，需要回看先發投手、牛棚或打線是否有臨場變化。</td>
+            </tr>
+
+            <tr>
+              <td>2026-06-30 08:10</td>
+              <td>明尼蘇達雙城 @ 休士頓太空人<span>GamePk 824176</span></td>
+              <td>休士頓太空人<span>54.1%</span></td>
+              <td>5-4</td>
+              <td>明尼蘇達雙城</td>
+              <td><span class="badge bad">錯誤</span></td>
+              <td>大分<span>8.5</span></td>
+              <td><span class="badge ok">正確</span></td>
+              <td>一分差比賽，模型即使方向錯也屬高波動結果。</td>
+            </tr>
+
+            <tr>
+              <td>2026-06-30 08:05</td>
+              <td>聖地牙哥教士 @ 芝加哥小熊<span>GamePk 824662</span></td>
+              <td>芝加哥小熊<span>54.1%</span></td>
+              <td>2-3</td>
+              <td>芝加哥小熊</td>
+              <td><span class="badge ok">正確</span></td>
+              <td>小分<span>11.5</span></td>
+              <td><span class="badge ok">正確</span></td>
+              <td>方向正確，但信心不高，較適合作為觀察而非重注。<br>一分差比賽，模型即使方向錯也屬高波動結果。</td>
+            </tr>
+
+            <tr>
+              <td>2026-06-30 07:07</td>
+              <td>紐約大都會 @ 多倫多藍鳥<span>GamePk 822792</span></td>
+              <td>多倫多藍鳥<span>52.8%</span></td>
+              <td>1-2</td>
+              <td>多倫多藍鳥</td>
+              <td><span class="badge ok">正確</span></td>
+              <td>大分<span>8.5</span></td>
+              <td><span class="badge bad">錯誤</span></td>
+              <td>方向正確，但信心不高，較適合作為觀察而非重注。<br>一分差比賽，模型即使方向錯也屬高波動結果。</td>
+            </tr>
+
+            <tr>
+              <td>2026-06-30 09:40</td>
+              <td>舊金山巨人 @ 亞利桑那響尾蛇<span>GamePk 825065</span></td>
+              <td>亞利桑那響尾蛇<span>52.0%</span></td>
+              <td>4-5</td>
+              <td>亞利桑那響尾蛇</td>
+              <td><span class="badge ok">正確</span></td>
+              <td>小分<span>9.5</span></td>
+              <td><span class="badge ok">正確</span></td>
+              <td>方向正確，但信心不高，較適合作為觀察而非重注。<br>一分差比賽，模型即使方向錯也屬高波動結果。</td>
+            </tr>
+
+            <tr>
+              <td>2026-06-30 06:35</td>
+              <td>芝加哥白襪 @ 巴爾的摩金鶯<span>GamePk 824822</span></td>
+              <td>巴爾的摩金鶯<span>50.8%</span></td>
+              <td>8-2</td>
+              <td>芝加哥白襪</td>
+              <td><span class="badge bad">錯誤</span></td>
+              <td>小分<span>9.5</span></td>
+              <td><span class="badge bad">錯誤</span></td>
+              <td>信心接近五五波，賽前應降權或避免當主推。<br>大小分偏差 1.0 分，需檢查投手/天氣/打線係數。</td>
+            </tr>
+
+            <tr>
+              <td>2026-06-30 07:10</td>
+              <td>德州遊騎兵 @ 克里夫蘭守護者<span>GamePk 824420</span></td>
+              <td>克里夫蘭守護者<span>50.1%</span></td>
+              <td>6-3</td>
+              <td>德州遊騎兵</td>
+              <td><span class="badge bad">錯誤</span></td>
+              <td>大分<span>7.5</span></td>
+              <td><span class="badge ok">正確</span></td>
+              <td>信心接近五五波，賽前應降權或避免當主推。</td>
+            </tr></tbody>
+                </table>
+              </div>
+            </section>
+            <section class="day" id="day-2026-06-28">
+              <div class="day-head">
+                <div>
+                  <h2>2026-06-28 賽後檢討</h2>
+                  <p>賽前預測與賽後結果對照，包含勝方、大小分與投注結果。</p>
+                </div>
+              </div>
+              
+    <section class="kpis">
+      <div class="kpi"><div class="label">勝方準確率</div><div class="value">46.67%</div><div class="hint">7 / 15 已完賽</div></div>
+      <div class="kpi"><div class="label">大小分準確率</div><div class="value">46.67%</div><div class="hint">7 / 15 有盤口</div></div>
+      <div class="kpi"><div class="label">投注損益</div><div class="value bad">-100</div><div class="hint">1 筆投注紀錄</div></div>
+      <div class="kpi"><div class="label">待結算</div><div class="value muted">0</div><div class="hint">延賽或尚未完賽</div></div>
+    </section>
+              <div class="discussion">
+                <div><h3>命中重點</h3><ul><li>科羅拉多洛磯 @ 明尼蘇達雙城：高信心勝方命中。</li></ul></div>
+                <div><h3>失準檢討</h3><ul><li>芝加哥小熊 @ 密爾瓦基釀酒人：密爾瓦基釀酒人 未命中，比分 4-3。</li><li>休士頓太空人 @ 底特律老虎：底特律老虎 未命中，比分 7-5。</li><li>華盛頓國民 @ 巴爾的摩金鶯：巴爾的摩金鶯 未命中，比分 6-4。</li></ul></div>
+              </div>
+              <div class="table-wrap">
+                <table>
+                  <thead><tr><th>台灣開賽時間</th><th>對戰</th><th>賽前勝方</th><th>比分</th><th>實際勝方</th><th>勝方</th><th>大小分</th><th>大小分結果</th><th>檢討重點</th></tr></thead>
+                  <tbody>
+            <tr>
+              <td>2026-06-29 02:10</td>
+              <td>科羅拉多洛磯 @ 明尼蘇達雙城<span>GamePk 823686</span></td>
+              <td>明尼蘇達雙城<span>60.9%</span></td>
+              <td>2-3</td>
+              <td>明尼蘇達雙城</td>
+              <td><span class="badge ok">正確</span></td>
+              <td>大分<span>8.5</span></td>
+              <td><span class="badge bad">錯誤</span></td>
+              <td>高信心方向有命中，這類條件可列為穩定樣本繼續追蹤。<br>一分差比賽，模型即使方向錯也屬高波動結果。</td>
+            </tr>
+
+            <tr>
+              <td>2026-06-29 02:10</td>
+              <td>芝加哥小熊 @ 密爾瓦基釀酒人<span>GamePk 823769</span></td>
+              <td>密爾瓦基釀酒人<span>54.1%</span></td>
+              <td>4-3</td>
+              <td>芝加哥小熊</td>
+              <td><span class="badge bad">錯誤</span></td>
+              <td>大分<span>8.5</span></td>
+              <td><span class="badge bad">錯誤</span></td>
+              <td>一分差比賽，模型即使方向錯也屬高波動結果。<br>大小分偏差 2.9 分，需檢查投手/天氣/打線係數。</td>
+            </tr>
+
+            <tr>
+              <td>2026-06-29 01:40</td>
+              <td>休士頓太空人 @ 底特律老虎<span>GamePk 824256</span></td>
+              <td>底特律老虎<span>54.0%</span></td>
+              <td>7-5</td>
+              <td>休士頓太空人</td>
+              <td><span class="badge bad">錯誤</span></td>
+              <td>小分<span>8.5</span></td>
+              <td><span class="badge bad">錯誤</span></td>
+              <td>大小分偏差 3.8 分，需檢查投手/天氣/打線係數。<br>實際投注單虧損，後續應提高 edge 門檻或降低此類下注權重。</td>
+            </tr>
+
+            <tr>
+              <td>2026-06-29 01:40</td>
+              <td>亞利桑那響尾蛇 @ 坦帕灣光芒<span>GamePk 822959</span></td>
+              <td>坦帕灣光芒<span>53.4%</span></td>
+              <td>1-5</td>
+              <td>坦帕灣光芒</td>
+              <td><span class="badge ok">正確</span></td>
+              <td>大分<span>7.5</span></td>
+              <td><span class="badge bad">錯誤</span></td>
+              <td>方向正確，但信心不高，較適合作為觀察而非重注。<br>大小分偏差 2.6 分，需檢查投手/天氣/打線係數。</td>
+            </tr>
+
+            <tr>
+              <td>2026-06-29 01:35</td>
+              <td>華盛頓國民 @ 巴爾的摩金鶯<span>GamePk 824821</span></td>
+              <td>巴爾的摩金鶯<span>53.3%</span></td>
+              <td>6-4</td>
+              <td>華盛頓國民</td>
+              <td><span class="badge bad">錯誤</span></td>
+              <td>大分<span>8.5</span></td>
+              <td><span class="badge ok">正確</span></td>
+              <td></td>
+            </tr>
+
+            <tr>
+              <td>2026-06-29 02:15</td>
+              <td>邁阿密馬林魚 @ 聖路易紅雀<span>GamePk 823037</span></td>
+              <td>聖路易紅雀<span>52.2%</span></td>
+              <td>1-2</td>
+              <td>聖路易紅雀</td>
+              <td><span class="badge ok">正確</span></td>
+              <td>小分<span>9.5</span></td>
+              <td><span class="badge ok">正確</span></td>
+              <td>方向正確，但信心不高，較適合作為觀察而非重注。<br>一分差比賽，模型即使方向錯也屬高波動結果。</td>
+            </tr>
+
+            <tr>
+              <td>2026-06-29 02:10</td>
+              <td>堪薩斯市皇家 @ 芝加哥白襪<span>GamePk 824580</span></td>
+              <td>芝加哥白襪<span>51.6%</span></td>
+              <td>5-4</td>
+              <td>堪薩斯市皇家</td>
+              <td><span class="badge bad">錯誤</span></td>
+              <td>大分<span>8.5</span></td>
+              <td><span class="badge ok">正確</span></td>
+              <td>信心接近五五波，賽前應降權或避免當主推。<br>一分差比賽，模型即使方向錯也屬高波動結果。</td>
+            </tr>
+
+            <tr>
+              <td>2026-06-29 01:35</td>
+              <td>辛辛那提紅人 @ 匹茲堡海盜<span>GamePk 823362</span></td>
+              <td>匹茲堡海盜<span>51.5%</span></td>
+              <td>4-9</td>
+              <td>匹茲堡海盜</td>
+              <td><span class="badge ok">正確</span></td>
+              <td>大分<span>8.5</span></td>
+              <td><span class="badge ok">正確</span></td>
+              <td>方向正確，但信心不高，較適合作為觀察而非重注。</td>
+            </tr>
+
+            <tr>
+              <td>2026-06-29 01:37</td>
+              <td>德州遊騎兵 @ 多倫多藍鳥<span>GamePk 822795</span></td>
+              <td>多倫多藍鳥<span>51.4%</span></td>
+              <td>3-2</td>
+              <td>德州遊騎兵</td>
+              <td><span class="badge bad">錯誤</span></td>
+              <td>大分<span>8.5</span></td>
+              <td><span class="badge bad">錯誤</span></td>
+              <td>信心接近五五波，賽前應降權或避免當主推。<br>一分差比賽，模型即使方向錯也屬高波動結果。</td>
+            </tr>
+
+            <tr>
+              <td>2026-06-29 04:10</td>
+              <td>洛杉磯道奇 @ 聖地牙哥教士<span>GamePk 823281</span></td>
+              <td>洛杉磯道奇<span>51.2%</span></td>
+              <td>4-2</td>
+              <td>洛杉磯道奇</td>
+              <td><span class="badge ok">正確</span></td>
+              <td>大分<span>7.5</span></td>
+              <td><span class="badge bad">錯誤</span></td>
+              <td>方向正確，但信心不高，較適合作為觀察而非重注。<br>大小分偏差 2.7 分，需檢查投手/天氣/打線係數。</td>
+            </tr>
+
+            <tr>
+              <td>2026-06-29 01:40</td>
+              <td>費城費城人 @ 紐約大都會<span>GamePk 823608</span></td>
+              <td>費城費城人<span>50.6%</span></td>
+              <td>5-4</td>
+              <td>費城費城人</td>
+              <td><span class="badge ok">正確</span></td>
+              <td>大分<span>8.5</span></td>
+              <td><span class="badge ok">正確</span></td>
+              <td>方向正確，但信心不高，較適合作為觀察而非重注。<br>一分差比賽，模型即使方向錯也屬高波動結果。</td>
+            </tr>
+
+            <tr>
+              <td>2026-06-29 07:20</td>
+              <td>紐約洋基 @ 波士頓紅襪<span>GamePk 824744</span></td>
+              <td>紐約洋基<span>50.6%</span></td>
+              <td>4-5</td>
+              <td>波士頓紅襪</td>
+              <td><span class="badge bad">錯誤</span></td>
+              <td>大分<span>7.5</span></td>
+              <td><span class="badge ok">正確</span></td>
+              <td>信心接近五五波，賽前應降權或避免當主推。<br>一分差比賽，模型即使方向錯也屬高波動結果。</td>
+            </tr>
+
+            <tr>
+              <td>2026-06-29 04:05</td>
+              <td>亞特蘭大勇士 @ 舊金山巨人<span>GamePk 823204</span></td>
+              <td>亞特蘭大勇士<span>50.3%</span></td>
+              <td>2-3</td>
+              <td>舊金山巨人</td>
+              <td><span class="badge bad">錯誤</span></td>
+              <td>大分<span>7.5</span></td>
+              <td><span class="badge bad">錯誤</span></td>
+              <td>信心接近五五波，賽前應降權或避免當主推。<br>一分差比賽，模型即使方向錯也屬高波動結果。</td>
+            </tr>
+
+            <tr>
+              <td>2026-06-29 03:15</td>
+              <td>運動家 @ 洛杉磯天使<span>GamePk 824011</span></td>
+              <td>洛杉磯天使<span>50.2%</span></td>
+              <td>1-4</td>
+              <td>洛杉磯天使</td>
+              <td><span class="badge ok">正確</span></td>
+              <td>大分<span>9.5</span></td>
+              <td><span class="badge bad">錯誤</span></td>
+              <td>方向正確，但信心不高，較適合作為觀察而非重注。<br>大小分偏差 5.5 分，需檢查投手/天氣/打線係數。</td>
+            </tr>
+
+            <tr>
+              <td>2026-06-29 01:40</td>
+              <td>西雅圖水手 @ 克里夫蘭守護者<span>GamePk 824422</span></td>
+              <td>西雅圖水手<span>50.0%</span></td>
+              <td>5-6</td>
+              <td>克里夫蘭守護者</td>
+              <td><span class="badge bad">錯誤</span></td>
+              <td>大分<span>7.5</span></td>
+              <td><span class="badge ok">正確</span></td>
+              <td>信心接近五五波，賽前應降權或避免當主推。<br>一分差比賽，模型即使方向錯也屬高波動結果。</td>
+            </tr></tbody>
+                </table>
+              </div>
+            </section>
+            <section class="day" id="day-2026-06-27">
+              <div class="day-head">
+                <div>
+                  <h2>2026-06-27 賽後檢討</h2>
+                  <p>賽前預測與賽後結果對照，包含勝方、大小分與投注結果。</p>
+                </div>
+              </div>
+              
+    <section class="kpis">
+      <div class="kpi"><div class="label">勝方準確率</div><div class="value">26.67%</div><div class="hint">4 / 15 已完賽</div></div>
+      <div class="kpi"><div class="label">大小分準確率</div><div class="value">40.00%</div><div class="hint">6 / 15 有盤口</div></div>
+      <div class="kpi"><div class="label">投注損益</div><div class="value ">0</div><div class="hint">0 筆投注紀錄</div></div>
+      <div class="kpi"><div class="label">待結算</div><div class="value muted">0</div><div class="hint">延賽或尚未完賽</div></div>
+    </section>
+              <div class="discussion">
+                <div><h3>命中重點</h3><ul><li>勝方有命中，但多數信心不高，應保守看待。</li></ul></div>
+                <div><h3>失準檢討</h3><ul><li>科羅拉多洛磯 @ 明尼蘇達雙城：明尼蘇達雙城 未命中，比分 8-5。</li><li>芝加哥小熊 @ 密爾瓦基釀酒人：密爾瓦基釀酒人 未命中，比分 8-2。</li><li>休士頓太空人 @ 底特律老虎：底特律老虎 未命中，比分 8-6。</li><li>華盛頓國民 @ 巴爾的摩金鶯：巴爾的摩金鶯 未命中，比分 4-3。</li></ul></div>
+              </div>
+              <div class="table-wrap">
+                <table>
+                  <thead><tr><th>台灣開賽時間</th><th>對戰</th><th>賽前勝方</th><th>比分</th><th>實際勝方</th><th>勝方</th><th>大小分</th><th>大小分結果</th><th>檢討重點</th></tr></thead>
+                  <tbody>
+            <tr>
+              <td>未公布</td>
+              <td>科羅拉多洛磯 @ 明尼蘇達雙城<span>GamePk 823689</span></td>
+              <td>明尼蘇達雙城<span>60.9%</span></td>
+              <td>8-5</td>
+              <td>科羅拉多洛磯</td>
+              <td><span class="badge bad">錯誤</span></td>
+              <td>大分<span>9.5</span></td>
+              <td><span class="badge ok">正確</span></td>
+              <td>高信心失準，需要回看先發投手、牛棚或打線是否有臨場變化。</td>
+            </tr>
+
+            <tr>
+              <td>未公布</td>
+              <td>芝加哥小熊 @ 密爾瓦基釀酒人<span>GamePk 823770</span></td>
+              <td>密爾瓦基釀酒人<span>54.1%</span></td>
+              <td>8-2</td>
+              <td>芝加哥小熊</td>
+              <td><span class="badge bad">錯誤</span></td>
+              <td>大分<span>7.5</span></td>
+              <td><span class="badge ok">正確</span></td>
+              <td></td>
+            </tr>
+
+            <tr>
+              <td>未公布</td>
+              <td>休士頓太空人 @ 底特律老虎<span>GamePk 824257</span></td>
+              <td>底特律老虎<span>54.0%</span></td>
+              <td>8-6</td>
+              <td>休士頓太空人</td>
+              <td><span class="badge bad">錯誤</span></td>
+              <td>小分<span>8.5</span></td>
+              <td><span class="badge bad">錯誤</span></td>
+              <td>大小分偏差 5.6 分，需檢查投手/天氣/打線係數。</td>
+            </tr>
+
+            <tr>
+              <td>未公布</td>
+              <td>亞利桑那響尾蛇 @ 坦帕灣光芒<span>GamePk 822960</span></td>
+              <td>坦帕灣光芒<span>53.4%</span></td>
+              <td>2-4</td>
+              <td>坦帕灣光芒</td>
+              <td><span class="badge ok">正確</span></td>
+              <td>大分<span>8.5</span></td>
+              <td><span class="badge bad">錯誤</span></td>
+              <td>方向正確，但信心不高，較適合作為觀察而非重注。<br>大小分偏差 2.6 分，需檢查投手/天氣/打線係數。</td>
+            </tr>
+
+            <tr>
+              <td>未公布</td>
+              <td>華盛頓國民 @ 巴爾的摩金鶯<span>GamePk 824825</span></td>
+              <td>巴爾的摩金鶯<span>53.3%</span></td>
+              <td>4-3</td>
+              <td>華盛頓國民</td>
+              <td><span class="badge bad">錯誤</span></td>
+              <td>大分<span>8.5</span></td>
+              <td><span class="badge bad">錯誤</span></td>
+              <td>一分差比賽，模型即使方向錯也屬高波動結果。<br>大小分偏差 2.6 分，需檢查投手/天氣/打線係數。</td>
+            </tr>
+
+            <tr>
+              <td>未公布</td>
+              <td>邁阿密馬林魚 @ 聖路易紅雀<span>GamePk 823038</span></td>
+              <td>聖路易紅雀<span>52.2%</span></td>
+              <td>5-1</td>
+              <td>邁阿密馬林魚</td>
+              <td><span class="badge bad">錯誤</span></td>
+              <td>大分<span>8.5</span></td>
+              <td><span class="badge bad">錯誤</span></td>
+              <td>信心接近五五波，賽前應降權或避免當主推。<br>大小分偏差 3.0 分，需檢查投手/天氣/打線係數。</td>
+            </tr>
+
+            <tr>
+              <td>未公布</td>
+              <td>堪薩斯市皇家 @ 芝加哥白襪<span>GamePk 824581</span></td>
+              <td>芝加哥白襪<span>51.6%</span></td>
+              <td>1-2</td>
+              <td>芝加哥白襪</td>
+              <td><span class="badge ok">正確</span></td>
+              <td>大分<span>7.5</span></td>
+              <td><span class="badge bad">錯誤</span></td>
+              <td>方向正確，但信心不高，較適合作為觀察而非重注。<br>一分差比賽，模型即使方向錯也屬高波動結果。</td>
+            </tr>
+
+            <tr>
+              <td>未公布</td>
+              <td>辛辛那提紅人 @ 匹茲堡海盜<span>GamePk 823364</span></td>
+              <td>匹茲堡海盜<span>51.5%</span></td>
+              <td>9-7</td>
+              <td>辛辛那提紅人</td>
+              <td><span class="badge bad">錯誤</span></td>
+              <td>大分<span>7.5</span></td>
+              <td><span class="badge ok">正確</span></td>
+              <td>信心接近五五波，賽前應降權或避免當主推。</td>
+            </tr>
+
+            <tr>
+              <td>未公布</td>
+              <td>德州遊騎兵 @ 多倫多藍鳥<span>GamePk 822794</span></td>
+              <td>多倫多藍鳥<span>51.4%</span></td>
+              <td>7-4</td>
+              <td>德州遊騎兵</td>
+              <td><span class="badge bad">錯誤</span></td>
+              <td>大分<span>7.5</span></td>
+              <td><span class="badge ok">正確</span></td>
+              <td>信心接近五五波，賽前應降權或避免當主推。</td>
+            </tr>
+
+            <tr>
+              <td>未公布</td>
+              <td>洛杉磯道奇 @ 聖地牙哥教士<span>GamePk 823283</span></td>
+              <td>洛杉磯道奇<span>51.2%</span></td>
+              <td>15-3</td>
+              <td>洛杉磯道奇</td>
+              <td><span class="badge ok">正確</span></td>
+              <td>大分<span>7.5</span></td>
+              <td><span class="badge ok">正確</span></td>
+              <td>方向正確，但信心不高，較適合作為觀察而非重注。</td>
+            </tr>
+
+            <tr>
+              <td>未公布</td>
+              <td>費城費城人 @ 紐約大都會<span>GamePk 823609</span></td>
+              <td>費城費城人<span>50.6%</span></td>
+              <td>2-6</td>
+              <td>紐約大都會</td>
+              <td><span class="badge bad">錯誤</span></td>
+              <td>大分<span>8.5</span></td>
+              <td><span class="badge bad">錯誤</span></td>
+              <td>信心接近五五波，賽前應降權或避免當主推。<br>大小分偏差 1.6 分，需檢查投手/天氣/打線係數。</td>
+            </tr>
+
+            <tr>
+              <td>未公布</td>
+              <td>紐約洋基 @ 波士頓紅襪<span>GamePk 824745</span></td>
+              <td>紐約洋基<span>50.6%</span></td>
+              <td>1-4</td>
+              <td>波士頓紅襪</td>
+              <td><span class="badge bad">錯誤</span></td>
+              <td>小分<span>8.5</span></td>
+              <td><span class="badge ok">正確</span></td>
+              <td>信心接近五五波，賽前應降權或避免當主推。</td>
+            </tr>
+
+            <tr>
+              <td>未公布</td>
+              <td>亞特蘭大勇士 @ 舊金山巨人<span>GamePk 823207</span></td>
+              <td>亞特蘭大勇士<span>50.3%</span></td>
+              <td>0-5</td>
+              <td>舊金山巨人</td>
+              <td><span class="badge bad">錯誤</span></td>
+              <td>大分<span>7.5</span></td>
+              <td><span class="badge bad">錯誤</span></td>
+              <td>信心接近五五波，賽前應降權或避免當主推。<br>大小分偏差 3.6 分，需檢查投手/天氣/打線係數。</td>
+            </tr>
+
+            <tr>
+              <td>未公布</td>
+              <td>運動家 @ 洛杉磯天使<span>GamePk 824015</span></td>
+              <td>洛杉磯天使<span>50.2%</span></td>
+              <td>2-5</td>
+              <td>洛杉磯天使</td>
+              <td><span class="badge ok">正確</span></td>
+              <td>大分<span>8.5</span></td>
+              <td><span class="badge bad">錯誤</span></td>
+              <td>方向正確，但信心不高，較適合作為觀察而非重注。<br>大小分偏差 3.5 分，需檢查投手/天氣/打線係數。</td>
+            </tr>
+
+            <tr>
+              <td>未公布</td>
+              <td>西雅圖水手 @ 克里夫蘭守護者<span>GamePk 824421</span></td>
+              <td>西雅圖水手<span>50.0%</span></td>
+              <td>3-4</td>
+              <td>克里夫蘭守護者</td>
+              <td><span class="badge bad">錯誤</span></td>
+              <td>大分<span>7.5</span></td>
+              <td><span class="badge bad">錯誤</span></td>
+              <td>信心接近五五波，賽前應降權或避免當主推。<br>一分差比賽，模型即使方向錯也屬高波動結果。</td>
+            </tr></tbody>
+                </table>
+              </div>
+            </section>
+            <section class="day" id="day-2026-06-26">
+              <div class="day-head">
+                <div>
+                  <h2>2026-06-26 賽後檢討</h2>
+                  <p>賽前預測與賽後結果對照，包含勝方、大小分與投注結果。</p>
+                </div>
+              </div>
+              
+    <section class="kpis">
+      <div class="kpi"><div class="label">勝方準確率</div><div class="value">53.33%</div><div class="hint">8 / 15 已完賽</div></div>
+      <div class="kpi"><div class="label">大小分準確率</div><div class="value">0.00%</div><div class="hint">0 / 0 有盤口</div></div>
+      <div class="kpi"><div class="label">投注損益</div><div class="value ">0</div><div class="hint">0 筆投注紀錄</div></div>
+      <div class="kpi"><div class="label">待結算</div><div class="value muted">0</div><div class="hint">延賽或尚未完賽</div></div>
+    </section>
+              <div class="discussion">
+                <div><h3>命中重點</h3><ul><li>科羅拉多洛磯 @ 明尼蘇達雙城：高信心勝方命中。</li></ul></div>
+                <div><h3>失準檢討</h3><ul><li>沒有明顯高信心失準場。</li></ul></div>
+              </div>
+              <div class="table-wrap">
+                <table>
+                  <thead><tr><th>台灣開賽時間</th><th>對戰</th><th>賽前勝方</th><th>比分</th><th>實際勝方</th><th>勝方</th><th>大小分</th><th>大小分結果</th><th>檢討重點</th></tr></thead>
+                  <tbody>
+            <tr>
+              <td>未公布</td>
+              <td>科羅拉多洛磯 @ 明尼蘇達雙城<span>GamePk 823688</span></td>
+              <td>明尼蘇達雙城<span>60.9%</span></td>
+              <td>8-9</td>
+              <td>明尼蘇達雙城</td>
+              <td><span class="badge ok">正確</span></td>
+              <td>-<span>-</span></td>
+              <td><span class="badge wait">待結算</span></td>
+              <td>高信心方向有命中，這類條件可列為穩定樣本繼續追蹤。<br>一分差比賽，模型即使方向錯也屬高波動結果。</td>
+            </tr>
+
+            <tr>
+              <td>未公布</td>
+              <td>芝加哥小熊 @ 密爾瓦基釀酒人<span>GamePk 823773</span></td>
+              <td>密爾瓦基釀酒人<span>53.9%</span></td>
+              <td>2-6</td>
+              <td>密爾瓦基釀酒人</td>
+              <td><span class="badge ok">正確</span></td>
+              <td>-<span>-</span></td>
+              <td><span class="badge wait">待結算</span></td>
+              <td>方向正確，但信心不高，較適合作為觀察而非重注。</td>
+            </tr>
+
+            <tr>
+              <td>未公布</td>
+              <td>休士頓太空人 @ 底特律老虎<span>GamePk 824255</span></td>
+              <td>底特律老虎<span>53.6%</span></td>
+              <td>0-8</td>
+              <td>底特律老虎</td>
+              <td><span class="badge ok">正確</span></td>
+              <td>-<span>-</span></td>
+              <td><span class="badge wait">待結算</span></td>
+              <td>方向正確，但信心不高，較適合作為觀察而非重注。</td>
+            </tr>
+
+            <tr>
+              <td>未公布</td>
+              <td>亞利桑那響尾蛇 @ 坦帕灣光芒<span>GamePk 822962</span></td>
+              <td>坦帕灣光芒<span>53.2%</span></td>
+              <td>1-6</td>
+              <td>坦帕灣光芒</td>
+              <td><span class="badge ok">正確</span></td>
+              <td>-<span>-</span></td>
+              <td><span class="badge wait">待結算</span></td>
+              <td>方向正確，但信心不高，較適合作為觀察而非重注。</td>
+            </tr>
+
+            <tr>
+              <td>未公布</td>
+              <td>華盛頓國民 @ 巴爾的摩金鶯<span>GamePk 824824</span></td>
+              <td>巴爾的摩金鶯<span>53.1%</span></td>
+              <td>1-3</td>
+              <td>巴爾的摩金鶯</td>
+              <td><span class="badge ok">正確</span></td>
+              <td>-<span>-</span></td>
+              <td><span class="badge wait">待結算</span></td>
+              <td>方向正確，但信心不高，較適合作為觀察而非重注。</td>
+            </tr>
+
+            <tr>
+              <td>未公布</td>
+              <td>邁阿密馬林魚 @ 聖路易紅雀<span>GamePk 823039</span></td>
+              <td>聖路易紅雀<span>52.4%</span></td>
+              <td>4-0</td>
+              <td>邁阿密馬林魚</td>
+              <td><span class="badge bad">錯誤</span></td>
+              <td>-<span>-</span></td>
+              <td><span class="badge wait">待結算</span></td>
+              <td>信心接近五五波，賽前應降權或避免當主推。</td>
+            </tr>
+
+            <tr>
+              <td>未公布</td>
+              <td>辛辛那提紅人 @ 匹茲堡海盜<span>GamePk 823363</span></td>
+              <td>匹茲堡海盜<span>51.6%</span></td>
+              <td>6-4</td>
+              <td>辛辛那提紅人</td>
+              <td><span class="badge bad">錯誤</span></td>
+              <td>-<span>-</span></td>
+              <td><span class="badge wait">待結算</span></td>
+              <td>信心接近五五波，賽前應降權或避免當主推。</td>
+            </tr>
+
+            <tr>
+              <td>未公布</td>
+              <td>洛杉磯道奇 @ 聖地牙哥教士<span>GamePk 823285</span></td>
+              <td>洛杉磯道奇<span>51.4%</span></td>
+              <td>1-7</td>
+              <td>聖地牙哥教士</td>
+              <td><span class="badge bad">錯誤</span></td>
+              <td>-<span>-</span></td>
+              <td><span class="badge wait">待結算</span></td>
+              <td>信心接近五五波，賽前應降權或避免當主推。</td>
+            </tr>
+
+            <tr>
+              <td>未公布</td>
+              <td>德州遊騎兵 @ 多倫多藍鳥<span>GamePk 822796</span></td>
+              <td>多倫多藍鳥<span>51.4%</span></td>
+              <td>5-4</td>
+              <td>德州遊騎兵</td>
+              <td><span class="badge bad">錯誤</span></td>
+              <td>-<span>-</span></td>
+              <td><span class="badge wait">待結算</span></td>
+              <td>信心接近五五波，賽前應降權或避免當主推。<br>一分差比賽，模型即使方向錯也屬高波動結果。</td>
+            </tr>
+
+            <tr>
+              <td>未公布</td>
+              <td>紐約洋基 @ 波士頓紅襪<span>GamePk 824743</span></td>
+              <td>紐約洋基<span>51.0%</span></td>
+              <td>1-6</td>
+              <td>波士頓紅襪</td>
+              <td><span class="badge bad">錯誤</span></td>
+              <td>-<span>-</span></td>
+              <td><span class="badge wait">待結算</span></td>
+              <td>信心接近五五波，賽前應降權或避免當主推。</td>
+            </tr>
+
+            <tr>
+              <td>未公布</td>
+              <td>堪薩斯市皇家 @ 芝加哥白襪<span>GamePk 824582</span></td>
+              <td>芝加哥白襪<span>50.6%</span></td>
+              <td>1-22</td>
+              <td>芝加哥白襪</td>
+              <td><span class="badge ok">正確</span></td>
+              <td>-<span>-</span></td>
+              <td><span class="badge wait">待結算</span></td>
+              <td>方向正確，但信心不高，較適合作為觀察而非重注。</td>
+            </tr>
+
+            <tr>
+              <td>未公布</td>
+              <td>運動家 @ 洛杉磯天使<span>GamePk 824014</span></td>
+              <td>洛杉磯天使<span>50.5%</span></td>
+              <td>9-3</td>
+              <td>運動家</td>
+              <td><span class="badge bad">錯誤</span></td>
+              <td>-<span>-</span></td>
+              <td><span class="badge wait">待結算</span></td>
+              <td>信心接近五五波，賽前應降權或避免當主推。</td>
+            </tr>
+
+            <tr>
+              <td>未公布</td>
+              <td>費城費城人 @ 紐約大都會<span>GamePk 823610</span></td>
+              <td>費城費城人<span>50.5%</span></td>
+              <td>2-1</td>
+              <td>費城費城人</td>
+              <td><span class="badge ok">正確</span></td>
+              <td>-<span>-</span></td>
+              <td><span class="badge wait">待結算</span></td>
+              <td>方向正確，但信心不高，較適合作為觀察而非重注。<br>一分差比賽，模型即使方向錯也屬高波動結果。</td>
+            </tr>
+
+            <tr>
+              <td>未公布</td>
+              <td>亞特蘭大勇士 @ 舊金山巨人<span>GamePk 823206</span></td>
+              <td>亞特蘭大勇士<span>50.2%</span></td>
+              <td>3-1</td>
+              <td>亞特蘭大勇士</td>
+              <td><span class="badge ok">正確</span></td>
+              <td>-<span>-</span></td>
+              <td><span class="badge wait">待結算</span></td>
+              <td>方向正確，但信心不高，較適合作為觀察而非重注。</td>
+            </tr>
+
+            <tr>
+              <td>未公布</td>
+              <td>西雅圖水手 @ 克里夫蘭守護者<span>GamePk 824423</span></td>
+              <td>克里夫蘭守護者<span>50.1%</span></td>
+              <td>3-1</td>
+              <td>西雅圖水手</td>
+              <td><span class="badge bad">錯誤</span></td>
+              <td>-<span>-</span></td>
+              <td><span class="badge wait">待結算</span></td>
+              <td>信心接近五五波，賽前應降權或避免當主推。</td>
+            </tr></tbody>
+                </table>
+              </div>
+            </section>
+            <section class="day" id="day-2026-06-25">
+              <div class="day-head">
+                <div>
+                  <h2>2026-06-25 賽後檢討</h2>
+                  <p>賽前預測與賽後結果對照，包含勝方、大小分與投注結果。</p>
+                </div>
+              </div>
+              
+    <section class="kpis">
+      <div class="kpi"><div class="label">勝方準確率</div><div class="value">50.00%</div><div class="hint">4 / 8 已完賽</div></div>
+      <div class="kpi"><div class="label">大小分準確率</div><div class="value">0.00%</div><div class="hint">0 / 0 有盤口</div></div>
+      <div class="kpi"><div class="label">投注損益</div><div class="value ">0</div><div class="hint">0 筆投注紀錄</div></div>
+      <div class="kpi"><div class="label">待結算</div><div class="value muted">1</div><div class="hint">延賽或尚未完賽</div></div>
+    </section>
+              <div class="discussion">
+                <div><h3>命中重點</h3><ul><li>費城費城人 @ 華盛頓國民：高信心勝方命中。</li></ul></div>
+                <div><h3>失準檢討</h3><ul><li>運動家 @ 舊金山巨人：舊金山巨人 未命中，比分 9-6。</li><li>休士頓太空人 @ 底特律老虎：底特律老虎 未命中，比分 2-1。</li></ul></div>
+              </div>
+              <div class="table-wrap">
+                <table>
+                  <thead><tr><th>台灣開賽時間</th><th>對戰</th><th>賽前勝方</th><th>比分</th><th>實際勝方</th><th>勝方</th><th>大小分</th><th>大小分結果</th><th>檢討重點</th></tr></thead>
+                  <tbody>
+            <tr>
+              <td>未公布</td>
+              <td>費城費城人 @ 華盛頓國民<span>GamePk 822717</span></td>
+              <td>費城費城人<span>58.3%</span></td>
+              <td>10-5</td>
+              <td>費城費城人</td>
+              <td><span class="badge ok">正確</span></td>
+              <td>-<span>-</span></td>
+              <td><span class="badge wait">待結算</span></td>
+              <td>高信心方向有命中，這類條件可列為穩定樣本繼續追蹤。</td>
+            </tr>
+
+            <tr>
+              <td>未公布</td>
+              <td>運動家 @ 舊金山巨人<span>GamePk 823209</span></td>
+              <td>舊金山巨人<span>55.0%</span></td>
+              <td>9-6</td>
+              <td>運動家</td>
+              <td><span class="badge bad">錯誤</span></td>
+              <td>-<span>-</span></td>
+              <td><span class="badge wait">待結算</span></td>
+              <td></td>
+            </tr>
+
+            <tr>
+              <td>未公布</td>
+              <td>休士頓太空人 @ 底特律老虎<span>GamePk 824258</span></td>
+              <td>底特律老虎<span>53.8%</span></td>
+              <td>2-1</td>
+              <td>休士頓太空人</td>
+              <td><span class="badge bad">錯誤</span></td>
+              <td>-<span>-</span></td>
+              <td><span class="badge wait">待結算</span></td>
+              <td>一分差比賽，模型即使方向錯也屬高波動結果。</td>
+            </tr>
+
+            <tr>
+              <td>未公布</td>
+              <td>西雅圖水手 @ 匹茲堡海盜<span>GamePk 823366</span></td>
+              <td>西雅圖水手<span>52.7%</span></td>
+              <td>1-5</td>
+              <td>匹茲堡海盜</td>
+              <td><span class="badge bad">錯誤</span></td>
+              <td>-<span>-</span></td>
+              <td><span class="badge wait">待結算</span></td>
+              <td>信心接近五五波，賽前應降權或避免當主推。</td>
+            </tr>
+
+            <tr>
+              <td>未公布</td>
+              <td>堪薩斯市皇家 @ 坦帕灣光芒<span>GamePk 822961</span></td>
+              <td>坦帕灣光芒<span>52.6%</span></td>
+              <td>2-13</td>
+              <td>坦帕灣光芒</td>
+              <td><span class="badge ok">正確</span></td>
+              <td>-<span>-</span></td>
+              <td><span class="badge wait">待結算</span></td>
+              <td>方向正確，但信心不高，較適合作為觀察而非重注。</td>
+            </tr>
+
+            <tr>
+              <td>未公布</td>
+              <td>德州遊騎兵 @ 多倫多藍鳥<span>GamePk 822797</span></td>
+              <td>多倫多藍鳥<span>51.7%</span></td>
+              <td>6-5</td>
+              <td>德州遊騎兵</td>
+              <td><span class="badge bad">錯誤</span></td>
+              <td>-<span>-</span></td>
+              <td><span class="badge wait">待結算</span></td>
+              <td>信心接近五五波，賽前應降權或避免當主推。<br>一分差比賽，模型即使方向錯也屬高波動結果。</td>
+            </tr>
+
+            <tr>
+              <td>未公布</td>
+              <td>紐約洋基 @ 波士頓紅襪<span>GamePk 824747</span></td>
+              <td>波士頓紅襪<span>50.7%</span></td>
+              <td>3-6</td>
+              <td>波士頓紅襪</td>
+              <td><span class="badge ok">正確</span></td>
+              <td>-<span>-</span></td>
+              <td><span class="badge wait">待結算</span></td>
+              <td>方向正確，但信心不高，較適合作為觀察而非重注。</td>
+            </tr>
+
+            <tr>
+              <td>未公布</td>
+              <td>芝加哥小熊 @ 紐約大都會<span>GamePk 823612</span></td>
+              <td>芝加哥小熊<span>50.5%</span></td>
+              <td>4-3</td>
+              <td>芝加哥小熊</td>
+              <td><span class="badge ok">正確</span></td>
+              <td>-<span>-</span></td>
+              <td><span class="badge wait">待結算</span></td>
+              <td>方向正確，但信心不高，較適合作為觀察而非重注。<br>一分差比賽，模型即使方向錯也屬高波動結果。</td>
+            </tr>
+
+            <tr>
+              <td>未公布</td>
+              <td>亞利桑那響尾蛇 @ 聖路易紅雀<span>GamePk 823042</span></td>
+              <td>聖路易紅雀<span>50.0%</span></td>
+              <td>-</td>
+              <td>-</td>
+              <td><span class="badge wait">待結算</span></td>
+              <td>-<span>-</span></td>
+              <td><span class="badge wait">待結算</span></td>
+              <td></td>
+            </tr></tbody>
+                </table>
+              </div>
+            </section>
+</main>
+  </div>
+</body>
+</html>
