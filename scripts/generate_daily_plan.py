@@ -99,7 +99,7 @@ def game_time_tw(game_date: str) -> str:
         parsed = datetime.fromisoformat(game_date.replace("Z", "+00:00"))
     except ValueError:
         return "未公布"
-    return parsed.astimezone(TW_TZ).strftime("%m/%d %H:%M")
+    return parsed.astimezone(TW_TZ).strftime("%Y-%m-%d %H:%M")
 
 
 def train_models(games: list[dict]) -> tuple[TeamStats, dict[str, object]]:
@@ -388,7 +388,7 @@ def render_html(plan: dict) -> str:
   <main>
     <h1>每日 MLB 勝方預測</h1>
     <div class="meta">
-      目標日期：{plan['target_date']}<br />
+      MLB日期：{plan['target_date']}<br />
       主模型：{plan['models']['production']} / 確認模型：{plan['models']['confirmation']}<br />
       訓練場數：{plan['data_source']['training_games']} / 訓練截止：{plan['data_source']['last_training_date']} / 賽程場數：{plan['data_source']['schedule_games']}<br />
       產生時間：{plan['generated_at']}<br />
@@ -402,18 +402,18 @@ def render_html(plan: dict) -> str:
       <button class="sort-btn" id="sortTime" type="button">比賽時間</button>
     </div>
     <table>
-      <thead><tr><th>GamePk</th><th>台灣時間</th><th>狀態</th><th>對戰</th><th>先發投手</th><th>模型預測</th><th>預測比分</th><th>預測總分</th><th>信心</th><th>確認模型</th><th>分類</th></tr></thead>
+      <thead><tr><th>GamePk</th><th>台灣開賽時間</th><th>狀態</th><th>對戰</th><th>先發投手</th><th>模型預測</th><th>預測比分</th><th>預測總分</th><th>信心</th><th>確認模型</th><th>分類</th></tr></thead>
       <tbody id="scheduleRows">{schedule_rows_recommendation}</tbody>
     </table>
     <div class="warning">投注單請看 <a href="betting_ticket.html">今日投注單</a>。該頁只列入真實盤口與 edge 條件通過的場次。</div>
     <h2>高信心預測</h2>
     <table>
-      <thead><tr><th>決策</th><th>台灣時間</th><th>對戰</th><th>先發投手</th><th>預測勝方</th><th>預測比分</th><th>預測總分</th><th>信心</th><th>確認模型</th></tr></thead>
+      <thead><tr><th>決策</th><th>台灣開賽時間</th><th>對戰</th><th>先發投手</th><th>預測勝方</th><th>預測比分</th><th>預測總分</th><th>信心</th><th>確認模型</th></tr></thead>
       <tbody>{rec_rows}</tbody>
     </table>
     <h2>一般預測</h2>
     <table>
-      <thead><tr><th>決策</th><th>台灣時間</th><th>對戰</th><th>先發投手</th><th>預測勝方</th><th>預測比分</th><th>預測總分</th><th>信心</th><th>確認模型</th></tr></thead>
+      <thead><tr><th>決策</th><th>台灣開賽時間</th><th>對戰</th><th>先發投手</th><th>預測勝方</th><th>預測比分</th><th>預測總分</th><th>信心</th><th>確認模型</th></tr></thead>
       <tbody>{watch_rows}</tbody>
     </table>
     <div class="warning">比分預測取自蒙地卡羅 10,000 次單場模擬平均值；完整模擬分布請看 <a href="monte_carlo.html">蒙地卡羅模擬</a>。投注單請看 <a href="betting_ticket.html">今日投注單</a>。該頁只列入真實盤口與 edge 條件通過的場次。</div>

@@ -292,7 +292,7 @@ def render_html(report: dict) -> str:
   <main>
     <h1>MLB 大小分 v1</h1>
     <div class="meta">
-      日期：{report['target_date']}<br />
+      MLB日期：{report['target_date']}<br />
       模型：{report['model']}<br />
       訓練場數：{report['data_source']['training_games']} / 訓練截止：{report['data_source']['last_training_date']}<br />
       台灣運彩全場大小分盤：{report['summary']['with_totals_market']} / 候選：{report['summary']['candidates']}<br />
@@ -301,12 +301,12 @@ def render_html(report: dict) -> str:
     </div>
     <h2>大小分候選</h2>
     <table>
-      <thead><tr><th>GamePk</th><th>台灣時間</th><th>對戰</th><th>台灣運彩線</th><th>模型總分</th><th>方向</th><th>賠率</th><th>模型機率</th><th>市場隱含</th><th>Edge</th><th>決策</th></tr></thead>
+      <thead><tr><th>GamePk</th><th>台灣開賽時間</th><th>對戰</th><th>台灣運彩線</th><th>模型總分</th><th>方向</th><th>賠率</th><th>模型機率</th><th>市場隱含</th><th>Edge</th><th>決策</th></tr></thead>
       <tbody>{candidate_rows}</tbody>
     </table>
     <h2>全部大小分預測</h2>
     <table>
-      <thead><tr><th>GamePk</th><th>台灣時間</th><th>對戰</th><th>台灣運彩線</th><th>模型總分</th><th>方向</th><th>賠率</th><th>模型機率</th><th>市場隱含</th><th>Edge</th><th>決策</th></tr></thead>
+      <thead><tr><th>GamePk</th><th>台灣開賽時間</th><th>對戰</th><th>台灣運彩線</th><th>模型總分</th><th>方向</th><th>賠率</th><th>模型機率</th><th>市場隱含</th><th>Edge</th><th>決策</th></tr></thead>
       <tbody>{all_rows}</tbody>
     </table>
     <div class="note">大小分 v1 只使用台灣運彩全場總分大小盤，不使用 ESPN 備援；目前是模型驗證層，尚未併入主投注單。</div>

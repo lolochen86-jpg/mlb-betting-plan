@@ -414,7 +414,7 @@ def render_html(report: dict) -> str:
   <main>
     <h1>MLB 進階因子勝方模型</h1>
     <div class="meta">
-      日期：{report['target_date']}<br />
+      MLB日期：{report['target_date']}<br />
       模型：{report['model']}<br />
       台灣運彩盤口覆蓋：{report['summary']['with_taiwan_odds']} / {report['summary']['games']}<br />
       候選：{report['summary']['candidates']}<br />
@@ -422,12 +422,12 @@ def render_html(report: dict) -> str:
     </div>
     <h2>進階模型候選</h2>
     <table>
-      <thead><tr><th>GamePk</th><th>台灣時間</th><th>對戰</th><th>預測勝方</th><th>信心</th><th>台灣運彩賠率</th><th>市場隱含</th><th>Edge</th><th>主/客分數</th><th>決策</th></tr></thead>
+      <thead><tr><th>GamePk</th><th>台灣開賽時間</th><th>對戰</th><th>預測勝方</th><th>信心</th><th>台灣運彩賠率</th><th>市場隱含</th><th>Edge</th><th>主/客分數</th><th>決策</th></tr></thead>
       <tbody>{candidate_rows}</tbody>
     </table>
     <h2>全部進階預測</h2>
     <table>
-      <thead><tr><th>GamePk</th><th>台灣時間</th><th>對戰</th><th>預測勝方</th><th>信心</th><th>台灣運彩賠率</th><th>市場隱含</th><th>Edge</th><th>主/客分數</th><th>決策</th></tr></thead>
+      <thead><tr><th>GamePk</th><th>台灣開賽時間</th><th>對戰</th><th>預測勝方</th><th>信心</th><th>台灣運彩賠率</th><th>市場隱含</th><th>Edge</th><th>主/客分數</th><th>決策</th></tr></thead>
       <tbody>{all_rows}</tbody>
     </table>
     <div class="note"><strong>因子說明</strong><ul>{notes}</ul></div>

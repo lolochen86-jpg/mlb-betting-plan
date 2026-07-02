@@ -337,7 +337,7 @@ def render_html(report: dict) -> str:
 <body>
   <main>
     <h1>MLB 台灣運彩盤口研究</h1>
-    <p>目標日期：{html.escape(report['target_date'])} / 盤口來源：{html.escape(report['sportsbook'])} / 產生時間：{html.escape(report['generated_at'])}</p>
+    <p>MLB日期：{html.escape(report['target_date'])} / 盤口來源：{html.escape(report['sportsbook'])} / 產生時間：{html.escape(report['generated_at'])}</p>
     <div class="rules">
       <span>沒有台灣運彩盤口就不推薦</span>
       <span>獨贏門檻 {pct(report['rules']['moneyline_min_model_prob'])}</span>
@@ -354,13 +354,13 @@ def render_html(report: dict) -> str:
 
     <h2>比較有把握的候選</h2>
     <table>
-      <thead><tr><th>玩法</th><th>台灣時間</th><th>對戰</th><th>選項</th><th>盤口</th><th>賠率</th><th>模型機率</th><th>盤口隱含</th><th>Edge</th><th>狀態</th><th>理由</th></tr></thead>
+      <thead><tr><th>玩法</th><th>台灣開賽時間</th><th>對戰</th><th>選項</th><th>盤口</th><th>賠率</th><th>模型機率</th><th>盤口隱含</th><th>Edge</th><th>狀態</th><th>理由</th></tr></thead>
       <tbody>{candidate_rows}</tbody>
     </table>
 
     <h2>觀察項目</h2>
     <table>
-      <thead><tr><th>玩法</th><th>台灣時間</th><th>對戰</th><th>選項</th><th>盤口</th><th>賠率</th><th>模型機率</th><th>盤口隱含</th><th>Edge</th><th>狀態</th><th>理由</th></tr></thead>
+      <thead><tr><th>玩法</th><th>台灣開賽時間</th><th>對戰</th><th>選項</th><th>盤口</th><th>賠率</th><th>模型機率</th><th>盤口隱含</th><th>Edge</th><th>狀態</th><th>理由</th></tr></thead>
       <tbody>{watch_rows}</tbody>
     </table>
 

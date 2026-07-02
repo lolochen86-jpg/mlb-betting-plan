@@ -354,7 +354,7 @@ def render_roi_html(rows: list[dict]) -> str:
     <h1>MLB 真實盤口投注 ROI</h1>
     <div class="meta">已結算注數：{len(final_rows)} / 勝：{len(wins)} / 損益：{pnl:.2f} / ROI：{roi:.2f}%</div>
     <table>
-      <thead><tr><th>日期</th><th>台灣時間</th><th>來源</th><th>對戰</th><th>預測勝方</th><th>賠率</th><th>信心</th><th>Edge</th><th>結果</th><th>PnL</th></tr></thead>
+      <thead><tr><th>MLB日期</th><th>台灣開賽時間</th><th>來源</th><th>對戰</th><th>預測勝方</th><th>賠率</th><th>信心</th><th>Edge</th><th>結果</th><th>PnL</th></tr></thead>
       <tbody>{body}</tbody>
     </table>
     <div class="note">此頁只使用匯入的真實盤口；台灣運彩小數賠率與美式 moneyline 皆可計算，不使用固定 -110 假設。</div>

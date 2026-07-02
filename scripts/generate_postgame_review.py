@@ -9,6 +9,8 @@ import json
 from datetime import datetime
 from pathlib import Path
 
+from schedule_time import normalize_game_time_tw
+
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA_DIR = ROOT / "data"
@@ -133,10 +135,14 @@ def review_game(row: dict, total_row: dict | None, roi_row: dict | None, time_ro
             notes.append("實際投注單虧損，後續應提高 edge 門檻或降低此類下注權重。")
         elif roi_row.get("settlement") == "win":
             notes.append("實際投注單獲利，可追蹤同類盤口條件。")
+    game_time_tw = normalize_game_time_tw(
+        row.get("game_time_tw", "") or (time_row or {}).get("game_time_tw", ""),
+        row.get("date", ""),
+    )
     return {
         "date": row.get("date", ""),
         "game_pk": row.get("game_pk", ""),
-        "game_time_tw": row.get("game_time_tw", "") or (time_row or {}).get("game_time_tw", ""),
+        "game_time_tw": game_time_tw,
         "game_time_utc": row.get("game_time_utc", "") or (time_row or {}).get("game_time_utc", ""),
         "matchup_zh": row.get("matchup_zh", ""),
         "prediction_zh": row.get("prediction_zh", ""),
@@ -279,7 +285,7 @@ def render_html(report: dict) -> str:
               </div>
               <div class="table-wrap">
                 <table>
-                  <thead><tr><th>台灣時間</th><th>對戰</th><th>賽前勝方</th><th>比分</th><th>實際勝方</th><th>勝方</th><th>大小分</th><th>大小分結果</th><th>檢討重點</th></tr></thead>
+                  <thead><tr><th>台灣開賽時間</th><th>對戰</th><th>賽前勝方</th><th>比分</th><th>實際勝方</th><th>勝方</th><th>大小分</th><th>大小分結果</th><th>檢討重點</th></tr></thead>
                   <tbody>{render_game_rows(day['games'])}</tbody>
                 </table>
               </div>
@@ -333,7 +339,7 @@ def render_html(report: dict) -> str:
       <h1>MLB 賽後檢討</h1>
       <p>把賽前預測和賽後結果放在同一張檢討表，追蹤勝方、大小分、投注 ROI 與失準原因。</p>
     </div>
-    <p>最近檢討日：{latest_date}<br />產生時間：{report['generated_at']}</p>
+    <p>最近MLB賽事日：{latest_date}<br />產生時間：{report['generated_at']}</p>
   </section>
   <nav class="tabs">{render_day_tabs(report['days'], latest_date)}</nav>
   {''.join(day_sections)}

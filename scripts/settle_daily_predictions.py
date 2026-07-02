@@ -16,6 +16,7 @@ from pathlib import Path
 
 from fetch_real_mlb_data import MLB_SCHEDULE_URL
 from name_localization import team_zh
+from schedule_time import normalize_game_time_tw
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -178,6 +179,7 @@ def rebuild_prediction_log() -> None:
     for path in sorted(DATA_DIR.glob("prediction_settlement_*.json")):
         data = json.loads(path.read_text(encoding="utf-8"))
         for row in data.get("settlements", []):
+            row["game_time_tw"] = normalize_game_time_tw(row.get("game_time_tw", ""), row.get("date", ""))
             rows.append(row)
     rows.sort(key=lambda row: (row["date"], row.get("game_time_utc", ""), row.get("game_pk", "")), reverse=True)
     fields = [
@@ -244,7 +246,7 @@ def render_log_html(rows: list[dict]) -> str:
     <h1>MLB 實戰預測結算紀錄</h1>
     <div class="meta">已完賽：{len(final_rows)} / 正確：{len(correct)} / 準確率：{accuracy:.2f}%</div>
     <table>
-      <thead><tr><th>日期</th><th>台灣時間</th><th>類型</th><th>對戰</th><th>預測勝方</th><th>信心</th><th>比分</th><th>實際勝方</th><th>結果</th></tr></thead>
+      <thead><tr><th>MLB日期</th><th>台灣開賽時間</th><th>類型</th><th>對戰</th><th>預測勝方</th><th>信心</th><th>比分</th><th>實際勝方</th><th>結果</th></tr></thead>
       <tbody>{body}</tbody>
     </table>
     <div class="note">此頁只追蹤勝方預測準確率；盤口與投注 ROI 將在真實盤口資料補上後另行計算。</div>

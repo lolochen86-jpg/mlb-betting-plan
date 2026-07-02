@@ -437,7 +437,7 @@ def render_html(report: dict) -> str:
         <div class="game-head">
           <div>
             <h2>{html.escape(game['matchup_zh'])}</h2>
-            <p>台灣時間：{html.escape(str(game.get('game_time_tw') or '未公布'))}</p>
+            <p>台灣開賽時間：{html.escape(str(game.get('game_time_tw') or '未公布'))}</p>
             <p>平均比分 {game['away_zh']} {game['avg_away_score']:.2f}：{game['home_zh']} {game['avg_home_score']:.2f}，平均總分 {game['avg_total']:.2f}</p>
             <p>打線來源：{html.escape(source_label)}</p>
           </div>
@@ -503,7 +503,7 @@ def render_html(report: dict) -> str:
       <a href="betting_ticket.html">投注單</a>
     </nav>
     <h1>蒙地卡羅模擬</h1>
-    <p>目標日期：{report['target_date']} / 每場模擬 {report['simulations_per_game']:,} 次 / 產生時間：{report['generated_at']}</p>
+    <p>MLB日期：{report['target_date']} / 每場模擬 {report['simulations_per_game']:,} 次 / 產生時間：{report['generated_at']}</p>
   </header>
   <main>
     <section class="summary">

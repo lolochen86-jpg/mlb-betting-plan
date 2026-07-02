@@ -97,13 +97,13 @@ def render_html(report: dict) -> str:
   <main>
     <h1>MLB 今日投注單</h1>
     <div class="meta">
-      日期：{html.escape(report.get('target_date', ''))}<br />
+      MLB日期：{html.escape(report.get('target_date', ''))}<br />
       真實盤口列數：{summary.get('odds_rows', 0)} / 投注單：{summary.get('bets', 0)} / 待結算：{summary.get('pending_bets', 0)}<br />
       推薦來源限制：{html.escape(report.get('settings', {}).get('require_sportsbook') or '不限')}<br />
       來源：{html.escape(report.get('source_files', {}).get('odds', ''))}
     </div>
     <table>
-      <thead><tr><th>GamePk</th><th>台灣時間</th><th>對戰</th><th>投注隊伍</th><th>盤口來源</th><th>賠率</th><th>模型信心</th><th>市場隱含</th><th>Edge</th><th>單位</th><th>狀態</th></tr></thead>
+      <thead><tr><th>GamePk</th><th>台灣開賽時間</th><th>對戰</th><th>投注隊伍</th><th>盤口來源</th><th>賠率</th><th>模型信心</th><th>市場隱含</th><th>Edge</th><th>單位</th><th>狀態</th></tr></thead>
       <tbody>{body}</tbody>
     </table>
     <div class="note">此投注單只列入台灣運彩官方盤口且 edge 通過門檻的場次；沒有台灣運彩盤口就完全不推薦。</div>

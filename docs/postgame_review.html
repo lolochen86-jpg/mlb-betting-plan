@@ -37,53 +37,16 @@
     .badge { display:inline-flex; border-radius:999px; padding:4px 9px; font-size:12px; font-weight:900; margin:0; }
     .badge.ok { color:#126048; background:#dff2ea; } .badge.bad { color:#9b2f29; background:#f9dddd; } .badge.wait { color:#7a4b12; background:#fff2d6; }
     @media(max-width:900px) { .hero,.day-head { display:block; } .kpis,.discussion { grid-template-columns:1fr; } main { padding:18px 12px 34px; } }
-  
-    /* site navigation */
-    .site-shell { min-height: 100vh; display: grid; grid-template-columns: 220px minmax(0, 1fr); background: inherit; }
-    .site-sidebar { position: sticky; top: 0; align-self: start; height: 100vh; box-sizing: border-box; overflow-y: auto; border-right: 1px solid #dfe5df; background: #ffffff; padding: 22px 14px; z-index: 10; }
-    .site-brand { color: #163b34; font-size: 15px; font-weight: 900; letter-spacing: 0; margin: 0 0 14px; }
-    .site-sidebar nav { display: grid; gap: 6px; }
-    .site-nav-link { display: block; color: #40514b; text-decoration: none; border-radius: 8px; padding: 9px 10px; font-size: 14px; font-weight: 750; line-height: 1.25; }
-    .site-nav-link:hover { background: #eef4f1; color: #123d35; }
-    .site-nav-link.active { background: #165f56; color: #ffffff; }
-    .site-shell > main { width: min(1180px, calc(100% - 56px)); margin-left: auto; margin-right: auto; }
-    @media (max-width: 900px) {
-      .site-shell { display: block; }
-      .site-sidebar { position: static; height: auto; border-right: 0; border-bottom: 1px solid #dfe5df; }
-      .site-sidebar nav { grid-template-columns: repeat(auto-fit, minmax(112px, 1fr)); }
-      .site-shell > main { width: auto; }
-    }
   </style>
 </head>
 <body>
-  <div class="site-shell" data-site-nav="true">
-    <aside class="site-sidebar">
-      <div class="site-brand">MLB 投注計畫</div>
-      <nav aria-label="主要頁面">
-        <a class="site-nav-link" href="index.html">總覽</a>
-        <a class="site-nav-link" href="daily_predictions.html">今日預測</a>
-        <a class="site-nav-link" href="betting_ticket.html">投注單</a>
-        <a class="site-nav-link" href="totals_predictions.html">大小分</a>
-        <a class="site-nav-link" href="advanced_factors.html">進階因子</a>
-        <a class="site-nav-link" href="game_simulator.html">逐打席模擬</a>
-        <a class="site-nav-link" href="monte_carlo.html">蒙地卡羅</a>
-        <a class="site-nav-link" href="market_research.html">盤口研究</a>
-        <a class="site-nav-link" href="prediction_log.html">結算紀錄</a>
-        <a class="site-nav-link active" href="postgame_review.html">賽後檢討</a>
-        <a class="site-nav-link" href="betting_roi.html">投注 ROI</a>
-        <a class="site-nav-link" href="lineup_fix_comparison.html">修正前後</a>
-        <a class="site-nav-link" href="winner_model_search.html">模型搜尋</a>
-        <a class="site-nav-link" href="prediction_accuracy.html">準確率</a>
-        <a class="site-nav-link" href="status.html">狀態</a>
-      </nav>
-    </aside>
 <main>
   <section class="hero">
     <div>
       <h1>MLB 賽後檢討</h1>
       <p>把賽前預測和賽後結果放在同一張檢討表，追蹤勝方、大小分、投注 ROI 與失準原因。</p>
     </div>
-    <p>最近檢討日：2026-07-01<br />產生時間：2026-07-02T17:33:28</p>
+    <p>最近MLB賽事日：2026-07-01<br />產生時間：2026-07-02T20:08:31</p>
   </section>
   <nav class="tabs"><a class="tab active" href="#day-2026-07-01">2026-07-01</a>
 <a class="tab " href="#day-2026-06-30">2026-06-30</a>
@@ -113,10 +76,10 @@
               </div>
               <div class="table-wrap">
                 <table>
-                  <thead><tr><th>台灣時間</th><th>對戰</th><th>賽前勝方</th><th>比分</th><th>實際勝方</th><th>勝方</th><th>大小分</th><th>大小分結果</th><th>檢討重點</th></tr></thead>
+                  <thead><tr><th>台灣開賽時間</th><th>對戰</th><th>賽前勝方</th><th>比分</th><th>實際勝方</th><th>勝方</th><th>大小分</th><th>大小分結果</th><th>檢討重點</th></tr></thead>
                   <tbody>
             <tr>
-              <td>07/02 01:35</td>
+              <td>2026-07-02 01:35</td>
               <td>華盛頓國民 @ 波士頓紅襪<span>GamePk 824740</span></td>
               <td>波士頓紅襪<span>58.3%</span></td>
               <td>10-2</td>
@@ -128,7 +91,7 @@
             </tr>
 
             <tr>
-              <td>07/02 08:40</td>
+              <td>2026-07-02 08:40</td>
               <td>邁阿密馬林魚 @ 科羅拉多洛磯<span>GamePk 824337</span></td>
               <td>邁阿密馬林魚<span>58.1%</span></td>
               <td>3-6</td>
@@ -140,7 +103,7 @@
             </tr>
 
             <tr>
-              <td>07/02 08:10</td>
+              <td>2026-07-02 08:10</td>
               <td>辛辛那提紅人 @ 密爾瓦基釀酒人<span>GamePk 823767</span></td>
               <td>密爾瓦基釀酒人<span>58.1%</span></td>
               <td>2-4</td>
@@ -152,7 +115,7 @@
             </tr>
 
             <tr>
-              <td>07/02 09:40</td>
+              <td>2026-07-02 09:40</td>
               <td>洛杉磯道奇 @ 運動家<span>GamePk 824985</span></td>
               <td>洛杉磯道奇<span>56.3%</span></td>
               <td>1-7</td>
@@ -164,7 +127,7 @@
             </tr>
 
             <tr>
-              <td>07/02 06:40</td>
+              <td>2026-07-02 06:40</td>
               <td>匹茲堡海盜 @ 費城費城人<span>GamePk 823446</span></td>
               <td>費城費城人<span>55.5%</span></td>
               <td>6-10</td>
@@ -176,7 +139,7 @@
             </tr>
 
             <tr>
-              <td>07/02 07:15</td>
+              <td>2026-07-02 07:15</td>
               <td>聖路易紅雀 @ 亞特蘭大勇士<span>GamePk 824905</span></td>
               <td>亞特蘭大勇士<span>55.0%</span></td>
               <td>1-5</td>
@@ -188,7 +151,7 @@
             </tr>
 
             <tr>
-              <td>07/02 01:35</td>
+              <td>2026-07-02 01:35</td>
               <td>底特律老虎 @ 紐約洋基<span>GamePk 823530</span></td>
               <td>紐約洋基<span>55.1%</span></td>
               <td>6-2</td>
@@ -200,7 +163,7 @@
             </tr>
 
             <tr>
-              <td>07/02 02:20</td>
+              <td>2026-07-02 02:20</td>
               <td>聖地牙哥教士 @ 芝加哥小熊<span>GamePk 824660</span></td>
               <td>芝加哥小熊<span>54.2%</span></td>
               <td>3-23</td>
@@ -212,7 +175,7 @@
             </tr>
 
             <tr>
-              <td>07/02 08:10</td>
+              <td>2026-07-02 08:10</td>
               <td>明尼蘇達雙城 @ 休士頓太空人<span>GamePk 824174</span></td>
               <td>休士頓太空人<span>54.1%</span></td>
               <td>8-3</td>
@@ -224,7 +187,7 @@
             </tr>
 
             <tr>
-              <td>07/02 03:07</td>
+              <td>2026-07-02 03:07</td>
               <td>紐約大都會 @ 多倫多藍鳥<span>GamePk 822791</span></td>
               <td>多倫多藍鳥<span>52.7%</span></td>
               <td>3-9</td>
@@ -236,7 +199,7 @@
             </tr>
 
             <tr>
-              <td>07/02 09:40</td>
+              <td>2026-07-02 09:40</td>
               <td>舊金山巨人 @ 亞利桑那響尾蛇<span>GamePk 825064</span></td>
               <td>亞利桑那響尾蛇<span>52.3%</span></td>
               <td>6-4</td>
@@ -248,7 +211,7 @@
             </tr>
 
             <tr>
-              <td>07/02 07:40</td>
+              <td>2026-07-02 07:40</td>
               <td>坦帕灣光芒 @ 堪薩斯市皇家<span>GamePk 824094</span></td>
               <td>坦帕灣光芒<span>50.7%</span></td>
               <td>4-0</td>
@@ -260,7 +223,7 @@
             </tr>
 
             <tr>
-              <td>07/02 00:35</td>
+              <td>2026-07-02 00:35</td>
               <td>芝加哥白襪 @ 巴爾的摩金鶯<span>GamePk 824818</span></td>
               <td>巴爾的摩金鶯<span>50.3%</span></td>
               <td>1-6</td>
@@ -272,7 +235,7 @@
             </tr>
 
             <tr>
-              <td>07/02 01:10</td>
+              <td>2026-07-02 01:10</td>
               <td>德州遊騎兵 @ 克里夫蘭守護者<span>GamePk 824419</span></td>
               <td>德州遊騎兵<span>50.1%</span></td>
               <td>4-9</td>
@@ -305,10 +268,10 @@
               </div>
               <div class="table-wrap">
                 <table>
-                  <thead><tr><th>台灣時間</th><th>對戰</th><th>賽前勝方</th><th>比分</th><th>實際勝方</th><th>勝方</th><th>大小分</th><th>大小分結果</th><th>檢討重點</th></tr></thead>
+                  <thead><tr><th>台灣開賽時間</th><th>對戰</th><th>賽前勝方</th><th>比分</th><th>實際勝方</th><th>勝方</th><th>大小分</th><th>大小分結果</th><th>檢討重點</th></tr></thead>
                   <tbody>
             <tr>
-              <td>07/01 07:10</td>
+              <td>2026-07-01 07:10</td>
               <td>華盛頓國民 @ 波士頓紅襪<span>GamePk 824742</span></td>
               <td>波士頓紅襪<span>58.6%</span></td>
               <td>8-1</td>
@@ -320,7 +283,7 @@
             </tr>
 
             <tr>
-              <td>07/01 09:40</td>
+              <td>2026-07-01 09:40</td>
               <td>洛杉磯天使 @ 西雅圖水手<span>GamePk 823122</span></td>
               <td>西雅圖水手<span>58.0%</span></td>
               <td>3-8</td>
@@ -332,7 +295,7 @@
             </tr>
 
             <tr>
-              <td>07/01 07:40</td>
+              <td>2026-07-01 07:40</td>
               <td>辛辛那提紅人 @ 密爾瓦基釀酒人<span>GamePk 823768</span></td>
               <td>密爾瓦基釀酒人<span>57.9%</span></td>
               <td>2-7</td>
@@ -344,7 +307,7 @@
             </tr>
 
             <tr>
-              <td>07/01 08:40</td>
+              <td>2026-07-01 08:40</td>
               <td>邁阿密馬林魚 @ 科羅拉多洛磯<span>GamePk 824338</span></td>
               <td>邁阿密馬林魚<span>57.6%</span></td>
               <td>14-3</td>
@@ -356,7 +319,7 @@
             </tr>
 
             <tr>
-              <td>07/01 09:40</td>
+              <td>2026-07-01 09:40</td>
               <td>洛杉磯道奇 @ 運動家<span>GamePk 824984</span></td>
               <td>洛杉磯道奇<span>56.1%</span></td>
               <td>9-3</td>
@@ -368,7 +331,7 @@
             </tr>
 
             <tr>
-              <td>07/01 06:40</td>
+              <td>2026-07-01 06:40</td>
               <td>匹茲堡海盜 @ 費城費城人<span>GamePk 823445</span></td>
               <td>費城費城人<span>55.2%</span></td>
               <td>0-8</td>
@@ -380,7 +343,7 @@
             </tr>
 
             <tr>
-              <td>07/01 07:15</td>
+              <td>2026-07-01 07:15</td>
               <td>聖路易紅雀 @ 亞特蘭大勇士<span>GamePk 824907</span></td>
               <td>亞特蘭大勇士<span>55.1%</span></td>
               <td>5-3</td>
@@ -392,7 +355,7 @@
             </tr>
 
             <tr>
-              <td>07/01 07:05</td>
+              <td>2026-07-01 07:05</td>
               <td>底特律老虎 @ 紐約洋基<span>GamePk 823528</span></td>
               <td>紐約洋基<span>55.3%</span></td>
               <td>9-3</td>
@@ -404,7 +367,7 @@
             </tr>
 
             <tr>
-              <td>07/01 08:05</td>
+              <td>2026-07-01 08:05</td>
               <td>聖地牙哥教士 @ 芝加哥小熊<span>GamePk 824661</span></td>
               <td>芝加哥小熊<span>54.1%</span></td>
               <td>7-9</td>
@@ -416,7 +379,7 @@
             </tr>
 
             <tr>
-              <td>07/01 08:10</td>
+              <td>2026-07-01 08:10</td>
               <td>明尼蘇達雙城 @ 休士頓太空人<span>GamePk 824175</span></td>
               <td>休士頓太空人<span>54.1%</span></td>
               <td>4-6</td>
@@ -428,7 +391,7 @@
             </tr>
 
             <tr>
-              <td>07/01 07:07</td>
+              <td>2026-07-01 07:07</td>
               <td>紐約大都會 @ 多倫多藍鳥<span>GamePk 822793</span></td>
               <td>多倫多藍鳥<span>52.8%</span></td>
               <td>3-0</td>
@@ -440,7 +403,7 @@
             </tr>
 
             <tr>
-              <td>07/01 09:40</td>
+              <td>2026-07-01 09:40</td>
               <td>舊金山巨人 @ 亞利桑那響尾蛇<span>GamePk 825066</span></td>
               <td>亞利桑那響尾蛇<span>52.0%</span></td>
               <td>2-8</td>
@@ -452,7 +415,7 @@
             </tr>
 
             <tr>
-              <td>07/01 06:35</td>
+              <td>2026-07-01 06:35</td>
               <td>芝加哥白襪 @ 巴爾的摩金鶯<span>GamePk 824819</span></td>
               <td>巴爾的摩金鶯<span>50.5%</span></td>
               <td>9-3</td>
@@ -464,7 +427,7 @@
             </tr>
 
             <tr>
-              <td>07/01 07:40</td>
+              <td>2026-07-01 07:40</td>
               <td>坦帕灣光芒 @ 堪薩斯市皇家<span>GamePk 824096</span></td>
               <td>坦帕灣光芒<span>50.4%</span></td>
               <td>10-4</td>
@@ -476,7 +439,7 @@
             </tr>
 
             <tr>
-              <td>07/01 06:40</td>
+              <td>2026-07-01 06:40</td>
               <td>德州遊騎兵 @ 克里夫蘭守護者<span>GamePk 824418</span></td>
               <td>德州遊騎兵<span>50.1%</span></td>
               <td>4-2</td>
@@ -509,10 +472,10 @@
               </div>
               <div class="table-wrap">
                 <table>
-                  <thead><tr><th>台灣時間</th><th>對戰</th><th>賽前勝方</th><th>比分</th><th>實際勝方</th><th>勝方</th><th>大小分</th><th>大小分結果</th><th>檢討重點</th></tr></thead>
+                  <thead><tr><th>台灣開賽時間</th><th>對戰</th><th>賽前勝方</th><th>比分</th><th>實際勝方</th><th>勝方</th><th>大小分</th><th>大小分結果</th><th>檢討重點</th></tr></thead>
                   <tbody>
             <tr>
-              <td>06/30 07:10</td>
+              <td>2026-06-30 07:10</td>
               <td>華盛頓國民 @ 波士頓紅襪<span>GamePk 824741</span></td>
               <td>波士頓紅襪<span>58.5%</span></td>
               <td>3-6</td>
@@ -524,7 +487,7 @@
             </tr>
 
             <tr>
-              <td>06/30 07:40</td>
+              <td>2026-06-30 07:40</td>
               <td>辛辛那提紅人 @ 密爾瓦基釀酒人<span>GamePk 823771</span></td>
               <td>密爾瓦基釀酒人<span>57.8%</span></td>
               <td>3-5</td>
@@ -536,7 +499,7 @@
             </tr>
 
             <tr>
-              <td>06/30 08:40</td>
+              <td>2026-06-30 08:40</td>
               <td>邁阿密馬林魚 @ 科羅拉多洛磯<span>GamePk 824339</span></td>
               <td>邁阿密馬林魚<span>57.6%</span></td>
               <td>10-7</td>
@@ -548,7 +511,7 @@
             </tr>
 
             <tr>
-              <td>06/30 09:40</td>
+              <td>2026-06-30 09:40</td>
               <td>洛杉磯道奇 @ 運動家<span>GamePk 824986</span></td>
               <td>洛杉磯道奇<span>56.0%</span></td>
               <td>9-4</td>
@@ -560,7 +523,7 @@
             </tr>
 
             <tr>
-              <td>06/30 06:40</td>
+              <td>2026-06-30 06:40</td>
               <td>匹茲堡海盜 @ 費城費城人<span>GamePk 823444</span></td>
               <td>費城費城人<span>55.4%</span></td>
               <td>11-7</td>
@@ -572,7 +535,7 @@
             </tr>
 
             <tr>
-              <td>06/30 09:40</td>
+              <td>2026-06-30 09:40</td>
               <td>洛杉磯天使 @ 西雅圖水手<span>GamePk 823121</span></td>
               <td>西雅圖水手<span>57.8%</span></td>
               <td>2-6</td>
@@ -584,7 +547,7 @@
             </tr>
 
             <tr>
-              <td>06/30 07:05</td>
+              <td>2026-06-30 07:05</td>
               <td>底特律老虎 @ 紐約洋基<span>GamePk 823529</span></td>
               <td>紐約洋基<span>55.5%</span></td>
               <td>7-3</td>
@@ -596,7 +559,7 @@
             </tr>
 
             <tr>
-              <td>06/30 08:10</td>
+              <td>2026-06-30 08:10</td>
               <td>明尼蘇達雙城 @ 休士頓太空人<span>GamePk 824176</span></td>
               <td>休士頓太空人<span>54.1%</span></td>
               <td>5-4</td>
@@ -608,7 +571,7 @@
             </tr>
 
             <tr>
-              <td>06/30 08:05</td>
+              <td>2026-06-30 08:05</td>
               <td>聖地牙哥教士 @ 芝加哥小熊<span>GamePk 824662</span></td>
               <td>芝加哥小熊<span>54.1%</span></td>
               <td>2-3</td>
@@ -620,7 +583,7 @@
             </tr>
 
             <tr>
-              <td>06/30 07:07</td>
+              <td>2026-06-30 07:07</td>
               <td>紐約大都會 @ 多倫多藍鳥<span>GamePk 822792</span></td>
               <td>多倫多藍鳥<span>52.8%</span></td>
               <td>1-2</td>
@@ -632,7 +595,7 @@
             </tr>
 
             <tr>
-              <td>06/30 09:40</td>
+              <td>2026-06-30 09:40</td>
               <td>舊金山巨人 @ 亞利桑那響尾蛇<span>GamePk 825065</span></td>
               <td>亞利桑那響尾蛇<span>52.0%</span></td>
               <td>4-5</td>
@@ -644,7 +607,7 @@
             </tr>
 
             <tr>
-              <td>06/30 06:35</td>
+              <td>2026-06-30 06:35</td>
               <td>芝加哥白襪 @ 巴爾的摩金鶯<span>GamePk 824822</span></td>
               <td>巴爾的摩金鶯<span>50.8%</span></td>
               <td>8-2</td>
@@ -656,7 +619,7 @@
             </tr>
 
             <tr>
-              <td>06/30 07:10</td>
+              <td>2026-06-30 07:10</td>
               <td>德州遊騎兵 @ 克里夫蘭守護者<span>GamePk 824420</span></td>
               <td>克里夫蘭守護者<span>50.1%</span></td>
               <td>6-3</td>
@@ -689,10 +652,10 @@
               </div>
               <div class="table-wrap">
                 <table>
-                  <thead><tr><th>台灣時間</th><th>對戰</th><th>賽前勝方</th><th>比分</th><th>實際勝方</th><th>勝方</th><th>大小分</th><th>大小分結果</th><th>檢討重點</th></tr></thead>
+                  <thead><tr><th>台灣開賽時間</th><th>對戰</th><th>賽前勝方</th><th>比分</th><th>實際勝方</th><th>勝方</th><th>大小分</th><th>大小分結果</th><th>檢討重點</th></tr></thead>
                   <tbody>
             <tr>
-              <td>06/29 02:10</td>
+              <td>2026-06-29 02:10</td>
               <td>科羅拉多洛磯 @ 明尼蘇達雙城<span>GamePk 823686</span></td>
               <td>明尼蘇達雙城<span>60.9%</span></td>
               <td>2-3</td>
@@ -704,7 +667,7 @@
             </tr>
 
             <tr>
-              <td>06/29 02:10</td>
+              <td>2026-06-29 02:10</td>
               <td>芝加哥小熊 @ 密爾瓦基釀酒人<span>GamePk 823769</span></td>
               <td>密爾瓦基釀酒人<span>54.1%</span></td>
               <td>4-3</td>
@@ -716,7 +679,7 @@
             </tr>
 
             <tr>
-              <td>06/29 01:40</td>
+              <td>2026-06-29 01:40</td>
               <td>休士頓太空人 @ 底特律老虎<span>GamePk 824256</span></td>
               <td>底特律老虎<span>54.0%</span></td>
               <td>7-5</td>
@@ -728,7 +691,7 @@
             </tr>
 
             <tr>
-              <td>06/29 01:40</td>
+              <td>2026-06-29 01:40</td>
               <td>亞利桑那響尾蛇 @ 坦帕灣光芒<span>GamePk 822959</span></td>
               <td>坦帕灣光芒<span>53.4%</span></td>
               <td>1-5</td>
@@ -740,7 +703,7 @@
             </tr>
 
             <tr>
-              <td>06/29 01:35</td>
+              <td>2026-06-29 01:35</td>
               <td>華盛頓國民 @ 巴爾的摩金鶯<span>GamePk 824821</span></td>
               <td>巴爾的摩金鶯<span>53.3%</span></td>
               <td>6-4</td>
@@ -752,7 +715,7 @@
             </tr>
 
             <tr>
-              <td>06/29 02:15</td>
+              <td>2026-06-29 02:15</td>
               <td>邁阿密馬林魚 @ 聖路易紅雀<span>GamePk 823037</span></td>
               <td>聖路易紅雀<span>52.2%</span></td>
               <td>1-2</td>
@@ -764,7 +727,7 @@
             </tr>
 
             <tr>
-              <td>06/29 02:10</td>
+              <td>2026-06-29 02:10</td>
               <td>堪薩斯市皇家 @ 芝加哥白襪<span>GamePk 824580</span></td>
               <td>芝加哥白襪<span>51.6%</span></td>
               <td>5-4</td>
@@ -776,7 +739,7 @@
             </tr>
 
             <tr>
-              <td>06/29 01:35</td>
+              <td>2026-06-29 01:35</td>
               <td>辛辛那提紅人 @ 匹茲堡海盜<span>GamePk 823362</span></td>
               <td>匹茲堡海盜<span>51.5%</span></td>
               <td>4-9</td>
@@ -788,7 +751,7 @@
             </tr>
 
             <tr>
-              <td>06/29 01:37</td>
+              <td>2026-06-29 01:37</td>
               <td>德州遊騎兵 @ 多倫多藍鳥<span>GamePk 822795</span></td>
               <td>多倫多藍鳥<span>51.4%</span></td>
               <td>3-2</td>
@@ -800,7 +763,7 @@
             </tr>
 
             <tr>
-              <td>06/29 04:10</td>
+              <td>2026-06-29 04:10</td>
               <td>洛杉磯道奇 @ 聖地牙哥教士<span>GamePk 823281</span></td>
               <td>洛杉磯道奇<span>51.2%</span></td>
               <td>4-2</td>
@@ -812,7 +775,7 @@
             </tr>
 
             <tr>
-              <td>06/29 01:40</td>
+              <td>2026-06-29 01:40</td>
               <td>費城費城人 @ 紐約大都會<span>GamePk 823608</span></td>
               <td>費城費城人<span>50.6%</span></td>
               <td>5-4</td>
@@ -824,7 +787,7 @@
             </tr>
 
             <tr>
-              <td>06/29 07:20</td>
+              <td>2026-06-29 07:20</td>
               <td>紐約洋基 @ 波士頓紅襪<span>GamePk 824744</span></td>
               <td>紐約洋基<span>50.6%</span></td>
               <td>4-5</td>
@@ -836,7 +799,7 @@
             </tr>
 
             <tr>
-              <td>06/29 04:05</td>
+              <td>2026-06-29 04:05</td>
               <td>亞特蘭大勇士 @ 舊金山巨人<span>GamePk 823204</span></td>
               <td>亞特蘭大勇士<span>50.3%</span></td>
               <td>2-3</td>
@@ -848,7 +811,7 @@
             </tr>
 
             <tr>
-              <td>06/29 03:15</td>
+              <td>2026-06-29 03:15</td>
               <td>運動家 @ 洛杉磯天使<span>GamePk 824011</span></td>
               <td>洛杉磯天使<span>50.2%</span></td>
               <td>1-4</td>
@@ -860,7 +823,7 @@
             </tr>
 
             <tr>
-              <td>06/29 01:40</td>
+              <td>2026-06-29 01:40</td>
               <td>西雅圖水手 @ 克里夫蘭守護者<span>GamePk 824422</span></td>
               <td>西雅圖水手<span>50.0%</span></td>
               <td>5-6</td>
@@ -893,7 +856,7 @@
               </div>
               <div class="table-wrap">
                 <table>
-                  <thead><tr><th>台灣時間</th><th>對戰</th><th>賽前勝方</th><th>比分</th><th>實際勝方</th><th>勝方</th><th>大小分</th><th>大小分結果</th><th>檢討重點</th></tr></thead>
+                  <thead><tr><th>台灣開賽時間</th><th>對戰</th><th>賽前勝方</th><th>比分</th><th>實際勝方</th><th>勝方</th><th>大小分</th><th>大小分結果</th><th>檢討重點</th></tr></thead>
                   <tbody>
             <tr>
               <td>未公布</td>
@@ -1097,7 +1060,7 @@
               </div>
               <div class="table-wrap">
                 <table>
-                  <thead><tr><th>台灣時間</th><th>對戰</th><th>賽前勝方</th><th>比分</th><th>實際勝方</th><th>勝方</th><th>大小分</th><th>大小分結果</th><th>檢討重點</th></tr></thead>
+                  <thead><tr><th>台灣開賽時間</th><th>對戰</th><th>賽前勝方</th><th>比分</th><th>實際勝方</th><th>勝方</th><th>大小分</th><th>大小分結果</th><th>檢討重點</th></tr></thead>
                   <tbody>
             <tr>
               <td>未公布</td>
@@ -1301,7 +1264,7 @@
               </div>
               <div class="table-wrap">
                 <table>
-                  <thead><tr><th>台灣時間</th><th>對戰</th><th>賽前勝方</th><th>比分</th><th>實際勝方</th><th>勝方</th><th>大小分</th><th>大小分結果</th><th>檢討重點</th></tr></thead>
+                  <thead><tr><th>台灣開賽時間</th><th>對戰</th><th>賽前勝方</th><th>比分</th><th>實際勝方</th><th>勝方</th><th>大小分</th><th>大小分結果</th><th>檢討重點</th></tr></thead>
                   <tbody>
             <tr>
               <td>未公布</td>
@@ -1414,6 +1377,5 @@
               </div>
             </section>
 </main>
-  </div>
 </body>
 </html>
