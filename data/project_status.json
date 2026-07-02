@@ -1,15 +1,15 @@
 {
-  "generated_at": "2026-07-02T03:38:04",
+  "generated_at": "2026-07-02T17:32:34",
   "history": {
-    "games_written": 3720,
+    "games_written": 3728,
     "actual_first_game_date": "2025-03-27",
     "actual_last_game_date": "2026-07-01"
   },
   "accuracy": {
     "best_model": "A-畢氏勝率",
-    "predictions": 3580,
-    "correct": 1941,
-    "accuracy_pct": 54.22
+    "predictions": 3649,
+    "correct": 1977,
+    "accuracy_pct": 54.18
   },
   "daily": {
     "target_date": "2026-07-02",
@@ -62,9 +62,9 @@
     {
       "date": "2026-07-01",
       "predictions": 14,
-      "final_games": 1,
-      "pending_games": 13,
-      "accuracy_pct": 100.0
+      "final_games": 14,
+      "pending_games": 0,
+      "accuracy_pct": 50.0
     },
     {
       "date": "2026-07-02",
@@ -130,13 +130,8 @@
     {
       "date": "2026-07-02",
       "rows": 9,
-      "filled": 5,
-      "missing": [
-        "底特律老虎 @ 德州遊騎兵 (Scheduled)",
-        "洛杉磯天使 @ 西雅圖水手 (Scheduled)",
-        "聖地牙哥教士 @ 洛杉磯道奇 (Scheduled)",
-        "芝加哥白襪 @ 克里夫蘭守護者 (Scheduled)"
-      ]
+      "filled": 9,
+      "missing": []
     }
   ],
   "roi": [
@@ -166,11 +161,11 @@
     },
     {
       "date": "2026-06-28",
-      "bets": 1,
-      "final_bets": 1,
+      "bets": 0,
+      "final_bets": 0,
       "pending_bets": 0,
-      "total_pnl": -100.0,
-      "roi_pct": -100.0
+      "total_pnl": 0,
+      "roi_pct": 0
     },
     {
       "date": "2026-06-29",
@@ -206,10 +201,10 @@
     }
   ],
   "auto_runner": {
-    "mode": "running",
+    "mode": "success",
     "target_date": "2026-07-02",
     "last_started_at_tw": "2026-07-02T03:31:23+08:00",
-    "last_finished_at_tw": "2026-07-02T02:39:25+08:00",
+    "last_finished_at_tw": "2026-07-02T03:38:04+08:00",
     "last_return_code": 0,
     "log": "C:\\Users\\I5-10400F\\Documents\\投注計畫\\logs\\auto_runner\\2026-07-02.workflow.log"
   },
@@ -227,13 +222,8 @@
   "system_completion_pct": 100,
   "external_waiting_items": [
     "2026-06-25 尚有 1 場比賽未結算",
-    "2026-07-01 尚有 13 場比賽未結算",
     "2026-07-02 尚有 9 場比賽未結算",
-    "2026-06-25 亞利桑那響尾蛇 @ 聖路易紅雀 (Postponed) 尚未取得真實盤口",
-    "2026-07-02 底特律老虎 @ 德州遊騎兵 (Scheduled) 尚未開打或來源尚未開盤",
-    "2026-07-02 洛杉磯天使 @ 西雅圖水手 (Scheduled) 尚未開打或來源尚未開盤",
-    "2026-07-02 聖地牙哥教士 @ 洛杉磯道奇 (Scheduled) 尚未開打或來源尚未開盤",
-    "2026-07-02 芝加哥白襪 @ 克里夫蘭守護者 (Scheduled) 尚未開打或來源尚未開盤"
+    "2026-06-25 亞利桑那響尾蛇 @ 聖路易紅雀 (Postponed) 尚未取得真實盤口"
   ],
   "project_state": "系統完成，等待外部賽果/盤口"
 }

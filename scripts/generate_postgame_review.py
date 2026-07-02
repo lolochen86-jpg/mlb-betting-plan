@@ -16,6 +16,7 @@ DOCS_DIR = ROOT / "docs"
 
 POSTGAME_JSON = DATA_DIR / "postgame_review.json"
 POSTGAME_HTML = DOCS_DIR / "postgame_review.html"
+DAILY_JSON = DATA_DIR / "daily_predictions_{date}.json"
 
 
 def read_json(path: Path) -> dict:
@@ -84,7 +85,20 @@ def roi_index(target_date: str) -> dict[str, dict]:
     return {str(row.get("game_pk", "")): row for row in rows if str(row.get("game_pk", ""))}
 
 
-def review_game(row: dict, total_row: dict | None, roi_row: dict | None) -> dict:
+def daily_time_index(target_date: str) -> dict[str, dict]:
+    data = read_json(Path(str(DAILY_JSON).format(date=target_date)))
+    rows = data.get("all_predictions", []) if data else []
+    return {
+        str(row.get("game_pk", "")): {
+            "game_time_tw": row.get("game_time_tw", ""),
+            "game_time_utc": row.get("game_time_utc", ""),
+        }
+        for row in rows
+        if str(row.get("game_pk", ""))
+    }
+
+
+def review_game(row: dict, total_row: dict | None, roi_row: dict | None, time_row: dict | None = None) -> dict:
     away_score, home_score, actual_total = parse_score(row.get("score", ""))
     is_final = row.get("is_final") is True or str(row.get("is_final")).lower() == "true"
     winner_correct = row.get("settlement") == "correct" if is_final else None
@@ -122,6 +136,8 @@ def review_game(row: dict, total_row: dict | None, roi_row: dict | None) -> dict
     return {
         "date": row.get("date", ""),
         "game_pk": row.get("game_pk", ""),
+        "game_time_tw": row.get("game_time_tw", "") or (time_row or {}).get("game_time_tw", ""),
+        "game_time_utc": row.get("game_time_utc", "") or (time_row or {}).get("game_time_utc", ""),
         "matchup_zh": row.get("matchup_zh", ""),
         "prediction_zh": row.get("prediction_zh", ""),
         "confidence": confidence,
@@ -148,7 +164,16 @@ def build_report() -> dict:
         target_date = settlement.get("target_date", path.stem.replace("prediction_settlement_", ""))
         total_rows = totals_index(target_date)
         roi_rows = roi_index(target_date)
-        games = [review_game(row, total_rows.get(str(row.get("game_pk", ""))), roi_rows.get(str(row.get("game_pk", "")))) for row in settlement.get("settlements", [])]
+        time_rows = daily_time_index(target_date)
+        games = [
+            review_game(
+                row,
+                total_rows.get(str(row.get("game_pk", ""))),
+                roi_rows.get(str(row.get("game_pk", ""))),
+                time_rows.get(str(row.get("game_pk", ""))),
+            )
+            for row in settlement.get("settlements", [])
+        ]
         final_games = [game for game in games if game["winner_correct"] is not None]
         winner_correct = [game for game in final_games if game["winner_correct"] is True]
         totals_final = [game for game in games if game["total_correct"] is not None]
@@ -220,6 +245,7 @@ def render_game_rows(games: list[dict]) -> str:
         rows.append(
             f"""
             <tr>
+              <td>{html.escape(game.get('game_time_tw') or '未公布')}</td>
               <td>{html.escape(game['matchup_zh'])}<span>GamePk {game['game_pk']}</span></td>
               <td>{html.escape(game['prediction_zh'])}<span>{game['confidence'] * 100:.1f}%</span></td>
               <td>{game['score'] or '-'}</td>
@@ -253,7 +279,7 @@ def render_html(report: dict) -> str:
               </div>
               <div class="table-wrap">
                 <table>
-                  <thead><tr><th>對戰</th><th>賽前勝方</th><th>比分</th><th>實際勝方</th><th>勝方</th><th>大小分</th><th>大小分結果</th><th>檢討重點</th></tr></thead>
+                  <thead><tr><th>台灣時間</th><th>對戰</th><th>賽前勝方</th><th>比分</th><th>實際勝方</th><th>勝方</th><th>大小分</th><th>大小分結果</th><th>檢討重點</th></tr></thead>
                   <tbody>{render_game_rows(day['games'])}</tbody>
                 </table>
               </div>

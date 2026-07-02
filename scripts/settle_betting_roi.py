@@ -14,6 +14,8 @@ import json
 from datetime import date, datetime
 from pathlib import Path
 
+from schedule_time import attach_game_time
+
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA_DIR = ROOT / "data"
@@ -170,7 +172,8 @@ def make_roi(
         won = settled.get("settlement") == "correct" if is_final else None
         pnl = net_profit(unit, pick_odds, won) if won is not None else 0
         rows.append(
-            {
+            attach_game_time(
+                {
                 "date": target_date,
                 "game_pk": pred.get("game_pk", ""),
                 "sportsbook": odds.get("sportsbook", ""),
@@ -190,7 +193,9 @@ def make_roi(
                 "settlement": "win" if won is True else "loss" if won is False else "pending",
                 "pnl": round(pnl, 2),
                 "is_final": is_final,
-            }
+                },
+                {str(pred.get("game_pk", "")): {"game_time_tw": pred.get("game_time_tw", ""), "game_time_utc": pred.get("game_time_utc", "")}},
+            )
         )
 
     final_rows = [row for row in rows if row["is_final"]]
@@ -236,6 +241,8 @@ def write_roi(report: dict) -> None:
     fields = [
         "date",
         "game_pk",
+        "game_time_tw",
+        "game_time_utc",
         "sportsbook",
         "captured_at_tw",
         "decision",
@@ -274,10 +281,12 @@ def rebuild_roi_log() -> None:
     for path in sorted(DATA_DIR.glob("betting_roi_*.json")):
         data = json.loads(path.read_text(encoding="utf-8"))
         rows.extend(data.get("bets", []))
-    rows.sort(key=lambda row: (row["date"], row.get("game_pk", "")))
+    rows.sort(key=lambda row: (row["date"], row.get("game_time_utc", ""), row.get("game_pk", "")), reverse=True)
     fields = [
         "date",
         "game_pk",
+        "game_time_tw",
+        "game_time_utc",
         "sportsbook",
         "captured_at_tw",
         "matchup_zh",
@@ -308,6 +317,7 @@ def render_roi_html(rows: list[dict]) -> str:
         f"""
         <tr>
           <td>{html.escape(str(row.get('date', '')))}</td>
+          <td>{html.escape(str(row.get('game_time_tw', '') or '未公布'))}</td>
           <td>{html.escape(str(row.get('sportsbook', '')))}</td>
           <td>{html.escape(str(row.get('matchup_zh', '')))}</td>
           <td>{html.escape(str(row.get('prediction_zh', '')))}</td>
@@ -320,7 +330,7 @@ def render_roi_html(rows: list[dict]) -> str:
         for row in rows
     )
     if not rows:
-        body = '<tr><td colspan="9">尚未匯入真實盤口，沒有投注 ROI 紀錄。</td></tr>'
+        body = '<tr><td colspan="10">尚未匯入真實盤口，沒有投注 ROI 紀錄。</td></tr>'
     return f"""<!doctype html>
 <html lang="zh-Hant">
 <head>
@@ -344,7 +354,7 @@ def render_roi_html(rows: list[dict]) -> str:
     <h1>MLB 真實盤口投注 ROI</h1>
     <div class="meta">已結算注數：{len(final_rows)} / 勝：{len(wins)} / 損益：{pnl:.2f} / ROI：{roi:.2f}%</div>
     <table>
-      <thead><tr><th>日期</th><th>來源</th><th>對戰</th><th>預測勝方</th><th>賠率</th><th>信心</th><th>Edge</th><th>結果</th><th>PnL</th></tr></thead>
+      <thead><tr><th>日期</th><th>台灣時間</th><th>來源</th><th>對戰</th><th>預測勝方</th><th>賠率</th><th>信心</th><th>Edge</th><th>結果</th><th>PnL</th></tr></thead>
       <tbody>{body}</tbody>
     </table>
     <div class="note">此頁只使用匯入的真實盤口；台灣運彩小數賠率與美式 moneyline 皆可計算，不使用固定 -110 假設。</div>

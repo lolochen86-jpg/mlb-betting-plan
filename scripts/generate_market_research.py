@@ -17,6 +17,7 @@ from datetime import date, datetime
 from pathlib import Path
 
 from fetch_taiwan_sportslottery_markets import MARKETS_CSV, build_report as build_market_file
+from schedule_time import attach_game_time, load_time_index, time_sort_key
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -145,7 +146,8 @@ def build_moneyline_candidates(daily_rows: list[dict], monte_by_game: dict[str, 
             continue
         decision = "候選" if model_prob >= MIN_MONEYLINE_PROB and edge >= MIN_EDGE else "觀察"
         candidates.append(
-            {
+            attach_game_time(
+                {
                 "type": "不讓分",
                 "date": row.get("date", ""),
                 "game_pk": game_pk,
@@ -158,7 +160,9 @@ def build_moneyline_candidates(daily_rows: list[dict], monte_by_game: dict[str, 
                 "edge": round(edge, 4),
                 "decision": decision,
                 "reason": "勝方模型/蒙地卡羅高於台灣運彩隱含機率",
-            }
+                },
+                {game_pk: {"game_time_tw": row.get("game_time_tw", ""), "game_time_utc": row.get("game_time_utc", "")}},
+            )
         )
     return candidates
 
@@ -183,6 +187,8 @@ def build_totals_candidates(totals_rows: list[dict], markets: dict[tuple[str, st
                 "type": "全場大小",
                 "date": row.get("date", ""),
                 "game_pk": game_pk,
+                "game_time_tw": row.get("game_time_tw", ""),
+                "game_time_utc": row.get("game_time_utc", ""),
                 "matchup_zh": row.get("matchup_zh", ""),
                 "pick": row.get("pick", ""),
                 "line": row.get("line", ""),
@@ -199,6 +205,7 @@ def build_totals_candidates(totals_rows: list[dict], markets: dict[tuple[str, st
 
 def build_research(target_date: str) -> dict:
     market_rows = load_market_rows(target_date)
+    time_index = load_time_index(target_date)
     daily = load_json(Path(str(DAILY_PREDICTIONS_JSON).format(date=target_date)), {"all_predictions": []})
     totals = load_json(Path(str(TOTALS_JSON).format(date=target_date)), {"all_predictions": []})
     monte = load_json(Path(str(MONTE_CARLO_JSON).format(date=target_date)), {"games": []})
@@ -208,7 +215,9 @@ def build_research(target_date: str) -> dict:
     candidates = []
     candidates.extend(build_moneyline_candidates(daily.get("all_predictions", []), monte_by_game, markets))
     candidates.extend(build_totals_candidates(totals.get("all_predictions", []), markets))
-    candidates.sort(key=lambda row: (row["decision"] == "候選", row["edge"], row["model_prob"]), reverse=True)
+    for row in candidates:
+        attach_game_time(row, time_index)
+    candidates.sort(key=lambda row: (row["decision"] != "候選", time_sort_key(row), -row["edge"], -row["model_prob"]))
 
     overview = market_overview(market_rows)
     active_candidates = [row for row in candidates if row["decision"] == "候選"]
@@ -256,11 +265,12 @@ def write_outputs(report: dict) -> None:
 
 def rows_html(rows: list[dict], empty: str) -> str:
     if not rows:
-        return f'<tr><td colspan="10">{html.escape(empty)}</td></tr>'
+        return f'<tr><td colspan="11">{html.escape(empty)}</td></tr>'
     return "\n".join(
         f"""
         <tr>
           <td>{html.escape(row.get('type', ''))}</td>
+          <td>{html.escape(str(row.get('game_time_tw', '') or '未公布'))}</td>
           <td>{html.escape(row.get('matchup_zh', ''))}</td>
           <td>{html.escape(str(row.get('pick', '')))}</td>
           <td>{html.escape(str(row.get('line', '') or '-'))}</td>
@@ -344,13 +354,13 @@ def render_html(report: dict) -> str:
 
     <h2>比較有把握的候選</h2>
     <table>
-      <thead><tr><th>玩法</th><th>對戰</th><th>選項</th><th>盤口</th><th>賠率</th><th>模型機率</th><th>盤口隱含</th><th>Edge</th><th>狀態</th><th>理由</th></tr></thead>
+      <thead><tr><th>玩法</th><th>台灣時間</th><th>對戰</th><th>選項</th><th>盤口</th><th>賠率</th><th>模型機率</th><th>盤口隱含</th><th>Edge</th><th>狀態</th><th>理由</th></tr></thead>
       <tbody>{candidate_rows}</tbody>
     </table>
 
     <h2>觀察項目</h2>
     <table>
-      <thead><tr><th>玩法</th><th>對戰</th><th>選項</th><th>盤口</th><th>賠率</th><th>模型機率</th><th>盤口隱含</th><th>Edge</th><th>狀態</th><th>理由</th></tr></thead>
+      <thead><tr><th>玩法</th><th>台灣時間</th><th>對戰</th><th>選項</th><th>盤口</th><th>賠率</th><th>模型機率</th><th>盤口隱含</th><th>Edge</th><th>狀態</th><th>理由</th></tr></thead>
       <tbody>{watch_rows}</tbody>
     </table>
 

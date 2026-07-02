@@ -148,6 +148,8 @@ def build_sim_data(target_date: str) -> dict:
             {
                 "date": target_date,
                 "game_pk": game_pk,
+                "game_time_tw": row.get("game_time_tw", ""),
+                "game_time_utc": row.get("game_time_utc", ""),
                 "status": row.get("status", ""),
                 "away": away,
                 "home": home,
@@ -446,7 +448,7 @@ def render_html(data: dict) -> str:
 
     function renderStrip() {{
       const date = SIM_DATA.target_date.slice(5).replace('-', '<br>');
-      const tabs = SIM_DATA.games.map((g,i)=>'<button class="game-tab ' + (i===state.gameIndex?'active':'') + '" onclick="loadGame(' + i + ')"><div class="tab-row"><strong>' + g.away + '</strong><span>' + (i===state.gameIndex?'Viewing':'SIM') + '</span></div><div class="tab-row"><strong>' + g.home + '</strong><span>' + Math.round(g.confidence*100) + '%</span></div></button>').join('');
+      const tabs = SIM_DATA.games.map((g,i)=>'<button class="game-tab ' + (i===state.gameIndex?'active':'') + '" onclick="loadGame(' + i + ')"><div class="tab-row"><strong>' + (g.game_time_tw || '未公布') + '</strong><span>' + (i===state.gameIndex?'Viewing':'SIM') + '</span></div><div class="tab-row"><strong>' + g.away + '</strong><span>' + Math.round(g.confidence*100) + '%</span></div><div class="tab-row"><strong>' + g.home + '</strong><span>' + (g.status || '') + '</span></div></button>').join('');
       document.getElementById('gameStrip').innerHTML = '<div class="date-box">JUN<br>' + (date.split('<br>')[1] || '') + '</div>' + tabs;
     }}
 

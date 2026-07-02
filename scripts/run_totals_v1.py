@@ -13,6 +13,7 @@ from pathlib import Path
 
 from fetch_taiwan_sportslottery_odds import BASEBALL_GAMES_URL, decimal_odds, normalize_team_name, request_json
 from run_real_mlb_backtest import DEFAULT_GAMES_CSV, load_games
+from schedule_time import attach_game_time, load_time_index, time_sort_key
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -139,6 +140,7 @@ def predict_total(away_zh: str, home_zh: str, teams: dict, league_total: float) 
 def build_report(target_date: str, recent_games: int, min_edge: float) -> dict:
     history = [game for game in load_games(DEFAULT_GAMES_CSV) if game["date"] < target_date]
     daily_rows = read_daily_predictions(target_date)
+    time_index = load_time_index(target_date)
     taiwan_games = load_or_fetch_taiwan_source(target_date)
     totals_markets = extract_totals_markets(taiwan_games)
     teams, league_total, sigma = team_total_stats(history, recent_games)
@@ -161,7 +163,8 @@ def build_report(target_date: str, recent_games: int, min_edge: float) -> dict:
         edge = model_prob - market_prob
         decision = "大小分候選" if edge >= min_edge else "不推薦"
         predictions.append(
-            {
+            attach_game_time(
+                {
                 "date": target_date,
                 "game_pk": row.get("game_pk", ""),
                 "sportsbook": "台灣運彩",
@@ -175,9 +178,11 @@ def build_report(target_date: str, recent_games: int, min_edge: float) -> dict:
                 "edge": round(edge, 4),
                 "decision": decision,
                 "status": row.get("status", ""),
-            }
+                },
+                time_index,
+            )
         )
-    predictions.sort(key=lambda row: (row["decision"] == "大小分候選", row["edge"]), reverse=True)
+    predictions.sort(key=lambda row: (row["decision"] != "大小分候選", time_sort_key(row), -row["edge"]))
     candidates = [row for row in predictions if row["decision"] == "大小分候選"]
     return {
         "generated_at": datetime.now().isoformat(timespec="seconds"),
@@ -211,6 +216,8 @@ def write_outputs(report: dict) -> None:
     fields = [
         "date",
         "game_pk",
+        "game_time_tw",
+        "game_time_utc",
         "sportsbook",
         "matchup_zh",
         "line",
@@ -239,11 +246,12 @@ def write_outputs(report: dict) -> None:
 
 def render_rows(rows: list[dict]) -> str:
     if not rows:
-        return '<tr><td colspan="10">目前沒有大小分候選。</td></tr>'
+        return '<tr><td colspan="11">目前沒有大小分候選。</td></tr>'
     return "\n".join(
         f"""
         <tr>
           <td>{row.get('game_pk', '')}</td>
+          <td>{row.get('game_time_tw', '')}</td>
           <td>{row.get('matchup_zh', '')}</td>
           <td>{row.get('line', '')}</td>
           <td>{row.get('predicted_total', '')}</td>
@@ -293,12 +301,12 @@ def render_html(report: dict) -> str:
     </div>
     <h2>大小分候選</h2>
     <table>
-      <thead><tr><th>GamePk</th><th>對戰</th><th>台灣運彩線</th><th>模型總分</th><th>方向</th><th>賠率</th><th>模型機率</th><th>市場隱含</th><th>Edge</th><th>決策</th></tr></thead>
+      <thead><tr><th>GamePk</th><th>台灣時間</th><th>對戰</th><th>台灣運彩線</th><th>模型總分</th><th>方向</th><th>賠率</th><th>模型機率</th><th>市場隱含</th><th>Edge</th><th>決策</th></tr></thead>
       <tbody>{candidate_rows}</tbody>
     </table>
     <h2>全部大小分預測</h2>
     <table>
-      <thead><tr><th>GamePk</th><th>對戰</th><th>台灣運彩線</th><th>模型總分</th><th>方向</th><th>賠率</th><th>模型機率</th><th>市場隱含</th><th>Edge</th><th>決策</th></tr></thead>
+      <thead><tr><th>GamePk</th><th>台灣時間</th><th>對戰</th><th>台灣運彩線</th><th>模型總分</th><th>方向</th><th>賠率</th><th>模型機率</th><th>市場隱含</th><th>Edge</th><th>決策</th></tr></thead>
       <tbody>{all_rows}</tbody>
     </table>
     <div class="note">大小分 v1 只使用台灣運彩全場總分大小盤，不使用 ESPN 備援；目前是模型驗證層，尚未併入主投注單。</div>

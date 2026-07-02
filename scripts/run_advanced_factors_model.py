@@ -17,6 +17,7 @@ from fetch_taiwan_sportslottery_odds import normalize_team_name
 from fetch_real_mlb_data import MLB_SCHEDULE_URL
 from name_localization import team_zh
 from run_real_mlb_backtest import DEFAULT_GAMES_CSV, load_games
+from schedule_time import attach_game_time, load_time_index, time_sort_key
 from settle_betting_roi import implied_probability, parse_moneyline
 
 
@@ -267,6 +268,7 @@ def build_report(target_date: str, min_edge: float) -> dict:
     history = load_games(DEFAULT_GAMES_CSV)
     ctx = recent_context(history, target_date)
     odds_by_pk = load_taiwan_odds(target_date)
+    time_index = load_time_index(target_date)
 
     rows = []
     for game in schedule:
@@ -316,7 +318,8 @@ def build_report(target_date: str, min_edge: float) -> dict:
             edge = confidence - market_prob
             decision = "進階模型候選" if edge >= min_edge else "不推薦"
         rows.append(
-            {
+            attach_game_time(
+                {
                 "date": target_date,
                 "game_pk": game["game_pk"],
                 "sportsbook": "台灣運彩" if odds_row else "",
@@ -333,9 +336,17 @@ def build_report(target_date: str, min_edge: float) -> dict:
                 "away_components": away_components,
                 "decision": decision,
                 "status": game.get("status", ""),
-            }
+                },
+                time_index,
+            )
         )
-    rows.sort(key=lambda row: (row["decision"] == "進階模型候選", row.get("edge") if isinstance(row.get("edge"), float) else -99), reverse=True)
+    rows.sort(
+        key=lambda row: (
+            row["decision"] != "進階模型候選",
+            time_sort_key(row),
+            -(row.get("edge") if isinstance(row.get("edge"), float) else -99),
+        )
+    )
     candidates = [row for row in rows if row["decision"] == "進階模型候選"]
     return {
         "generated_at": datetime.now().isoformat(timespec="seconds"),
@@ -357,11 +368,12 @@ def build_report(target_date: str, min_edge: float) -> dict:
 
 def render_rows(rows: list[dict]) -> str:
     if not rows:
-        return '<tr><td colspan="9">目前沒有進階模型候選。</td></tr>'
+        return '<tr><td colspan="10">目前沒有進階模型候選。</td></tr>'
     return "\n".join(
         f"""
         <tr>
           <td>{row['game_pk']}</td>
+          <td>{row.get('game_time_tw', '')}</td>
           <td>{row['matchup_zh']}</td>
           <td>{row['prediction_zh']}</td>
           <td>{float(row['confidence']) * 100:.1f}%</td>
@@ -410,12 +422,12 @@ def render_html(report: dict) -> str:
     </div>
     <h2>進階模型候選</h2>
     <table>
-      <thead><tr><th>GamePk</th><th>對戰</th><th>預測勝方</th><th>信心</th><th>台灣運彩賠率</th><th>市場隱含</th><th>Edge</th><th>主/客分數</th><th>決策</th></tr></thead>
+      <thead><tr><th>GamePk</th><th>台灣時間</th><th>對戰</th><th>預測勝方</th><th>信心</th><th>台灣運彩賠率</th><th>市場隱含</th><th>Edge</th><th>主/客分數</th><th>決策</th></tr></thead>
       <tbody>{candidate_rows}</tbody>
     </table>
     <h2>全部進階預測</h2>
     <table>
-      <thead><tr><th>GamePk</th><th>對戰</th><th>預測勝方</th><th>信心</th><th>台灣運彩賠率</th><th>市場隱含</th><th>Edge</th><th>主/客分數</th><th>決策</th></tr></thead>
+      <thead><tr><th>GamePk</th><th>台灣時間</th><th>對戰</th><th>預測勝方</th><th>信心</th><th>台灣運彩賠率</th><th>市場隱含</th><th>Edge</th><th>主/客分數</th><th>決策</th></tr></thead>
       <tbody>{all_rows}</tbody>
     </table>
     <div class="note"><strong>因子說明</strong><ul>{notes}</ul></div>
@@ -435,6 +447,8 @@ def write_outputs(report: dict) -> None:
     fields = [
         "date",
         "game_pk",
+        "game_time_tw",
+        "game_time_utc",
         "sportsbook",
         "matchup_zh",
         "prediction_zh",

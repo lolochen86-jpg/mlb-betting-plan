@@ -97,6 +97,8 @@ def settle_predictions(target_date: str) -> dict:
             {
                 "date": target_date,
                 "game_pk": pred.get("game_pk", ""),
+                "game_time_tw": pred.get("game_time_tw", ""),
+                "game_time_utc": pred.get("game_time_utc", ""),
                 "decision": pred.get("decision", ""),
                 "matchup_zh": pred.get("matchup_zh", ""),
                 "prediction_zh": pred.get("prediction_zh", ""),
@@ -142,6 +144,8 @@ def write_settlement(settlement: dict) -> None:
     json_path.write_text(json.dumps(settlement, ensure_ascii=False, indent=2), encoding="utf-8")
     fields = [
         "date",
+        "game_time_tw",
+        "game_time_utc",
         "decision",
         "matchup_zh",
         "prediction_zh",
@@ -178,6 +182,8 @@ def rebuild_prediction_log() -> None:
     rows.sort(key=lambda row: (row["date"], row.get("game_time_utc", ""), row.get("game_pk", "")), reverse=True)
     fields = [
         "date",
+        "game_time_tw",
+        "game_time_utc",
         "decision",
         "matchup_zh",
         "prediction_zh",
@@ -204,6 +210,7 @@ def render_log_html(rows: list[dict]) -> str:
         f"""
         <tr>
           <td>{row.get('date', '')}</td>
+          <td>{row.get('game_time_tw', '')}</td>
           <td>{row.get('decision', '')}</td>
           <td>{row.get('matchup_zh', '')}</td>
           <td>{row.get('prediction_zh', '')}</td>
@@ -237,7 +244,7 @@ def render_log_html(rows: list[dict]) -> str:
     <h1>MLB 實戰預測結算紀錄</h1>
     <div class="meta">已完賽：{len(final_rows)} / 正確：{len(correct)} / 準確率：{accuracy:.2f}%</div>
     <table>
-      <thead><tr><th>日期</th><th>類型</th><th>對戰</th><th>預測勝方</th><th>信心</th><th>比分</th><th>實際勝方</th><th>結果</th></tr></thead>
+      <thead><tr><th>日期</th><th>台灣時間</th><th>類型</th><th>對戰</th><th>預測勝方</th><th>信心</th><th>比分</th><th>實際勝方</th><th>結果</th></tr></thead>
       <tbody>{body}</tbody>
     </table>
     <div class="note">此頁只追蹤勝方預測準確率；盤口與投注 ROI 將在真實盤口資料補上後另行計算。</div>

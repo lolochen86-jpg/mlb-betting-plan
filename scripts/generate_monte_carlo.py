@@ -14,6 +14,7 @@ from datetime import date, datetime
 from pathlib import Path
 
 from generate_game_simulator import build_sim_data
+from schedule_time import time_sort_key
 from settle_betting_roi import implied_probability, parse_moneyline
 
 
@@ -327,6 +328,8 @@ def summarize_game(game: dict, simulations: int, totals: dict, moneyline: dict) 
 
     return {
         "game_pk": game["game_pk"],
+        "game_time_tw": game.get("game_time_tw", ""),
+        "game_time_utc": game.get("game_time_utc", ""),
         "matchup_zh": f"{game['away']} @ {game['home']}",
         "away_zh": game["away"],
         "home_zh": game["home"],
@@ -365,7 +368,7 @@ def build_report(target_date: str, simulations: int) -> dict:
     moneyline = load_moneyline(target_date)
     totals = load_totals(target_date)
     games = [summarize_game(game, simulations, totals, moneyline) for game in sim_data["games"]]
-    games.sort(key=lambda row: max(row["away_win_prob"], row["home_win_prob"]), reverse=True)
+    games.sort(key=time_sort_key)
     return {
         "generated_at": datetime.now().isoformat(timespec="seconds"),
         "target_date": target_date,
@@ -379,6 +382,8 @@ def write_csv(report: dict) -> None:
     path = Path(str(MC_CSV).format(date=report["target_date"]))
     fields = [
         "game_pk",
+        "game_time_tw",
+        "game_time_utc",
         "matchup_zh",
         "simulations",
         "avg_away_score",
@@ -432,6 +437,7 @@ def render_html(report: dict) -> str:
         <div class="game-head">
           <div>
             <h2>{html.escape(game['matchup_zh'])}</h2>
+            <p>台灣時間：{html.escape(str(game.get('game_time_tw') or '未公布'))}</p>
             <p>平均比分 {game['away_zh']} {game['avg_away_score']:.2f}：{game['home_zh']} {game['avg_home_score']:.2f}，平均總分 {game['avg_total']:.2f}</p>
             <p>打線來源：{html.escape(source_label)}</p>
           </div>

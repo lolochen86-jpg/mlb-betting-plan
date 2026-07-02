@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-02T03:32:19",
+  "generated_at": "2026-07-02T17:27:25",
   "target_date": "2026-07-01",
   "source_files": {
     "predictions": "data\\daily_predictions_2026-07-01.json",
@@ -9,7 +9,7 @@
   "settings": {
     "unit": 100.0,
     "min_edge": 0.0,
-    "only_high_confidence": false,
+    "only_high_confidence": true,
     "require_sportsbook": "台灣運彩"
   },
   "summary": {
@@ -233,7 +233,7 @@
       "score_prediction_zh": "底特律老虎 3.73 : 紐約洋基 5.61",
       "total_prediction_zh": "9.35",
       "monte_carlo_pick_zh": "不推薦",
-      "skip_reason": "edge -0.1482 低於門檻"
+      "skip_reason": "非高信心預測"
     },
     {
       "date": "2026-07-01",
@@ -263,7 +263,7 @@
       "score_prediction_zh": "聖地牙哥教士 2.92 : 芝加哥小熊 4.87",
       "total_prediction_zh": "7.79",
       "monte_carlo_pick_zh": "芝加哥小熊",
-      "skip_reason": "edge -0.0830 低於門檻"
+      "skip_reason": "非高信心預測"
     },
     {
       "date": "2026-07-01",
@@ -293,7 +293,7 @@
       "score_prediction_zh": "明尼蘇達雙城 3.35 : 休士頓太空人 2.45",
       "total_prediction_zh": "5.79",
       "monte_carlo_pick_zh": "明尼蘇達雙城",
-      "skip_reason": "edge -0.1037 低於門檻"
+      "skip_reason": "非高信心預測"
     },
     {
       "date": "2026-07-01",
@@ -323,7 +323,7 @@
       "score_prediction_zh": "紐約大都會 2.90 : 多倫多藍鳥 2.51",
       "total_prediction_zh": "5.41",
       "monte_carlo_pick_zh": "不推薦",
-      "skip_reason": "edge -0.0382 低於門檻"
+      "skip_reason": "非高信心預測"
     },
     {
       "date": "2026-07-01",
@@ -353,7 +353,7 @@
       "score_prediction_zh": "舊金山巨人 2.53 : 亞利桑那響尾蛇 2.41",
       "total_prediction_zh": "4.93",
       "monte_carlo_pick_zh": "不推薦",
-      "skip_reason": "edge -0.0943 低於門檻"
+      "skip_reason": "非高信心預測"
     },
     {
       "date": "2026-07-01",
@@ -383,7 +383,7 @@
       "score_prediction_zh": "坦帕灣光芒 2.81 : 堪薩斯市皇家 4.23",
       "total_prediction_zh": "7.04",
       "monte_carlo_pick_zh": "堪薩斯市皇家",
-      "skip_reason": "edge -0.1599 低於門檻"
+      "skip_reason": "非高信心預測"
     },
     {
       "date": "2026-07-01",
@@ -413,7 +413,7 @@
       "score_prediction_zh": "芝加哥白襪 4.13 : 巴爾的摩金鶯 2.43",
       "total_prediction_zh": "6.56",
       "monte_carlo_pick_zh": "芝加哥白襪",
-      "skip_reason": "edge -0.1303 低於門檻"
+      "skip_reason": "非高信心預測"
     },
     {
       "date": "2026-07-01",
@@ -443,7 +443,7 @@
       "score_prediction_zh": "德州遊騎兵 3.46 : 克里夫蘭守護者 1.80",
       "total_prediction_zh": "5.26",
       "monte_carlo_pick_zh": "德州遊騎兵",
-      "skip_reason": "edge -0.0480 低於門檻"
+      "skip_reason": "非高信心預測"
     }
   ],
   "note": "ROI uses imported real odds only. Taiwan Sports Lottery decimal odds and American moneyline are supported. Fixed -110 reference results are excluded."

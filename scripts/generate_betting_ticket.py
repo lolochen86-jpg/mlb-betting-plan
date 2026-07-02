@@ -32,6 +32,8 @@ def write_csv(target_date: str, rows: list[dict]) -> Path:
     fields = [
         "date",
         "game_pk",
+        "game_time_tw",
+        "game_time_utc",
         "sportsbook",
         "captured_at_tw",
         "matchup_zh",
@@ -58,6 +60,7 @@ def render_html(report: dict) -> str:
         f"""
         <tr>
           <td>{html.escape(str(row.get('game_pk', '')))}</td>
+          <td>{html.escape(str(row.get('game_time_tw', '') or '未公布'))}</td>
           <td>{html.escape(str(row.get('matchup_zh', '')))}</td>
           <td>{html.escape(str(row.get('prediction_zh', '')))}</td>
           <td>{html.escape(str(row.get('sportsbook', '')))}</td>
@@ -71,7 +74,7 @@ def render_html(report: dict) -> str:
         for row in rows
     )
     if not rows:
-        body = '<tr><td colspan="10">目前沒有符合真實盤口與 edge 條件的投注單。</td></tr>'
+        body = '<tr><td colspan="11">目前沒有符合真實盤口與 edge 條件的投注單。</td></tr>'
     return f"""<!doctype html>
 <html lang="zh-Hant">
 <head>
@@ -100,7 +103,7 @@ def render_html(report: dict) -> str:
       來源：{html.escape(report.get('source_files', {}).get('odds', ''))}
     </div>
     <table>
-      <thead><tr><th>GamePk</th><th>對戰</th><th>投注隊伍</th><th>盤口來源</th><th>賠率</th><th>模型信心</th><th>市場隱含</th><th>Edge</th><th>單位</th><th>狀態</th></tr></thead>
+      <thead><tr><th>GamePk</th><th>台灣時間</th><th>對戰</th><th>投注隊伍</th><th>盤口來源</th><th>賠率</th><th>模型信心</th><th>市場隱含</th><th>Edge</th><th>單位</th><th>狀態</th></tr></thead>
       <tbody>{body}</tbody>
     </table>
     <div class="note">此投注單只列入台灣運彩官方盤口且 edge 通過門檻的場次；沒有台灣運彩盤口就完全不推薦。</div>
