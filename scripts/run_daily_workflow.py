@@ -173,6 +173,7 @@ def main() -> None:
     run_step("產生賽後檢討", [py, "scripts/generate_postgame_review.py"])
     run_step("重建首頁", [py, "scripts/generate_plan.py"])
     run_step("重建狀態頁", [py, "scripts/generate_status_report.py"])
+    run_step("套用全站側邊選單", [py, "scripts/apply_site_navigation.py"])
     print("\nworkflow completed")
 
 
