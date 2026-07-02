@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-02T19:59:25",
+  "generated_at": "2026-07-02T21:00:46",
   "target_date": "2026-06-28",
   "source_files": {
     "predictions": "data\\daily_predictions_2026-06-28.json",
@@ -9,21 +9,45 @@
   "settings": {
     "unit": 100.0,
     "min_edge": 0.0,
-    "only_high_confidence": true,
+    "only_high_confidence": false,
     "require_sportsbook": "台灣運彩"
   },
   "summary": {
     "odds_rows": 15,
-    "bets": 0,
-    "final_bets": 0,
+    "bets": 1,
+    "final_bets": 1,
     "pending_bets": 0,
     "wins": 0,
-    "losses": 0,
-    "total_pnl": 0,
-    "roi_pct": 0,
-    "skipped": 15
+    "losses": 1,
+    "total_pnl": -100.0,
+    "roi_pct": -100.0,
+    "skipped": 14
   },
-  "bets": [],
+  "bets": [
+    {
+      "date": "2026-06-28",
+      "game_pk": "824256",
+      "sportsbook": "台灣運彩",
+      "captured_at_tw": "2026-06-28T23:10:31",
+      "decision": "一般預測",
+      "matchup_zh": "休士頓太空人 @ 底特律老虎",
+      "prediction_zh": "底特律老虎",
+      "pick_side": "home",
+      "moneyline": 1.87,
+      "confidence": 0.5397,
+      "market_implied_prob": 0.5348,
+      "edge": 0.0049,
+      "unit": 100.0,
+      "status": "Final",
+      "score": "7-5",
+      "actual_winner_zh": "休士頓太空人",
+      "settlement": "loss",
+      "pnl": -100.0,
+      "is_final": true,
+      "game_time_tw": "2026-06-29 01:40",
+      "game_time_utc": "2026-06-28T17:40:00Z"
+    }
+  ],
   "skipped": [
     {
       "date": "2026-06-28",
@@ -71,31 +95,7 @@
       "confirmation_same_direction": true,
       "confidence_pass": false,
       "decision": "一般預測",
-      "skip_reason": "非高信心預測"
-    },
-    {
-      "date": "2026-06-28",
-      "game_pk": "824256",
-      "game_time_utc": "2026-06-28T17:40:00Z",
-      "game_time_tw": "06/29 01:40",
-      "status": "Pre-Game",
-      "matchup_zh": "休士頓太空人 @ 底特律老虎",
-      "away_zh": "休士頓太空人",
-      "away_team_id": 117,
-      "home_zh": "底特律老虎",
-      "home_team_id": 116,
-      "away_probable_pitcher_zh": "杭特 布朗",
-      "away_probable_pitcher_id": 686613,
-      "home_probable_pitcher_zh": "傑克 赫",
-      "home_probable_pitcher_id": 656427,
-      "prediction_zh": "底特律老虎",
-      "pick_side": "home",
-      "confidence": 0.5397,
-      "confirmation_pick_zh": "底特律老虎",
-      "confirmation_same_direction": true,
-      "confidence_pass": false,
-      "decision": "一般預測",
-      "skip_reason": "非高信心預測"
+      "skip_reason": "edge -0.1584 低於門檻"
     },
     {
       "date": "2026-06-28",
@@ -119,7 +119,7 @@
       "confirmation_same_direction": true,
       "confidence_pass": false,
       "decision": "一般預測",
-      "skip_reason": "非高信心預測"
+      "skip_reason": "edge -0.2008 低於門檻"
     },
     {
       "date": "2026-06-28",
@@ -143,7 +143,7 @@
       "confirmation_same_direction": true,
       "confidence_pass": false,
       "decision": "一般預測",
-      "skip_reason": "非高信心預測"
+      "skip_reason": "edge -0.1911 低於門檻"
     },
     {
       "date": "2026-06-28",
@@ -167,7 +167,7 @@
       "confirmation_same_direction": false,
       "confidence_pass": false,
       "decision": "一般預測",
-      "skip_reason": "非高信心預測"
+      "skip_reason": "edge -0.1026 低於門檻"
     },
     {
       "date": "2026-06-28",
@@ -191,7 +191,7 @@
       "confirmation_same_direction": true,
       "confidence_pass": false,
       "decision": "一般預測",
-      "skip_reason": "非高信心預測"
+      "skip_reason": "edge -0.1378 低於門檻"
     },
     {
       "date": "2026-06-28",
@@ -215,7 +215,7 @@
       "confirmation_same_direction": true,
       "confidence_pass": false,
       "decision": "一般預測",
-      "skip_reason": "非高信心預測"
+      "skip_reason": "edge -0.1302 低於門檻"
     },
     {
       "date": "2026-06-28",
@@ -239,7 +239,7 @@
       "confirmation_same_direction": true,
       "confidence_pass": false,
       "decision": "一般預測",
-      "skip_reason": "非高信心預測"
+      "skip_reason": "edge -0.1265 低於門檻"
     },
     {
       "date": "2026-06-28",
@@ -263,7 +263,7 @@
       "confirmation_same_direction": false,
       "confidence_pass": false,
       "decision": "一般預測",
-      "skip_reason": "非高信心預測"
+      "skip_reason": "edge -0.1775 低於門檻"
     },
     {
       "date": "2026-06-28",
@@ -287,7 +287,7 @@
       "confirmation_same_direction": true,
       "confidence_pass": false,
       "decision": "一般預測",
-      "skip_reason": "非高信心預測"
+      "skip_reason": "edge -0.1784 低於門檻"
     },
     {
       "date": "2026-06-28",
@@ -311,7 +311,7 @@
       "confirmation_same_direction": false,
       "confidence_pass": false,
       "decision": "一般預測",
-      "skip_reason": "非高信心預測"
+      "skip_reason": "edge -0.0560 低於門檻"
     },
     {
       "date": "2026-06-28",
@@ -335,7 +335,7 @@
       "confirmation_same_direction": false,
       "confidence_pass": false,
       "decision": "一般預測",
-      "skip_reason": "非高信心預測"
+      "skip_reason": "edge -0.1865 低於門檻"
     },
     {
       "date": "2026-06-28",
@@ -359,7 +359,7 @@
       "confirmation_same_direction": false,
       "confidence_pass": false,
       "decision": "一般預測",
-      "skip_reason": "非高信心預測"
+      "skip_reason": "edge -0.0323 低於門檻"
     },
     {
       "date": "2026-06-28",
@@ -383,7 +383,7 @@
       "confirmation_same_direction": true,
       "confidence_pass": false,
       "decision": "一般預測",
-      "skip_reason": "非高信心預測"
+      "skip_reason": "edge -0.0949 低於門檻"
     }
   ],
   "note": "ROI uses imported real odds only. Taiwan Sports Lottery decimal odds and American moneyline are supported. Fixed -110 reference results are excluded."

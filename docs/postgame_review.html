@@ -37,16 +37,53 @@
     .badge { display:inline-flex; border-radius:999px; padding:4px 9px; font-size:12px; font-weight:900; margin:0; }
     .badge.ok { color:#126048; background:#dff2ea; } .badge.bad { color:#9b2f29; background:#f9dddd; } .badge.wait { color:#7a4b12; background:#fff2d6; }
     @media(max-width:900px) { .hero,.day-head { display:block; } .kpis,.discussion { grid-template-columns:1fr; } main { padding:18px 12px 34px; } }
+  
+    /* site navigation */
+    .site-shell { min-height: 100vh; display: grid; grid-template-columns: 220px minmax(0, 1fr); background: inherit; }
+    .site-sidebar { position: sticky; top: 0; align-self: start; height: 100vh; box-sizing: border-box; overflow-y: auto; border-right: 1px solid #dfe5df; background: #ffffff; padding: 22px 14px; z-index: 10; }
+    .site-brand { color: #163b34; font-size: 15px; font-weight: 900; letter-spacing: 0; margin: 0 0 14px; }
+    .site-sidebar nav { display: grid; gap: 6px; }
+    .site-nav-link { display: block; color: #40514b; text-decoration: none; border-radius: 8px; padding: 9px 10px; font-size: 14px; font-weight: 750; line-height: 1.25; }
+    .site-nav-link:hover { background: #eef4f1; color: #123d35; }
+    .site-nav-link.active { background: #165f56; color: #ffffff; }
+    .site-shell > main { width: min(1180px, calc(100% - 56px)); margin-left: auto; margin-right: auto; }
+    @media (max-width: 900px) {
+      .site-shell { display: block; }
+      .site-sidebar { position: static; height: auto; border-right: 0; border-bottom: 1px solid #dfe5df; }
+      .site-sidebar nav { grid-template-columns: repeat(auto-fit, minmax(112px, 1fr)); }
+      .site-shell > main { width: auto; }
+    }
   </style>
 </head>
 <body>
+  <div class="site-shell" data-site-nav="true">
+    <aside class="site-sidebar">
+      <div class="site-brand">MLB 投注計畫</div>
+      <nav aria-label="主要頁面">
+        <a class="site-nav-link" href="index.html">總覽</a>
+        <a class="site-nav-link" href="daily_predictions.html">今日預測</a>
+        <a class="site-nav-link" href="betting_ticket.html">投注單</a>
+        <a class="site-nav-link" href="totals_predictions.html">大小分</a>
+        <a class="site-nav-link" href="advanced_factors.html">進階因子</a>
+        <a class="site-nav-link" href="game_simulator.html">逐打席模擬</a>
+        <a class="site-nav-link" href="monte_carlo.html">蒙地卡羅</a>
+        <a class="site-nav-link" href="market_research.html">盤口研究</a>
+        <a class="site-nav-link" href="prediction_log.html">結算紀錄</a>
+        <a class="site-nav-link active" href="postgame_review.html">賽後檢討</a>
+        <a class="site-nav-link" href="betting_roi.html">投注 ROI</a>
+        <a class="site-nav-link" href="lineup_fix_comparison.html">修正前後</a>
+        <a class="site-nav-link" href="winner_model_search.html">模型搜尋</a>
+        <a class="site-nav-link" href="prediction_accuracy.html">準確率</a>
+        <a class="site-nav-link" href="status.html">狀態</a>
+      </nav>
+    </aside>
 <main>
   <section class="hero">
     <div>
       <h1>MLB 賽後檢討</h1>
       <p>把賽前預測和賽後結果放在同一張檢討表，追蹤勝方、大小分、投注 ROI 與失準原因。</p>
     </div>
-    <p>最近MLB賽事日：2026-07-01<br />產生時間：2026-07-02T20:08:31</p>
+    <p>最近MLB賽事日：2026-07-01<br />產生時間：2026-07-02T21:05:35</p>
   </section>
   <nav class="tabs"><a class="tab active" href="#day-2026-07-01">2026-07-01</a>
 <a class="tab " href="#day-2026-06-30">2026-06-30</a>
@@ -643,7 +680,7 @@
     <section class="kpis">
       <div class="kpi"><div class="label">勝方準確率</div><div class="value">46.67%</div><div class="hint">7 / 15 已完賽</div></div>
       <div class="kpi"><div class="label">大小分準確率</div><div class="value">46.67%</div><div class="hint">7 / 15 有盤口</div></div>
-      <div class="kpi"><div class="label">投注損益</div><div class="value ">0</div><div class="hint">0 筆投注紀錄</div></div>
+      <div class="kpi"><div class="label">投注損益</div><div class="value bad">-100</div><div class="hint">1 筆投注紀錄</div></div>
       <div class="kpi"><div class="label">待結算</div><div class="value muted">0</div><div class="hint">延賽或尚未完賽</div></div>
     </section>
               <div class="discussion">
@@ -687,7 +724,7 @@
               <td><span class="badge bad">錯誤</span></td>
               <td>小分<span>8.5</span></td>
               <td><span class="badge bad">錯誤</span></td>
-              <td>大小分偏差 3.8 分，需檢查投手/天氣/打線係數。</td>
+              <td>大小分偏差 3.8 分，需檢查投手/天氣/打線係數。<br>實際投注單虧損，後續應提高 edge 門檻或降低此類下注權重。</td>
             </tr>
 
             <tr>
@@ -1377,5 +1414,6 @@
               </div>
             </section>
 </main>
+  </div>
 </body>
 </html>

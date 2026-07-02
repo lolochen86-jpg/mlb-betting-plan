@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-02T19:59:31",
+  "generated_at": "2026-07-02T21:00:50",
   "target_date": "2026-06-30",
   "source_files": {
     "predictions": "data\\daily_predictions_2026-06-30.json",
@@ -9,7 +9,7 @@
   "settings": {
     "unit": 100.0,
     "min_edge": 0.0,
-    "only_high_confidence": true,
+    "only_high_confidence": false,
     "require_sportsbook": "台灣運彩"
   },
   "summary": {
@@ -215,7 +215,7 @@
       "confirmation_same_direction": false,
       "confidence_pass": true,
       "decision": "一般預測",
-      "skip_reason": "非高信心預測"
+      "skip_reason": "edge -0.1315 低於門檻"
     },
     {
       "date": "2026-06-30",
@@ -239,7 +239,7 @@
       "confirmation_same_direction": true,
       "confidence_pass": false,
       "decision": "一般預測",
-      "skip_reason": "非高信心預測"
+      "skip_reason": "edge -0.1435 低於門檻"
     },
     {
       "date": "2026-06-30",
@@ -263,7 +263,7 @@
       "confirmation_same_direction": true,
       "confidence_pass": false,
       "decision": "一般預測",
-      "skip_reason": "非高信心預測"
+      "skip_reason": "edge -0.0028 低於門檻"
     },
     {
       "date": "2026-06-30",
@@ -287,7 +287,7 @@
       "confirmation_same_direction": true,
       "confidence_pass": false,
       "decision": "一般預測",
-      "skip_reason": "非高信心預測"
+      "skip_reason": "edge -0.0781 低於門檻"
     },
     {
       "date": "2026-06-30",
@@ -311,7 +311,7 @@
       "confirmation_same_direction": true,
       "confidence_pass": false,
       "decision": "一般預測",
-      "skip_reason": "非高信心預測"
+      "skip_reason": "edge -0.0542 低於門檻"
     },
     {
       "date": "2026-06-30",
@@ -335,7 +335,7 @@
       "confirmation_same_direction": false,
       "confidence_pass": false,
       "decision": "一般預測",
-      "skip_reason": "非高信心預測"
+      "skip_reason": "edge -0.1277 低於門檻"
     },
     {
       "date": "2026-06-30",
@@ -359,7 +359,7 @@
       "confirmation_same_direction": true,
       "confidence_pass": false,
       "decision": "一般預測",
-      "skip_reason": "非高信心預測"
+      "skip_reason": "edge -0.1092 低於門檻"
     },
     {
       "date": "2026-06-30",
@@ -383,7 +383,7 @@
       "confirmation_same_direction": true,
       "confidence_pass": false,
       "decision": "一般預測",
-      "skip_reason": "非高信心預測"
+      "skip_reason": "edge -0.1054 低於門檻"
     }
   ],
   "note": "ROI uses imported real odds only. Taiwan Sports Lottery decimal odds and American moneyline are supported. Fixed -110 reference results are excluded."
