@@ -175,7 +175,7 @@ def rebuild_prediction_log() -> None:
         data = json.loads(path.read_text(encoding="utf-8"))
         for row in data.get("settlements", []):
             rows.append(row)
-    rows.sort(key=lambda row: (row["date"], row.get("game_pk", "")))
+    rows.sort(key=lambda row: (row["date"], row.get("game_time_utc", ""), row.get("game_pk", "")), reverse=True)
     fields = [
         "date",
         "decision",
