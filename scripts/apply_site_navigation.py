@@ -17,6 +17,7 @@ NAV_ITEMS = [
     ("advanced_factors.html", "進階因子"),
     ("game_simulator.html", "逐打席模擬"),
     ("monte_carlo.html", "蒙地卡羅"),
+    ("market_research.html", "盤口研究"),
     ("prediction_log.html", "結算紀錄"),
     ("postgame_review.html", "賽後檢討"),
     ("betting_roi.html", "投注 ROI"),
