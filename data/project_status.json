@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-03T21:51:20",
+  "generated_at": "2026-07-04T00:08:33",
   "history": {
     "games_written": 3737,
     "actual_first_game_date": "2025-03-27",
@@ -12,8 +12,8 @@
     "accuracy_pct": 54.18
   },
   "daily": {
-    "target_date": "2026-07-03",
-    "predictions": 13,
+    "target_date": "2026-07-04",
+    "predictions": 15,
     "high_confidence": 3
   },
   "settlements": [
@@ -78,6 +78,13 @@
       "predictions": 13,
       "final_games": 0,
       "pending_games": 13,
+      "accuracy_pct": 0
+    },
+    {
+      "date": "2026-07-04",
+      "predictions": 15,
+      "final_games": 0,
+      "pending_games": 15,
       "accuracy_pct": 0
     }
   ],
@@ -145,6 +152,15 @@
       "rows": 13,
       "filled": 13,
       "missing": []
+    },
+    {
+      "date": "2026-07-04",
+      "rows": 15,
+      "filled": 13,
+      "missing": [
+        "底特律老虎 @ 德州遊騎兵 (Scheduled)",
+        "費城費城人 @ 堪薩斯市皇家 (Scheduled)"
+      ]
     }
   ],
   "roi": [
@@ -219,12 +235,20 @@
       "pending_bets": 2,
       "total_pnl": 0,
       "roi_pct": 0
+    },
+    {
+      "date": "2026-07-04",
+      "bets": 2,
+      "final_bets": 0,
+      "pending_bets": 2,
+      "total_pnl": 0,
+      "roi_pct": 0
     }
   ],
   "auto_runner": {
-    "mode": "success",
-    "target_date": "2026-07-03",
-    "last_started_at_tw": "2026-07-03T21:00:00+08:00",
+    "mode": "running",
+    "target_date": "2026-07-04",
+    "last_started_at_tw": "2026-07-04T00:00:02+08:00",
     "last_finished_at_tw": "2026-07-03T21:07:43+08:00",
     "last_return_code": 0,
     "log": "C:\\Users\\I5-10400F\\Documents\\投注計畫\\logs\\auto_runner\\2026-07-03.workflow.log"
@@ -245,8 +269,12 @@
   "external_waiting_items": [
     "2026-06-25 尚有 1 場比賽未結算",
     "2026-07-03 尚有 13 場比賽未結算",
+    "2026-07-04 尚有 15 場比賽未結算",
     "2026-06-25 亞利桑那響尾蛇 @ 聖路易紅雀 (Postponed) 尚未取得真實盤口",
-    "2026-07-03 尚有 2 注 ROI 待賽果結算"
+    "2026-07-04 底特律老虎 @ 德州遊騎兵 (Scheduled) 尚未開打或來源尚未開盤",
+    "2026-07-04 費城費城人 @ 堪薩斯市皇家 (Scheduled) 尚未開打或來源尚未開盤",
+    "2026-07-03 尚有 2 注 ROI 待賽果結算",
+    "2026-07-04 尚有 2 注 ROI 待賽果結算"
   ],
   "project_state": "系統完成，等待外部賽果/盤口"
 }
