@@ -84,14 +84,14 @@ Windows 也可以直接執行：
 
 這會開一個常駐視窗，每 60 分鐘自動更新今天的賽程、預測、真實盤口、投注單、ROI、逐打席模擬與 Monte Carlo，關掉視窗就停止。
 
-如果要交給 Windows 自動排程，每天台灣時間 21:00 和 00:00 背景各跑一次：
+如果要交給 Windows 自動排程，每天台灣時間 13:50、21:00 和 00:00 背景各跑一次：
 
 ```powershell
 .\install_windows_auto_runner.cmd
 ```
 
 自動更新狀態會寫到 `data/auto_runner_status.json`，詳細紀錄會寫到 `logs/auto_runner/`。
-Windows 工作排程名稱是 `MLB_Betting_Auto_Update_2100` 與 `MLB_Betting_Auto_Update_0000`。安裝檔會另外建立 `C:\tmp\mlb_betting_project` 資料夾捷徑與 `C:\tmp\mlb_betting_auto_update.cmd` 啟動器，避免排程器因中文路徑解析失敗。
+Windows 工作排程名稱是 `MLB_Betting_Auto_Update_1350`、`MLB_Betting_Auto_Update_2100` 與 `MLB_Betting_Auto_Update_0000`。13:50 這次是台灣時間下午 2 點前的結算檢查，會抓最新真實比分並結算最近預測；21:00 和 00:00 則用來更新隔天盤口、投注單、模擬與推薦。安裝檔會另外建立 `C:\tmp\mlb_betting_project` 資料夾捷徑與 `C:\tmp\mlb_betting_auto_update.cmd` 啟動器，避免排程器因中文路徑解析失敗。
 
 其他 Windows 快捷檔：
 
@@ -111,13 +111,13 @@ Windows 工作排程名稱是 `MLB_Betting_Auto_Update_2100` 與 `MLB_Betting_Au
 - `開啟網頁.cmd`：直接開啟主控台。
 - `立刻更新一次.cmd`：立刻手動更新今天一次，會重跑投注單、逐打席模擬與 Monte Carlo。
 - `開啟常駐自動更新.cmd`：開一個視窗，每 60 分鐘自動更新一次。
-- `安裝每小時自動排程.cmd`：相容舊檔名；實際會安裝每天 21:00 與 00:00 自動更新。
-- `移除每小時自動排程.cmd`：相容舊檔名；實際會移除每天 21:00 與 00:00 自動更新。
-- `安裝晚上9點和12點自動排程.cmd`：交給 Windows 每天 21:00 與 00:00 背景自動更新。
-- `移除晚上9點和12點自動排程.cmd`：移除每天 21:00 與 00:00 背景自動更新。
+- `安裝每小時自動排程.cmd`：相容舊檔名；實際會安裝每天 13:50、21:00 與 00:00 自動更新。
+- `移除每小時自動排程.cmd`：相容舊檔名；實際會移除每天 13:50、21:00 與 00:00 自動更新。
+- `安裝晚上9點和12點自動排程.cmd`：相容舊檔名；實際會交給 Windows 每天 13:50、21:00 與 00:00 背景自動更新。
+- `移除晚上9點和12點自動排程.cmd`：相容舊檔名；實際會移除每天 13:50、21:00 與 00:00 背景自動更新。
 - `open_dashboard.cmd`：直接開啟主控台。
 - `run_auto_once.cmd`：立刻手動更新今天一次。
-- `uninstall_windows_auto_runner.cmd`：移除每天 21:00 與 00:00 自動排程。
+- `uninstall_windows_auto_runner.cmd`：移除每天 13:50、21:00 與 00:00 自動排程。
 
 開啟儀表板：
 

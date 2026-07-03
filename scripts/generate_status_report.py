@@ -181,6 +181,7 @@ def build_status() -> dict:
             ".\\uninstall_windows_auto_runner.cmd",
             ".\\安裝晚上9點和12點自動排程.cmd",
             ".\\移除晚上9點和12點自動排程.cmd",
+            "Windows 排程時間：台灣時間 13:50、21:00、00:00；13:50 用來在下午 2 點前結算當天上午完賽結果。",
             "python scripts\\run_daily_workflow.py --date YYYY-MM-DD --all-predictions --skip-backtest-refresh",
             "python scripts\\run_daily_workflow.py --date YYYY-MM-DD --all-predictions",
         ],
