@@ -142,6 +142,7 @@ def main() -> None:
     if not args.skip_backtest_refresh:
         run_step("真實預測準確率", [py, "scripts/run_real_mlb_prediction_accuracy.py"])
         run_step("固定賠率參考回測", [py, "scripts/run_real_mlb_backtest.py"])
+        run_step("重建首頁", [py, "scripts/generate_plan.py"])
 
     dates_to_settle = settlement_dates(target_date, settle_date, args.settlement_lookback_days)
     settle_recent_predictions(py, dates_to_settle, args)

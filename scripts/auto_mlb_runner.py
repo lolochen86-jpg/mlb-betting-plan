@@ -69,7 +69,6 @@ def run_workflow(args: argparse.Namespace) -> int:
         "--min-edge",
         str(args.min_edge),
         "--all-predictions",
-        "--skip-backtest-refresh",
     ]
     if args.skip_odds_fetch:
         command.append("--skip-odds-fetch")
