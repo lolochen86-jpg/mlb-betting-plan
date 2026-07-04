@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-04T00:00:46",
+  "generated_at": "2026-07-04T13:50:53",
   "target_date": "2026-07-03",
   "source_files": {
     "predictions": "data\\daily_predictions_2026-07-03.json",
@@ -15,12 +15,12 @@
   "summary": {
     "odds_rows": 13,
     "bets": 2,
-    "final_bets": 0,
-    "pending_bets": 2,
+    "final_bets": 2,
+    "pending_bets": 0,
     "wins": 0,
-    "losses": 0,
-    "total_pnl": 0,
-    "roi_pct": 0,
+    "losses": 2,
+    "total_pnl": -200.0,
+    "roi_pct": -100.0,
     "skipped": 11
   },
   "bets": [
@@ -38,12 +38,12 @@
       "market_implied_prob": 0.5263,
       "edge": 0.0017,
       "unit": 100.0,
-      "status": "Scheduled",
-      "score": "",
-      "actual_winner_zh": "",
-      "settlement": "pending",
-      "pnl": 0,
-      "is_final": false,
+      "status": "Final",
+      "score": "2-0",
+      "actual_winner_zh": "多倫多藍鳥",
+      "settlement": "loss",
+      "pnl": -100.0,
+      "is_final": true,
       "game_time_tw": "2026-07-04 10:10",
       "game_time_utc": "2026-07-04T02:10:00Z"
     },
@@ -61,12 +61,12 @@
       "market_implied_prob": 0.5,
       "edge": 0.01,
       "unit": 100.0,
-      "status": "Scheduled",
-      "score": "",
-      "actual_winner_zh": "",
-      "settlement": "pending",
-      "pnl": 0,
-      "is_final": false,
+      "status": "Final",
+      "score": "5-9",
+      "actual_winner_zh": "華盛頓國民",
+      "settlement": "loss",
+      "pnl": -100.0,
+      "is_final": true,
       "game_time_tw": "2026-07-04 06:45",
       "game_time_utc": "2026-07-03T22:45:00Z"
     }
