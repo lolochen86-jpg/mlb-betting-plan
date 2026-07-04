@@ -1,20 +1,20 @@
 {
-  "generated_at": "2026-07-04T21:01:28",
+  "generated_at": "2026-07-05T00:00:40",
   "backtest_period": {
     "start": "2025-03-27",
-    "end": "2026-07-03"
+    "end": "2026-07-04"
   },
   "data_source": {
     "type": "real_mlb_final_scores",
     "games_csv": "data\\real_mlb_games.csv",
-    "games_evaluated": 3750,
+    "games_evaluated": 3752,
     "note": "Pure winner-prediction accuracy only. Odds, edge, stake, and ROI are intentionally excluded."
   },
   "models": {
     "A-畢氏勝率": {
-      "predictions": 3671,
-      "correct": 1988,
-      "wrong": 1683,
+      "predictions": 3673,
+      "correct": 1989,
+      "wrong": 1684,
       "accuracy_pct": 54.15,
       "monthly": [
         {
@@ -79,8 +79,8 @@
         },
         {
           "month": "2026-07",
-          "predictions": 36,
-          "correct": 18,
+          "predictions": 38,
+          "correct": 19,
           "accuracy_pct": 50.0
         }
       ],
@@ -62491,13 +62491,47 @@
           "correct": true,
           "away_probable_pitcher_zh": "凱爾 哈索",
           "home_probable_pitcher_zh": "荷西 卡布拉"
+        },
+        {
+          "game_pk": "822716",
+          "date": "2026-07-04",
+          "matchup_zh": "匹茲堡海盜 @ 華盛頓國民",
+          "away_zh": "匹茲堡海盜",
+          "home_zh": "華盛頓國民",
+          "away_score": 5,
+          "home_score": 1,
+          "pick_zh": "匹茲堡海盜",
+          "pick_side": "away",
+          "actual_winner_zh": "匹茲堡海盜",
+          "confidence": 0.5081,
+          "home_win_probability": 0.4919,
+          "correct": true,
+          "away_probable_pitcher_zh": "布 阿",
+          "home_probable_pitcher_zh": "卡 帕史"
+        },
+        {
+          "game_pk": "823526",
+          "date": "2026-07-04",
+          "matchup_zh": "明尼蘇達雙城 @ 紐約洋基",
+          "away_zh": "明尼蘇達雙城",
+          "home_zh": "紐約洋基",
+          "away_score": 0,
+          "home_score": 0,
+          "pick_zh": "紐約洋基",
+          "pick_side": "home",
+          "actual_winner_zh": "明尼蘇達雙城",
+          "confidence": 0.5904,
+          "home_win_probability": 0.5904,
+          "correct": false,
+          "away_probable_pitcher_zh": "茲伊布布伊 馬",
+          "home_probable_pitcher_zh": "布 貝"
         }
       ]
     },
     "B-近期狀態": {
-      "predictions": 3671,
-      "correct": 1965,
-      "wrong": 1706,
+      "predictions": 3673,
+      "correct": 1966,
+      "wrong": 1707,
       "accuracy_pct": 53.53,
       "monthly": [
         {
@@ -62562,9 +62596,9 @@
         },
         {
           "month": "2026-07",
-          "predictions": 36,
-          "correct": 19,
-          "accuracy_pct": 52.78
+          "predictions": 38,
+          "correct": 20,
+          "accuracy_pct": 52.63
         }
       ],
       "prediction_details": [
@@ -124974,14 +125008,48 @@
           "correct": true,
           "away_probable_pitcher_zh": "凱爾 哈索",
           "home_probable_pitcher_zh": "荷西 卡布拉"
+        },
+        {
+          "game_pk": "822716",
+          "date": "2026-07-04",
+          "matchup_zh": "匹茲堡海盜 @ 華盛頓國民",
+          "away_zh": "匹茲堡海盜",
+          "home_zh": "華盛頓國民",
+          "away_score": 5,
+          "home_score": 1,
+          "pick_zh": "華盛頓國民",
+          "pick_side": "home",
+          "actual_winner_zh": "匹茲堡海盜",
+          "confidence": 0.515,
+          "home_win_probability": 0.515,
+          "correct": false,
+          "away_probable_pitcher_zh": "布 阿",
+          "home_probable_pitcher_zh": "卡 帕史"
+        },
+        {
+          "game_pk": "823526",
+          "date": "2026-07-04",
+          "matchup_zh": "明尼蘇達雙城 @ 紐約洋基",
+          "away_zh": "明尼蘇達雙城",
+          "home_zh": "紐約洋基",
+          "away_score": 0,
+          "home_score": 0,
+          "pick_zh": "明尼蘇達雙城",
+          "pick_side": "away",
+          "actual_winner_zh": "明尼蘇達雙城",
+          "confidence": 0.5564,
+          "home_win_probability": 0.4436,
+          "correct": true,
+          "away_probable_pitcher_zh": "茲伊布布伊 馬",
+          "home_probable_pitcher_zh": "布 貝"
         }
       ]
     },
     "C-ELO評分": {
-      "predictions": 3750,
+      "predictions": 3752,
       "correct": 2015,
-      "wrong": 1735,
-      "accuracy_pct": 53.73,
+      "wrong": 1737,
+      "accuracy_pct": 53.7,
       "monthly": [
         {
           "month": "2025-03",
@@ -125051,9 +125119,9 @@
         },
         {
           "month": "2026-07",
-          "predictions": 36,
+          "predictions": 38,
           "correct": 20,
-          "accuracy_pct": 55.56
+          "accuracy_pct": 52.63
         }
       ],
       "prediction_details": [
@@ -188806,13 +188874,47 @@
           "correct": true,
           "away_probable_pitcher_zh": "凱爾 哈索",
           "home_probable_pitcher_zh": "荷西 卡布拉"
+        },
+        {
+          "game_pk": "822716",
+          "date": "2026-07-04",
+          "matchup_zh": "匹茲堡海盜 @ 華盛頓國民",
+          "away_zh": "匹茲堡海盜",
+          "home_zh": "華盛頓國民",
+          "away_score": 5,
+          "home_score": 1,
+          "pick_zh": "華盛頓國民",
+          "pick_side": "home",
+          "actual_winner_zh": "匹茲堡海盜",
+          "confidence": 0.5708,
+          "home_win_probability": 0.5708,
+          "correct": false,
+          "away_probable_pitcher_zh": "布 阿",
+          "home_probable_pitcher_zh": "卡 帕史"
+        },
+        {
+          "game_pk": "823526",
+          "date": "2026-07-04",
+          "matchup_zh": "明尼蘇達雙城 @ 紐約洋基",
+          "away_zh": "明尼蘇達雙城",
+          "home_zh": "紐約洋基",
+          "away_score": 0,
+          "home_score": 0,
+          "pick_zh": "紐約洋基",
+          "pick_side": "home",
+          "actual_winner_zh": "明尼蘇達雙城",
+          "confidence": 0.5432,
+          "home_win_probability": 0.5432,
+          "correct": false,
+          "away_probable_pitcher_zh": "茲伊布布伊 馬",
+          "home_probable_pitcher_zh": "布 貝"
         }
       ]
     },
     "D-近期失分代理": {
-      "predictions": 3671,
-      "correct": 1916,
-      "wrong": 1755,
+      "predictions": 3673,
+      "correct": 1917,
+      "wrong": 1756,
       "accuracy_pct": 52.19,
       "monthly": [
         {
@@ -188877,9 +188979,9 @@
         },
         {
           "month": "2026-07",
-          "predictions": 36,
-          "correct": 15,
-          "accuracy_pct": 41.67
+          "predictions": 38,
+          "correct": 16,
+          "accuracy_pct": 42.11
         }
       ],
       "prediction_details": [
@@ -251289,13 +251391,47 @@
           "correct": true,
           "away_probable_pitcher_zh": "凱爾 哈索",
           "home_probable_pitcher_zh": "荷西 卡布拉"
+        },
+        {
+          "game_pk": "822716",
+          "date": "2026-07-04",
+          "matchup_zh": "匹茲堡海盜 @ 華盛頓國民",
+          "away_zh": "匹茲堡海盜",
+          "home_zh": "華盛頓國民",
+          "away_score": 5,
+          "home_score": 1,
+          "pick_zh": "華盛頓國民",
+          "pick_side": "home",
+          "actual_winner_zh": "匹茲堡海盜",
+          "confidence": 0.6804,
+          "home_win_probability": 0.6804,
+          "correct": false,
+          "away_probable_pitcher_zh": "布 阿",
+          "home_probable_pitcher_zh": "卡 帕史"
+        },
+        {
+          "game_pk": "823526",
+          "date": "2026-07-04",
+          "matchup_zh": "明尼蘇達雙城 @ 紐約洋基",
+          "away_zh": "明尼蘇達雙城",
+          "home_zh": "紐約洋基",
+          "away_score": 0,
+          "home_score": 0,
+          "pick_zh": "明尼蘇達雙城",
+          "pick_side": "away",
+          "actual_winner_zh": "明尼蘇達雙城",
+          "confidence": 0.5718,
+          "home_win_probability": 0.4282,
+          "correct": true,
+          "away_probable_pitcher_zh": "茲伊布布伊 馬",
+          "home_probable_pitcher_zh": "布 貝"
         }
       ]
     },
     "E-對照組(Ensemble)": {
-      "predictions": 3750,
-      "correct": 2001,
-      "wrong": 1749,
+      "predictions": 3752,
+      "correct": 2002,
+      "wrong": 1750,
       "accuracy_pct": 53.36,
       "monthly": [
         {
@@ -251366,8 +251502,8 @@
         },
         {
           "month": "2026-07",
-          "predictions": 36,
-          "correct": 18,
+          "predictions": 38,
+          "correct": 19,
           "accuracy_pct": 50.0
         }
       ],
@@ -315121,6 +315257,40 @@
           "correct": true,
           "away_probable_pitcher_zh": "凱爾 哈索",
           "home_probable_pitcher_zh": "荷西 卡布拉"
+        },
+        {
+          "game_pk": "822716",
+          "date": "2026-07-04",
+          "matchup_zh": "匹茲堡海盜 @ 華盛頓國民",
+          "away_zh": "匹茲堡海盜",
+          "home_zh": "華盛頓國民",
+          "away_score": 5,
+          "home_score": 1,
+          "pick_zh": "華盛頓國民",
+          "pick_side": "home",
+          "actual_winner_zh": "匹茲堡海盜",
+          "confidence": 0.5696,
+          "home_win_probability": 0.5696,
+          "correct": false,
+          "away_probable_pitcher_zh": "布 阿",
+          "home_probable_pitcher_zh": "卡 帕史"
+        },
+        {
+          "game_pk": "823526",
+          "date": "2026-07-04",
+          "matchup_zh": "明尼蘇達雙城 @ 紐約洋基",
+          "away_zh": "明尼蘇達雙城",
+          "home_zh": "紐約洋基",
+          "away_score": 0,
+          "home_score": 0,
+          "pick_zh": "明尼蘇達雙城",
+          "pick_side": "away",
+          "actual_winner_zh": "明尼蘇達雙城",
+          "confidence": 0.5074,
+          "home_win_probability": 0.4926,
+          "correct": true,
+          "away_probable_pitcher_zh": "茲伊布布伊 馬",
+          "home_probable_pitcher_zh": "布 貝"
         }
       ]
     }

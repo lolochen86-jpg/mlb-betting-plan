@@ -1,7 +1,7 @@
 {
   "backtest_period": {
     "start": "2025-03-27",
-    "end": "2026-07-03"
+    "end": "2026-07-04"
   },
   "settings": {
     "unit": 100,
@@ -13,24 +13,24 @@
   "data_source": {
     "type": "real_mlb_final_scores",
     "games_csv": "data\\real_mlb_games.csv",
-    "games_evaluated": 3750,
+    "games_evaluated": 3752,
     "actual_first_game_date": "2025-03-27",
-    "actual_last_game_date": "2026-07-03",
+    "actual_last_game_date": "2026-07-04",
     "game_types": [
       "R"
     ],
     "coverage_warning": null,
-    "generated_at": "2026-07-04T21:01:29",
+    "generated_at": "2026-07-05T00:00:41",
     "note": "Backtest uses real MLB final scores from saved MLB Stats API schedule data. Odds are still the configured fixed market assumption."
   },
   "models": {
     "A-畢氏勝率": {
-      "total_bets": 1133,
+      "total_bets": 1134,
       "wins": 671,
-      "losses": 462,
-      "win_rate": 0.5922,
-      "total_pnl": 14800.61,
-      "roi_pct": 13.06,
+      "losses": 463,
+      "win_rate": 0.5917,
+      "total_pnl": 14700.61,
+      "roi_pct": 12.96,
       "daily_records": [
         {
           "date": "2025-03-27",
@@ -20697,16 +20697,41 @@
               "result": "win"
             }
           ]
+        },
+        {
+          "date": "2026-07-04",
+          "bets": 1,
+          "wins": 0,
+          "losses": 1,
+          "pnl": -100.0,
+          "bet_details": [
+            {
+              "game_pk": "823526",
+              "home": "New York Yankees",
+              "home_zh": "紐約洋基",
+              "away": "Minnesota Twins",
+              "away_zh": "明尼蘇達雙城",
+              "home_score": 0,
+              "away_score": 0,
+              "pick": "New York Yankees",
+              "pick_zh": "紐約洋基",
+              "home_probable_pitcher_zh": "布 貝",
+              "away_probable_pitcher_zh": "茲伊布布伊 馬",
+              "confidence": 0.5904,
+              "edge": 0.0666,
+              "result": "loss"
+            }
+          ]
         }
       ]
     },
     "B-近期狀態": {
-      "total_bets": 1356,
-      "wins": 761,
+      "total_bets": 1357,
+      "wins": 762,
       "losses": 595,
-      "win_rate": 0.5612,
-      "total_pnl": 9682.51,
-      "roi_pct": 7.14,
+      "win_rate": 0.5615,
+      "total_pnl": 9773.42,
+      "roi_pct": 7.2,
       "daily_records": [
         {
           "date": "2025-03-27",
@@ -44945,16 +44970,41 @@
               "result": "win"
             }
           ]
+        },
+        {
+          "date": "2026-07-04",
+          "bets": 1,
+          "wins": 1,
+          "losses": 0,
+          "pnl": 90.91,
+          "bet_details": [
+            {
+              "game_pk": "823526",
+              "home": "New York Yankees",
+              "home_zh": "紐約洋基",
+              "away": "Minnesota Twins",
+              "away_zh": "明尼蘇達雙城",
+              "home_score": 0,
+              "away_score": 0,
+              "pick": "Minnesota Twins",
+              "pick_zh": "明尼蘇達雙城",
+              "home_probable_pitcher_zh": "布 貝",
+              "away_probable_pitcher_zh": "茲伊布布伊 馬",
+              "confidence": 0.5564,
+              "edge": 0.0326,
+              "result": "win"
+            }
+          ]
         }
       ]
     },
     "C-ELO評分": {
-      "total_bets": 1341,
+      "total_bets": 1342,
       "wins": 783,
-      "losses": 558,
-      "win_rate": 0.5839,
-      "total_pnl": 15382.53,
-      "roi_pct": 11.47,
+      "losses": 559,
+      "win_rate": 0.5835,
+      "total_pnl": 15282.53,
+      "roi_pct": 11.39,
       "daily_records": [
         {
           "date": "2025-03-27",
@@ -68956,16 +69006,41 @@
               "result": "win"
             }
           ]
+        },
+        {
+          "date": "2026-07-04",
+          "bets": 1,
+          "wins": 0,
+          "losses": 1,
+          "pnl": -100.0,
+          "bet_details": [
+            {
+              "game_pk": "822716",
+              "home": "Washington Nationals",
+              "home_zh": "華盛頓國民",
+              "away": "Pittsburgh Pirates",
+              "away_zh": "匹茲堡海盜",
+              "home_score": 1,
+              "away_score": 5,
+              "pick": "Washington Nationals",
+              "pick_zh": "華盛頓國民",
+              "home_probable_pitcher_zh": "卡 帕史",
+              "away_probable_pitcher_zh": "布 阿",
+              "confidence": 0.5708,
+              "edge": 0.047,
+              "result": "loss"
+            }
+          ]
         }
       ]
     },
     "D-近期失分代理": {
-      "total_bets": 1341,
-      "wins": 742,
-      "losses": 599,
-      "win_rate": 0.5533,
-      "total_pnl": 7555.22,
-      "roi_pct": 5.63,
+      "total_bets": 1343,
+      "wins": 743,
+      "losses": 600,
+      "win_rate": 0.5532,
+      "total_pnl": 7546.13,
+      "roi_pct": 5.62,
       "daily_records": [
         {
           "date": "2025-03-27",
@@ -92964,16 +93039,57 @@
               "result": "loss"
             }
           ]
+        },
+        {
+          "date": "2026-07-04",
+          "bets": 2,
+          "wins": 1,
+          "losses": 1,
+          "pnl": -9.09,
+          "bet_details": [
+            {
+              "game_pk": "822716",
+              "home": "Washington Nationals",
+              "home_zh": "華盛頓國民",
+              "away": "Pittsburgh Pirates",
+              "away_zh": "匹茲堡海盜",
+              "home_score": 1,
+              "away_score": 5,
+              "pick": "Washington Nationals",
+              "pick_zh": "華盛頓國民",
+              "home_probable_pitcher_zh": "卡 帕史",
+              "away_probable_pitcher_zh": "布 阿",
+              "confidence": 0.6804,
+              "edge": 0.1566,
+              "result": "loss"
+            },
+            {
+              "game_pk": "823526",
+              "home": "New York Yankees",
+              "home_zh": "紐約洋基",
+              "away": "Minnesota Twins",
+              "away_zh": "明尼蘇達雙城",
+              "home_score": 0,
+              "away_score": 0,
+              "pick": "Minnesota Twins",
+              "pick_zh": "明尼蘇達雙城",
+              "home_probable_pitcher_zh": "布 貝",
+              "away_probable_pitcher_zh": "茲伊布布伊 馬",
+              "confidence": 0.5718,
+              "edge": 0.048,
+              "result": "win"
+            }
+          ]
         }
       ]
     },
     "E-對照組(Ensemble)": {
-      "total_bets": 1311,
+      "total_bets": 1312,
       "wins": 767,
-      "losses": 544,
-      "win_rate": 0.585,
-      "total_pnl": 15327.97,
-      "roi_pct": 11.69,
+      "losses": 545,
+      "win_rate": 0.5846,
+      "total_pnl": 15227.97,
+      "roi_pct": 11.61,
       "daily_records": [
         {
           "date": "2025-03-27",
@@ -116492,6 +116608,31 @@
               "away_probable_pitcher_zh": "羅根 韋伯",
               "confidence": 0.5654,
               "edge": 0.0416,
+              "result": "loss"
+            }
+          ]
+        },
+        {
+          "date": "2026-07-04",
+          "bets": 1,
+          "wins": 0,
+          "losses": 1,
+          "pnl": -100.0,
+          "bet_details": [
+            {
+              "game_pk": "822716",
+              "home": "Washington Nationals",
+              "home_zh": "華盛頓國民",
+              "away": "Pittsburgh Pirates",
+              "away_zh": "匹茲堡海盜",
+              "home_score": 1,
+              "away_score": 5,
+              "pick": "Washington Nationals",
+              "pick_zh": "華盛頓國民",
+              "home_probable_pitcher_zh": "卡 帕史",
+              "away_probable_pitcher_zh": "布 阿",
+              "confidence": 0.566,
+              "edge": 0.0422,
               "result": "loss"
             }
           ]
