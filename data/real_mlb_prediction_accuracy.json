@@ -1,21 +1,21 @@
 {
-  "generated_at": "2026-07-05T21:00:45",
+  "generated_at": "2026-07-06T00:01:02",
   "backtest_period": {
     "start": "2025-03-27",
-    "end": "2026-07-04"
+    "end": "2026-07-05"
   },
   "data_source": {
     "type": "real_mlb_final_scores",
     "games_csv": "data\\real_mlb_games.csv",
-    "games_evaluated": 3765,
+    "games_evaluated": 3770,
     "note": "Pure winner-prediction accuracy only. Odds, edge, stake, and ROI are intentionally excluded."
   },
   "models": {
     "A-畢氏勝率": {
-      "predictions": 3686,
+      "predictions": 3691,
       "correct": 1995,
-      "wrong": 1691,
-      "accuracy_pct": 54.12,
+      "wrong": 1696,
+      "accuracy_pct": 54.05,
       "monthly": [
         {
           "month": "2025-04",
@@ -79,9 +79,9 @@
         },
         {
           "month": "2026-07",
-          "predictions": 51,
+          "predictions": 56,
           "correct": 25,
-          "accuracy_pct": 49.02
+          "accuracy_pct": 44.64
         }
       ],
       "prediction_details": [
@@ -62746,14 +62746,99 @@
           "correct": false,
           "away_probable_pitcher_zh": "布蘭登 伍德拉夫",
           "home_probable_pitcher_zh": "梅 凱"
+        },
+        {
+          "game_pk": "823525",
+          "date": "2026-07-05",
+          "matchup_zh": "明尼蘇達雙城 @ 紐約洋基",
+          "away_zh": "明尼蘇達雙城",
+          "home_zh": "紐約洋基",
+          "away_score": 0,
+          "home_score": 0,
+          "pick_zh": "紐約洋基",
+          "pick_side": "home",
+          "actual_winner_zh": "明尼蘇達雙城",
+          "confidence": 0.5875,
+          "home_win_probability": 0.5875,
+          "correct": false,
+          "away_probable_pitcher_zh": "喬 萊恩",
+          "home_probable_pitcher_zh": "萊恩 韋"
+        },
+        {
+          "game_pk": "824413",
+          "date": "2026-07-05",
+          "matchup_zh": "芝加哥白襪 @ 克里夫蘭守護者",
+          "away_zh": "芝加哥白襪",
+          "home_zh": "克里夫蘭守護者",
+          "away_score": 0,
+          "home_score": 0,
+          "pick_zh": "克里夫蘭守護者",
+          "pick_side": "home",
+          "actual_winner_zh": "芝加哥白襪",
+          "confidence": 0.5315,
+          "home_win_probability": 0.5315,
+          "correct": false,
+          "away_probable_pitcher_zh": "克里斯 姆優爾普赫伊",
+          "home_probable_pitcher_zh": "坦納 比貝"
+        },
+        {
+          "game_pk": "824497",
+          "date": "2026-07-05",
+          "matchup_zh": "巴爾的摩金鶯 @ 辛辛那提紅人",
+          "away_zh": "巴爾的摩金鶯",
+          "home_zh": "辛辛那提紅人",
+          "away_score": 0,
+          "home_score": 0,
+          "pick_zh": "辛辛那提紅人",
+          "pick_side": "home",
+          "actual_winner_zh": "巴爾的摩金鶯",
+          "confidence": 0.5427,
+          "home_win_probability": 0.5427,
+          "correct": false,
+          "away_probable_pitcher_zh": "凱爾 布迪",
+          "home_probable_pitcher_zh": "尼克 羅多羅"
+        },
+        {
+          "game_pk": "824656",
+          "date": "2026-07-05",
+          "matchup_zh": "聖路易紅雀 @ 芝加哥小熊",
+          "away_zh": "聖路易紅雀",
+          "home_zh": "芝加哥小熊",
+          "away_score": 0,
+          "home_score": 0,
+          "pick_zh": "芝加哥小熊",
+          "pick_side": "home",
+          "actual_winner_zh": "聖路易紅雀",
+          "confidence": 0.5663,
+          "home_win_probability": 0.5663,
+          "correct": false,
+          "away_probable_pitcher_zh": "馬 里貝拉托",
+          "home_probable_pitcher_zh": "賈維 阿"
+        },
+        {
+          "game_pk": "824902",
+          "date": "2026-07-05",
+          "matchup_zh": "紐約大都會 @ 亞特蘭大勇士",
+          "away_zh": "紐約大都會",
+          "home_zh": "亞特蘭大勇士",
+          "away_score": 0,
+          "home_score": 0,
+          "pick_zh": "亞特蘭大勇士",
+          "pick_side": "home",
+          "actual_winner_zh": "紐約大都會",
+          "confidence": 0.539,
+          "home_win_probability": 0.539,
+          "correct": false,
+          "away_probable_pitcher_zh": "諾拉 姆克爾伊阿恩",
+          "home_probable_pitcher_zh": "馬 佩雷"
         }
       ]
     },
     "B-近期狀態": {
-      "predictions": 3686,
-      "correct": 1973,
-      "wrong": 1713,
-      "accuracy_pct": 53.53,
+      "predictions": 3691,
+      "correct": 1975,
+      "wrong": 1716,
+      "accuracy_pct": 53.51,
       "monthly": [
         {
           "month": "2025-04",
@@ -62817,9 +62902,9 @@
         },
         {
           "month": "2026-07",
-          "predictions": 51,
-          "correct": 27,
-          "accuracy_pct": 52.94
+          "predictions": 56,
+          "correct": 29,
+          "accuracy_pct": 51.79
         }
       ],
       "prediction_details": [
@@ -125484,14 +125569,99 @@
           "correct": false,
           "away_probable_pitcher_zh": "布蘭登 伍德拉夫",
           "home_probable_pitcher_zh": "梅 凱"
+        },
+        {
+          "game_pk": "823525",
+          "date": "2026-07-05",
+          "matchup_zh": "明尼蘇達雙城 @ 紐約洋基",
+          "away_zh": "明尼蘇達雙城",
+          "home_zh": "紐約洋基",
+          "away_score": 0,
+          "home_score": 0,
+          "pick_zh": "明尼蘇達雙城",
+          "pick_side": "away",
+          "actual_winner_zh": "明尼蘇達雙城",
+          "confidence": 0.65,
+          "home_win_probability": 0.35,
+          "correct": true,
+          "away_probable_pitcher_zh": "喬 萊恩",
+          "home_probable_pitcher_zh": "萊恩 韋"
+        },
+        {
+          "game_pk": "824413",
+          "date": "2026-07-05",
+          "matchup_zh": "芝加哥白襪 @ 克里夫蘭守護者",
+          "away_zh": "芝加哥白襪",
+          "home_zh": "克里夫蘭守護者",
+          "away_score": 0,
+          "home_score": 0,
+          "pick_zh": "克里夫蘭守護者",
+          "pick_side": "home",
+          "actual_winner_zh": "芝加哥白襪",
+          "confidence": 0.5605,
+          "home_win_probability": 0.5605,
+          "correct": false,
+          "away_probable_pitcher_zh": "克里斯 姆優爾普赫伊",
+          "home_probable_pitcher_zh": "坦納 比貝"
+        },
+        {
+          "game_pk": "824497",
+          "date": "2026-07-05",
+          "matchup_zh": "巴爾的摩金鶯 @ 辛辛那提紅人",
+          "away_zh": "巴爾的摩金鶯",
+          "home_zh": "辛辛那提紅人",
+          "away_score": 0,
+          "home_score": 0,
+          "pick_zh": "巴爾的摩金鶯",
+          "pick_side": "away",
+          "actual_winner_zh": "巴爾的摩金鶯",
+          "confidence": 0.5564,
+          "home_win_probability": 0.4436,
+          "correct": true,
+          "away_probable_pitcher_zh": "凱爾 布迪",
+          "home_probable_pitcher_zh": "尼克 羅多羅"
+        },
+        {
+          "game_pk": "824656",
+          "date": "2026-07-05",
+          "matchup_zh": "聖路易紅雀 @ 芝加哥小熊",
+          "away_zh": "聖路易紅雀",
+          "home_zh": "芝加哥小熊",
+          "away_score": 0,
+          "home_score": 0,
+          "pick_zh": "芝加哥小熊",
+          "pick_side": "home",
+          "actual_winner_zh": "聖路易紅雀",
+          "confidence": 0.5983,
+          "home_win_probability": 0.5983,
+          "correct": false,
+          "away_probable_pitcher_zh": "馬 里貝拉托",
+          "home_probable_pitcher_zh": "賈維 阿"
+        },
+        {
+          "game_pk": "824902",
+          "date": "2026-07-05",
+          "matchup_zh": "紐約大都會 @ 亞特蘭大勇士",
+          "away_zh": "紐約大都會",
+          "home_zh": "亞特蘭大勇士",
+          "away_score": 0,
+          "home_score": 0,
+          "pick_zh": "亞特蘭大勇士",
+          "pick_side": "home",
+          "actual_winner_zh": "紐約大都會",
+          "confidence": 0.6817,
+          "home_win_probability": 0.6817,
+          "correct": false,
+          "away_probable_pitcher_zh": "諾拉 姆克爾伊阿恩",
+          "home_probable_pitcher_zh": "馬 佩雷"
         }
       ]
     },
     "C-ELO評分": {
-      "predictions": 3765,
-      "correct": 2023,
-      "wrong": 1742,
-      "accuracy_pct": 53.73,
+      "predictions": 3770,
+      "correct": 2024,
+      "wrong": 1746,
+      "accuracy_pct": 53.69,
       "monthly": [
         {
           "month": "2025-03",
@@ -125561,9 +125731,9 @@
         },
         {
           "month": "2026-07",
-          "predictions": 51,
-          "correct": 28,
-          "accuracy_pct": 54.9
+          "predictions": 56,
+          "correct": 29,
+          "accuracy_pct": 51.79
         }
       ],
       "prediction_details": [
@@ -189571,14 +189741,99 @@
           "correct": false,
           "away_probable_pitcher_zh": "布蘭登 伍德拉夫",
           "home_probable_pitcher_zh": "梅 凱"
+        },
+        {
+          "game_pk": "823525",
+          "date": "2026-07-05",
+          "matchup_zh": "明尼蘇達雙城 @ 紐約洋基",
+          "away_zh": "明尼蘇達雙城",
+          "home_zh": "紐約洋基",
+          "away_score": 0,
+          "home_score": 0,
+          "pick_zh": "紐約洋基",
+          "pick_side": "home",
+          "actual_winner_zh": "明尼蘇達雙城",
+          "confidence": 0.5128,
+          "home_win_probability": 0.5128,
+          "correct": false,
+          "away_probable_pitcher_zh": "喬 萊恩",
+          "home_probable_pitcher_zh": "萊恩 韋"
+        },
+        {
+          "game_pk": "824413",
+          "date": "2026-07-05",
+          "matchup_zh": "芝加哥白襪 @ 克里夫蘭守護者",
+          "away_zh": "芝加哥白襪",
+          "home_zh": "克里夫蘭守護者",
+          "away_score": 0,
+          "home_score": 0,
+          "pick_zh": "克里夫蘭守護者",
+          "pick_side": "home",
+          "actual_winner_zh": "芝加哥白襪",
+          "confidence": 0.5138,
+          "home_win_probability": 0.5138,
+          "correct": false,
+          "away_probable_pitcher_zh": "克里斯 姆優爾普赫伊",
+          "home_probable_pitcher_zh": "坦納 比貝"
+        },
+        {
+          "game_pk": "824497",
+          "date": "2026-07-05",
+          "matchup_zh": "巴爾的摩金鶯 @ 辛辛那提紅人",
+          "away_zh": "巴爾的摩金鶯",
+          "home_zh": "辛辛那提紅人",
+          "away_score": 0,
+          "home_score": 0,
+          "pick_zh": "巴爾的摩金鶯",
+          "pick_side": "away",
+          "actual_winner_zh": "巴爾的摩金鶯",
+          "confidence": 0.5571,
+          "home_win_probability": 0.4429,
+          "correct": true,
+          "away_probable_pitcher_zh": "凱爾 布迪",
+          "home_probable_pitcher_zh": "尼克 羅多羅"
+        },
+        {
+          "game_pk": "824656",
+          "date": "2026-07-05",
+          "matchup_zh": "聖路易紅雀 @ 芝加哥小熊",
+          "away_zh": "聖路易紅雀",
+          "home_zh": "芝加哥小熊",
+          "away_score": 0,
+          "home_score": 0,
+          "pick_zh": "芝加哥小熊",
+          "pick_side": "home",
+          "actual_winner_zh": "聖路易紅雀",
+          "confidence": 0.5322,
+          "home_win_probability": 0.5322,
+          "correct": false,
+          "away_probable_pitcher_zh": "馬 里貝拉托",
+          "home_probable_pitcher_zh": "賈維 阿"
+        },
+        {
+          "game_pk": "824902",
+          "date": "2026-07-05",
+          "matchup_zh": "紐約大都會 @ 亞特蘭大勇士",
+          "away_zh": "紐約大都會",
+          "home_zh": "亞特蘭大勇士",
+          "away_score": 0,
+          "home_score": 0,
+          "pick_zh": "亞特蘭大勇士",
+          "pick_side": "home",
+          "actual_winner_zh": "紐約大都會",
+          "confidence": 0.6393,
+          "home_win_probability": 0.6393,
+          "correct": false,
+          "away_probable_pitcher_zh": "諾拉 姆克爾伊阿恩",
+          "home_probable_pitcher_zh": "馬 佩雷"
         }
       ]
     },
     "D-近期失分代理": {
-      "predictions": 3686,
-      "correct": 1919,
-      "wrong": 1767,
-      "accuracy_pct": 52.06,
+      "predictions": 3691,
+      "correct": 1921,
+      "wrong": 1770,
+      "accuracy_pct": 52.05,
       "monthly": [
         {
           "month": "2025-04",
@@ -189642,9 +189897,9 @@
         },
         {
           "month": "2026-07",
-          "predictions": 51,
-          "correct": 18,
-          "accuracy_pct": 35.29
+          "predictions": 56,
+          "correct": 20,
+          "accuracy_pct": 35.71
         }
       ],
       "prediction_details": [
@@ -252309,14 +252564,99 @@
           "correct": false,
           "away_probable_pitcher_zh": "布蘭登 伍德拉夫",
           "home_probable_pitcher_zh": "梅 凱"
+        },
+        {
+          "game_pk": "823525",
+          "date": "2026-07-05",
+          "matchup_zh": "明尼蘇達雙城 @ 紐約洋基",
+          "away_zh": "明尼蘇達雙城",
+          "home_zh": "紐約洋基",
+          "away_score": 0,
+          "home_score": 0,
+          "pick_zh": "明尼蘇達雙城",
+          "pick_side": "away",
+          "actual_winner_zh": "明尼蘇達雙城",
+          "confidence": 0.594,
+          "home_win_probability": 0.406,
+          "correct": true,
+          "away_probable_pitcher_zh": "喬 萊恩",
+          "home_probable_pitcher_zh": "萊恩 韋"
+        },
+        {
+          "game_pk": "824413",
+          "date": "2026-07-05",
+          "matchup_zh": "芝加哥白襪 @ 克里夫蘭守護者",
+          "away_zh": "芝加哥白襪",
+          "home_zh": "克里夫蘭守護者",
+          "away_score": 0,
+          "home_score": 0,
+          "pick_zh": "克里夫蘭守護者",
+          "pick_side": "home",
+          "actual_winner_zh": "芝加哥白襪",
+          "confidence": 0.5328,
+          "home_win_probability": 0.5328,
+          "correct": false,
+          "away_probable_pitcher_zh": "克里斯 姆優爾普赫伊",
+          "home_probable_pitcher_zh": "坦納 比貝"
+        },
+        {
+          "game_pk": "824497",
+          "date": "2026-07-05",
+          "matchup_zh": "巴爾的摩金鶯 @ 辛辛那提紅人",
+          "away_zh": "巴爾的摩金鶯",
+          "home_zh": "辛辛那提紅人",
+          "away_score": 0,
+          "home_score": 0,
+          "pick_zh": "辛辛那提紅人",
+          "pick_side": "home",
+          "actual_winner_zh": "巴爾的摩金鶯",
+          "confidence": 0.5094,
+          "home_win_probability": 0.5094,
+          "correct": false,
+          "away_probable_pitcher_zh": "凱爾 布迪",
+          "home_probable_pitcher_zh": "尼克 羅多羅"
+        },
+        {
+          "game_pk": "824656",
+          "date": "2026-07-05",
+          "matchup_zh": "聖路易紅雀 @ 芝加哥小熊",
+          "away_zh": "聖路易紅雀",
+          "home_zh": "芝加哥小熊",
+          "away_score": 0,
+          "home_score": 0,
+          "pick_zh": "聖路易紅雀",
+          "pick_side": "away",
+          "actual_winner_zh": "聖路易紅雀",
+          "confidence": 0.62,
+          "home_win_probability": 0.38,
+          "correct": true,
+          "away_probable_pitcher_zh": "馬 里貝拉托",
+          "home_probable_pitcher_zh": "賈維 阿"
+        },
+        {
+          "game_pk": "824902",
+          "date": "2026-07-05",
+          "matchup_zh": "紐約大都會 @ 亞特蘭大勇士",
+          "away_zh": "紐約大都會",
+          "home_zh": "亞特蘭大勇士",
+          "away_score": 0,
+          "home_score": 0,
+          "pick_zh": "亞特蘭大勇士",
+          "pick_side": "home",
+          "actual_winner_zh": "紐約大都會",
+          "confidence": 0.586,
+          "home_win_probability": 0.586,
+          "correct": false,
+          "away_probable_pitcher_zh": "諾拉 姆克爾伊阿恩",
+          "home_probable_pitcher_zh": "馬 佩雷"
         }
       ]
     },
     "E-對照組(Ensemble)": {
-      "predictions": 3765,
-      "correct": 2009,
-      "wrong": 1756,
-      "accuracy_pct": 53.36,
+      "predictions": 3770,
+      "correct": 2011,
+      "wrong": 1759,
+      "accuracy_pct": 53.34,
       "monthly": [
         {
           "month": "2025-03",
@@ -252386,9 +252726,9 @@
         },
         {
           "month": "2026-07",
-          "predictions": 51,
-          "correct": 26,
-          "accuracy_pct": 50.98
+          "predictions": 56,
+          "correct": 28,
+          "accuracy_pct": 50.0
         }
       ],
       "prediction_details": [
@@ -316396,6 +316736,91 @@
           "correct": false,
           "away_probable_pitcher_zh": "布蘭登 伍德拉夫",
           "home_probable_pitcher_zh": "梅 凱"
+        },
+        {
+          "game_pk": "823525",
+          "date": "2026-07-05",
+          "matchup_zh": "明尼蘇達雙城 @ 紐約洋基",
+          "away_zh": "明尼蘇達雙城",
+          "home_zh": "紐約洋基",
+          "away_score": 0,
+          "home_score": 0,
+          "pick_zh": "明尼蘇達雙城",
+          "pick_side": "away",
+          "actual_winner_zh": "明尼蘇達雙城",
+          "confidence": 0.5476,
+          "home_win_probability": 0.4524,
+          "correct": true,
+          "away_probable_pitcher_zh": "喬 萊恩",
+          "home_probable_pitcher_zh": "萊恩 韋"
+        },
+        {
+          "game_pk": "824413",
+          "date": "2026-07-05",
+          "matchup_zh": "芝加哥白襪 @ 克里夫蘭守護者",
+          "away_zh": "芝加哥白襪",
+          "home_zh": "克里夫蘭守護者",
+          "away_score": 0,
+          "home_score": 0,
+          "pick_zh": "克里夫蘭守護者",
+          "pick_side": "home",
+          "actual_winner_zh": "芝加哥白襪",
+          "confidence": 0.5359,
+          "home_win_probability": 0.5359,
+          "correct": false,
+          "away_probable_pitcher_zh": "克里斯 姆優爾普赫伊",
+          "home_probable_pitcher_zh": "坦納 比貝"
+        },
+        {
+          "game_pk": "824497",
+          "date": "2026-07-05",
+          "matchup_zh": "巴爾的摩金鶯 @ 辛辛那提紅人",
+          "away_zh": "巴爾的摩金鶯",
+          "home_zh": "辛辛那提紅人",
+          "away_score": 0,
+          "home_score": 0,
+          "pick_zh": "巴爾的摩金鶯",
+          "pick_side": "away",
+          "actual_winner_zh": "巴爾的摩金鶯",
+          "confidence": 0.5176,
+          "home_win_probability": 0.4824,
+          "correct": true,
+          "away_probable_pitcher_zh": "凱爾 布迪",
+          "home_probable_pitcher_zh": "尼克 羅多羅"
+        },
+        {
+          "game_pk": "824656",
+          "date": "2026-07-05",
+          "matchup_zh": "聖路易紅雀 @ 芝加哥小熊",
+          "away_zh": "聖路易紅雀",
+          "home_zh": "芝加哥小熊",
+          "away_score": 0,
+          "home_score": 0,
+          "pick_zh": "芝加哥小熊",
+          "pick_side": "home",
+          "actual_winner_zh": "聖路易紅雀",
+          "confidence": 0.515,
+          "home_win_probability": 0.515,
+          "correct": false,
+          "away_probable_pitcher_zh": "馬 里貝拉托",
+          "home_probable_pitcher_zh": "賈維 阿"
+        },
+        {
+          "game_pk": "824902",
+          "date": "2026-07-05",
+          "matchup_zh": "紐約大都會 @ 亞特蘭大勇士",
+          "away_zh": "紐約大都會",
+          "home_zh": "亞特蘭大勇士",
+          "away_score": 0,
+          "home_score": 0,
+          "pick_zh": "亞特蘭大勇士",
+          "pick_side": "home",
+          "actual_winner_zh": "紐約大都會",
+          "confidence": 0.6155,
+          "home_win_probability": 0.6155,
+          "correct": false,
+          "away_probable_pitcher_zh": "諾拉 姆克爾伊阿恩",
+          "home_probable_pitcher_zh": "馬 佩雷"
         }
       ]
     }
