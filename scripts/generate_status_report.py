@@ -172,6 +172,7 @@ def build_status() -> dict:
             "last_finished_at_tw": auto_runner.get("last_finished_at_tw", ""),
             "last_return_code": auto_runner.get("last_return_code", ""),
             "log": auto_runner.get("log", ""),
+            "health": auto_runner.get("health", {}),
         },
         "next_commands": [
             ".\\open_dashboard.cmd",
@@ -200,6 +201,20 @@ def render_list(items: list[str]) -> str:
 
 def render_html(status: dict) -> str:
     auto = status.get("auto_runner", {})
+    health = auto.get("health", {}) if isinstance(auto.get("health", {}), dict) else {}
+    health_checks = health.get("checks", []) if isinstance(health.get("checks", []), list) else []
+    health_rows = "\n".join(
+        f"""
+        <tr>
+          <td>{html.escape(str(row.get('name', '')))}</td>
+          <td>{'正常' if row.get('ok') else '異常'}</td>
+          <td>{'是' if row.get('exists') else '否'}</td>
+          <td>{'是' if row.get('has_target_date') else '否'}</td>
+        </tr>"""
+        for row in health_checks
+    )
+    if not health_rows:
+        health_rows = '<tr><td colspan="4">尚未執行健康檢查。</td></tr>'
     odds_rows = "\n".join(
         f"""
         <tr>
@@ -273,15 +288,20 @@ def render_html(status: dict) -> str:
     <table><thead><tr><th>專案狀態</th><th>外部等待項目</th></tr></thead><tbody><tr><td>{html.escape(status['project_state'])}</td><td>{waiting}</td></tr></tbody></table>
     <h2>自動更新</h2>
     <table>
-      <thead><tr><th>狀態</th><th>日期</th><th>開始時間</th><th>完成時間</th><th>返回碼</th><th>Log</th></tr></thead>
+      <thead><tr><th>狀態</th><th>日期</th><th>開始時間</th><th>完成時間</th><th>返回碼</th><th>健康檢查</th><th>Log</th></tr></thead>
       <tbody><tr>
         <td>{auto_mode}</td>
         <td>{html.escape(str(auto.get('target_date', '')))}</td>
         <td>{html.escape(str(auto.get('last_started_at_tw', '')))}</td>
         <td>{html.escape(str(auto.get('last_finished_at_tw', '')))}</td>
         <td>{html.escape(str(auto.get('last_return_code', '')))}</td>
+        <td>{'正常' if health.get('ok') else html.escape(str(health.get('message', '尚未檢查')))}</td>
         <td>{auto_log}</td>
       </tr></tbody>
+    </table>
+    <table>
+      <thead><tr><th>頁面</th><th>狀態</th><th>檔案存在</th><th>含目標日期</th></tr></thead>
+      <tbody>{health_rows}</tbody>
     </table>
     <h2>盤口完整度</h2>
     <table><thead><tr><th>日期</th><th>已填 / 場次</th><th>缺盤口</th></tr></thead><tbody>{odds_rows}</tbody></table>

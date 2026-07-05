@@ -17,6 +17,13 @@ ROOT = Path(__file__).resolve().parents[1]
 LOG_DIR = ROOT / "logs" / "auto_runner"
 STATE_PATH = ROOT / "data" / "auto_runner_status.json"
 
+HEALTH_PAGES = {
+    "daily_predictions": ROOT / "docs" / "daily_predictions.html",
+    "betting_ticket": ROOT / "docs" / "betting_ticket.html",
+    "postgame_review": ROOT / "docs" / "postgame_review.html",
+    "status": ROOT / "docs" / "status.html",
+}
+
 
 def now_local() -> datetime:
     return datetime.now().astimezone()
@@ -55,6 +62,31 @@ def write_state(**updates: object) -> None:
     state.update(updates)
     state["updated_at_tw"] = now_local().isoformat(timespec="seconds")
     STATE_PATH.write_text(json.dumps(state, ensure_ascii=False, indent=2), encoding="utf-8")
+
+
+def check_site_health(target_date: str) -> dict:
+    checks = []
+    for name, path in HEALTH_PAGES.items():
+        exists = path.exists()
+        text = path.read_text(encoding="utf-8", errors="ignore") if exists else ""
+        has_target_date = target_date in text
+        checks.append(
+            {
+                "name": name,
+                "path": str(path),
+                "exists": exists,
+                "has_target_date": has_target_date,
+                "ok": exists and has_target_date,
+            }
+        )
+    ok = all(item["ok"] for item in checks)
+    return {
+        "ok": ok,
+        "target_date": target_date,
+        "checked_at_tw": now_local().isoformat(timespec="seconds"),
+        "checks": checks,
+        "message": "site pages contain target date" if ok else "some site pages are stale or missing target date",
+    }
 
 
 def run_workflow(args: argparse.Namespace) -> int:
@@ -100,20 +132,25 @@ def run_workflow(args: argparse.Namespace) -> int:
             log_file.write(line)
         return_code = process.wait()
 
-    status = "success" if return_code == 0 else "failed"
+    health = check_site_health(target_date) if return_code == 0 else {"ok": False, "message": "workflow failed before health check"}
+    status = "success" if return_code == 0 and health.get("ok") else "health_failed" if return_code == 0 else "failed"
     append_log(f"finish workflow date={target_date} status={status} return_code={return_code}")
+    append_log(f"health: {health.get('message')}")
     write_state(
         mode=status,
         target_date=target_date,
         last_finished_at_tw=now_local().isoformat(timespec="seconds"),
         last_return_code=return_code,
+        health=health,
         dashboard=str(ROOT / "docs" / "index.html"),
         daily_predictions=str(ROOT / "docs" / "daily_predictions.html"),
         betting_ticket=str(ROOT / "docs" / "betting_ticket.html"),
         log=str(child_log),
     )
-    if return_code == 0 and args.publish:
+    if return_code == 0 and health.get("ok") and args.publish:
         publish_site(target_date)
+    elif return_code == 0 and args.publish:
+        write_state(publish_status="skipped", publish_message="health check failed")
     return return_code
 
 
