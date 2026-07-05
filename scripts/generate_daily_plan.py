@@ -35,7 +35,9 @@ DAILY_PLAN_JSON = DATA_DIR / "daily_predictions_{date}.json"
 DAILY_PLAN_CSV = DATA_DIR / "daily_predictions_{date}.csv"
 DAILY_PLAN_HTML = DOCS_DIR / "daily_predictions.html"
 MONTE_CARLO_JSON = DATA_DIR / "monte_carlo_{date}.json"
+TOTALS_JSON = DATA_DIR / "totals_predictions_{date}.json"
 TW_TZ = ZoneInfo("Asia/Taipei")
+REMOVED_PENDING_STATUSES = {"postponed", "cancelled", "canceled"}
 
 
 def request_json(url: str, timeout: int = 30) -> dict:
@@ -148,6 +150,29 @@ def load_score_predictions(target_date: str) -> dict[str, dict]:
     return {str(row.get("game_pk", "")): row for row in rows if str(row.get("game_pk", ""))}
 
 
+def load_daily_prediction_index(target_date: str) -> dict[str, dict]:
+    path = Path(str(DAILY_PLAN_JSON).format(date=target_date))
+    if not path.exists():
+        return {}
+    try:
+        payload = json.loads(path.read_text(encoding="utf-8-sig"))
+    except json.JSONDecodeError:
+        return {}
+    return {str(row.get("game_pk", "")): row for row in payload.get("all_predictions", []) if str(row.get("game_pk", ""))}
+
+
+def load_totals_prediction_index(target_date: str) -> dict[str, dict]:
+    path = Path(str(TOTALS_JSON).format(date=target_date))
+    if not path.exists():
+        return {}
+    try:
+        payload = json.loads(path.read_text(encoding="utf-8-sig"))
+    except json.JSONDecodeError:
+        return {}
+    rows = [*payload.get("all_predictions", []), *payload.get("skipped", [])]
+    return {str(row.get("game_pk", "")): row for row in rows if str(row.get("game_pk", ""))}
+
+
 def merge_score_predictions(rows: list[dict], target_date: str) -> None:
     scores = load_score_predictions(target_date)
     for row in rows:
@@ -179,8 +204,27 @@ def merge_score_predictions(rows: list[dict], target_date: str) -> None:
         )
 
 
+def is_removed_pending_status(status: str) -> bool:
+    normalized = str(status or "").strip().lower()
+    return any(item in normalized for item in REMOVED_PENDING_STATUSES)
+
+
+def pending_totals_text(settlement_row: dict, daily_row: dict, totals_row: dict) -> str:
+    daily_total = daily_row.get("total_prediction_zh") or daily_row.get("predicted_total") or "-"
+    totals_predicted = totals_row.get("predicted_total")
+    line = totals_row.get("line")
+    pick = totals_row.get("pick")
+    if line not in (None, "") and pick:
+        return f"{pick} {line} / 預測總分 {totals_predicted if totals_predicted not in (None, '') else daily_total}"
+    if daily_total not in (None, "", "-"):
+        return f"預測總分 {daily_total}"
+    return "尚無大小分預測"
+
+
 def load_pending_settlements(target_date: str) -> list[dict]:
     pending = []
+    daily_cache: dict[str, dict[str, dict]] = {}
+    totals_cache: dict[str, dict[str, dict]] = {}
     for path in sorted(DATA_DIR.glob("prediction_settlement_*.json")):
         try:
             payload = json.loads(path.read_text(encoding="utf-8-sig"))
@@ -192,8 +236,16 @@ def load_pending_settlements(target_date: str) -> list[dict]:
         for row in payload.get("settlements", []):
             if str(row.get("settlement", "")).lower() != "pending":
                 continue
+            if is_removed_pending_status(str(row.get("status", ""))):
+                continue
             item = dict(row)
             item["date"] = str(item.get("date") or settlement_date)
+            daily_cache.setdefault(item["date"], load_daily_prediction_index(item["date"]))
+            totals_cache.setdefault(item["date"], load_totals_prediction_index(item["date"]))
+            game_pk = str(item.get("game_pk", ""))
+            daily_row = daily_cache[item["date"]].get(game_pk, {})
+            totals_row = totals_cache[item["date"]].get(game_pk, {})
+            item["totals_prediction_zh"] = pending_totals_text(item, daily_row, totals_row)
             pending.append(item)
     pending.sort(
         key=lambda row: (
@@ -379,7 +431,7 @@ def render_schedule_rows(rows: list[dict]) -> str:
 
 def render_pending_rows(rows: list[dict]) -> str:
     if not rows:
-        return '<tr><td colspan="7">目前沒有未結算預測。</td></tr>'
+        return '<tr><td colspan="8">目前沒有未結算預測。</td></tr>'
     parts = []
     for row in rows:
         confidence = float(row.get("confidence") or 0) * 100
@@ -391,6 +443,7 @@ def render_pending_rows(rows: list[dict]) -> str:
               <td>{html.escape(str(row.get('status', '待結算')))}</td>
               <td>{html.escape(str(row.get('matchup_zh', '')))}</td>
               <td>{html.escape(str(row.get('prediction_zh', '')))}</td>
+              <td>{html.escape(str(row.get('totals_prediction_zh', '尚無大小分預測')))}</td>
               <td>{confidence:.1f}%</td>
               <td>待結算</td>
             </tr>"""
@@ -448,7 +501,7 @@ def render_html(plan: dict) -> str:
     {f'<div class="warning">{warning}</div>' if warning else ''}
     <h2>未結算預測追蹤</h2>
     <table>
-      <thead><tr><th>MLB日期</th><th>台灣開賽時間</th><th>狀態</th><th>對戰</th><th>預測勝方</th><th>信心</th><th>結算</th></tr></thead>
+      <thead><tr><th>MLB日期</th><th>台灣開賽時間</th><th>狀態</th><th>對戰</th><th>預測勝方</th><th>大小分預測</th><th>信心</th><th>結算</th></tr></thead>
       <tbody>{pending_rows}</tbody>
     </table>
     <h2>完整賽程表</h2>
