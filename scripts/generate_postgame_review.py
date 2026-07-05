@@ -135,6 +135,8 @@ def review_game(row: dict, total_row: dict | None, roi_row: dict | None, time_ro
             notes.append("實際投注單虧損，後續應提高 edge 門檻或降低此類下注權重。")
         elif roi_row.get("settlement") == "win":
             notes.append("實際投注單獲利，可追蹤同類盤口條件。")
+    if not is_final:
+        notes.append("尚未完賽，等待賽後自動結算真實比分。")
     game_time_tw = normalize_game_time_tw(
         row.get("game_time_tw", "") or (time_row or {}).get("game_time_tw", ""),
         row.get("date", ""),
@@ -180,6 +182,7 @@ def build_report() -> dict:
             )
             for row in settlement.get("settlements", [])
         ]
+        games.sort(key=lambda game: (game.get("game_time_utc", ""), game.get("game_pk", "")))
         final_games = [game for game in games if game["winner_correct"] is not None]
         winner_correct = [game for game in final_games if game["winner_correct"] is True]
         totals_final = [game for game in games if game["total_correct"] is not None]
@@ -197,9 +200,17 @@ def build_report() -> dict:
             highlights.append("勝方有命中，但多數信心不高，應保守看待。")
         if not misses and final_games:
             misses.append("沒有明顯高信心失準場。")
+        if not final_games and games:
+            high_pending = [game for game in games if game["confidence"] >= 0.55]
+            if high_pending:
+                highlights.append(f"尚未完賽；目前有 {len(high_pending)} 場高信心賽前預測待追蹤。")
+            else:
+                highlights.append("尚未完賽；目前都是一般信心賽前預測。")
+            misses.append("等待真實比分後，系統會自動補上勝方、大小分與投注 ROI 檢討。")
         day = (
             {
                 "date": target_date,
+                "phase": "賽後檢討" if final_games else "賽前預測待結算",
                 "summary": {
                     "games": len(games),
                     "final_games": len(final_games),
@@ -217,9 +228,9 @@ def build_report() -> dict:
                 "games": games,
             }
         )
-        if final_games:
+        if games:
             days.append(day)
-    latest = next((day for day in reversed(days) if day["summary"]["final_games"] > 0), days[-1] if days else None)
+    latest = days[-1] if days else None
     return {
         "generated_at": datetime.now().isoformat(timespec="seconds"),
         "latest_review_date": latest.get("date") if latest else "",
@@ -269,19 +280,22 @@ def render_html(report: dict) -> str:
     latest_date = report.get("latest_review_date", "")
     day_sections = []
     for day in reversed(report["days"]):
+        phase = day.get("phase", "賽後檢討")
+        left_title = "賽前重點" if phase == "賽前預測待結算" else "命中重點"
+        right_title = "待結算說明" if phase == "賽前預測待結算" else "失準檢討"
         day_sections.append(
             f"""
             <section class="day" id="day-{day['date']}">
               <div class="day-head">
                 <div>
-                  <h2>{day['date']} 賽後檢討</h2>
-                  <p>賽前預測與賽後結果對照，包含勝方、大小分與投注結果。</p>
+                  <h2>{day['date']} {phase}</h2>
+                  <p>{'賽前預測待比賽完成；賽後會自動補上真實比分、大小分與投注結果。' if phase == '賽前預測待結算' else '賽前預測與賽後結果對照，包含勝方、大小分與投注結果。'}</p>
                 </div>
               </div>
               {render_summary_cards(day)}
               <div class="discussion">
-                <div><h3>命中重點</h3><ul>{''.join(f'<li>{html.escape(item)}</li>' for item in day['highlights'])}</ul></div>
-                <div><h3>失準檢討</h3><ul>{''.join(f'<li>{html.escape(item)}</li>' for item in day['misses'])}</ul></div>
+                <div><h3>{left_title}</h3><ul>{''.join(f'<li>{html.escape(item)}</li>' for item in day['highlights'])}</ul></div>
+                <div><h3>{right_title}</h3><ul>{''.join(f'<li>{html.escape(item)}</li>' for item in day['misses'])}</ul></div>
               </div>
               <div class="table-wrap">
                 <table>
@@ -337,9 +351,9 @@ def render_html(report: dict) -> str:
   <section class="hero">
     <div>
       <h1>MLB 賽後檢討</h1>
-      <p>把賽前預測和賽後結果放在同一張檢討表，追蹤勝方、大小分、投注 ROI 與失準原因。</p>
+      <p>把當天賽前預測和賽後結果放在同一張表；未完賽先顯示待結算，完賽後追蹤勝方、大小分、投注 ROI 與失準原因。</p>
     </div>
-    <p>最近MLB賽事日：{latest_date}<br />產生時間：{report['generated_at']}</p>
+    <p>最新MLB賽事日：{latest_date}<br />產生時間：{report['generated_at']}</p>
   </section>
   <nav class="tabs">{render_day_tabs(report['days'], latest_date)}</nav>
   {''.join(day_sections)}
