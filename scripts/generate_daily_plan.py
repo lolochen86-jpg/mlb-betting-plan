@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import argparse
 import csv
+import html
 import json
 import urllib.parse
 import urllib.request
@@ -178,6 +179,33 @@ def merge_score_predictions(rows: list[dict], target_date: str) -> None:
         )
 
 
+def load_pending_settlements(target_date: str) -> list[dict]:
+    pending = []
+    for path in sorted(DATA_DIR.glob("prediction_settlement_*.json")):
+        try:
+            payload = json.loads(path.read_text(encoding="utf-8-sig"))
+        except (json.JSONDecodeError, OSError):
+            continue
+        settlement_date = str(payload.get("target_date") or path.stem.replace("prediction_settlement_", ""))
+        if settlement_date > target_date:
+            continue
+        for row in payload.get("settlements", []):
+            if str(row.get("settlement", "")).lower() != "pending":
+                continue
+            item = dict(row)
+            item["date"] = str(item.get("date") or settlement_date)
+            pending.append(item)
+    pending.sort(
+        key=lambda row: (
+            str(row.get("game_time_utc") or ""),
+            str(row.get("date") or ""),
+            str(row.get("game_pk") or ""),
+        ),
+        reverse=True,
+    )
+    return pending
+
+
 def build_daily_plan(target_date: str, games_csv: Path, min_confidence: float) -> dict:
     history = [game for game in load_games(games_csv) if game["date"] < target_date]
     schedule = fetch_schedule(target_date)
@@ -262,6 +290,7 @@ def build_daily_plan(target_date: str, games_csv: Path, min_confidence: float) -
         "high_confidence_predictions": recommendations,
         "all_predictions": candidates,
         "watchlist": watchlist,
+        "pending_unsettled_predictions": load_pending_settlements(target_date),
     }
 
 
@@ -348,9 +377,31 @@ def render_schedule_rows(rows: list[dict]) -> str:
     return "\n".join(parts)
 
 
+def render_pending_rows(rows: list[dict]) -> str:
+    if not rows:
+        return '<tr><td colspan="7">目前沒有未結算預測。</td></tr>'
+    parts = []
+    for row in rows:
+        confidence = float(row.get("confidence") or 0) * 100
+        parts.append(
+            f"""
+            <tr>
+              <td>{html.escape(str(row.get('date', '')))}</td>
+              <td>{html.escape(str(row.get('game_time_tw', '')))}</td>
+              <td>{html.escape(str(row.get('status', '待結算')))}</td>
+              <td>{html.escape(str(row.get('matchup_zh', '')))}</td>
+              <td>{html.escape(str(row.get('prediction_zh', '')))}</td>
+              <td>{confidence:.1f}%</td>
+              <td>待結算</td>
+            </tr>"""
+        )
+    return "\n".join(parts)
+
+
 def render_html(plan: dict) -> str:
     rec_rows = render_rows(plan["high_confidence_predictions"])
     watch_rows = render_rows(plan["watchlist"])
+    pending_rows = render_pending_rows(plan.get("pending_unsettled_predictions", []))
     schedule_rows_recommendation = render_schedule_rows(plan["all_predictions"])
     schedule_rows_time = render_schedule_rows(
         sorted(plan["all_predictions"], key=lambda row: (row.get("game_time_utc") or "", int(row.get("game_pk") or 0)))
@@ -395,6 +446,11 @@ def render_html(plan: dict) -> str:
       {freshness_note}
     </div>
     {f'<div class="warning">{warning}</div>' if warning else ''}
+    <h2>未結算預測追蹤</h2>
+    <table>
+      <thead><tr><th>MLB日期</th><th>台灣開賽時間</th><th>狀態</th><th>對戰</th><th>預測勝方</th><th>信心</th><th>結算</th></tr></thead>
+      <tbody>{pending_rows}</tbody>
+    </table>
     <h2>完整賽程表</h2>
     <div class="toolbar">
       <span>排序方式</span>
