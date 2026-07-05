@@ -50,7 +50,7 @@ def classify_ticket(report: dict) -> tuple[list[dict], list[dict], list[dict]]:
     for row in report.get("skipped", []):
         reason = str(row.get("skip_reason", ""))
         if "找不到真實盤口" in reason or "盤口" in reason:
-            row["ticket_tier"] = "無台灣運彩盤口"
+            row["ticket_tier"] = "建議盤口"
             no_market.append(row)
         elif row.get("sportsbook") == "台灣運彩" or row.get("moneyline"):
             row["ticket_tier"] = "觀察"
@@ -105,7 +105,7 @@ def render_html(report: dict) -> str:
     if not watch_rows:
         watch_body = '<tr><td colspan="12">目前沒有觀察名單。</td></tr>'
     if not no_market_rows:
-        no_market_body = '<tr><td colspan="5">目前沒有缺台灣運彩盤口的顯示項目。</td></tr>'
+        no_market_body = '<tr><td colspan="5">目前沒有等待開盤的建議盤口。</td></tr>'
     return f"""<!doctype html>
 <html lang="zh-Hant">
 <head>
@@ -143,7 +143,7 @@ def render_html(report: dict) -> str:
     <section class="kpis">
       <div class="kpi"><strong>{len(official_rows)}</strong><span>正式下注</span></div>
       <div class="kpi"><strong>{len(watch_rows)}</strong><span>觀察名單</span></div>
-      <div class="kpi"><strong>{len(no_market_rows)}</strong><span>缺台灣運彩盤口</span></div>
+      <div class="kpi"><strong>{len(no_market_rows)}</strong><span>建議盤口</span></div>
     </section>
     <h2>正式下注</h2>
     <table>
@@ -155,12 +155,12 @@ def render_html(report: dict) -> str:
       <thead><tr><th>層級</th><th>GamePk</th><th>台灣開賽時間</th><th>對戰</th><th>投注隊伍</th><th>盤口來源</th><th>賠率</th><th>模型信心</th><th>市場隱含</th><th>Edge</th><th>單位</th><th>原因</th></tr></thead>
       <tbody>{watch_body}</tbody>
     </table>
-    <h2>無台灣運彩盤口，不推薦</h2>
+    <h2>建議盤口</h2>
     <table>
-      <thead><tr><th>GamePk</th><th>台灣開賽時間</th><th>對戰</th><th>模型預測</th><th>原因</th></tr></thead>
+      <thead><tr><th>GamePk</th><th>台灣開賽時間</th><th>對戰</th><th>建議方向</th><th>狀態</th></tr></thead>
       <tbody>{no_market_body}</tbody>
     </table>
-    <div class="note">正式下注只採用台灣運彩官方盤口。觀察名單不等於下注；缺台灣運彩盤口的比賽完全不推薦。</div>
+    <div class="note">正式下注只採用台灣運彩官方盤口。觀察名單不等於下注；建議盤口是等待台灣運彩開盤後再比對賠率與 Edge，未開盤前不列入正式下注。</div>
   </main>
 </body>
 </html>"""
@@ -195,7 +195,7 @@ def render_no_market_rows(rows: list[dict]) -> str:
           <td>{html.escape(str(row.get('game_time_tw', '') or '未公布'))}</td>
           <td>{html.escape(str(row.get('matchup_zh', '')))}</td>
           <td>{html.escape(str(row.get('prediction_zh', '')))} / {float(row.get('confidence') or 0) * 100:.1f}%</td>
-          <td>{html.escape(str(row.get('skip_reason', '找不到真實盤口')))}</td>
+          <td>{html.escape('等待台灣運彩開盤' if '找不到真實盤口' in str(row.get('skip_reason', '')) else str(row.get('skip_reason', '等待台灣運彩開盤')))}</td>
         </tr>"""
         for row in rows
     )
