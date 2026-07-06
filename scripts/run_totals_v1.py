@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 """Generate MLB totals over/under v1 predictions from real scores and Taiwan Sports Lottery odds."""
 
 from __future__ import annotations
@@ -26,6 +26,9 @@ TAIWAN_SOURCE_JSON = ODDS_DIR / "taiwan_sportslottery_baseball_source_{date}.jso
 TOTALS_JSON = DATA_DIR / "totals_predictions_{date}.json"
 TOTALS_CSV = DATA_DIR / "totals_predictions_{date}.csv"
 TOTALS_HTML = DOCS_DIR / "totals_predictions.html"
+MONTE_CARLO_JSON = DATA_DIR / "monte_carlo_{date}.json"
+MIN_MODEL_PROB = 0.57
+MIN_EDGE = 0.02
 
 
 def normal_cdf(x: float, mean: float, sigma: float) -> float:
@@ -38,6 +41,17 @@ def read_daily_predictions(target_date: str) -> list[dict]:
         raise SystemExit(f"Missing daily predictions: {path}")
     data = json.loads(path.read_text(encoding="utf-8"))
     return data.get("all_predictions", [])
+
+
+def read_monte_carlo_totals(target_date: str) -> dict[str, dict]:
+    path = Path(str(MONTE_CARLO_JSON).format(date=target_date))
+    if not path.exists():
+        return {}
+    try:
+        data = json.loads(path.read_text(encoding="utf-8-sig"))
+    except json.JSONDecodeError:
+        return {}
+    return {str(row.get("game_pk", "")): row for row in data.get("games", []) if str(row.get("game_pk", ""))}
 
 
 def load_or_fetch_taiwan_source(target_date: str) -> list[dict]:
@@ -140,6 +154,7 @@ def predict_total(away_zh: str, home_zh: str, teams: dict, league_total: float) 
 def build_report(target_date: str, recent_games: int, min_edge: float) -> dict:
     history = [game for game in load_games(DEFAULT_GAMES_CSV) if game["date"] < target_date]
     daily_rows = read_daily_predictions(target_date)
+    monte_carlo_totals = read_monte_carlo_totals(target_date)
     time_index = load_time_index(target_date)
     taiwan_games = load_or_fetch_taiwan_source(target_date)
     totals_markets = extract_totals_markets(taiwan_games)
@@ -161,7 +176,15 @@ def build_report(target_date: str, recent_games: int, min_edge: float) -> dict:
         odds = market["over_odds"] if pick == "大分" else market["under_odds"]
         market_prob = implied(float(odds))
         edge = model_prob - market_prob
-        decision = "大小分候選" if edge >= min_edge else "不推薦"
+        monte_row = monte_carlo_totals.get(str(row.get("game_pk", "")), {})
+        monte_pick = str(monte_row.get("totals_pick") or "")
+        monte_total = monte_row.get("avg_total")
+        if monte_pick in {"大分", "小分"} and monte_pick != pick:
+            decision = "大小分分歧"
+        elif edge >= max(min_edge, MIN_EDGE) and model_prob >= MIN_MODEL_PROB:
+            decision = "大小分候選"
+        else:
+            decision = "不推薦"
         predictions.append(
             attach_game_time(
                 {
@@ -176,6 +199,8 @@ def build_report(target_date: str, recent_games: int, min_edge: float) -> dict:
                 "model_prob": round(model_prob, 4),
                 "market_implied_prob": round(market_prob, 4),
                 "edge": round(edge, 4),
+                "monte_carlo_pick": monte_pick or "-",
+                "monte_carlo_total": monte_total,
                 "decision": decision,
                 "status": row.get("status", ""),
                 },
@@ -227,6 +252,8 @@ def write_outputs(report: dict) -> None:
         "model_prob",
         "market_implied_prob",
         "edge",
+        "monte_carlo_pick",
+        "monte_carlo_total",
         "decision",
         "status",
     ]
@@ -246,7 +273,7 @@ def write_outputs(report: dict) -> None:
 
 def render_rows(rows: list[dict]) -> str:
     if not rows:
-        return '<tr><td colspan="11">目前沒有大小分候選。</td></tr>'
+        return '<tr><td colspan="12">目前沒有大小分候選。</td></tr>'
     return "\n".join(
         f"""
         <tr>
@@ -260,6 +287,7 @@ def render_rows(rows: list[dict]) -> str:
           <td>{float(row.get('model_prob') or 0) * 100:.1f}%</td>
           <td>{float(row.get('market_implied_prob') or 0) * 100:.1f}%</td>
           <td>{float(row.get('edge') or 0) * 100:.1f}%</td>
+          <td>{row.get('monte_carlo_pick', '-')} {row.get('monte_carlo_total') or ''}</td>
           <td>{row.get('decision', '')}</td>
         </tr>"""
         for row in rows
@@ -301,12 +329,12 @@ def render_html(report: dict) -> str:
     </div>
     <h2>大小分候選</h2>
     <table>
-      <thead><tr><th>GamePk</th><th>台灣開賽時間</th><th>對戰</th><th>台灣運彩線</th><th>模型總分</th><th>方向</th><th>賠率</th><th>模型機率</th><th>市場隱含</th><th>Edge</th><th>決策</th></tr></thead>
+      <thead><tr><th>GamePk</th><th>台灣開賽時間</th><th>對戰</th><th>台灣運彩線</th><th>模型總分</th><th>方向</th><th>賠率</th><th>模型機率</th><th>市場隱含</th><th>Edge</th><th>蒙地卡羅</th><th>決策</th></tr></thead>
       <tbody>{candidate_rows}</tbody>
     </table>
     <h2>全部大小分預測</h2>
     <table>
-      <thead><tr><th>GamePk</th><th>台灣開賽時間</th><th>對戰</th><th>台灣運彩線</th><th>模型總分</th><th>方向</th><th>賠率</th><th>模型機率</th><th>市場隱含</th><th>Edge</th><th>決策</th></tr></thead>
+      <thead><tr><th>GamePk</th><th>台灣開賽時間</th><th>對戰</th><th>台灣運彩線</th><th>模型總分</th><th>方向</th><th>賠率</th><th>模型機率</th><th>市場隱含</th><th>Edge</th><th>蒙地卡羅</th><th>決策</th></tr></thead>
       <tbody>{all_rows}</tbody>
     </table>
     <div class="note">大小分 v1 只使用台灣運彩全場總分大小盤，不使用 ESPN 備援；目前是模型驗證層，尚未併入主投注單。</div>
