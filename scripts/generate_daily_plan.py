@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 """Generate a Chinese daily MLB winner prediction plan from real saved scores."""
 
 from __future__ import annotations
@@ -204,6 +204,38 @@ def merge_score_predictions(rows: list[dict], target_date: str) -> None:
         )
 
 
+def annotate_score_alignment(rows: list[dict]) -> None:
+    for row in rows:
+        away_score = row.get("predicted_away_score")
+        home_score = row.get("predicted_home_score")
+        score_side = ""
+        score_pick = "-"
+        if away_score not in (None, "") and home_score not in (None, ""):
+            away_value = float(away_score)
+            home_value = float(home_score)
+            if home_value > away_value:
+                score_side = "home"
+                score_pick = str(row.get("home_zh", ""))
+            elif away_value > home_value:
+                score_side = "away"
+                score_pick = str(row.get("away_zh", ""))
+            else:
+                score_side = "tie"
+                score_pick = "平手"
+
+        row["score_pick_side"] = score_side
+        row["score_pick_zh"] = score_pick
+        if not score_side:
+            row["score_alignment"] = "無比分模型"
+        elif score_side == "tie":
+            row["score_alignment"] = "比分平手"
+        elif score_side == row.get("pick_side"):
+            row["score_alignment"] = "一致"
+        else:
+            row["score_alignment"] = "模型分歧"
+            row["decision"] = "模型分歧"
+
+
 def is_removed_pending_status(status: str) -> bool:
     normalized = str(status or "").strip().lower()
     return any(item in normalized for item in REMOVED_PENDING_STATUSES)
@@ -318,6 +350,7 @@ def build_daily_plan(target_date: str, games_csv: Path, min_confidence: float) -
         )
 
     merge_score_predictions(candidates, target_date)
+    annotate_score_alignment(candidates)
     candidates.sort(key=lambda row: (row["decision"] == "高信心預測", row["confidence"]), reverse=True)
     recommendations = [row for row in candidates if row["decision"] == "高信心預測"]
     watchlist = [row for row in candidates if row not in recommendations]
@@ -384,6 +417,8 @@ def write_outputs(plan: dict) -> None:
         "predicted_home_score",
         "predicted_total",
         "monte_carlo_pick_zh",
+        "score_pick_zh",
+        "score_alignment",
         "status",
     ]
     with csv_path.open("w", encoding="utf-8", newline="") as f:
@@ -399,7 +434,7 @@ def write_outputs(plan: dict) -> None:
 
 def render_rows(rows: list[dict]) -> str:
     if not rows:
-        return '<tr><td colspan="9">沒有符合條件的場次</td></tr>'
+        return '<tr><td colspan="11">目前沒有符合條件的預測。</td></tr>'
     parts = []
     for row in rows:
         parts.append(
@@ -412,6 +447,8 @@ def render_rows(rows: list[dict]) -> str:
               <td>{row['prediction_zh']}</td>
               <td>{row.get('score_prediction_zh', '-')}</td>
               <td>{row.get('total_prediction_zh', '-')}</td>
+              <td>{row.get('score_pick_zh', '-')}</td>
+              <td>{row.get('score_alignment', '-')}</td>
               <td>{row['confidence'] * 100:.1f}%</td>
               <td>{row['confirmation_pick_zh']}</td>
             </tr>"""
@@ -421,7 +458,7 @@ def render_rows(rows: list[dict]) -> str:
 
 def render_schedule_rows(rows: list[dict]) -> str:
     if not rows:
-        return '<tr><td colspan="11">沒有賽程</td></tr>'
+        return '<tr><td colspan="13">目前沒有賽程資料。</td></tr>'
     parts = []
     for row in rows:
         parts.append(
@@ -435,6 +472,8 @@ def render_schedule_rows(rows: list[dict]) -> str:
               <td>{row['prediction_zh']}</td>
               <td>{row.get('score_prediction_zh', '-')}</td>
               <td>{row.get('total_prediction_zh', '-')}</td>
+              <td>{row.get('score_pick_zh', '-')}</td>
+              <td>{row.get('score_alignment', '-')}</td>
               <td>{row['confidence'] * 100:.1f}%</td>
               <td>{row['confirmation_pick_zh']}</td>
               <td>{row['decision']}</td>
@@ -445,7 +484,7 @@ def render_schedule_rows(rows: list[dict]) -> str:
 
 def render_pending_rows(rows: list[dict]) -> str:
     if not rows:
-        return '<tr><td colspan="9">目前沒有未結算預測。</td></tr>'
+        return '<tr><td colspan="11">目前沒有符合條件的預測。</td></tr>'
     parts = []
     for row in rows:
         confidence = float(row.get("confidence") or 0) * 100
@@ -526,18 +565,18 @@ def render_html(plan: dict) -> str:
       <button class="sort-btn" id="sortTime" type="button">比賽時間</button>
     </div>
     <table>
-      <thead><tr><th>GamePk</th><th>台灣開賽時間</th><th>狀態</th><th>對戰</th><th>先發投手</th><th>模型預測</th><th>預測比分</th><th>預測總分</th><th>信心</th><th>確認模型</th><th>分類</th></tr></thead>
+      <thead><tr><th>GamePk</th><th>台灣開賽時間</th><th>狀態</th><th>對戰</th><th>先發投手</th><th>模型預測</th><th>預測比分</th><th>預測總分</th><th>比分模型</th><th>一致性</th><th>信心</th><th>確認模型</th><th>分類</th></tr></thead>
       <tbody id="scheduleRows">{schedule_rows_recommendation}</tbody>
     </table>
     <div class="warning">投注單請看 <a href="betting_ticket.html">今日投注單</a>。該頁只列入真實盤口與 edge 條件通過的場次。</div>
     <h2>高信心預測</h2>
     <table>
-      <thead><tr><th>決策</th><th>台灣開賽時間</th><th>對戰</th><th>先發投手</th><th>預測勝方</th><th>預測比分</th><th>預測總分</th><th>信心</th><th>確認模型</th></tr></thead>
+      <thead><tr><th>決策</th><th>台灣開賽時間</th><th>對戰</th><th>先發投手</th><th>預測勝方</th><th>預測比分</th><th>預測總分</th><th>比分模型</th><th>一致性</th><th>信心</th><th>確認模型</th></tr></thead>
       <tbody>{rec_rows}</tbody>
     </table>
     <h2>一般預測</h2>
     <table>
-      <thead><tr><th>決策</th><th>台灣開賽時間</th><th>對戰</th><th>先發投手</th><th>預測勝方</th><th>預測比分</th><th>預測總分</th><th>信心</th><th>確認模型</th></tr></thead>
+      <thead><tr><th>決策</th><th>台灣開賽時間</th><th>對戰</th><th>先發投手</th><th>預測勝方</th><th>預測比分</th><th>預測總分</th><th>比分模型</th><th>一致性</th><th>信心</th><th>確認模型</th></tr></thead>
       <tbody>{watch_rows}</tbody>
     </table>
     <div class="warning">比分預測取自蒙地卡羅 10,000 次單場模擬平均值；完整模擬分布請看 <a href="monte_carlo.html">蒙地卡羅模擬</a>。投注單請看 <a href="betting_ticket.html">今日投注單</a>。該頁只列入真實盤口與 edge 條件通過的場次。</div>

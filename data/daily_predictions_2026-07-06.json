@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-06T21:04:58",
+  "generated_at": "2026-07-07T00:14:27",
   "target_date": "2026-07-06",
   "models": {
     "production": "A-畢氏勝率",
@@ -19,37 +19,7 @@
     "warning": null,
     "freshness_note": "訓練資料已更新到目標日前一天 2026-07-05。"
   },
-  "high_confidence_predictions": [
-    {
-      "date": "2026-07-06",
-      "game_pk": "823930",
-      "game_time_utc": "2026-07-07T02:10:00Z",
-      "game_time_tw": "2026-07-07 10:10",
-      "status": "Scheduled",
-      "matchup_zh": "科羅拉多洛磯 @ 洛杉磯道奇",
-      "away_zh": "科羅拉多洛磯",
-      "away_team_id": 115,
-      "home_zh": "洛杉磯道奇",
-      "home_team_id": 119,
-      "away_probable_pitcher_zh": "凱爾 拉",
-      "away_probable_pitcher_id": 607536,
-      "home_probable_pitcher_zh": "艾里 拉",
-      "home_probable_pitcher_id": 641778,
-      "prediction_zh": "洛杉磯道奇",
-      "pick_side": "home",
-      "confidence": 0.6738,
-      "confirmation_pick_zh": "洛杉磯道奇",
-      "confirmation_same_direction": true,
-      "confidence_pass": true,
-      "decision": "高信心預測",
-      "predicted_away_score": 8.0,
-      "predicted_home_score": 2.82,
-      "predicted_total": 10.81,
-      "score_prediction_zh": "科羅拉多洛磯 8.00 : 洛杉磯道奇 2.82",
-      "total_prediction_zh": "10.81",
-      "monte_carlo_pick_zh": "科羅拉多洛磯"
-    }
-  ],
+  "high_confidence_predictions": [],
   "all_predictions": [
     {
       "date": "2026-07-06",
@@ -72,13 +42,16 @@
       "confirmation_pick_zh": "洛杉磯道奇",
       "confirmation_same_direction": true,
       "confidence_pass": true,
-      "decision": "高信心預測",
+      "decision": "模型分歧",
       "predicted_away_score": 8.0,
       "predicted_home_score": 2.82,
       "predicted_total": 10.81,
       "score_prediction_zh": "科羅拉多洛磯 8.00 : 洛杉磯道奇 2.82",
       "total_prediction_zh": "10.81",
-      "monte_carlo_pick_zh": "科羅拉多洛磯"
+      "monte_carlo_pick_zh": "科羅拉多洛磯",
+      "score_pick_side": "away",
+      "score_pick_zh": "科羅拉多洛磯",
+      "score_alignment": "模型分歧"
     },
     {
       "date": "2026-07-06",
@@ -101,13 +74,16 @@
       "confirmation_pick_zh": "密爾瓦基釀酒人",
       "confirmation_same_direction": true,
       "confidence_pass": false,
-      "decision": "一般預測",
+      "decision": "模型分歧",
       "predicted_away_score": 2.98,
       "predicted_home_score": 5.07,
       "predicted_total": 8.05,
       "score_prediction_zh": "密爾瓦基釀酒人 2.98 : 聖路易紅雀 5.07",
       "total_prediction_zh": "8.05",
-      "monte_carlo_pick_zh": "聖路易紅雀"
+      "monte_carlo_pick_zh": "聖路易紅雀",
+      "score_pick_side": "home",
+      "score_pick_zh": "聖路易紅雀",
+      "score_alignment": "模型分歧"
     },
     {
       "date": "2026-07-06",
@@ -130,13 +106,16 @@
       "confirmation_pick_zh": "亞特蘭大勇士",
       "confirmation_same_direction": true,
       "confidence_pass": false,
-      "decision": "一般預測",
+      "decision": "模型分歧",
       "predicted_away_score": 3.34,
       "predicted_home_score": 2.31,
       "predicted_total": 5.65,
       "score_prediction_zh": "紐約大都會 3.34 : 亞特蘭大勇士 2.31",
       "total_prediction_zh": "5.65",
-      "monte_carlo_pick_zh": "紐約大都會"
+      "monte_carlo_pick_zh": "紐約大都會",
+      "score_pick_side": "away",
+      "score_pick_zh": "紐約大都會",
+      "score_alignment": "模型分歧"
     },
     {
       "date": "2026-07-06",
@@ -159,20 +138,23 @@
       "confirmation_pick_zh": "亞利桑那響尾蛇",
       "confirmation_same_direction": false,
       "confidence_pass": false,
-      "decision": "一般預測",
+      "decision": "模型分歧",
       "predicted_away_score": 2.57,
       "predicted_home_score": 2.35,
       "predicted_total": 4.92,
       "score_prediction_zh": "亞利桑那響尾蛇 2.57 : 聖地牙哥教士 2.35",
       "total_prediction_zh": "4.92",
-      "monte_carlo_pick_zh": "不推薦"
+      "monte_carlo_pick_zh": "不推薦",
+      "score_pick_side": "away",
+      "score_pick_zh": "亞利桑那響尾蛇",
+      "score_alignment": "模型分歧"
     },
     {
       "date": "2026-07-06",
       "game_pk": "824089",
       "game_time_utc": "2026-07-06T18:10:00Z",
       "game_time_tw": "2026-07-07 02:10",
-      "status": "Scheduled",
+      "status": "Pre-Game",
       "matchup_zh": "費城費城人 @ 堪薩斯市皇家",
       "away_zh": "費城費城人",
       "away_team_id": 143,
@@ -194,7 +176,10 @@
       "predicted_total": 6.57,
       "score_prediction_zh": "費城費城人 3.47 : 堪薩斯市皇家 3.10",
       "total_prediction_zh": "6.57",
-      "monte_carlo_pick_zh": "堪薩斯市皇家"
+      "monte_carlo_pick_zh": "堪薩斯市皇家",
+      "score_pick_side": "away",
+      "score_pick_zh": "費城費城人",
+      "score_alignment": "一致"
     },
     {
       "date": "2026-07-06",
@@ -217,13 +202,16 @@
       "confirmation_pick_zh": "休士頓太空人",
       "confirmation_same_direction": true,
       "confidence_pass": false,
-      "decision": "一般預測",
+      "decision": "模型分歧",
       "predicted_away_score": 2.57,
       "predicted_home_score": 3.91,
       "predicted_total": 6.48,
       "score_prediction_zh": "休士頓太空人 2.57 : 華盛頓國民 3.91",
       "total_prediction_zh": "6.48",
-      "monte_carlo_pick_zh": "華盛頓國民"
+      "monte_carlo_pick_zh": "華盛頓國民",
+      "score_pick_side": "home",
+      "score_pick_zh": "華盛頓國民",
+      "score_alignment": "模型分歧"
     },
     {
       "date": "2026-07-06",
@@ -252,7 +240,10 @@
       "predicted_total": 8.06,
       "score_prediction_zh": "紐約洋基 4.15 : 坦帕灣光芒 3.91",
       "total_prediction_zh": "8.06",
-      "monte_carlo_pick_zh": "不推薦"
+      "monte_carlo_pick_zh": "不推薦",
+      "score_pick_side": "away",
+      "score_pick_zh": "紐約洋基",
+      "score_alignment": "一致"
     },
     {
       "date": "2026-07-06",
@@ -281,12 +272,47 @@
       "predicted_total": 5.23,
       "score_prediction_zh": "多倫多藍鳥 2.09 : 舊金山巨人 3.14",
       "total_prediction_zh": "5.23",
-      "monte_carlo_pick_zh": "舊金山巨人"
+      "monte_carlo_pick_zh": "舊金山巨人",
+      "score_pick_side": "home",
+      "score_pick_zh": "舊金山巨人",
+      "score_alignment": "一致"
     }
   ],
   "watchlist": [
     {
       "date": "2026-07-06",
+      "game_pk": "823930",
+      "game_time_utc": "2026-07-07T02:10:00Z",
+      "game_time_tw": "2026-07-07 10:10",
+      "status": "Scheduled",
+      "matchup_zh": "科羅拉多洛磯 @ 洛杉磯道奇",
+      "away_zh": "科羅拉多洛磯",
+      "away_team_id": 115,
+      "home_zh": "洛杉磯道奇",
+      "home_team_id": 119,
+      "away_probable_pitcher_zh": "凱爾 拉",
+      "away_probable_pitcher_id": 607536,
+      "home_probable_pitcher_zh": "艾里 拉",
+      "home_probable_pitcher_id": 641778,
+      "prediction_zh": "洛杉磯道奇",
+      "pick_side": "home",
+      "confidence": 0.6738,
+      "confirmation_pick_zh": "洛杉磯道奇",
+      "confirmation_same_direction": true,
+      "confidence_pass": true,
+      "decision": "模型分歧",
+      "predicted_away_score": 8.0,
+      "predicted_home_score": 2.82,
+      "predicted_total": 10.81,
+      "score_prediction_zh": "科羅拉多洛磯 8.00 : 洛杉磯道奇 2.82",
+      "total_prediction_zh": "10.81",
+      "monte_carlo_pick_zh": "科羅拉多洛磯",
+      "score_pick_side": "away",
+      "score_pick_zh": "科羅拉多洛磯",
+      "score_alignment": "模型分歧"
+    },
+    {
+      "date": "2026-07-06",
       "game_pk": "823036",
       "game_time_utc": "2026-07-06T23:45:00Z",
       "game_time_tw": "2026-07-07 07:45",
@@ -306,13 +332,16 @@
       "confirmation_pick_zh": "密爾瓦基釀酒人",
       "confirmation_same_direction": true,
       "confidence_pass": false,
-      "decision": "一般預測",
+      "decision": "模型分歧",
       "predicted_away_score": 2.98,
       "predicted_home_score": 5.07,
       "predicted_total": 8.05,
       "score_prediction_zh": "密爾瓦基釀酒人 2.98 : 聖路易紅雀 5.07",
       "total_prediction_zh": "8.05",
-      "monte_carlo_pick_zh": "聖路易紅雀"
+      "monte_carlo_pick_zh": "聖路易紅雀",
+      "score_pick_side": "home",
+      "score_pick_zh": "聖路易紅雀",
+      "score_alignment": "模型分歧"
     },
     {
       "date": "2026-07-06",
@@ -335,13 +364,16 @@
       "confirmation_pick_zh": "亞特蘭大勇士",
       "confirmation_same_direction": true,
       "confidence_pass": false,
-      "decision": "一般預測",
+      "decision": "模型分歧",
       "predicted_away_score": 3.34,
       "predicted_home_score": 2.31,
       "predicted_total": 5.65,
       "score_prediction_zh": "紐約大都會 3.34 : 亞特蘭大勇士 2.31",
       "total_prediction_zh": "5.65",
-      "monte_carlo_pick_zh": "紐約大都會"
+      "monte_carlo_pick_zh": "紐約大都會",
+      "score_pick_side": "away",
+      "score_pick_zh": "紐約大都會",
+      "score_alignment": "模型分歧"
     },
     {
       "date": "2026-07-06",
@@ -364,20 +396,23 @@
       "confirmation_pick_zh": "亞利桑那響尾蛇",
       "confirmation_same_direction": false,
       "confidence_pass": false,
-      "decision": "一般預測",
+      "decision": "模型分歧",
       "predicted_away_score": 2.57,
       "predicted_home_score": 2.35,
       "predicted_total": 4.92,
       "score_prediction_zh": "亞利桑那響尾蛇 2.57 : 聖地牙哥教士 2.35",
       "total_prediction_zh": "4.92",
-      "monte_carlo_pick_zh": "不推薦"
+      "monte_carlo_pick_zh": "不推薦",
+      "score_pick_side": "away",
+      "score_pick_zh": "亞利桑那響尾蛇",
+      "score_alignment": "模型分歧"
     },
     {
       "date": "2026-07-06",
       "game_pk": "824089",
       "game_time_utc": "2026-07-06T18:10:00Z",
       "game_time_tw": "2026-07-07 02:10",
-      "status": "Scheduled",
+      "status": "Pre-Game",
       "matchup_zh": "費城費城人 @ 堪薩斯市皇家",
       "away_zh": "費城費城人",
       "away_team_id": 143,
@@ -399,7 +434,10 @@
       "predicted_total": 6.57,
       "score_prediction_zh": "費城費城人 3.47 : 堪薩斯市皇家 3.10",
       "total_prediction_zh": "6.57",
-      "monte_carlo_pick_zh": "堪薩斯市皇家"
+      "monte_carlo_pick_zh": "堪薩斯市皇家",
+      "score_pick_side": "away",
+      "score_pick_zh": "費城費城人",
+      "score_alignment": "一致"
     },
     {
       "date": "2026-07-06",
@@ -422,13 +460,16 @@
       "confirmation_pick_zh": "休士頓太空人",
       "confirmation_same_direction": true,
       "confidence_pass": false,
-      "decision": "一般預測",
+      "decision": "模型分歧",
       "predicted_away_score": 2.57,
       "predicted_home_score": 3.91,
       "predicted_total": 6.48,
       "score_prediction_zh": "休士頓太空人 2.57 : 華盛頓國民 3.91",
       "total_prediction_zh": "6.48",
-      "monte_carlo_pick_zh": "華盛頓國民"
+      "monte_carlo_pick_zh": "華盛頓國民",
+      "score_pick_side": "home",
+      "score_pick_zh": "華盛頓國民",
+      "score_alignment": "模型分歧"
     },
     {
       "date": "2026-07-06",
@@ -457,7 +498,10 @@
       "predicted_total": 8.06,
       "score_prediction_zh": "紐約洋基 4.15 : 坦帕灣光芒 3.91",
       "total_prediction_zh": "8.06",
-      "monte_carlo_pick_zh": "不推薦"
+      "monte_carlo_pick_zh": "不推薦",
+      "score_pick_side": "away",
+      "score_pick_zh": "紐約洋基",
+      "score_alignment": "一致"
     },
     {
       "date": "2026-07-06",
@@ -486,7 +530,10 @@
       "predicted_total": 5.23,
       "score_prediction_zh": "多倫多藍鳥 2.09 : 舊金山巨人 3.14",
       "total_prediction_zh": "5.23",
-      "monte_carlo_pick_zh": "舊金山巨人"
+      "monte_carlo_pick_zh": "舊金山巨人",
+      "score_pick_side": "home",
+      "score_pick_zh": "舊金山巨人",
+      "score_alignment": "一致"
     }
   ],
   "pending_unsettled_predictions": [
@@ -634,7 +681,7 @@
       "confidence": 0.5224,
       "confirmation_pick_zh": "費城費城人",
       "confirmation_same_direction": true,
-      "status": "Scheduled",
+      "status": "Pre-Game",
       "score": "",
       "actual_winner_zh": "",
       "settlement": "pending",
