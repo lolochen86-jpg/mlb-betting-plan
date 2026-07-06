@@ -129,6 +129,41 @@ def settlement_index(settlement: dict) -> dict[str, dict]:
     return {str(row.get("game_pk", "")): row for row in settlement.get("settlements", [])}
 
 
+def model_block_reason(prediction: dict) -> str:
+    """Return a hard-stop reason when upstream models disagree."""
+    if prediction.get("decision") == "模型分歧" or prediction.get("score_alignment") == "模型分歧":
+        return "勝方模型與比分模型分歧"
+    if prediction.get("totals_alignment") == "大小分分歧":
+        return "大小分模型分歧"
+    return ""
+
+
+def skipped_with_odds(
+    pred: dict,
+    odds: dict,
+    pick_odds: int | float,
+    confidence: float,
+    market_prob: float,
+    edge: float,
+    unit: float,
+    reason: str,
+) -> dict:
+    return attach_game_time(
+        {
+            **pred,
+            "sportsbook": odds.get("sportsbook", ""),
+            "captured_at_tw": odds.get("captured_at_tw", ""),
+            "moneyline": pick_odds,
+            "market_implied_prob": round(market_prob, 4),
+            "edge": round(edge, 4),
+            "unit": unit,
+            "settlement": "skipped",
+            "skip_reason": reason,
+        },
+        {str(pred.get("game_pk", "")): {"game_time_tw": pred.get("game_time_tw", ""), "game_time_utc": pred.get("game_time_utc", "")}},
+    )
+
+
 def make_roi(
     target_date: str,
     unit: float,
@@ -152,20 +187,46 @@ def make_roi(
         if only_high_confidence and pred.get("decision") != "高信心預測":
             skipped.append({**pred, "skip_reason": "非高信心預測"})
             continue
+        blocker = model_block_reason(pred)
+        if blocker:
+            skipped.append({**pred, "skip_reason": blocker})
+            continue
         odds = find_odds(pred, by_pk, by_matchup)
         if not odds:
             skipped.append({**pred, "skip_reason": "找不到真實盤口"})
-            continue
-        if require_sportsbook and odds.get("sportsbook", "").strip() != require_sportsbook:
-            skipped.append({**pred, "skip_reason": f"盤口來源不是 {require_sportsbook}"})
             continue
         pick_side = pred.get("pick_side")
         pick_odds = odds["home_moneyline"] if pick_side == "home" else odds["away_moneyline"]
         market_prob = implied_probability(pick_odds)
         confidence = float(pred.get("confidence") or 0)
         edge = confidence - market_prob
+        if require_sportsbook and odds.get("sportsbook", "").strip() != require_sportsbook:
+            skipped.append(
+                skipped_with_odds(
+                    pred,
+                    odds,
+                    pick_odds,
+                    confidence,
+                    market_prob,
+                    edge,
+                    unit,
+                    f"盤口來源不是 {require_sportsbook}",
+                )
+            )
+            continue
         if edge < min_edge:
-            skipped.append({**pred, "skip_reason": f"edge {edge:.4f} 低於門檻"})
+            skipped.append(
+                skipped_with_odds(
+                    pred,
+                    odds,
+                    pick_odds,
+                    confidence,
+                    market_prob,
+                    edge,
+                    unit,
+                    f"edge {edge:.4f} 低於門檻",
+                )
+            )
             continue
         settled = settlements.get(str(pred.get("game_pk", "")), {})
         is_final = settled.get("is_final") is True or str(settled.get("is_final")).lower() == "true"
@@ -179,6 +240,11 @@ def make_roi(
                 "sportsbook": odds.get("sportsbook", ""),
                 "captured_at_tw": odds.get("captured_at_tw", ""),
                 "decision": pred.get("decision", ""),
+                "score_pick_zh": pred.get("score_pick_zh", ""),
+                "score_alignment": pred.get("score_alignment", ""),
+                "monte_carlo_totals_pick_zh": pred.get("monte_carlo_totals_pick_zh", ""),
+                "official_totals_pick_zh": pred.get("official_totals_pick_zh", ""),
+                "totals_alignment": pred.get("totals_alignment", ""),
                 "matchup_zh": pred.get("matchup_zh", ""),
                 "prediction_zh": pred.get("prediction_zh", ""),
                 "pick_side": pick_side,
@@ -246,6 +312,11 @@ def write_roi(report: dict) -> None:
         "sportsbook",
         "captured_at_tw",
         "decision",
+        "score_pick_zh",
+        "score_alignment",
+        "monte_carlo_totals_pick_zh",
+        "official_totals_pick_zh",
+        "totals_alignment",
         "matchup_zh",
         "prediction_zh",
         "moneyline",
@@ -289,6 +360,11 @@ def rebuild_roi_log() -> None:
         "game_time_utc",
         "sportsbook",
         "captured_at_tw",
+        "score_pick_zh",
+        "score_alignment",
+        "monte_carlo_totals_pick_zh",
+        "official_totals_pick_zh",
+        "totals_alignment",
         "matchup_zh",
         "prediction_zh",
         "moneyline",
@@ -321,6 +397,8 @@ def render_roi_html(rows: list[dict]) -> str:
           <td>{html.escape(str(row.get('sportsbook', '')))}</td>
           <td>{html.escape(str(row.get('matchup_zh', '')))}</td>
           <td>{html.escape(str(row.get('prediction_zh', '')))}</td>
+          <td>{html.escape(str(row.get('score_alignment', '') or '一致'))}</td>
+          <td>{html.escape(str(row.get('totals_alignment', '') or '一致'))}</td>
           <td>{row.get('moneyline', '')}</td>
           <td>{float(row.get('confidence') or 0) * 100:.1f}%</td>
           <td>{float(row.get('edge') or 0) * 100:.1f}%</td>
@@ -330,7 +408,7 @@ def render_roi_html(rows: list[dict]) -> str:
         for row in rows
     )
     if not rows:
-        body = '<tr><td colspan="10">尚未匯入真實盤口，沒有投注 ROI 紀錄。</td></tr>'
+        body = '<tr><td colspan="12">尚未匯入真實盤口，沒有投注 ROI 紀錄。</td></tr>'
     return f"""<!doctype html>
 <html lang="zh-Hant">
 <head>
@@ -354,7 +432,7 @@ def render_roi_html(rows: list[dict]) -> str:
     <h1>MLB 真實盤口投注 ROI</h1>
     <div class="meta">已結算注數：{len(final_rows)} / 勝：{len(wins)} / 損益：{pnl:.2f} / ROI：{roi:.2f}%</div>
     <table>
-      <thead><tr><th>MLB日期</th><th>台灣開賽時間</th><th>來源</th><th>對戰</th><th>預測勝方</th><th>賠率</th><th>信心</th><th>Edge</th><th>結果</th><th>PnL</th></tr></thead>
+      <thead><tr><th>MLB日期</th><th>台灣開賽時間</th><th>來源</th><th>對戰</th><th>預測勝方</th><th>勝方一致性</th><th>大小分一致性</th><th>賠率</th><th>信心</th><th>Edge</th><th>結果</th><th>PnL</th></tr></thead>
       <tbody>{body}</tbody>
     </table>
     <div class="note">此頁只使用匯入的真實盤口；台灣運彩小數賠率與美式 moneyline 皆可計算，不使用固定 -110 假設。</div>

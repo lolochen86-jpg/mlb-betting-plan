@@ -23,7 +23,20 @@ OFFICIAL_MIN_CONFIDENCE = 0.55
 OFFICIAL_MIN_EDGE = 0.02
 
 
+def model_block_reason(row: dict) -> str:
+    if row.get("decision") == "模型分歧" or row.get("score_alignment") == "模型分歧":
+        return "勝方模型與比分模型分歧"
+    if row.get("totals_alignment") == "大小分分歧":
+        return "大小分模型分歧"
+    reason = str(row.get("skip_reason", ""))
+    if reason in {"勝方模型與比分模型分歧", "大小分模型分歧"}:
+        return reason
+    return ""
+
+
 def is_official_bet(row: dict) -> bool:
+    if model_block_reason(row):
+        return False
     try:
         confidence = float(row.get("confidence") or 0)
         edge = float(row.get("edge") or 0)
@@ -41,6 +54,9 @@ def classify_ticket(report: dict) -> tuple[list[dict], list[dict], list[dict]]:
     watchlist = []
     no_market = []
     for row in report.get("bets", []):
+        blocker = model_block_reason(row)
+        if blocker:
+            row["skip_reason"] = blocker
         if is_official_bet(row):
             row["ticket_tier"] = "正式下注"
             bets.append(row)
@@ -49,7 +65,12 @@ def classify_ticket(report: dict) -> tuple[list[dict], list[dict], list[dict]]:
             watchlist.append(row)
     for row in report.get("skipped", []):
         reason = str(row.get("skip_reason", ""))
-        if "找不到真實盤口" in reason or "盤口" in reason:
+        blocker = model_block_reason(row)
+        if blocker:
+            row["skip_reason"] = blocker
+            row["ticket_tier"] = "觀察"
+            watchlist.append(row)
+        elif "找不到真實盤口" in reason or "盤口" in reason:
             row["ticket_tier"] = "建議盤口"
             no_market.append(row)
         elif row.get("sportsbook") == "台灣運彩" or row.get("moneyline"):
@@ -78,6 +99,11 @@ def write_csv(target_date: str, rows: list[dict]) -> Path:
         "captured_at_tw",
         "matchup_zh",
         "prediction_zh",
+        "score_pick_zh",
+        "score_alignment",
+        "monte_carlo_totals_pick_zh",
+        "official_totals_pick_zh",
+        "totals_alignment",
         "moneyline",
         "confidence",
         "market_implied_prob",
@@ -85,6 +111,7 @@ def write_csv(target_date: str, rows: list[dict]) -> Path:
         "unit",
         "status",
         "settlement",
+        "skip_reason",
         "ticket_tier",
     ]
     with path.open("w", encoding="utf-8", newline="") as f:
@@ -136,7 +163,7 @@ def render_html(report: dict) -> str:
     <h1>MLB 今日投注單</h1>
     <div class="meta">
       MLB日期：{html.escape(report.get('target_date', ''))}<br />
-      真實盤口列數：{summary.get('odds_rows', 0)} / 原始候選：{summary.get('bets', 0)} / 待結算：{summary.get('pending_bets', 0)}<br />
+      台灣運彩盤口列數：{summary.get('odds_rows', 0)} / 正式投注候選：{summary.get('bets', 0)} / 觀察或排除：{summary.get('skipped', 0)}<br />
       正式下注門檻：信心 >= {OFFICIAL_MIN_CONFIDENCE * 100:.0f}%、Edge >= {OFFICIAL_MIN_EDGE * 100:.0f}%、確認模型同方向、必須有台灣運彩盤口<br />
       來源：{html.escape(report.get('source_files', {}).get('odds', ''))}
     </div>
@@ -181,7 +208,7 @@ def render_bet_rows(rows: list[dict], include_reason: bool = False) -> str:
           <td>{float(row.get('market_implied_prob') or 0) * 100:.1f}%</td>
           <td>{float(row.get('edge') or 0) * 100:.1f}%</td>
           <td>{float(row.get('unit') or 0):.0f}</td>
-          <td>{html.escape(str(row.get('skip_reason') or ('待結算' if row.get('settlement') == 'pending' else row.get('settlement', ''))))}</td>
+          <td>{html.escape(str(row.get('skip_reason') or row.get('score_alignment') or row.get('totals_alignment') or ('待結算' if row.get('settlement') == 'pending' else row.get('settlement', ''))))}</td>
         </tr>"""
         for row in rows
     )

@@ -165,14 +165,15 @@ def main() -> None:
         [py, "scripts/validate_odds_file.py", "--date", target_date, "--allow-partial"],
         allow_fail=True,
     )
-    run_step("今天投注 ROI 待結算", roi_args(py, target_date, args.unit, args.min_edge, args.all_predictions))
-    run_step("產生今天投注單", [py, "scripts/generate_betting_ticket.py", "--date", target_date])
     run_step("產生今天大小分 v1", [py, "scripts/run_totals_v1.py", "--date", target_date])
     run_step("產生今天進階因子 v1", [py, "scripts/run_advanced_factors_model.py", "--date", target_date])
     run_step("產生今天逐打席模擬", [py, "scripts/generate_game_simulator.py", "--date", target_date])
     run_step("產生今天蒙地卡羅模擬", [py, "scripts/generate_monte_carlo.py", "--date", target_date, "--simulations", "10000"])
     run_step("產生台灣運彩盤口研究", [py, "scripts/generate_market_research.py", "--date", target_date])
     run_step("重建今日勝方預測比分欄位", [py, "scripts/generate_daily_plan.py", "--date", target_date])
+    run_step("今天預測重建待結算檔", [py, "scripts/settle_daily_predictions.py", "--date", target_date])
+    run_step("今天投注 ROI 待結算", roi_args(py, target_date, args.unit, args.min_edge, args.all_predictions))
+    run_step("產生今天投注單", [py, "scripts/generate_betting_ticket.py", "--date", target_date])
     run_step("產生賽後檢討", [py, "scripts/generate_postgame_review.py"])
     run_step("重建首頁", [py, "scripts/generate_plan.py"])
     run_step("重建狀態頁", [py, "scripts/generate_status_report.py"])
