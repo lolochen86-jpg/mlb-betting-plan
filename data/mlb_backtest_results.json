@@ -1,7 +1,7 @@
 {
   "backtest_period": {
     "start": "2025-03-27",
-    "end": "2026-07-05"
+    "end": "2026-07-06"
   },
   "settings": {
     "unit": 100,
@@ -13,14 +13,14 @@
   "data_source": {
     "type": "real_mlb_final_scores",
     "games_csv": "data\\real_mlb_games.csv",
-    "games_evaluated": 3780,
+    "games_evaluated": 3781,
     "actual_first_game_date": "2025-03-27",
-    "actual_last_game_date": "2026-07-05",
+    "actual_last_game_date": "2026-07-06",
     "game_types": [
       "R"
     ],
     "coverage_warning": null,
-    "generated_at": "2026-07-06T21:00:45",
+    "generated_at": "2026-07-07T00:00:49",
     "note": "Backtest uses real MLB final scores from saved MLB Stats API schedule data. Odds are still the configured fixed market assumption."
   },
   "models": {
@@ -20843,16 +20843,24 @@
               "result": "loss"
             }
           ]
+        },
+        {
+          "date": "2026-07-06",
+          "bets": 0,
+          "wins": 0,
+          "losses": 0,
+          "pnl": 0.0,
+          "bet_details": []
         }
       ]
     },
     "B-近期狀態": {
-      "total_bets": 1366,
-      "wins": 767,
+      "total_bets": 1367,
+      "wins": 768,
       "losses": 599,
-      "win_rate": 0.5615,
-      "total_pnl": 9827.97,
-      "roi_pct": 7.19,
+      "win_rate": 0.5618,
+      "total_pnl": 9918.88,
+      "roi_pct": 7.26,
       "daily_records": [
         {
           "date": "2025-03-27",
@@ -45269,16 +45277,41 @@
               "result": "win"
             }
           ]
+        },
+        {
+          "date": "2026-07-06",
+          "bets": 1,
+          "wins": 1,
+          "losses": 0,
+          "pnl": 90.91,
+          "bet_details": [
+            {
+              "game_pk": "824089",
+              "home": "Kansas City Royals",
+              "home_zh": "堪薩斯市皇家",
+              "away": "Philadelphia Phillies",
+              "away_zh": "費城費城人",
+              "home_score": 0,
+              "away_score": 0,
+              "pick": "Philadelphia Phillies",
+              "pick_zh": "費城費城人",
+              "home_probable_pitcher_zh": "諾 卡梅羅",
+              "away_probable_pitcher_zh": "史 薩",
+              "confidence": 0.65,
+              "edge": 0.1262,
+              "result": "win"
+            }
+          ]
         }
       ]
     },
     "C-ELO評分": {
-      "total_bets": 1351,
-      "wins": 789,
+      "total_bets": 1352,
+      "wins": 790,
       "losses": 562,
-      "win_rate": 0.584,
-      "total_pnl": 15527.99,
-      "roi_pct": 11.49,
+      "win_rate": 0.5843,
+      "total_pnl": 15618.9,
+      "roi_pct": 11.55,
       "daily_records": [
         {
           "date": "2025-03-27",
@@ -69458,16 +69491,41 @@
               "result": "win"
             }
           ]
+        },
+        {
+          "date": "2026-07-06",
+          "bets": 1,
+          "wins": 1,
+          "losses": 0,
+          "pnl": 90.91,
+          "bet_details": [
+            {
+              "game_pk": "824089",
+              "home": "Kansas City Royals",
+              "home_zh": "堪薩斯市皇家",
+              "away": "Philadelphia Phillies",
+              "away_zh": "費城費城人",
+              "home_score": 0,
+              "away_score": 0,
+              "pick": "Philadelphia Phillies",
+              "pick_zh": "費城費城人",
+              "home_probable_pitcher_zh": "諾 卡梅羅",
+              "away_probable_pitcher_zh": "史 薩",
+              "confidence": 0.65,
+              "edge": 0.1262,
+              "result": "win"
+            }
+          ]
         }
       ]
     },
     "D-近期失分代理": {
-      "total_bets": 1351,
-      "wins": 745,
+      "total_bets": 1352,
+      "wins": 746,
       "losses": 606,
-      "win_rate": 0.5514,
-      "total_pnl": 7127.95,
-      "roi_pct": 5.28,
+      "win_rate": 0.5518,
+      "total_pnl": 7218.86,
+      "roi_pct": 5.34,
       "daily_records": [
         {
           "date": "2025-03-27",
@@ -93644,16 +93702,41 @@
               "result": "loss"
             }
           ]
+        },
+        {
+          "date": "2026-07-06",
+          "bets": 1,
+          "wins": 1,
+          "losses": 0,
+          "pnl": 90.91,
+          "bet_details": [
+            {
+              "game_pk": "824089",
+              "home": "Kansas City Royals",
+              "home_zh": "堪薩斯市皇家",
+              "away": "Philadelphia Phillies",
+              "away_zh": "費城費城人",
+              "home_score": 0,
+              "away_score": 0,
+              "pick": "Philadelphia Phillies",
+              "pick_zh": "費城費城人",
+              "home_probable_pitcher_zh": "諾 卡梅羅",
+              "away_probable_pitcher_zh": "史 薩",
+              "confidence": 0.58,
+              "edge": 0.0562,
+              "result": "win"
+            }
+          ]
         }
       ]
     },
     "E-對照組(Ensemble)": {
-      "total_bets": 1321,
-      "wins": 770,
+      "total_bets": 1322,
+      "wins": 771,
       "losses": 551,
-      "win_rate": 0.5829,
-      "total_pnl": 14900.7,
-      "roi_pct": 11.28,
+      "win_rate": 0.5832,
+      "total_pnl": 14991.61,
+      "roi_pct": 11.34,
       "daily_records": [
         {
           "date": "2025-03-27",
@@ -117350,6 +117433,31 @@
               "away_probable_pitcher_zh": "艾 佩雷",
               "confidence": 0.5715,
               "edge": 0.0476,
+              "result": "win"
+            }
+          ]
+        },
+        {
+          "date": "2026-07-06",
+          "bets": 1,
+          "wins": 1,
+          "losses": 0,
+          "pnl": 90.91,
+          "bet_details": [
+            {
+              "game_pk": "824089",
+              "home": "Kansas City Royals",
+              "home_zh": "堪薩斯市皇家",
+              "away": "Philadelphia Phillies",
+              "away_zh": "費城費城人",
+              "home_score": 0,
+              "away_score": 0,
+              "pick": "Philadelphia Phillies",
+              "pick_zh": "費城費城人",
+              "home_probable_pitcher_zh": "諾 卡梅羅",
+              "away_probable_pitcher_zh": "史 薩",
+              "confidence": 0.5916,
+              "edge": 0.0678,
               "result": "win"
             }
           ]

@@ -1,21 +1,21 @@
 {
-  "generated_at": "2026-07-06T21:00:45",
+  "generated_at": "2026-07-07T00:00:48",
   "backtest_period": {
     "start": "2025-03-27",
-    "end": "2026-07-05"
+    "end": "2026-07-06"
   },
   "data_source": {
     "type": "real_mlb_final_scores",
     "games_csv": "data\\real_mlb_games.csv",
-    "games_evaluated": 3780,
+    "games_evaluated": 3781,
     "note": "Pure winner-prediction accuracy only. Odds, edge, stake, and ROI are intentionally excluded."
   },
   "models": {
     "A-畢氏勝率": {
-      "predictions": 3701,
-      "correct": 2002,
+      "predictions": 3702,
+      "correct": 2003,
       "wrong": 1699,
-      "accuracy_pct": 54.09,
+      "accuracy_pct": 54.11,
       "monthly": [
         {
           "month": "2025-04",
@@ -79,9 +79,9 @@
         },
         {
           "month": "2026-07",
-          "predictions": 66,
-          "correct": 32,
-          "accuracy_pct": 48.48
+          "predictions": 67,
+          "correct": 33,
+          "accuracy_pct": 49.25
         }
       ],
       "prediction_details": [
@@ -63001,14 +63001,31 @@
           "correct": true,
           "away_probable_pitcher_zh": "布蘭登 斯普爾歐阿特",
           "home_probable_pitcher_zh": "愛德華多 羅"
+        },
+        {
+          "game_pk": "824089",
+          "date": "2026-07-06",
+          "matchup_zh": "費城費城人 @ 堪薩斯市皇家",
+          "away_zh": "費城費城人",
+          "home_zh": "堪薩斯市皇家",
+          "away_score": 0,
+          "home_score": 0,
+          "pick_zh": "費城費城人",
+          "pick_side": "away",
+          "actual_winner_zh": "費城費城人",
+          "confidence": 0.5224,
+          "home_win_probability": 0.4776,
+          "correct": true,
+          "away_probable_pitcher_zh": "史 薩",
+          "home_probable_pitcher_zh": "諾 卡梅羅"
         }
       ]
     },
     "B-近期狀態": {
-      "predictions": 3701,
-      "correct": 1980,
+      "predictions": 3702,
+      "correct": 1981,
       "wrong": 1721,
-      "accuracy_pct": 53.5,
+      "accuracy_pct": 53.51,
       "monthly": [
         {
           "month": "2025-04",
@@ -63072,9 +63089,9 @@
         },
         {
           "month": "2026-07",
-          "predictions": 66,
-          "correct": 34,
-          "accuracy_pct": 51.52
+          "predictions": 67,
+          "correct": 35,
+          "accuracy_pct": 52.24
         }
       ],
       "prediction_details": [
@@ -125994,14 +126011,31 @@
           "correct": true,
           "away_probable_pitcher_zh": "布蘭登 斯普爾歐阿特",
           "home_probable_pitcher_zh": "愛德華多 羅"
+        },
+        {
+          "game_pk": "824089",
+          "date": "2026-07-06",
+          "matchup_zh": "費城費城人 @ 堪薩斯市皇家",
+          "away_zh": "費城費城人",
+          "home_zh": "堪薩斯市皇家",
+          "away_score": 0,
+          "home_score": 0,
+          "pick_zh": "費城費城人",
+          "pick_side": "away",
+          "actual_winner_zh": "費城費城人",
+          "confidence": 0.65,
+          "home_win_probability": 0.35,
+          "correct": true,
+          "away_probable_pitcher_zh": "史 薩",
+          "home_probable_pitcher_zh": "諾 卡梅羅"
         }
       ]
     },
     "C-ELO評分": {
-      "predictions": 3780,
-      "correct": 2028,
+      "predictions": 3781,
+      "correct": 2029,
       "wrong": 1752,
-      "accuracy_pct": 53.65,
+      "accuracy_pct": 53.66,
       "monthly": [
         {
           "month": "2025-03",
@@ -126071,9 +126105,9 @@
         },
         {
           "month": "2026-07",
-          "predictions": 66,
-          "correct": 33,
-          "accuracy_pct": 50.0
+          "predictions": 67,
+          "correct": 34,
+          "accuracy_pct": 50.75
         }
       ],
       "prediction_details": [
@@ -190336,14 +190370,31 @@
           "correct": true,
           "away_probable_pitcher_zh": "布蘭登 斯普爾歐阿特",
           "home_probable_pitcher_zh": "愛德華多 羅"
+        },
+        {
+          "game_pk": "824089",
+          "date": "2026-07-06",
+          "matchup_zh": "費城費城人 @ 堪薩斯市皇家",
+          "away_zh": "費城費城人",
+          "home_zh": "堪薩斯市皇家",
+          "away_score": 0,
+          "home_score": 0,
+          "pick_zh": "費城費城人",
+          "pick_side": "away",
+          "actual_winner_zh": "費城費城人",
+          "confidence": 0.65,
+          "home_win_probability": 0.35,
+          "correct": true,
+          "away_probable_pitcher_zh": "史 薩",
+          "home_probable_pitcher_zh": "諾 卡梅羅"
         }
       ]
     },
     "D-近期失分代理": {
-      "predictions": 3701,
-      "correct": 1927,
+      "predictions": 3702,
+      "correct": 1928,
       "wrong": 1774,
-      "accuracy_pct": 52.07,
+      "accuracy_pct": 52.08,
       "monthly": [
         {
           "month": "2025-04",
@@ -190407,9 +190458,9 @@
         },
         {
           "month": "2026-07",
-          "predictions": 66,
-          "correct": 26,
-          "accuracy_pct": 39.39
+          "predictions": 67,
+          "correct": 27,
+          "accuracy_pct": 40.3
         }
       ],
       "prediction_details": [
@@ -253329,14 +253380,31 @@
           "correct": true,
           "away_probable_pitcher_zh": "布蘭登 斯普爾歐阿特",
           "home_probable_pitcher_zh": "愛德華多 羅"
+        },
+        {
+          "game_pk": "824089",
+          "date": "2026-07-06",
+          "matchup_zh": "費城費城人 @ 堪薩斯市皇家",
+          "away_zh": "費城費城人",
+          "home_zh": "堪薩斯市皇家",
+          "away_score": 0,
+          "home_score": 0,
+          "pick_zh": "費城費城人",
+          "pick_side": "away",
+          "actual_winner_zh": "費城費城人",
+          "confidence": 0.58,
+          "home_win_probability": 0.42,
+          "correct": true,
+          "away_probable_pitcher_zh": "史 薩",
+          "home_probable_pitcher_zh": "諾 卡梅羅"
         }
       ]
     },
     "E-對照組(Ensemble)": {
-      "predictions": 3780,
-      "correct": 2015,
+      "predictions": 3781,
+      "correct": 2016,
       "wrong": 1765,
-      "accuracy_pct": 53.31,
+      "accuracy_pct": 53.32,
       "monthly": [
         {
           "month": "2025-03",
@@ -253406,9 +253474,9 @@
         },
         {
           "month": "2026-07",
-          "predictions": 66,
-          "correct": 32,
-          "accuracy_pct": 48.48
+          "predictions": 67,
+          "correct": 33,
+          "accuracy_pct": 49.25
         }
       ],
       "prediction_details": [
@@ -317671,6 +317739,23 @@
           "correct": true,
           "away_probable_pitcher_zh": "布蘭登 斯普爾歐阿特",
           "home_probable_pitcher_zh": "愛德華多 羅"
+        },
+        {
+          "game_pk": "824089",
+          "date": "2026-07-06",
+          "matchup_zh": "費城費城人 @ 堪薩斯市皇家",
+          "away_zh": "費城費城人",
+          "home_zh": "堪薩斯市皇家",
+          "away_score": 0,
+          "home_score": 0,
+          "pick_zh": "費城費城人",
+          "pick_side": "away",
+          "actual_winner_zh": "費城費城人",
+          "confidence": 0.6039,
+          "home_win_probability": 0.3961,
+          "correct": true,
+          "away_probable_pitcher_zh": "史 薩",
+          "home_probable_pitcher_zh": "諾 卡梅羅"
         }
       ]
     }
