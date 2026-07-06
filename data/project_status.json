@@ -1,15 +1,15 @@
 {
-  "generated_at": "2026-07-06T05:32:08",
+  "generated_at": "2026-07-06T13:55:04",
   "history": {
-    "games_written": 3770,
+    "games_written": 3780,
     "actual_first_game_date": "2025-03-27",
     "actual_last_game_date": "2026-07-05"
   },
   "accuracy": {
     "best_model": "A-畢氏勝率",
-    "predictions": 3691,
-    "correct": 1995,
-    "accuracy_pct": 54.05
+    "predictions": 3701,
+    "correct": 2002,
+    "accuracy_pct": 54.09
   },
   "daily": {
     "target_date": "2026-07-06",
@@ -90,9 +90,9 @@
     {
       "date": "2026-07-05",
       "predictions": 15,
-      "final_games": 0,
-      "pending_games": 15,
-      "accuracy_pct": 0
+      "final_games": 15,
+      "pending_games": 0,
+      "accuracy_pct": 46.67
     },
     {
       "date": "2026-07-06",
@@ -182,15 +182,8 @@
     {
       "date": "2026-07-06",
       "rows": 8,
-      "filled": 2,
-      "missing": [
-        "休士頓太空人 @ 華盛頓國民 (Scheduled)",
-        "紐約洋基 @ 坦帕灣光芒 (Scheduled)",
-        "密爾瓦基釀酒人 @ 聖路易紅雀 (Scheduled)",
-        "多倫多藍鳥 @ 舊金山巨人 (Scheduled)",
-        "亞利桑那響尾蛇 @ 聖地牙哥教士 (Scheduled)",
-        "科羅拉多洛磯 @ 洛杉磯道奇 (Scheduled)"
-      ]
+      "filled": 8,
+      "missing": []
     }
   ],
   "roi": [
@@ -292,9 +285,9 @@
     }
   ],
   "auto_runner": {
-    "mode": "success",
+    "mode": "running",
     "target_date": "2026-07-06",
-    "last_started_at_tw": "2026-07-06T00:00:03+08:00",
+    "last_started_at_tw": "2026-07-06T13:50:02+08:00",
     "last_finished_at_tw": "2026-07-06T00:06:09+08:00",
     "last_return_code": 0,
     "log": "C:\\Users\\I5-10400F\\Documents\\投注計畫\\logs\\auto_runner\\2026-07-06.workflow.log",
@@ -315,15 +308,8 @@
   "system_completion_pct": 100,
   "external_waiting_items": [
     "2026-06-25 尚有 1 場比賽未結算",
-    "2026-07-05 尚有 15 場比賽未結算",
     "2026-07-06 尚有 8 場比賽未結算",
-    "2026-06-25 亞利桑那響尾蛇 @ 聖路易紅雀 (Postponed) 尚未取得真實盤口",
-    "2026-07-06 休士頓太空人 @ 華盛頓國民 (Scheduled) 尚未開打或來源尚未開盤",
-    "2026-07-06 紐約洋基 @ 坦帕灣光芒 (Scheduled) 尚未開打或來源尚未開盤",
-    "2026-07-06 密爾瓦基釀酒人 @ 聖路易紅雀 (Scheduled) 尚未開打或來源尚未開盤",
-    "2026-07-06 多倫多藍鳥 @ 舊金山巨人 (Scheduled) 尚未開打或來源尚未開盤",
-    "2026-07-06 亞利桑那響尾蛇 @ 聖地牙哥教士 (Scheduled) 尚未開打或來源尚未開盤",
-    "2026-07-06 科羅拉多洛磯 @ 洛杉磯道奇 (Scheduled) 尚未開打或來源尚未開盤"
+    "2026-06-25 亞利桑那響尾蛇 @ 聖路易紅雀 (Postponed) 尚未取得真實盤口"
   ],
   "project_state": "系統完成，等待外部賽果/盤口"
 }
