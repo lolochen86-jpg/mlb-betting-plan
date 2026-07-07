@@ -109,6 +109,9 @@ def daily_prediction_index(target_date: str) -> dict[str, dict]:
             "predicted_home_score": row.get("predicted_home_score", ""),
             "predicted_total": row.get("predicted_total", ""),
             "score_prediction_zh": row.get("score_prediction_zh", ""),
+            "score_pick_zh": row.get("score_pick_zh", ""),
+            "score_alignment": row.get("score_alignment", ""),
+            "totals_alignment": row.get("totals_alignment", ""),
         }
         for row in rows
         if str(row.get("game_pk", ""))
@@ -137,6 +140,21 @@ def format_score_prediction(row: dict, daily_row: dict | None) -> str:
     return f"{away_score} : {home_score}"
 
 
+def total_side_from_values(total: object, line: object) -> str:
+    if total in (None, "") or line in (None, ""):
+        return ""
+    try:
+        total_float = float(total)
+        line_float = float(line)
+    except Exception:
+        return ""
+    if total_float > line_float:
+        return "over"
+    if total_float < line_float:
+        return "under"
+    return "push"
+
+
 def review_game(row: dict, total_row: dict | None, roi_row: dict | None, daily_row: dict | None = None) -> dict:
     away_score, home_score, actual_total = parse_score(row.get("score", ""))
     is_final = row.get("is_final") is True or str(row.get("is_final")).lower() == "true"
@@ -158,6 +176,29 @@ def review_game(row: dict, total_row: dict | None, roi_row: dict | None, daily_r
     predicted_away_score = (daily_row or row).get("predicted_away_score", "")
     predicted_home_score = (daily_row or row).get("predicted_home_score", "")
     predicted_score_total = (daily_row or row).get("predicted_total", "")
+    score_pick_zh = (daily_row or {}).get("score_pick_zh", "")
+    score_alignment = (daily_row or {}).get("score_alignment", "")
+    totals_alignment = (daily_row or {}).get("totals_alignment", "")
+    score_total_side = total_side_from_values(predicted_score_total, total_line)
+    total_gap = None
+    if predicted_total is not None and predicted_score_total not in (None, ""):
+        try:
+            total_gap = round(abs(predicted_total - float(predicted_score_total)), 2)
+        except Exception:
+            total_gap = None
+    consistency = []
+    if score_alignment == "模型分歧":
+        consistency.append("勝方分歧")
+    elif score_alignment == "一致":
+        consistency.append("勝方一致")
+    elif score_alignment:
+        consistency.append(score_alignment)
+    if score_total_side and total_pick and score_total_side != "push" and total_pick != "push":
+        consistency.append("大小分一致" if score_total_side == total_pick else "大小分分歧")
+    elif totals_alignment:
+        consistency.append(totals_alignment)
+    if total_gap is not None and total_gap >= 1.5:
+        consistency.append(f"總分差 {total_gap:g}")
     notes = []
     confidence = float(row.get("confidence") or 0)
     if winner_correct is True and confidence >= 0.55:
@@ -202,6 +243,12 @@ def review_game(row: dict, total_row: dict | None, roi_row: dict | None, daily_r
         "predicted_away_score": predicted_away_score,
         "predicted_home_score": predicted_home_score,
         "predicted_score_total": predicted_score_total,
+        "score_pick_zh": score_pick_zh,
+        "score_alignment": score_alignment,
+        "score_total_side": score_total_side,
+        "total_gap": total_gap,
+        "totals_alignment": totals_alignment,
+        "model_consistency": consistency,
         "score": row.get("score", ""),
         "actual_winner_zh": row.get("actual_winner_zh", ""),
         "winner_correct": winner_correct,
@@ -312,14 +359,19 @@ def render_summary_cards(day: dict) -> str:
 def render_game_rows(games: list[dict]) -> str:
     rows = []
     for game in games:
+        consistency_html = "".join(
+            f'<span class="pill {consistency_class(item)}">{html.escape(item)}</span>'
+            for item in game.get("model_consistency", [])
+        ) or '<span class="pill wait">待資料</span>'
         rows.append(
             f"""
             <tr>
               <td>{html.escape(game.get('game_time_tw') or '未公布')}</td>
               <td>{html.escape(game['matchup_zh'])}<span>GamePk {game['game_pk']}</span></td>
               <td>{html.escape(game['prediction_zh'])}<span>{game['confidence'] * 100:.1f}%</span></td>
-              <td>{html.escape(game.get('predicted_score_zh') or '-')}<span>比分模型總分 {html.escape(fmt_number(game.get('predicted_score_total')))}</span></td>
+              <td>{html.escape(game.get('predicted_score_zh') or '-')}<span>比分勝方 {html.escape(game.get('score_pick_zh') or '-')} / 總分 {html.escape(fmt_number(game.get('predicted_score_total')))}</span></td>
               <td>{html.escape(fmt_number(game.get('predicted_total')))}<span>盤口 {html.escape(fmt_number(game.get('total_line')))} / {side_zh(game['total_pick'])}</span></td>
+              <td>{consistency_html}</td>
               <td>{game['score'] or '-'}</td>
               <td>{html.escape(game['actual_winner_zh'] or '-')}</td>
               <td><span class="badge {'ok' if game['winner_correct'] is True else 'bad' if game['winner_correct'] is False else 'wait'}">{result_zh(game['winner_correct'])}</span></td>
@@ -328,6 +380,14 @@ def render_game_rows(games: list[dict]) -> str:
             </tr>"""
         )
     return "\n".join(rows)
+
+
+def consistency_class(item: str) -> str:
+    if "分歧" in item or "差" in item:
+        return "bad"
+    if "一致" in item:
+        return "ok"
+    return "wait"
 
 
 def render_html(report: dict) -> str:
@@ -353,7 +413,7 @@ def render_html(report: dict) -> str:
               </div>
               <div class="table-wrap">
                 <table>
-                  <thead><tr><th>台灣開賽時間</th><th>對戰</th><th>賽前勝方</th><th>勝方比分模型</th><th>大小分模型</th><th>實際比分</th><th>實際勝方</th><th>勝方</th><th>大小分結果</th><th>檢討重點</th></tr></thead>
+                  <thead><tr><th>台灣開賽時間</th><th>對戰</th><th>賽前勝方</th><th>勝方比分模型</th><th>大小分模型</th><th>模型搭配</th><th>實際比分</th><th>實際勝方</th><th>勝方</th><th>大小分結果</th><th>檢討重點</th></tr></thead>
                   <tbody>{render_game_rows(day['games'])}</tbody>
                 </table>
               </div>
@@ -397,6 +457,8 @@ def render_html(report: dict) -> str:
     tr:last-child td {{ border-bottom:0; }}
     .badge {{ display:inline-flex; border-radius:999px; padding:4px 9px; font-size:12px; font-weight:900; margin:0; }}
     .badge.ok {{ color:#126048; background:#dff2ea; }} .badge.bad {{ color:#9b2f29; background:#f9dddd; }} .badge.wait {{ color:#7a4b12; background:#fff2d6; }}
+    .pill {{ display:inline-flex; width:max-content; border-radius:999px; padding:3px 8px; font-size:12px; font-weight:900; margin:0 4px 4px 0; }}
+    .pill.ok {{ color:#126048; background:#dff2ea; }} .pill.bad {{ color:#9b2f29; background:#f9dddd; }} .pill.wait {{ color:#7a4b12; background:#fff2d6; }}
     @media(max-width:900px) {{ .hero,.day-head {{ display:block; }} .kpis,.discussion {{ grid-template-columns:1fr; }} main {{ padding:18px 12px 34px; }} }}
   </style>
 </head>
@@ -405,7 +467,7 @@ def render_html(report: dict) -> str:
   <section class="hero">
     <div>
       <h1>MLB 賽後檢討</h1>
-      <p>把當天賽前預測和賽後結果放在同一張表；勝方比分模型與大小分模型分開顯示，避免把兩套模型的總分混在一起。</p>
+      <p>把當天賽前預測和賽後結果放在同一張表；勝方主模型、比分模型、大小分模型分開顯示，並直接標出模型是否搭得起來。</p>
     </div>
     <p>最新MLB賽事日：{latest_date}<br />產生時間：{report['generated_at']}</p>
   </section>
