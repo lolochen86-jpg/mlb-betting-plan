@@ -131,6 +131,9 @@ def settlement_index(settlement: dict) -> dict[str, dict]:
 
 def model_block_reason(prediction: dict) -> str:
     """Return a hard-stop reason when upstream models disagree."""
+    unified_decision = str(prediction.get("unified_decision") or "")
+    if unified_decision and unified_decision != "整合推薦":
+        return f"整合方向未統一：{unified_decision}"
     if prediction.get("decision") == "模型分歧" or prediction.get("score_alignment") == "模型分歧":
         return "勝方模型與比分模型分歧"
     if prediction.get("totals_alignment") == "大小分分歧":
@@ -240,6 +243,8 @@ def make_roi(
                 "sportsbook": odds.get("sportsbook", ""),
                 "captured_at_tw": odds.get("captured_at_tw", ""),
                 "decision": pred.get("decision", ""),
+                "unified_decision": pred.get("unified_decision", ""),
+                "unified_direction": pred.get("unified_direction", ""),
                 "score_pick_zh": pred.get("score_pick_zh", ""),
                 "score_alignment": pred.get("score_alignment", ""),
                 "monte_carlo_totals_pick_zh": pred.get("monte_carlo_totals_pick_zh", ""),
@@ -312,6 +317,8 @@ def write_roi(report: dict) -> None:
         "sportsbook",
         "captured_at_tw",
         "decision",
+        "unified_decision",
+        "unified_direction",
         "score_pick_zh",
         "score_alignment",
         "monte_carlo_totals_pick_zh",
@@ -360,6 +367,8 @@ def rebuild_roi_log() -> None:
         "game_time_utc",
         "sportsbook",
         "captured_at_tw",
+        "unified_decision",
+        "unified_direction",
         "score_pick_zh",
         "score_alignment",
         "monte_carlo_totals_pick_zh",

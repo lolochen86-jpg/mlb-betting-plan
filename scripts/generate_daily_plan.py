@@ -240,6 +240,21 @@ def annotate_score_alignment(rows: list[dict]) -> None:
             row["decision"] = "模型分歧"
 
 
+def score_total_pick(total: object, line: object) -> str:
+    if total in (None, "") or line in (None, ""):
+        return ""
+    try:
+        total_value = float(total)
+        line_value = float(line)
+    except Exception:
+        return ""
+    if total_value > line_value:
+        return "大分"
+    if total_value < line_value:
+        return "小分"
+    return "平盤"
+
+
 def annotate_totals_alignment(rows: list[dict], target_date: str) -> None:
     totals_index = load_totals_prediction_index(target_date)
     for row in rows:
@@ -257,6 +272,7 @@ def annotate_totals_alignment(rows: list[dict], target_date: str) -> None:
         row["official_totals_predicted"] = official_predicted
         row["official_totals_prob"] = official_prob if official_prob else None
         row["official_totals_edge"] = official_edge if official_edge else None
+        row["score_totals_pick_zh"] = score_total_pick(monte_total, official_line)
 
         if not official_pick or official_line in (None, ""):
             row["totals_alignment"] = "無台灣運彩大小分盤口"
@@ -268,6 +284,33 @@ def annotate_totals_alignment(rows: list[dict], target_date: str) -> None:
             row["totals_alignment"] = "大小分信心不足"
         else:
             row["totals_alignment"] = "大小分一致"
+
+
+def annotate_unified_direction(rows: list[dict]) -> None:
+    for row in rows:
+        winner_ok = (
+            row.get("decision") != "模型分歧"
+            and row.get("score_alignment") == "一致"
+            and bool(row.get("confirmation_same_direction"))
+        )
+        totals_ok = (
+            row.get("official_totals_pick_zh") in {"大分", "小分"}
+            and row.get("totals_alignment") == "大小分一致"
+            and row.get("score_totals_pick_zh") == row.get("official_totals_pick_zh")
+        )
+        row["unified_winner_zh"] = row.get("prediction_zh", "") if winner_ok else "不推薦勝方"
+        row["unified_totals_pick_zh"] = row.get("official_totals_pick_zh", "") if totals_ok else "不推薦大小分"
+        if winner_ok and totals_ok:
+            row["unified_direction"] = f"{row['unified_winner_zh']} / {row['unified_totals_pick_zh']}"
+            row["unified_decision"] = "整合推薦"
+        else:
+            row["unified_direction"] = "不推薦"
+            if not winner_ok and not totals_ok:
+                row["unified_decision"] = "勝方與大小分未統一"
+            elif not winner_ok:
+                row["unified_decision"] = "勝方未統一"
+            else:
+                row["unified_decision"] = "大小分未統一"
 
 
 def is_removed_pending_status(status: str) -> bool:
@@ -386,8 +429,9 @@ def build_daily_plan(target_date: str, games_csv: Path, min_confidence: float) -
     merge_score_predictions(candidates, target_date)
     annotate_score_alignment(candidates)
     annotate_totals_alignment(candidates, target_date)
+    annotate_unified_direction(candidates)
     candidates.sort(key=lambda row: (row["decision"] == "高信心預測", row["confidence"]), reverse=True)
-    recommendations = [row for row in candidates if row["decision"] == "高信心預測"]
+    recommendations = [row for row in candidates if row["decision"] == "高信心預測" and row["unified_decision"] == "整合推薦"]
     watchlist = [row for row in candidates if row not in recommendations]
     last_training_date = history[-1]["date"] if history else None
     expected_training_cutoff = (date.fromisoformat(target_date) - timedelta(days=1)).isoformat()
@@ -444,6 +488,10 @@ def write_outputs(plan: dict) -> None:
         "away_probable_pitcher_zh",
         "home_probable_pitcher_zh",
         "prediction_zh",
+        "unified_decision",
+        "unified_direction",
+        "unified_winner_zh",
+        "unified_totals_pick_zh",
         "confidence",
         "confirmation_pick_zh",
         "confirmation_same_direction",
@@ -458,6 +506,7 @@ def write_outputs(plan: dict) -> None:
         "official_totals_pick_zh",
         "official_totals_line",
         "official_totals_predicted",
+        "score_totals_pick_zh",
         "totals_alignment",
         "status",
     ]
@@ -474,7 +523,7 @@ def write_outputs(plan: dict) -> None:
 
 def render_rows(rows: list[dict]) -> str:
     if not rows:
-        return '<tr><td colspan="14">目前沒有符合條件的預測。</td></tr>'
+        return '<tr><td colspan="15">目前沒有符合條件的預測。</td></tr>'
     parts = []
     for row in rows:
         parts.append(
@@ -485,12 +534,13 @@ def render_rows(rows: list[dict]) -> str:
               <td>{row['matchup_zh']}</td>
               <td>{row['away_probable_pitcher_zh']} / {row['home_probable_pitcher_zh']}</td>
               <td>{row['prediction_zh']}</td>
+              <td>{row.get('unified_direction', '-')}<span>{row.get('unified_decision', '-')}</span></td>
               <td>{row.get('score_prediction_zh', '-')}</td>
               <td>{row.get('total_prediction_zh', '-')}</td>
               <td>{row.get('score_pick_zh', '-')}</td>
               <td>{row.get('score_alignment', '-')}</td>
               <td>{row.get('monte_carlo_totals_pick_zh', '-')}</td>
-              <td>{row.get('official_totals_pick_zh', '-')} {row.get('official_totals_line') or ''}</td>
+              <td>{row.get('official_totals_pick_zh', '-')} {row.get('official_totals_line') or ''}<span>比分總分方向 {row.get('score_totals_pick_zh', '-') or '-'}</span></td>
               <td>{row.get('totals_alignment', '-')}</td>
               <td>{row['confidence'] * 100:.1f}%</td>
               <td>{row['confirmation_pick_zh']}</td>
@@ -501,7 +551,7 @@ def render_rows(rows: list[dict]) -> str:
 
 def render_schedule_rows(rows: list[dict]) -> str:
     if not rows:
-        return '<tr><td colspan="16">目前沒有賽程資料。</td></tr>'
+        return '<tr><td colspan="17">目前沒有賽程資料。</td></tr>'
     parts = []
     for row in rows:
         parts.append(
@@ -513,12 +563,13 @@ def render_schedule_rows(rows: list[dict]) -> str:
               <td>{row['matchup_zh']}</td>
               <td>{row['away_probable_pitcher_zh']} / {row['home_probable_pitcher_zh']}</td>
               <td>{row['prediction_zh']}</td>
+              <td>{row.get('unified_direction', '-')}<span>{row.get('unified_decision', '-')}</span></td>
               <td>{row.get('score_prediction_zh', '-')}</td>
               <td>{row.get('total_prediction_zh', '-')}</td>
               <td>{row.get('score_pick_zh', '-')}</td>
               <td>{row.get('score_alignment', '-')}</td>
               <td>{row.get('monte_carlo_totals_pick_zh', '-')}</td>
-              <td>{row.get('official_totals_pick_zh', '-')} {row.get('official_totals_line') or ''}</td>
+              <td>{row.get('official_totals_pick_zh', '-')} {row.get('official_totals_line') or ''}<span>比分總分方向 {row.get('score_totals_pick_zh', '-') or '-'}</span></td>
               <td>{row.get('totals_alignment', '-')}</td>
               <td>{row['confidence'] * 100:.1f}%</td>
               <td>{row['confirmation_pick_zh']}</td>
@@ -611,18 +662,18 @@ def render_html(plan: dict) -> str:
       <button class="sort-btn" id="sortTime" type="button">比賽時間</button>
     </div>
     <table>
-      <thead><tr><th>GamePk</th><th>台灣開賽時間</th><th>狀態</th><th>對戰</th><th>先發投手</th><th>模型預測</th><th>預測比分</th><th>預測總分</th><th>比分模型</th><th>勝方一致性</th><th>蒙地卡羅大小</th><th>台灣運彩大小</th><th>大小分一致性</th><th>信心</th><th>確認模型</th><th>分類</th></tr></thead>
+      <thead><tr><th>GamePk</th><th>台灣開賽時間</th><th>狀態</th><th>對戰</th><th>先發投手</th><th>模型預測</th><th>整合方向</th><th>預測比分</th><th>預測總分</th><th>比分模型</th><th>勝方一致性</th><th>蒙地卡羅大小</th><th>台灣運彩大小</th><th>大小分一致性</th><th>信心</th><th>確認模型</th><th>分類</th></tr></thead>
       <tbody id="scheduleRows">{schedule_rows_recommendation}</tbody>
     </table>
     <div class="warning">投注單請看 <a href="betting_ticket.html">今日投注單</a>。該頁只列入真實盤口與 edge 條件通過的場次。</div>
     <h2>高信心預測</h2>
     <table>
-      <thead><tr><th>決策</th><th>台灣開賽時間</th><th>對戰</th><th>先發投手</th><th>預測勝方</th><th>預測比分</th><th>預測總分</th><th>比分模型</th><th>勝方一致性</th><th>蒙地卡羅大小</th><th>台灣運彩大小</th><th>大小分一致性</th><th>信心</th><th>確認模型</th></tr></thead>
+      <thead><tr><th>決策</th><th>台灣開賽時間</th><th>對戰</th><th>先發投手</th><th>預測勝方</th><th>整合方向</th><th>預測比分</th><th>預測總分</th><th>比分模型</th><th>勝方一致性</th><th>蒙地卡羅大小</th><th>台灣運彩大小</th><th>大小分一致性</th><th>信心</th><th>確認模型</th></tr></thead>
       <tbody>{rec_rows}</tbody>
     </table>
     <h2>一般預測</h2>
     <table>
-      <thead><tr><th>決策</th><th>台灣開賽時間</th><th>對戰</th><th>先發投手</th><th>預測勝方</th><th>預測比分</th><th>預測總分</th><th>比分模型</th><th>勝方一致性</th><th>蒙地卡羅大小</th><th>台灣運彩大小</th><th>大小分一致性</th><th>信心</th><th>確認模型</th></tr></thead>
+      <thead><tr><th>決策</th><th>台灣開賽時間</th><th>對戰</th><th>先發投手</th><th>預測勝方</th><th>整合方向</th><th>預測比分</th><th>預測總分</th><th>比分模型</th><th>勝方一致性</th><th>蒙地卡羅大小</th><th>台灣運彩大小</th><th>大小分一致性</th><th>信心</th><th>確認模型</th></tr></thead>
       <tbody>{watch_rows}</tbody>
     </table>
     <div class="warning">比分預測取自蒙地卡羅 10,000 次單場模擬平均值；完整模擬分布請看 <a href="monte_carlo.html">蒙地卡羅模擬</a>。投注單請看 <a href="betting_ticket.html">今日投注單</a>。該頁只列入真實盤口與 edge 條件通過的場次。</div>

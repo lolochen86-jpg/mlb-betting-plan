@@ -24,6 +24,9 @@ OFFICIAL_MIN_EDGE = 0.02
 
 
 def model_block_reason(row: dict) -> str:
+    unified_decision = str(row.get("unified_decision") or "")
+    if unified_decision and unified_decision != "整合推薦":
+        return f"整合方向未統一：{unified_decision}"
     if row.get("decision") == "模型分歧" or row.get("score_alignment") == "模型分歧":
         return "勝方模型與比分模型分歧"
     if row.get("totals_alignment") == "大小分分歧":
@@ -99,6 +102,8 @@ def write_csv(target_date: str, rows: list[dict]) -> Path:
         "captured_at_tw",
         "matchup_zh",
         "prediction_zh",
+        "unified_decision",
+        "unified_direction",
         "score_pick_zh",
         "score_alignment",
         "monte_carlo_totals_pick_zh",
