@@ -369,6 +369,10 @@ def load_pending_settlements(target_date: str) -> list[dict]:
             totals_row = totals_cache[item["date"]].get(game_pk, {})
             item["score_prediction_zh"] = pending_score_text(daily_row)
             item["totals_prediction_zh"] = pending_totals_text(item, daily_row, totals_row)
+            item["unified_direction"] = daily_row.get("unified_direction", "不推薦")
+            item["unified_decision"] = daily_row.get("unified_decision", "尚無整合方向")
+            item["score_alignment"] = daily_row.get("score_alignment", "")
+            item["totals_alignment"] = daily_row.get("totals_alignment", "")
             pending.append(item)
     pending.sort(
         key=lambda row: (
@@ -581,7 +585,7 @@ def render_schedule_rows(rows: list[dict]) -> str:
 
 def render_pending_rows(rows: list[dict]) -> str:
     if not rows:
-        return '<tr><td colspan="11">目前沒有符合條件的預測。</td></tr>'
+        return '<tr><td colspan="11">目前沒有未結算預測。</td></tr>'
     parts = []
     for row in rows:
         confidence = float(row.get("confidence") or 0) * 100
@@ -593,8 +597,10 @@ def render_pending_rows(rows: list[dict]) -> str:
               <td>{html.escape(str(row.get('status', '待結算')))}</td>
               <td>{html.escape(str(row.get('matchup_zh', '')))}</td>
               <td>{html.escape(str(row.get('prediction_zh', '')))}</td>
+              <td>{html.escape(str(row.get('unified_direction', '不推薦')))}<span>{html.escape(str(row.get('unified_decision', '尚無整合方向')))}</span></td>
               <td>{html.escape(str(row.get('score_prediction_zh', '尚無雙方得分預測')))}</td>
               <td>{html.escape(str(row.get('totals_prediction_zh', '尚無大小分預測')))}</td>
+              <td>{html.escape(str(row.get('score_alignment') or '-'))} / {html.escape(str(row.get('totals_alignment') or '-'))}</td>
               <td>{confidence:.1f}%</td>
               <td>待結算</td>
             </tr>"""
@@ -650,9 +656,9 @@ def render_html(plan: dict) -> str:
       {freshness_note}
     </div>
     {f'<div class="warning">{warning}</div>' if warning else ''}
-    <h2>未結算預測追蹤</h2>
+    <h2>今日與之前未結算預測追蹤</h2>
     <table>
-      <thead><tr><th>MLB日期</th><th>台灣開賽時間</th><th>狀態</th><th>對戰</th><th>預測勝方</th><th>預測比分</th><th>大小分預測</th><th>信心</th><th>結算</th></tr></thead>
+      <thead><tr><th>MLB日期</th><th>台灣開賽時間</th><th>狀態</th><th>對戰</th><th>預測勝方</th><th>整合方向</th><th>預測比分</th><th>大小分預測</th><th>模型搭配</th><th>信心</th><th>結算</th></tr></thead>
       <tbody>{pending_rows}</tbody>
     </table>
     <h2>完整賽程表</h2>
