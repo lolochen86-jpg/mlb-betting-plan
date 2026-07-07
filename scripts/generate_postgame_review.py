@@ -87,20 +87,48 @@ def roi_index(target_date: str) -> dict[str, dict]:
     return {str(row.get("game_pk", "")): row for row in rows if str(row.get("game_pk", ""))}
 
 
-def daily_time_index(target_date: str) -> dict[str, dict]:
+def daily_prediction_index(target_date: str) -> dict[str, dict]:
     data = read_json(Path(str(DAILY_JSON).format(date=target_date)))
     rows = data.get("all_predictions", []) if data else []
     return {
         str(row.get("game_pk", "")): {
             "game_time_tw": row.get("game_time_tw", ""),
             "game_time_utc": row.get("game_time_utc", ""),
+            "away_zh": row.get("away_zh", ""),
+            "home_zh": row.get("home_zh", ""),
+            "predicted_away_score": row.get("predicted_away_score", ""),
+            "predicted_home_score": row.get("predicted_home_score", ""),
+            "predicted_total": row.get("predicted_total", ""),
+            "score_prediction_zh": row.get("score_prediction_zh", ""),
         }
         for row in rows
         if str(row.get("game_pk", ""))
     }
 
 
-def review_game(row: dict, total_row: dict | None, roi_row: dict | None, time_row: dict | None = None) -> dict:
+def format_score_prediction(row: dict, daily_row: dict | None) -> str:
+    source = daily_row or row
+    score_text = source.get("score_prediction_zh", "")
+    if score_text:
+        return str(score_text)
+    away_name = source.get("away_zh", "") or row.get("away_zh", "")
+    home_name = source.get("home_zh", "") or row.get("home_zh", "")
+    away_score = source.get("predicted_away_score", "")
+    home_score = source.get("predicted_home_score", "")
+    if away_score in (None, "") or home_score in (None, ""):
+        return ""
+    try:
+        away_score = f"{float(away_score):.2f}"
+        home_score = f"{float(home_score):.2f}"
+    except Exception:
+        away_score = str(away_score)
+        home_score = str(home_score)
+    if away_name and home_name:
+        return f"{away_name} {away_score} : {home_name} {home_score}"
+    return f"{away_score} : {home_score}"
+
+
+def review_game(row: dict, total_row: dict | None, roi_row: dict | None, daily_row: dict | None = None) -> dict:
     away_score, home_score, actual_total = parse_score(row.get("score", ""))
     is_final = row.get("is_final") is True or str(row.get("is_final")).lower() == "true"
     winner_correct = row.get("settlement") == "correct" if is_final else None
@@ -138,17 +166,25 @@ def review_game(row: dict, total_row: dict | None, roi_row: dict | None, time_ro
     if not is_final:
         notes.append("尚未完賽，等待賽後自動結算真實比分。")
     game_time_tw = normalize_game_time_tw(
-        row.get("game_time_tw", "") or (time_row or {}).get("game_time_tw", ""),
+        row.get("game_time_tw", "") or (daily_row or {}).get("game_time_tw", ""),
         row.get("date", ""),
     )
+    predicted_score_zh = format_score_prediction(row, daily_row)
+    predicted_away_score = (daily_row or row).get("predicted_away_score", "")
+    predicted_home_score = (daily_row or row).get("predicted_home_score", "")
+    predicted_score_total = (daily_row or row).get("predicted_total", "")
     return {
         "date": row.get("date", ""),
         "game_pk": row.get("game_pk", ""),
         "game_time_tw": game_time_tw,
-        "game_time_utc": row.get("game_time_utc", "") or (time_row or {}).get("game_time_utc", ""),
+        "game_time_utc": row.get("game_time_utc", "") or (daily_row or {}).get("game_time_utc", ""),
         "matchup_zh": row.get("matchup_zh", ""),
         "prediction_zh": row.get("prediction_zh", ""),
         "confidence": confidence,
+        "predicted_score_zh": predicted_score_zh,
+        "predicted_away_score": predicted_away_score,
+        "predicted_home_score": predicted_home_score,
+        "predicted_score_total": predicted_score_total,
         "score": row.get("score", ""),
         "actual_winner_zh": row.get("actual_winner_zh", ""),
         "winner_correct": winner_correct,
@@ -172,13 +208,13 @@ def build_report() -> dict:
         target_date = settlement.get("target_date", path.stem.replace("prediction_settlement_", ""))
         total_rows = totals_index(target_date)
         roi_rows = roi_index(target_date)
-        time_rows = daily_time_index(target_date)
+        daily_rows = daily_prediction_index(target_date)
         games = [
             review_game(
                 row,
                 total_rows.get(str(row.get("game_pk", ""))),
                 roi_rows.get(str(row.get("game_pk", ""))),
-                time_rows.get(str(row.get("game_pk", ""))),
+                daily_rows.get(str(row.get("game_pk", ""))),
             )
             for row in settlement.get("settlements", [])
         ]
@@ -265,6 +301,7 @@ def render_game_rows(games: list[dict]) -> str:
               <td>{html.escape(game.get('game_time_tw') or '未公布')}</td>
               <td>{html.escape(game['matchup_zh'])}<span>GamePk {game['game_pk']}</span></td>
               <td>{html.escape(game['prediction_zh'])}<span>{game['confidence'] * 100:.1f}%</span></td>
+              <td>{html.escape(game.get('predicted_score_zh') or '-')}<span>總分 {html.escape(str(game.get('predicted_score_total') or '-'))}</span></td>
               <td>{game['score'] or '-'}</td>
               <td>{html.escape(game['actual_winner_zh'] or '-')}</td>
               <td><span class="badge {'ok' if game['winner_correct'] is True else 'bad' if game['winner_correct'] is False else 'wait'}">{result_zh(game['winner_correct'])}</span></td>
@@ -299,7 +336,7 @@ def render_html(report: dict) -> str:
               </div>
               <div class="table-wrap">
                 <table>
-                  <thead><tr><th>台灣開賽時間</th><th>對戰</th><th>賽前勝方</th><th>比分</th><th>實際勝方</th><th>勝方</th><th>大小分</th><th>大小分結果</th><th>檢討重點</th></tr></thead>
+                  <thead><tr><th>台灣開賽時間</th><th>對戰</th><th>賽前勝方</th><th>賽前預測比分</th><th>實際比分</th><th>實際勝方</th><th>勝方</th><th>大小分</th><th>大小分結果</th><th>檢討重點</th></tr></thead>
                   <tbody>{render_game_rows(day['games'])}</tbody>
                 </table>
               </div>
