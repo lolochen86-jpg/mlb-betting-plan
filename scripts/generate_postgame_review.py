@@ -61,6 +61,15 @@ def side_zh(side: str) -> str:
     return {"over": "大分", "under": "小分", "home": "主隊", "away": "客隊"}.get(side, side or "-")
 
 
+def fmt_number(value: object) -> str:
+    if value in (None, ""):
+        return "-"
+    try:
+        return f"{float(value):.2f}".rstrip("0").rstrip(".")
+    except Exception:
+        return str(value)
+
+
 def result_zh(value: bool | None) -> str:
     if value is True:
         return "正確"
@@ -136,14 +145,19 @@ def review_game(row: dict, total_row: dict | None, roi_row: dict | None, daily_r
     total_correct = None
     total_line = None
     predicted_total = None
-    if total_row and actual_total is not None:
+    if total_row:
         try:
             total_line = float(total_row.get("line"))
             predicted_total = float(total_row.get("predicted_total"))
-            actual_side = "over" if actual_total > total_line else "under" if actual_total < total_line else "push"
-            total_correct = total_pick == actual_side if actual_side != "push" else None
+            if actual_total is not None:
+                actual_side = "over" if actual_total > total_line else "under" if actual_total < total_line else "push"
+                total_correct = total_pick == actual_side if actual_side != "push" else None
         except Exception:
             pass
+    predicted_score_zh = format_score_prediction(row, daily_row)
+    predicted_away_score = (daily_row or row).get("predicted_away_score", "")
+    predicted_home_score = (daily_row or row).get("predicted_home_score", "")
+    predicted_score_total = (daily_row or row).get("predicted_total", "")
     notes = []
     confidence = float(row.get("confidence") or 0)
     if winner_correct is True and confidence >= 0.55:
@@ -158,6 +172,13 @@ def review_game(row: dict, total_row: dict | None, roi_row: dict | None, daily_r
         notes.append("一分差比賽，模型即使方向錯也屬高波動結果。")
     if total_correct is False and predicted_total is not None and actual_total is not None:
         notes.append(f"大小分偏差 {abs(predicted_total - actual_total):.1f} 分，需檢查投手/天氣/打線係數。")
+    if predicted_total is not None and predicted_score_total not in (None, ""):
+        try:
+            score_total_float = float(predicted_score_total)
+            if abs(predicted_total - score_total_float) >= 1.5:
+                notes.append("勝方比分模型與大小分模型差距較大，大小分應以大小分模型為主。")
+        except Exception:
+            pass
     if roi_row:
         if roi_row.get("settlement") == "loss":
             notes.append("實際投注單虧損，後續應提高 edge 門檻或降低此類下注權重。")
@@ -169,10 +190,6 @@ def review_game(row: dict, total_row: dict | None, roi_row: dict | None, daily_r
         row.get("game_time_tw", "") or (daily_row or {}).get("game_time_tw", ""),
         row.get("date", ""),
     )
-    predicted_score_zh = format_score_prediction(row, daily_row)
-    predicted_away_score = (daily_row or row).get("predicted_away_score", "")
-    predicted_home_score = (daily_row or row).get("predicted_home_score", "")
-    predicted_score_total = (daily_row or row).get("predicted_total", "")
     return {
         "date": row.get("date", ""),
         "game_pk": row.get("game_pk", ""),
@@ -301,11 +318,11 @@ def render_game_rows(games: list[dict]) -> str:
               <td>{html.escape(game.get('game_time_tw') or '未公布')}</td>
               <td>{html.escape(game['matchup_zh'])}<span>GamePk {game['game_pk']}</span></td>
               <td>{html.escape(game['prediction_zh'])}<span>{game['confidence'] * 100:.1f}%</span></td>
-              <td>{html.escape(game.get('predicted_score_zh') or '-')}<span>總分 {html.escape(str(game.get('predicted_score_total') or '-'))}</span></td>
+              <td>{html.escape(game.get('predicted_score_zh') or '-')}<span>比分模型總分 {html.escape(fmt_number(game.get('predicted_score_total')))}</span></td>
+              <td>{html.escape(fmt_number(game.get('predicted_total')))}<span>盤口 {html.escape(fmt_number(game.get('total_line')))} / {side_zh(game['total_pick'])}</span></td>
               <td>{game['score'] or '-'}</td>
               <td>{html.escape(game['actual_winner_zh'] or '-')}</td>
               <td><span class="badge {'ok' if game['winner_correct'] is True else 'bad' if game['winner_correct'] is False else 'wait'}">{result_zh(game['winner_correct'])}</span></td>
-              <td>{side_zh(game['total_pick'])}<span>{'-' if game['total_line'] is None else game['total_line']}</span></td>
               <td><span class="badge {'ok' if game['total_correct'] is True else 'bad' if game['total_correct'] is False else 'wait'}">{result_zh(game['total_correct'])}</span></td>
               <td>{'<br>'.join(html.escape(note) for note in game['notes'][:2])}</td>
             </tr>"""
@@ -336,7 +353,7 @@ def render_html(report: dict) -> str:
               </div>
               <div class="table-wrap">
                 <table>
-                  <thead><tr><th>台灣開賽時間</th><th>對戰</th><th>賽前勝方</th><th>賽前預測比分</th><th>實際比分</th><th>實際勝方</th><th>勝方</th><th>大小分</th><th>大小分結果</th><th>檢討重點</th></tr></thead>
+                  <thead><tr><th>台灣開賽時間</th><th>對戰</th><th>賽前勝方</th><th>勝方比分模型</th><th>大小分模型</th><th>實際比分</th><th>實際勝方</th><th>勝方</th><th>大小分結果</th><th>檢討重點</th></tr></thead>
                   <tbody>{render_game_rows(day['games'])}</tbody>
                 </table>
               </div>
@@ -388,7 +405,7 @@ def render_html(report: dict) -> str:
   <section class="hero">
     <div>
       <h1>MLB 賽後檢討</h1>
-      <p>把當天賽前預測和賽後結果放在同一張表；未完賽先顯示待結算，完賽後追蹤勝方、大小分、投注 ROI 與失準原因。</p>
+      <p>把當天賽前預測和賽後結果放在同一張表；勝方比分模型與大小分模型分開顯示，避免把兩套模型的總分混在一起。</p>
     </div>
     <p>最新MLB賽事日：{latest_date}<br />產生時間：{report['generated_at']}</p>
   </section>
