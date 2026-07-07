@@ -1,21 +1,21 @@
 {
-  "generated_at": "2026-07-07T21:00:48",
+  "generated_at": "2026-07-08T00:00:47",
   "backtest_period": {
     "start": "2025-03-27",
-    "end": "2026-07-06"
+    "end": "2026-07-07"
   },
   "data_source": {
     "type": "real_mlb_final_scores",
     "games_csv": "data\\real_mlb_games.csv",
-    "games_evaluated": 3788,
+    "games_evaluated": 3789,
     "note": "Pure winner-prediction accuracy only. Odds, edge, stake, and ROI are intentionally excluded."
   },
   "models": {
     "A-畢氏勝率": {
-      "predictions": 3709,
-      "correct": 2006,
+      "predictions": 3710,
+      "correct": 2007,
       "wrong": 1703,
-      "accuracy_pct": 54.08,
+      "accuracy_pct": 54.1,
       "monthly": [
         {
           "month": "2025-04",
@@ -79,9 +79,9 @@
         },
         {
           "month": "2026-07",
-          "predictions": 74,
-          "correct": 36,
-          "accuracy_pct": 48.65
+          "predictions": 75,
+          "correct": 37,
+          "accuracy_pct": 49.33
         }
       ],
       "prediction_details": [
@@ -63137,14 +63137,31 @@
           "correct": false,
           "away_probable_pitcher_zh": "佛萊迪 佩拉",
           "home_probable_pitcher_zh": "雷納 羅培茲"
+        },
+        {
+          "game_pk": "823062",
+          "date": "2026-07-07",
+          "matchup_zh": "密爾瓦基釀酒人 @ 聖路易紅雀",
+          "away_zh": "密爾瓦基釀酒人",
+          "home_zh": "聖路易紅雀",
+          "away_score": 0,
+          "home_score": 0,
+          "pick_zh": "密爾瓦基釀酒人",
+          "pick_side": "away",
+          "actual_winner_zh": "密爾瓦基釀酒人",
+          "confidence": 0.5453,
+          "home_win_probability": 0.4547,
+          "correct": true,
+          "away_probable_pitcher_zh": "雅各布 米西羅",
+          "home_probable_pitcher_zh": "馬 斯維阿恩斯歐恩"
         }
       ]
     },
     "B-近期狀態": {
-      "predictions": 3709,
-      "correct": 1984,
+      "predictions": 3710,
+      "correct": 1985,
       "wrong": 1725,
-      "accuracy_pct": 53.49,
+      "accuracy_pct": 53.5,
       "monthly": [
         {
           "month": "2025-04",
@@ -63208,9 +63225,9 @@
         },
         {
           "month": "2026-07",
-          "predictions": 74,
-          "correct": 38,
-          "accuracy_pct": 51.35
+          "predictions": 75,
+          "correct": 39,
+          "accuracy_pct": 52.0
         }
       ],
       "prediction_details": [
@@ -126266,14 +126283,31 @@
           "correct": false,
           "away_probable_pitcher_zh": "佛萊迪 佩拉",
           "home_probable_pitcher_zh": "雷納 羅培茲"
+        },
+        {
+          "game_pk": "823062",
+          "date": "2026-07-07",
+          "matchup_zh": "密爾瓦基釀酒人 @ 聖路易紅雀",
+          "away_zh": "密爾瓦基釀酒人",
+          "home_zh": "聖路易紅雀",
+          "away_score": 0,
+          "home_score": 0,
+          "pick_zh": "密爾瓦基釀酒人",
+          "pick_side": "away",
+          "actual_winner_zh": "密爾瓦基釀酒人",
+          "confidence": 0.5305,
+          "home_win_probability": 0.4695,
+          "correct": true,
+          "away_probable_pitcher_zh": "雅各布 米西羅",
+          "home_probable_pitcher_zh": "馬 斯維阿恩斯歐恩"
         }
       ]
     },
     "C-ELO評分": {
-      "predictions": 3788,
-      "correct": 2030,
+      "predictions": 3789,
+      "correct": 2031,
       "wrong": 1758,
-      "accuracy_pct": 53.59,
+      "accuracy_pct": 53.6,
       "monthly": [
         {
           "month": "2025-03",
@@ -126343,9 +126377,9 @@
         },
         {
           "month": "2026-07",
-          "predictions": 74,
-          "correct": 35,
-          "accuracy_pct": 47.3
+          "predictions": 75,
+          "correct": 36,
+          "accuracy_pct": 48.0
         }
       ],
       "prediction_details": [
@@ -190744,14 +190778,31 @@
           "correct": false,
           "away_probable_pitcher_zh": "佛萊迪 佩拉",
           "home_probable_pitcher_zh": "雷納 羅培茲"
+        },
+        {
+          "game_pk": "823062",
+          "date": "2026-07-07",
+          "matchup_zh": "密爾瓦基釀酒人 @ 聖路易紅雀",
+          "away_zh": "密爾瓦基釀酒人",
+          "home_zh": "聖路易紅雀",
+          "away_score": 0,
+          "home_score": 0,
+          "pick_zh": "密爾瓦基釀酒人",
+          "pick_side": "away",
+          "actual_winner_zh": "密爾瓦基釀酒人",
+          "confidence": 0.6165,
+          "home_win_probability": 0.3835,
+          "correct": true,
+          "away_probable_pitcher_zh": "雅各布 米西羅",
+          "home_probable_pitcher_zh": "馬 斯維阿恩斯歐恩"
         }
       ]
     },
     "D-近期失分代理": {
-      "predictions": 3709,
+      "predictions": 3710,
       "correct": 1929,
-      "wrong": 1780,
-      "accuracy_pct": 52.01,
+      "wrong": 1781,
+      "accuracy_pct": 51.99,
       "monthly": [
         {
           "month": "2025-04",
@@ -190815,9 +190866,9 @@
         },
         {
           "month": "2026-07",
-          "predictions": 74,
+          "predictions": 75,
           "correct": 28,
-          "accuracy_pct": 37.84
+          "accuracy_pct": 37.33
         }
       ],
       "prediction_details": [
@@ -253873,14 +253924,31 @@
           "correct": false,
           "away_probable_pitcher_zh": "佛萊迪 佩拉",
           "home_probable_pitcher_zh": "雷納 羅培茲"
+        },
+        {
+          "game_pk": "823062",
+          "date": "2026-07-07",
+          "matchup_zh": "密爾瓦基釀酒人 @ 聖路易紅雀",
+          "away_zh": "密爾瓦基釀酒人",
+          "home_zh": "聖路易紅雀",
+          "away_score": 0,
+          "home_score": 0,
+          "pick_zh": "聖路易紅雀",
+          "pick_side": "home",
+          "actual_winner_zh": "密爾瓦基釀酒人",
+          "confidence": 0.5756,
+          "home_win_probability": 0.5756,
+          "correct": false,
+          "away_probable_pitcher_zh": "雅各布 米西羅",
+          "home_probable_pitcher_zh": "馬 斯維阿恩斯歐恩"
         }
       ]
     },
     "E-對照組(Ensemble)": {
-      "predictions": 3788,
-      "correct": 2018,
+      "predictions": 3789,
+      "correct": 2019,
       "wrong": 1770,
-      "accuracy_pct": 53.27,
+      "accuracy_pct": 53.29,
       "monthly": [
         {
           "month": "2025-03",
@@ -253950,9 +254018,9 @@
         },
         {
           "month": "2026-07",
-          "predictions": 74,
-          "correct": 35,
-          "accuracy_pct": 47.3
+          "predictions": 75,
+          "correct": 36,
+          "accuracy_pct": 48.0
         }
       ],
       "prediction_details": [
@@ -318351,6 +318419,23 @@
           "correct": false,
           "away_probable_pitcher_zh": "佛萊迪 佩拉",
           "home_probable_pitcher_zh": "雷納 羅培茲"
+        },
+        {
+          "game_pk": "823062",
+          "date": "2026-07-07",
+          "matchup_zh": "密爾瓦基釀酒人 @ 聖路易紅雀",
+          "away_zh": "密爾瓦基釀酒人",
+          "home_zh": "聖路易紅雀",
+          "away_score": 0,
+          "home_score": 0,
+          "pick_zh": "密爾瓦基釀酒人",
+          "pick_side": "away",
+          "actual_winner_zh": "密爾瓦基釀酒人",
+          "confidence": 0.5235,
+          "home_win_probability": 0.4765,
+          "correct": true,
+          "away_probable_pitcher_zh": "雅各布 米西羅",
+          "home_probable_pitcher_zh": "馬 斯維阿恩斯歐恩"
         }
       ]
     }

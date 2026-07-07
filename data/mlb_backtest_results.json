@@ -1,7 +1,7 @@
 {
   "backtest_period": {
     "start": "2025-03-27",
-    "end": "2026-07-06"
+    "end": "2026-07-07"
   },
   "settings": {
     "unit": 100,
@@ -13,14 +13,14 @@
   "data_source": {
     "type": "real_mlb_final_scores",
     "games_csv": "data\\real_mlb_games.csv",
-    "games_evaluated": 3788,
+    "games_evaluated": 3789,
     "actual_first_game_date": "2025-03-27",
-    "actual_last_game_date": "2026-07-06",
+    "actual_last_game_date": "2026-07-07",
     "game_types": [
       "R"
     ],
     "coverage_warning": null,
-    "generated_at": "2026-07-07T21:00:49",
+    "generated_at": "2026-07-08T00:00:48",
     "note": "Backtest uses real MLB final scores from saved MLB Stats API schedule data. Odds are still the configured fixed market assumption."
   },
   "models": {
@@ -20868,6 +20868,14 @@
               "result": "win"
             }
           ]
+        },
+        {
+          "date": "2026-07-07",
+          "bets": 0,
+          "wins": 0,
+          "losses": 0,
+          "pnl": 0.0,
+          "bet_details": []
         }
       ]
     },
@@ -45383,16 +45391,24 @@
               "result": "win"
             }
           ]
+        },
+        {
+          "date": "2026-07-07",
+          "bets": 0,
+          "wins": 0,
+          "losses": 0,
+          "pnl": 0.0,
+          "bet_details": []
         }
       ]
     },
     "C-ELO評分": {
-      "total_bets": 1356,
-      "wins": 791,
+      "total_bets": 1357,
+      "wins": 792,
       "losses": 565,
-      "win_rate": 0.5833,
-      "total_pnl": 15409.81,
-      "roi_pct": 11.36,
+      "win_rate": 0.5836,
+      "total_pnl": 15500.72,
+      "roi_pct": 11.42,
       "daily_records": [
         {
           "date": "2025-03-27",
@@ -69661,16 +69677,41 @@
               "result": "loss"
             }
           ]
+        },
+        {
+          "date": "2026-07-07",
+          "bets": 1,
+          "wins": 1,
+          "losses": 0,
+          "pnl": 90.91,
+          "bet_details": [
+            {
+              "game_pk": "823062",
+              "home": "St. Louis Cardinals",
+              "home_zh": "聖路易紅雀",
+              "away": "Milwaukee Brewers",
+              "away_zh": "密爾瓦基釀酒人",
+              "home_score": 0,
+              "away_score": 0,
+              "pick": "Milwaukee Brewers",
+              "pick_zh": "密爾瓦基釀酒人",
+              "home_probable_pitcher_zh": "馬 斯維阿恩斯歐恩",
+              "away_probable_pitcher_zh": "雅各布 米西羅",
+              "confidence": 0.6165,
+              "edge": 0.0927,
+              "result": "win"
+            }
+          ]
         }
       ]
     },
     "D-近期失分代理": {
-      "total_bets": 1356,
+      "total_bets": 1357,
       "wins": 746,
-      "losses": 610,
-      "win_rate": 0.5501,
-      "total_pnl": 6818.86,
-      "roi_pct": 5.03,
+      "losses": 611,
+      "win_rate": 0.5497,
+      "total_pnl": 6718.86,
+      "roi_pct": 4.95,
       "daily_records": [
         {
           "date": "2025-03-27",
@@ -93936,6 +93977,31 @@
               "result": "loss"
             }
           ]
+        },
+        {
+          "date": "2026-07-07",
+          "bets": 1,
+          "wins": 0,
+          "losses": 1,
+          "pnl": -100.0,
+          "bet_details": [
+            {
+              "game_pk": "823062",
+              "home": "St. Louis Cardinals",
+              "home_zh": "聖路易紅雀",
+              "away": "Milwaukee Brewers",
+              "away_zh": "密爾瓦基釀酒人",
+              "home_score": 0,
+              "away_score": 0,
+              "pick": "St. Louis Cardinals",
+              "pick_zh": "聖路易紅雀",
+              "home_probable_pitcher_zh": "馬 斯維阿恩斯歐恩",
+              "away_probable_pitcher_zh": "雅各布 米西羅",
+              "confidence": 0.5756,
+              "edge": 0.0517,
+              "result": "loss"
+            }
+          ]
         }
       ]
     },
@@ -117718,6 +117784,14 @@
               "result": "loss"
             }
           ]
+        },
+        {
+          "date": "2026-07-07",
+          "bets": 0,
+          "wins": 0,
+          "losses": 0,
+          "pnl": 0.0,
+          "bet_details": []
         }
       ]
     }
