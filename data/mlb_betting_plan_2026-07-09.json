@@ -1,0 +1,1724 @@
+{
+  "model": {
+    "trained_at": "2026-07-01T14:27:27.682622+00:00",
+    "metadata": {
+      "source": "db",
+      "row_count": 2927,
+      "train_rows": 2687,
+      "holdout_rows": 240,
+      "metrics": {
+        "moneyline": {
+          "accuracy": 0.5208333333333334,
+          "log_loss": 0.7049256258379112
+        },
+        "totals": {
+          "total_runs_mae": 3.406075860344923,
+          "average_expected_total": 9.080135149241364
+        }
+      },
+      "default_total_line": 8.5
+    }
+  },
+  "row_count": 15,
+  "sportsbook": "fanduel",
+  "latest_date_only": true,
+  "moneyline": [
+    {
+      "game_id": 3030,
+      "mlb_game_pk": 822880,
+      "market_type": "moneyline",
+      "market_status": "no_odds",
+      "recommended_side": "none",
+      "true_win_probability": {
+        "home": 0.6781755218655556,
+        "away": 0.32182447813444437
+      },
+      "expected_value": {
+        "home": 0.0,
+        "away": 0.0
+      },
+      "current_odds_american": {
+        "home": null,
+        "away": null
+      },
+      "bet_fraction": 0.0,
+      "side_details": {
+        "home": {
+          "side": "home",
+          "true_probability": 0.6781755218655556,
+          "implied_probability": null,
+          "american_odds": null,
+          "expected_value": 0.0,
+          "bet_fraction": 0.0
+        },
+        "away": {
+          "side": "away",
+          "true_probability": 0.32182447813444437,
+          "implied_probability": null,
+          "american_odds": null,
+          "expected_value": 0.0,
+          "bet_fraction": 0.0
+        }
+      },
+      "game_date": "2026-07-08",
+      "game_datetime_utc": "2026-07-09T00:05:00+00:00",
+      "game_datetime_tw": "2026-07-09T08:05:00+08:00",
+      "teams": {
+        "home": {
+          "team_id": 8,
+          "name": "Texas Rangers",
+          "abbreviation": "TEX"
+        },
+        "away": {
+          "team_id": 17,
+          "name": "Los Angeles Angels",
+          "abbreviation": "LAA"
+        }
+      }
+    },
+    {
+      "game_id": 3029,
+      "mlb_game_pk": 823032,
+      "market_type": "moneyline",
+      "market_status": "no_odds",
+      "recommended_side": "none",
+      "true_win_probability": {
+        "home": 0.6630907845419526,
+        "away": 0.3369092154580474
+      },
+      "expected_value": {
+        "home": 0.0,
+        "away": 0.0
+      },
+      "current_odds_american": {
+        "home": null,
+        "away": null
+      },
+      "bet_fraction": 0.0,
+      "side_details": {
+        "home": {
+          "side": "home",
+          "true_probability": 0.6630907845419526,
+          "implied_probability": null,
+          "american_odds": null,
+          "expected_value": 0.0,
+          "bet_fraction": 0.0
+        },
+        "away": {
+          "side": "away",
+          "true_probability": 0.3369092154580474,
+          "implied_probability": null,
+          "american_odds": null,
+          "expected_value": 0.0,
+          "bet_fraction": 0.0
+        }
+      },
+      "game_date": "2026-07-08",
+      "game_datetime_utc": "2026-07-08T23:45:00+00:00",
+      "game_datetime_tw": "2026-07-09T07:45:00+08:00",
+      "teams": {
+        "home": {
+          "team_id": 6,
+          "name": "St. Louis Cardinals",
+          "abbreviation": "STL"
+        },
+        "away": {
+          "team_id": 16,
+          "name": "Milwaukee Brewers",
+          "abbreviation": "MIL"
+        }
+      }
+    },
+    {
+      "game_id": 3028,
+      "mlb_game_pk": 824578,
+      "market_type": "moneyline",
+      "market_status": "no_odds",
+      "recommended_side": "none",
+      "true_win_probability": {
+        "home": 0.6346750598235503,
+        "away": 0.3653249401764497
+      },
+      "expected_value": {
+        "home": 0.0,
+        "away": 0.0
+      },
+      "current_odds_american": {
+        "home": null,
+        "away": null
+      },
+      "bet_fraction": 0.0,
+      "side_details": {
+        "home": {
+          "side": "home",
+          "true_probability": 0.6346750598235503,
+          "implied_probability": null,
+          "american_odds": null,
+          "expected_value": 0.0,
+          "bet_fraction": 0.0
+        },
+        "away": {
+          "side": "away",
+          "true_probability": 0.3653249401764497,
+          "implied_probability": null,
+          "american_odds": null,
+          "expected_value": 0.0,
+          "bet_fraction": 0.0
+        }
+      },
+      "game_date": "2026-07-08",
+      "game_datetime_utc": "2026-07-08T23:40:00+00:00",
+      "game_datetime_tw": "2026-07-09T07:40:00+08:00",
+      "teams": {
+        "home": {
+          "team_id": 13,
+          "name": "Chicago White Sox",
+          "abbreviation": "CWS"
+        },
+        "away": {
+          "team_id": 20,
+          "name": "Boston Red Sox",
+          "abbreviation": "BOS"
+        }
+      }
+    },
+    {
+      "game_id": 3027,
+      "mlb_game_pk": 823684,
+      "market_type": "moneyline",
+      "market_status": "no_odds",
+      "recommended_side": "none",
+      "true_win_probability": {
+        "home": 0.5734572837846287,
+        "away": 0.4265427162153713
+      },
+      "expected_value": {
+        "home": 0.0,
+        "away": 0.0
+      },
+      "current_odds_american": {
+        "home": null,
+        "away": null
+      },
+      "bet_fraction": 0.0,
+      "side_details": {
+        "home": {
+          "side": "home",
+          "true_probability": 0.5734572837846287,
+          "implied_probability": null,
+          "american_odds": null,
+          "expected_value": 0.0,
+          "bet_fraction": 0.0
+        },
+        "away": {
+          "side": "away",
+          "true_probability": 0.4265427162153713,
+          "implied_probability": null,
+          "american_odds": null,
+          "expected_value": 0.0,
+          "bet_fraction": 0.0
+        }
+      },
+      "game_date": "2026-07-08",
+      "game_datetime_utc": "2026-07-08T23:40:00+00:00",
+      "game_datetime_tw": "2026-07-09T07:40:00+08:00",
+      "teams": {
+        "home": {
+          "team_id": 10,
+          "name": "Minnesota Twins",
+          "abbreviation": "MIN"
+        },
+        "away": {
+          "team_id": 23,
+          "name": "Cleveland Guardians",
+          "abbreviation": "CLE"
+        }
+      }
+    },
+    {
+      "game_id": 3026,
+      "mlb_game_pk": 824496,
+      "market_type": "moneyline",
+      "market_status": "no_odds",
+      "recommended_side": "none",
+      "true_win_probability": {
+        "home": 0.5187635051849596,
+        "away": 0.4812364948150404
+      },
+      "expected_value": {
+        "home": 0.0,
+        "away": 0.0
+      },
+      "current_odds_american": {
+        "home": null,
+        "away": null
+      },
+      "bet_fraction": 0.0,
+      "side_details": {
+        "home": {
+          "side": "home",
+          "true_probability": 0.5187635051849596,
+          "implied_probability": null,
+          "american_odds": null,
+          "expected_value": 0.0,
+          "bet_fraction": 0.0
+        },
+        "away": {
+          "side": "away",
+          "true_probability": 0.4812364948150404,
+          "implied_probability": null,
+          "american_odds": null,
+          "expected_value": 0.0,
+          "bet_fraction": 0.0
+        }
+      },
+      "game_date": "2026-07-08",
+      "game_datetime_utc": "2026-07-08T23:10:00+00:00",
+      "game_datetime_tw": "2026-07-09T07:10:00+08:00",
+      "teams": {
+        "home": {
+          "team_id": 22,
+          "name": "Cincinnati Reds",
+          "abbreviation": "CIN"
+        },
+        "away": {
+          "team_id": 11,
+          "name": "Philadelphia Phillies",
+          "abbreviation": "PHI"
+        }
+      }
+    },
+    {
+      "game_id": 3025,
+      "mlb_game_pk": 823605,
+      "market_type": "moneyline",
+      "market_status": "no_odds",
+      "recommended_side": "none",
+      "true_win_probability": {
+        "home": 0.660416695709348,
+        "away": 0.339583304290652
+      },
+      "expected_value": {
+        "home": 0.0,
+        "away": 0.0
+      },
+      "current_odds_american": {
+        "home": null,
+        "away": null
+      },
+      "bet_fraction": 0.0,
+      "side_details": {
+        "home": {
+          "side": "home",
+          "true_probability": 0.660416695709348,
+          "implied_probability": null,
+          "american_odds": null,
+          "expected_value": 0.0,
+          "bet_fraction": 0.0
+        },
+        "away": {
+          "side": "away",
+          "true_probability": 0.339583304290652,
+          "implied_probability": null,
+          "american_odds": null,
+          "expected_value": 0.0,
+          "bet_fraction": 0.0
+        }
+      },
+      "game_date": "2026-07-08",
+      "game_datetime_utc": "2026-07-08T23:10:00+00:00",
+      "game_datetime_tw": "2026-07-09T07:10:00+08:00",
+      "teams": {
+        "home": {
+          "team_id": 30,
+          "name": "New York Mets",
+          "abbreviation": "NYM"
+        },
+        "away": {
+          "team_id": 27,
+          "name": "Kansas City Royals",
+          "abbreviation": "KC"
+        }
+      }
+    },
+    {
+      "game_id": 3021,
+      "mlb_game_pk": 823360,
+      "market_type": "moneyline",
+      "market_status": "no_odds",
+      "recommended_side": "none",
+      "true_win_probability": {
+        "home": 0.5626327742801364,
+        "away": 0.43736722571986364
+      },
+      "expected_value": {
+        "home": 0.0,
+        "away": 0.0
+      },
+      "current_odds_american": {
+        "home": null,
+        "away": null
+      },
+      "bet_fraction": 0.0,
+      "side_details": {
+        "home": {
+          "side": "home",
+          "true_probability": 0.5626327742801364,
+          "implied_probability": null,
+          "american_odds": null,
+          "expected_value": 0.0,
+          "bet_fraction": 0.0
+        },
+        "away": {
+          "side": "away",
+          "true_probability": 0.43736722571986364,
+          "implied_probability": null,
+          "american_odds": null,
+          "expected_value": 0.0,
+          "bet_fraction": 0.0
+        }
+      },
+      "game_date": "2026-07-08",
+      "game_datetime_utc": "2026-07-08T22:40:00+00:00",
+      "game_datetime_tw": "2026-07-09T06:40:00+08:00",
+      "teams": {
+        "home": {
+          "team_id": 2,
+          "name": "Pittsburgh Pirates",
+          "abbreviation": "PIT"
+        },
+        "away": {
+          "team_id": 12,
+          "name": "Atlanta Braves",
+          "abbreviation": "ATL"
+        }
+      }
+    },
+    {
+      "game_id": 3023,
+      "mlb_game_pk": 822957,
+      "market_type": "moneyline",
+      "market_status": "no_odds",
+      "recommended_side": "none",
+      "true_win_probability": {
+        "home": 0.5141924945246894,
+        "away": 0.4858075054753106
+      },
+      "expected_value": {
+        "home": 0.0,
+        "away": 0.0
+      },
+      "current_odds_american": {
+        "home": null,
+        "away": null
+      },
+      "bet_fraction": 0.0,
+      "side_details": {
+        "home": {
+          "side": "home",
+          "true_probability": 0.5141924945246894,
+          "implied_probability": null,
+          "american_odds": null,
+          "expected_value": 0.0,
+          "bet_fraction": 0.0
+        },
+        "away": {
+          "side": "away",
+          "true_probability": 0.4858075054753106,
+          "implied_probability": null,
+          "american_odds": null,
+          "expected_value": 0.0,
+          "bet_fraction": 0.0
+        }
+      },
+      "game_date": "2026-07-08",
+      "game_datetime_utc": "2026-07-08T22:40:00+00:00",
+      "game_datetime_tw": "2026-07-09T06:40:00+08:00",
+      "teams": {
+        "home": {
+          "team_id": 7,
+          "name": "Tampa Bay Rays",
+          "abbreviation": "TB"
+        },
+        "away": {
+          "team_id": 15,
+          "name": "New York Yankees",
+          "abbreviation": "NYY"
+        }
+      }
+    },
+    {
+      "game_id": 3022,
+      "mlb_game_pk": 823848,
+      "market_type": "moneyline",
+      "market_status": "no_odds",
+      "recommended_side": "none",
+      "true_win_probability": {
+        "home": 0.6173361821289574,
+        "away": 0.38266381787104264
+      },
+      "expected_value": {
+        "home": 0.0,
+        "away": 0.0
+      },
+      "current_odds_american": {
+        "home": null,
+        "away": null
+      },
+      "bet_fraction": 0.0,
+      "side_details": {
+        "home": {
+          "side": "home",
+          "true_probability": 0.6173361821289574,
+          "implied_probability": null,
+          "american_odds": null,
+          "expected_value": 0.0,
+          "bet_fraction": 0.0
+        },
+        "away": {
+          "side": "away",
+          "true_probability": 0.38266381787104264,
+          "implied_probability": null,
+          "american_odds": null,
+          "expected_value": 0.0,
+          "bet_fraction": 0.0
+        }
+      },
+      "game_date": "2026-07-08",
+      "game_datetime_utc": "2026-07-08T22:40:00+00:00",
+      "game_datetime_tw": "2026-07-09T06:40:00+08:00",
+      "teams": {
+        "home": {
+          "team_id": 14,
+          "name": "Miami Marlins",
+          "abbreviation": "MIA"
+        },
+        "away": {
+          "team_id": 4,
+          "name": "Seattle Mariners",
+          "abbreviation": "SEA"
+        }
+      }
+    },
+    {
+      "game_id": 3020,
+      "mlb_game_pk": 824253,
+      "market_type": "moneyline",
+      "market_status": "no_odds",
+      "recommended_side": "none",
+      "true_win_probability": {
+        "home": 0.528037895571348,
+        "away": 0.47196210442865205
+      },
+      "expected_value": {
+        "home": 0.0,
+        "away": 0.0
+      },
+      "current_odds_american": {
+        "home": null,
+        "away": null
+      },
+      "bet_fraction": 0.0,
+      "side_details": {
+        "home": {
+          "side": "home",
+          "true_probability": 0.528037895571348,
+          "implied_probability": null,
+          "american_odds": null,
+          "expected_value": 0.0,
+          "bet_fraction": 0.0
+        },
+        "away": {
+          "side": "away",
+          "true_probability": 0.47196210442865205,
+          "implied_probability": null,
+          "american_odds": null,
+          "expected_value": 0.0,
+          "bet_fraction": 0.0
+        }
+      },
+      "game_date": "2026-07-08",
+      "game_datetime_utc": "2026-07-08T22:40:00+00:00",
+      "game_datetime_tw": "2026-07-09T06:40:00+08:00",
+      "teams": {
+        "home": {
+          "team_id": 25,
+          "name": "Detroit Tigers",
+          "abbreviation": "DET"
+        },
+        "away": {
+          "team_id": 1,
+          "name": "Athletics",
+          "abbreviation": "ATH"
+        }
+      }
+    },
+    {
+      "game_id": 3019,
+      "mlb_game_pk": 824815,
+      "market_type": "moneyline",
+      "market_status": "no_odds",
+      "recommended_side": "none",
+      "true_win_probability": {
+        "home": 0.47659922074123845,
+        "away": 0.5234007792587616
+      },
+      "expected_value": {
+        "home": 0.0,
+        "away": 0.0
+      },
+      "current_odds_american": {
+        "home": null,
+        "away": null
+      },
+      "bet_fraction": 0.0,
+      "side_details": {
+        "home": {
+          "side": "home",
+          "true_probability": 0.47659922074123845,
+          "implied_probability": null,
+          "american_odds": null,
+          "expected_value": 0.0,
+          "bet_fraction": 0.0
+        },
+        "away": {
+          "side": "away",
+          "true_probability": 0.5234007792587616,
+          "implied_probability": null,
+          "american_odds": null,
+          "expected_value": 0.0,
+          "bet_fraction": 0.0
+        }
+      },
+      "game_date": "2026-07-08",
+      "game_datetime_utc": "2026-07-08T22:35:00+00:00",
+      "game_datetime_tw": "2026-07-09T06:35:00+08:00",
+      "teams": {
+        "home": {
+          "team_id": 19,
+          "name": "Baltimore Orioles",
+          "abbreviation": "BAL"
+        },
+        "away": {
+          "team_id": 21,
+          "name": "Chicago Cubs",
+          "abbreviation": "CHC"
+        }
+      }
+    },
+    {
+      "game_id": 3018,
+      "mlb_game_pk": 823202,
+      "market_type": "moneyline",
+      "market_status": "no_odds",
+      "recommended_side": "none",
+      "true_win_probability": {
+        "home": 0.5515100443423612,
+        "away": 0.44848995565763883
+      },
+      "expected_value": {
+        "home": 0.0,
+        "away": 0.0
+      },
+      "current_odds_american": {
+        "home": null,
+        "away": null
+      },
+      "bet_fraction": 0.0,
+      "side_details": {
+        "home": {
+          "side": "home",
+          "true_probability": 0.5515100443423612,
+          "implied_probability": null,
+          "american_odds": null,
+          "expected_value": 0.0,
+          "bet_fraction": 0.0
+        },
+        "away": {
+          "side": "away",
+          "true_probability": 0.44848995565763883,
+          "implied_probability": null,
+          "american_odds": null,
+          "expected_value": 0.0,
+          "bet_fraction": 0.0
+        }
+      },
+      "game_date": "2026-07-08",
+      "game_datetime_utc": "2026-07-08T19:45:00+00:00",
+      "game_datetime_tw": "2026-07-09T03:45:00+08:00",
+      "teams": {
+        "home": {
+          "team_id": 5,
+          "name": "San Francisco Giants",
+          "abbreviation": "SF"
+        },
+        "away": {
+          "team_id": 9,
+          "name": "Toronto Blue Jays",
+          "abbreviation": "TOR"
+        }
+      }
+    },
+    {
+      "game_id": 3031,
+      "mlb_game_pk": 823928,
+      "market_type": "moneyline",
+      "market_status": "no_odds",
+      "recommended_side": "none",
+      "true_win_probability": {
+        "home": 0.7236574716650211,
+        "away": 0.27634252833497885
+      },
+      "expected_value": {
+        "home": 0.0,
+        "away": 0.0
+      },
+      "current_odds_american": {
+        "home": null,
+        "away": null
+      },
+      "bet_fraction": 0.0,
+      "side_details": {
+        "home": {
+          "side": "home",
+          "true_probability": 0.7236574716650211,
+          "implied_probability": null,
+          "american_odds": null,
+          "expected_value": 0.0,
+          "bet_fraction": 0.0
+        },
+        "away": {
+          "side": "away",
+          "true_probability": 0.27634252833497885,
+          "implied_probability": null,
+          "american_odds": null,
+          "expected_value": 0.0,
+          "bet_fraction": 0.0
+        }
+      },
+      "game_date": "2026-07-08",
+      "game_datetime_utc": "2026-07-09T02:10:00+00:00",
+      "game_datetime_tw": "2026-07-09T10:10:00+08:00",
+      "teams": {
+        "home": {
+          "team_id": 28,
+          "name": "Los Angeles Dodgers",
+          "abbreviation": "LAD"
+        },
+        "away": {
+          "team_id": 24,
+          "name": "Colorado Rockies",
+          "abbreviation": "COL"
+        }
+      }
+    },
+    {
+      "game_id": 3024,
+      "mlb_game_pk": 822710,
+      "market_type": "moneyline",
+      "market_status": "no_odds",
+      "recommended_side": "none",
+      "true_win_probability": {
+        "home": 0.5447995894372332,
+        "away": 0.45520041056276683
+      },
+      "expected_value": {
+        "home": 0.0,
+        "away": 0.0
+      },
+      "current_odds_american": {
+        "home": null,
+        "away": null
+      },
+      "bet_fraction": 0.0,
+      "side_details": {
+        "home": {
+          "side": "home",
+          "true_probability": 0.5447995894372332,
+          "implied_probability": null,
+          "american_odds": null,
+          "expected_value": 0.0,
+          "bet_fraction": 0.0
+        },
+        "away": {
+          "side": "away",
+          "true_probability": 0.45520041056276683,
+          "implied_probability": null,
+          "american_odds": null,
+          "expected_value": 0.0,
+          "bet_fraction": 0.0
+        }
+      },
+      "game_date": "2026-07-08",
+      "game_datetime_utc": "2026-07-08T22:45:00+00:00",
+      "game_datetime_tw": "2026-07-09T06:45:00+08:00",
+      "teams": {
+        "home": {
+          "team_id": 29,
+          "name": "Washington Nationals",
+          "abbreviation": "WSH"
+        },
+        "away": {
+          "team_id": 26,
+          "name": "Houston Astros",
+          "abbreviation": "HOU"
+        }
+      }
+    },
+    {
+      "game_id": 3032,
+      "mlb_game_pk": 823279,
+      "market_type": "moneyline",
+      "market_status": "no_odds",
+      "recommended_side": "none",
+      "true_win_probability": {
+        "home": 0.4205824909258874,
+        "away": 0.5794175090741126
+      },
+      "expected_value": {
+        "home": 0.0,
+        "away": 0.0
+      },
+      "current_odds_american": {
+        "home": null,
+        "away": null
+      },
+      "bet_fraction": 0.0,
+      "side_details": {
+        "home": {
+          "side": "home",
+          "true_probability": 0.4205824909258874,
+          "implied_probability": null,
+          "american_odds": null,
+          "expected_value": 0.0,
+          "bet_fraction": 0.0
+        },
+        "away": {
+          "side": "away",
+          "true_probability": 0.5794175090741126,
+          "implied_probability": null,
+          "american_odds": null,
+          "expected_value": 0.0,
+          "bet_fraction": 0.0
+        }
+      },
+      "game_date": "2026-07-08",
+      "game_datetime_utc": "2026-07-09T02:10:00+00:00",
+      "game_datetime_tw": "2026-07-09T10:10:00+08:00",
+      "teams": {
+        "home": {
+          "team_id": 3,
+          "name": "San Diego Padres",
+          "abbreviation": "SD"
+        },
+        "away": {
+          "team_id": 18,
+          "name": "Arizona Diamondbacks",
+          "abbreviation": "AZ"
+        }
+      }
+    }
+  ],
+  "totals": [
+    {
+      "game_id": 3030,
+      "mlb_game_pk": 822880,
+      "market_type": "total",
+      "market_status": "no_odds",
+      "totals_line": 8.5,
+      "recommended_side": "none",
+      "true_probability": {
+        "over": 0.5690027655721072,
+        "under": 0.4309972344278927,
+        "push": 0.0
+      },
+      "expected_value": {
+        "over": 0.0,
+        "under": 0.0
+      },
+      "current_odds_american": {
+        "over": null,
+        "under": null
+      },
+      "bet_fraction": 0.0,
+      "expected_runs": {
+        "home": 4.6928904187518965,
+        "away": 4.496322929830034,
+        "total": 9.18921334858193
+      },
+      "side_details": {
+        "over": {
+          "side": "over",
+          "true_probability": 0.5690027655721072,
+          "implied_probability": null,
+          "american_odds": null,
+          "expected_value": 0.0,
+          "bet_fraction": 0.0
+        },
+        "under": {
+          "side": "under",
+          "true_probability": 0.4309972344278927,
+          "implied_probability": null,
+          "american_odds": null,
+          "expected_value": 0.0,
+          "bet_fraction": 0.0
+        }
+      },
+      "game_date": "2026-07-08",
+      "game_datetime_utc": "2026-07-09T00:05:00+00:00",
+      "game_datetime_tw": "2026-07-09T08:05:00+08:00",
+      "teams": {
+        "home": {
+          "team_id": 8,
+          "name": "Texas Rangers",
+          "abbreviation": "TEX"
+        },
+        "away": {
+          "team_id": 17,
+          "name": "Los Angeles Angels",
+          "abbreviation": "LAA"
+        }
+      }
+    },
+    {
+      "game_id": 3029,
+      "mlb_game_pk": 823032,
+      "market_type": "total",
+      "market_status": "no_odds",
+      "totals_line": 8.5,
+      "recommended_side": "none",
+      "true_probability": {
+        "over": 0.5589424850973045,
+        "under": 0.4410575149026954,
+        "push": 0.0
+      },
+      "expected_value": {
+        "over": 0.0,
+        "under": 0.0
+      },
+      "current_odds_american": {
+        "over": null,
+        "under": null
+      },
+      "bet_fraction": 0.0,
+      "expected_runs": {
+        "home": 4.736620633219628,
+        "away": 4.374863530053391,
+        "total": 9.111484163273019
+      },
+      "side_details": {
+        "over": {
+          "side": "over",
+          "true_probability": 0.5589424850973045,
+          "implied_probability": null,
+          "american_odds": null,
+          "expected_value": 0.0,
+          "bet_fraction": 0.0
+        },
+        "under": {
+          "side": "under",
+          "true_probability": 0.4410575149026954,
+          "implied_probability": null,
+          "american_odds": null,
+          "expected_value": 0.0,
+          "bet_fraction": 0.0
+        }
+      },
+      "game_date": "2026-07-08",
+      "game_datetime_utc": "2026-07-08T23:45:00+00:00",
+      "game_datetime_tw": "2026-07-09T07:45:00+08:00",
+      "teams": {
+        "home": {
+          "team_id": 6,
+          "name": "St. Louis Cardinals",
+          "abbreviation": "STL"
+        },
+        "away": {
+          "team_id": 16,
+          "name": "Milwaukee Brewers",
+          "abbreviation": "MIL"
+        }
+      }
+    },
+    {
+      "game_id": 3028,
+      "mlb_game_pk": 824578,
+      "market_type": "total",
+      "market_status": "no_odds",
+      "totals_line": 8.5,
+      "recommended_side": "none",
+      "true_probability": {
+        "over": 0.5236159612116984,
+        "under": 0.4763840387883016,
+        "push": 0.0
+      },
+      "expected_value": {
+        "over": 0.0,
+        "under": 0.0
+      },
+      "current_odds_american": {
+        "over": null,
+        "under": null
+      },
+      "bet_fraction": 0.0,
+      "expected_runs": {
+        "home": 4.481750279492028,
+        "away": 4.362199020802083,
+        "total": 8.84394930029411
+      },
+      "side_details": {
+        "over": {
+          "side": "over",
+          "true_probability": 0.5236159612116984,
+          "implied_probability": null,
+          "american_odds": null,
+          "expected_value": 0.0,
+          "bet_fraction": 0.0
+        },
+        "under": {
+          "side": "under",
+          "true_probability": 0.4763840387883016,
+          "implied_probability": null,
+          "american_odds": null,
+          "expected_value": 0.0,
+          "bet_fraction": 0.0
+        }
+      },
+      "game_date": "2026-07-08",
+      "game_datetime_utc": "2026-07-08T23:40:00+00:00",
+      "game_datetime_tw": "2026-07-09T07:40:00+08:00",
+      "teams": {
+        "home": {
+          "team_id": 13,
+          "name": "Chicago White Sox",
+          "abbreviation": "CWS"
+        },
+        "away": {
+          "team_id": 20,
+          "name": "Boston Red Sox",
+          "abbreviation": "BOS"
+        }
+      }
+    },
+    {
+      "game_id": 3027,
+      "mlb_game_pk": 823684,
+      "market_type": "total",
+      "market_status": "no_odds",
+      "totals_line": 8.5,
+      "recommended_side": "none",
+      "true_probability": {
+        "over": 0.528727517602588,
+        "under": 0.4712724823974122,
+        "push": 0.0
+      },
+      "expected_value": {
+        "over": 0.0,
+        "under": 0.0
+      },
+      "current_odds_american": {
+        "over": null,
+        "under": null
+      },
+      "bet_fraction": 0.0,
+      "expected_runs": {
+        "home": 4.440041927446851,
+        "away": 4.442153301735442,
+        "total": 8.882195229182294
+      },
+      "side_details": {
+        "over": {
+          "side": "over",
+          "true_probability": 0.528727517602588,
+          "implied_probability": null,
+          "american_odds": null,
+          "expected_value": 0.0,
+          "bet_fraction": 0.0
+        },
+        "under": {
+          "side": "under",
+          "true_probability": 0.4712724823974122,
+          "implied_probability": null,
+          "american_odds": null,
+          "expected_value": 0.0,
+          "bet_fraction": 0.0
+        }
+      },
+      "game_date": "2026-07-08",
+      "game_datetime_utc": "2026-07-08T23:40:00+00:00",
+      "game_datetime_tw": "2026-07-09T07:40:00+08:00",
+      "teams": {
+        "home": {
+          "team_id": 10,
+          "name": "Minnesota Twins",
+          "abbreviation": "MIN"
+        },
+        "away": {
+          "team_id": 23,
+          "name": "Cleveland Guardians",
+          "abbreviation": "CLE"
+        }
+      }
+    },
+    {
+      "game_id": 3026,
+      "mlb_game_pk": 824496,
+      "market_type": "total",
+      "market_status": "no_odds",
+      "totals_line": 8.5,
+      "recommended_side": "none",
+      "true_probability": {
+        "over": 0.49659567025881485,
+        "under": 0.503404329741185,
+        "push": 0.0
+      },
+      "expected_value": {
+        "over": 0.0,
+        "under": 0.0
+      },
+      "current_odds_american": {
+        "over": null,
+        "under": null
+      },
+      "bet_fraction": 0.0,
+      "expected_runs": {
+        "home": 4.2448274141828914,
+        "away": 4.399104081300298,
+        "total": 8.64393149548319
+      },
+      "side_details": {
+        "over": {
+          "side": "over",
+          "true_probability": 0.49659567025881485,
+          "implied_probability": null,
+          "american_odds": null,
+          "expected_value": 0.0,
+          "bet_fraction": 0.0
+        },
+        "under": {
+          "side": "under",
+          "true_probability": 0.503404329741185,
+          "implied_probability": null,
+          "american_odds": null,
+          "expected_value": 0.0,
+          "bet_fraction": 0.0
+        }
+      },
+      "game_date": "2026-07-08",
+      "game_datetime_utc": "2026-07-08T23:10:00+00:00",
+      "game_datetime_tw": "2026-07-09T07:10:00+08:00",
+      "teams": {
+        "home": {
+          "team_id": 22,
+          "name": "Cincinnati Reds",
+          "abbreviation": "CIN"
+        },
+        "away": {
+          "team_id": 11,
+          "name": "Philadelphia Phillies",
+          "abbreviation": "PHI"
+        }
+      }
+    },
+    {
+      "game_id": 3025,
+      "mlb_game_pk": 823605,
+      "market_type": "total",
+      "market_status": "no_odds",
+      "totals_line": 8.5,
+      "recommended_side": "none",
+      "true_probability": {
+        "over": 0.4877912005216032,
+        "under": 0.512208799478397,
+        "push": 0.0
+      },
+      "expected_value": {
+        "over": 0.0,
+        "under": 0.0
+      },
+      "current_odds_american": {
+        "over": null,
+        "under": null
+      },
+      "bet_fraction": 0.0,
+      "expected_runs": {
+        "home": 4.659620218155761,
+        "away": 3.9198151991947596,
+        "total": 8.57943541735052
+      },
+      "side_details": {
+        "over": {
+          "side": "over",
+          "true_probability": 0.4877912005216032,
+          "implied_probability": null,
+          "american_odds": null,
+          "expected_value": 0.0,
+          "bet_fraction": 0.0
+        },
+        "under": {
+          "side": "under",
+          "true_probability": 0.512208799478397,
+          "implied_probability": null,
+          "american_odds": null,
+          "expected_value": 0.0,
+          "bet_fraction": 0.0
+        }
+      },
+      "game_date": "2026-07-08",
+      "game_datetime_utc": "2026-07-08T23:10:00+00:00",
+      "game_datetime_tw": "2026-07-09T07:10:00+08:00",
+      "teams": {
+        "home": {
+          "team_id": 30,
+          "name": "New York Mets",
+          "abbreviation": "NYM"
+        },
+        "away": {
+          "team_id": 27,
+          "name": "Kansas City Royals",
+          "abbreviation": "KC"
+        }
+      }
+    },
+    {
+      "game_id": 3021,
+      "mlb_game_pk": 823360,
+      "market_type": "total",
+      "market_status": "no_odds",
+      "totals_line": 8.5,
+      "recommended_side": "none",
+      "true_probability": {
+        "over": 0.6200652186500625,
+        "under": 0.37993478134993747,
+        "push": 0.0
+      },
+      "expected_value": {
+        "over": 0.0,
+        "under": 0.0
+      },
+      "current_odds_american": {
+        "over": null,
+        "under": null
+      },
+      "bet_fraction": 0.0,
+      "expected_runs": {
+        "home": 4.800373860640732,
+        "away": 4.796913487749335,
+        "total": 9.597287348390067
+      },
+      "side_details": {
+        "over": {
+          "side": "over",
+          "true_probability": 0.6200652186500625,
+          "implied_probability": null,
+          "american_odds": null,
+          "expected_value": 0.0,
+          "bet_fraction": 0.0
+        },
+        "under": {
+          "side": "under",
+          "true_probability": 0.37993478134993747,
+          "implied_probability": null,
+          "american_odds": null,
+          "expected_value": 0.0,
+          "bet_fraction": 0.0
+        }
+      },
+      "game_date": "2026-07-08",
+      "game_datetime_utc": "2026-07-08T22:40:00+00:00",
+      "game_datetime_tw": "2026-07-09T06:40:00+08:00",
+      "teams": {
+        "home": {
+          "team_id": 2,
+          "name": "Pittsburgh Pirates",
+          "abbreviation": "PIT"
+        },
+        "away": {
+          "team_id": 12,
+          "name": "Atlanta Braves",
+          "abbreviation": "ATL"
+        }
+      }
+    },
+    {
+      "game_id": 3023,
+      "mlb_game_pk": 822957,
+      "market_type": "total",
+      "market_status": "no_odds",
+      "totals_line": 8.5,
+      "recommended_side": "none",
+      "true_probability": {
+        "over": 0.4912155577844296,
+        "under": 0.5087844422155703,
+        "push": 0.0
+      },
+      "expected_value": {
+        "over": 0.0,
+        "under": 0.0
+      },
+      "current_odds_american": {
+        "over": null,
+        "under": null
+      },
+      "bet_fraction": 0.0,
+      "expected_runs": {
+        "home": 4.291136714369549,
+        "away": 4.313348415302701,
+        "total": 8.60448512967225
+      },
+      "side_details": {
+        "over": {
+          "side": "over",
+          "true_probability": 0.4912155577844296,
+          "implied_probability": null,
+          "american_odds": null,
+          "expected_value": 0.0,
+          "bet_fraction": 0.0
+        },
+        "under": {
+          "side": "under",
+          "true_probability": 0.5087844422155703,
+          "implied_probability": null,
+          "american_odds": null,
+          "expected_value": 0.0,
+          "bet_fraction": 0.0
+        }
+      },
+      "game_date": "2026-07-08",
+      "game_datetime_utc": "2026-07-08T22:40:00+00:00",
+      "game_datetime_tw": "2026-07-09T06:40:00+08:00",
+      "teams": {
+        "home": {
+          "team_id": 7,
+          "name": "Tampa Bay Rays",
+          "abbreviation": "TB"
+        },
+        "away": {
+          "team_id": 15,
+          "name": "New York Yankees",
+          "abbreviation": "NYY"
+        }
+      }
+    },
+    {
+      "game_id": 3022,
+      "mlb_game_pk": 823848,
+      "market_type": "total",
+      "market_status": "no_odds",
+      "totals_line": 8.5,
+      "recommended_side": "none",
+      "true_probability": {
+        "over": 0.5429617609390087,
+        "under": 0.4570382390609912,
+        "push": 0.0
+      },
+      "expected_value": {
+        "over": 0.0,
+        "under": 0.0
+      },
+      "current_odds_american": {
+        "over": null,
+        "under": null
+      },
+      "bet_fraction": 0.0,
+      "expected_runs": {
+        "home": 4.533924456223748,
+        "away": 4.455565060466343,
+        "total": 8.989489516690092
+      },
+      "side_details": {
+        "over": {
+          "side": "over",
+          "true_probability": 0.5429617609390087,
+          "implied_probability": null,
+          "american_odds": null,
+          "expected_value": 0.0,
+          "bet_fraction": 0.0
+        },
+        "under": {
+          "side": "under",
+          "true_probability": 0.4570382390609912,
+          "implied_probability": null,
+          "american_odds": null,
+          "expected_value": 0.0,
+          "bet_fraction": 0.0
+        }
+      },
+      "game_date": "2026-07-08",
+      "game_datetime_utc": "2026-07-08T22:40:00+00:00",
+      "game_datetime_tw": "2026-07-09T06:40:00+08:00",
+      "teams": {
+        "home": {
+          "team_id": 14,
+          "name": "Miami Marlins",
+          "abbreviation": "MIA"
+        },
+        "away": {
+          "team_id": 4,
+          "name": "Seattle Mariners",
+          "abbreviation": "SEA"
+        }
+      }
+    },
+    {
+      "game_id": 3020,
+      "mlb_game_pk": 824253,
+      "market_type": "total",
+      "market_status": "no_odds",
+      "totals_line": 8.5,
+      "recommended_side": "none",
+      "true_probability": {
+        "over": 0.528847191953008,
+        "under": 0.4711528080469918,
+        "push": 0.0
+      },
+      "expected_value": {
+        "over": 0.0,
+        "under": 0.0
+      },
+      "current_odds_american": {
+        "over": null,
+        "under": null
+      },
+      "bet_fraction": 0.0,
+      "expected_runs": {
+        "home": 4.664266078605704,
+        "away": 4.218826331874098,
+        "total": 8.8830924104798
+      },
+      "side_details": {
+        "over": {
+          "side": "over",
+          "true_probability": 0.528847191953008,
+          "implied_probability": null,
+          "american_odds": null,
+          "expected_value": 0.0,
+          "bet_fraction": 0.0
+        },
+        "under": {
+          "side": "under",
+          "true_probability": 0.4711528080469918,
+          "implied_probability": null,
+          "american_odds": null,
+          "expected_value": 0.0,
+          "bet_fraction": 0.0
+        }
+      },
+      "game_date": "2026-07-08",
+      "game_datetime_utc": "2026-07-08T22:40:00+00:00",
+      "game_datetime_tw": "2026-07-09T06:40:00+08:00",
+      "teams": {
+        "home": {
+          "team_id": 25,
+          "name": "Detroit Tigers",
+          "abbreviation": "DET"
+        },
+        "away": {
+          "team_id": 1,
+          "name": "Athletics",
+          "abbreviation": "ATH"
+        }
+      }
+    },
+    {
+      "game_id": 3019,
+      "mlb_game_pk": 824815,
+      "market_type": "total",
+      "market_status": "no_odds",
+      "totals_line": 8.5,
+      "recommended_side": "none",
+      "true_probability": {
+        "over": 0.46632895831627263,
+        "under": 0.5336710416837274,
+        "push": 0.0
+      },
+      "expected_value": {
+        "over": 0.0,
+        "under": 0.0
+      },
+      "current_odds_american": {
+        "over": null,
+        "under": null
+      },
+      "bet_fraction": 0.0,
+      "expected_runs": {
+        "home": 4.355846002913603,
+        "away": 4.067479652709888,
+        "total": 8.423325655623492
+      },
+      "side_details": {
+        "over": {
+          "side": "over",
+          "true_probability": 0.46632895831627263,
+          "implied_probability": null,
+          "american_odds": null,
+          "expected_value": 0.0,
+          "bet_fraction": 0.0
+        },
+        "under": {
+          "side": "under",
+          "true_probability": 0.5336710416837274,
+          "implied_probability": null,
+          "american_odds": null,
+          "expected_value": 0.0,
+          "bet_fraction": 0.0
+        }
+      },
+      "game_date": "2026-07-08",
+      "game_datetime_utc": "2026-07-08T22:35:00+00:00",
+      "game_datetime_tw": "2026-07-09T06:35:00+08:00",
+      "teams": {
+        "home": {
+          "team_id": 19,
+          "name": "Baltimore Orioles",
+          "abbreviation": "BAL"
+        },
+        "away": {
+          "team_id": 21,
+          "name": "Chicago Cubs",
+          "abbreviation": "CHC"
+        }
+      }
+    },
+    {
+      "game_id": 3018,
+      "mlb_game_pk": 823202,
+      "market_type": "total",
+      "market_status": "no_odds",
+      "totals_line": 8.5,
+      "recommended_side": "none",
+      "true_probability": {
+        "over": 0.49589317104938335,
+        "under": 0.5041068289506168,
+        "push": 0.0
+      },
+      "expected_value": {
+        "over": 0.0,
+        "under": 0.0
+      },
+      "current_odds_american": {
+        "over": null,
+        "under": null
+      },
+      "bet_fraction": 0.0,
+      "expected_runs": {
+        "home": 4.338583671530676,
+        "away": 4.300190735495798,
+        "total": 8.638774407026474
+      },
+      "side_details": {
+        "over": {
+          "side": "over",
+          "true_probability": 0.49589317104938335,
+          "implied_probability": null,
+          "american_odds": null,
+          "expected_value": 0.0,
+          "bet_fraction": 0.0
+        },
+        "under": {
+          "side": "under",
+          "true_probability": 0.5041068289506168,
+          "implied_probability": null,
+          "american_odds": null,
+          "expected_value": 0.0,
+          "bet_fraction": 0.0
+        }
+      },
+      "game_date": "2026-07-08",
+      "game_datetime_utc": "2026-07-08T19:45:00+00:00",
+      "game_datetime_tw": "2026-07-09T03:45:00+08:00",
+      "teams": {
+        "home": {
+          "team_id": 5,
+          "name": "San Francisco Giants",
+          "abbreviation": "SF"
+        },
+        "away": {
+          "team_id": 9,
+          "name": "Toronto Blue Jays",
+          "abbreviation": "TOR"
+        }
+      }
+    },
+    {
+      "game_id": 3031,
+      "mlb_game_pk": 823928,
+      "market_type": "total",
+      "market_status": "no_odds",
+      "totals_line": 8.5,
+      "recommended_side": "none",
+      "true_probability": {
+        "over": 0.564117498394926,
+        "under": 0.4358825016050739,
+        "push": 0.0
+      },
+      "expected_value": {
+        "over": 0.0,
+        "under": 0.0
+      },
+      "current_odds_american": {
+        "over": null,
+        "under": null
+      },
+      "bet_fraction": 0.0,
+      "expected_runs": {
+        "home": 4.887467085525572,
+        "away": 4.263906178297577,
+        "total": 9.15137326382315
+      },
+      "side_details": {
+        "over": {
+          "side": "over",
+          "true_probability": 0.564117498394926,
+          "implied_probability": null,
+          "american_odds": null,
+          "expected_value": 0.0,
+          "bet_fraction": 0.0
+        },
+        "under": {
+          "side": "under",
+          "true_probability": 0.4358825016050739,
+          "implied_probability": null,
+          "american_odds": null,
+          "expected_value": 0.0,
+          "bet_fraction": 0.0
+        }
+      },
+      "game_date": "2026-07-08",
+      "game_datetime_utc": "2026-07-09T02:10:00+00:00",
+      "game_datetime_tw": "2026-07-09T10:10:00+08:00",
+      "teams": {
+        "home": {
+          "team_id": 28,
+          "name": "Los Angeles Dodgers",
+          "abbreviation": "LAD"
+        },
+        "away": {
+          "team_id": 24,
+          "name": "Colorado Rockies",
+          "abbreviation": "COL"
+        }
+      }
+    },
+    {
+      "game_id": 3024,
+      "mlb_game_pk": 822710,
+      "market_type": "total",
+      "market_status": "no_odds",
+      "totals_line": 8.5,
+      "recommended_side": "none",
+      "true_probability": {
+        "over": 0.5782950652669099,
+        "under": 0.42170493473309034,
+        "push": 0.0
+      },
+      "expected_value": {
+        "over": 0.0,
+        "under": 0.0
+      },
+      "current_odds_american": {
+        "over": null,
+        "under": null
+      },
+      "bet_fraction": 0.0,
+      "expected_runs": {
+        "home": 4.737274902411216,
+        "away": 4.524434322501212,
+        "total": 9.261709224912428
+      },
+      "side_details": {
+        "over": {
+          "side": "over",
+          "true_probability": 0.5782950652669099,
+          "implied_probability": null,
+          "american_odds": null,
+          "expected_value": 0.0,
+          "bet_fraction": 0.0
+        },
+        "under": {
+          "side": "under",
+          "true_probability": 0.42170493473309034,
+          "implied_probability": null,
+          "american_odds": null,
+          "expected_value": 0.0,
+          "bet_fraction": 0.0
+        }
+      },
+      "game_date": "2026-07-08",
+      "game_datetime_utc": "2026-07-08T22:45:00+00:00",
+      "game_datetime_tw": "2026-07-09T06:45:00+08:00",
+      "teams": {
+        "home": {
+          "team_id": 29,
+          "name": "Washington Nationals",
+          "abbreviation": "WSH"
+        },
+        "away": {
+          "team_id": 26,
+          "name": "Houston Astros",
+          "abbreviation": "HOU"
+        }
+      }
+    },
+    {
+      "game_id": 3032,
+      "mlb_game_pk": 823279,
+      "market_type": "total",
+      "market_status": "no_odds",
+      "totals_line": 8.5,
+      "recommended_side": "none",
+      "true_probability": {
+        "over": 0.5574866876346531,
+        "under": 0.44251331236534686,
+        "push": 0.0
+      },
+      "expected_value": {
+        "over": 0.0,
+        "under": 0.0
+      },
+      "current_odds_american": {
+        "over": null,
+        "under": null
+      },
+      "bet_fraction": 0.0,
+      "expected_runs": {
+        "home": 4.866718938142575,
+        "away": 4.233579135105156,
+        "total": 9.100298073247732
+      },
+      "side_details": {
+        "over": {
+          "side": "over",
+          "true_probability": 0.5574866876346531,
+          "implied_probability": null,
+          "american_odds": null,
+          "expected_value": 0.0,
+          "bet_fraction": 0.0
+        },
+        "under": {
+          "side": "under",
+          "true_probability": 0.44251331236534686,
+          "implied_probability": null,
+          "american_odds": null,
+          "expected_value": 0.0,
+          "bet_fraction": 0.0
+        }
+      },
+      "game_date": "2026-07-08",
+      "game_datetime_utc": "2026-07-09T02:10:00+00:00",
+      "game_datetime_tw": "2026-07-09T10:10:00+08:00",
+      "teams": {
+        "home": {
+          "team_id": 3,
+          "name": "San Diego Padres",
+          "abbreviation": "SD"
+        },
+        "away": {
+          "team_id": 18,
+          "name": "Arizona Diamondbacks",
+          "abbreviation": "AZ"
+        }
+      }
+    }
+  ]
+}
