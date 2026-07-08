@@ -24,11 +24,13 @@
     .site-nav-link { display: block; color: #40514b; text-decoration: none; border-radius: 8px; padding: 9px 10px; font-size: 14px; font-weight: 750; line-height: 1.25; }
     .site-nav-link:hover { background: #eef4f1; color: #123d35; }
     .site-nav-link.active { background: #165f56; color: #ffffff; }
-    .site-shell > main { width: min(1180px, calc(100% - 56px)); margin-left: auto; margin-right: auto; }
+    .site-shell > header { grid-column: 2; min-width: 0; }
+    .site-shell > main { grid-column: 2; width: min(1180px, calc(100% - 56px)); margin-left: auto; margin-right: auto; min-width: 0; }
     @media (max-width: 900px) {
       .site-shell { display: block; }
       .site-sidebar { position: static; height: auto; border-right: 0; border-bottom: 1px solid #dfe5df; }
       .site-sidebar nav { grid-template-columns: repeat(auto-fit, minmax(112px, 1fr)); }
+      .site-shell > header { grid-column: auto; }
       .site-shell > main { width: auto; }
     }
   </style>
