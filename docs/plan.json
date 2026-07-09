@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-07-09T21:07:55",
+  "generated_at": "2026-07-10T00:08:42",
   "period": {
     "start": "2025-03-27",
-    "end": "2026-07-08"
+    "end": "2026-07-09"
   },
   "settings": {
     "unit": 100,
@@ -14,14 +14,14 @@
   "data_source": {
     "type": "real_mlb_final_scores",
     "games_csv": "data\\real_mlb_games.csv",
-    "games_evaluated": 3819,
+    "games_evaluated": 3825,
     "actual_first_game_date": "2025-03-27",
-    "actual_last_game_date": "2026-07-08",
+    "actual_last_game_date": "2026-07-09",
     "game_types": [
       "R"
     ],
     "coverage_warning": null,
-    "generated_at": "2026-07-09T21:00:55",
+    "generated_at": "2026-07-10T00:00:53",
     "note": "Backtest uses real MLB final scores from saved MLB Stats API schedule data. Odds are still the configured fixed market assumption."
   },
   "bankroll_assumption": 10000,
@@ -39,89 +39,89 @@
     },
     {
       "模型": "C-ELO評分",
-      "總注": 1366,
-      "勝": 797,
-      "敗": 569,
-      "勝率%": 58.35,
-      "總損益$": 15555.27,
-      "ROI%": 11.39
+      "總注": 1369,
+      "勝": 798,
+      "敗": 571,
+      "勝率%": 58.29,
+      "總損益$": 15446.18,
+      "ROI%": 11.28
     },
     {
       "模型": "E-對照組(Ensemble)",
-      "總注": 1334,
-      "勝": 777,
-      "敗": 557,
-      "勝率%": 58.25,
-      "總損益$": 14937.07,
-      "ROI%": 11.2
+      "總注": 1339,
+      "勝": 779,
+      "敗": 560,
+      "勝率%": 58.18,
+      "總損益$": 14818.89,
+      "ROI%": 11.07
     },
     {
       "模型": "B-近期狀態",
-      "總注": 1381,
-      "勝": 775,
-      "敗": 606,
-      "勝率%": 56.12,
-      "總損益$": 9855.25,
-      "ROI%": 7.14
+      "總注": 1386,
+      "勝": 777,
+      "敗": 609,
+      "勝率%": 56.06,
+      "總損益$": 9737.07,
+      "ROI%": 7.03
     },
     {
       "模型": "D-近期失分代理",
-      "總注": 1366,
-      "勝": 750,
-      "敗": 616,
-      "勝率%": 54.9,
-      "總損益$": 6582.5,
-      "ROI%": 4.82
+      "總注": 1371,
+      "勝": 752,
+      "敗": 619,
+      "勝率%": 54.85,
+      "總損益$": 6464.32,
+      "ROI%": 4.72
     }
   ],
   "accuracy_ranking": [
     {
       "模型": "A-畢氏勝率",
-      "預測場次": 3740,
-      "正確": 2023,
-      "錯誤": 1717,
-      "準確率%": 54.09
+      "預測場次": 3746,
+      "正確": 2027,
+      "錯誤": 1719,
+      "準確率%": 54.11
     },
     {
       "模型": "C-ELO評分",
-      "預測場次": 3819,
-      "正確": 2049,
-      "錯誤": 1770,
-      "準確率%": 53.65
+      "預測場次": 3825,
+      "正確": 2051,
+      "錯誤": 1774,
+      "準確率%": 53.62
     },
     {
       "模型": "B-近期狀態",
-      "預測場次": 3740,
-      "正確": 2004,
-      "錯誤": 1736,
-      "準確率%": 53.58
+      "預測場次": 3746,
+      "正確": 2006,
+      "錯誤": 1740,
+      "準確率%": 53.55
     },
     {
       "模型": "E-對照組(Ensemble)",
-      "預測場次": 3819,
-      "正確": 2035,
-      "錯誤": 1784,
-      "準確率%": 53.29
+      "預測場次": 3825,
+      "正確": 2038,
+      "錯誤": 1787,
+      "準確率%": 53.28
     },
     {
       "模型": "D-近期失分代理",
-      "預測場次": 3740,
-      "正確": 1945,
-      "錯誤": 1795,
-      "準確率%": 52.01
+      "預測場次": 3746,
+      "正確": 1947,
+      "錯誤": 1799,
+      "準確率%": 51.98
     }
   ],
   "accuracy_source": {
     "type": "real_mlb_final_scores",
     "games_csv": "data\\real_mlb_games.csv",
-    "games_evaluated": 3819,
+    "games_evaluated": 3825,
     "note": "Pure winner-prediction accuracy only. Odds, edge, stake, and ROI are intentionally excluded."
   },
   "accuracy_metrics": {
-    "predictions": 3740,
-    "correct": 2023,
-    "wrong": 1717,
-    "accuracy_pct": 54.09
+    "predictions": 3746,
+    "correct": 2027,
+    "wrong": 1719,
+    "accuracy_pct": 54.11
   },
   "production_metrics": {
     "total_bets": 1148,
@@ -136,7 +136,7 @@
     "positive_day_rate_pct": 58.06,
     "max_drawdown": -1354.51,
     "last_14_active_day_pnl": 563.66,
-    "last_record_date": "2026-07-08"
+    "last_record_date": "2026-07-09"
   },
   "recent_bets": [
     {
@@ -2577,6 +2577,14 @@
       "wins": 2,
       "losses": 1,
       "pnl": 81.82,
+      "cumulative_pnl": 14827.89
+    },
+    {
+      "date": "2026-07-09",
+      "bets": 0,
+      "wins": 0,
+      "losses": 0,
+      "pnl": 0.0,
       "cumulative_pnl": 14827.89
     }
   ]
