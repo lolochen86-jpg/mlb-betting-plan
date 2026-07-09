@@ -10,7 +10,7 @@ import html
 import json
 import random
 from copy import deepcopy
-from datetime import date, datetime
+from datetime import date, datetime, timedelta
 from pathlib import Path
 
 from generate_game_simulator import build_sim_data
@@ -412,9 +412,50 @@ def write_csv(report: dict) -> None:
             writer.writerow({field: row.get(field, "") for field in fields})
 
 
+def display_games(report: dict) -> list[dict]:
+    target_date = report["target_date"]
+    previous_date = (date.fromisoformat(target_date) - timedelta(days=1)).isoformat()
+    previous_path = Path(str(MC_JSON).format(date=previous_date))
+    games = []
+    if previous_path.exists():
+        try:
+            previous_report = json.loads(previous_path.read_text(encoding="utf-8-sig"))
+        except (json.JSONDecodeError, OSError):
+            previous_report = {}
+        for game in previous_report.get("games", []):
+            if str(game.get("game_time_tw") or "").startswith(target_date):
+                games.append({**game, "mlb_date": previous_date, "taiwan_date": target_date})
+    for game in report["games"]:
+        game_time_tw = str(game.get("game_time_tw") or "")
+        games.append(
+            {
+                **game,
+                "mlb_date": target_date,
+                "taiwan_date": game_time_tw[:10] if len(game_time_tw) >= 10 else "",
+            }
+        )
+    games.sort(
+        key=lambda game: (
+            0 if game.get("taiwan_date") == target_date else 1,
+            str(game.get("game_time_tw") or ""),
+            str(game.get("game_pk") or ""),
+        )
+    )
+    return games
+
+
 def render_html(report: dict) -> str:
     cards = []
-    for game in report["games"]:
+    games = display_games(report)
+    active_taiwan_date = None
+    for game in games:
+        if game.get("taiwan_date") != active_taiwan_date:
+            active_taiwan_date = game.get("taiwan_date")
+            day_label = "台灣今日" if active_taiwan_date == report["target_date"] else "台灣明日／之後"
+            cards.append(
+                f'<h2 class="day-heading">{day_label} {html.escape(str(active_taiwan_date or "時間未公布"))}'
+                f'<span>MLB 日期 {html.escape(str(game.get("mlb_date") or "-"))}</span></h2>'
+            )
         away_prob = pct(game["away_win_prob"])
         home_prob = pct(game["home_win_prob"])
         over_text = pct(game["over_prob"]) if game["over_prob"] is not None else "-"
@@ -477,6 +518,8 @@ def render_html(report: dict) -> str:
     .summary span, .metrics span {{ display:block; color:var(--muted); font-size:13px; font-weight:800; }}
     .summary strong {{ display:block; font-size:28px; margin-top:4px; }}
     .game-card {{ padding:18px; margin-bottom:16px; }}
+    .day-heading {{ margin:24px 0 12px; padding:12px 14px; background:#e8f1ed; border-left:4px solid var(--accent); border-radius:0 8px 8px 0; }}
+    .day-heading span {{ display:block; margin-top:3px; color:var(--muted); font-size:13px; font-weight:700; }}
     .game-head {{ display:flex; align-items:start; justify-content:space-between; gap:18px; border-bottom:1px solid var(--line); padding-bottom:14px; margin-bottom:14px; }}
     h2 {{ margin:0 0 6px; font-size:22px; }}
     .pick {{ min-width:120px; text-align:center; border:1px solid var(--line); border-radius:8px; padding:10px; font-weight:900; color:var(--warn); background:#fff8ed; }}
@@ -503,12 +546,12 @@ def render_html(report: dict) -> str:
       <a href="betting_ticket.html">投注單</a>
     </nav>
     <h1>蒙地卡羅模擬</h1>
-    <p>MLB日期：{report['target_date']} / 每場模擬 {report['simulations_per_game']:,} 次 / 產生時間：{report['generated_at']}</p>
+    <p>台灣顯示日期：{report['target_date']} / 每場模擬 {report['simulations_per_game']:,} 次 / 產生時間：{report['generated_at']}</p>
   </header>
   <main>
     <section class="summary">
-      <div><span>賽程場數</span><strong>{len(report['games'])}</strong></div>
-      <div><span>總模擬場次</span><strong>{len(report['games']) * report['simulations_per_game']:,}</strong></div>
+      <div><span>今日與明日賽程</span><strong>{len(games)}</strong></div>
+      <div><span>總模擬場次</span><strong>{len(games) * report['simulations_per_game']:,}</strong></div>
       <div><span>用途</span><strong>勝率 / 大小分 / 安打期望</strong></div>
     </section>
     {''.join(cards)}
