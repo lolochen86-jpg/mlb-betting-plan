@@ -343,6 +343,11 @@ def pending_score_text(daily_row: dict) -> str:
     return "尚無雙方得分預測"
 
 
+def taiwan_game_date(row: dict) -> str:
+    game_time_tw = str(row.get("game_time_tw") or "")
+    return game_time_tw[:10] if len(game_time_tw) >= 10 else ""
+
+
 def load_pending_settlements(target_date: str) -> list[dict]:
     pending = []
     daily_cache: dict[str, dict[str, dict]] = {}
@@ -376,11 +381,10 @@ def load_pending_settlements(target_date: str) -> list[dict]:
             pending.append(item)
     pending.sort(
         key=lambda row: (
-            str(row.get("game_time_utc") or ""),
-            str(row.get("date") or ""),
+            0 if taiwan_game_date(row) == target_date else (1 if taiwan_game_date(row) > target_date else 2),
+            str(row.get("game_time_tw") or ""),
             str(row.get("game_pk") or ""),
-        ),
-        reverse=True,
+        )
     )
     return pending
 
@@ -583,11 +587,22 @@ def render_schedule_rows(rows: list[dict]) -> str:
     return "\n".join(parts)
 
 
-def render_pending_rows(rows: list[dict]) -> str:
+def render_pending_rows(rows: list[dict], target_date: str) -> str:
     if not rows:
         return '<tr><td colspan="11">目前沒有未結算預測。</td></tr>'
     parts = []
+    active_date = None
     for row in rows:
+        game_date_tw = taiwan_game_date(row)
+        if game_date_tw != active_date:
+            if game_date_tw == target_date:
+                label = f"台灣今日 {game_date_tw}"
+            elif game_date_tw > target_date:
+                label = f"台灣明日／之後 {game_date_tw}"
+            else:
+                label = f"台灣之前未結算 {game_date_tw or '時間未公布'}"
+            parts.append(f'<tr class="date-group"><td colspan="11">{html.escape(label)}</td></tr>')
+            active_date = game_date_tw
         confidence = float(row.get("confidence") or 0) * 100
         parts.append(
             f"""
@@ -611,7 +626,7 @@ def render_pending_rows(rows: list[dict]) -> str:
 def render_html(plan: dict) -> str:
     rec_rows = render_rows(plan["high_confidence_predictions"])
     watch_rows = render_rows(plan["watchlist"])
-    pending_rows = render_pending_rows(plan.get("pending_unsettled_predictions", []))
+    pending_rows = render_pending_rows(plan.get("pending_unsettled_predictions", []), plan["target_date"])
     schedule_rows_recommendation = render_schedule_rows(plan["all_predictions"])
     schedule_rows_time = render_schedule_rows(
         sorted(plan["all_predictions"], key=lambda row: (row.get("game_time_utc") or "", int(row.get("game_pk") or 0)))
@@ -642,6 +657,7 @@ def render_html(plan: dict) -> str:
     table {{ width: 100%; border-collapse: collapse; background: white; border: 1px solid #dfe5df; border-radius: 8px; overflow: hidden; }}
     th, td {{ text-align: left; border-bottom: 1px solid #dfe5df; padding: 12px 10px; white-space: nowrap; font-size: 14px; }}
     th {{ color: #68736d; font-size: 12px; }}
+    .date-group td {{ background: #e8f1ed; color: #164f47; font-weight: 900; font-size: 14px; }}
     @media (max-width: 720px) {{ main {{ padding: 18px; }} table {{ display: block; overflow-x: auto; }} h1 {{ font-size: 25px; }} }}
   </style>
 </head>

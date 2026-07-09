@@ -76,9 +76,9 @@ def strip_existing(text: str) -> str:
     if MARKER not in text:
         return text
     start = text.find(f'  <div class="site-shell" {MARKER}>')
-    main_start = text.find("<main", start)
-    if start >= 0 and main_start > start:
-        text = text[:start] + text[main_start:]
+    aside_end = text.find("</aside>", start)
+    if start >= 0 and aside_end > start:
+        text = text[:start] + text[aside_end + len("</aside>") :]
     end_marker = "\n  </div>\n</body>"
     if end_marker in text:
         text = text.replace(end_marker, "\n</body>", 1)
@@ -103,6 +103,12 @@ def apply_nav(path: Path) -> bool:
         return False
     text = path.read_text(encoding="utf-8-sig")
     original = text
+    if MARKER in text:
+        text = inject_css(text)
+        if text != original:
+            path.write_text(text, encoding="utf-8")
+            return True
+        return False
     text = strip_existing(text)
     text = inject_css(text)
     text = text.replace("<body>", f"<body>\n{nav_html(path.name)}", 1)
