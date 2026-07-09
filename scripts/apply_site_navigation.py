@@ -25,6 +25,7 @@ NAV_ITEMS = [
     ("winner_model_search.html", "模型搜尋"),
     ("prediction_accuracy.html", "準確率"),
     ("status.html", "狀態"),
+    ("api/index.html", "資料 API"),
 ]
 
 SKIP_FILES = {"index.html"}
@@ -48,6 +49,20 @@ def nav_html(current: str) -> str:
             "    </aside>",
         ]
     )
+
+
+def refresh_nav_links(text: str, current: str) -> str:
+    aside_start = text.find('<aside class="site-sidebar">')
+    nav_start = text.find("<nav", aside_start)
+    nav_open_end = text.find(">", nav_start)
+    nav_end = text.find("</nav>", nav_open_end)
+    if min(aside_start, nav_start, nav_open_end, nav_end) < 0:
+        return text
+    links = []
+    for href, label in NAV_ITEMS:
+        active = " active" if href == current else ""
+        links.append(f'        <a class="site-nav-link{active}" href="{href}">{label}</a>')
+    return text[: nav_open_end + 1] + "\n" + "\n".join(links) + "\n      " + text[nav_end:]
 
 
 def site_css() -> str:
@@ -105,6 +120,7 @@ def apply_nav(path: Path) -> bool:
     original = text
     if MARKER in text:
         text = inject_css(text)
+        text = refresh_nav_links(text, path.name)
         if text != original:
             path.write_text(text, encoding="utf-8")
             return True

@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MLB 預測資料 API</title>
+  <style>
+    body { margin:0; background:#f5f7f5; color:#1e2924; font-family:"Microsoft JhengHei","Noto Sans TC",system-ui,sans-serif; }
+    main { max-width:980px; margin:0 auto; padding:32px 20px 48px; }
+    h1 { margin:0 0 8px; } h2 { margin-top:28px; }
+    p { color:#61706a; line-height:1.7; }
+    table { width:100%; border-collapse:collapse; background:#fff; border:1px solid #dce4df; }
+    th,td { padding:12px; border-bottom:1px solid #dce4df; text-align:left; }
+    code,pre { font-family:Consolas,monospace; }
+    pre { overflow:auto; padding:16px; background:#17231f; color:#e8f3ee; border-radius:8px; }
+    a { color:#126458; }
+  </style>
+</head>
+<body>
+<main>
+  <h1>MLB 預測資料 API</h1>
+  <p>公開唯讀 JSON API，更新日期：2026-07-09。GitHub Pages 靜態端點不需要 API Key。</p>
+  <h2>端點</h2>
+  <table><thead><tr><th>資料</th><th>網址</th></tr></thead><tbody><tr><td><code>latest_daily_predictions</code></td><td><a href="https://lolochen86-jpg.github.io/mlb-betting-plan/api/v1/latest/daily-predictions.json">https://lolochen86-jpg.github.io/mlb-betting-plan/api/v1/latest/daily-predictions.json</a></td></tr><tr><td><code>latest_monte_carlo</code></td><td><a href="https://lolochen86-jpg.github.io/mlb-betting-plan/api/v1/latest/monte-carlo.json">https://lolochen86-jpg.github.io/mlb-betting-plan/api/v1/latest/monte-carlo.json</a></td></tr><tr><td><code>latest_totals</code></td><td><a href="https://lolochen86-jpg.github.io/mlb-betting-plan/api/v1/latest/totals.json">https://lolochen86-jpg.github.io/mlb-betting-plan/api/v1/latest/totals.json</a></td></tr><tr><td><code>latest_markets</code></td><td><a href="https://lolochen86-jpg.github.io/mlb-betting-plan/api/v1/latest/markets.json">https://lolochen86-jpg.github.io/mlb-betting-plan/api/v1/latest/markets.json</a></td></tr><tr><td><code>latest_betting_roi</code></td><td><a href="https://lolochen86-jpg.github.io/mlb-betting-plan/api/v1/latest/betting-roi.json">https://lolochen86-jpg.github.io/mlb-betting-plan/api/v1/latest/betting-roi.json</a></td></tr><tr><td><code>latest_settlement</code></td><td><a href="https://lolochen86-jpg.github.io/mlb-betting-plan/api/v1/latest/settlement.json">https://lolochen86-jpg.github.io/mlb-betting-plan/api/v1/latest/settlement.json</a></td></tr><tr><td><code>latest_postgame_review</code></td><td><a href="https://lolochen86-jpg.github.io/mlb-betting-plan/api/v1/latest/postgame-review.json">https://lolochen86-jpg.github.io/mlb-betting-plan/api/v1/latest/postgame-review.json</a></td></tr></tbody></table>
+  <h2>JavaScript 範例</h2>
+  <pre><code>const response = await fetch("https://lolochen86-jpg.github.io/mlb-betting-plan/api/v1/latest/monte-carlo.json");
+const data = await response.json();
+console.log(data.taiwan_today);</code></pre>
+  <p>投注資料僅供模型研究，不保證獲利。其他網站應顯示資料產生時間與來源。</p>
+</main>
+</body>
+</html>
