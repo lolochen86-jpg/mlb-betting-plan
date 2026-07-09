@@ -16,6 +16,7 @@ from pathlib import Path
 from fetch_taiwan_sportslottery_odds import normalize_team_name
 from fetch_real_mlb_data import MLB_SCHEDULE_URL
 from name_localization import team_zh
+from pitcher_rotation import enrich_probable_pitchers
 from run_real_mlb_backtest import DEFAULT_GAMES_CSV, load_games
 from schedule_time import attach_game_time, load_time_index, time_sort_key
 from settle_betting_roi import implied_probability, parse_moneyline
@@ -260,12 +261,12 @@ def load_taiwan_odds(target_date: str) -> dict[str, dict]:
 
 def build_report(target_date: str, min_edge: float) -> dict:
     season = target_date[:4]
-    schedule = fetch_schedule(target_date)
+    history = [game for game in load_games(DEFAULT_GAMES_CSV) if game["date"] < target_date]
+    schedule = enrich_probable_pitchers(fetch_schedule(target_date), history, target_date)
     team_ids = {int(g["away_team_id"]) for g in schedule if g.get("away_team_id")} | {int(g["home_team_id"]) for g in schedule if g.get("home_team_id")}
     pitcher_ids = {int(g["away_pitcher_id"]) for g in schedule if g.get("away_pitcher_id")} | {int(g["home_pitcher_id"]) for g in schedule if g.get("home_pitcher_id")}
     team_stats = fetch_team_stats(team_ids, season)
     pitcher_stats = fetch_pitcher_stats(pitcher_ids, season)
-    history = load_games(DEFAULT_GAMES_CSV)
     ctx = recent_context(history, target_date)
     odds_by_pk = load_taiwan_odds(target_date)
     time_index = load_time_index(target_date)
@@ -283,7 +284,7 @@ def build_report(target_date: str, min_edge: float) -> dict:
 
         away_components = {
             "打擊率壘包": offense_score(away_team.get("hitting", {})),
-            "先發投手": pitcher_score(away_pitcher),
+            "先發投手": 50 + (pitcher_score(away_pitcher) - 50) * float(game.get("away_pitcher_weight", 0)),
             "牛棚深度": bullpen_score(away_team.get("pitching", {}), -recent_run_diff(home, ctx)),
             "近期戰績": 0.055 * recent_run_diff(away, ctx),
             "隊史連勝連敗": 0.28 * streak_score(away, ctx),
@@ -292,7 +293,7 @@ def build_report(target_date: str, min_edge: float) -> dict:
         }
         home_components = {
             "打擊率壘包": offense_score(home_team.get("hitting", {})),
-            "先發投手": pitcher_score(home_pitcher),
+            "先發投手": 50 + (pitcher_score(home_pitcher) - 50) * float(game.get("home_pitcher_weight", 0)),
             "牛棚深度": bullpen_score(home_team.get("pitching", {}), -recent_run_diff(away, ctx)),
             "近期戰績": 0.055 * recent_run_diff(home, ctx),
             "隊史連勝連敗": 0.28 * streak_score(home, ctx),

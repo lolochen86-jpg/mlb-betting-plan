@@ -10,6 +10,7 @@ from datetime import date, datetime
 from pathlib import Path
 
 from mlb_player_context import fetch_game_player_context, fetch_pitcher_profile, fetch_projected_lineup
+from pitcher_rotation import blend_pitcher_profile
 from run_real_mlb_backtest import DEFAULT_GAMES_CSV, load_games
 
 
@@ -144,6 +145,8 @@ def build_sim_data(target_date: str) -> dict:
             home_pitcher_profile = {**home_pitcher_profile, **fetch_pitcher_profile(row.get("home_probable_pitcher_id"), season)}
         except Exception:
             pass
+        away_pitcher_profile = blend_pitcher_profile(away_pitcher_profile, row.get("away_pitcher_weight", 0))
+        home_pitcher_profile = blend_pitcher_profile(home_pitcher_profile, row.get("home_pitcher_weight", 0))
         games.append(
             {
                 "date": target_date,
@@ -153,10 +156,15 @@ def build_sim_data(target_date: str) -> dict:
                 "status": row.get("status", ""),
                 "away": away,
                 "home": home,
-                "away_pitcher": row.get("away_probable_pitcher_zh") or "未公布",
-                "home_pitcher": row.get("home_probable_pitcher_zh") or "未公布",
+                "matchup_zh": row.get("matchup_zh") or f"{away} @ {home}",
+                "away_pitcher": row.get("away_probable_pitcher_display_zh") or row.get("away_probable_pitcher_zh") or "未公布",
+                "home_pitcher": row.get("home_probable_pitcher_display_zh") or row.get("home_probable_pitcher_zh") or "未公布",
                 "away_pitcher_id": row.get("away_probable_pitcher_id"),
                 "home_pitcher_id": row.get("home_probable_pitcher_id"),
+                "away_pitcher_source": row.get("away_pitcher_source", "league_average"),
+                "home_pitcher_source": row.get("home_pitcher_source", "league_average"),
+                "away_pitcher_weight": row.get("away_pitcher_weight", 0),
+                "home_pitcher_weight": row.get("home_pitcher_weight", 0),
                 "away_pitcher_profile": away_pitcher_profile,
                 "home_pitcher_profile": home_pitcher_profile,
                 "lineup_source": lineup_source,

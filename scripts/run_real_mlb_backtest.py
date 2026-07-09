@@ -180,8 +180,10 @@ def load_games(path: Path) -> list[dict]:
                 "home_score": int(row["home_score"]),
                 "away_score": int(row["away_score"]),
                 "status": row.get("status", ""),
+                "home_probable_pitcher_id": row.get("home_probable_pitcher_id", ""),
                 "home_probable_pitcher": row.get("home_probable_pitcher", ""),
                 "home_probable_pitcher_zh": row.get("home_probable_pitcher_zh", ""),
+                "away_probable_pitcher_id": row.get("away_probable_pitcher_id", ""),
                 "away_probable_pitcher": row.get("away_probable_pitcher", ""),
                 "away_probable_pitcher_zh": row.get("away_probable_pitcher_zh", ""),
             }

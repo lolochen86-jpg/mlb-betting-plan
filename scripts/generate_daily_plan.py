@@ -16,6 +16,7 @@ from zoneinfo import ZoneInfo
 
 from fetch_real_mlb_data import MLB_SCHEDULE_URL
 from name_localization import player_zh, team_zh
+from pitcher_rotation import enrich_probable_pitchers, pitcher_display
 from run_real_mlb_backtest import (
     DEFAULT_GAMES_CSV,
     ModelA,
@@ -391,7 +392,7 @@ def load_pending_settlements(target_date: str) -> list[dict]:
 
 def build_daily_plan(target_date: str, games_csv: Path, min_confidence: float) -> dict:
     history = [game for game in load_games(games_csv) if game["date"] < target_date]
-    schedule = fetch_schedule(target_date)
+    schedule = enrich_probable_pitchers(fetch_schedule(target_date), history, target_date)
     stats, models = train_models(history)
     production_name = "A-畢氏勝率"
     confirmation_name = "E-對照組(Ensemble)"
@@ -422,8 +423,14 @@ def build_daily_plan(target_date: str, games_csv: Path, min_confidence: float) -
                 "home_team_id": game.get("home_team_id"),
                 "away_probable_pitcher_zh": game["away_probable_pitcher_zh"] or "未公布",
                 "away_probable_pitcher_id": game.get("away_probable_pitcher_id"),
+                "away_pitcher_source": game.get("away_pitcher_source", "league_average"),
+                "away_pitcher_confidence": game.get("away_pitcher_confidence", 0),
+                "away_pitcher_weight": game.get("away_pitcher_weight", 0),
                 "home_probable_pitcher_zh": game["home_probable_pitcher_zh"] or "未公布",
                 "home_probable_pitcher_id": game.get("home_probable_pitcher_id"),
+                "home_pitcher_source": game.get("home_pitcher_source", "league_average"),
+                "home_pitcher_confidence": game.get("home_pitcher_confidence", 0),
+                "home_pitcher_weight": game.get("home_pitcher_weight", 0),
                 "prediction_zh": prod_pick["team_zh"],
                 "pick_side": prod_pick["side"],
                 "confidence": round(prod_pick["confidence"], 4),
@@ -438,6 +445,17 @@ def build_daily_plan(target_date: str, games_csv: Path, min_confidence: float) -
     annotate_score_alignment(candidates)
     annotate_totals_alignment(candidates, target_date)
     annotate_unified_direction(candidates)
+    for row in candidates:
+        row["away_probable_pitcher_display_zh"] = pitcher_display(
+            row["away_probable_pitcher_zh"],
+            row["away_pitcher_source"],
+            float(row["away_pitcher_confidence"]),
+        )
+        row["home_probable_pitcher_display_zh"] = pitcher_display(
+            row["home_probable_pitcher_zh"],
+            row["home_pitcher_source"],
+            float(row["home_pitcher_confidence"]),
+        )
     candidates.sort(key=lambda row: (row["decision"] == "高信心預測", row["confidence"]), reverse=True)
     recommendations = [row for row in candidates if row["decision"] == "高信心預測" and row["unified_decision"] == "整合推薦"]
     watchlist = [row for row in candidates if row not in recommendations]
@@ -494,7 +512,15 @@ def write_outputs(plan: dict) -> None:
         "decision",
         "matchup_zh",
         "away_probable_pitcher_zh",
+        "away_probable_pitcher_display_zh",
+        "away_pitcher_source",
+        "away_pitcher_confidence",
+        "away_pitcher_weight",
         "home_probable_pitcher_zh",
+        "home_probable_pitcher_display_zh",
+        "home_pitcher_source",
+        "home_pitcher_confidence",
+        "home_pitcher_weight",
         "prediction_zh",
         "unified_decision",
         "unified_direction",
@@ -540,7 +566,7 @@ def render_rows(rows: list[dict]) -> str:
               <td>{row['decision']}</td>
               <td>{row.get('game_time_tw', '未公布')}</td>
               <td>{row['matchup_zh']}</td>
-              <td>{row['away_probable_pitcher_zh']} / {row['home_probable_pitcher_zh']}</td>
+              <td>{row.get('away_probable_pitcher_display_zh', row['away_probable_pitcher_zh'])} / {row.get('home_probable_pitcher_display_zh', row['home_probable_pitcher_zh'])}</td>
               <td>{row['prediction_zh']}</td>
               <td>{row.get('unified_direction', '-')}<span>{row.get('unified_decision', '-')}</span></td>
               <td>{row.get('score_prediction_zh', '-')}</td>
@@ -569,7 +595,7 @@ def render_schedule_rows(rows: list[dict]) -> str:
               <td>{row.get('game_time_tw', '未公布')}</td>
               <td>{row['status']}</td>
               <td>{row['matchup_zh']}</td>
-              <td>{row['away_probable_pitcher_zh']} / {row['home_probable_pitcher_zh']}</td>
+              <td>{row.get('away_probable_pitcher_display_zh', row['away_probable_pitcher_zh'])} / {row.get('home_probable_pitcher_display_zh', row['home_probable_pitcher_zh'])}</td>
               <td>{row['prediction_zh']}</td>
               <td>{row.get('unified_direction', '-')}<span>{row.get('unified_decision', '-')}</span></td>
               <td>{row.get('score_prediction_zh', '-')}</td>

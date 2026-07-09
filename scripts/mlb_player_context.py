@@ -15,7 +15,7 @@ MLB_API = "https://statsapi.mlb.com/api/v1"
 LINEUP_POSITIONS = ["CF", "2B", "1B", "C", "DH", "LF", "3B", "RF", "SS"]
 
 
-def request_json(url: str, timeout: int = 30) -> dict:
+def request_json(url: str, timeout: int = 8) -> dict:
     req = urllib.request.Request(
         url,
         headers={
@@ -226,7 +226,7 @@ def _team_box_from_game(game_pk: str, team_id: int) -> dict:
 
 
 @lru_cache(maxsize=256)
-def recent_batting_order(team_id: int, target_date: str, lookback_days: int = 10, max_games: int = 6) -> dict[int, dict]:
+def recent_batting_order(team_id: int, target_date: str, lookback_days: int = 10, max_games: int = 4) -> dict[int, dict]:
     order_counts: dict[int, Counter] = defaultdict(Counter)
     position_counts: dict[int, Counter] = defaultdict(Counter)
     latest_seen = {}
@@ -281,7 +281,10 @@ def fetch_projected_lineup(team_id: int | str | None, season: str, target_date: 
         return []
     url = f"{MLB_API}/teams/{tid}/roster?rosterType=active&hydrate=person(stats(type=season,group=hitting,season={season}))"
     payload = request_json(url)
-    recent_orders = recent_batting_order(tid, target_date or f"{season}-06-30") if target_date else {}
+    try:
+        recent_orders = recent_batting_order(tid, target_date or f"{season}-06-30") if target_date else {}
+    except Exception:
+        recent_orders = {}
     candidates = []
     for entry in payload.get("roster", []):
         position = entry.get("position") or {}
