@@ -13,7 +13,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 DATA_DIR = ROOT / "data"
 API_DIR = ROOT / "docs" / "api" / "v1"
-SITE_BASE = "https://lolochen86-jpg.github.io/mlb-betting-plan"
+SITE_BASE = "https://raw.githubusercontent.com/lolochen86-jpg/mlb-betting-plan/main/docs"
 
 
 def load_json(path: Path) -> dict:
