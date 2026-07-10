@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-10T21:09:44",
+  "generated_at": "2026-07-11T00:10:52",
   "history": {
     "games_written": 3832,
     "actual_first_game_date": "2025-03-27",
@@ -12,9 +12,9 @@
     "accuracy_pct": 54.14
   },
   "daily": {
-    "target_date": "2026-07-10",
+    "target_date": "2026-07-11",
     "predictions": 15,
-    "high_confidence": 1
+    "high_confidence": 2
   },
   "settlements": [
     {
@@ -128,6 +128,13 @@
       "final_games": 0,
       "pending_games": 15,
       "accuracy_pct": 0
+    },
+    {
+      "date": "2026-07-11",
+      "predictions": 15,
+      "final_games": 0,
+      "pending_games": 15,
+      "accuracy_pct": 0
     }
   ],
   "odds": [
@@ -233,6 +240,12 @@
     },
     {
       "date": "2026-07-10",
+      "rows": 15,
+      "filled": 15,
+      "missing": []
+    },
+    {
+      "date": "2026-07-11",
       "rows": 15,
       "filled": 15,
       "missing": []
@@ -366,19 +379,27 @@
       "pending_bets": 0,
       "total_pnl": 0,
       "roi_pct": 0
+    },
+    {
+      "date": "2026-07-11",
+      "bets": 0,
+      "final_bets": 0,
+      "pending_bets": 0,
+      "total_pnl": 0,
+      "roi_pct": 0
     }
   ],
   "auto_runner": {
     "mode": "running",
-    "target_date": "2026-07-10",
-    "last_started_at_tw": "2026-07-10T21:00:02+08:00",
-    "last_finished_at_tw": "2026-07-10T13:58:40+08:00",
+    "target_date": "2026-07-11",
+    "last_started_at_tw": "2026-07-11T00:00:02+08:00",
+    "last_finished_at_tw": "2026-07-10T21:09:44+08:00",
     "last_return_code": 0,
     "log": "C:\\Users\\I5-10400F\\Documents\\投注計畫\\logs\\auto_runner\\2026-07-10.workflow.log",
     "health": {
       "ok": true,
       "target_date": "2026-07-10",
-      "checked_at_tw": "2026-07-10T13:58:40+08:00",
+      "checked_at_tw": "2026-07-10T21:09:44+08:00",
       "checks": [
         {
           "name": "daily_predictions",
@@ -428,6 +449,7 @@
   "external_waiting_items": [
     "2026-06-25 尚有 1 場比賽未結算",
     "2026-07-10 尚有 15 場比賽未結算",
+    "2026-07-11 尚有 15 場比賽未結算",
     "2026-06-25 亞利桑那響尾蛇 @ 聖路易紅雀 (Postponed) 尚未取得真實盤口"
   ],
   "project_state": "系統完成，等待外部賽果/盤口"
