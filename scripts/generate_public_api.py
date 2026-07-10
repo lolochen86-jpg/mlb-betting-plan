@@ -79,6 +79,7 @@ def build_daily(target_date: str) -> dict:
         "generated_at": datetime.now().astimezone().isoformat(timespec="seconds"),
         "models": payload.get("models", {}),
         "data_source": payload.get("data_source", {}),
+        "postgame_calibration": payload.get("postgame_calibration", {}),
         "taiwan_today": today_predictions,
         "taiwan_future": future_predictions,
         "taiwan_today_pending": [row for row in pending if game_date_tw(row) == target_date],

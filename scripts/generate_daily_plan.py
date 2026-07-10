@@ -17,6 +17,7 @@ from zoneinfo import ZoneInfo
 from fetch_real_mlb_data import MLB_SCHEDULE_URL
 from name_localization import player_zh, team_zh
 from pitcher_rotation import enrich_probable_pitchers, pitcher_display
+from postgame_calibration import load_recent_calibration
 from run_real_mlb_backtest import (
     DEFAULT_GAMES_CSV,
     ModelA,
@@ -174,8 +175,9 @@ def load_totals_prediction_index(target_date: str) -> dict[str, dict]:
     return {str(row.get("game_pk", "")): row for row in rows if str(row.get("game_pk", ""))}
 
 
-def merge_score_predictions(rows: list[dict], target_date: str) -> None:
+def merge_score_predictions(rows: list[dict], target_date: str, calibration: dict | None = None) -> None:
     scores = load_score_predictions(target_date)
+    score_total_bias = float((calibration or {}).get("score_total_bias_applied") or 0)
     for row in rows:
         score = scores.get(str(row.get("game_pk", "")))
         if not score:
@@ -193,13 +195,18 @@ def merge_score_predictions(rows: list[dict], target_date: str) -> None:
         away_score = score.get("avg_away_score")
         home_score = score.get("avg_home_score")
         total = score.get("avg_total")
+        if away_score is not None and home_score is not None and score_total_bias:
+            away_score = max(0.0, away_score + score_total_bias / 2)
+            home_score = max(0.0, home_score + score_total_bias / 2)
+            total = away_score + home_score
         row.update(
             {
-                "predicted_away_score": away_score,
-                "predicted_home_score": home_score,
-                "predicted_total": total,
+                "predicted_away_score": round(away_score, 2),
+                "predicted_home_score": round(home_score, 2),
+                "predicted_total": round(total, 2),
                 "score_prediction_zh": f"{row['away_zh']} {away_score:.2f} : {row['home_zh']} {home_score:.2f}",
                 "total_prediction_zh": f"{total:.2f}",
+                "score_total_bias_applied": score_total_bias,
                 "monte_carlo_pick_zh": score.get("moneyline_pick", "-"),
                 "monte_carlo_total_line": score.get("total_line"),
                 "monte_carlo_totals_pick_zh": score.get("totals_pick", "-"),
@@ -256,8 +263,11 @@ def score_total_pick(total: object, line: object) -> str:
     return "平盤"
 
 
-def annotate_totals_alignment(rows: list[dict], target_date: str) -> None:
+def annotate_totals_alignment(rows: list[dict], target_date: str, calibration: dict | None = None) -> None:
     totals_index = load_totals_prediction_index(target_date)
+    min_prob = float((calibration or {}).get("totals_min_prob") or 0.57)
+    min_edge = float((calibration or {}).get("totals_min_edge") or 0.02)
+    min_line_gap = float((calibration or {}).get("totals_min_line_gap") or 0.75)
     for row in rows:
         totals_row = totals_index.get(str(row.get("game_pk", "")), {})
         official_pick = str(totals_row.get("pick") or "")
@@ -279,20 +289,25 @@ def annotate_totals_alignment(rows: list[dict], target_date: str) -> None:
             row["totals_alignment"] = "無台灣運彩大小分盤口"
         elif monte_pick in {"大分", "小分"} and official_pick in {"大分", "小分"} and monte_pick != official_pick:
             row["totals_alignment"] = "大小分分歧"
-        elif monte_total not in (None, "") and abs(float(monte_total) - float(official_line)) < 0.75:
+        elif monte_total not in (None, "") and abs(float(monte_total) - float(official_line)) < min_line_gap:
             row["totals_alignment"] = "接近盤口"
-        elif official_prob < 0.57 or official_edge < 0.02:
+        elif official_prob < min_prob or official_edge < min_edge:
             row["totals_alignment"] = "大小分信心不足"
         else:
             row["totals_alignment"] = "大小分一致"
+        row["postgame_totals_min_prob"] = min_prob
+        row["postgame_totals_min_edge"] = min_edge
+        row["postgame_totals_min_line_gap"] = min_line_gap
 
 
-def annotate_unified_direction(rows: list[dict]) -> None:
+def annotate_unified_direction(rows: list[dict], calibration: dict | None = None) -> None:
+    winner_min_confidence = float((calibration or {}).get("winner_min_confidence") or 0.55)
     for row in rows:
         winner_ok = (
             row.get("decision") != "模型分歧"
             and row.get("score_alignment") == "一致"
             and bool(row.get("confirmation_same_direction"))
+            and float(row.get("confidence") or 0) >= winner_min_confidence
         )
         totals_ok = (
             row.get("official_totals_pick_zh") in {"大分", "小分"}
@@ -312,6 +327,7 @@ def annotate_unified_direction(rows: list[dict]) -> None:
                 row["unified_decision"] = "勝方未統一"
             else:
                 row["unified_decision"] = "大小分未統一"
+        row["postgame_winner_min_confidence"] = winner_min_confidence
 
 
 def is_removed_pending_status(status: str) -> bool:
@@ -393,6 +409,8 @@ def load_pending_settlements(target_date: str) -> list[dict]:
 def build_daily_plan(target_date: str, games_csv: Path, min_confidence: float) -> dict:
     history = [game for game in load_games(games_csv) if game["date"] < target_date]
     schedule = enrich_probable_pitchers(fetch_schedule(target_date), history, target_date)
+    postgame_calibration = load_recent_calibration(10)
+    effective_min_confidence = max(min_confidence, float(postgame_calibration.get("winner_min_confidence") or min_confidence))
     stats, models = train_models(history)
     production_name = "A-畢氏勝率"
     confirmation_name = "E-對照組(Ensemble)"
@@ -408,7 +426,7 @@ def build_daily_plan(target_date: str, games_csv: Path, min_confidence: float) -
         prod_pick = pick_from_probability(game["home_zh"], game["away_zh"], prod_prob)
         conf_pick = pick_from_probability(game["home_zh"], game["away_zh"], conf_prob) if conf_prob is not None else None
         same_direction = bool(conf_pick and conf_pick["side"] == prod_pick["side"])
-        confidence_pass = prod_pick["confidence"] >= min_confidence
+        confidence_pass = prod_pick["confidence"] >= effective_min_confidence
         candidates.append(
             {
                 "date": target_date,
@@ -441,10 +459,10 @@ def build_daily_plan(target_date: str, games_csv: Path, min_confidence: float) -
             }
         )
 
-    merge_score_predictions(candidates, target_date)
+    merge_score_predictions(candidates, target_date, postgame_calibration)
     annotate_score_alignment(candidates)
-    annotate_totals_alignment(candidates, target_date)
-    annotate_unified_direction(candidates)
+    annotate_totals_alignment(candidates, target_date, postgame_calibration)
+    annotate_unified_direction(candidates, postgame_calibration)
     for row in candidates:
         row["away_probable_pitcher_display_zh"] = pitcher_display(
             row["away_probable_pitcher_zh"],
@@ -471,8 +489,10 @@ def build_daily_plan(target_date: str, games_csv: Path, min_confidence: float) -
         },
         "settings": {
             "min_confidence": min_confidence,
+            "effective_min_confidence": effective_min_confidence,
             "odds_status": "not_used_for_accuracy_first",
         },
+        "postgame_calibration": postgame_calibration,
         "data_source": {
             "history_csv": str(games_csv.relative_to(ROOT)) if games_csv.is_relative_to(ROOT) else str(games_csv),
             "training_games": len(history),
@@ -533,6 +553,7 @@ def write_outputs(plan: dict) -> None:
         "predicted_away_score",
         "predicted_home_score",
         "predicted_total",
+        "score_total_bias_applied",
         "monte_carlo_pick_zh",
         "score_pick_zh",
         "score_alignment",
@@ -542,6 +563,10 @@ def write_outputs(plan: dict) -> None:
         "official_totals_predicted",
         "score_totals_pick_zh",
         "totals_alignment",
+        "postgame_winner_min_confidence",
+        "postgame_totals_min_prob",
+        "postgame_totals_min_edge",
+        "postgame_totals_min_line_gap",
         "status",
     ]
     with csv_path.open("w", encoding="utf-8", newline="") as f:
@@ -663,6 +688,20 @@ def render_html(plan: dict) -> str:
     )
     warning = plan["data_source"].get("warning") or ""
     freshness_note = plan["data_source"].get("freshness_note") or ""
+    calibration = plan.get("postgame_calibration", {})
+    calibration_notes = "".join(f"<li>{html.escape(str(note))}</li>" for note in calibration.get("notes", []))
+    calibration_html = f"""<section class="calibration">
+      <h2>近十天檢討校正</h2>
+      <div class="calibration-grid">
+        <div><span>檢討樣本</span><strong>{calibration.get('days', 0)} 天 / {calibration.get('games', 0)} 場</strong></div>
+        <div><span>近十天勝方準確率</span><strong>{float(calibration.get('winner_accuracy') or 0) * 100:.1f}%</strong></div>
+        <div><span>勝方主推門檻</span><strong>{float(calibration.get('winner_min_confidence') or 0) * 100:.1f}%</strong></div>
+        <div><span>比分總分校正</span><strong>{float(calibration.get('score_total_bias_applied') or 0):+.2f}</strong></div>
+        <div><span>大小分最低機率</span><strong>{float(calibration.get('totals_min_prob') or 0) * 100:.1f}%</strong></div>
+        <div><span>大小分離盤門檻</span><strong>{float(calibration.get('totals_min_line_gap') or 0):.2f} 分</strong></div>
+      </div>
+      <ul>{calibration_notes}</ul>
+    </section>"""
     return f"""<!doctype html>
 <html lang="zh-Hant">
 <head>
@@ -676,6 +715,13 @@ def render_html(plan: dict) -> str:
     h2 {{ margin: 24px 0 12px; font-size: 18px; }}
     .meta {{ color: #68736d; line-height: 1.6; font-size: 14px; }}
     .warning {{ margin-top: 16px; padding: 12px 14px; border: 1px solid #e2c47a; background: #fff8e6; border-radius: 8px; color: #765315; }}
+    .calibration {{ margin: 18px 0; padding: 16px; background: #fff; border: 1px solid #dfe5df; border-radius: 8px; }}
+    .calibration h2 {{ margin-top: 0; }}
+    .calibration-grid {{ display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }}
+    .calibration-grid div {{ border: 1px solid #e3e8e4; border-radius: 8px; padding: 10px; }}
+    .calibration-grid span {{ display: block; color: #68736d; font-size: 12px; }}
+    .calibration-grid strong {{ display: block; margin-top: 4px; font-size: 18px; }}
+    .calibration ul {{ margin: 12px 0 0; color: #43504a; line-height: 1.7; }}
     .toolbar {{ display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin: 14px 0 10px; }}
     .toolbar span {{ color: #68736d; font-size: 13px; font-weight: 700; }}
     .sort-btn {{ border: 1px solid #dfe5df; border-radius: 8px; background: white; color: #24433b; padding: 8px 10px; font: inherit; font-weight: 800; cursor: pointer; }}
@@ -684,7 +730,7 @@ def render_html(plan: dict) -> str:
     th, td {{ text-align: left; border-bottom: 1px solid #dfe5df; padding: 12px 10px; white-space: nowrap; font-size: 14px; }}
     th {{ color: #68736d; font-size: 12px; }}
     .date-group td {{ background: #e8f1ed; color: #164f47; font-weight: 900; font-size: 14px; }}
-    @media (max-width: 720px) {{ main {{ padding: 18px; }} table {{ display: block; overflow-x: auto; }} h1 {{ font-size: 25px; }} }}
+    @media (max-width: 720px) {{ main {{ padding: 18px; }} table {{ display: block; overflow-x: auto; }} h1 {{ font-size: 25px; }} .calibration-grid {{ grid-template-columns: 1fr; }} }}
   </style>
 </head>
 <body>
@@ -698,6 +744,7 @@ def render_html(plan: dict) -> str:
       {freshness_note}
     </div>
     {f'<div class="warning">{warning}</div>' if warning else ''}
+    {calibration_html}
     <h2>今日與之前未結算預測追蹤</h2>
     <table>
       <thead><tr><th>MLB日期</th><th>台灣開賽時間</th><th>狀態</th><th>對戰</th><th>預測勝方</th><th>整合方向</th><th>預測比分</th><th>大小分預測</th><th>模型搭配</th><th>信心</th><th>結算</th></tr></thead>
