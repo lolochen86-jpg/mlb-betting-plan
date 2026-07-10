@@ -19,7 +19,10 @@ from run_real_mlb_backtest import DEFAULT_GAMES_CSV, load_games
 ROOT = Path(__file__).resolve().parents[1]
 DATA_DIR = ROOT / "data"
 DAILY_JSON = DATA_DIR / "daily_predictions_{date}.json"
+SIM_DATA_JSON = DATA_DIR / "game_simulator_{date}.json"
 UNIFIED_JSON = DATA_DIR / "unified_expectations_{date}.json"
+BULLPEN_CACHE_JSON = DATA_DIR / "bullpen_usage_{date}.json"
+WEATHER_CACHE_JSON = DATA_DIR / "weather_context_{date}.json"
 MLB_API = "https://statsapi.mlb.com/api/v1"
 
 
@@ -58,6 +61,13 @@ def lineup_factor(lineup: list[dict]) -> tuple[float, dict]:
 
 
 def weather_context(game_pk: str, fetch_live: bool = False) -> dict:
+    for path in DATA_DIR.glob("weather_context_*.json"):
+        try:
+            cache = json.loads(path.read_text(encoding="utf-8-sig"))
+        except json.JSONDecodeError:
+            continue
+        if str(game_pk) in cache:
+            return cache[str(game_pk)]
     if not fetch_live:
         return {"source": "not_connected", "factor": 0.0, "note": "real weather feed not connected in fast daily run"}
     try:
@@ -99,6 +109,15 @@ def bullpen_usage(team_id: int | str | None, target_date: str) -> dict:
         tid = 0
     if not tid:
         return {"source": "missing_team_id", "recent_ip": 0.0, "fatigue_runs": 0.0}
+    cache_path = Path(str(BULLPEN_CACHE_JSON).format(date=target_date))
+    cache = {}
+    if cache_path.exists():
+        try:
+            cache = json.loads(cache_path.read_text(encoding="utf-8-sig"))
+        except json.JSONDecodeError:
+            cache = {}
+    if str(tid) in cache:
+        return cache[str(tid)]
     try:
         from mlb_player_context import _team_recent_game_pks, _team_box_from_game
 
@@ -111,15 +130,33 @@ def bullpen_usage(team_id: int | str | None, target_date: str) -> dict:
                 pitcher_ids.add(str(pitcher_id))
                 relief_pitchers += 1
         fatigue_runs = clamp((relief_pitchers - 8) * 0.045, -0.10, 0.35)
-        return {
+        result = {
             "source": "recent_boxscore_pitcher_usage",
             "recent_games": len(game_pks),
             "recent_relief_pitcher_appearances": relief_pitchers,
             "unique_recent_relievers": len(pitcher_ids),
             "fatigue_runs": round(fatigue_runs, 3),
         }
+        cache[str(tid)] = result
+        cache_path.write_text(json.dumps(cache, ensure_ascii=False, indent=2), encoding="utf-8")
+        return result
     except Exception as exc:
         return {"source": "missing", "recent_ip": 0.0, "fatigue_runs": 0.0, "note": str(exc)}
+
+
+def cached_bullpen_usage(team_id: int | str | None, target_date: str) -> dict:
+    try:
+        tid = str(int(team_id or 0))
+    except (TypeError, ValueError):
+        return {"source": "missing_team_id", "fatigue_runs": 0.0}
+    cache_path = Path(str(BULLPEN_CACHE_JSON).format(date=target_date))
+    if not cache_path.exists():
+        return {"source": "not_connected_fast_run", "fatigue_runs": 0.0}
+    try:
+        cache = json.loads(cache_path.read_text(encoding="utf-8-sig"))
+    except json.JSONDecodeError:
+        return {"source": "not_connected_fast_run", "fatigue_runs": 0.0}
+    return cache.get(tid, {"source": "not_connected_fast_run", "fatigue_runs": 0.0})
 
 
 def load_daily(target_date: str) -> dict:
@@ -127,6 +164,17 @@ def load_daily(target_date: str) -> dict:
     if not path.exists():
         raise SystemExit(f"Missing daily predictions: {path}")
     return json.loads(path.read_text(encoding="utf-8-sig"))
+
+
+def load_sim_context(target_date: str) -> dict[str, dict]:
+    path = Path(str(SIM_DATA_JSON).format(date=target_date))
+    if not path.exists():
+        return {}
+    try:
+        payload = json.loads(path.read_text(encoding="utf-8-sig"))
+    except json.JSONDecodeError:
+        return {}
+    return {str(game.get("game_pk", "")): game for game in payload.get("games", []) if str(game.get("game_pk", ""))}
 
 
 def team_base_runs(profile: dict, opponent_profile: dict) -> float:
@@ -139,6 +187,7 @@ def pitcher_runs_modifier(opposing_pitcher: dict) -> float:
 
 def build_report(target_date: str, fetch_weather: bool = False, fetch_deep_context: bool = False) -> dict:
     daily = load_daily(target_date)
+    sim_context = load_sim_context(target_date)
     history = [game for game in load_games(DEFAULT_GAMES_CSV) if game["date"] < target_date]
     profiles = team_profiles(history)
     calibration = load_recent_calibration(10)
@@ -155,7 +204,12 @@ def build_report(target_date: str, fetch_weather: bool = False, fetch_deep_conte
         away_lineup = []
         home_lineup = []
         lineup_source = "not_connected_fast_run"
-        if fetch_deep_context:
+        sim_game = sim_context.get(game_pk, {})
+        if sim_game:
+            away_lineup = sim_game.get("away_lineup") or []
+            home_lineup = sim_game.get("home_lineup") or []
+            lineup_source = sim_game.get("lineup_source", "game_simulator_context")
+        if fetch_deep_context and (not away_lineup or not home_lineup):
             from mlb_player_context import fetch_game_player_context, fetch_projected_lineup
 
             try:
@@ -178,10 +232,14 @@ def build_report(target_date: str, fetch_weather: bool = False, fetch_deep_conte
         away_lineup_factor, away_lineup_meta = lineup_factor(away_lineup)
         home_lineup_factor, home_lineup_meta = lineup_factor(home_lineup)
 
-        away_pitcher_weight = float(row.get("away_pitcher_weight") or 0)
-        home_pitcher_weight = float(row.get("home_pitcher_weight") or 0)
+        away_pitcher_weight = float(row.get("away_pitcher_weight") or sim_game.get("away_pitcher_weight") or 0)
+        home_pitcher_weight = float(row.get("home_pitcher_weight") or sim_game.get("home_pitcher_weight") or 0)
+        away_pitcher_profile = sim_game.get("away_pitcher_profile") or {}
+        home_pitcher_profile = sim_game.get("home_pitcher_profile") or {}
         if away_pitcher_weight <= 0 or home_pitcher_weight <= 0:
             missing.append("probable_pitcher_profile")
+        if not away_pitcher_profile or not home_pitcher_profile:
+            missing.append("pitcher_profile")
 
         weather = weather_context(game_pk, fetch_weather)
         if weather.get("source") in {"missing", "not_connected"}:
@@ -190,8 +248,8 @@ def build_report(target_date: str, fetch_weather: bool = False, fetch_deep_conte
             away_bullpen = bullpen_usage(row.get("away_team_id"), target_date)
             home_bullpen = bullpen_usage(row.get("home_team_id"), target_date)
         else:
-            away_bullpen = {"source": "not_connected_fast_run", "fatigue_runs": 0.0}
-            home_bullpen = {"source": "not_connected_fast_run", "fatigue_runs": 0.0}
+            away_bullpen = cached_bullpen_usage(row.get("away_team_id"), target_date)
+            home_bullpen = cached_bullpen_usage(row.get("home_team_id"), target_date)
         if away_bullpen.get("source") in {"missing", "not_connected_fast_run"} or home_bullpen.get("source") in {"missing", "not_connected_fast_run"}:
             missing.append("bullpen_recent_usage")
         missing.append("injury_absence_feed")
@@ -200,12 +258,12 @@ def build_report(target_date: str, fetch_weather: bool = False, fetch_deep_conte
         home_profile = profiles.get(home, {"offense": 4.45, "prevention": 4.45})
         away_raw = (
             team_base_runs(away_profile, home_profile) * away_lineup_factor
-            + 0.10 * (1 - home_pitcher_weight)
+            + (pitcher_runs_modifier(home_pitcher_profile) if home_pitcher_profile else 0.10 * (1 - home_pitcher_weight))
             + float(home_bullpen.get("fatigue_runs") or 0)
         )
         home_raw = (
             team_base_runs(home_profile, away_profile) * home_lineup_factor
-            + 0.10 * (1 - away_pitcher_weight)
+            + (pitcher_runs_modifier(away_pitcher_profile) if away_pitcher_profile else 0.10 * (1 - away_pitcher_weight))
             + float(away_bullpen.get("fatigue_runs") or 0)
             + 0.10
         )
