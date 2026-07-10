@@ -690,6 +690,8 @@ def render_html(plan: dict) -> str:
     freshness_note = plan["data_source"].get("freshness_note") or ""
     calibration = plan.get("postgame_calibration", {})
     calibration_notes = "".join(f"<li>{html.escape(str(note))}</li>" for note in calibration.get("notes", []))
+    data_gap_notes = "".join(f"<li>{html.escape(str(note))}</li>" for note in calibration.get("data_gaps", []))
+    data_gap_html = f"<h3>資料補強重點</h3><ul>{data_gap_notes}</ul>" if data_gap_notes else ""
     calibration_html = f"""<section class="calibration">
       <h2>近十天檢討校正</h2>
       <div class="calibration-grid">
@@ -701,6 +703,7 @@ def render_html(plan: dict) -> str:
         <div><span>大小分離盤門檻</span><strong>{float(calibration.get('totals_min_line_gap') or 0):.2f} 分</strong></div>
       </div>
       <ul>{calibration_notes}</ul>
+      {data_gap_html}
     </section>"""
     return f"""<!doctype html>
 <html lang="zh-Hant">

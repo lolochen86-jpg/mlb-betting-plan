@@ -200,33 +200,46 @@ def review_game(row: dict, total_row: dict | None, roi_row: dict | None, daily_r
     if total_gap is not None and total_gap >= 1.5:
         consistency.append(f"總分差 {total_gap:g}")
     notes = []
+    reason_codes = []
     confidence = float(row.get("confidence") or 0)
     if winner_correct is True and confidence >= 0.55:
         notes.append("高信心方向有命中，這類條件可列為穩定樣本繼續追蹤。")
+        reason_codes.append("high_confidence_hit")
     elif winner_correct is False and confidence >= 0.55:
         notes.append("高信心失準，需要回看先發投手、牛棚或打線是否有臨場變化。")
+        reason_codes.append("high_confidence_miss")
     elif winner_correct is False and confidence < 0.53:
         notes.append("信心接近五五波，賽前應降權或避免當主推。")
+        reason_codes.append("low_confidence_miss")
     elif winner_correct is True:
         notes.append("方向正確，但信心不高，較適合作為觀察而非重注。")
+        reason_codes.append("low_confidence_hit")
     if away_score is not None and home_score is not None and abs(away_score - home_score) <= 1:
         notes.append("一分差比賽，模型即使方向錯也屬高波動結果。")
+        reason_codes.append("one_run_volatility")
     if total_correct is False and predicted_total is not None and actual_total is not None:
         notes.append(f"大小分偏差 {abs(predicted_total - actual_total):.1f} 分，需檢查投手/天氣/打線係數。")
+        reason_codes.append("totals_miss")
+        if abs(predicted_total - actual_total) >= 3:
+            reason_codes.append("large_totals_error")
     if predicted_total is not None and predicted_score_total not in (None, ""):
         try:
             score_total_float = float(predicted_score_total)
             if abs(predicted_total - score_total_float) >= 1.5:
                 notes.append("勝方比分模型與大小分模型差距較大，大小分應以大小分模型為主。")
+                reason_codes.append("score_totals_model_gap")
         except Exception:
             pass
     if roi_row:
         if roi_row.get("settlement") == "loss":
             notes.append("實際投注單虧損，後續應提高 edge 門檻或降低此類下注權重。")
+            reason_codes.append("roi_loss")
         elif roi_row.get("settlement") == "win":
             notes.append("實際投注單獲利，可追蹤同類盤口條件。")
+            reason_codes.append("roi_win")
     if not is_final:
         notes.append("尚未完賽，等待賽後自動結算真實比分。")
+        reason_codes.append("pending")
     game_time_tw = normalize_game_time_tw(
         row.get("game_time_tw", "") or (daily_row or {}).get("game_time_tw", ""),
         row.get("date", ""),
@@ -259,6 +272,7 @@ def review_game(row: dict, total_row: dict | None, roi_row: dict | None, daily_r
         "total_correct": total_correct,
         "roi_settlement": roi_row.get("settlement", "") if roi_row else "",
         "pnl": float(roi_row.get("pnl", 0) or 0) if roi_row else 0.0,
+        "reason_codes": reason_codes,
         "notes": notes,
     }
 

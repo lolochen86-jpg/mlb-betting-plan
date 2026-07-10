@@ -1,7 +1,7 @@
 {
   "api_version": "v1",
   "taiwan_display_date": "2026-07-10",
-  "generated_at": "2026-07-10T16:05:04+08:00",
+  "generated_at": "2026-07-10T16:29:16+08:00",
   "models": {
     "production": "A-畢氏勝率",
     "confirmation": "E-對照組(Ensemble)"
@@ -29,6 +29,22 @@
     "totals_min_prob": 0.59,
     "totals_min_line_gap": 1.25,
     "mismatch_notes": 75,
+    "reason_counts": {
+      "low_confidence_hit": 44,
+      "score_totals_model_gap": 75,
+      "low_confidence_miss": 26,
+      "high_confidence_miss": 17,
+      "totals_miss": 54,
+      "large_totals_error": 36,
+      "high_confidence_hit": 18,
+      "one_run_volatility": 24,
+      "roi_loss": 2
+    },
+    "data_gaps": [
+      "大小分大偏差偏多：優先補真實天氣、球場風向、先發/牛棚臨場狀態。",
+      "高信心勝方失準偏多：優先補官方先發打線、牛棚可用性、傷兵/輪休。",
+      "勝方比分模型與大小分模型長期分歧：需要建立同一套得分期望，不應兩套模型各算各的。"
+    ],
     "notes": [
       "近十天高信心失準偏多，勝方主推需更嚴格確認。",
       "近十天比分模型總分平均偏差 +0.66 分，今日比分總分校正 +0.66 分。",
