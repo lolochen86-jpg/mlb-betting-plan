@@ -27,6 +27,7 @@ TOTALS_JSON = DATA_DIR / "totals_predictions_{date}.json"
 TOTALS_CSV = DATA_DIR / "totals_predictions_{date}.csv"
 TOTALS_HTML = DOCS_DIR / "totals_predictions.html"
 MONTE_CARLO_JSON = DATA_DIR / "monte_carlo_{date}.json"
+UNIFIED_JSON = DATA_DIR / "unified_expectations_{date}.json"
 MIN_MODEL_PROB = 0.57
 MIN_EDGE = 0.02
 
@@ -45,6 +46,17 @@ def read_daily_predictions(target_date: str) -> list[dict]:
 
 def read_monte_carlo_totals(target_date: str) -> dict[str, dict]:
     path = Path(str(MONTE_CARLO_JSON).format(date=target_date))
+    if not path.exists():
+        return {}
+    try:
+        data = json.loads(path.read_text(encoding="utf-8-sig"))
+    except json.JSONDecodeError:
+        return {}
+    return {str(row.get("game_pk", "")): row for row in data.get("games", []) if str(row.get("game_pk", ""))}
+
+
+def read_unified_expectations(target_date: str) -> dict[str, dict]:
+    path = Path(str(UNIFIED_JSON).format(date=target_date))
     if not path.exists():
         return {}
     try:
@@ -155,6 +167,7 @@ def build_report(target_date: str, recent_games: int, min_edge: float) -> dict:
     history = [game for game in load_games(DEFAULT_GAMES_CSV) if game["date"] < target_date]
     daily_rows = read_daily_predictions(target_date)
     monte_carlo_totals = read_monte_carlo_totals(target_date)
+    unified_expectations = read_unified_expectations(target_date)
     time_index = load_time_index(target_date)
     taiwan_games = load_or_fetch_taiwan_source(target_date)
     totals_markets = extract_totals_markets(taiwan_games)
@@ -167,7 +180,8 @@ def build_report(target_date: str, recent_games: int, min_edge: float) -> dict:
         if not market:
             skipped.append({**row, "skip_reason": "沒有台灣運彩全場大小分盤口"})
             continue
-        predicted_total = predict_total(key[0], key[1], teams, league_total)
+        unified_row = unified_expectations.get(str(row.get("game_pk", "")), {})
+        predicted_total = float(unified_row.get("expected_total") or predict_total(key[0], key[1], teams, league_total))
         line = float(market["line"])
         over_prob = 1 - normal_cdf(line, predicted_total, sigma)
         under_prob = 1 - over_prob
@@ -194,6 +208,11 @@ def build_report(target_date: str, recent_games: int, min_edge: float) -> dict:
                 "matchup_zh": row.get("matchup_zh", ""),
                 "line": line,
                 "predicted_total": round(predicted_total, 2),
+                "model_source": "unified_expected_runs_v1" if unified_row else "totals_v1_fallback",
+                "away_expected_runs": unified_row.get("away_expected_runs", ""),
+                "home_expected_runs": unified_row.get("home_expected_runs", ""),
+                "data_quality": unified_row.get("data_quality", ""),
+                "missing_data": "; ".join(unified_row.get("missing_data", [])) if unified_row else "",
                 "pick": pick,
                 "odds": odds,
                 "model_prob": round(model_prob, 4),
@@ -247,6 +266,11 @@ def write_outputs(report: dict) -> None:
         "matchup_zh",
         "line",
         "predicted_total",
+        "model_source",
+        "away_expected_runs",
+        "home_expected_runs",
+        "data_quality",
+        "missing_data",
         "pick",
         "odds",
         "model_prob",

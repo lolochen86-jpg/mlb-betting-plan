@@ -148,6 +148,7 @@ def main() -> None:
     settle_recent_predictions(py, dates_to_settle, args)
 
     run_step("產生今天勝方預測", [py, "scripts/generate_daily_plan.py", "--date", target_date])
+    run_step("產生統一得分期望 v1", [py, "scripts/unified_expectation_model.py", "--date", target_date])
     run_step("今天預測建立待結算檔", [py, "scripts/settle_daily_predictions.py", "--date", target_date])
 
     if odds_csv_path(target_date).exists():

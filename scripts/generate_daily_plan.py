@@ -38,6 +38,7 @@ DAILY_PLAN_CSV = DATA_DIR / "daily_predictions_{date}.csv"
 DAILY_PLAN_HTML = DOCS_DIR / "daily_predictions.html"
 MONTE_CARLO_JSON = DATA_DIR / "monte_carlo_{date}.json"
 TOTALS_JSON = DATA_DIR / "totals_predictions_{date}.json"
+UNIFIED_JSON = DATA_DIR / "unified_expectations_{date}.json"
 TW_TZ = ZoneInfo("Asia/Taipei")
 REMOVED_PENDING_STATUSES = {"postponed", "cancelled", "canceled"}
 
@@ -141,6 +142,29 @@ def pick_from_probability(home_zh: str, away_zh: str, prob_home: float) -> dict:
 
 
 def load_score_predictions(target_date: str) -> dict[str, dict]:
+    unified_path = Path(str(UNIFIED_JSON).format(date=target_date))
+    if unified_path.exists():
+        try:
+            payload = json.loads(unified_path.read_text(encoding="utf-8-sig"))
+            return {
+                str(row.get("game_pk", "")): {
+                    "avg_away_score": row.get("away_expected_runs"),
+                    "avg_home_score": row.get("home_expected_runs"),
+                    "avg_total": row.get("expected_total"),
+                    "moneyline_pick": row.get("prediction_zh", "-"),
+                    "total_line": None,
+                    "totals_pick": "-",
+                    "over_prob": None,
+                    "under_prob": None,
+                    "source": "unified_expected_runs_v1",
+                    "data_quality": row.get("data_quality", ""),
+                    "missing_data": row.get("missing_data", []),
+                }
+                for row in payload.get("games", [])
+                if str(row.get("game_pk", ""))
+            }
+        except json.JSONDecodeError:
+            pass
     path = Path(str(MONTE_CARLO_JSON).format(date=target_date))
     if not path.exists():
         return {}
@@ -177,7 +201,6 @@ def load_totals_prediction_index(target_date: str) -> dict[str, dict]:
 
 def merge_score_predictions(rows: list[dict], target_date: str, calibration: dict | None = None) -> None:
     scores = load_score_predictions(target_date)
-    score_total_bias = float((calibration or {}).get("score_total_bias_applied") or 0)
     for row in rows:
         score = scores.get(str(row.get("game_pk", "")))
         if not score:
@@ -195,6 +218,7 @@ def merge_score_predictions(rows: list[dict], target_date: str, calibration: dic
         away_score = score.get("avg_away_score")
         home_score = score.get("avg_home_score")
         total = score.get("avg_total")
+        score_total_bias = 0.0 if score.get("source") == "unified_expected_runs_v1" else float((calibration or {}).get("score_total_bias_applied") or 0)
         if away_score is not None and home_score is not None and score_total_bias:
             away_score = max(0.0, away_score + score_total_bias / 2)
             home_score = max(0.0, home_score + score_total_bias / 2)
@@ -212,6 +236,9 @@ def merge_score_predictions(rows: list[dict], target_date: str, calibration: dic
                 "monte_carlo_totals_pick_zh": score.get("totals_pick", "-"),
                 "monte_carlo_over_prob": score.get("over_prob"),
                 "monte_carlo_under_prob": score.get("under_prob"),
+                "score_source": score.get("source", "monte_carlo"),
+                "score_data_quality": score.get("data_quality", ""),
+                "score_missing_data": score.get("missing_data", []),
             }
         )
 

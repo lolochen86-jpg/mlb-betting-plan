@@ -148,6 +148,7 @@ def generate(target_date: str) -> None:
     write_json(archive / "monte-carlo.json", monte_carlo)
 
     sources = {
+        "unified-expectations.json": DATA_DIR / f"unified_expectations_{target_date}.json",
         "totals.json": DATA_DIR / f"totals_predictions_{target_date}.json",
         "markets.json": DATA_DIR / "odds" / f"taiwan_sportslottery_markets_{target_date}.json",
         "betting-roi.json": DATA_DIR / f"betting_roi_{target_date}.json",
