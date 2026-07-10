@@ -12,6 +12,7 @@ from datetime import date, datetime
 from pathlib import Path
 
 from fetch_taiwan_sportslottery_odds import BASEBALL_GAMES_URL, decimal_odds, normalize_team_name, request_json
+from postgame_calibration import load_recent_calibration
 from run_real_mlb_backtest import DEFAULT_GAMES_CSV, load_games
 from schedule_time import attach_game_time, load_time_index, time_sort_key
 
@@ -172,6 +173,10 @@ def build_report(target_date: str, recent_games: int, min_edge: float) -> dict:
     taiwan_games = load_or_fetch_taiwan_source(target_date)
     totals_markets = extract_totals_markets(taiwan_games)
     teams, league_total, sigma = team_total_stats(history, recent_games)
+    calibration = load_recent_calibration()
+    effective_min_edge = max(min_edge, MIN_EDGE, float(calibration.get("totals_min_edge") or 0))
+    min_model_prob = max(MIN_MODEL_PROB, float(calibration.get("totals_min_prob") or 0))
+    min_line_gap = float(calibration.get("totals_min_line_gap") or 0.75)
     predictions = []
     skipped = []
     for row in daily_rows:
@@ -193,9 +198,8 @@ def build_report(target_date: str, recent_games: int, min_edge: float) -> dict:
         monte_row = monte_carlo_totals.get(str(row.get("game_pk", "")), {})
         monte_pick = str(monte_row.get("totals_pick") or "")
         monte_total = monte_row.get("avg_total")
-        if monte_pick in {"大分", "小分"} and monte_pick != pick:
-            decision = "大小分分歧"
-        elif edge >= max(min_edge, MIN_EDGE) and model_prob >= MIN_MODEL_PROB:
+        line_gap = abs(predicted_total - line)
+        if edge >= effective_min_edge and model_prob >= min_model_prob and line_gap >= min_line_gap:
             decision = "大小分候選"
         else:
             decision = "不推薦"
@@ -218,6 +222,7 @@ def build_report(target_date: str, recent_games: int, min_edge: float) -> dict:
                 "model_prob": round(model_prob, 4),
                 "market_implied_prob": round(market_prob, 4),
                 "edge": round(edge, 4),
+                "line_gap": round(line_gap, 2),
                 "monte_carlo_pick": monte_pick or "-",
                 "monte_carlo_total": monte_total,
                 "decision": decision,
@@ -232,7 +237,13 @@ def build_report(target_date: str, recent_games: int, min_edge: float) -> dict:
         "generated_at": datetime.now().isoformat(timespec="seconds"),
         "target_date": target_date,
         "model": "大小分 v1 - 近期/整季得失分混合",
-        "settings": {"recent_games": recent_games, "min_edge": min_edge, "require_sportsbook": "台灣運彩"},
+        "settings": {
+            "recent_games": recent_games,
+            "min_edge": effective_min_edge,
+            "min_model_prob": min_model_prob,
+            "min_line_gap": min_line_gap,
+            "require_sportsbook": "台灣運彩",
+        },
         "data_source": {
             "training_games": len(history),
             "last_training_date": history[-1]["date"] if history else "",
@@ -276,6 +287,7 @@ def write_outputs(report: dict) -> None:
         "model_prob",
         "market_implied_prob",
         "edge",
+        "line_gap",
         "monte_carlo_pick",
         "monte_carlo_total",
         "decision",
@@ -310,7 +322,7 @@ def render_rows(rows: list[dict]) -> str:
           <td>{row.get('odds', '')}</td>
           <td>{float(row.get('model_prob') or 0) * 100:.1f}%</td>
           <td>{float(row.get('market_implied_prob') or 0) * 100:.1f}%</td>
-          <td>{float(row.get('edge') or 0) * 100:.1f}%</td>
+          <td>{float(row.get('edge') or 0) * 100:.1f}% / {row.get('line_gap', '')}</td>
           <td>{row.get('monte_carlo_pick', '-')} {row.get('monte_carlo_total') or ''}</td>
           <td>{row.get('decision', '')}</td>
         </tr>"""
@@ -353,12 +365,12 @@ def render_html(report: dict) -> str:
     </div>
     <h2>大小分候選</h2>
     <table>
-      <thead><tr><th>GamePk</th><th>台灣開賽時間</th><th>對戰</th><th>台灣運彩線</th><th>模型總分</th><th>方向</th><th>賠率</th><th>模型機率</th><th>市場隱含</th><th>Edge</th><th>蒙地卡羅</th><th>決策</th></tr></thead>
+      <thead><tr><th>GamePk</th><th>台灣開賽時間</th><th>對戰</th><th>台灣運彩線</th><th>模型總分</th><th>方向</th><th>賠率</th><th>模型機率</th><th>市場隱含</th><th>Edge / 離盤</th><th>蒙地卡羅</th><th>決策</th></tr></thead>
       <tbody>{candidate_rows}</tbody>
     </table>
     <h2>全部大小分預測</h2>
     <table>
-      <thead><tr><th>GamePk</th><th>台灣開賽時間</th><th>對戰</th><th>台灣運彩線</th><th>模型總分</th><th>方向</th><th>賠率</th><th>模型機率</th><th>市場隱含</th><th>Edge</th><th>蒙地卡羅</th><th>決策</th></tr></thead>
+      <thead><tr><th>GamePk</th><th>台灣開賽時間</th><th>對戰</th><th>台灣運彩線</th><th>模型總分</th><th>方向</th><th>賠率</th><th>模型機率</th><th>市場隱含</th><th>Edge / 離盤</th><th>蒙地卡羅</th><th>決策</th></tr></thead>
       <tbody>{all_rows}</tbody>
     </table>
     <div class="note">大小分 v1 只使用台灣運彩全場總分大小盤，不使用 ESPN 備援；目前是模型驗證層，尚未併入主投注單。</div>

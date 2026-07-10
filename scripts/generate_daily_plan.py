@@ -61,7 +61,13 @@ def fetch_schedule(target_date: str) -> list[dict]:
         "date": target_date,
         "hydrate": "team,probablePitcher,linescore",
     }
-    payload = request_json(f"{MLB_SCHEDULE_URL}?{urllib.parse.urlencode(params)}")
+    try:
+        payload = request_json(f"{MLB_SCHEDULE_URL}?{urllib.parse.urlencode(params)}")
+    except Exception:
+        fallback = load_existing_schedule(target_date)
+        if fallback:
+            return fallback
+        raise
     games = []
     for day in payload.get("dates", []):
         for game in day.get("games", []):
@@ -94,6 +100,81 @@ def fetch_schedule(target_date: str) -> list[dict]:
                     "away_probable_pitcher_zh": player_zh(away_pitcher.get("fullName", "")),
                 }
             )
+    games.sort(key=lambda row: (row.get("game_time_utc") or "", int(row["game_pk"] or 0)))
+    return games
+
+
+def load_existing_schedule(target_date: str) -> list[dict]:
+    path = Path(str(DAILY_PLAN_JSON).format(date=target_date))
+    sim_path = DATA_DIR / f"game_simulator_{target_date}.json"
+    payload = {}
+    if path.exists():
+        try:
+            payload = json.loads(path.read_text(encoding="utf-8-sig"))
+        except (json.JSONDecodeError, OSError):
+            payload = {}
+
+    team_names_by_id: dict[str, str] = {}
+    team_names_by_zh: dict[str, str] = {}
+    for game in load_games(DEFAULT_GAMES_CSV):
+        if game.get("home_team_id"):
+            team_names_by_id[str(game["home_team_id"])] = game.get("home", "")
+        if game.get("away_team_id"):
+            team_names_by_id[str(game["away_team_id"])] = game.get("away", "")
+        if game.get("home_zh"):
+            team_names_by_zh[str(game["home_zh"])] = game.get("home", "")
+        if game.get("away_zh"):
+            team_names_by_zh[str(game["away_zh"])] = game.get("away", "")
+
+    games = []
+    existing_rows = payload.get("all_predictions", []) if isinstance(payload, dict) else []
+    if not existing_rows and sim_path.exists():
+        try:
+            sim_payload = json.loads(sim_path.read_text(encoding="utf-8-sig"))
+            existing_rows = [
+                {
+                    "game_pk": row.get("game_pk"),
+                    "game_time_utc": row.get("game_time_utc"),
+                    "game_time_tw": row.get("game_time_tw"),
+                    "status": row.get("status"),
+                    "home_zh": row.get("home"),
+                    "away_zh": row.get("away"),
+                    "home_probable_pitcher_id": row.get("home_pitcher_id"),
+                    "home_probable_pitcher_zh": row.get("home_pitcher"),
+                    "away_probable_pitcher_id": row.get("away_pitcher_id"),
+                    "away_probable_pitcher_zh": row.get("away_pitcher"),
+                }
+                for row in sim_payload.get("games", [])
+            ]
+        except (json.JSONDecodeError, OSError):
+            existing_rows = []
+
+    for row in existing_rows:
+        home_team_id = row.get("home_team_id")
+        away_team_id = row.get("away_team_id")
+        home_zh = row.get("home_zh", "")
+        away_zh = row.get("away_zh", "")
+        games.append(
+            {
+                "date": target_date,
+                "game_pk": str(row.get("game_pk") or ""),
+                "game_time_utc": row.get("game_time_utc", ""),
+                "game_time_tw": row.get("game_time_tw", "未公布"),
+                "status": row.get("status", ""),
+                "home": team_names_by_id.get(str(home_team_id), team_names_by_zh.get(str(home_zh), str(home_zh))),
+                "home_team_id": home_team_id,
+                "home_zh": home_zh,
+                "away": team_names_by_id.get(str(away_team_id), team_names_by_zh.get(str(away_zh), str(away_zh))),
+                "away_team_id": away_team_id,
+                "away_zh": away_zh,
+                "home_probable_pitcher": "",
+                "home_probable_pitcher_id": row.get("home_probable_pitcher_id"),
+                "home_probable_pitcher_zh": row.get("home_probable_pitcher_zh", ""),
+                "away_probable_pitcher": "",
+                "away_probable_pitcher_id": row.get("away_probable_pitcher_id"),
+                "away_probable_pitcher_zh": row.get("away_probable_pitcher_zh", ""),
+            }
+        )
     games.sort(key=lambda row: (row.get("game_time_utc") or "", int(row["game_pk"] or 0)))
     return games
 
@@ -142,6 +223,15 @@ def pick_from_probability(home_zh: str, away_zh: str, prob_home: float) -> dict:
 
 
 def load_score_predictions(target_date: str) -> dict[str, dict]:
+    monte_rows: dict[str, dict] = {}
+    monte_path = Path(str(MONTE_CARLO_JSON).format(date=target_date))
+    if monte_path.exists():
+        try:
+            monte_payload = json.loads(monte_path.read_text(encoding="utf-8-sig"))
+            monte_rows = {str(row.get("game_pk", "")): row for row in monte_payload.get("games", []) if str(row.get("game_pk", ""))}
+        except json.JSONDecodeError:
+            monte_rows = {}
+
     unified_path = Path(str(UNIFIED_JSON).format(date=target_date))
     if unified_path.exists():
         try:
@@ -151,11 +241,11 @@ def load_score_predictions(target_date: str) -> dict[str, dict]:
                     "avg_away_score": row.get("away_expected_runs"),
                     "avg_home_score": row.get("home_expected_runs"),
                     "avg_total": row.get("expected_total"),
-                    "moneyline_pick": row.get("prediction_zh", "-"),
-                    "total_line": None,
-                    "totals_pick": "-",
-                    "over_prob": None,
-                    "under_prob": None,
+                    "moneyline_pick": monte_rows.get(str(row.get("game_pk", "")), {}).get("moneyline_pick", row.get("prediction_zh", "-")),
+                    "total_line": monte_rows.get(str(row.get("game_pk", "")), {}).get("total_line"),
+                    "totals_pick": monte_rows.get(str(row.get("game_pk", "")), {}).get("totals_pick", "-"),
+                    "over_prob": monte_rows.get(str(row.get("game_pk", "")), {}).get("over_prob"),
+                    "under_prob": monte_rows.get(str(row.get("game_pk", "")), {}).get("under_prob"),
                     "source": "unified_expected_runs_v1",
                     "data_quality": row.get("data_quality", ""),
                     "missing_data": row.get("missing_data", []),
@@ -165,15 +255,9 @@ def load_score_predictions(target_date: str) -> dict[str, dict]:
             }
         except json.JSONDecodeError:
             pass
-    path = Path(str(MONTE_CARLO_JSON).format(date=target_date))
-    if not path.exists():
+    if not monte_path.exists():
         return {}
-    try:
-        payload = json.loads(path.read_text(encoding="utf-8-sig"))
-    except json.JSONDecodeError:
-        return {}
-    rows = payload.get("games", [])
-    return {str(row.get("game_pk", "")): row for row in rows if str(row.get("game_pk", ""))}
+    return monte_rows
 
 
 def load_daily_prediction_index(target_date: str) -> dict[str, dict]:
@@ -801,7 +885,7 @@ def render_html(plan: dict) -> str:
       <thead><tr><th>決策</th><th>台灣開賽時間</th><th>對戰</th><th>先發投手</th><th>預測勝方</th><th>整合方向</th><th>預測比分</th><th>預測總分</th><th>比分模型</th><th>勝方一致性</th><th>蒙地卡羅大小</th><th>台灣運彩大小</th><th>大小分一致性</th><th>信心</th><th>確認模型</th></tr></thead>
       <tbody>{watch_rows}</tbody>
     </table>
-    <div class="warning">比分預測取自蒙地卡羅 10,000 次單場模擬平均值；完整模擬分布請看 <a href="monte_carlo.html">蒙地卡羅模擬</a>。投注單請看 <a href="betting_ticket.html">今日投注單</a>。該頁只列入真實盤口與 edge 條件通過的場次。</div>
+    <div class="warning">比分預測取自統一得分期望模型；蒙地卡羅會用同一份得分期望校準分布。完整模擬分布請看 <a href="monte_carlo.html">蒙地卡羅模擬</a>。投注單請看 <a href="betting_ticket.html">今日投注單</a>。該頁只列入真實盤口與 edge 條件通過的場次。</div>
     <div class="warning">之前做的預測驗證：<a href="prediction_log.html">結算紀錄</a> 看每場命中/錯誤；<a href="postgame_review.html">賽後檢討</a> 看每日總結；<a href="winner_model_search.html">模型搜尋</a> 看歷史模型驗證。</div>
   </main>
   <script>

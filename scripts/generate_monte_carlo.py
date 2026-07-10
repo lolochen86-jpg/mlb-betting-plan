@@ -29,6 +29,7 @@ MC_JSON = DATA_DIR / "monte_carlo_{date}.json"
 MC_CSV = DATA_DIR / "monte_carlo_{date}.csv"
 MC_HTML = DOCS_DIR / "monte_carlo.html"
 SIM_DATA_JSON = DATA_DIR / "game_simulator_{date}.json"
+UNIFIED_JSON = DATA_DIR / "unified_expectations_{date}.json"
 
 OUTCOMES = {
     "single": 15.2,
@@ -94,6 +95,31 @@ def load_totals(target_date: str) -> dict[str, dict]:
             except ValueError:
                 continue
             rows[game_pk] = row
+    return rows
+
+
+def load_unified_expectations(target_date: str) -> dict[str, dict]:
+    path = Path(str(UNIFIED_JSON).format(date=target_date))
+    if not path.exists():
+        return {}
+    try:
+        payload = json.loads(path.read_text(encoding="utf-8-sig"))
+    except json.JSONDecodeError:
+        return {}
+    rows = {}
+    for row in payload.get("games", []):
+        game_pk = str(row.get("game_pk", "")).strip()
+        if not game_pk:
+            continue
+        try:
+            rows[game_pk] = {
+                **row,
+                "away_expected_runs": float(row.get("away_expected_runs")),
+                "home_expected_runs": float(row.get("home_expected_runs")),
+                "expected_total": float(row.get("expected_total")),
+            }
+        except (TypeError, ValueError):
+            continue
     return rows
 
 
@@ -257,43 +283,63 @@ def simulate_game(game: dict, rng: random.Random) -> dict:
     }
 
 
-def summarize_game(game: dict, simulations: int, totals: dict, moneyline: dict) -> dict:
+def summarize_game(game: dict, simulations: int, totals: dict, moneyline: dict, unified: dict) -> dict:
     rng = random.Random(stable_seed(game["date"], game["game_pk"], str(simulations)))
-    wins = {"away": 0, "home": 0}
-    scores = {"away": 0, "home": 0}
-    totals_list = []
+    score_pairs: list[tuple[float, float]] = []
     hit_totals = {
         "away": {player["name"]: 0 for player in game["away_lineup"]},
         "home": {player["name"]: 0 for player in game["home_lineup"]},
     }
 
     line = totals.get(str(game["game_pk"]), {}).get("line_value")
-    over_count = 0
-    under_count = 0
-    push_count = 0
 
     for _ in range(simulations):
         result = simulate_game(game, rng)
-        wins[result["winner"]] += 1
-        scores["away"] += result["away_score"]
-        scores["home"] += result["home_score"]
-        totals_list.append(result["total"])
-        if line is not None:
-            if result["total"] > line:
-                over_count += 1
-            elif result["total"] < line:
-                under_count += 1
-            else:
-                push_count += 1
+        score_pairs.append((float(result["away_score"]), float(result["home_score"])))
         for side in ("away", "home"):
             for player in result["box"][side]:
                 hit_totals[side][player["name"]] += player["H"]
 
+    source = "plate_appearance_monte_carlo"
+    data_quality = ""
+    missing_data: list[str] = []
+    raw_avg_away = sum(pair[0] for pair in score_pairs) / simulations
+    raw_avg_home = sum(pair[1] for pair in score_pairs) / simulations
+    unified_row = unified.get(str(game["game_pk"]))
+    if unified_row:
+        away_offset = unified_row["away_expected_runs"] - raw_avg_away
+        home_offset = unified_row["home_expected_runs"] - raw_avg_home
+        score_pairs = [(max(0.0, away + away_offset), max(0.0, home + home_offset)) for away, home in score_pairs]
+        source = "unified_expected_runs_v1_adjusted_monte_carlo"
+        data_quality = str(unified_row.get("data_quality") or "")
+        missing_data = list(unified_row.get("missing_data") or [])
+
+    wins = {"away": 0.0, "home": 0.0}
+    over_count = 0
+    under_count = 0
+    push_count = 0
+    for away_score, home_score in score_pairs:
+        if away_score > home_score:
+            wins["away"] += 1
+        elif home_score > away_score:
+            wins["home"] += 1
+        else:
+            wins["away"] += 0.5
+            wins["home"] += 0.5
+        total_score = away_score + home_score
+        if line is not None:
+            if total_score > line:
+                over_count += 1
+            elif total_score < line:
+                under_count += 1
+            else:
+                push_count += 1
+
     away_win_prob = wins["away"] / simulations
     home_win_prob = wins["home"] / simulations
-    avg_away = scores["away"] / simulations
-    avg_home = scores["home"] / simulations
-    avg_total = sum(totals_list) / simulations
+    avg_away = sum(pair[0] for pair in score_pairs) / simulations
+    avg_home = sum(pair[1] for pair in score_pairs) / simulations
+    avg_total = avg_away + avg_home
     total_line = line if line is not None else round(avg_total * 2) / 2
     over_prob = over_count / simulations if line is not None else None
     under_prob = under_count / simulations if line is not None else None
@@ -334,6 +380,12 @@ def summarize_game(game: dict, simulations: int, totals: dict, moneyline: dict) 
         "away_zh": game["away"],
         "home_zh": game["home"],
         "lineup_source": game.get("lineup_source", ""),
+        "source": source,
+        "data_quality": data_quality,
+        "missing_data": missing_data,
+        "raw_avg_away_score": round(raw_avg_away, 2),
+        "raw_avg_home_score": round(raw_avg_home, 2),
+        "raw_avg_total": round(raw_avg_away + raw_avg_home, 2),
         "simulations": simulations,
         "avg_away_score": round(avg_away, 2),
         "avg_home_score": round(avg_home, 2),
@@ -367,14 +419,15 @@ def build_report(target_date: str, simulations: int) -> dict:
         sim_data = build_sim_data(target_date)
     moneyline = load_moneyline(target_date)
     totals = load_totals(target_date)
-    games = [summarize_game(game, simulations, totals, moneyline) for game in sim_data["games"]]
+    unified = load_unified_expectations(target_date)
+    games = [summarize_game(game, simulations, totals, moneyline, unified) for game in sim_data["games"]]
     games.sort(key=time_sort_key)
     return {
         "generated_at": datetime.now().isoformat(timespec="seconds"),
         "target_date": target_date,
         "simulations_per_game": simulations,
         "games": games,
-        "note": "Monte Carlo uses the same role-based plate-appearance engine as the game simulator. It is a probability distribution, not official MLB play-by-play or guaranteed betting profit.",
+        "note": "Monte Carlo keeps the role-based plate-appearance distribution, then calibrates team scoring means to unified_expected_runs_v1 when available. It is a probability distribution, not official MLB play-by-play or guaranteed betting profit.",
     }
 
 
@@ -400,6 +453,11 @@ def write_csv(report: dict) -> None:
         "home_edge",
         "moneyline_pick",
         "lineup_source",
+        "source",
+        "data_quality",
+        "raw_avg_away_score",
+        "raw_avg_home_score",
+        "raw_avg_total",
         "total_line",
         "over_prob",
         "under_prob",
