@@ -1,7 +1,7 @@
 {
   "backtest_period": {
     "start": "2025-03-27",
-    "end": "2026-07-10"
+    "end": "2026-07-11"
   },
   "settings": {
     "unit": 100,
@@ -13,14 +13,14 @@
   "data_source": {
     "type": "real_mlb_final_scores",
     "games_csv": "data\\real_mlb_games.csv",
-    "games_evaluated": 3846,
+    "games_evaluated": 3849,
     "actual_first_game_date": "2025-03-27",
-    "actual_last_game_date": "2026-07-10",
+    "actual_last_game_date": "2026-07-11",
     "game_types": [
       "R"
     ],
     "coverage_warning": null,
-    "generated_at": "2026-07-11T21:00:50",
+    "generated_at": "2026-07-12T00:01:06",
     "note": "Backtest uses real MLB final scores from saved MLB Stats API schedule data. Odds are still the configured fixed market assumption."
   },
   "models": {
@@ -21096,16 +21096,24 @@
               "result": "win"
             }
           ]
+        },
+        {
+          "date": "2026-07-11",
+          "bets": 0,
+          "wins": 0,
+          "losses": 0,
+          "pnl": 0.0,
+          "bet_details": []
         }
       ]
     },
     "B-近期狀態": {
-      "total_bets": 1391,
-      "wins": 779,
-      "losses": 612,
-      "win_rate": 0.56,
-      "total_pnl": 9618.89,
-      "roi_pct": 6.92,
+      "total_bets": 1394,
+      "wins": 780,
+      "losses": 614,
+      "win_rate": 0.5595,
+      "total_pnl": 9509.8,
+      "roi_pct": 6.82,
       "daily_records": [
         {
           "date": "2025-03-27",
@@ -45967,16 +45975,73 @@
               "result": "loss"
             }
           ]
+        },
+        {
+          "date": "2026-07-11",
+          "bets": 3,
+          "wins": 1,
+          "losses": 2,
+          "pnl": -109.09,
+          "bet_details": [
+            {
+              "game_pk": "823682",
+              "home": "Minnesota Twins",
+              "home_zh": "明尼蘇達雙城",
+              "away": "Los Angeles Angels",
+              "away_zh": "洛杉磯天使",
+              "home_score": 0,
+              "away_score": 0,
+              "pick": "Minnesota Twins",
+              "pick_zh": "明尼蘇達雙城",
+              "home_probable_pitcher_zh": "喬 萊恩",
+              "away_probable_pitcher_zh": "萊恩 喬",
+              "confidence": 0.75,
+              "edge": 0.2262,
+              "result": "loss"
+            },
+            {
+              "game_pk": "824576",
+              "home": "Chicago White Sox",
+              "home_zh": "芝加哥白襪",
+              "away": "Athletics",
+              "away_zh": "運動家",
+              "home_score": 0,
+              "away_score": 0,
+              "pick": "Chicago White Sox",
+              "pick_zh": "芝加哥白襪",
+              "home_probable_pitcher_zh": "布萊恩 赫優德斯歐恩",
+              "away_probable_pitcher_zh": "加傑 傑優姆普",
+              "confidence": 0.75,
+              "edge": 0.2262,
+              "result": "loss"
+            },
+            {
+              "game_pk": "823357",
+              "home": "Pittsburgh Pirates",
+              "home_zh": "匹茲堡海盜",
+              "away": "Milwaukee Brewers",
+              "away_zh": "密爾瓦基釀酒人",
+              "home_score": 0,
+              "away_score": 0,
+              "pick": "Milwaukee Brewers",
+              "pick_zh": "密爾瓦基釀酒人",
+              "home_probable_pitcher_zh": "布 阿",
+              "away_probable_pitcher_zh": "布蘭登 斯普爾歐阿特",
+              "confidence": 0.5683,
+              "edge": 0.0445,
+              "result": "win"
+            }
+          ]
         }
       ]
     },
     "C-ELO評分": {
-      "total_bets": 1376,
-      "wins": 803,
-      "losses": 573,
-      "win_rate": 0.5836,
-      "total_pnl": 15700.73,
-      "roi_pct": 11.41,
+      "total_bets": 1379,
+      "wins": 804,
+      "losses": 575,
+      "win_rate": 0.583,
+      "total_pnl": 15591.64,
+      "roi_pct": 11.31,
       "daily_records": [
         {
           "date": "2025-03-27",
@@ -70601,16 +70666,73 @@
               "result": "loss"
             }
           ]
+        },
+        {
+          "date": "2026-07-11",
+          "bets": 3,
+          "wins": 1,
+          "losses": 2,
+          "pnl": -109.09,
+          "bet_details": [
+            {
+              "game_pk": "824576",
+              "home": "Chicago White Sox",
+              "home_zh": "芝加哥白襪",
+              "away": "Athletics",
+              "away_zh": "運動家",
+              "home_score": 0,
+              "away_score": 0,
+              "pick": "Chicago White Sox",
+              "pick_zh": "芝加哥白襪",
+              "home_probable_pitcher_zh": "布萊恩 赫優德斯歐恩",
+              "away_probable_pitcher_zh": "加傑 傑優姆普",
+              "confidence": 0.6519,
+              "edge": 0.1281,
+              "result": "loss"
+            },
+            {
+              "game_pk": "823357",
+              "home": "Pittsburgh Pirates",
+              "home_zh": "匹茲堡海盜",
+              "away": "Milwaukee Brewers",
+              "away_zh": "密爾瓦基釀酒人",
+              "home_score": 0,
+              "away_score": 0,
+              "pick": "Milwaukee Brewers",
+              "pick_zh": "密爾瓦基釀酒人",
+              "home_probable_pitcher_zh": "布 阿",
+              "away_probable_pitcher_zh": "布蘭登 斯普爾歐阿特",
+              "confidence": 0.6383,
+              "edge": 0.1144,
+              "result": "win"
+            },
+            {
+              "game_pk": "823682",
+              "home": "Minnesota Twins",
+              "home_zh": "明尼蘇達雙城",
+              "away": "Los Angeles Angels",
+              "away_zh": "洛杉磯天使",
+              "home_score": 0,
+              "away_score": 0,
+              "pick": "Minnesota Twins",
+              "pick_zh": "明尼蘇達雙城",
+              "home_probable_pitcher_zh": "喬 萊恩",
+              "away_probable_pitcher_zh": "萊恩 喬",
+              "confidence": 0.6114,
+              "edge": 0.0876,
+              "result": "loss"
+            }
+          ]
         }
       ]
     },
     "D-近期失分代理": {
-      "total_bets": 1376,
-      "wins": 756,
-      "losses": 620,
-      "win_rate": 0.5494,
-      "total_pnl": 6727.96,
-      "roi_pct": 4.89,
+      "total_bets": 1379,
+      "wins": 757,
+      "losses": 622,
+      "win_rate": 0.5489,
+      "total_pnl": 6618.87,
+      "roi_pct": 4.8,
       "daily_records": [
         {
           "date": "2025-03-27",
@@ -95232,16 +95354,73 @@
               "result": "win"
             }
           ]
+        },
+        {
+          "date": "2026-07-11",
+          "bets": 3,
+          "wins": 1,
+          "losses": 2,
+          "pnl": -109.09,
+          "bet_details": [
+            {
+              "game_pk": "824576",
+              "home": "Chicago White Sox",
+              "home_zh": "芝加哥白襪",
+              "away": "Athletics",
+              "away_zh": "運動家",
+              "home_score": 0,
+              "away_score": 0,
+              "pick": "Chicago White Sox",
+              "pick_zh": "芝加哥白襪",
+              "home_probable_pitcher_zh": "布萊恩 赫優德斯歐恩",
+              "away_probable_pitcher_zh": "加傑 傑優姆普",
+              "confidence": 0.6593,
+              "edge": 0.1355,
+              "result": "loss"
+            },
+            {
+              "game_pk": "823682",
+              "home": "Minnesota Twins",
+              "home_zh": "明尼蘇達雙城",
+              "away": "Los Angeles Angels",
+              "away_zh": "洛杉磯天使",
+              "home_score": 0,
+              "away_score": 0,
+              "pick": "Minnesota Twins",
+              "pick_zh": "明尼蘇達雙城",
+              "home_probable_pitcher_zh": "喬 萊恩",
+              "away_probable_pitcher_zh": "萊恩 喬",
+              "confidence": 0.639,
+              "edge": 0.1152,
+              "result": "loss"
+            },
+            {
+              "game_pk": "823357",
+              "home": "Pittsburgh Pirates",
+              "home_zh": "匹茲堡海盜",
+              "away": "Milwaukee Brewers",
+              "away_zh": "密爾瓦基釀酒人",
+              "home_score": 0,
+              "away_score": 0,
+              "pick": "Milwaukee Brewers",
+              "pick_zh": "密爾瓦基釀酒人",
+              "home_probable_pitcher_zh": "布 阿",
+              "away_probable_pitcher_zh": "布蘭登 斯普爾歐阿特",
+              "confidence": 0.555,
+              "edge": 0.0312,
+              "result": "win"
+            }
+          ]
         }
       ]
     },
     "E-對照組(Ensemble)": {
-      "total_bets": 1344,
-      "wins": 781,
-      "losses": 563,
-      "win_rate": 0.5811,
-      "total_pnl": 14700.71,
-      "roi_pct": 10.94,
+      "total_bets": 1347,
+      "wins": 782,
+      "losses": 565,
+      "win_rate": 0.5805,
+      "total_pnl": 14591.62,
+      "roi_pct": 10.83,
       "daily_records": [
         {
           "date": "2025-03-27",
@@ -119352,6 +119531,63 @@
               "confidence": 0.5841,
               "edge": 0.0603,
               "result": "loss"
+            }
+          ]
+        },
+        {
+          "date": "2026-07-11",
+          "bets": 3,
+          "wins": 1,
+          "losses": 2,
+          "pnl": -109.09,
+          "bet_details": [
+            {
+              "game_pk": "824576",
+              "home": "Chicago White Sox",
+              "home_zh": "芝加哥白襪",
+              "away": "Athletics",
+              "away_zh": "運動家",
+              "home_score": 0,
+              "away_score": 0,
+              "pick": "Chicago White Sox",
+              "pick_zh": "芝加哥白襪",
+              "home_probable_pitcher_zh": "布萊恩 赫優德斯歐恩",
+              "away_probable_pitcher_zh": "加傑 傑優姆普",
+              "confidence": 0.6529,
+              "edge": 0.1291,
+              "result": "loss"
+            },
+            {
+              "game_pk": "823682",
+              "home": "Minnesota Twins",
+              "home_zh": "明尼蘇達雙城",
+              "away": "Los Angeles Angels",
+              "away_zh": "洛杉磯天使",
+              "home_score": 0,
+              "away_score": 0,
+              "pick": "Minnesota Twins",
+              "pick_zh": "明尼蘇達雙城",
+              "home_probable_pitcher_zh": "喬 萊恩",
+              "away_probable_pitcher_zh": "萊恩 喬",
+              "confidence": 0.6373,
+              "edge": 0.1135,
+              "result": "loss"
+            },
+            {
+              "game_pk": "823357",
+              "home": "Pittsburgh Pirates",
+              "home_zh": "匹茲堡海盜",
+              "away": "Milwaukee Brewers",
+              "away_zh": "密爾瓦基釀酒人",
+              "home_score": 0,
+              "away_score": 0,
+              "pick": "Milwaukee Brewers",
+              "pick_zh": "密爾瓦基釀酒人",
+              "home_probable_pitcher_zh": "布 阿",
+              "away_probable_pitcher_zh": "布蘭登 斯普爾歐阿特",
+              "confidence": 0.5819,
+              "edge": 0.0581,
+              "result": "win"
             }
           ]
         }

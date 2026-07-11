@@ -1,21 +1,21 @@
 {
-  "generated_at": "2026-07-11T21:00:49",
+  "generated_at": "2026-07-12T00:00:58",
   "backtest_period": {
     "start": "2025-03-27",
-    "end": "2026-07-10"
+    "end": "2026-07-11"
   },
   "data_source": {
     "type": "real_mlb_final_scores",
     "games_csv": "data\\real_mlb_games.csv",
-    "games_evaluated": 3846,
+    "games_evaluated": 3849,
     "note": "Pure winner-prediction accuracy only. Odds, edge, stake, and ROI are intentionally excluded."
   },
   "models": {
     "A-畢氏勝率": {
-      "predictions": 3767,
-      "correct": 2039,
-      "wrong": 1728,
-      "accuracy_pct": 54.13,
+      "predictions": 3770,
+      "correct": 2040,
+      "wrong": 1730,
+      "accuracy_pct": 54.11,
       "monthly": [
         {
           "month": "2025-04",
@@ -79,9 +79,9 @@
         },
         {
           "month": "2026-07",
-          "predictions": 132,
-          "correct": 69,
-          "accuracy_pct": 52.27
+          "predictions": 135,
+          "correct": 70,
+          "accuracy_pct": 51.85
         }
       ],
       "prediction_details": [
@@ -64123,14 +64123,65 @@
           "correct": true,
           "away_probable_pitcher_zh": "路 阿維拉",
           "home_probable_pitcher_zh": "布蘭登 尤"
+        },
+        {
+          "game_pk": "823357",
+          "date": "2026-07-11",
+          "matchup_zh": "密爾瓦基釀酒人 @ 匹茲堡海盜",
+          "away_zh": "密爾瓦基釀酒人",
+          "home_zh": "匹茲堡海盜",
+          "away_score": 0,
+          "home_score": 0,
+          "pick_zh": "密爾瓦基釀酒人",
+          "pick_side": "away",
+          "actual_winner_zh": "密爾瓦基釀酒人",
+          "confidence": 0.5411,
+          "home_win_probability": 0.4589,
+          "correct": true,
+          "away_probable_pitcher_zh": "布蘭登 斯普爾歐阿特",
+          "home_probable_pitcher_zh": "布 阿"
+        },
+        {
+          "game_pk": "823682",
+          "date": "2026-07-11",
+          "matchup_zh": "洛杉磯天使 @ 明尼蘇達雙城",
+          "away_zh": "洛杉磯天使",
+          "home_zh": "明尼蘇達雙城",
+          "away_score": 0,
+          "home_score": 0,
+          "pick_zh": "明尼蘇達雙城",
+          "pick_side": "home",
+          "actual_winner_zh": "洛杉磯天使",
+          "confidence": 0.542,
+          "home_win_probability": 0.542,
+          "correct": false,
+          "away_probable_pitcher_zh": "萊恩 喬",
+          "home_probable_pitcher_zh": "喬 萊恩"
+        },
+        {
+          "game_pk": "824576",
+          "date": "2026-07-11",
+          "matchup_zh": "運動家 @ 芝加哥白襪",
+          "away_zh": "運動家",
+          "home_zh": "芝加哥白襪",
+          "away_score": 0,
+          "home_score": 0,
+          "pick_zh": "芝加哥白襪",
+          "pick_side": "home",
+          "actual_winner_zh": "運動家",
+          "confidence": 0.5411,
+          "home_win_probability": 0.5411,
+          "correct": false,
+          "away_probable_pitcher_zh": "加傑 傑優姆普",
+          "home_probable_pitcher_zh": "布萊恩 赫優德斯歐恩"
         }
       ]
     },
     "B-近期狀態": {
-      "predictions": 3767,
-      "correct": 2020,
-      "wrong": 1747,
-      "accuracy_pct": 53.62,
+      "predictions": 3770,
+      "correct": 2021,
+      "wrong": 1749,
+      "accuracy_pct": 53.61,
       "monthly": [
         {
           "month": "2025-04",
@@ -64194,9 +64245,9 @@
         },
         {
           "month": "2026-07",
-          "predictions": 132,
-          "correct": 74,
-          "accuracy_pct": 56.06
+          "predictions": 135,
+          "correct": 75,
+          "accuracy_pct": 55.56
         }
       ],
       "prediction_details": [
@@ -128238,14 +128289,65 @@
           "correct": true,
           "away_probable_pitcher_zh": "路 阿維拉",
           "home_probable_pitcher_zh": "布蘭登 尤"
+        },
+        {
+          "game_pk": "823357",
+          "date": "2026-07-11",
+          "matchup_zh": "密爾瓦基釀酒人 @ 匹茲堡海盜",
+          "away_zh": "密爾瓦基釀酒人",
+          "home_zh": "匹茲堡海盜",
+          "away_score": 0,
+          "home_score": 0,
+          "pick_zh": "密爾瓦基釀酒人",
+          "pick_side": "away",
+          "actual_winner_zh": "密爾瓦基釀酒人",
+          "confidence": 0.5683,
+          "home_win_probability": 0.4317,
+          "correct": true,
+          "away_probable_pitcher_zh": "布蘭登 斯普爾歐阿特",
+          "home_probable_pitcher_zh": "布 阿"
+        },
+        {
+          "game_pk": "823682",
+          "date": "2026-07-11",
+          "matchup_zh": "洛杉磯天使 @ 明尼蘇達雙城",
+          "away_zh": "洛杉磯天使",
+          "home_zh": "明尼蘇達雙城",
+          "away_score": 0,
+          "home_score": 0,
+          "pick_zh": "明尼蘇達雙城",
+          "pick_side": "home",
+          "actual_winner_zh": "洛杉磯天使",
+          "confidence": 0.75,
+          "home_win_probability": 0.75,
+          "correct": false,
+          "away_probable_pitcher_zh": "萊恩 喬",
+          "home_probable_pitcher_zh": "喬 萊恩"
+        },
+        {
+          "game_pk": "824576",
+          "date": "2026-07-11",
+          "matchup_zh": "運動家 @ 芝加哥白襪",
+          "away_zh": "運動家",
+          "home_zh": "芝加哥白襪",
+          "away_score": 0,
+          "home_score": 0,
+          "pick_zh": "芝加哥白襪",
+          "pick_side": "home",
+          "actual_winner_zh": "運動家",
+          "confidence": 0.75,
+          "home_win_probability": 0.75,
+          "correct": false,
+          "away_probable_pitcher_zh": "加傑 傑優姆普",
+          "home_probable_pitcher_zh": "布萊恩 赫優德斯歐恩"
         }
       ]
     },
     "C-ELO評分": {
-      "predictions": 3846,
-      "correct": 2063,
-      "wrong": 1783,
-      "accuracy_pct": 53.64,
+      "predictions": 3849,
+      "correct": 2064,
+      "wrong": 1785,
+      "accuracy_pct": 53.62,
       "monthly": [
         {
           "month": "2025-03",
@@ -128315,9 +128417,9 @@
         },
         {
           "month": "2026-07",
-          "predictions": 132,
-          "correct": 68,
-          "accuracy_pct": 51.52
+          "predictions": 135,
+          "correct": 69,
+          "accuracy_pct": 51.11
         }
       ],
       "prediction_details": [
@@ -193702,14 +193804,65 @@
           "correct": true,
           "away_probable_pitcher_zh": "路 阿維拉",
           "home_probable_pitcher_zh": "布蘭登 尤"
+        },
+        {
+          "game_pk": "823357",
+          "date": "2026-07-11",
+          "matchup_zh": "密爾瓦基釀酒人 @ 匹茲堡海盜",
+          "away_zh": "密爾瓦基釀酒人",
+          "home_zh": "匹茲堡海盜",
+          "away_score": 0,
+          "home_score": 0,
+          "pick_zh": "密爾瓦基釀酒人",
+          "pick_side": "away",
+          "actual_winner_zh": "密爾瓦基釀酒人",
+          "confidence": 0.6383,
+          "home_win_probability": 0.3617,
+          "correct": true,
+          "away_probable_pitcher_zh": "布蘭登 斯普爾歐阿特",
+          "home_probable_pitcher_zh": "布 阿"
+        },
+        {
+          "game_pk": "823682",
+          "date": "2026-07-11",
+          "matchup_zh": "洛杉磯天使 @ 明尼蘇達雙城",
+          "away_zh": "洛杉磯天使",
+          "home_zh": "明尼蘇達雙城",
+          "away_score": 0,
+          "home_score": 0,
+          "pick_zh": "明尼蘇達雙城",
+          "pick_side": "home",
+          "actual_winner_zh": "洛杉磯天使",
+          "confidence": 0.6114,
+          "home_win_probability": 0.6114,
+          "correct": false,
+          "away_probable_pitcher_zh": "萊恩 喬",
+          "home_probable_pitcher_zh": "喬 萊恩"
+        },
+        {
+          "game_pk": "824576",
+          "date": "2026-07-11",
+          "matchup_zh": "運動家 @ 芝加哥白襪",
+          "away_zh": "運動家",
+          "home_zh": "芝加哥白襪",
+          "away_score": 0,
+          "home_score": 0,
+          "pick_zh": "芝加哥白襪",
+          "pick_side": "home",
+          "actual_winner_zh": "運動家",
+          "confidence": 0.6519,
+          "home_win_probability": 0.6519,
+          "correct": false,
+          "away_probable_pitcher_zh": "加傑 傑優姆普",
+          "home_probable_pitcher_zh": "布萊恩 赫優德斯歐恩"
         }
       ]
     },
     "D-近期失分代理": {
-      "predictions": 3767,
-      "correct": 1958,
-      "wrong": 1809,
-      "accuracy_pct": 51.98,
+      "predictions": 3770,
+      "correct": 1959,
+      "wrong": 1811,
+      "accuracy_pct": 51.96,
       "monthly": [
         {
           "month": "2025-04",
@@ -193773,9 +193926,9 @@
         },
         {
           "month": "2026-07",
-          "predictions": 132,
-          "correct": 57,
-          "accuracy_pct": 43.18
+          "predictions": 135,
+          "correct": 58,
+          "accuracy_pct": 42.96
         }
       ],
       "prediction_details": [
@@ -257817,14 +257970,65 @@
           "correct": true,
           "away_probable_pitcher_zh": "路 阿維拉",
           "home_probable_pitcher_zh": "布蘭登 尤"
+        },
+        {
+          "game_pk": "823357",
+          "date": "2026-07-11",
+          "matchup_zh": "密爾瓦基釀酒人 @ 匹茲堡海盜",
+          "away_zh": "密爾瓦基釀酒人",
+          "home_zh": "匹茲堡海盜",
+          "away_score": 0,
+          "home_score": 0,
+          "pick_zh": "密爾瓦基釀酒人",
+          "pick_side": "away",
+          "actual_winner_zh": "密爾瓦基釀酒人",
+          "confidence": 0.555,
+          "home_win_probability": 0.445,
+          "correct": true,
+          "away_probable_pitcher_zh": "布蘭登 斯普爾歐阿特",
+          "home_probable_pitcher_zh": "布 阿"
+        },
+        {
+          "game_pk": "823682",
+          "date": "2026-07-11",
+          "matchup_zh": "洛杉磯天使 @ 明尼蘇達雙城",
+          "away_zh": "洛杉磯天使",
+          "home_zh": "明尼蘇達雙城",
+          "away_score": 0,
+          "home_score": 0,
+          "pick_zh": "明尼蘇達雙城",
+          "pick_side": "home",
+          "actual_winner_zh": "洛杉磯天使",
+          "confidence": 0.639,
+          "home_win_probability": 0.639,
+          "correct": false,
+          "away_probable_pitcher_zh": "萊恩 喬",
+          "home_probable_pitcher_zh": "喬 萊恩"
+        },
+        {
+          "game_pk": "824576",
+          "date": "2026-07-11",
+          "matchup_zh": "運動家 @ 芝加哥白襪",
+          "away_zh": "運動家",
+          "home_zh": "芝加哥白襪",
+          "away_score": 0,
+          "home_score": 0,
+          "pick_zh": "芝加哥白襪",
+          "pick_side": "home",
+          "actual_winner_zh": "運動家",
+          "confidence": 0.6593,
+          "home_win_probability": 0.6593,
+          "correct": false,
+          "away_probable_pitcher_zh": "加傑 傑優姆普",
+          "home_probable_pitcher_zh": "布萊恩 赫優德斯歐恩"
         }
       ]
     },
     "E-對照組(Ensemble)": {
-      "predictions": 3846,
-      "correct": 2050,
-      "wrong": 1796,
-      "accuracy_pct": 53.3,
+      "predictions": 3849,
+      "correct": 2051,
+      "wrong": 1798,
+      "accuracy_pct": 53.29,
       "monthly": [
         {
           "month": "2025-03",
@@ -257894,9 +258098,9 @@
         },
         {
           "month": "2026-07",
-          "predictions": 132,
-          "correct": 67,
-          "accuracy_pct": 50.76
+          "predictions": 135,
+          "correct": 68,
+          "accuracy_pct": 50.37
         }
       ],
       "prediction_details": [
@@ -323281,6 +323485,57 @@
           "correct": true,
           "away_probable_pitcher_zh": "路 阿維拉",
           "home_probable_pitcher_zh": "布蘭登 尤"
+        },
+        {
+          "game_pk": "823357",
+          "date": "2026-07-11",
+          "matchup_zh": "密爾瓦基釀酒人 @ 匹茲堡海盜",
+          "away_zh": "密爾瓦基釀酒人",
+          "home_zh": "匹茲堡海盜",
+          "away_score": 0,
+          "home_score": 0,
+          "pick_zh": "密爾瓦基釀酒人",
+          "pick_side": "away",
+          "actual_winner_zh": "密爾瓦基釀酒人",
+          "confidence": 0.5739,
+          "home_win_probability": 0.4261,
+          "correct": true,
+          "away_probable_pitcher_zh": "布蘭登 斯普爾歐阿特",
+          "home_probable_pitcher_zh": "布 阿"
+        },
+        {
+          "game_pk": "823682",
+          "date": "2026-07-11",
+          "matchup_zh": "洛杉磯天使 @ 明尼蘇達雙城",
+          "away_zh": "洛杉磯天使",
+          "home_zh": "明尼蘇達雙城",
+          "away_score": 0,
+          "home_score": 0,
+          "pick_zh": "明尼蘇達雙城",
+          "pick_side": "home",
+          "actual_winner_zh": "洛杉磯天使",
+          "confidence": 0.6407,
+          "home_win_probability": 0.6407,
+          "correct": false,
+          "away_probable_pitcher_zh": "萊恩 喬",
+          "home_probable_pitcher_zh": "喬 萊恩"
+        },
+        {
+          "game_pk": "824576",
+          "date": "2026-07-11",
+          "matchup_zh": "運動家 @ 芝加哥白襪",
+          "away_zh": "運動家",
+          "home_zh": "芝加哥白襪",
+          "away_score": 0,
+          "home_score": 0,
+          "pick_zh": "芝加哥白襪",
+          "pick_side": "home",
+          "actual_winner_zh": "運動家",
+          "confidence": 0.6529,
+          "home_win_probability": 0.6529,
+          "correct": false,
+          "away_probable_pitcher_zh": "加傑 傑優姆普",
+          "home_probable_pitcher_zh": "布萊恩 赫優德斯歐恩"
         }
       ]
     }
