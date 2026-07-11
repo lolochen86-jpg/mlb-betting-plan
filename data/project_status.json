@@ -1,20 +1,20 @@
 {
-  "generated_at": "2026-07-11T00:10:52",
+  "generated_at": "2026-07-11T14:02:57",
   "history": {
-    "games_written": 3832,
+    "games_written": 3846,
     "actual_first_game_date": "2025-03-27",
-    "actual_last_game_date": "2026-07-09"
+    "actual_last_game_date": "2026-07-10"
   },
   "accuracy": {
     "best_model": "A-畢氏勝率",
-    "predictions": 3753,
-    "correct": 2032,
-    "accuracy_pct": 54.14
+    "predictions": 3767,
+    "correct": 2039,
+    "accuracy_pct": 54.13
   },
   "daily": {
     "target_date": "2026-07-11",
-    "predictions": 15,
-    "high_confidence": 2
+    "predictions": 16,
+    "high_confidence": 1
   },
   "settlements": [
     {
@@ -125,15 +125,15 @@
     {
       "date": "2026-07-10",
       "predictions": 15,
-      "final_games": 0,
-      "pending_games": 15,
-      "accuracy_pct": 0
+      "final_games": 13,
+      "pending_games": 2,
+      "accuracy_pct": 53.85
     },
     {
       "date": "2026-07-11",
-      "predictions": 15,
+      "predictions": 16,
       "final_games": 0,
-      "pending_games": 15,
+      "pending_games": 16,
       "accuracy_pct": 0
     }
   ],
@@ -392,14 +392,14 @@
   "auto_runner": {
     "mode": "running",
     "target_date": "2026-07-11",
-    "last_started_at_tw": "2026-07-11T00:00:02+08:00",
-    "last_finished_at_tw": "2026-07-10T21:09:44+08:00",
+    "last_started_at_tw": "2026-07-11T13:50:02+08:00",
+    "last_finished_at_tw": "2026-07-11T00:10:52+08:00",
     "last_return_code": 0,
-    "log": "C:\\Users\\I5-10400F\\Documents\\投注計畫\\logs\\auto_runner\\2026-07-10.workflow.log",
+    "log": "C:\\Users\\I5-10400F\\Documents\\投注計畫\\logs\\auto_runner\\2026-07-11.workflow.log",
     "health": {
       "ok": true,
-      "target_date": "2026-07-10",
-      "checked_at_tw": "2026-07-10T21:09:44+08:00",
+      "target_date": "2026-07-11",
+      "checked_at_tw": "2026-07-11T00:10:52+08:00",
       "checks": [
         {
           "name": "daily_predictions",
@@ -448,8 +448,8 @@
   "system_completion_pct": 100,
   "external_waiting_items": [
     "2026-06-25 尚有 1 場比賽未結算",
-    "2026-07-10 尚有 15 場比賽未結算",
-    "2026-07-11 尚有 15 場比賽未結算",
+    "2026-07-10 尚有 2 場比賽未結算",
+    "2026-07-11 尚有 16 場比賽未結算",
     "2026-06-25 亞利桑那響尾蛇 @ 聖路易紅雀 (Postponed) 尚未取得真實盤口"
   ],
   "project_state": "系統完成，等待外部賽果/盤口"

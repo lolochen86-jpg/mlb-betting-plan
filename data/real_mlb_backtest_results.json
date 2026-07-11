@@ -1,7 +1,7 @@
 {
   "backtest_period": {
     "start": "2025-03-27",
-    "end": "2026-07-09"
+    "end": "2026-07-10"
   },
   "settings": {
     "unit": 100,
@@ -13,24 +13,24 @@
   "data_source": {
     "type": "real_mlb_final_scores",
     "games_csv": "data\\real_mlb_games.csv",
-    "games_evaluated": 3832,
+    "games_evaluated": 3846,
     "actual_first_game_date": "2025-03-27",
-    "actual_last_game_date": "2026-07-09",
+    "actual_last_game_date": "2026-07-10",
     "game_types": [
       "R"
     ],
-    "coverage_warning": "Requested through 2026-07-10, but MLB Stats API returned saved final-score rows only through 2026-07-09.",
-    "generated_at": "2026-07-11T00:01:22",
+    "coverage_warning": null,
+    "generated_at": "2026-07-11T13:51:59",
     "note": "Backtest uses real MLB final scores from saved MLB Stats API schedule data. Odds are still the configured fixed market assumption."
   },
   "models": {
     "A-畢氏勝率": {
-      "total_bets": 1151,
-      "wins": 682,
-      "losses": 469,
-      "win_rate": 0.5925,
-      "total_pnl": 15100.62,
-      "roi_pct": 13.12,
+      "total_bets": 1154,
+      "wins": 683,
+      "losses": 471,
+      "win_rate": 0.5919,
+      "total_pnl": 14991.53,
+      "roi_pct": 12.99,
       "daily_records": [
         {
           "date": "2025-03-27",
@@ -21039,16 +21039,73 @@
               "result": "win"
             }
           ]
+        },
+        {
+          "date": "2026-07-10",
+          "bets": 3,
+          "wins": 1,
+          "losses": 2,
+          "pnl": -109.09,
+          "bet_details": [
+            {
+              "game_pk": "823200",
+              "home": "San Francisco Giants",
+              "home_zh": "舊金山巨人",
+              "away": "Colorado Rockies",
+              "away_zh": "科羅拉多洛磯",
+              "home_score": 3,
+              "away_score": 4,
+              "pick": "San Francisco Giants",
+              "pick_zh": "舊金山巨人",
+              "home_probable_pitcher_zh": "羅 拉",
+              "away_probable_pitcher_zh": "坦納 戈",
+              "confidence": 0.6163,
+              "edge": 0.0925,
+              "result": "loss"
+            },
+            {
+              "game_pk": "823927",
+              "home": "Los Angeles Dodgers",
+              "home_zh": "洛杉磯道奇",
+              "away": "Arizona Diamondbacks",
+              "away_zh": "亞利桑那響尾蛇",
+              "home_score": 3,
+              "away_score": 9,
+              "pick": "Los Angeles Dodgers",
+              "pick_zh": "洛杉磯道奇",
+              "home_probable_pitcher_zh": "凱爾 赫優爾特",
+              "away_probable_pitcher_zh": "愛德華多 羅",
+              "confidence": 0.5765,
+              "edge": 0.0527,
+              "result": "loss"
+            },
+            {
+              "game_pk": "822709",
+              "home": "Washington Nationals",
+              "home_zh": "華盛頓國民",
+              "away": "New York Yankees",
+              "away_zh": "紐約洋基",
+              "home_score": 3,
+              "away_score": 5,
+              "pick": "New York Yankees",
+              "pick_zh": "紐約洋基",
+              "home_probable_pitcher_zh": "卡 帕史",
+              "away_probable_pitcher_zh": "萊恩 韋",
+              "confidence": 0.561,
+              "edge": 0.0372,
+              "result": "win"
+            }
+          ]
         }
       ]
     },
     "B-近期狀態": {
-      "total_bets": 1386,
-      "wins": 778,
-      "losses": 608,
-      "win_rate": 0.5613,
-      "total_pnl": 9927.98,
-      "roi_pct": 7.16,
+      "total_bets": 1391,
+      "wins": 779,
+      "losses": 612,
+      "win_rate": 0.56,
+      "total_pnl": 9618.89,
+      "roi_pct": 6.92,
       "daily_records": [
         {
           "date": "2025-03-27",
@@ -45821,16 +45878,105 @@
               "result": "win"
             }
           ]
+        },
+        {
+          "date": "2026-07-10",
+          "bets": 5,
+          "wins": 1,
+          "losses": 4,
+          "pnl": -309.09,
+          "bet_details": [
+            {
+              "game_pk": "823685",
+              "home": "Minnesota Twins",
+              "home_zh": "明尼蘇達雙城",
+              "away": "Los Angeles Angels",
+              "away_zh": "洛杉磯天使",
+              "home_score": 3,
+              "away_score": 4,
+              "pick": "Minnesota Twins",
+              "pick_zh": "明尼蘇達雙城",
+              "home_probable_pitcher_zh": "茲伊布布伊 馬",
+              "away_probable_pitcher_zh": "葛索 羅",
+              "confidence": 0.75,
+              "edge": 0.2262,
+              "result": "loss"
+            },
+            {
+              "game_pk": "824575",
+              "home": "Chicago White Sox",
+              "home_zh": "芝加哥白襪",
+              "away": "Athletics",
+              "away_zh": "運動家",
+              "home_score": 14,
+              "away_score": 1,
+              "pick": "Chicago White Sox",
+              "pick_zh": "芝加哥白襪",
+              "home_probable_pitcher_zh": "西恩 布優爾克伊",
+              "away_probable_pitcher_zh": "雅各布 羅培茲",
+              "confidence": 0.75,
+              "edge": 0.2262,
+              "result": "win"
+            },
+            {
+              "game_pk": "822709",
+              "home": "Washington Nationals",
+              "home_zh": "華盛頓國民",
+              "away": "New York Yankees",
+              "away_zh": "紐約洋基",
+              "home_score": 3,
+              "away_score": 5,
+              "pick": "Washington Nationals",
+              "pick_zh": "華盛頓國民",
+              "home_probable_pitcher_zh": "卡 帕史",
+              "away_probable_pitcher_zh": "萊恩 韋",
+              "confidence": 0.6817,
+              "edge": 0.1579,
+              "result": "loss"
+            },
+            {
+              "game_pk": "823845",
+              "home": "Miami Marlins",
+              "home_zh": "邁阿密馬林魚",
+              "away": "Cleveland Guardians",
+              "away_zh": "克里夫蘭守護者",
+              "home_score": 2,
+              "away_score": 3,
+              "pick": "Miami Marlins",
+              "pick_zh": "邁阿密馬林魚",
+              "home_probable_pitcher_zh": "桑迪 阿爾坎塔拉",
+              "away_probable_pitcher_zh": "帕 梅",
+              "confidence": 0.6817,
+              "edge": 0.1579,
+              "result": "loss"
+            },
+            {
+              "game_pk": "824493",
+              "home": "Cincinnati Reds",
+              "home_zh": "辛辛那提紅人",
+              "away": "Chicago Cubs",
+              "away_zh": "芝加哥小熊",
+              "home_score": 4,
+              "away_score": 0,
+              "pick": "Chicago Cubs",
+              "pick_zh": "芝加哥小熊",
+              "home_probable_pitcher_zh": "杭特 葛林",
+              "away_probable_pitcher_zh": "今永昇太",
+              "confidence": 0.65,
+              "edge": 0.1262,
+              "result": "loss"
+            }
+          ]
         }
       ]
     },
     "C-ELO評分": {
-      "total_bets": 1371,
-      "wins": 802,
-      "losses": 569,
-      "win_rate": 0.585,
-      "total_pnl": 16009.82,
-      "roi_pct": 11.68,
+      "total_bets": 1376,
+      "wins": 803,
+      "losses": 573,
+      "win_rate": 0.5836,
+      "total_pnl": 15700.73,
+      "roi_pct": 11.41,
       "daily_records": [
         {
           "date": "2025-03-27",
@@ -70366,16 +70512,105 @@
               "result": "win"
             }
           ]
+        },
+        {
+          "date": "2026-07-10",
+          "bets": 5,
+          "wins": 1,
+          "losses": 4,
+          "pnl": -309.09,
+          "bet_details": [
+            {
+              "game_pk": "823927",
+              "home": "Los Angeles Dodgers",
+              "home_zh": "洛杉磯道奇",
+              "away": "Arizona Diamondbacks",
+              "away_zh": "亞利桑那響尾蛇",
+              "home_score": 3,
+              "away_score": 9,
+              "pick": "Los Angeles Dodgers",
+              "pick_zh": "洛杉磯道奇",
+              "home_probable_pitcher_zh": "凱爾 赫優爾特",
+              "away_probable_pitcher_zh": "愛德華多 羅",
+              "confidence": 0.6922,
+              "edge": 0.1684,
+              "result": "loss"
+            },
+            {
+              "game_pk": "823845",
+              "home": "Miami Marlins",
+              "home_zh": "邁阿密馬林魚",
+              "away": "Cleveland Guardians",
+              "away_zh": "克里夫蘭守護者",
+              "home_score": 2,
+              "away_score": 3,
+              "pick": "Miami Marlins",
+              "pick_zh": "邁阿密馬林魚",
+              "home_probable_pitcher_zh": "桑迪 阿爾坎塔拉",
+              "away_probable_pitcher_zh": "帕 梅",
+              "confidence": 0.6492,
+              "edge": 0.1253,
+              "result": "loss"
+            },
+            {
+              "game_pk": "823685",
+              "home": "Minnesota Twins",
+              "home_zh": "明尼蘇達雙城",
+              "away": "Los Angeles Angels",
+              "away_zh": "洛杉磯天使",
+              "home_score": 3,
+              "away_score": 4,
+              "pick": "Minnesota Twins",
+              "pick_zh": "明尼蘇達雙城",
+              "home_probable_pitcher_zh": "茲伊布布伊 馬",
+              "away_probable_pitcher_zh": "葛索 羅",
+              "confidence": 0.6458,
+              "edge": 0.122,
+              "result": "loss"
+            },
+            {
+              "game_pk": "824575",
+              "home": "Chicago White Sox",
+              "home_zh": "芝加哥白襪",
+              "away": "Athletics",
+              "away_zh": "運動家",
+              "home_score": 14,
+              "away_score": 1,
+              "pick": "Chicago White Sox",
+              "pick_zh": "芝加哥白襪",
+              "home_probable_pitcher_zh": "西恩 布優爾克伊",
+              "away_probable_pitcher_zh": "雅各布 羅培茲",
+              "confidence": 0.6312,
+              "edge": 0.1074,
+              "result": "win"
+            },
+            {
+              "game_pk": "824493",
+              "home": "Cincinnati Reds",
+              "home_zh": "辛辛那提紅人",
+              "away": "Chicago Cubs",
+              "away_zh": "芝加哥小熊",
+              "home_score": 4,
+              "away_score": 0,
+              "pick": "Chicago Cubs",
+              "pick_zh": "芝加哥小熊",
+              "home_probable_pitcher_zh": "杭特 葛林",
+              "away_probable_pitcher_zh": "今永昇太",
+              "confidence": 0.6153,
+              "edge": 0.0915,
+              "result": "loss"
+            }
+          ]
         }
       ]
     },
     "D-近期失分代理": {
-      "total_bets": 1371,
-      "wins": 753,
-      "losses": 618,
-      "win_rate": 0.5492,
-      "total_pnl": 6655.23,
-      "roi_pct": 4.85,
+      "total_bets": 1376,
+      "wins": 756,
+      "losses": 620,
+      "win_rate": 0.5494,
+      "total_pnl": 6727.96,
+      "roi_pct": 4.89,
       "daily_records": [
         {
           "date": "2025-03-27",
@@ -94908,16 +95143,105 @@
               "result": "win"
             }
           ]
+        },
+        {
+          "date": "2026-07-10",
+          "bets": 5,
+          "wins": 3,
+          "losses": 2,
+          "pnl": 72.73,
+          "bet_details": [
+            {
+              "game_pk": "824252",
+              "home": "Detroit Tigers",
+              "home_zh": "底特律老虎",
+              "away": "Philadelphia Phillies",
+              "away_zh": "費城費城人",
+              "home_score": 10,
+              "away_score": 2,
+              "pick": "Detroit Tigers",
+              "pick_zh": "底特律老虎",
+              "home_probable_pitcher_zh": "傑克 赫",
+              "away_probable_pitcher_zh": "亞倫 諾拉",
+              "confidence": 0.7,
+              "edge": 0.1762,
+              "result": "win"
+            },
+            {
+              "game_pk": "823685",
+              "home": "Minnesota Twins",
+              "home_zh": "明尼蘇達雙城",
+              "away": "Los Angeles Angels",
+              "away_zh": "洛杉磯天使",
+              "home_score": 3,
+              "away_score": 4,
+              "pick": "Minnesota Twins",
+              "pick_zh": "明尼蘇達雙城",
+              "home_probable_pitcher_zh": "茲伊布布伊 馬",
+              "away_probable_pitcher_zh": "葛索 羅",
+              "confidence": 0.6796,
+              "edge": 0.1558,
+              "result": "loss"
+            },
+            {
+              "game_pk": "823278",
+              "home": "San Diego Padres",
+              "home_zh": "聖地牙哥教士",
+              "away": "Toronto Blue Jays",
+              "away_zh": "多倫多藍鳥",
+              "home_score": 3,
+              "away_score": 5,
+              "pick": "San Diego Padres",
+              "pick_zh": "聖地牙哥教士",
+              "home_probable_pitcher_zh": "傑普 塞",
+              "away_probable_pitcher_zh": "謝恩 比貝",
+              "confidence": 0.6287,
+              "edge": 0.1049,
+              "result": "loss"
+            },
+            {
+              "game_pk": "822709",
+              "home": "Washington Nationals",
+              "home_zh": "華盛頓國民",
+              "away": "New York Yankees",
+              "away_zh": "紐約洋基",
+              "home_score": 3,
+              "away_score": 5,
+              "pick": "New York Yankees",
+              "pick_zh": "紐約洋基",
+              "home_probable_pitcher_zh": "卡 帕史",
+              "away_probable_pitcher_zh": "萊恩 韋",
+              "confidence": 0.62,
+              "edge": 0.0962,
+              "result": "win"
+            },
+            {
+              "game_pk": "823604",
+              "home": "New York Mets",
+              "home_zh": "紐約大都會",
+              "away": "Boston Red Sox",
+              "away_zh": "波士頓紅襪",
+              "home_score": 2,
+              "away_score": 6,
+              "pick": "Boston Red Sox",
+              "pick_zh": "波士頓紅襪",
+              "home_probable_pitcher_zh": "諾拉 姆克爾伊阿恩",
+              "away_probable_pitcher_zh": "桑尼 葛雷",
+              "confidence": 0.62,
+              "edge": 0.0962,
+              "result": "win"
+            }
+          ]
         }
       ]
     },
     "E-對照組(Ensemble)": {
-      "total_bets": 1339,
-      "wins": 780,
-      "losses": 559,
-      "win_rate": 0.5825,
-      "total_pnl": 15009.8,
-      "roi_pct": 11.21,
+      "total_bets": 1344,
+      "wins": 781,
+      "losses": 563,
+      "win_rate": 0.5811,
+      "total_pnl": 14700.71,
+      "roi_pct": 10.94,
       "daily_records": [
         {
           "date": "2025-03-27",
@@ -118938,6 +119262,95 @@
               "away_probable_pitcher_zh": "加維 威",
               "confidence": 0.5788,
               "edge": 0.055,
+              "result": "loss"
+            }
+          ]
+        },
+        {
+          "date": "2026-07-10",
+          "bets": 5,
+          "wins": 1,
+          "losses": 4,
+          "pnl": -309.09,
+          "bet_details": [
+            {
+              "game_pk": "823685",
+              "home": "Minnesota Twins",
+              "home_zh": "明尼蘇達雙城",
+              "away": "Los Angeles Angels",
+              "away_zh": "洛杉磯天使",
+              "home_score": 3,
+              "away_score": 4,
+              "pick": "Minnesota Twins",
+              "pick_zh": "明尼蘇達雙城",
+              "home_probable_pitcher_zh": "茲伊布布伊 馬",
+              "away_probable_pitcher_zh": "葛索 羅",
+              "confidence": 0.6542,
+              "edge": 0.1304,
+              "result": "loss"
+            },
+            {
+              "game_pk": "824575",
+              "home": "Chicago White Sox",
+              "home_zh": "芝加哥白襪",
+              "away": "Athletics",
+              "away_zh": "運動家",
+              "home_score": 14,
+              "away_score": 1,
+              "pick": "Chicago White Sox",
+              "pick_zh": "芝加哥白襪",
+              "home_probable_pitcher_zh": "西恩 布優爾克伊",
+              "away_probable_pitcher_zh": "雅各布 羅培茲",
+              "confidence": 0.6383,
+              "edge": 0.1145,
+              "result": "win"
+            },
+            {
+              "game_pk": "823927",
+              "home": "Los Angeles Dodgers",
+              "home_zh": "洛杉磯道奇",
+              "away": "Arizona Diamondbacks",
+              "away_zh": "亞利桑那響尾蛇",
+              "home_score": 3,
+              "away_score": 9,
+              "pick": "Los Angeles Dodgers",
+              "pick_zh": "洛杉磯道奇",
+              "home_probable_pitcher_zh": "凱爾 赫優爾特",
+              "away_probable_pitcher_zh": "愛德華多 羅",
+              "confidence": 0.6098,
+              "edge": 0.086,
+              "result": "loss"
+            },
+            {
+              "game_pk": "823845",
+              "home": "Miami Marlins",
+              "home_zh": "邁阿密馬林魚",
+              "away": "Cleveland Guardians",
+              "away_zh": "克里夫蘭守護者",
+              "home_score": 2,
+              "away_score": 3,
+              "pick": "Miami Marlins",
+              "pick_zh": "邁阿密馬林魚",
+              "home_probable_pitcher_zh": "桑迪 阿爾坎塔拉",
+              "away_probable_pitcher_zh": "帕 梅",
+              "confidence": 0.609,
+              "edge": 0.0852,
+              "result": "loss"
+            },
+            {
+              "game_pk": "824493",
+              "home": "Cincinnati Reds",
+              "home_zh": "辛辛那提紅人",
+              "away": "Chicago Cubs",
+              "away_zh": "芝加哥小熊",
+              "home_score": 4,
+              "away_score": 0,
+              "pick": "Chicago Cubs",
+              "pick_zh": "芝加哥小熊",
+              "home_probable_pitcher_zh": "杭特 葛林",
+              "away_probable_pitcher_zh": "今永昇太",
+              "confidence": 0.5841,
+              "edge": 0.0603,
               "result": "loss"
             }
           ]
