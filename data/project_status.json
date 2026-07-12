@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-07-12T21:07:26",
+  "generated_at": "2026-07-13T00:01:05",
   "history": {
-    "games_written": 3862,
+    "games_written": 3873,
     "actual_first_game_date": "2025-03-27",
-    "actual_last_game_date": "2026-07-11"
+    "actual_last_game_date": "2026-07-12"
   },
   "accuracy": {
     "best_model": "A-畢氏勝率",
-    "predictions": 3783,
-    "correct": 2048,
-    "accuracy_pct": 54.14
+    "predictions": 3794,
+    "correct": 2053,
+    "accuracy_pct": 54.11
   },
   "daily": {
-    "target_date": "2026-07-12",
-    "predictions": 15,
+    "target_date": "2026-07-13",
+    "predictions": 0,
     "high_confidence": 0
   },
   "settlements": [
@@ -142,6 +142,13 @@
       "final_games": 0,
       "pending_games": 15,
       "accuracy_pct": 0
+    },
+    {
+      "date": "2026-07-13",
+      "predictions": 0,
+      "final_games": 0,
+      "pending_games": 0,
+      "accuracy_pct": 0
     }
   ],
   "odds": [
@@ -261,6 +268,12 @@
       "date": "2026-07-12",
       "rows": 15,
       "filled": 15,
+      "missing": []
+    },
+    {
+      "date": "2026-07-13",
+      "rows": 0,
+      "filled": 0,
       "missing": []
     }
   ],
@@ -408,19 +421,27 @@
       "pending_bets": 0,
       "total_pnl": 0,
       "roi_pct": 0
+    },
+    {
+      "date": "2026-07-13",
+      "bets": 0,
+      "final_bets": 0,
+      "pending_bets": 0,
+      "total_pnl": 0,
+      "roi_pct": 0
     }
   ],
   "auto_runner": {
     "mode": "running",
-    "target_date": "2026-07-12",
-    "last_started_at_tw": "2026-07-12T21:00:02+08:00",
-    "last_finished_at_tw": "2026-07-12T13:59:00+08:00",
+    "target_date": "2026-07-13",
+    "last_started_at_tw": "2026-07-13T00:00:02+08:00",
+    "last_finished_at_tw": "2026-07-12T21:07:26+08:00",
     "last_return_code": 0,
     "log": "C:\\Users\\I5-10400F\\Documents\\投注計畫\\logs\\auto_runner\\2026-07-12.workflow.log",
     "health": {
       "ok": true,
       "target_date": "2026-07-12",
-      "checked_at_tw": "2026-07-12T13:59:00+08:00",
+      "checked_at_tw": "2026-07-12T21:07:26+08:00",
       "checks": [
         {
           "name": "daily_predictions",
@@ -466,7 +487,7 @@
     "python scripts\\run_daily_workflow.py --date YYYY-MM-DD --all-predictions --skip-backtest-refresh",
     "python scripts\\run_daily_workflow.py --date YYYY-MM-DD --all-predictions"
   ],
-  "system_completion_pct": 100,
+  "system_completion_pct": 90,
   "external_waiting_items": [
     "2026-06-25 尚有 1 場比賽未結算",
     "2026-07-10 尚有 1 場比賽未結算",
