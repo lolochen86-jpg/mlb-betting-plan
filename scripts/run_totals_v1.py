@@ -187,6 +187,8 @@ def build_report(target_date: str, recent_games: int, min_edge: float) -> dict:
             continue
         unified_row = unified_expectations.get(str(row.get("game_pk", "")), {})
         predicted_total = float(unified_row.get("expected_total") or predict_total(key[0], key[1], teams, league_total))
+        lineup_source = str(unified_row.get("lineup_source") or "")
+        has_official_lineup = "official" in lineup_source.lower()
         line = float(market["line"])
         over_prob = 1 - normal_cdf(line, predicted_total, sigma)
         under_prob = 1 - over_prob
@@ -199,7 +201,9 @@ def build_report(target_date: str, recent_games: int, min_edge: float) -> dict:
         monte_pick = str(monte_row.get("totals_pick") or "")
         monte_total = monte_row.get("avg_total")
         line_gap = abs(predicted_total - line)
-        if edge >= effective_min_edge and model_prob >= min_model_prob and line_gap >= min_line_gap:
+        if not has_official_lineup:
+            decision = "等待官方打線"
+        elif edge >= effective_min_edge and model_prob >= min_model_prob and line_gap >= min_line_gap:
             decision = "大小分候選"
         else:
             decision = "不推薦"
@@ -217,6 +221,8 @@ def build_report(target_date: str, recent_games: int, min_edge: float) -> dict:
                 "home_expected_runs": unified_row.get("home_expected_runs", ""),
                 "data_quality": unified_row.get("data_quality", ""),
                 "missing_data": "; ".join(unified_row.get("missing_data", [])) if unified_row else "",
+                "lineup_source": lineup_source,
+                "has_official_lineup": has_official_lineup,
                 "pick": pick,
                 "odds": odds,
                 "model_prob": round(model_prob, 4),
@@ -288,6 +294,8 @@ def write_outputs(report: dict) -> None:
         "market_implied_prob",
         "edge",
         "line_gap",
+        "lineup_source",
+        "has_official_lineup",
         "monte_carlo_pick",
         "monte_carlo_total",
         "decision",

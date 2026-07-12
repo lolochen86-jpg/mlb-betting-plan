@@ -25,6 +25,9 @@ def load_recent_calibration(days: int = 10) -> dict:
         "winner_accuracy": None,
         "score_total_bias": 0.0,
         "score_total_bias_applied": 0.0,
+        "totals_recent_bias": 0.0,
+        "totals_recent_bias_applied": 0.0,
+        "totals_recent_games": 0,
         "winner_min_confidence": 0.55,
         "totals_min_edge": 0.025,
         "totals_min_prob": 0.58,
@@ -58,6 +61,19 @@ def load_recent_calibration(days: int = 10) -> dict:
         and isinstance(game.get("actual_total"), (int, float))
     ]
     total_bias = mean(game["actual_total"] - game["predicted_total"] for game in totals_games) if totals_games else 0.0
+    recent_total_days = payload.get("days", [])[-3:]
+    recent_totals_games = [
+        game
+        for day in recent_total_days
+        for game in day.get("games", [])
+        if isinstance(game.get("predicted_total"), (int, float))
+        and isinstance(game.get("actual_total"), (int, float))
+    ]
+    totals_recent_bias = (
+        mean(game["actual_total"] - game["predicted_total"] for game in recent_totals_games)
+        if recent_totals_games
+        else 0.0
+    )
 
     low_conf_games = [game for game in games if float(game.get("confidence") or 0) < 0.55]
     low_conf_accuracy = mean(1.0 if game.get("winner_correct") else 0.0 for game in low_conf_games) if low_conf_games else 0.5
@@ -80,6 +96,9 @@ def load_recent_calibration(days: int = 10) -> dict:
     applied_bias = round(_clamp(total_bias, -0.75, 1.25), 2)
     if abs(applied_bias) >= 0.25:
         notes.append(f"近十天比分模型總分平均偏差 {total_bias:+.2f} 分，今日比分總分校正 {applied_bias:+.2f} 分。")
+    totals_recent_bias_applied = round(_clamp(totals_recent_bias, -1.0, 0.75), 2)
+    if totals_recent_bias_applied <= -0.35:
+        notes.append(f"近三天大小分模型平均高估 {abs(totals_recent_bias):.2f} 分，今日總分期望降溫 {totals_recent_bias_applied:+.2f} 分。")
 
     mismatch_notes = reason_counts.get("score_totals_model_gap", 0) or sum(
         1 for game in games for note in game.get("notes", []) if "勝方比分模型與大小分模型差距較大" in note
@@ -109,6 +128,9 @@ def load_recent_calibration(days: int = 10) -> dict:
         "low_confidence_accuracy": round(low_conf_accuracy, 4),
         "score_total_bias": round(total_bias, 3),
         "score_total_bias_applied": applied_bias,
+        "totals_recent_bias": round(totals_recent_bias, 3),
+        "totals_recent_bias_applied": totals_recent_bias_applied,
+        "totals_recent_games": len(recent_totals_games),
         "winner_min_confidence": winner_min_confidence,
         "totals_min_edge": totals_min_edge,
         "totals_min_prob": totals_min_prob,

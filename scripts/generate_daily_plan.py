@@ -386,6 +386,7 @@ def annotate_totals_alignment(rows: list[dict], target_date: str, calibration: d
         official_predicted = totals_row.get("predicted_total")
         official_prob = float(totals_row.get("model_prob") or 0)
         official_edge = float(totals_row.get("edge") or 0)
+        official_decision = str(totals_row.get("decision") or "")
         monte_pick = str(row.get("monte_carlo_totals_pick_zh") or "")
         monte_total = row.get("predicted_total")
 
@@ -398,6 +399,8 @@ def annotate_totals_alignment(rows: list[dict], target_date: str, calibration: d
 
         if not official_pick or official_line in (None, ""):
             row["totals_alignment"] = "無台灣運彩大小分盤口"
+        elif official_decision and official_decision != "大小分候選":
+            row["totals_alignment"] = official_decision
         elif monte_pick in {"大分", "小分"} and official_pick in {"大分", "小分"} and monte_pick != official_pick:
             row["totals_alignment"] = "大小分分歧"
         elif monte_total not in (None, "") and abs(float(monte_total) - float(official_line)) < min_line_gap:

@@ -192,6 +192,7 @@ def build_report(target_date: str, fetch_weather: bool = False, fetch_deep_conte
     profiles = team_profiles(history)
     calibration = load_recent_calibration(10)
     score_bias = float(calibration.get("score_total_bias_applied") or 0)
+    totals_recent_bias = float(calibration.get("totals_recent_bias_applied") or 0)
     season = target_date[:4]
     games = []
 
@@ -268,7 +269,7 @@ def build_report(target_date: str, fetch_weather: bool = False, fetch_deep_conte
             + 0.10
         )
         weather_split = float(weather.get("factor") or 0) / 2
-        bias_split = score_bias / 2
+        bias_split = (score_bias + totals_recent_bias) / 2
         away_runs = clamp(away_raw + weather_split + bias_split, 1.5, 8.5)
         home_runs = clamp(home_raw + weather_split + bias_split, 1.5, 8.5)
         total = away_runs + home_runs
@@ -299,6 +300,7 @@ def build_report(target_date: str, fetch_weather: bool = False, fetch_deep_conte
                 "away_bullpen": away_bullpen,
                 "home_bullpen": home_bullpen,
                 "score_bias_applied": score_bias,
+                "totals_recent_bias_applied": totals_recent_bias,
                 "missing_data": sorted(set(missing)),
                 "data_quality": "可用" if len(set(missing)) <= 2 else "需補資料",
                 "model_version": "unified_expected_runs_v1",
