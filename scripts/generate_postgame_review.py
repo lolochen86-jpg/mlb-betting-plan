@@ -344,12 +344,41 @@ def build_report() -> dict:
         )
         if games:
             days.append(day)
+    add_cumulative_summaries(days)
     latest = days[-1] if days else None
     return {
         "generated_at": datetime.now().isoformat(timespec="seconds"),
         "latest_review_date": latest.get("date") if latest else "",
         "days": days,
     }
+
+
+def add_cumulative_summaries(days: list[dict]) -> None:
+    cumulative = {
+        "games": 0,
+        "final_games": 0,
+        "pending_games": 0,
+        "winner_correct": 0,
+        "totals_games": 0,
+        "totals_correct": 0,
+        "roi_bets": 0,
+        "pnl": 0.0,
+    }
+    for day in days:
+        summary = day["summary"]
+        cumulative["games"] += int(summary.get("games") or 0)
+        cumulative["final_games"] += int(summary.get("final_games") or 0)
+        cumulative["pending_games"] += int(summary.get("pending_games") or 0)
+        cumulative["winner_correct"] += int(summary.get("winner_correct") or 0)
+        cumulative["totals_games"] += int(summary.get("totals_games") or 0)
+        cumulative["totals_correct"] += int(summary.get("totals_correct") or 0)
+        cumulative["roi_bets"] += int(summary.get("roi_bets") or 0)
+        cumulative["pnl"] = round(cumulative["pnl"] + float(summary.get("pnl") or 0), 2)
+        summary["cumulative"] = {
+            **cumulative,
+            "winner_accuracy_pct": pct(cumulative["winner_correct"], cumulative["final_games"]),
+            "totals_accuracy_pct": pct(cumulative["totals_correct"], cumulative["totals_games"]),
+        }
 
 
 def render_day_tabs(days: list[dict], latest_date: str) -> str:
@@ -361,12 +390,17 @@ def render_day_tabs(days: list[dict], latest_date: str) -> str:
 
 def render_summary_cards(day: dict) -> str:
     s = day["summary"]
+    c = s.get("cumulative", {})
     return f"""
     <section class="kpis">
-      <div class="kpi"><div class="label">勝方準確率</div><div class="value">{s['winner_accuracy_pct']:.2f}%</div><div class="hint">{s['winner_correct']} / {s['final_games']} 已完賽</div></div>
-      <div class="kpi"><div class="label">大小分準確率</div><div class="value">{s['totals_accuracy_pct']:.2f}%</div><div class="hint">{s['totals_correct']} / {s['totals_games']} 有盤口</div></div>
-      <div class="kpi"><div class="label">投注損益</div><div class="value {'good' if s['pnl'] > 0 else 'bad' if s['pnl'] < 0 else ''}">{s['pnl']:.0f}</div><div class="hint">{s['roi_bets']} 筆投注紀錄</div></div>
-      <div class="kpi"><div class="label">待結算</div><div class="value muted">{s['pending_games']}</div><div class="hint">延賽或尚未完賽</div></div>
+      <div class="kpi"><div class="label">當日勝方準確率</div><div class="value">{s['winner_accuracy_pct']:.2f}%</div><div class="hint">{s['winner_correct']} / {s['final_games']} 已完賽</div></div>
+      <div class="kpi"><div class="label">累積勝方準確率</div><div class="value">{float(c.get('winner_accuracy_pct') or 0):.2f}%</div><div class="hint">{c.get('winner_correct', 0)} / {c.get('final_games', 0)} 已完賽</div></div>
+      <div class="kpi"><div class="label">當日大小分準確率</div><div class="value">{s['totals_accuracy_pct']:.2f}%</div><div class="hint">{s['totals_correct']} / {s['totals_games']} 有盤口</div></div>
+      <div class="kpi"><div class="label">累積大小分準確率</div><div class="value">{float(c.get('totals_accuracy_pct') or 0):.2f}%</div><div class="hint">{c.get('totals_correct', 0)} / {c.get('totals_games', 0)} 有盤口</div></div>
+      <div class="kpi"><div class="label">當日投注損益</div><div class="value {'good' if s['pnl'] > 0 else 'bad' if s['pnl'] < 0 else ''}">{s['pnl']:.0f}</div><div class="hint">{s['roi_bets']} 筆投注紀錄</div></div>
+      <div class="kpi"><div class="label">累積投注損益</div><div class="value {'good' if float(c.get('pnl') or 0) > 0 else 'bad' if float(c.get('pnl') or 0) < 0 else ''}">{float(c.get('pnl') or 0):.0f}</div><div class="hint">{c.get('roi_bets', 0)} 筆投注紀錄</div></div>
+      <div class="kpi"><div class="label">當日待結算</div><div class="value muted">{s['pending_games']}</div><div class="hint">延賽或尚未完賽</div></div>
+      <div class="kpi"><div class="label">累積待結算</div><div class="value muted">{c.get('pending_games', 0)}</div><div class="hint">全部日期待結算</div></div>
     </section>"""
 
 
