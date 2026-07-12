@@ -153,6 +153,7 @@ def main() -> None:
         [py, "scripts/fetch_context_sources.py", "--date", target_date, "--max-seconds", "75"],
         allow_fail=True,
     )
+    run_step("產生今天逐打席模擬", [py, "scripts/generate_game_simulator.py", "--date", target_date])
     run_step("產生統一得分期望 v1", [py, "scripts/unified_expectation_model.py", "--date", target_date])
     run_step("今天預測建立待結算檔", [py, "scripts/settle_daily_predictions.py", "--date", target_date])
 
@@ -173,8 +174,8 @@ def main() -> None:
     )
     run_step("產生今天大小分 v1", [py, "scripts/run_totals_v1.py", "--date", target_date])
     run_step("產生今天進階因子 v1", [py, "scripts/run_advanced_factors_model.py", "--date", target_date])
-    run_step("產生今天逐打席模擬", [py, "scripts/generate_game_simulator.py", "--date", target_date])
     run_step("產生今天蒙地卡羅模擬", [py, "scripts/generate_monte_carlo.py", "--date", target_date, "--simulations", "10000"])
+    run_step("用蒙地卡羅重建大小分 v1", [py, "scripts/run_totals_v1.py", "--date", target_date])
     run_step("產生台灣運彩盤口研究", [py, "scripts/generate_market_research.py", "--date", target_date])
     run_step("重建今日勝方預測比分欄位", [py, "scripts/generate_daily_plan.py", "--date", target_date])
     run_step("今天預測重建待結算檔", [py, "scripts/settle_daily_predictions.py", "--date", target_date])
