@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-13T00:01:05",
+  "generated_at": "2026-07-13T08:31:36",
   "history": {
     "games_written": 3873,
     "actual_first_game_date": "2025-03-27",
@@ -432,16 +432,16 @@
     }
   ],
   "auto_runner": {
-    "mode": "running",
+    "mode": "success",
     "target_date": "2026-07-13",
     "last_started_at_tw": "2026-07-13T00:00:02+08:00",
-    "last_finished_at_tw": "2026-07-12T21:07:26+08:00",
+    "last_finished_at_tw": "2026-07-13T00:01:05+08:00",
     "last_return_code": 0,
-    "log": "C:\\Users\\I5-10400F\\Documents\\投注計畫\\logs\\auto_runner\\2026-07-12.workflow.log",
+    "log": "C:\\Users\\I5-10400F\\Documents\\投注計畫\\logs\\auto_runner\\2026-07-13.workflow.log",
     "health": {
       "ok": true,
-      "target_date": "2026-07-12",
-      "checked_at_tw": "2026-07-12T21:07:26+08:00",
+      "target_date": "2026-07-13",
+      "checked_at_tw": "2026-07-13T00:01:05+08:00",
       "checks": [
         {
           "name": "daily_predictions",
@@ -477,6 +477,8 @@
   },
   "next_commands": [
     ".\\open_dashboard.cmd",
+    ".\\manual_update.cmd",
+    ".\\手動更新.cmd",
     ".\\run_auto_once.cmd",
     ".\\start_auto_runner.cmd",
     ".\\install_windows_auto_runner.cmd",

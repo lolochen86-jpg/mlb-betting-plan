@@ -97,6 +97,7 @@ Windows 工作排程名稱是 `MLB_Betting_Auto_Update_1350`、`MLB_Betting_Auto
 
 ```powershell
 .\開啟網頁.cmd
+.\手動更新.cmd
 .\立刻更新一次.cmd
 .\開啟常駐自動更新.cmd
 .\安裝每小時自動排程.cmd
@@ -104,11 +105,13 @@ Windows 工作排程名稱是 `MLB_Betting_Auto_Update_1350`、`MLB_Betting_Auto
 .\安裝晚上9點和12點自動排程.cmd
 .\移除晚上9點和12點自動排程.cmd
 .\open_dashboard.cmd
+.\manual_update.cmd
 .\run_auto_once.cmd
 .\uninstall_windows_auto_runner.cmd
 ```
 
 - `開啟網頁.cmd`：直接開啟主控台。
+- `手動更新.cmd`：可直接更新今天，或輸入指定日期更新；完成後會暫停顯示結果。
 - `立刻更新一次.cmd`：立刻手動更新今天一次，會重跑投注單、逐打席模擬與 Monte Carlo。
 - `開啟常駐自動更新.cmd`：開一個視窗，每 60 分鐘自動更新一次。
 - `安裝每小時自動排程.cmd`：相容舊檔名；實際會安裝每天 13:50、21:00 與 00:00 自動更新。
@@ -116,6 +119,7 @@ Windows 工作排程名稱是 `MLB_Betting_Auto_Update_1350`、`MLB_Betting_Auto
 - `安裝晚上9點和12點自動排程.cmd`：相容舊檔名；實際會交給 Windows 每天 13:50、21:00 與 00:00 背景自動更新。
 - `移除晚上9點和12點自動排程.cmd`：相容舊檔名；實際會移除每天 13:50、21:00 與 00:00 背景自動更新。
 - `open_dashboard.cmd`：直接開啟主控台。
+- `manual_update.cmd`：英文檔名版本，功能同 `手動更新.cmd`。
 - `run_auto_once.cmd`：立刻手動更新今天一次。
 - `uninstall_windows_auto_runner.cmd`：移除每天 13:50、21:00 與 00:00 自動排程。
 

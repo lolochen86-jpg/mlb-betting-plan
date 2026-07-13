@@ -176,6 +176,8 @@ def build_status() -> dict:
         },
         "next_commands": [
             ".\\open_dashboard.cmd",
+            ".\\manual_update.cmd",
+            ".\\手動更新.cmd",
             ".\\run_auto_once.cmd",
             ".\\start_auto_runner.cmd",
             ".\\install_windows_auto_runner.cmd",
