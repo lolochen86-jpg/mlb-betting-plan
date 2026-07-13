@@ -1,7 +1,7 @@
 {
   "api_version": "v1",
   "taiwan_display_date": "2026-07-13",
-  "generated_at": "2026-07-13T13:51:40+08:00",
+  "generated_at": "2026-07-13T21:01:18+08:00",
   "models": {
     "production": "A-畢氏勝率",
     "confirmation": "E-對照組(Ensemble)"
@@ -19,29 +19,29 @@
   "postgame_calibration": {
     "source": "postgame_review",
     "days": 10,
-    "games": 125,
-    "winner_accuracy": 0.528,
-    "low_confidence_accuracy": 0.5155,
-    "score_total_bias": -0.182,
-    "score_total_bias_applied": -0.18,
-    "totals_recent_bias": -2.01,
+    "games": 140,
+    "winner_accuracy": 0.5429,
+    "low_confidence_accuracy": 0.5321,
+    "score_total_bias": -0.174,
+    "score_total_bias_applied": -0.17,
+    "totals_recent_bias": -1.401,
     "totals_recent_bias_applied": -1.0,
-    "totals_recent_games": 30,
+    "totals_recent_games": 44,
     "winner_min_confidence": 0.57,
     "totals_min_edge": 0.03,
     "totals_min_prob": 0.59,
     "totals_min_line_gap": 1.25,
     "mismatch_notes": 58,
     "reason_counts": {
-      "high_confidence_miss": 12,
-      "totals_miss": 66,
-      "large_totals_error": 47,
+      "high_confidence_miss": 13,
+      "totals_miss": 74,
+      "large_totals_error": 50,
       "score_totals_model_gap": 58,
-      "low_confidence_miss": 31,
+      "low_confidence_miss": 34,
       "roi_loss": 2,
-      "high_confidence_hit": 16,
-      "low_confidence_hit": 50,
-      "one_run_volatility": 30
+      "high_confidence_hit": 18,
+      "low_confidence_hit": 58,
+      "one_run_volatility": 34
     },
     "data_gaps": [
       "大小分大偏差偏多：優先補真實天氣、球場風向、先發/牛棚臨場狀態。",
@@ -49,9 +49,8 @@
       "勝方比分模型與大小分模型長期分歧：需要建立同一套得分期望，不應兩套模型各算各的。"
     ],
     "notes": [
-      "近十天低信心勝方表現偏弱，主推勝方門檻提高到 56%。",
       "近十天高信心失準偏多，勝方主推需更嚴格確認。",
-      "近三天大小分模型平均高估 2.01 分，今日總分期望降溫 -1.00 分。",
+      "近三天大小分模型平均高估 1.40 分，今日總分期望降溫 -1.00 分。",
       "近十天大小分與比分模型分歧頻繁，大小分需方向一致且離盤更遠才推薦。"
     ]
   },
