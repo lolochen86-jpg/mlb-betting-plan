@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-15T00:01:07",
+  "generated_at": "2026-07-15T13:51:06",
   "history": {
     "games_written": 3877,
     "actual_first_game_date": "2025-03-27",
@@ -476,13 +476,45 @@
   "auto_runner": {
     "mode": "running",
     "target_date": "2026-07-15",
-    "last_started_at_tw": "2026-07-15T00:00:03+08:00",
-    "last_finished_at_tw": "2026-07-14T21:01:15+08:00",
-    "last_return_code": 1,
-    "log": "C:\\Users\\I5-10400F\\Documents\\投注計畫\\logs\\auto_runner\\2026-07-14.workflow.log",
+    "last_started_at_tw": "2026-07-15T13:50:01+08:00",
+    "last_finished_at_tw": "2026-07-15T00:01:07+08:00",
+    "last_return_code": 0,
+    "log": "C:\\Users\\I5-10400F\\Documents\\投注計畫\\logs\\auto_runner\\2026-07-15.workflow.log",
     "health": {
-      "ok": false,
-      "message": "workflow failed before health check"
+      "ok": true,
+      "target_date": "2026-07-15",
+      "checked_at_tw": "2026-07-15T00:01:07+08:00",
+      "checks": [
+        {
+          "name": "daily_predictions",
+          "path": "C:\\Users\\I5-10400F\\Documents\\投注計畫\\docs\\daily_predictions.html",
+          "exists": true,
+          "has_target_date": true,
+          "ok": true
+        },
+        {
+          "name": "betting_ticket",
+          "path": "C:\\Users\\I5-10400F\\Documents\\投注計畫\\docs\\betting_ticket.html",
+          "exists": true,
+          "has_target_date": true,
+          "ok": true
+        },
+        {
+          "name": "postgame_review",
+          "path": "C:\\Users\\I5-10400F\\Documents\\投注計畫\\docs\\postgame_review.html",
+          "exists": true,
+          "has_target_date": true,
+          "ok": true
+        },
+        {
+          "name": "status",
+          "path": "C:\\Users\\I5-10400F\\Documents\\投注計畫\\docs\\status.html",
+          "exists": true,
+          "has_target_date": true,
+          "ok": true
+        }
+      ],
+      "message": "site pages contain target date"
     }
   },
   "next_commands": [
