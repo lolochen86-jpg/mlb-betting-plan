@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-15T21:01:26",
+  "generated_at": "2026-07-16T00:01:43",
   "history": {
     "games_written": 3877,
     "actual_first_game_date": "2025-03-27",
@@ -12,8 +12,8 @@
     "accuracy_pct": 54.19
   },
   "daily": {
-    "target_date": "2026-07-15",
-    "predictions": 0,
+    "target_date": "2026-07-16",
+    "predictions": 1,
     "high_confidence": 0
   },
   "settlements": [
@@ -163,6 +163,13 @@
       "final_games": 0,
       "pending_games": 0,
       "accuracy_pct": 0
+    },
+    {
+      "date": "2026-07-16",
+      "predictions": 1,
+      "final_games": 0,
+      "pending_games": 1,
+      "accuracy_pct": 0
     }
   ],
   "odds": [
@@ -300,6 +307,12 @@
       "date": "2026-07-15",
       "rows": 0,
       "filled": 0,
+      "missing": []
+    },
+    {
+      "date": "2026-07-16",
+      "rows": 1,
+      "filled": 1,
       "missing": []
     }
   ],
@@ -471,19 +484,27 @@
       "pending_bets": 0,
       "total_pnl": 0,
       "roi_pct": 0
+    },
+    {
+      "date": "2026-07-16",
+      "bets": 0,
+      "final_bets": 0,
+      "pending_bets": 0,
+      "total_pnl": 0,
+      "roi_pct": 0
     }
   ],
   "auto_runner": {
     "mode": "running",
-    "target_date": "2026-07-15",
-    "last_started_at_tw": "2026-07-15T21:00:01+08:00",
-    "last_finished_at_tw": "2026-07-15T13:51:06+08:00",
+    "target_date": "2026-07-16",
+    "last_started_at_tw": "2026-07-16T00:00:01+08:00",
+    "last_finished_at_tw": "2026-07-15T21:01:26+08:00",
     "last_return_code": 0,
     "log": "C:\\Users\\I5-10400F\\Documents\\投注計畫\\logs\\auto_runner\\2026-07-15.workflow.log",
     "health": {
       "ok": true,
       "target_date": "2026-07-15",
-      "checked_at_tw": "2026-07-15T13:51:06+08:00",
+      "checked_at_tw": "2026-07-15T21:01:26+08:00",
       "checks": [
         {
           "name": "daily_predictions",
@@ -531,10 +552,11 @@
     "python scripts\\run_daily_workflow.py --date YYYY-MM-DD --all-predictions --skip-backtest-refresh",
     "python scripts\\run_daily_workflow.py --date YYYY-MM-DD --all-predictions"
   ],
-  "system_completion_pct": 90,
+  "system_completion_pct": 100,
   "external_waiting_items": [
     "2026-06-25 尚有 1 場比賽未結算",
     "2026-07-10 尚有 1 場比賽未結算",
+    "2026-07-16 尚有 1 場比賽未結算",
     "2026-06-25 亞利桑那響尾蛇 @ 聖路易紅雀 (Postponed) 尚未取得真實盤口"
   ],
   "project_state": "系統完成，等待外部賽果/盤口"
