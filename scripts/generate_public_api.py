@@ -154,6 +154,7 @@ def generate(target_date: str) -> None:
         "betting-roi.json": DATA_DIR / f"betting_roi_{target_date}.json",
         "settlement.json": DATA_DIR / f"prediction_settlement_{target_date}.json",
         "postgame-review.json": DATA_DIR / "postgame_review.json",
+        "quant-model.json": DATA_DIR / f"quant_model_predictions_{target_date}.json",
     }
     for filename, source in sources.items():
         copy_json(source, latest / filename)

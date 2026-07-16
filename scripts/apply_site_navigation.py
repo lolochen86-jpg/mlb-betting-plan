@@ -15,6 +15,7 @@ NAV_ITEMS = [
     ("betting_ticket.html", "投注單"),
     ("totals_predictions.html", "大小分"),
     ("advanced_factors.html", "進階因子"),
+    ("quant_model.html", "Q-量化模型"),
     ("game_simulator.html", "逐打席模擬"),
     ("monte_carlo.html", "蒙地卡羅"),
     ("market_research.html", "盤口研究"),

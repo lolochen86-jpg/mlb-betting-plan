@@ -1,0 +1,74 @@
+{
+  "generated_at": "2026-07-16T08:48:31",
+  "target_date": "2026-07-16",
+  "model": "Q-量化模型 XGBoost/Poisson Bundle 2026-07-16",
+  "model_dir": "models\\quant_bundle_2026_07_16",
+  "metadata": {
+    "trained_at": "2026-07-01T14:27:27.682622+00:00",
+    "metadata": {
+      "source": "db",
+      "row_count": 2927,
+      "train_rows": 2687,
+      "holdout_rows": 240,
+      "metrics": {
+        "moneyline": {
+          "accuracy": 0.5208333333333334,
+          "log_loss": 0.7049256258379112
+        },
+        "totals": {
+          "total_runs_mae": 3.406075860344923,
+          "average_expected_total": 9.080135149241364
+        }
+      },
+      "default_total_line": 8.5
+    }
+  },
+  "summary": {
+    "games": 1,
+    "aligned_with_existing": 1,
+    "complete_data": 0,
+    "holdout_moneyline_accuracy": 0.5208333333333334,
+    "holdout_total_runs_mae": 3.406075860344923
+  },
+  "review": {
+    "is_more_perfect": false,
+    "conclusion": "目前不能判定更完美。此 bundle holdout 獨贏準確率約 52.08%；先列為 Q-量化候選，累積實戰結算後再調整權重。",
+    "recommended_use": "先作為候選確認模型；只有在同場實戰準確率連續優於 A-畢氏勝率與統一得分模型後，才提高為主模型權重。",
+    "next_improvements": [
+      "用本專案 2026 已結算資料建立 Q 模型專屬結算紀錄。",
+      "補足官方先發打線與缺陣，減少 lineup_missing。",
+      "把台灣運彩盤口齊全後加入 edge/ROI 實測，而不是只看勝率。"
+    ]
+  },
+  "games": [
+    {
+      "date": "2026-07-16",
+      "game_pk": "823440",
+      "game_time_tw": "2026-07-17 07:10",
+      "status": "Scheduled",
+      "matchup_zh": "紐約大都會 @ 費城費城人",
+      "away_zh": "紐約大都會",
+      "home_zh": "費城費城人",
+      "quant_prediction_zh": "費城費城人",
+      "quant_pick_side": "home",
+      "quant_confidence": 0.5555,
+      "home_win_probability": 0.5555,
+      "away_win_probability": 0.4445,
+      "predicted_away_score": 4.56,
+      "predicted_home_score": 4.94,
+      "predicted_total": 9.5,
+      "total_line": 8.5,
+      "totals_pick_zh": "大分",
+      "totals_probability": 0.6081,
+      "over_probability": 0.6081,
+      "under_probability": 0.3919,
+      "official_model_pick_zh": "費城費城人",
+      "unified_model_pick_zh": "費城費城人",
+      "model_alignment": "一致",
+      "data_quality": "可用但需留意",
+      "missing_features": [
+        "home_probable_pitcher_not_fully_confirmed"
+      ]
+    }
+  ]
+}
