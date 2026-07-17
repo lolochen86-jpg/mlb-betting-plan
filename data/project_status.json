@@ -1,18 +1,18 @@
 {
-  "generated_at": "2026-07-17T21:12:14",
+  "generated_at": "2026-07-18T00:08:46",
   "history": {
-    "games_written": 3878,
+    "games_written": 3879,
     "actual_first_game_date": "2025-03-27",
-    "actual_last_game_date": "2026-07-16"
+    "actual_last_game_date": "2026-07-17"
   },
   "accuracy": {
     "best_model": "A-畢氏勝率",
-    "predictions": 3799,
+    "predictions": 3800,
     "correct": 2058,
-    "accuracy_pct": 54.17
+    "accuracy_pct": 54.16
   },
   "daily": {
-    "target_date": "2026-07-17",
+    "target_date": "2026-07-18",
     "predictions": 15,
     "high_confidence": 0
   },
@@ -177,6 +177,13 @@
       "final_games": 0,
       "pending_games": 15,
       "accuracy_pct": 0
+    },
+    {
+      "date": "2026-07-18",
+      "predictions": 15,
+      "final_games": 0,
+      "pending_games": 15,
+      "accuracy_pct": 0
     }
   ],
   "odds": [
@@ -327,6 +334,14 @@
       "rows": 15,
       "filled": 15,
       "missing": []
+    },
+    {
+      "date": "2026-07-18",
+      "rows": 15,
+      "filled": 14,
+      "missing": [
+        "紐約大都會 @ 費城費城人 (Scheduled)"
+      ]
     }
   ],
   "roi": [
@@ -513,19 +528,27 @@
       "pending_bets": 0,
       "total_pnl": 0,
       "roi_pct": 0
+    },
+    {
+      "date": "2026-07-18",
+      "bets": 0,
+      "final_bets": 0,
+      "pending_bets": 0,
+      "total_pnl": 0,
+      "roi_pct": 0
     }
   ],
   "auto_runner": {
     "mode": "running",
-    "target_date": "2026-07-17",
-    "last_started_at_tw": "2026-07-17T21:00:02+08:00",
-    "last_finished_at_tw": "2026-07-17T13:57:14+08:00",
+    "target_date": "2026-07-18",
+    "last_started_at_tw": "2026-07-18T00:00:02+08:00",
+    "last_finished_at_tw": "2026-07-17T21:12:14+08:00",
     "last_return_code": 0,
     "log": "C:\\Users\\I5-10400F\\Documents\\投注計畫\\logs\\auto_runner\\2026-07-17.workflow.log",
     "health": {
       "ok": true,
       "target_date": "2026-07-17",
-      "checked_at_tw": "2026-07-17T13:57:14+08:00",
+      "checked_at_tw": "2026-07-17T21:12:14+08:00",
       "checks": [
         {
           "name": "daily_predictions",
@@ -578,7 +601,9 @@
     "2026-06-25 尚有 1 場比賽未結算",
     "2026-07-10 尚有 1 場比賽未結算",
     "2026-07-17 尚有 15 場比賽未結算",
-    "2026-06-25 亞利桑那響尾蛇 @ 聖路易紅雀 (Postponed) 尚未取得真實盤口"
+    "2026-07-18 尚有 15 場比賽未結算",
+    "2026-06-25 亞利桑那響尾蛇 @ 聖路易紅雀 (Postponed) 尚未取得真實盤口",
+    "2026-07-18 紐約大都會 @ 費城費城人 (Scheduled) 尚未開打或來源尚未開盤"
   ],
   "project_state": "系統完成，等待外部賽果/盤口"
 }

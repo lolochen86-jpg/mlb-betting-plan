@@ -1,21 +1,21 @@
 {
-  "generated_at": "2026-07-17T21:02:20",
+  "generated_at": "2026-07-18T00:00:55",
   "backtest_period": {
     "start": "2025-03-27",
-    "end": "2026-07-16"
+    "end": "2026-07-17"
   },
   "data_source": {
     "type": "real_mlb_final_scores",
     "games_csv": "data\\real_mlb_games.csv",
-    "games_evaluated": 3878,
+    "games_evaluated": 3879,
     "note": "Pure winner-prediction accuracy only. Odds, edge, stake, and ROI are intentionally excluded."
   },
   "models": {
     "A-畢氏勝率": {
-      "predictions": 3799,
+      "predictions": 3800,
       "correct": 2058,
-      "wrong": 1741,
-      "accuracy_pct": 54.17,
+      "wrong": 1742,
+      "accuracy_pct": 54.16,
       "monthly": [
         {
           "month": "2025-04",
@@ -79,9 +79,9 @@
         },
         {
           "month": "2026-07",
-          "predictions": 164,
+          "predictions": 165,
           "correct": 88,
-          "accuracy_pct": 53.66
+          "accuracy_pct": 53.33
         }
       ],
       "prediction_details": [
@@ -64667,14 +64667,31 @@
           "correct": false,
           "away_probable_pitcher_zh": "查史 斯克歐特特",
           "home_probable_pitcher_zh": "亞倫 諾拉"
+        },
+        {
+          "game_pk": "824766",
+          "date": "2026-07-17",
+          "matchup_zh": "坦帕灣光芒 @ 波士頓紅襪",
+          "away_zh": "坦帕灣光芒",
+          "home_zh": "波士頓紅襪",
+          "away_score": 0,
+          "home_score": 0,
+          "pick_zh": "波士頓紅襪",
+          "pick_side": "home",
+          "actual_winner_zh": "坦帕灣光芒",
+          "confidence": 0.5344,
+          "home_win_probability": 0.5344,
+          "correct": false,
+          "away_probable_pitcher_zh": "葛里芬 賈",
+          "home_probable_pitcher_zh": "傑克 貝"
         }
       ]
     },
     "B-近期狀態": {
-      "predictions": 3799,
+      "predictions": 3800,
       "correct": 2035,
-      "wrong": 1764,
-      "accuracy_pct": 53.57,
+      "wrong": 1765,
+      "accuracy_pct": 53.55,
       "monthly": [
         {
           "month": "2025-04",
@@ -64738,9 +64755,9 @@
         },
         {
           "month": "2026-07",
-          "predictions": 164,
+          "predictions": 165,
           "correct": 89,
-          "accuracy_pct": 54.27
+          "accuracy_pct": 53.94
         }
       ],
       "prediction_details": [
@@ -129326,14 +129343,31 @@
           "correct": false,
           "away_probable_pitcher_zh": "查史 斯克歐特特",
           "home_probable_pitcher_zh": "亞倫 諾拉"
+        },
+        {
+          "game_pk": "824766",
+          "date": "2026-07-17",
+          "matchup_zh": "坦帕灣光芒 @ 波士頓紅襪",
+          "away_zh": "坦帕灣光芒",
+          "home_zh": "波士頓紅襪",
+          "away_score": 0,
+          "home_score": 0,
+          "pick_zh": "波士頓紅襪",
+          "pick_side": "home",
+          "actual_winner_zh": "坦帕灣光芒",
+          "confidence": 0.6579,
+          "home_win_probability": 0.6579,
+          "correct": false,
+          "away_probable_pitcher_zh": "葛里芬 賈",
+          "home_probable_pitcher_zh": "傑克 貝"
         }
       ]
     },
     "C-ELO評分": {
-      "predictions": 3878,
+      "predictions": 3879,
       "correct": 2082,
-      "wrong": 1796,
-      "accuracy_pct": 53.69,
+      "wrong": 1797,
+      "accuracy_pct": 53.67,
       "monthly": [
         {
           "month": "2025-03",
@@ -129403,9 +129437,9 @@
         },
         {
           "month": "2026-07",
-          "predictions": 164,
+          "predictions": 165,
           "correct": 87,
-          "accuracy_pct": 53.05
+          "accuracy_pct": 52.73
         }
       ],
       "prediction_details": [
@@ -195334,14 +195368,31 @@
           "correct": false,
           "away_probable_pitcher_zh": "查史 斯克歐特特",
           "home_probable_pitcher_zh": "亞倫 諾拉"
+        },
+        {
+          "game_pk": "824766",
+          "date": "2026-07-17",
+          "matchup_zh": "坦帕灣光芒 @ 波士頓紅襪",
+          "away_zh": "坦帕灣光芒",
+          "home_zh": "波士頓紅襪",
+          "away_score": 0,
+          "home_score": 0,
+          "pick_zh": "波士頓紅襪",
+          "pick_side": "home",
+          "actual_winner_zh": "坦帕灣光芒",
+          "confidence": 0.5601,
+          "home_win_probability": 0.5601,
+          "correct": false,
+          "away_probable_pitcher_zh": "葛里芬 賈",
+          "home_probable_pitcher_zh": "傑克 貝"
         }
       ]
     },
     "D-近期失分代理": {
-      "predictions": 3799,
+      "predictions": 3800,
       "correct": 1978,
-      "wrong": 1821,
-      "accuracy_pct": 52.07,
+      "wrong": 1822,
+      "accuracy_pct": 52.05,
       "monthly": [
         {
           "month": "2025-04",
@@ -195405,9 +195456,9 @@
         },
         {
           "month": "2026-07",
-          "predictions": 164,
+          "predictions": 165,
           "correct": 77,
-          "accuracy_pct": 46.95
+          "accuracy_pct": 46.67
         }
       ],
       "prediction_details": [
@@ -259993,14 +260044,31 @@
           "correct": true,
           "away_probable_pitcher_zh": "查史 斯克歐特特",
           "home_probable_pitcher_zh": "亞倫 諾拉"
+        },
+        {
+          "game_pk": "824766",
+          "date": "2026-07-17",
+          "matchup_zh": "坦帕灣光芒 @ 波士頓紅襪",
+          "away_zh": "坦帕灣光芒",
+          "home_zh": "波士頓紅襪",
+          "away_score": 0,
+          "home_score": 0,
+          "pick_zh": "波士頓紅襪",
+          "pick_side": "home",
+          "actual_winner_zh": "坦帕灣光芒",
+          "confidence": 0.7,
+          "home_win_probability": 0.7,
+          "correct": false,
+          "away_probable_pitcher_zh": "葛里芬 賈",
+          "home_probable_pitcher_zh": "傑克 貝"
         }
       ]
     },
     "E-對照組(Ensemble)": {
-      "predictions": 3878,
+      "predictions": 3879,
       "correct": 2068,
-      "wrong": 1810,
-      "accuracy_pct": 53.33,
+      "wrong": 1811,
+      "accuracy_pct": 53.31,
       "monthly": [
         {
           "month": "2025-03",
@@ -260070,9 +260138,9 @@
         },
         {
           "month": "2026-07",
-          "predictions": 164,
+          "predictions": 165,
           "correct": 85,
-          "accuracy_pct": 51.83
+          "accuracy_pct": 51.52
         }
       ],
       "prediction_details": [
@@ -326001,6 +326069,23 @@
           "correct": false,
           "away_probable_pitcher_zh": "查史 斯克歐特特",
           "home_probable_pitcher_zh": "亞倫 諾拉"
+        },
+        {
+          "game_pk": "824766",
+          "date": "2026-07-17",
+          "matchup_zh": "坦帕灣光芒 @ 波士頓紅襪",
+          "away_zh": "坦帕灣光芒",
+          "home_zh": "波士頓紅襪",
+          "away_score": 0,
+          "home_score": 0,
+          "pick_zh": "波士頓紅襪",
+          "pick_side": "home",
+          "actual_winner_zh": "坦帕灣光芒",
+          "confidence": 0.6077,
+          "home_win_probability": 0.6077,
+          "correct": false,
+          "away_probable_pitcher_zh": "葛里芬 賈",
+          "home_probable_pitcher_zh": "傑克 貝"
         }
       ]
     }

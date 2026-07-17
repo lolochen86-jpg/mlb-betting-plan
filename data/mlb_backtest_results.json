@@ -1,7 +1,7 @@
 {
   "backtest_period": {
     "start": "2025-03-27",
-    "end": "2026-07-16"
+    "end": "2026-07-17"
   },
   "settings": {
     "unit": 100,
@@ -13,14 +13,14 @@
   "data_source": {
     "type": "real_mlb_final_scores",
     "games_csv": "data\\real_mlb_games.csv",
-    "games_evaluated": 3878,
+    "games_evaluated": 3879,
     "actual_first_game_date": "2025-03-27",
-    "actual_last_game_date": "2026-07-16",
+    "actual_last_game_date": "2026-07-17",
     "game_types": [
       "R"
     ],
     "coverage_warning": null,
-    "generated_at": "2026-07-17T21:02:20",
+    "generated_at": "2026-07-18T00:00:55",
     "note": "Backtest uses real MLB final scores from saved MLB Stats API schedule data. Odds are still the configured fixed market assumption."
   },
   "models": {
@@ -21218,16 +21218,24 @@
           "losses": 0,
           "pnl": 0.0,
           "bet_details": []
+        },
+        {
+          "date": "2026-07-17",
+          "bets": 0,
+          "wins": 0,
+          "losses": 0,
+          "pnl": 0.0,
+          "bet_details": []
         }
       ]
     },
     "B-近期狀態": {
-      "total_bets": 1402,
+      "total_bets": 1403,
       "wins": 786,
-      "losses": 616,
-      "win_rate": 0.5606,
-      "total_pnl": 9855.26,
-      "roi_pct": 7.03,
+      "losses": 617,
+      "win_rate": 0.5602,
+      "total_pnl": 9755.26,
+      "roi_pct": 6.95,
       "daily_records": [
         {
           "date": "2025-03-27",
@@ -46292,16 +46300,41 @@
               "result": "loss"
             }
           ]
+        },
+        {
+          "date": "2026-07-17",
+          "bets": 1,
+          "wins": 0,
+          "losses": 1,
+          "pnl": -100.0,
+          "bet_details": [
+            {
+              "game_pk": "824766",
+              "home": "Boston Red Sox",
+              "home_zh": "波士頓紅襪",
+              "away": "Tampa Bay Rays",
+              "away_zh": "坦帕灣光芒",
+              "home_score": 0,
+              "away_score": 0,
+              "pick": "Boston Red Sox",
+              "pick_zh": "波士頓紅襪",
+              "home_probable_pitcher_zh": "傑克 貝",
+              "away_probable_pitcher_zh": "葛里芬 賈",
+              "confidence": 0.6579,
+              "edge": 0.134,
+              "result": "loss"
+            }
+          ]
         }
       ]
     },
     "C-ELO評分": {
-      "total_bets": 1387,
+      "total_bets": 1388,
       "wins": 809,
-      "losses": 578,
-      "win_rate": 0.5833,
-      "total_pnl": 15746.19,
-      "roi_pct": 11.35,
+      "losses": 579,
+      "win_rate": 0.5829,
+      "total_pnl": 15646.19,
+      "roi_pct": 11.27,
       "daily_records": [
         {
           "date": "2025-03-27",
@@ -71129,16 +71162,41 @@
               "result": "loss"
             }
           ]
+        },
+        {
+          "date": "2026-07-17",
+          "bets": 1,
+          "wins": 0,
+          "losses": 1,
+          "pnl": -100.0,
+          "bet_details": [
+            {
+              "game_pk": "824766",
+              "home": "Boston Red Sox",
+              "home_zh": "波士頓紅襪",
+              "away": "Tampa Bay Rays",
+              "away_zh": "坦帕灣光芒",
+              "home_score": 0,
+              "away_score": 0,
+              "pick": "Boston Red Sox",
+              "pick_zh": "波士頓紅襪",
+              "home_probable_pitcher_zh": "傑克 貝",
+              "away_probable_pitcher_zh": "葛里芬 賈",
+              "confidence": 0.5601,
+              "edge": 0.0363,
+              "result": "loss"
+            }
+          ]
         }
       ]
     },
     "D-近期失分代理": {
-      "total_bets": 1386,
+      "total_bets": 1387,
       "wins": 761,
-      "losses": 625,
-      "win_rate": 0.5491,
-      "total_pnl": 6682.51,
-      "roi_pct": 4.82,
+      "losses": 626,
+      "win_rate": 0.5487,
+      "total_pnl": 6582.51,
+      "roi_pct": 4.75,
       "daily_records": [
         {
           "date": "2025-03-27",
@@ -95946,16 +96004,41 @@
           "losses": 0,
           "pnl": 0.0,
           "bet_details": []
+        },
+        {
+          "date": "2026-07-17",
+          "bets": 1,
+          "wins": 0,
+          "losses": 1,
+          "pnl": -100.0,
+          "bet_details": [
+            {
+              "game_pk": "824766",
+              "home": "Boston Red Sox",
+              "home_zh": "波士頓紅襪",
+              "away": "Tampa Bay Rays",
+              "away_zh": "坦帕灣光芒",
+              "home_score": 0,
+              "away_score": 0,
+              "pick": "Boston Red Sox",
+              "pick_zh": "波士頓紅襪",
+              "home_probable_pitcher_zh": "傑克 貝",
+              "away_probable_pitcher_zh": "葛里芬 賈",
+              "confidence": 0.7,
+              "edge": 0.1762,
+              "result": "loss"
+            }
+          ]
         }
       ]
     },
     "E-對照組(Ensemble)": {
-      "total_bets": 1355,
+      "total_bets": 1356,
       "wins": 789,
-      "losses": 566,
-      "win_rate": 0.5823,
-      "total_pnl": 15127.99,
-      "roi_pct": 11.16,
+      "losses": 567,
+      "win_rate": 0.5819,
+      "total_pnl": 15027.99,
+      "roi_pct": 11.08,
       "daily_records": [
         {
           "date": "2025-03-27",
@@ -120268,6 +120351,31 @@
               "away_probable_pitcher_zh": "查史 斯克歐特特",
               "confidence": 0.5908,
               "edge": 0.067,
+              "result": "loss"
+            }
+          ]
+        },
+        {
+          "date": "2026-07-17",
+          "bets": 1,
+          "wins": 0,
+          "losses": 1,
+          "pnl": -100.0,
+          "bet_details": [
+            {
+              "game_pk": "824766",
+              "home": "Boston Red Sox",
+              "home_zh": "波士頓紅襪",
+              "away": "Tampa Bay Rays",
+              "away_zh": "坦帕灣光芒",
+              "home_score": 0,
+              "away_score": 0,
+              "pick": "Boston Red Sox",
+              "pick_zh": "波士頓紅襪",
+              "home_probable_pitcher_zh": "傑克 貝",
+              "away_probable_pitcher_zh": "葛里芬 賈",
+              "confidence": 0.6014,
+              "edge": 0.0776,
               "result": "loss"
             }
           ]
