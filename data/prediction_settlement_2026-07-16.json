@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-07-17T00:00:55",
+  "generated_at": "2026-07-17T13:51:01",
   "target_date": "2026-07-16",
   "source_prediction_file": "data\\daily_predictions_2026-07-16.json",
   "summary": {
     "predictions": 1,
-    "final_games": 0,
-    "pending_games": 1,
+    "final_games": 1,
+    "pending_games": 0,
     "correct": 0,
-    "wrong": 0,
-    "accuracy_pct": 0,
+    "wrong": 1,
+    "accuracy_pct": 0.0,
     "high_confidence_final": 0,
     "high_confidence_correct": 0,
     "high_confidence_accuracy_pct": 0
@@ -25,11 +25,11 @@
       "confidence": 0.5456,
       "confirmation_pick_zh": "費城費城人",
       "confirmation_same_direction": true,
-      "status": "Scheduled",
-      "score": "",
-      "actual_winner_zh": "",
-      "settlement": "pending",
-      "is_final": false
+      "status": "Final",
+      "score": "4-1",
+      "actual_winner_zh": "紐約大都會",
+      "settlement": "wrong",
+      "is_final": true
     }
   ],
   "note": "Accuracy settlement only. Odds and betting ROI are not calculated here."

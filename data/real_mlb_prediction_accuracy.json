@@ -1,21 +1,21 @@
 {
-  "generated_at": "2026-07-17T00:00:46",
+  "generated_at": "2026-07-17T13:50:51",
   "backtest_period": {
     "start": "2025-03-27",
-    "end": "2026-07-12"
+    "end": "2026-07-16"
   },
   "data_source": {
     "type": "real_mlb_final_scores",
     "games_csv": "data\\real_mlb_games.csv",
-    "games_evaluated": 3877,
+    "games_evaluated": 3878,
     "note": "Pure winner-prediction accuracy only. Odds, edge, stake, and ROI are intentionally excluded."
   },
   "models": {
     "A-畢氏勝率": {
-      "predictions": 3798,
+      "predictions": 3799,
       "correct": 2058,
-      "wrong": 1740,
-      "accuracy_pct": 54.19,
+      "wrong": 1741,
+      "accuracy_pct": 54.17,
       "monthly": [
         {
           "month": "2025-04",
@@ -79,9 +79,9 @@
         },
         {
           "month": "2026-07",
-          "predictions": 163,
+          "predictions": 164,
           "correct": 88,
-          "accuracy_pct": 53.99
+          "accuracy_pct": 53.66
         }
       ],
       "prediction_details": [
@@ -64650,14 +64650,31 @@
           "correct": true,
           "away_probable_pitcher_zh": "賽斯 盧戈",
           "home_probable_pitcher_zh": "謝恩 巴"
+        },
+        {
+          "game_pk": "823440",
+          "date": "2026-07-16",
+          "matchup_zh": "紐約大都會 @ 費城費城人",
+          "away_zh": "紐約大都會",
+          "home_zh": "費城費城人",
+          "away_score": 4,
+          "home_score": 1,
+          "pick_zh": "費城費城人",
+          "pick_side": "home",
+          "actual_winner_zh": "紐約大都會",
+          "confidence": 0.5456,
+          "home_win_probability": 0.5456,
+          "correct": false,
+          "away_probable_pitcher_zh": "查史 斯克歐特特",
+          "home_probable_pitcher_zh": "亞倫 諾拉"
         }
       ]
     },
     "B-近期狀態": {
-      "predictions": 3798,
+      "predictions": 3799,
       "correct": 2035,
-      "wrong": 1763,
-      "accuracy_pct": 53.58,
+      "wrong": 1764,
+      "accuracy_pct": 53.57,
       "monthly": [
         {
           "month": "2025-04",
@@ -64721,9 +64738,9 @@
         },
         {
           "month": "2026-07",
-          "predictions": 163,
+          "predictions": 164,
           "correct": 89,
-          "accuracy_pct": 54.6
+          "accuracy_pct": 54.27
         }
       ],
       "prediction_details": [
@@ -129292,14 +129309,31 @@
           "correct": true,
           "away_probable_pitcher_zh": "賽斯 盧戈",
           "home_probable_pitcher_zh": "謝恩 巴"
+        },
+        {
+          "game_pk": "823440",
+          "date": "2026-07-16",
+          "matchup_zh": "紐約大都會 @ 費城費城人",
+          "away_zh": "紐約大都會",
+          "home_zh": "費城費城人",
+          "away_score": 4,
+          "home_score": 1,
+          "pick_zh": "費城費城人",
+          "pick_side": "home",
+          "actual_winner_zh": "紐約大都會",
+          "confidence": 0.5706,
+          "home_win_probability": 0.5706,
+          "correct": false,
+          "away_probable_pitcher_zh": "查史 斯克歐特特",
+          "home_probable_pitcher_zh": "亞倫 諾拉"
         }
       ]
     },
     "C-ELO評分": {
-      "predictions": 3877,
+      "predictions": 3878,
       "correct": 2082,
-      "wrong": 1795,
-      "accuracy_pct": 53.7,
+      "wrong": 1796,
+      "accuracy_pct": 53.69,
       "monthly": [
         {
           "month": "2025-03",
@@ -129369,9 +129403,9 @@
         },
         {
           "month": "2026-07",
-          "predictions": 163,
+          "predictions": 164,
           "correct": 87,
-          "accuracy_pct": 53.37
+          "accuracy_pct": 53.05
         }
       ],
       "prediction_details": [
@@ -195283,14 +195317,31 @@
           "correct": true,
           "away_probable_pitcher_zh": "賽斯 盧戈",
           "home_probable_pitcher_zh": "謝恩 巴"
+        },
+        {
+          "game_pk": "823440",
+          "date": "2026-07-16",
+          "matchup_zh": "紐約大都會 @ 費城費城人",
+          "away_zh": "紐約大都會",
+          "home_zh": "費城費城人",
+          "away_score": 4,
+          "home_score": 1,
+          "pick_zh": "費城費城人",
+          "pick_side": "home",
+          "actual_winner_zh": "紐約大都會",
+          "confidence": 0.7031,
+          "home_win_probability": 0.7031,
+          "correct": false,
+          "away_probable_pitcher_zh": "查史 斯克歐特特",
+          "home_probable_pitcher_zh": "亞倫 諾拉"
         }
       ]
     },
     "D-近期失分代理": {
-      "predictions": 3798,
-      "correct": 1977,
+      "predictions": 3799,
+      "correct": 1978,
       "wrong": 1821,
-      "accuracy_pct": 52.05,
+      "accuracy_pct": 52.07,
       "monthly": [
         {
           "month": "2025-04",
@@ -195354,9 +195405,9 @@
         },
         {
           "month": "2026-07",
-          "predictions": 163,
-          "correct": 76,
-          "accuracy_pct": 46.63
+          "predictions": 164,
+          "correct": 77,
+          "accuracy_pct": 46.95
         }
       ],
       "prediction_details": [
@@ -259925,14 +259976,31 @@
           "correct": true,
           "away_probable_pitcher_zh": "賽斯 盧戈",
           "home_probable_pitcher_zh": "謝恩 巴"
+        },
+        {
+          "game_pk": "823440",
+          "date": "2026-07-16",
+          "matchup_zh": "紐約大都會 @ 費城費城人",
+          "away_zh": "紐約大都會",
+          "home_zh": "費城費城人",
+          "away_score": 4,
+          "home_score": 1,
+          "pick_zh": "紐約大都會",
+          "pick_side": "away",
+          "actual_winner_zh": "紐約大都會",
+          "confidence": 0.541,
+          "home_win_probability": 0.459,
+          "correct": true,
+          "away_probable_pitcher_zh": "查史 斯克歐特特",
+          "home_probable_pitcher_zh": "亞倫 諾拉"
         }
       ]
     },
     "E-對照組(Ensemble)": {
-      "predictions": 3877,
+      "predictions": 3878,
       "correct": 2068,
-      "wrong": 1809,
-      "accuracy_pct": 53.34,
+      "wrong": 1810,
+      "accuracy_pct": 53.33,
       "monthly": [
         {
           "month": "2025-03",
@@ -260002,9 +260070,9 @@
         },
         {
           "month": "2026-07",
-          "predictions": 163,
+          "predictions": 164,
           "correct": 85,
-          "accuracy_pct": 52.15
+          "accuracy_pct": 51.83
         }
       ],
       "prediction_details": [
@@ -325916,6 +325984,23 @@
           "correct": true,
           "away_probable_pitcher_zh": "賽斯 盧戈",
           "home_probable_pitcher_zh": "謝恩 巴"
+        },
+        {
+          "game_pk": "823440",
+          "date": "2026-07-16",
+          "matchup_zh": "紐約大都會 @ 費城費城人",
+          "away_zh": "紐約大都會",
+          "home_zh": "費城費城人",
+          "away_score": 4,
+          "home_score": 1,
+          "pick_zh": "費城費城人",
+          "pick_side": "home",
+          "actual_winner_zh": "紐約大都會",
+          "confidence": 0.5743,
+          "home_win_probability": 0.5743,
+          "correct": false,
+          "away_probable_pitcher_zh": "查史 斯克歐特特",
+          "home_probable_pitcher_zh": "亞倫 諾拉"
         }
       ]
     }

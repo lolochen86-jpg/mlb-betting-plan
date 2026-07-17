@@ -1,7 +1,7 @@
 {
   "backtest_period": {
     "start": "2025-03-27",
-    "end": "2026-07-12"
+    "end": "2026-07-16"
   },
   "settings": {
     "unit": 100,
@@ -13,14 +13,14 @@
   "data_source": {
     "type": "real_mlb_final_scores",
     "games_csv": "data\\real_mlb_games.csv",
-    "games_evaluated": 3877,
+    "games_evaluated": 3878,
     "actual_first_game_date": "2025-03-27",
-    "actual_last_game_date": "2026-07-12",
+    "actual_last_game_date": "2026-07-16",
     "game_types": [
       "R"
     ],
-    "coverage_warning": "Requested through 2026-07-16, but MLB Stats API returned saved final-score rows only through 2026-07-12.",
-    "generated_at": "2026-07-17T00:00:46",
+    "coverage_warning": null,
+    "generated_at": "2026-07-17T13:50:52",
     "note": "Backtest uses real MLB final scores from saved MLB Stats API schedule data. Odds are still the configured fixed market assumption."
   },
   "models": {
@@ -21210,16 +21210,24 @@
               "result": "win"
             }
           ]
+        },
+        {
+          "date": "2026-07-16",
+          "bets": 0,
+          "wins": 0,
+          "losses": 0,
+          "pnl": 0.0,
+          "bet_details": []
         }
       ]
     },
     "B-近期狀態": {
-      "total_bets": 1401,
+      "total_bets": 1402,
       "wins": 786,
-      "losses": 615,
-      "win_rate": 0.561,
-      "total_pnl": 9955.26,
-      "roi_pct": 7.11,
+      "losses": 616,
+      "win_rate": 0.5606,
+      "total_pnl": 9855.26,
+      "roi_pct": 7.03,
       "daily_records": [
         {
           "date": "2025-03-27",
@@ -46259,16 +46267,41 @@
               "result": "loss"
             }
           ]
+        },
+        {
+          "date": "2026-07-16",
+          "bets": 1,
+          "wins": 0,
+          "losses": 1,
+          "pnl": -100.0,
+          "bet_details": [
+            {
+              "game_pk": "823440",
+              "home": "Philadelphia Phillies",
+              "home_zh": "費城費城人",
+              "away": "New York Mets",
+              "away_zh": "紐約大都會",
+              "home_score": 1,
+              "away_score": 4,
+              "pick": "Philadelphia Phillies",
+              "pick_zh": "費城費城人",
+              "home_probable_pitcher_zh": "亞倫 諾拉",
+              "away_probable_pitcher_zh": "查史 斯克歐特特",
+              "confidence": 0.5706,
+              "edge": 0.0467,
+              "result": "loss"
+            }
+          ]
         }
       ]
     },
     "C-ELO評分": {
-      "total_bets": 1386,
+      "total_bets": 1387,
       "wins": 809,
-      "losses": 577,
-      "win_rate": 0.5837,
-      "total_pnl": 15846.19,
-      "roi_pct": 11.43,
+      "losses": 578,
+      "win_rate": 0.5833,
+      "total_pnl": 15746.19,
+      "roi_pct": 11.35,
       "daily_records": [
         {
           "date": "2025-03-27",
@@ -71069,6 +71102,31 @@
               "confidence": 0.6199,
               "edge": 0.0961,
               "result": "win"
+            }
+          ]
+        },
+        {
+          "date": "2026-07-16",
+          "bets": 1,
+          "wins": 0,
+          "losses": 1,
+          "pnl": -100.0,
+          "bet_details": [
+            {
+              "game_pk": "823440",
+              "home": "Philadelphia Phillies",
+              "home_zh": "費城費城人",
+              "away": "New York Mets",
+              "away_zh": "紐約大都會",
+              "home_score": 1,
+              "away_score": 4,
+              "pick": "Philadelphia Phillies",
+              "pick_zh": "費城費城人",
+              "home_probable_pitcher_zh": "亞倫 諾拉",
+              "away_probable_pitcher_zh": "查史 斯克歐特特",
+              "confidence": 0.7031,
+              "edge": 0.1793,
+              "result": "loss"
             }
           ]
         }
@@ -95880,16 +95938,24 @@
               "result": "loss"
             }
           ]
+        },
+        {
+          "date": "2026-07-16",
+          "bets": 0,
+          "wins": 0,
+          "losses": 0,
+          "pnl": 0.0,
+          "bet_details": []
         }
       ]
     },
     "E-對照組(Ensemble)": {
-      "total_bets": 1354,
+      "total_bets": 1355,
       "wins": 789,
-      "losses": 565,
-      "win_rate": 0.5827,
-      "total_pnl": 15227.99,
-      "roi_pct": 11.25,
+      "losses": 566,
+      "win_rate": 0.5823,
+      "total_pnl": 15127.99,
+      "roi_pct": 11.16,
       "daily_records": [
         {
           "date": "2025-03-27",
@@ -120175,6 +120241,31 @@
               "pick_zh": "坦帕灣光芒",
               "home_probable_pitcher_zh": "伊阿恩 塞莫",
               "away_probable_pitcher_zh": "艾梅 哈",
+              "confidence": 0.5908,
+              "edge": 0.067,
+              "result": "loss"
+            }
+          ]
+        },
+        {
+          "date": "2026-07-16",
+          "bets": 1,
+          "wins": 0,
+          "losses": 1,
+          "pnl": -100.0,
+          "bet_details": [
+            {
+              "game_pk": "823440",
+              "home": "Philadelphia Phillies",
+              "home_zh": "費城費城人",
+              "away": "New York Mets",
+              "away_zh": "紐約大都會",
+              "home_score": 1,
+              "away_score": 4,
+              "pick": "Philadelphia Phillies",
+              "pick_zh": "費城費城人",
+              "home_probable_pitcher_zh": "亞倫 諾拉",
+              "away_probable_pitcher_zh": "查史 斯克歐特特",
               "confidence": 0.5908,
               "edge": 0.067,
               "result": "loss"
