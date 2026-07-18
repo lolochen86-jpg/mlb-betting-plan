@@ -1,7 +1,7 @@
 {
   "backtest_period": {
     "start": "2025-03-27",
-    "end": "2026-07-17"
+    "end": "2026-07-18"
   },
   "settings": {
     "unit": 100,
@@ -13,14 +13,14 @@
   "data_source": {
     "type": "real_mlb_final_scores",
     "games_csv": "data\\real_mlb_games.csv",
-    "games_evaluated": 3892,
+    "games_evaluated": 3894,
     "actual_first_game_date": "2025-03-27",
-    "actual_last_game_date": "2026-07-17",
+    "actual_last_game_date": "2026-07-18",
     "game_types": [
       "R"
     ],
     "coverage_warning": null,
-    "generated_at": "2026-07-18T21:01:58",
+    "generated_at": "2026-07-19T00:00:47",
     "note": "Backtest uses real MLB final scores from saved MLB Stats API schedule data. Odds are still the configured fixed market assumption."
   },
   "models": {
@@ -21275,16 +21275,24 @@
               "result": "loss"
             }
           ]
+        },
+        {
+          "date": "2026-07-18",
+          "bets": 0,
+          "wins": 0,
+          "losses": 0,
+          "pnl": 0.0,
+          "bet_details": []
         }
       ]
     },
     "B-近期狀態": {
-      "total_bets": 1407,
-      "wins": 791,
+      "total_bets": 1408,
+      "wins": 792,
       "losses": 616,
-      "win_rate": 0.5622,
-      "total_pnl": 10309.81,
-      "roi_pct": 7.33,
+      "win_rate": 0.5625,
+      "total_pnl": 10400.72,
+      "roi_pct": 7.39,
       "daily_records": [
         {
           "date": "2025-03-27",
@@ -46438,16 +46446,41 @@
               "result": "win"
             }
           ]
+        },
+        {
+          "date": "2026-07-18",
+          "bets": 1,
+          "wins": 1,
+          "losses": 0,
+          "pnl": 90.91,
+          "bet_details": [
+            {
+              "game_pk": "822790",
+              "home": "Toronto Blue Jays",
+              "home_zh": "多倫多藍鳥",
+              "away": "Chicago White Sox",
+              "away_zh": "芝加哥白襪",
+              "home_score": 0,
+              "away_score": 0,
+              "pick": "Chicago White Sox",
+              "pick_zh": "芝加哥白襪",
+              "home_probable_pitcher_zh": "謝恩 比貝",
+              "away_probable_pitcher_zh": "達維 馬",
+              "confidence": 0.585,
+              "edge": 0.0612,
+              "result": "win"
+            }
+          ]
         }
       ]
     },
     "C-ELO評分": {
-      "total_bets": 1392,
-      "wins": 812,
+      "total_bets": 1393,
+      "wins": 813,
       "losses": 580,
-      "win_rate": 0.5833,
-      "total_pnl": 15818.92,
-      "roi_pct": 11.36,
+      "win_rate": 0.5836,
+      "total_pnl": 15909.83,
+      "roi_pct": 11.42,
       "daily_records": [
         {
           "date": "2025-03-27",
@@ -71364,16 +71397,41 @@
               "result": "win"
             }
           ]
+        },
+        {
+          "date": "2026-07-18",
+          "bets": 1,
+          "wins": 1,
+          "losses": 0,
+          "pnl": 90.91,
+          "bet_details": [
+            {
+              "game_pk": "822790",
+              "home": "Toronto Blue Jays",
+              "home_zh": "多倫多藍鳥",
+              "away": "Chicago White Sox",
+              "away_zh": "芝加哥白襪",
+              "home_score": 0,
+              "away_score": 0,
+              "pick": "Chicago White Sox",
+              "pick_zh": "芝加哥白襪",
+              "home_probable_pitcher_zh": "謝恩 比貝",
+              "away_probable_pitcher_zh": "達維 馬",
+              "confidence": 0.5714,
+              "edge": 0.0475,
+              "result": "win"
+            }
+          ]
         }
       ]
     },
     "D-近期失分代理": {
-      "total_bets": 1391,
-      "wins": 765,
-      "losses": 626,
-      "win_rate": 0.55,
-      "total_pnl": 6946.15,
-      "roi_pct": 4.99,
+      "total_bets": 1393,
+      "wins": 766,
+      "losses": 627,
+      "win_rate": 0.5499,
+      "total_pnl": 6937.06,
+      "roi_pct": 4.98,
       "daily_records": [
         {
           "date": "2025-03-27",
@@ -96270,16 +96328,57 @@
               "result": "win"
             }
           ]
+        },
+        {
+          "date": "2026-07-18",
+          "bets": 2,
+          "wins": 1,
+          "losses": 1,
+          "pnl": -9.09,
+          "bet_details": [
+            {
+              "game_pk": "824414",
+              "home": "Cleveland Guardians",
+              "home_zh": "克里夫蘭守護者",
+              "away": "Pittsburgh Pirates",
+              "away_zh": "匹茲堡海盜",
+              "home_score": 0,
+              "away_score": 0,
+              "pick": "Cleveland Guardians",
+              "pick_zh": "克里夫蘭守護者",
+              "home_probable_pitcher_zh": "加維 威",
+              "away_probable_pitcher_zh": "賈雷 喬內",
+              "confidence": 0.6867,
+              "edge": 0.1629,
+              "result": "loss"
+            },
+            {
+              "game_pk": "822790",
+              "home": "Toronto Blue Jays",
+              "home_zh": "多倫多藍鳥",
+              "away": "Chicago White Sox",
+              "away_zh": "芝加哥白襪",
+              "home_score": 0,
+              "away_score": 0,
+              "pick": "Chicago White Sox",
+              "pick_zh": "芝加哥白襪",
+              "home_probable_pitcher_zh": "謝恩 比貝",
+              "away_probable_pitcher_zh": "達維 馬",
+              "confidence": 0.62,
+              "edge": 0.0962,
+              "result": "win"
+            }
+          ]
         }
       ]
     },
     "E-對照組(Ensemble)": {
-      "total_bets": 1360,
-      "wins": 793,
+      "total_bets": 1361,
+      "wins": 794,
       "losses": 567,
-      "win_rate": 0.5831,
-      "total_pnl": 15391.63,
-      "roi_pct": 11.32,
+      "win_rate": 0.5834,
+      "total_pnl": 15482.54,
+      "roi_pct": 11.38,
       "daily_records": [
         {
           "date": "2025-03-27",
@@ -120682,6 +120781,31 @@
               "confidence": 0.5701,
               "edge": 0.0463,
               "result": "loss"
+            }
+          ]
+        },
+        {
+          "date": "2026-07-18",
+          "bets": 1,
+          "wins": 1,
+          "losses": 0,
+          "pnl": 90.91,
+          "bet_details": [
+            {
+              "game_pk": "822790",
+              "home": "Toronto Blue Jays",
+              "home_zh": "多倫多藍鳥",
+              "away": "Chicago White Sox",
+              "away_zh": "芝加哥白襪",
+              "home_score": 0,
+              "away_score": 0,
+              "pick": "Chicago White Sox",
+              "pick_zh": "芝加哥白襪",
+              "home_probable_pitcher_zh": "謝恩 比貝",
+              "away_probable_pitcher_zh": "達維 馬",
+              "confidence": 0.5574,
+              "edge": 0.0336,
+              "result": "win"
             }
           ]
         }

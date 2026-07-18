@@ -1,21 +1,21 @@
 {
-  "generated_at": "2026-07-18T21:01:58",
+  "generated_at": "2026-07-19T00:00:46",
   "backtest_period": {
     "start": "2025-03-27",
-    "end": "2026-07-17"
+    "end": "2026-07-18"
   },
   "data_source": {
     "type": "real_mlb_final_scores",
     "games_csv": "data\\real_mlb_games.csv",
-    "games_evaluated": 3892,
+    "games_evaluated": 3894,
     "note": "Pure winner-prediction accuracy only. Odds, edge, stake, and ROI are intentionally excluded."
   },
   "models": {
     "A-畢氏勝率": {
-      "predictions": 3813,
+      "predictions": 3815,
       "correct": 2064,
-      "wrong": 1749,
-      "accuracy_pct": 54.13,
+      "wrong": 1751,
+      "accuracy_pct": 54.1,
       "monthly": [
         {
           "month": "2025-04",
@@ -79,9 +79,9 @@
         },
         {
           "month": "2026-07",
-          "predictions": 178,
+          "predictions": 180,
           "correct": 94,
-          "accuracy_pct": 52.81
+          "accuracy_pct": 52.22
         }
       ],
       "prediction_details": [
@@ -64905,14 +64905,48 @@
           "correct": false,
           "away_probable_pitcher_zh": "麥可 麥格里維",
           "home_probable_pitcher_zh": "梅 凱"
+        },
+        {
+          "game_pk": "822790",
+          "date": "2026-07-18",
+          "matchup_zh": "芝加哥白襪 @ 多倫多藍鳥",
+          "away_zh": "芝加哥白襪",
+          "home_zh": "多倫多藍鳥",
+          "away_score": 0,
+          "home_score": 0,
+          "pick_zh": "多倫多藍鳥",
+          "pick_side": "home",
+          "actual_winner_zh": "芝加哥白襪",
+          "confidence": 0.5372,
+          "home_win_probability": 0.5372,
+          "correct": false,
+          "away_probable_pitcher_zh": "達維 馬",
+          "home_probable_pitcher_zh": "謝恩 比貝"
+        },
+        {
+          "game_pk": "824414",
+          "date": "2026-07-18",
+          "matchup_zh": "匹茲堡海盜 @ 克里夫蘭守護者",
+          "away_zh": "匹茲堡海盜",
+          "home_zh": "克里夫蘭守護者",
+          "away_score": 0,
+          "home_score": 0,
+          "pick_zh": "克里夫蘭守護者",
+          "pick_side": "home",
+          "actual_winner_zh": "匹茲堡海盜",
+          "confidence": 0.5218,
+          "home_win_probability": 0.5218,
+          "correct": false,
+          "away_probable_pitcher_zh": "賈雷 喬內",
+          "home_probable_pitcher_zh": "加維 威"
         }
       ]
     },
     "B-近期狀態": {
-      "predictions": 3813,
-      "correct": 2043,
+      "predictions": 3815,
+      "correct": 2045,
       "wrong": 1770,
-      "accuracy_pct": 53.58,
+      "accuracy_pct": 53.6,
       "monthly": [
         {
           "month": "2025-04",
@@ -64976,9 +65010,9 @@
         },
         {
           "month": "2026-07",
-          "predictions": 178,
-          "correct": 97,
-          "accuracy_pct": 54.49
+          "predictions": 180,
+          "correct": 99,
+          "accuracy_pct": 55.0
         }
       ],
       "prediction_details": [
@@ -129802,13 +129836,47 @@
           "correct": false,
           "away_probable_pitcher_zh": "麥可 麥格里維",
           "home_probable_pitcher_zh": "梅 凱"
+        },
+        {
+          "game_pk": "822790",
+          "date": "2026-07-18",
+          "matchup_zh": "芝加哥白襪 @ 多倫多藍鳥",
+          "away_zh": "芝加哥白襪",
+          "home_zh": "多倫多藍鳥",
+          "away_score": 0,
+          "home_score": 0,
+          "pick_zh": "芝加哥白襪",
+          "pick_side": "away",
+          "actual_winner_zh": "芝加哥白襪",
+          "confidence": 0.585,
+          "home_win_probability": 0.415,
+          "correct": true,
+          "away_probable_pitcher_zh": "達維 馬",
+          "home_probable_pitcher_zh": "謝恩 比貝"
+        },
+        {
+          "game_pk": "824414",
+          "date": "2026-07-18",
+          "matchup_zh": "匹茲堡海盜 @ 克里夫蘭守護者",
+          "away_zh": "匹茲堡海盜",
+          "home_zh": "克里夫蘭守護者",
+          "away_score": 0,
+          "home_score": 0,
+          "pick_zh": "匹茲堡海盜",
+          "pick_side": "away",
+          "actual_winner_zh": "匹茲堡海盜",
+          "confidence": 0.5235,
+          "home_win_probability": 0.4765,
+          "correct": true,
+          "away_probable_pitcher_zh": "賈雷 喬內",
+          "home_probable_pitcher_zh": "加維 威"
         }
       ]
     },
     "C-ELO評分": {
-      "predictions": 3892,
-      "correct": 2090,
-      "wrong": 1802,
+      "predictions": 3894,
+      "correct": 2091,
+      "wrong": 1803,
       "accuracy_pct": 53.7,
       "monthly": [
         {
@@ -129879,9 +129947,9 @@
         },
         {
           "month": "2026-07",
-          "predictions": 178,
-          "correct": 95,
-          "accuracy_pct": 53.37
+          "predictions": 180,
+          "correct": 96,
+          "accuracy_pct": 53.33
         }
       ],
       "prediction_details": [
@@ -196048,13 +196116,47 @@
           "correct": false,
           "away_probable_pitcher_zh": "麥可 麥格里維",
           "home_probable_pitcher_zh": "梅 凱"
+        },
+        {
+          "game_pk": "822790",
+          "date": "2026-07-18",
+          "matchup_zh": "芝加哥白襪 @ 多倫多藍鳥",
+          "away_zh": "芝加哥白襪",
+          "home_zh": "多倫多藍鳥",
+          "away_score": 0,
+          "home_score": 0,
+          "pick_zh": "芝加哥白襪",
+          "pick_side": "away",
+          "actual_winner_zh": "芝加哥白襪",
+          "confidence": 0.5714,
+          "home_win_probability": 0.4286,
+          "correct": true,
+          "away_probable_pitcher_zh": "達維 馬",
+          "home_probable_pitcher_zh": "謝恩 比貝"
+        },
+        {
+          "game_pk": "824414",
+          "date": "2026-07-18",
+          "matchup_zh": "匹茲堡海盜 @ 克里夫蘭守護者",
+          "away_zh": "匹茲堡海盜",
+          "home_zh": "克里夫蘭守護者",
+          "away_score": 0,
+          "home_score": 0,
+          "pick_zh": "克里夫蘭守護者",
+          "pick_side": "home",
+          "actual_winner_zh": "匹茲堡海盜",
+          "confidence": 0.5135,
+          "home_win_probability": 0.5135,
+          "correct": false,
+          "away_probable_pitcher_zh": "賈雷 喬內",
+          "home_probable_pitcher_zh": "加維 威"
         }
       ]
     },
     "D-近期失分代理": {
-      "predictions": 3813,
-      "correct": 1989,
-      "wrong": 1824,
+      "predictions": 3815,
+      "correct": 1990,
+      "wrong": 1825,
       "accuracy_pct": 52.16,
       "monthly": [
         {
@@ -196119,8 +196221,8 @@
         },
         {
           "month": "2026-07",
-          "predictions": 178,
-          "correct": 88,
+          "predictions": 180,
+          "correct": 89,
           "accuracy_pct": 49.44
         }
       ],
@@ -260945,14 +261047,48 @@
           "correct": true,
           "away_probable_pitcher_zh": "麥可 麥格里維",
           "home_probable_pitcher_zh": "梅 凱"
+        },
+        {
+          "game_pk": "822790",
+          "date": "2026-07-18",
+          "matchup_zh": "芝加哥白襪 @ 多倫多藍鳥",
+          "away_zh": "芝加哥白襪",
+          "home_zh": "多倫多藍鳥",
+          "away_score": 0,
+          "home_score": 0,
+          "pick_zh": "芝加哥白襪",
+          "pick_side": "away",
+          "actual_winner_zh": "芝加哥白襪",
+          "confidence": 0.62,
+          "home_win_probability": 0.38,
+          "correct": true,
+          "away_probable_pitcher_zh": "達維 馬",
+          "home_probable_pitcher_zh": "謝恩 比貝"
+        },
+        {
+          "game_pk": "824414",
+          "date": "2026-07-18",
+          "matchup_zh": "匹茲堡海盜 @ 克里夫蘭守護者",
+          "away_zh": "匹茲堡海盜",
+          "home_zh": "克里夫蘭守護者",
+          "away_score": 0,
+          "home_score": 0,
+          "pick_zh": "克里夫蘭守護者",
+          "pick_side": "home",
+          "actual_winner_zh": "匹茲堡海盜",
+          "confidence": 0.6867,
+          "home_win_probability": 0.6867,
+          "correct": false,
+          "away_probable_pitcher_zh": "賈雷 喬內",
+          "home_probable_pitcher_zh": "加維 威"
         }
       ]
     },
     "E-對照組(Ensemble)": {
-      "predictions": 3892,
-      "correct": 2077,
-      "wrong": 1815,
-      "accuracy_pct": 53.37,
+      "predictions": 3894,
+      "correct": 2078,
+      "wrong": 1816,
+      "accuracy_pct": 53.36,
       "monthly": [
         {
           "month": "2025-03",
@@ -261022,9 +261158,9 @@
         },
         {
           "month": "2026-07",
-          "predictions": 178,
-          "correct": 94,
-          "accuracy_pct": 52.81
+          "predictions": 180,
+          "correct": 95,
+          "accuracy_pct": 52.78
         }
       ],
       "prediction_details": [
@@ -327191,6 +327327,40 @@
           "correct": false,
           "away_probable_pitcher_zh": "麥可 麥格里維",
           "home_probable_pitcher_zh": "梅 凱"
+        },
+        {
+          "game_pk": "822790",
+          "date": "2026-07-18",
+          "matchup_zh": "芝加哥白襪 @ 多倫多藍鳥",
+          "away_zh": "芝加哥白襪",
+          "home_zh": "多倫多藍鳥",
+          "away_score": 0,
+          "home_score": 0,
+          "pick_zh": "芝加哥白襪",
+          "pick_side": "away",
+          "actual_winner_zh": "芝加哥白襪",
+          "confidence": 0.5691,
+          "home_win_probability": 0.4309,
+          "correct": true,
+          "away_probable_pitcher_zh": "達維 馬",
+          "home_probable_pitcher_zh": "謝恩 比貝"
+        },
+        {
+          "game_pk": "824414",
+          "date": "2026-07-18",
+          "matchup_zh": "匹茲堡海盜 @ 克里夫蘭守護者",
+          "away_zh": "匹茲堡海盜",
+          "home_zh": "克里夫蘭守護者",
+          "away_score": 0,
+          "home_score": 0,
+          "pick_zh": "克里夫蘭守護者",
+          "pick_side": "home",
+          "actual_winner_zh": "匹茲堡海盜",
+          "confidence": 0.5675,
+          "home_win_probability": 0.5675,
+          "correct": false,
+          "away_probable_pitcher_zh": "賈雷 喬內",
+          "home_probable_pitcher_zh": "加維 威"
         }
       ]
     }
