@@ -59,7 +59,11 @@ def write_state(**updates: object) -> None:
             state = json.loads(STATE_PATH.read_text(encoding="utf-8"))
         except json.JSONDecodeError:
             state = {}
-    state.update(updates)
+    for key, value in updates.items():
+        if value is None:
+            state.pop(key, None)
+        else:
+            state[key] = value
     state["updated_at_tw"] = now_local().isoformat(timespec="seconds")
     STATE_PATH.write_text(json.dumps(state, ensure_ascii=False, indent=2), encoding="utf-8")
 
@@ -112,6 +116,7 @@ def run_workflow(args: argparse.Namespace) -> int:
         target_date=target_date,
         last_started_at_tw=now_local().isoformat(timespec="seconds"),
         last_command=command,
+        next_run_at_tw=None,
     )
 
     LOG_DIR.mkdir(parents=True, exist_ok=True)
@@ -141,6 +146,7 @@ def run_workflow(args: argparse.Namespace) -> int:
         target_date=target_date,
         last_finished_at_tw=now_local().isoformat(timespec="seconds"),
         last_return_code=return_code,
+        next_run_at_tw=None,
         health=health,
         dashboard=str(ROOT / "docs" / "index.html"),
         daily_predictions=str(ROOT / "docs" / "daily_predictions.html"),
