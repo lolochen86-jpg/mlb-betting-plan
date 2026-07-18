@@ -329,6 +329,12 @@ def render_html(plan: dict, line_chart: str, bar_chart: str) -> str:
     nav a {{ display: flex; align-items: center; gap: 10px; color: var(--muted); text-decoration: none; padding: 10px 12px; border-radius: 8px; font-size: 14px; margin-bottom: 4px; }}
     nav a.active, nav a:hover {{ background: #e8f2ef; color: var(--teal-2); }}
     .daily-link {{ display: inline-flex; margin-top: 12px; color: var(--teal-2); font-weight: 700; text-decoration: none; font-size: 14px; }}
+    .manual-panel {{ padding: 16px 18px; margin-bottom: 16px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }}
+    .manual-panel h2 {{ margin: 0 0 6px; }}
+    .manual-panel p {{ margin: 0; color: var(--muted); font-size: 13px; line-height: 1.6; }}
+    .manual-actions {{ display: flex; flex-wrap: wrap; gap: 10px; justify-content: flex-end; }}
+    .manual-actions a {{ display: inline-flex; align-items: center; justify-content: center; min-height: 38px; border-radius: 8px; border: 1px solid var(--line); padding: 0 13px; color: var(--teal-2); background: #ffffff; font-size: 14px; font-weight: 800; text-decoration: none; white-space: nowrap; }}
+    .manual-actions a.primary {{ background: var(--teal); color: #ffffff; border-color: var(--teal); }}
     main {{ padding: 28px; max-width: 1360px; width: 100%; min-width: 0; }}
     .topbar {{ display: flex; justify-content: space-between; gap: 20px; align-items: flex-start; margin-bottom: 22px; }}
     h1 {{ font-size: 32px; line-height: 1.15; margin: 0 0 8px; }}
@@ -415,6 +421,19 @@ def render_html(plan: dict, line_chart: str, bar_chart: str) -> str:
           <a class="daily-link" href="prediction_log.html">查看實戰預測結算</a>
         </div>
         <div class="stamp">資料期間 {plan['period']['start']} 至 {plan['period']['end']}<br />真實賽果 {accuracy_source.get('games_evaluated', games_evaluated)} 場<br />產生時間 {plan['generated_at']}</div>
+      </section>
+
+      <section class="panel manual-panel" id="manual-update">
+        <div>
+          <h2>手動更新</h2>
+          <p>需要立刻抓最新賽程、盤口、蒙地卡羅、Q-量化模型和賽後檢討時，按這裡或回專案資料夾雙擊「手動更新.cmd」。若瀏覽器封鎖執行 cmd，請用資料夾雙擊方式。</p>
+        </div>
+        <div class="manual-actions">
+          <a class="primary" href="../manual_update.cmd">手動更新</a>
+          <a href="../run_auto_once.cmd">立刻更新一次</a>
+          <a href="../start_auto_runner.cmd">開啟常駐自動跑</a>
+          <a href="status.html">查看更新狀態</a>
+        </div>
       </section>
 
       <section class="kpis">
