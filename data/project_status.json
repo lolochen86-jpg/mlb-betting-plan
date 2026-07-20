@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-20T21:08:42",
+  "generated_at": "2026-07-21T00:08:25",
   "history": {
     "games_written": 3923,
     "actual_first_game_date": "2025-03-27",
@@ -12,7 +12,7 @@
     "accuracy_pct": 54.19
   },
   "daily": {
-    "target_date": "2026-07-20",
+    "target_date": "2026-07-21",
     "predictions": 15,
     "high_confidence": 0
   },
@@ -198,6 +198,13 @@
       "final_games": 0,
       "pending_games": 15,
       "accuracy_pct": 0
+    },
+    {
+      "date": "2026-07-21",
+      "predictions": 15,
+      "final_games": 0,
+      "pending_games": 15,
+      "accuracy_pct": 0
     }
   ],
   "odds": [
@@ -363,6 +370,12 @@
     },
     {
       "date": "2026-07-20",
+      "rows": 15,
+      "filled": 15,
+      "missing": []
+    },
+    {
+      "date": "2026-07-21",
       "rows": 15,
       "filled": 15,
       "missing": []
@@ -576,19 +589,27 @@
       "pending_bets": 0,
       "total_pnl": 0,
       "roi_pct": 0
+    },
+    {
+      "date": "2026-07-21",
+      "bets": 0,
+      "final_bets": 0,
+      "pending_bets": 0,
+      "total_pnl": 0,
+      "roi_pct": 0
     }
   ],
   "auto_runner": {
     "mode": "running",
-    "target_date": "2026-07-20",
-    "last_started_at_tw": "2026-07-20T21:00:02+08:00",
-    "last_finished_at_tw": "2026-07-20T13:59:52+08:00",
+    "target_date": "2026-07-21",
+    "last_started_at_tw": "2026-07-21T00:00:03+08:00",
+    "last_finished_at_tw": "2026-07-20T21:08:43+08:00",
     "last_return_code": 0,
     "log": "C:\\Users\\I5-10400F\\Documents\\投注計畫\\logs\\auto_runner\\2026-07-20.workflow.log",
     "health": {
       "ok": true,
       "target_date": "2026-07-20",
-      "checked_at_tw": "2026-07-20T13:59:52+08:00",
+      "checked_at_tw": "2026-07-20T21:08:43+08:00",
       "checks": [
         {
           "name": "daily_predictions",
@@ -643,6 +664,7 @@
     "2026-07-17 尚有 1 場比賽未結算",
     "2026-07-18 尚有 1 場比賽未結算",
     "2026-07-20 尚有 15 場比賽未結算",
+    "2026-07-21 尚有 15 場比賽未結算",
     "2026-06-25 亞利桑那響尾蛇 @ 聖路易紅雀 (Postponed) 尚未取得真實盤口"
   ],
   "project_state": "系統完成，等待外部賽果/盤口"
