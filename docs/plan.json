@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-07-22T00:08:37",
+  "generated_at": "2026-07-22T13:58:49",
   "period": {
     "start": "2025-03-27",
-    "end": "2026-07-20"
+    "end": "2026-07-21"
   },
   "settings": {
     "unit": 100,
@@ -14,14 +14,14 @@
   "data_source": {
     "type": "real_mlb_final_scores",
     "games_csv": "data\\real_mlb_games.csv",
-    "games_evaluated": 3938,
+    "games_evaluated": 3951,
     "actual_first_game_date": "2025-03-27",
-    "actual_last_game_date": "2026-07-20",
+    "actual_last_game_date": "2026-07-21",
     "game_types": [
       "R"
     ],
-    "coverage_warning": "Requested through 2026-07-21, but MLB Stats API returned saved final-score rows only through 2026-07-20.",
-    "generated_at": "2026-07-22T00:00:45",
+    "coverage_warning": null,
+    "generated_at": "2026-07-22T13:50:54",
     "note": "Backtest uses real MLB final scores from saved MLB Stats API schedule data. Odds are still the configured fixed market assumption."
   },
   "bankroll_assumption": 10000,
@@ -30,115 +30,135 @@
   "ranking": [
     {
       "模型": "A-畢氏勝率",
-      "總注": 1173,
-      "勝": 697,
-      "敗": 476,
-      "勝率%": 59.42,
-      "總損益$": 15764.27,
-      "ROI%": 13.44
+      "總注": 1175,
+      "勝": 698,
+      "敗": 477,
+      "勝率%": 59.4,
+      "總損益$": 15755.18,
+      "ROI%": 13.41
     },
     {
       "模型": "E-對照組(Ensemble)",
-      "總注": 1372,
-      "勝": 800,
-      "敗": 572,
-      "勝率%": 58.31,
-      "總損益$": 15528.0,
-      "ROI%": 11.32
+      "總注": 1377,
+      "勝": 802,
+      "敗": 575,
+      "勝率%": 58.24,
+      "總損益$": 15409.82,
+      "ROI%": 11.19
     },
     {
       "模型": "C-ELO評分",
-      "總注": 1407,
-      "勝": 820,
-      "敗": 587,
-      "勝率%": 58.28,
-      "總損益$": 15846.2,
-      "ROI%": 11.26
+      "總注": 1412,
+      "勝": 821,
+      "敗": 591,
+      "勝率%": 58.14,
+      "總損益$": 15537.11,
+      "ROI%": 11.0
     },
     {
       "模型": "B-近期狀態",
-      "總注": 1422,
-      "勝": 801,
-      "敗": 621,
-      "勝率%": 56.33,
-      "總損益$": 10718.91,
-      "ROI%": 7.54
+      "總注": 1427,
+      "勝": 803,
+      "敗": 624,
+      "勝率%": 56.27,
+      "總損益$": 10600.73,
+      "ROI%": 7.43
     },
     {
       "模型": "D-近期失分代理",
-      "總注": 1406,
-      "勝": 773,
-      "敗": 633,
-      "勝率%": 54.98,
-      "總損益$": 6973.43,
-      "ROI%": 4.96
+      "總注": 1411,
+      "勝": 775,
+      "敗": 636,
+      "勝率%": 54.93,
+      "總損益$": 6855.25,
+      "ROI%": 4.86
     }
   ],
   "accuracy_ranking": [
     {
       "模型": "A-畢氏勝率",
-      "預測場次": 3859,
-      "正確": 2092,
-      "錯誤": 1767,
+      "預測場次": 3872,
+      "正確": 2099,
+      "錯誤": 1773,
       "準確率%": 54.21
     },
     {
       "模型": "C-ELO評分",
-      "預測場次": 3938,
-      "正確": 2119,
-      "錯誤": 1819,
-      "準確率%": 53.81
+      "預測場次": 3951,
+      "正確": 2123,
+      "錯誤": 1828,
+      "準確率%": 53.73
     },
     {
       "模型": "B-近期狀態",
-      "預測場次": 3859,
-      "正確": 2064,
-      "錯誤": 1795,
-      "準確率%": 53.49
+      "預測場次": 3872,
+      "正確": 2069,
+      "錯誤": 1803,
+      "準確率%": 53.43
     },
     {
       "模型": "E-對照組(Ensemble)",
-      "預測場次": 3938,
-      "正確": 2103,
-      "錯誤": 1835,
-      "準確率%": 53.4
+      "預測場次": 3951,
+      "正確": 2107,
+      "錯誤": 1844,
+      "準確率%": 53.33
     },
     {
       "模型": "D-近期失分代理",
-      "預測場次": 3859,
-      "正確": 2012,
-      "錯誤": 1847,
-      "準確率%": 52.14
+      "預測場次": 3872,
+      "正確": 2018,
+      "錯誤": 1854,
+      "準確率%": 52.12
     }
   ],
   "accuracy_source": {
     "type": "real_mlb_final_scores",
     "games_csv": "data\\real_mlb_games.csv",
-    "games_evaluated": 3938,
+    "games_evaluated": 3951,
     "note": "Pure winner-prediction accuracy only. Odds, edge, stake, and ROI are intentionally excluded."
   },
   "accuracy_metrics": {
-    "predictions": 3859,
-    "correct": 2092,
-    "wrong": 1767,
+    "predictions": 3872,
+    "correct": 2099,
+    "wrong": 1773,
     "accuracy_pct": 54.21
   },
   "production_metrics": {
-    "total_bets": 1173,
-    "wins": 697,
-    "losses": 476,
-    "win_rate_pct": 59.42,
-    "total_pnl": 15764.27,
-    "roi_pct": 13.44,
-    "active_days": 287,
+    "total_bets": 1175,
+    "wins": 698,
+    "losses": 477,
+    "win_rate_pct": 59.4,
+    "total_pnl": 15755.18,
+    "roi_pct": 13.41,
+    "active_days": 288,
     "winning_days": 169,
-    "losing_days": 118,
-    "positive_day_rate_pct": 58.89,
+    "losing_days": 119,
+    "positive_day_rate_pct": 58.68,
     "max_drawdown": -1354.51,
-    "last_14_active_day_pnl": 945.48,
-    "last_record_date": "2026-07-20"
+    "last_14_active_day_pnl": 954.57,
+    "last_record_date": "2026-07-21"
   },
   "recent_bets": [
+    {
+      "date": "2026-07-21",
+      "matchup_zh": "運動家 @ 亞利桑那響尾蛇",
+      "pitchers_zh": "傑克 佩 / 柯 凱",
+      "pick_zh": "亞利桑那響尾蛇",
+      "score": "5-6",
+      "confidence": 0.5557,
+      "edge": 0.0318,
+      "result": "win"
+    },
+    {
+      "date": "2026-07-21",
+      "matchup_zh": "紐約大都會 @ 密爾瓦基釀酒人",
+      "pitchers_zh": "札 特赫歐爾恩特歐恩 / 布蘭登 斯普爾歐阿特",
+      "pick_zh": "密爾瓦基釀酒人",
+      "score": "4-0",
+      "confidence": 0.5765,
+      "edge": 0.0527,
+      "result": "loss"
+    },
     {
       "date": "2026-07-20",
       "matchup_zh": "運動家 @ 亞利桑那響尾蛇",
@@ -237,26 +257,6 @@
       "score": "6-8",
       "confidence": 0.5855,
       "edge": 0.0617,
-      "result": "win"
-    },
-    {
-      "date": "2026-07-17",
-      "matchup_zh": "明尼蘇達雙城 @ 芝加哥小熊",
-      "pitchers_zh": "貝利 歐伯 / 柯里 雷",
-      "pick_zh": "芝加哥小熊",
-      "score": "5-2",
-      "confidence": 0.5774,
-      "edge": 0.0536,
-      "result": "loss"
-    },
-    {
-      "date": "2026-07-17",
-      "matchup_zh": "辛辛那提紅人 @ 科羅拉多洛磯",
-      "pitchers_zh": "布雷迪 西 / 加布 赫優格赫伊斯",
-      "pick_zh": "辛辛那提紅人",
-      "score": "7-2",
-      "confidence": 0.5789,
-      "edge": 0.0551,
       "result": "win"
     }
   ],
@@ -2650,6 +2650,14 @@
       "losses": 1,
       "pnl": 172.73,
       "cumulative_pnl": 15764.27
+    },
+    {
+      "date": "2026-07-21",
+      "bets": 2,
+      "wins": 1,
+      "losses": 1,
+      "pnl": -9.09,
+      "cumulative_pnl": 15755.18
     }
   ]
 }
