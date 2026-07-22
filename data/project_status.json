@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-07-22T21:07:58",
+  "generated_at": "2026-07-23T00:05:10",
   "history": {
-    "games_written": 3951,
+    "games_written": 3955,
     "actual_first_game_date": "2025-03-27",
-    "actual_last_game_date": "2026-07-21"
+    "actual_last_game_date": "2026-07-22"
   },
   "accuracy": {
     "best_model": "A-畢氏勝率",
-    "predictions": 3872,
+    "predictions": 3876,
     "correct": 2099,
-    "accuracy_pct": 54.21
+    "accuracy_pct": 54.15
   },
   "daily": {
-    "target_date": "2026-07-22",
-    "predictions": 17,
+    "target_date": "2026-07-23",
+    "predictions": 5,
     "high_confidence": 0
   },
   "settlements": [
@@ -212,6 +212,13 @@
       "final_games": 0,
       "pending_games": 17,
       "accuracy_pct": 0
+    },
+    {
+      "date": "2026-07-23",
+      "predictions": 5,
+      "final_games": 0,
+      "pending_games": 5,
+      "accuracy_pct": 0
     }
   ],
   "odds": [
@@ -223,7 +230,7 @@
         "費城費城人 @ 華盛頓國民 (Final)",
         "德州遊騎兵 @ 多倫多藍鳥 (Final)",
         "堪薩斯市皇家 @ 坦帕灣光芒 (Final)",
-        "亞利桑那響尾蛇 @ 聖路易紅雀 (Postponed)",
+        "亞利桑那響尾蛇 @ 聖路易紅雀 (Scheduled)",
         "運動家 @ 舊金山巨人 (Final)",
         "西雅圖水手 @ 匹茲堡海盜 (Final)",
         "芝加哥小熊 @ 紐約大都會 (Final)",
@@ -392,6 +399,15 @@
       "rows": 15,
       "filled": 15,
       "missing": []
+    },
+    {
+      "date": "2026-07-23",
+      "rows": 5,
+      "filled": 3,
+      "missing": [
+        "亞利桑那響尾蛇 @ 聖路易紅雀 (Scheduled)",
+        "堪薩斯市皇家 @ 底特律老虎 (Scheduled)"
+      ]
     }
   ],
   "roi": [
@@ -618,19 +634,27 @@
       "pending_bets": 0,
       "total_pnl": 0,
       "roi_pct": 0
+    },
+    {
+      "date": "2026-07-23",
+      "bets": 0,
+      "final_bets": 0,
+      "pending_bets": 0,
+      "total_pnl": 0,
+      "roi_pct": 0
     }
   ],
   "auto_runner": {
     "mode": "running",
-    "target_date": "2026-07-22",
-    "last_started_at_tw": "2026-07-22T21:00:02+08:00",
-    "last_finished_at_tw": "2026-07-22T13:58:50+08:00",
+    "target_date": "2026-07-23",
+    "last_started_at_tw": "2026-07-23T00:00:03+08:00",
+    "last_finished_at_tw": "2026-07-22T21:07:58+08:00",
     "last_return_code": 0,
     "log": "C:\\Users\\I5-10400F\\Documents\\投注計畫\\logs\\auto_runner\\2026-07-22.workflow.log",
     "health": {
       "ok": true,
       "target_date": "2026-07-22",
-      "checked_at_tw": "2026-07-22T13:58:50+08:00",
+      "checked_at_tw": "2026-07-22T21:07:58+08:00",
       "checks": [
         {
           "name": "daily_predictions",
@@ -686,7 +710,10 @@
     "2026-07-18 尚有 1 場比賽未結算",
     "2026-07-21 尚有 2 場比賽未結算",
     "2026-07-22 尚有 17 場比賽未結算",
-    "2026-06-25 亞利桑那響尾蛇 @ 聖路易紅雀 (Postponed) 尚未取得真實盤口"
+    "2026-07-23 尚有 5 場比賽未結算",
+    "2026-06-25 亞利桑那響尾蛇 @ 聖路易紅雀 (Scheduled) 尚未開打或來源尚未開盤",
+    "2026-07-23 亞利桑那響尾蛇 @ 聖路易紅雀 (Scheduled) 尚未開打或來源尚未開盤",
+    "2026-07-23 堪薩斯市皇家 @ 底特律老虎 (Scheduled) 尚未開打或來源尚未開盤"
   ],
   "project_state": "系統完成，等待外部賽果/盤口"
 }

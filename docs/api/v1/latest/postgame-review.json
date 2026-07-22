@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-07-22T21:07:58",
-  "latest_review_date": "2026-07-22",
+  "generated_at": "2026-07-23T00:05:08",
+  "latest_review_date": "2026-07-23",
   "days": [
     {
       "date": "2026-06-25",
@@ -14271,6 +14271,232 @@
           "predicted_total": 9.81,
           "actual_total": null,
           "total_pick": "over",
+          "total_correct": null,
+          "roi_settlement": "",
+          "pnl": 0.0,
+          "reason_codes": [
+            "pending"
+          ],
+          "notes": [
+            "尚未完賽，等待賽後自動結算真實比分。"
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2026-07-23",
+      "phase": "賽前預測待結算",
+      "summary": {
+        "games": 5,
+        "final_games": 0,
+        "pending_games": 5,
+        "winner_correct": 0,
+        "winner_accuracy_pct": 0.0,
+        "totals_games": 0,
+        "totals_correct": 0,
+        "totals_accuracy_pct": 0.0,
+        "roi_bets": 0,
+        "pnl": 0,
+        "cumulative": {
+          "games": 346,
+          "final_games": 318,
+          "pending_games": 28,
+          "winner_correct": 170,
+          "totals_games": 293,
+          "totals_correct": 147,
+          "roi_bets": 3,
+          "pnl": -300.0,
+          "winner_accuracy_pct": 53.46,
+          "totals_accuracy_pct": 50.17
+        }
+      },
+      "highlights": [
+        "尚未完賽；目前有 1 場高信心賽前預測待追蹤。"
+      ],
+      "misses": [
+        "等待真實比分後，系統會自動補上勝方、大小分與投注 ROI 檢討。"
+      ],
+      "games": [
+        {
+          "date": "2026-07-23",
+          "game_pk": "824893",
+          "game_time_tw": "2026-07-24 00:15",
+          "game_time_utc": "2026-07-23T16:15:00Z",
+          "matchup_zh": "聖地牙哥教士 @ 亞特蘭大勇士",
+          "prediction_zh": "亞特蘭大勇士",
+          "confidence": 0.5262,
+          "predicted_score_zh": "聖地牙哥教士 4.31 : 亞特蘭大勇士 5.87",
+          "predicted_away_score": 4.31,
+          "predicted_home_score": 5.87,
+          "predicted_score_total": 10.18,
+          "score_pick_zh": "亞特蘭大勇士",
+          "score_alignment": "一致",
+          "score_total_side": "over",
+          "total_gap": 0.0,
+          "totals_alignment": "等待官方打線",
+          "model_consistency": [
+            "勝方一致",
+            "大小分一致"
+          ],
+          "score": "",
+          "actual_winner_zh": "",
+          "winner_correct": null,
+          "total_line": 8.5,
+          "predicted_total": 10.18,
+          "actual_total": null,
+          "total_pick": "over",
+          "total_correct": null,
+          "roi_settlement": "",
+          "pnl": 0.0,
+          "reason_codes": [
+            "pending"
+          ],
+          "notes": [
+            "尚未完賽，等待賽後自動結算真實比分。"
+          ]
+        },
+        {
+          "date": "2026-07-23",
+          "game_pk": "824406",
+          "game_time_tw": "2026-07-24 01:10",
+          "game_time_utc": "2026-07-23T17:10:00Z",
+          "matchup_zh": "明尼蘇達雙城 @ 克里夫蘭守護者",
+          "prediction_zh": "克里夫蘭守護者",
+          "confidence": 0.5438,
+          "predicted_score_zh": "明尼蘇達雙城 4.32 : 克里夫蘭守護者 4.34",
+          "predicted_away_score": 4.32,
+          "predicted_home_score": 4.34,
+          "predicted_score_total": 8.66,
+          "score_pick_zh": "克里夫蘭守護者",
+          "score_alignment": "一致",
+          "score_total_side": "over",
+          "total_gap": 0.0,
+          "totals_alignment": "等待官方打線",
+          "model_consistency": [
+            "勝方一致",
+            "大小分一致"
+          ],
+          "score": "",
+          "actual_winner_zh": "",
+          "winner_correct": null,
+          "total_line": 7.5,
+          "predicted_total": 8.66,
+          "actual_total": null,
+          "total_pick": "over",
+          "total_correct": null,
+          "roi_settlement": "",
+          "pnl": 0.0,
+          "reason_codes": [
+            "pending"
+          ],
+          "notes": [
+            "尚未完賽，等待賽後自動結算真實比分。"
+          ]
+        },
+        {
+          "date": "2026-07-23",
+          "game_pk": "822785",
+          "game_time_tw": "2026-07-24 03:07",
+          "game_time_utc": "2026-07-23T19:07:00Z",
+          "matchup_zh": "坦帕灣光芒 @ 多倫多藍鳥",
+          "prediction_zh": "多倫多藍鳥",
+          "confidence": 0.5111,
+          "predicted_score_zh": "坦帕灣光芒 5.05 : 多倫多藍鳥 4.07",
+          "predicted_away_score": 5.05,
+          "predicted_home_score": 4.07,
+          "predicted_score_total": 9.12,
+          "score_pick_zh": "坦帕灣光芒",
+          "score_alignment": "模型分歧",
+          "score_total_side": "over",
+          "total_gap": 0.0,
+          "totals_alignment": "等待官方打線",
+          "model_consistency": [
+            "勝方分歧",
+            "大小分一致"
+          ],
+          "score": "",
+          "actual_winner_zh": "",
+          "winner_correct": null,
+          "total_line": 8.5,
+          "predicted_total": 9.12,
+          "actual_total": null,
+          "total_pick": "over",
+          "total_correct": null,
+          "roi_settlement": "",
+          "pnl": 0.0,
+          "reason_codes": [
+            "pending"
+          ],
+          "notes": [
+            "尚未完賽，等待賽後自動結算真實比分。"
+          ]
+        },
+        {
+          "date": "2026-07-23",
+          "game_pk": "823042",
+          "game_time_tw": "2026-07-24 05:15",
+          "game_time_utc": "2026-07-23T21:15:00Z",
+          "matchup_zh": "亞利桑那響尾蛇 @ 聖路易紅雀",
+          "prediction_zh": "聖路易紅雀",
+          "confidence": 0.5082,
+          "predicted_score_zh": "亞利桑那響尾蛇 4.48 : 聖路易紅雀 4.86",
+          "predicted_away_score": 4.48,
+          "predicted_home_score": 4.86,
+          "predicted_score_total": 9.33,
+          "score_pick_zh": "聖路易紅雀",
+          "score_alignment": "一致",
+          "score_total_side": "",
+          "total_gap": null,
+          "totals_alignment": "無台灣運彩大小分盤口",
+          "model_consistency": [
+            "勝方一致",
+            "無台灣運彩大小分盤口"
+          ],
+          "score": "",
+          "actual_winner_zh": "",
+          "winner_correct": null,
+          "total_line": null,
+          "predicted_total": null,
+          "actual_total": null,
+          "total_pick": "",
+          "total_correct": null,
+          "roi_settlement": "",
+          "pnl": 0.0,
+          "reason_codes": [
+            "pending"
+          ],
+          "notes": [
+            "尚未完賽，等待賽後自動結算真實比分。"
+          ]
+        },
+        {
+          "date": "2026-07-23",
+          "game_pk": "824247",
+          "game_time_tw": "2026-07-24 06:40",
+          "game_time_utc": "2026-07-23T22:40:00Z",
+          "matchup_zh": "堪薩斯市皇家 @ 底特律老虎",
+          "prediction_zh": "底特律老虎",
+          "confidence": 0.555,
+          "predicted_score_zh": "堪薩斯市皇家 3.92 : 底特律老虎 4.91",
+          "predicted_away_score": 3.92,
+          "predicted_home_score": 4.91,
+          "predicted_score_total": 8.83,
+          "score_pick_zh": "底特律老虎",
+          "score_alignment": "一致",
+          "score_total_side": "",
+          "total_gap": null,
+          "totals_alignment": "無台灣運彩大小分盤口",
+          "model_consistency": [
+            "勝方一致",
+            "無台灣運彩大小分盤口"
+          ],
+          "score": "",
+          "actual_winner_zh": "",
+          "winner_correct": null,
+          "total_line": null,
+          "predicted_total": null,
+          "actual_total": null,
+          "total_pick": "",
           "total_correct": null,
           "roi_settlement": "",
           "pnl": 0.0,
