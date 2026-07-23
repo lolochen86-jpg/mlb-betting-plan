@@ -1,37 +1,38 @@
 {
-  "generated_at": "2026-07-23T13:52:42",
+  "generated_at": "2026-07-23T21:03:37",
   "target_date": "2026-07-23",
   "model": "統一得分期望 v1",
   "postgame_calibration": {
     "source": "postgame_review",
     "days": 10,
-    "games": 105,
-    "winner_accuracy": 0.5714,
-    "low_confidence_accuracy": 0.5357,
-    "score_total_bias": -0.08,
-    "score_total_bias_applied": -0.08,
-    "totals_recent_bias": -1.348,
+    "games": 122,
+    "winner_accuracy": 0.5738,
+    "low_confidence_accuracy": 0.5368,
+    "score_total_bias": -0.188,
+    "score_total_bias_applied": -0.19,
+    "totals_recent_bias": -1.062,
     "totals_recent_bias_applied": -1.0,
-    "totals_recent_games": 13,
+    "totals_recent_games": 30,
     "winner_min_confidence": 0.55,
     "totals_min_edge": 0.025,
     "totals_min_prob": 0.58,
     "totals_min_line_gap": 1.0,
     "mismatch_notes": 0,
     "reason_counts": {
-      "one_run_volatility": 29,
-      "low_confidence_hit": 45,
-      "totals_miss": 56,
-      "large_totals_error": 33,
-      "high_confidence_hit": 15,
-      "low_confidence_miss": 21,
-      "high_confidence_miss": 6
+      "one_run_volatility": 33,
+      "low_confidence_hit": 51,
+      "totals_miss": 64,
+      "large_totals_error": 37,
+      "high_confidence_hit": 19,
+      "low_confidence_miss": 22,
+      "high_confidence_miss": 8
     },
     "data_gaps": [
-      "大小分大偏差偏多：優先補真實天氣、球場風向、先發/牛棚臨場狀態。"
+      "大小分大偏差偏多：優先補真實天氣、球場風向、先發/牛棚臨場狀態。",
+      "高信心勝方失準偏多：優先補官方先發打線、牛棚可用性、傷兵/輪休。"
     ],
     "notes": [
-      "近三天大小分模型平均高估 1.35 分，今日總分期望降溫 -1.00 分。"
+      "近三天大小分模型平均高估 1.06 分，今日總分期望降溫 -1.00 分。"
     ]
   },
   "summary": {
@@ -49,9 +50,9 @@
       "matchup_zh": "堪薩斯市皇家 @ 底特律老虎",
       "away_zh": "堪薩斯市皇家",
       "home_zh": "底特律老虎",
-      "away_expected_runs": 3.35,
-      "home_expected_runs": 4.19,
-      "expected_total": 7.54,
+      "away_expected_runs": 3.3,
+      "home_expected_runs": 4.13,
+      "expected_total": 7.43,
       "pick_side": "home",
       "prediction_zh": "底特律老虎",
       "home_win_prob": 0.611,
@@ -96,7 +97,7 @@
         "unique_recent_relievers": 10,
         "fatigue_runs": 0.225
       },
-      "score_bias_applied": -0.08,
+      "score_bias_applied": -0.19,
       "totals_recent_bias_applied": -1.0,
       "missing_data": [
         "injury_absence_feed"
@@ -112,9 +113,9 @@
       "matchup_zh": "明尼蘇達雙城 @ 克里夫蘭守護者",
       "away_zh": "明尼蘇達雙城",
       "home_zh": "克里夫蘭守護者",
-      "away_expected_runs": 3.79,
-      "home_expected_runs": 3.8,
-      "expected_total": 7.59,
+      "away_expected_runs": 3.73,
+      "home_expected_runs": 3.75,
+      "expected_total": 7.48,
       "pick_side": "home",
       "prediction_zh": "克里夫蘭守護者",
       "home_win_prob": 0.5022,
@@ -159,7 +160,7 @@
         "unique_recent_relievers": 7,
         "fatigue_runs": 0.09
       },
-      "score_bias_applied": -0.08,
+      "score_bias_applied": -0.19,
       "totals_recent_bias_applied": -1.0,
       "missing_data": [
         "injury_absence_feed"
@@ -175,9 +176,9 @@
       "matchup_zh": "聖地牙哥教士 @ 亞特蘭大勇士",
       "away_zh": "聖地牙哥教士",
       "home_zh": "亞特蘭大勇士",
-      "away_expected_runs": 3.65,
-      "home_expected_runs": 5.42,
-      "expected_total": 9.07,
+      "away_expected_runs": 3.6,
+      "home_expected_runs": 5.36,
+      "expected_total": 8.96,
       "pick_side": "home",
       "prediction_zh": "亞特蘭大勇士",
       "home_win_prob": 0.7,
@@ -222,7 +223,7 @@
         "unique_recent_relievers": 8,
         "fatigue_runs": 0.0
       },
-      "score_bias_applied": -0.08,
+      "score_bias_applied": -0.19,
       "totals_recent_bias_applied": -1.0,
       "missing_data": [
         "injury_absence_feed"
@@ -238,9 +239,9 @@
       "matchup_zh": "坦帕灣光芒 @ 多倫多藍鳥",
       "away_zh": "坦帕灣光芒",
       "home_zh": "多倫多藍鳥",
-      "away_expected_runs": 4.38,
-      "home_expected_runs": 3.38,
-      "expected_total": 7.77,
+      "away_expected_runs": 4.33,
+      "home_expected_runs": 3.33,
+      "expected_total": 7.66,
       "pick_side": "away",
       "prediction_zh": "坦帕灣光芒",
       "home_win_prob": 0.3684,
@@ -285,7 +286,7 @@
         "unique_recent_relievers": 6,
         "fatigue_runs": 0.045
       },
-      "score_bias_applied": -0.08,
+      "score_bias_applied": -0.19,
       "totals_recent_bias_applied": -1.0,
       "missing_data": [
         "injury_absence_feed"
@@ -301,9 +302,9 @@
       "matchup_zh": "亞利桑那響尾蛇 @ 聖路易紅雀",
       "away_zh": "亞利桑那響尾蛇",
       "home_zh": "聖路易紅雀",
-      "away_expected_runs": 3.99,
-      "home_expected_runs": 4.14,
-      "expected_total": 8.13,
+      "away_expected_runs": 3.94,
+      "home_expected_runs": 4.08,
+      "expected_total": 8.02,
       "pick_side": "home",
       "prediction_zh": "聖路易紅雀",
       "home_win_prob": 0.5192,
@@ -348,7 +349,7 @@
         "unique_recent_relievers": 7,
         "fatigue_runs": 0.045
       },
-      "score_bias_applied": -0.08,
+      "score_bias_applied": -0.19,
       "totals_recent_bias_applied": -1.0,
       "missing_data": [
         "injury_absence_feed"
