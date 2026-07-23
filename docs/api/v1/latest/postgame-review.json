@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-23T00:05:08",
+  "generated_at": "2026-07-23T13:53:48",
   "latest_review_date": "2026-07-23",
   "days": [
     {
@@ -13603,36 +13603,41 @@
     },
     {
       "date": "2026-07-22",
-      "phase": "賽前預測待結算",
+      "phase": "賽後檢討",
       "summary": {
         "games": 17,
-        "final_games": 0,
-        "pending_games": 17,
-        "winner_correct": 0,
-        "winner_accuracy_pct": 0.0,
-        "totals_games": 0,
-        "totals_correct": 0,
-        "totals_accuracy_pct": 0.0,
+        "final_games": 17,
+        "pending_games": 0,
+        "winner_correct": 10,
+        "winner_accuracy_pct": 58.82,
+        "totals_games": 17,
+        "totals_correct": 9,
+        "totals_accuracy_pct": 52.94,
         "roi_bets": 0,
         "pnl": 0,
         "cumulative": {
           "games": 341,
-          "final_games": 318,
-          "pending_games": 23,
-          "winner_correct": 170,
-          "totals_games": 293,
-          "totals_correct": 147,
+          "final_games": 335,
+          "pending_games": 6,
+          "winner_correct": 180,
+          "totals_games": 310,
+          "totals_correct": 156,
           "roi_bets": 3,
           "pnl": -300.0,
-          "winner_accuracy_pct": 53.46,
-          "totals_accuracy_pct": 50.17
+          "winner_accuracy_pct": 53.73,
+          "totals_accuracy_pct": 50.32
         }
       },
       "highlights": [
-        "尚未完賽；目前有 6 場高信心賽前預測待追蹤。"
+        "巴爾的摩金鶯 @ 波士頓紅襪：高信心勝方命中。",
+        "紐約大都會 @ 密爾瓦基釀酒人：高信心勝方命中。",
+        "運動家 @ 亞利桑那響尾蛇：高信心勝方命中。"
       ],
       "misses": [
-        "等待真實比分後，系統會自動補上勝方、大小分與投注 ROI 檢討。"
+        "匹茲堡海盜 @ 紐約洋基：紐約洋基 未命中，比分 5-3。",
+        "辛辛那提紅人 @ 西雅圖水手：西雅圖水手 未命中，比分 5-3。",
+        "明尼蘇達雙城 @ 克里夫蘭守護者：克里夫蘭守護者 未命中，比分 10-6。",
+        "巴爾的摩金鶯 @ 波士頓紅襪：波士頓紅襪 未命中，比分 5-1。"
       ],
       "games": [
         {
@@ -13656,21 +13661,23 @@
             "勝方分歧",
             "大小分一致"
           ],
-          "score": "",
-          "actual_winner_zh": "",
-          "winner_correct": null,
+          "score": "5-3",
+          "actual_winner_zh": "匹茲堡海盜",
+          "winner_correct": false,
           "total_line": 9.5,
           "predicted_total": 10.1,
-          "actual_total": null,
+          "actual_total": 8,
           "total_pick": "over",
-          "total_correct": null,
+          "total_correct": false,
           "roi_settlement": "",
           "pnl": 0.0,
           "reason_codes": [
-            "pending"
+            "high_confidence_miss",
+            "totals_miss"
           ],
           "notes": [
-            "尚未完賽，等待賽後自動結算真實比分。"
+            "高信心失準，需要回看先發投手、牛棚或打線是否有臨場變化。",
+            "大小分偏差 2.1 分，需檢查投手/天氣/打線係數。"
           ]
         },
         {
@@ -13694,21 +13701,21 @@
             "勝方一致",
             "大小分一致"
           ],
-          "score": "",
-          "actual_winner_zh": "",
-          "winner_correct": null,
+          "score": "3-6",
+          "actual_winner_zh": "波士頓紅襪",
+          "winner_correct": true,
           "total_line": 9.5,
           "predicted_total": 8.7,
-          "actual_total": null,
+          "actual_total": 9,
           "total_pick": "under",
-          "total_correct": null,
+          "total_correct": true,
           "roi_settlement": "",
           "pnl": 0.0,
           "reason_codes": [
-            "pending"
+            "high_confidence_hit"
           ],
           "notes": [
-            "尚未完賽，等待賽後自動結算真實比分。"
+            "高信心方向有命中，這類條件可列為穩定樣本繼續追蹤。"
           ]
         },
         {
@@ -13732,21 +13739,25 @@
             "勝方一致",
             "大小分一致"
           ],
-          "score": "",
-          "actual_winner_zh": "",
-          "winner_correct": null,
+          "score": "3-4",
+          "actual_winner_zh": "密爾瓦基釀酒人",
+          "winner_correct": true,
           "total_line": 7.5,
           "predicted_total": 8.85,
-          "actual_total": null,
+          "actual_total": 7,
           "total_pick": "over",
-          "total_correct": null,
+          "total_correct": false,
           "roi_settlement": "",
           "pnl": 0.0,
           "reason_codes": [
-            "pending"
+            "high_confidence_hit",
+            "one_run_volatility",
+            "totals_miss"
           ],
           "notes": [
-            "尚未完賽，等待賽後自動結算真實比分。"
+            "高信心方向有命中，這類條件可列為穩定樣本繼續追蹤。",
+            "一分差比賽，模型即使方向錯也屬高波動結果。",
+            "大小分偏差 1.8 分，需檢查投手/天氣/打線係數。"
           ]
         },
         {
@@ -13770,21 +13781,23 @@
             "勝方分歧",
             "大小分一致"
           ],
-          "score": "",
-          "actual_winner_zh": "",
-          "winner_correct": null,
+          "score": "4-5",
+          "actual_winner_zh": "堪薩斯市皇家",
+          "winner_correct": true,
           "total_line": 8.5,
           "predicted_total": 9.68,
-          "actual_total": null,
+          "actual_total": 9,
           "total_pick": "over",
-          "total_correct": null,
+          "total_correct": true,
           "roi_settlement": "",
           "pnl": 0.0,
           "reason_codes": [
-            "pending"
+            "low_confidence_hit",
+            "one_run_volatility"
           ],
           "notes": [
-            "尚未完賽，等待賽後自動結算真實比分。"
+            "方向正確，但信心不高，較適合作為觀察而非重注。",
+            "一分差比賽，模型即使方向錯也屬高波動結果。"
           ]
         },
         {
@@ -13808,21 +13821,21 @@
             "勝方一致",
             "大小分一致"
           ],
-          "score": "",
-          "actual_winner_zh": "",
-          "winner_correct": null,
+          "score": "8-0",
+          "actual_winner_zh": "華盛頓國民",
+          "winner_correct": true,
           "total_line": 11.5,
           "predicted_total": 11.05,
-          "actual_total": null,
+          "actual_total": 8,
           "total_pick": "under",
-          "total_correct": null,
+          "total_correct": true,
           "roi_settlement": "",
           "pnl": 0.0,
           "reason_codes": [
-            "pending"
+            "low_confidence_hit"
           ],
           "notes": [
-            "尚未完賽，等待賽後自動結算真實比分。"
+            "方向正確，但信心不高，較適合作為觀察而非重注。"
           ]
         },
         {
@@ -13846,22 +13859,18 @@
             "勝方一致",
             "大小分一致"
           ],
-          "score": "",
-          "actual_winner_zh": "",
-          "winner_correct": null,
+          "score": "5-3",
+          "actual_winner_zh": "辛辛那提紅人",
+          "winner_correct": false,
           "total_line": 8.5,
           "predicted_total": 8.37,
-          "actual_total": null,
+          "actual_total": 8,
           "total_pick": "under",
-          "total_correct": null,
+          "total_correct": true,
           "roi_settlement": "",
           "pnl": 0.0,
-          "reason_codes": [
-            "pending"
-          ],
-          "notes": [
-            "尚未完賽，等待賽後自動結算真實比分。"
-          ]
+          "reason_codes": [],
+          "notes": []
         },
         {
           "date": "2026-07-22",
@@ -13884,21 +13893,21 @@
             "勝方一致",
             "大小分一致"
           ],
-          "score": "",
-          "actual_winner_zh": "",
-          "winner_correct": null,
+          "score": "5-15",
+          "actual_winner_zh": "亞利桑那響尾蛇",
+          "winner_correct": true,
           "total_line": 9.5,
           "predicted_total": 10.26,
-          "actual_total": null,
+          "actual_total": 20,
           "total_pick": "over",
-          "total_correct": null,
+          "total_correct": true,
           "roi_settlement": "",
           "pnl": 0.0,
           "reason_codes": [
-            "pending"
+            "high_confidence_hit"
           ],
           "notes": [
-            "尚未完賽，等待賽後自動結算真實比分。"
+            "高信心方向有命中，這類條件可列為穩定樣本繼續追蹤。"
           ]
         },
         {
@@ -13922,21 +13931,26 @@
             "勝方一致",
             "大小分一致"
           ],
-          "score": "",
-          "actual_winner_zh": "",
-          "winner_correct": null,
+          "score": "1-0",
+          "actual_winner_zh": "聖路易紅雀",
+          "winner_correct": true,
           "total_line": 8.5,
           "predicted_total": 8.67,
-          "actual_total": null,
+          "actual_total": 1,
           "total_pick": "over",
-          "total_correct": null,
+          "total_correct": false,
           "roi_settlement": "",
           "pnl": 0.0,
           "reason_codes": [
-            "pending"
+            "low_confidence_hit",
+            "one_run_volatility",
+            "totals_miss",
+            "large_totals_error"
           ],
           "notes": [
-            "尚未完賽，等待賽後自動結算真實比分。"
+            "方向正確，但信心不高，較適合作為觀察而非重注。",
+            "一分差比賽，模型即使方向錯也屬高波動結果。",
+            "大小分偏差 7.7 分，需檢查投手/天氣/打線係數。"
           ]
         },
         {
@@ -13960,21 +13974,21 @@
             "勝方一致",
             "大小分一致"
           ],
-          "score": "",
-          "actual_winner_zh": "",
-          "winner_correct": null,
+          "score": "9-5",
+          "actual_winner_zh": "洛杉磯道奇",
+          "winner_correct": true,
           "total_line": 9.5,
           "predicted_total": 9.87,
-          "actual_total": null,
+          "actual_total": 14,
           "total_pick": "over",
-          "total_correct": null,
+          "total_correct": true,
           "roi_settlement": "",
           "pnl": 0.0,
           "reason_codes": [
-            "pending"
+            "low_confidence_hit"
           ],
           "notes": [
-            "尚未完賽，等待賽後自動結算真實比分。"
+            "方向正確，但信心不高，較適合作為觀察而非重注。"
           ]
         },
         {
@@ -13998,22 +14012,18 @@
             "勝方分歧",
             "大小分一致"
           ],
-          "score": "",
-          "actual_winner_zh": "",
-          "winner_correct": null,
+          "score": "10-6",
+          "actual_winner_zh": "明尼蘇達雙城",
+          "winner_correct": false,
           "total_line": 7.5,
           "predicted_total": 8.86,
-          "actual_total": null,
+          "actual_total": 16,
           "total_pick": "over",
-          "total_correct": null,
+          "total_correct": true,
           "roi_settlement": "",
           "pnl": 0.0,
-          "reason_codes": [
-            "pending"
-          ],
-          "notes": [
-            "尚未完賽，等待賽後自動結算真實比分。"
-          ]
+          "reason_codes": [],
+          "notes": []
         },
         {
           "date": "2026-07-22",
@@ -14036,21 +14046,24 @@
             "勝方分歧",
             "大小分一致"
           ],
-          "score": "",
-          "actual_winner_zh": "",
-          "winner_correct": null,
+          "score": "0-2",
+          "actual_winner_zh": "紐約洋基",
+          "winner_correct": true,
           "total_line": 9.5,
           "predicted_total": 9.76,
-          "actual_total": null,
+          "actual_total": 2,
           "total_pick": "over",
-          "total_correct": null,
+          "total_correct": false,
           "roi_settlement": "",
           "pnl": 0.0,
           "reason_codes": [
-            "pending"
+            "high_confidence_hit",
+            "totals_miss",
+            "large_totals_error"
           ],
           "notes": [
-            "尚未完賽，等待賽後自動結算真實比分。"
+            "高信心方向有命中，這類條件可列為穩定樣本繼續追蹤。",
+            "大小分偏差 7.8 分，需檢查投手/天氣/打線係數。"
           ]
         },
         {
@@ -14074,21 +14087,23 @@
             "勝方分歧",
             "大小分一致"
           ],
-          "score": "",
-          "actual_winner_zh": "",
-          "winner_correct": null,
+          "score": "4-2",
+          "actual_winner_zh": "坦帕灣光芒",
+          "winner_correct": false,
           "total_line": 7.5,
           "predicted_total": 8.72,
-          "actual_total": null,
+          "actual_total": 6,
           "total_pick": "over",
-          "total_correct": null,
+          "total_correct": false,
           "roi_settlement": "",
           "pnl": 0.0,
           "reason_codes": [
-            "pending"
+            "low_confidence_miss",
+            "totals_miss"
           ],
           "notes": [
-            "尚未完賽，等待賽後自動結算真實比分。"
+            "信心接近五五波，賽前應降權或避免當主推。",
+            "大小分偏差 2.7 分，需檢查投手/天氣/打線係數。"
           ]
         },
         {
@@ -14112,21 +14127,21 @@
             "勝方一致",
             "大小分一致"
           ],
-          "score": "",
-          "actual_winner_zh": "",
-          "winner_correct": null,
+          "score": "5-1",
+          "actual_winner_zh": "巴爾的摩金鶯",
+          "winner_correct": false,
           "total_line": 9.5,
           "predicted_total": 8.69,
-          "actual_total": null,
+          "actual_total": 6,
           "total_pick": "under",
-          "total_correct": null,
+          "total_correct": true,
           "roi_settlement": "",
           "pnl": 0.0,
           "reason_codes": [
-            "pending"
+            "high_confidence_miss"
           ],
           "notes": [
-            "尚未完賽，等待賽後自動結算真實比分。"
+            "高信心失準，需要回看先發投手、牛棚或打線是否有臨場變化。"
           ]
         },
         {
@@ -14150,21 +14165,23 @@
             "勝方一致",
             "大小分一致"
           ],
-          "score": "",
-          "actual_winner_zh": "",
-          "winner_correct": null,
+          "score": "6-7",
+          "actual_winner_zh": "亞特蘭大勇士",
+          "winner_correct": true,
           "total_line": 8.5,
           "predicted_total": 9.89,
-          "actual_total": null,
+          "actual_total": 13,
           "total_pick": "over",
-          "total_correct": null,
+          "total_correct": true,
           "roi_settlement": "",
           "pnl": 0.0,
           "reason_codes": [
-            "pending"
+            "low_confidence_hit",
+            "one_run_volatility"
           ],
           "notes": [
-            "尚未完賽，等待賽後自動結算真實比分。"
+            "方向正確，但信心不高，較適合作為觀察而非重注。",
+            "一分差比賽，模型即使方向錯也屬高波動結果。"
           ]
         },
         {
@@ -14188,21 +14205,22 @@
             "比分平手",
             "大小分一致"
           ],
-          "score": "",
-          "actual_winner_zh": "",
-          "winner_correct": null,
+          "score": "4-2",
+          "actual_winner_zh": "芝加哥白襪",
+          "winner_correct": false,
           "total_line": 8.5,
           "predicted_total": 9.41,
-          "actual_total": null,
+          "actual_total": 6,
           "total_pick": "over",
-          "total_correct": null,
+          "total_correct": false,
           "roi_settlement": "",
           "pnl": 0.0,
           "reason_codes": [
-            "pending"
+            "totals_miss",
+            "large_totals_error"
           ],
           "notes": [
-            "尚未完賽，等待賽後自動結算真實比分。"
+            "大小分偏差 3.4 分，需檢查投手/天氣/打線係數。"
           ]
         },
         {
@@ -14226,21 +14244,23 @@
             "勝方分歧",
             "大小分一致"
           ],
-          "score": "",
-          "actual_winner_zh": "",
-          "winner_correct": null,
+          "score": "2-5",
+          "actual_winner_zh": "休士頓太空人",
+          "winner_correct": true,
           "total_line": 8.5,
           "predicted_total": 9.66,
-          "actual_total": null,
+          "actual_total": 7,
           "total_pick": "over",
-          "total_correct": null,
+          "total_correct": false,
           "roi_settlement": "",
           "pnl": 0.0,
           "reason_codes": [
-            "pending"
+            "low_confidence_hit",
+            "totals_miss"
           ],
           "notes": [
-            "尚未完賽，等待賽後自動結算真實比分。"
+            "方向正確，但信心不高，較適合作為觀察而非重注。",
+            "大小分偏差 2.7 分，需檢查投手/天氣/打線係數。"
           ]
         },
         {
@@ -14264,21 +14284,22 @@
             "勝方一致",
             "大小分一致"
           ],
-          "score": "",
-          "actual_winner_zh": "",
-          "winner_correct": null,
+          "score": "5-1",
+          "actual_winner_zh": "底特律老虎",
+          "winner_correct": false,
           "total_line": 7.5,
           "predicted_total": 9.81,
-          "actual_total": null,
+          "actual_total": 6,
           "total_pick": "over",
-          "total_correct": null,
+          "total_correct": false,
           "roi_settlement": "",
           "pnl": 0.0,
           "reason_codes": [
-            "pending"
+            "totals_miss",
+            "large_totals_error"
           ],
           "notes": [
-            "尚未完賽，等待賽後自動結算真實比分。"
+            "大小分偏差 3.8 分，需檢查投手/天氣/打線係數。"
           ]
         }
       ]
@@ -14299,15 +14320,15 @@
         "pnl": 0,
         "cumulative": {
           "games": 346,
-          "final_games": 318,
-          "pending_games": 28,
-          "winner_correct": 170,
-          "totals_games": 293,
-          "totals_correct": 147,
+          "final_games": 335,
+          "pending_games": 11,
+          "winner_correct": 180,
+          "totals_games": 310,
+          "totals_correct": 156,
           "roi_bets": 3,
           "pnl": -300.0,
-          "winner_accuracy_pct": 53.46,
-          "totals_accuracy_pct": 50.17
+          "winner_accuracy_pct": 53.73,
+          "totals_accuracy_pct": 50.32
         }
       },
       "highlights": [
@@ -14324,11 +14345,11 @@
           "game_time_utc": "2026-07-23T16:15:00Z",
           "matchup_zh": "聖地牙哥教士 @ 亞特蘭大勇士",
           "prediction_zh": "亞特蘭大勇士",
-          "confidence": 0.5262,
-          "predicted_score_zh": "聖地牙哥教士 4.31 : 亞特蘭大勇士 5.87",
-          "predicted_away_score": 4.31,
-          "predicted_home_score": 5.87,
-          "predicted_score_total": 10.18,
+          "confidence": 0.5265,
+          "predicted_score_zh": "聖地牙哥教士 3.65 : 亞特蘭大勇士 5.42",
+          "predicted_away_score": 3.65,
+          "predicted_home_score": 5.42,
+          "predicted_score_total": 9.07,
           "score_pick_zh": "亞特蘭大勇士",
           "score_alignment": "一致",
           "score_total_side": "over",
@@ -14342,7 +14363,7 @@
           "actual_winner_zh": "",
           "winner_correct": null,
           "total_line": 8.5,
-          "predicted_total": 10.18,
+          "predicted_total": 9.07,
           "actual_total": null,
           "total_pick": "over",
           "total_correct": null,
@@ -14362,11 +14383,11 @@
           "game_time_utc": "2026-07-23T17:10:00Z",
           "matchup_zh": "明尼蘇達雙城 @ 克里夫蘭守護者",
           "prediction_zh": "克里夫蘭守護者",
-          "confidence": 0.5438,
-          "predicted_score_zh": "明尼蘇達雙城 4.32 : 克里夫蘭守護者 4.34",
-          "predicted_away_score": 4.32,
-          "predicted_home_score": 4.34,
-          "predicted_score_total": 8.66,
+          "confidence": 0.5419,
+          "predicted_score_zh": "明尼蘇達雙城 3.79 : 克里夫蘭守護者 3.80",
+          "predicted_away_score": 3.79,
+          "predicted_home_score": 3.8,
+          "predicted_score_total": 7.59,
           "score_pick_zh": "克里夫蘭守護者",
           "score_alignment": "一致",
           "score_total_side": "over",
@@ -14380,7 +14401,7 @@
           "actual_winner_zh": "",
           "winner_correct": null,
           "total_line": 7.5,
-          "predicted_total": 8.66,
+          "predicted_total": 7.59,
           "actual_total": null,
           "total_pick": "over",
           "total_correct": null,
@@ -14400,14 +14421,14 @@
           "game_time_utc": "2026-07-23T19:07:00Z",
           "matchup_zh": "坦帕灣光芒 @ 多倫多藍鳥",
           "prediction_zh": "多倫多藍鳥",
-          "confidence": 0.5111,
-          "predicted_score_zh": "坦帕灣光芒 5.05 : 多倫多藍鳥 4.07",
-          "predicted_away_score": 5.05,
-          "predicted_home_score": 4.07,
-          "predicted_score_total": 9.12,
+          "confidence": 0.5104,
+          "predicted_score_zh": "坦帕灣光芒 4.38 : 多倫多藍鳥 3.38",
+          "predicted_away_score": 4.38,
+          "predicted_home_score": 3.38,
+          "predicted_score_total": 7.77,
           "score_pick_zh": "坦帕灣光芒",
           "score_alignment": "模型分歧",
-          "score_total_side": "over",
+          "score_total_side": "under",
           "total_gap": 0.0,
           "totals_alignment": "等待官方打線",
           "model_consistency": [
@@ -14418,9 +14439,9 @@
           "actual_winner_zh": "",
           "winner_correct": null,
           "total_line": 8.5,
-          "predicted_total": 9.12,
+          "predicted_total": 7.77,
           "actual_total": null,
-          "total_pick": "over",
+          "total_pick": "under",
           "total_correct": null,
           "roi_settlement": "",
           "pnl": 0.0,
@@ -14438,27 +14459,27 @@
           "game_time_utc": "2026-07-23T21:15:00Z",
           "matchup_zh": "亞利桑那響尾蛇 @ 聖路易紅雀",
           "prediction_zh": "聖路易紅雀",
-          "confidence": 0.5082,
-          "predicted_score_zh": "亞利桑那響尾蛇 4.48 : 聖路易紅雀 4.86",
-          "predicted_away_score": 4.48,
-          "predicted_home_score": 4.86,
-          "predicted_score_total": 9.33,
+          "confidence": 0.5066,
+          "predicted_score_zh": "亞利桑那響尾蛇 3.99 : 聖路易紅雀 4.14",
+          "predicted_away_score": 3.99,
+          "predicted_home_score": 4.14,
+          "predicted_score_total": 8.13,
           "score_pick_zh": "聖路易紅雀",
           "score_alignment": "一致",
-          "score_total_side": "",
-          "total_gap": null,
-          "totals_alignment": "無台灣運彩大小分盤口",
+          "score_total_side": "under",
+          "total_gap": 0.0,
+          "totals_alignment": "等待官方打線",
           "model_consistency": [
             "勝方一致",
-            "無台灣運彩大小分盤口"
+            "大小分一致"
           ],
           "score": "",
           "actual_winner_zh": "",
           "winner_correct": null,
-          "total_line": null,
-          "predicted_total": null,
+          "total_line": 8.5,
+          "predicted_total": 8.13,
           "actual_total": null,
-          "total_pick": "",
+          "total_pick": "under",
           "total_correct": null,
           "roi_settlement": "",
           "pnl": 0.0,
@@ -14476,27 +14497,27 @@
           "game_time_utc": "2026-07-23T22:40:00Z",
           "matchup_zh": "堪薩斯市皇家 @ 底特律老虎",
           "prediction_zh": "底特律老虎",
-          "confidence": 0.555,
-          "predicted_score_zh": "堪薩斯市皇家 3.92 : 底特律老虎 4.91",
-          "predicted_away_score": 3.92,
-          "predicted_home_score": 4.91,
-          "predicted_score_total": 8.83,
+          "confidence": 0.5554,
+          "predicted_score_zh": "堪薩斯市皇家 3.35 : 底特律老虎 4.19",
+          "predicted_away_score": 3.35,
+          "predicted_home_score": 4.19,
+          "predicted_score_total": 7.54,
           "score_pick_zh": "底特律老虎",
           "score_alignment": "一致",
-          "score_total_side": "",
-          "total_gap": null,
-          "totals_alignment": "無台灣運彩大小分盤口",
+          "score_total_side": "under",
+          "total_gap": 0.0,
+          "totals_alignment": "等待官方打線",
           "model_consistency": [
             "勝方一致",
-            "無台灣運彩大小分盤口"
+            "大小分一致"
           ],
           "score": "",
           "actual_winner_zh": "",
           "winner_correct": null,
-          "total_line": null,
-          "predicted_total": null,
+          "total_line": 8.5,
+          "predicted_total": 7.54,
           "actual_total": null,
-          "total_pick": "",
+          "total_pick": "under",
           "total_correct": null,
           "roi_settlement": "",
           "pnl": 0.0,

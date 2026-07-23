@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-23T00:05:09",
+  "generated_at": "2026-07-23T13:53:48",
   "period": {
     "start": "2025-03-27",
     "end": "2026-07-22"
@@ -14,14 +14,14 @@
   "data_source": {
     "type": "real_mlb_final_scores",
     "games_csv": "data\\real_mlb_games.csv",
-    "games_evaluated": 3955,
+    "games_evaluated": 3968,
     "actual_first_game_date": "2025-03-27",
     "actual_last_game_date": "2026-07-22",
     "game_types": [
       "R"
     ],
     "coverage_warning": null,
-    "generated_at": "2026-07-23T00:00:53",
+    "generated_at": "2026-07-23T13:51:01",
     "note": "Backtest uses real MLB final scores from saved MLB Stats API schedule data. Odds are still the configured fixed market assumption."
   },
   "bankroll_assumption": 10000,
@@ -30,121 +30,131 @@
   "ranking": [
     {
       "模型": "A-畢氏勝率",
-      "總注": 1178,
-      "勝": 698,
-      "敗": 480,
-      "勝率%": 59.25,
-      "總損益$": 15455.18,
-      "ROI%": 13.12
+      "總注": 1180,
+      "勝": 701,
+      "敗": 479,
+      "勝率%": 59.41,
+      "總損益$": 15827.91,
+      "ROI%": 13.41
     },
     {
       "模型": "E-對照組(Ensemble)",
-      "總注": 1379,
-      "勝": 802,
+      "總注": 1382,
+      "勝": 805,
       "敗": 577,
-      "勝率%": 58.16,
-      "總損益$": 15209.82,
-      "ROI%": 11.03
+      "勝率%": 58.25,
+      "總損益$": 15482.55,
+      "ROI%": 11.2
     },
     {
       "模型": "C-ELO評分",
-      "總注": 1414,
-      "勝": 821,
+      "總注": 1417,
+      "勝": 824,
       "敗": 593,
-      "勝率%": 58.06,
-      "總損益$": 15337.11,
-      "ROI%": 10.85
+      "勝率%": 58.15,
+      "總損益$": 15609.84,
+      "ROI%": 11.02
     },
     {
       "模型": "B-近期狀態",
-      "總注": 1428,
-      "勝": 803,
-      "敗": 625,
-      "勝率%": 56.23,
-      "總損益$": 10500.73,
-      "ROI%": 7.35
+      "總注": 1432,
+      "勝": 806,
+      "敗": 626,
+      "勝率%": 56.28,
+      "總損益$": 10673.46,
+      "ROI%": 7.45
     },
     {
       "模型": "D-近期失分代理",
-      "總注": 1412,
+      "總注": 1416,
       "勝": 776,
-      "敗": 636,
-      "勝率%": 54.96,
-      "總損益$": 6946.16,
-      "ROI%": 4.92
+      "敗": 640,
+      "勝率%": 54.8,
+      "總損益$": 6546.16,
+      "ROI%": 4.62
     }
   ],
   "accuracy_ranking": [
     {
       "模型": "A-畢氏勝率",
-      "預測場次": 3876,
-      "正確": 2099,
-      "錯誤": 1777,
-      "準確率%": 54.15
+      "預測場次": 3889,
+      "正確": 2109,
+      "錯誤": 1780,
+      "準確率%": 54.23
     },
     {
       "模型": "C-ELO評分",
-      "預測場次": 3955,
-      "正確": 2124,
-      "錯誤": 1831,
-      "準確率%": 53.7
+      "預測場次": 3968,
+      "正確": 2135,
+      "錯誤": 1833,
+      "準確率%": 53.81
     },
     {
       "模型": "B-近期狀態",
-      "預測場次": 3876,
-      "正確": 2069,
-      "錯誤": 1807,
-      "準確率%": 53.38
+      "預測場次": 3889,
+      "正確": 2079,
+      "錯誤": 1810,
+      "準確率%": 53.46
     },
     {
       "模型": "E-對照組(Ensemble)",
-      "預測場次": 3955,
-      "正確": 2108,
-      "錯誤": 1847,
-      "準確率%": 53.3
+      "預測場次": 3968,
+      "正確": 2117,
+      "錯誤": 1851,
+      "準確率%": 53.35
     },
     {
       "模型": "D-近期失分代理",
-      "預測場次": 3876,
-      "正確": 2019,
-      "錯誤": 1857,
-      "準確率%": 52.09
+      "預測場次": 3889,
+      "正確": 2026,
+      "錯誤": 1863,
+      "準確率%": 52.1
     }
   ],
   "accuracy_source": {
     "type": "real_mlb_final_scores",
     "games_csv": "data\\real_mlb_games.csv",
-    "games_evaluated": 3955,
+    "games_evaluated": 3968,
     "note": "Pure winner-prediction accuracy only. Odds, edge, stake, and ROI are intentionally excluded."
   },
   "accuracy_metrics": {
-    "predictions": 3876,
-    "correct": 2099,
-    "wrong": 1777,
-    "accuracy_pct": 54.15
+    "predictions": 3889,
+    "correct": 2109,
+    "wrong": 1780,
+    "accuracy_pct": 54.23
   },
   "production_metrics": {
-    "total_bets": 1178,
-    "wins": 698,
-    "losses": 480,
-    "win_rate_pct": 59.25,
-    "total_pnl": 15455.18,
-    "roi_pct": 13.12,
+    "total_bets": 1180,
+    "wins": 701,
+    "losses": 479,
+    "win_rate_pct": 59.41,
+    "total_pnl": 15827.91,
+    "roi_pct": 13.41,
     "active_days": 289,
-    "winning_days": 169,
-    "losing_days": 120,
-    "positive_day_rate_pct": 58.48,
+    "winning_days": 170,
+    "losing_days": 119,
+    "positive_day_rate_pct": 58.82,
     "max_drawdown": -1354.51,
-    "last_14_active_day_pnl": 672.75,
+    "last_14_active_day_pnl": 1045.48,
     "last_record_date": "2026-07-22"
   },
   "recent_bets": [
     {
       "date": "2026-07-22",
       "matchup_zh": "匹茲堡海盜 @ 紐約洋基",
+      "pitchers_zh": "布優布布阿 查 / 麥斯 弗里德",
+      "pick_zh": "紐約洋基",
+      "score": "0-2",
+      "confidence": 0.5658,
+      "edge": 0.042,
+      "result": "win"
+    },
+    {
+      "date": "2026-07-22",
+      "matchup_zh": "匹茲堡海盜 @ 紐約洋基",
       "pitchers_zh": "米 凱勒 / 格里特 柯爾",
       "pick_zh": "紐約洋基",
-      "score": "0-0",
+      "score": "5-3",
       "confidence": 0.5658,
       "edge": 0.042,
       "result": "loss"
@@ -154,7 +164,17 @@
       "matchup_zh": "巴爾的摩金鶯 @ 波士頓紅襪",
       "pitchers_zh": "德 梅 / 傑克 貝",
       "pick_zh": "波士頓紅襪",
-      "score": "0-0",
+      "score": "3-6",
+      "confidence": 0.5747,
+      "edge": 0.0508,
+      "result": "win"
+    },
+    {
+      "date": "2026-07-22",
+      "matchup_zh": "巴爾的摩金鶯 @ 波士頓紅襪",
+      "pitchers_zh": "凱爾 布迪 / 愛德華多 里維拉",
+      "pick_zh": "波士頓紅襪",
+      "score": "5-1",
       "confidence": 0.5747,
       "edge": 0.0508,
       "result": "loss"
@@ -164,10 +184,10 @@
       "matchup_zh": "紐約大都會 @ 密爾瓦基釀酒人",
       "pitchers_zh": "查史 斯克歐特特 / 羅根 赫",
       "pick_zh": "密爾瓦基釀酒人",
-      "score": "0-0",
+      "score": "3-4",
       "confidence": 0.575,
       "edge": 0.0512,
-      "result": "loss"
+      "result": "win"
     },
     {
       "date": "2026-07-21",
@@ -237,26 +257,6 @@
       "score": "9-6",
       "confidence": 0.5771,
       "edge": 0.0533,
-      "result": "win"
-    },
-    {
-      "date": "2026-07-19",
-      "matchup_zh": "明尼蘇達雙城 @ 芝加哥小熊",
-      "pitchers_zh": "茲伊布布伊 馬 / 今永昇太",
-      "pick_zh": "芝加哥小熊",
-      "score": "1-10",
-      "confidence": 0.5775,
-      "edge": 0.0537,
-      "result": "win"
-    },
-    {
-      "date": "2026-07-19",
-      "matchup_zh": "邁阿密馬林魚 @ 密爾瓦基釀酒人",
-      "pitchers_zh": "艾 佩雷 / 羅貝 加",
-      "pick_zh": "密爾瓦基釀酒人",
-      "score": "1-3",
-      "confidence": 0.5859,
-      "edge": 0.0621,
       "result": "win"
     }
   ],
@@ -2661,11 +2661,11 @@
     },
     {
       "date": "2026-07-22",
-      "bets": 3,
-      "wins": 0,
-      "losses": 3,
-      "pnl": -300.0,
-      "cumulative_pnl": 15455.18
+      "bets": 5,
+      "wins": 3,
+      "losses": 2,
+      "pnl": 72.73,
+      "cumulative_pnl": 15827.91
     }
   ]
 }
