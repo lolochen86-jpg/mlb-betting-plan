@@ -1,7 +1,7 @@
 {
   "backtest_period": {
     "start": "2025-03-27",
-    "end": "2026-07-22"
+    "end": "2026-07-23"
   },
   "settings": {
     "unit": 100,
@@ -13,14 +13,14 @@
   "data_source": {
     "type": "real_mlb_final_scores",
     "games_csv": "data\\real_mlb_games.csv",
-    "games_evaluated": 3968,
+    "games_evaluated": 3970,
     "actual_first_game_date": "2025-03-27",
-    "actual_last_game_date": "2026-07-22",
+    "actual_last_game_date": "2026-07-23",
     "game_types": [
       "R"
     ],
     "coverage_warning": null,
-    "generated_at": "2026-07-23T21:01:58",
+    "generated_at": "2026-07-24T00:01:19",
     "note": "Backtest uses real MLB final scores from saved MLB Stats API schedule data. Odds are still the configured fixed market assumption."
   },
   "models": {
@@ -21592,16 +21592,24 @@
               "result": "win"
             }
           ]
+        },
+        {
+          "date": "2026-07-23",
+          "bets": 0,
+          "wins": 0,
+          "losses": 0,
+          "pnl": 0.0,
+          "bet_details": []
         }
       ]
     },
     "B-近期狀態": {
-      "total_bets": 1432,
+      "total_bets": 1434,
       "wins": 806,
-      "losses": 626,
-      "win_rate": 0.5628,
-      "total_pnl": 10673.46,
-      "roi_pct": 7.45,
+      "losses": 628,
+      "win_rate": 0.5621,
+      "total_pnl": 10473.46,
+      "roi_pct": 7.3,
       "daily_records": [
         {
           "date": "2025-03-27",
@@ -47200,16 +47208,57 @@
               "result": "win"
             }
           ]
+        },
+        {
+          "date": "2026-07-23",
+          "bets": 2,
+          "wins": 0,
+          "losses": 2,
+          "pnl": -200.0,
+          "bet_details": [
+            {
+              "game_pk": "824406",
+              "home": "Cleveland Guardians",
+              "home_zh": "克里夫蘭守護者",
+              "away": "Minnesota Twins",
+              "away_zh": "明尼蘇達雙城",
+              "home_score": 0,
+              "away_score": 0,
+              "pick": "Cleveland Guardians",
+              "pick_zh": "克里夫蘭守護者",
+              "home_probable_pitcher_zh": "加維 威",
+              "away_probable_pitcher_zh": "塔 布",
+              "confidence": 0.6514,
+              "edge": 0.1276,
+              "result": "loss"
+            },
+            {
+              "game_pk": "824893",
+              "home": "Atlanta Braves",
+              "home_zh": "亞特蘭大勇士",
+              "away": "San Diego Padres",
+              "away_zh": "聖地牙哥教士",
+              "home_score": 0,
+              "away_score": 0,
+              "pick": "Atlanta Braves",
+              "pick_zh": "亞特蘭大勇士",
+              "home_probable_pitcher_zh": "克里斯 塞爾",
+              "away_probable_pitcher_zh": "凱爾 哈",
+              "confidence": 0.615,
+              "edge": 0.0912,
+              "result": "loss"
+            }
+          ]
         }
       ]
     },
     "C-ELO評分": {
-      "total_bets": 1417,
+      "total_bets": 1419,
       "wins": 824,
-      "losses": 593,
-      "win_rate": 0.5815,
-      "total_pnl": 15609.84,
-      "roi_pct": 11.02,
+      "losses": 595,
+      "win_rate": 0.5807,
+      "total_pnl": 15409.84,
+      "roi_pct": 10.86,
       "daily_records": [
         {
           "date": "2025-03-27",
@@ -72571,16 +72620,57 @@
               "result": "loss"
             }
           ]
+        },
+        {
+          "date": "2026-07-23",
+          "bets": 2,
+          "wins": 0,
+          "losses": 2,
+          "pnl": -200.0,
+          "bet_details": [
+            {
+              "game_pk": "824893",
+              "home": "Atlanta Braves",
+              "home_zh": "亞特蘭大勇士",
+              "away": "San Diego Padres",
+              "away_zh": "聖地牙哥教士",
+              "home_score": 0,
+              "away_score": 0,
+              "pick": "Atlanta Braves",
+              "pick_zh": "亞特蘭大勇士",
+              "home_probable_pitcher_zh": "克里斯 塞爾",
+              "away_probable_pitcher_zh": "凱爾 哈",
+              "confidence": 0.5702,
+              "edge": 0.0464,
+              "result": "loss"
+            },
+            {
+              "game_pk": "824406",
+              "home": "Cleveland Guardians",
+              "home_zh": "克里夫蘭守護者",
+              "away": "Minnesota Twins",
+              "away_zh": "明尼蘇達雙城",
+              "home_score": 0,
+              "away_score": 0,
+              "pick": "Cleveland Guardians",
+              "pick_zh": "克里夫蘭守護者",
+              "home_probable_pitcher_zh": "加維 威",
+              "away_probable_pitcher_zh": "塔 布",
+              "confidence": 0.5593,
+              "edge": 0.0355,
+              "result": "loss"
+            }
+          ]
         }
       ]
     },
     "D-近期失分代理": {
-      "total_bets": 1416,
+      "total_bets": 1417,
       "wins": 776,
-      "losses": 640,
-      "win_rate": 0.548,
-      "total_pnl": 6546.16,
-      "roi_pct": 4.62,
+      "losses": 641,
+      "win_rate": 0.5476,
+      "total_pnl": 6446.16,
+      "roi_pct": 4.55,
       "daily_records": [
         {
           "date": "2025-03-27",
@@ -97922,16 +98012,41 @@
               "result": "loss"
             }
           ]
+        },
+        {
+          "date": "2026-07-23",
+          "bets": 1,
+          "wins": 0,
+          "losses": 1,
+          "pnl": -100.0,
+          "bet_details": [
+            {
+              "game_pk": "824406",
+              "home": "Cleveland Guardians",
+              "home_zh": "克里夫蘭守護者",
+              "away": "Minnesota Twins",
+              "away_zh": "明尼蘇達雙城",
+              "home_score": 0,
+              "away_score": 0,
+              "pick": "Cleveland Guardians",
+              "pick_zh": "克里夫蘭守護者",
+              "home_probable_pitcher_zh": "加維 威",
+              "away_probable_pitcher_zh": "塔 布",
+              "confidence": 0.5914,
+              "edge": 0.0676,
+              "result": "loss"
+            }
+          ]
         }
       ]
     },
     "E-對照組(Ensemble)": {
-      "total_bets": 1382,
+      "total_bets": 1383,
       "wins": 805,
-      "losses": 577,
-      "win_rate": 0.5825,
-      "total_pnl": 15482.55,
-      "roi_pct": 11.2,
+      "losses": 578,
+      "win_rate": 0.5821,
+      "total_pnl": 15382.55,
+      "roi_pct": 11.12,
       "daily_records": [
         {
           "date": "2025-03-27",
@@ -122731,6 +122846,31 @@
               "confidence": 0.5774,
               "edge": 0.0536,
               "result": "win"
+            }
+          ]
+        },
+        {
+          "date": "2026-07-23",
+          "bets": 1,
+          "wins": 0,
+          "losses": 1,
+          "pnl": -100.0,
+          "bet_details": [
+            {
+              "game_pk": "824406",
+              "home": "Cleveland Guardians",
+              "home_zh": "克里夫蘭守護者",
+              "away": "Minnesota Twins",
+              "away_zh": "明尼蘇達雙城",
+              "home_score": 0,
+              "away_score": 0,
+              "pick": "Cleveland Guardians",
+              "pick_zh": "克里夫蘭守護者",
+              "home_probable_pitcher_zh": "加維 威",
+              "away_probable_pitcher_zh": "塔 布",
+              "confidence": 0.5874,
+              "edge": 0.0636,
+              "result": "loss"
             }
           ]
         }

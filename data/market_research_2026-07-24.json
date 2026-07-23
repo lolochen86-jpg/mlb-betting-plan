@@ -1,0 +1,344 @@
+{
+  "generated_at": "2026-07-24T00:10:02",
+  "target_date": "2026-07-24",
+  "sportsbook": "台灣運彩",
+  "rules": {
+    "require_official_market": true,
+    "moneyline_min_model_prob": 0.56,
+    "totals_min_model_prob": 0.58,
+    "min_edge": 0.03,
+    "no_market_no_recommendation": true
+  },
+  "summary": {
+    "official_selections": 240,
+    "market_types": 41,
+    "candidate_count": 0,
+    "watch_count": 2,
+    "official_events_matched": 1,
+    "official_game_pks_matched": 1
+  },
+  "candidates": [],
+  "watchlist": [
+    {
+      "type": "全場大小",
+      "date": "2026-07-24",
+      "game_pk": "824248",
+      "game_time_tw": "2026-07-25 06:40",
+      "game_time_utc": "2026-07-24T22:40:00Z",
+      "matchup_zh": "堪薩斯市皇家 @ 底特律老虎",
+      "pick": "小分",
+      "line": 8.5,
+      "odds": 1.63,
+      "model_prob": 0.5719,
+      "market_prob": 0.6135,
+      "edge": -0.0416,
+      "decision": "觀察",
+      "reason": "大小分模型高於台灣運彩隱含機率"
+    },
+    {
+      "type": "不讓分",
+      "date": "2026-07-24",
+      "game_pk": "824248",
+      "matchup_zh": "堪薩斯市皇家 @ 底特律老虎",
+      "pick": "底特律老虎",
+      "line": "",
+      "odds": 1.32,
+      "model_prob": 0.681,
+      "market_prob": 0.7576,
+      "edge": -0.0766,
+      "decision": "觀察",
+      "reason": "勝方模型/蒙地卡羅高於台灣運彩隱含機率",
+      "game_time_tw": "2026-07-25 06:40",
+      "game_time_utc": "2026-07-24T22:40:00Z"
+    }
+  ],
+  "market_overview": [
+    {
+      "market_ti": "354",
+      "market_name": "不讓分",
+      "games": 5,
+      "selections": 10,
+      "model_status": "已啟用"
+    },
+    {
+      "market_ti": "360",
+      "market_name": "[總分]大小 7.5",
+      "games": 4,
+      "selections": 8,
+      "model_status": "已啟用"
+    },
+    {
+      "market_ti": "360",
+      "market_name": "[總分]大小 8.5",
+      "games": 4,
+      "selections": 8,
+      "model_status": "已啟用"
+    },
+    {
+      "market_ti": "360",
+      "market_name": "[總分]大小 6.5",
+      "games": 2,
+      "selections": 4,
+      "model_status": "已啟用"
+    },
+    {
+      "market_ti": "360",
+      "market_name": "[總分]大小 9.5",
+      "games": 1,
+      "selections": 2,
+      "model_status": "已啟用"
+    },
+    {
+      "market_ti": "357",
+      "market_name": "勝分差",
+      "games": 5,
+      "selections": 30,
+      "model_status": "觀察中"
+    },
+    {
+      "market_ti": "358",
+      "market_name": "讓分 -1.5",
+      "games": 5,
+      "selections": 10,
+      "model_status": "可研究"
+    },
+    {
+      "market_ti": "366",
+      "market_name": "[總分]單雙",
+      "games": 5,
+      "selections": 10,
+      "model_status": "可研究"
+    },
+    {
+      "market_ti": "374",
+      "market_name": "得分最高單局(不含延長賽)",
+      "games": 5,
+      "selections": 50,
+      "model_status": "觀察中"
+    },
+    {
+      "market_ti": "376",
+      "market_name": "[1-5局] 不讓分",
+      "games": 5,
+      "selections": 15,
+      "model_status": "可研究"
+    },
+    {
+      "market_ti": "389",
+      "market_name": "[第1局] 不讓分",
+      "games": 5,
+      "selections": 15,
+      "model_status": "可研究"
+    },
+    {
+      "market_ti": "398",
+      "market_name": "[第1局] 大小 0.5",
+      "games": 5,
+      "selections": 10,
+      "model_status": "可研究"
+    },
+    {
+      "market_ti": "378",
+      "market_name": "[1-5局] 大小 4.5",
+      "games": 4,
+      "selections": 8,
+      "model_status": "可研究"
+    },
+    {
+      "market_ti": "358",
+      "market_name": "讓分 -2.5",
+      "games": 3,
+      "selections": 6,
+      "model_status": "可研究"
+    },
+    {
+      "market_ti": "358",
+      "market_name": "讓分 1.5",
+      "games": 1,
+      "selections": 2,
+      "model_status": "可研究"
+    },
+    {
+      "market_ti": "358",
+      "market_name": "讓分 2.5",
+      "games": 1,
+      "selections": 2,
+      "model_status": "可研究"
+    },
+    {
+      "market_ti": "362",
+      "market_name": "亞特蘭大勇士 大小 4.5",
+      "games": 1,
+      "selections": 2,
+      "model_status": "可研究"
+    },
+    {
+      "market_ti": "362",
+      "market_name": "克里夫蘭守護者 大小 3.5",
+      "games": 1,
+      "selections": 2,
+      "model_status": "可研究"
+    },
+    {
+      "market_ti": "362",
+      "market_name": "多倫多藍鳥 大小 3.5",
+      "games": 1,
+      "selections": 2,
+      "model_status": "可研究"
+    },
+    {
+      "market_ti": "362",
+      "market_name": "底特律老虎 大小 4.5",
+      "games": 1,
+      "selections": 2,
+      "model_status": "可研究"
+    },
+    {
+      "market_ti": "362",
+      "market_name": "聖路易紅雀 大小 3.5",
+      "games": 1,
+      "selections": 2,
+      "model_status": "可研究"
+    },
+    {
+      "market_ti": "363",
+      "market_name": "亞歷桑那響尾蛇 大小 3.5",
+      "games": 1,
+      "selections": 2,
+      "model_status": "可研究"
+    },
+    {
+      "market_ti": "363",
+      "market_name": "坦帕灣光芒 大小 3.5",
+      "games": 1,
+      "selections": 2,
+      "model_status": "可研究"
+    },
+    {
+      "market_ti": "363",
+      "market_name": "坦帕灣光芒 大小 4.5",
+      "games": 1,
+      "selections": 2,
+      "model_status": "可研究"
+    },
+    {
+      "market_ti": "363",
+      "market_name": "堪薩斯皇家 大小 2.5",
+      "games": 1,
+      "selections": 2,
+      "model_status": "可研究"
+    },
+    {
+      "market_ti": "363",
+      "market_name": "堪薩斯皇家 大小 3.5",
+      "games": 1,
+      "selections": 2,
+      "model_status": "可研究"
+    },
+    {
+      "market_ti": "363",
+      "market_name": "明尼蘇達雙城 大小 3.5",
+      "games": 1,
+      "selections": 2,
+      "model_status": "可研究"
+    },
+    {
+      "market_ti": "363",
+      "market_name": "聖地牙哥教士 大小 2.5",
+      "games": 1,
+      "selections": 2,
+      "model_status": "可研究"
+    },
+    {
+      "market_ti": "378",
+      "market_name": "[1-5局] 大小 3.5",
+      "games": 1,
+      "selections": 2,
+      "model_status": "可研究"
+    },
+    {
+      "market_ti": "379",
+      "market_name": "[1-5局] 亞特蘭大勇士 大小 2.5",
+      "games": 1,
+      "selections": 2,
+      "model_status": "可研究"
+    },
+    {
+      "market_ti": "379",
+      "market_name": "[1-5局] 克里夫蘭守護者 大小 1.5",
+      "games": 1,
+      "selections": 2,
+      "model_status": "可研究"
+    },
+    {
+      "market_ti": "379",
+      "market_name": "[1-5局] 多倫多藍鳥 大小 1.5",
+      "games": 1,
+      "selections": 2,
+      "model_status": "可研究"
+    },
+    {
+      "market_ti": "379",
+      "market_name": "[1-5局] 多倫多藍鳥 大小 2.5",
+      "games": 1,
+      "selections": 2,
+      "model_status": "可研究"
+    },
+    {
+      "market_ti": "379",
+      "market_name": "[1-5局] 底特律老虎 大小 2.5",
+      "games": 1,
+      "selections": 2,
+      "model_status": "可研究"
+    },
+    {
+      "market_ti": "379",
+      "market_name": "[1-5局] 聖路易紅雀 大小 1.5",
+      "games": 1,
+      "selections": 2,
+      "model_status": "可研究"
+    },
+    {
+      "market_ti": "380",
+      "market_name": "[1-5局] 亞歷桑那響尾蛇 大小 1.5",
+      "games": 1,
+      "selections": 2,
+      "model_status": "可研究"
+    },
+    {
+      "market_ti": "380",
+      "market_name": "[1-5局] 坦帕灣光芒 大小 1.5",
+      "games": 1,
+      "selections": 2,
+      "model_status": "可研究"
+    },
+    {
+      "market_ti": "380",
+      "market_name": "[1-5局] 坦帕灣光芒 大小 2.5",
+      "games": 1,
+      "selections": 2,
+      "model_status": "可研究"
+    },
+    {
+      "market_ti": "380",
+      "market_name": "[1-5局] 堪薩斯皇家 大小 1.5",
+      "games": 1,
+      "selections": 2,
+      "model_status": "可研究"
+    },
+    {
+      "market_ti": "380",
+      "market_name": "[1-5局] 明尼蘇達雙城 大小 1.5",
+      "games": 1,
+      "selections": 2,
+      "model_status": "可研究"
+    },
+    {
+      "market_ti": "380",
+      "market_name": "[1-5局] 聖地牙哥教士 大小 1.5",
+      "games": 1,
+      "selections": 2,
+      "model_status": "可研究"
+    }
+  ]
+}

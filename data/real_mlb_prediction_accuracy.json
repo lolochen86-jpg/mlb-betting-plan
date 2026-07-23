@@ -1,21 +1,21 @@
 {
-  "generated_at": "2026-07-23T21:01:57",
+  "generated_at": "2026-07-24T00:01:18",
   "backtest_period": {
     "start": "2025-03-27",
-    "end": "2026-07-22"
+    "end": "2026-07-23"
   },
   "data_source": {
     "type": "real_mlb_final_scores",
     "games_csv": "data\\real_mlb_games.csv",
-    "games_evaluated": 3968,
+    "games_evaluated": 3970,
     "note": "Pure winner-prediction accuracy only. Odds, edge, stake, and ROI are intentionally excluded."
   },
   "models": {
     "A-畢氏勝率": {
-      "predictions": 3889,
+      "predictions": 3891,
       "correct": 2109,
-      "wrong": 1780,
-      "accuracy_pct": 54.23,
+      "wrong": 1782,
+      "accuracy_pct": 54.2,
       "monthly": [
         {
           "month": "2025-04",
@@ -79,9 +79,9 @@
         },
         {
           "month": "2026-07",
-          "predictions": 254,
+          "predictions": 256,
           "correct": 139,
-          "accuracy_pct": 54.72
+          "accuracy_pct": 54.3
         }
       ],
       "prediction_details": [
@@ -66197,14 +66197,48 @@
           "correct": true,
           "away_probable_pitcher_zh": "加傑 傑優姆普",
           "home_probable_pitcher_zh": "梅 凱"
+        },
+        {
+          "game_pk": "824406",
+          "date": "2026-07-23",
+          "matchup_zh": "明尼蘇達雙城 @ 克里夫蘭守護者",
+          "away_zh": "明尼蘇達雙城",
+          "home_zh": "克里夫蘭守護者",
+          "away_score": 0,
+          "home_score": 0,
+          "pick_zh": "克里夫蘭守護者",
+          "pick_side": "home",
+          "actual_winner_zh": "明尼蘇達雙城",
+          "confidence": 0.5419,
+          "home_win_probability": 0.5419,
+          "correct": false,
+          "away_probable_pitcher_zh": "塔 布",
+          "home_probable_pitcher_zh": "加維 威"
+        },
+        {
+          "game_pk": "824893",
+          "date": "2026-07-23",
+          "matchup_zh": "聖地牙哥教士 @ 亞特蘭大勇士",
+          "away_zh": "聖地牙哥教士",
+          "home_zh": "亞特蘭大勇士",
+          "away_score": 0,
+          "home_score": 0,
+          "pick_zh": "亞特蘭大勇士",
+          "pick_side": "home",
+          "actual_winner_zh": "聖地牙哥教士",
+          "confidence": 0.5265,
+          "home_win_probability": 0.5265,
+          "correct": false,
+          "away_probable_pitcher_zh": "凱爾 哈",
+          "home_probable_pitcher_zh": "克里斯 塞爾"
         }
       ]
     },
     "B-近期狀態": {
-      "predictions": 3889,
+      "predictions": 3891,
       "correct": 2079,
-      "wrong": 1810,
-      "accuracy_pct": 53.46,
+      "wrong": 1812,
+      "accuracy_pct": 53.43,
       "monthly": [
         {
           "month": "2025-04",
@@ -66268,9 +66302,9 @@
         },
         {
           "month": "2026-07",
-          "predictions": 254,
+          "predictions": 256,
           "correct": 133,
-          "accuracy_pct": 52.36
+          "accuracy_pct": 51.95
         }
       ],
       "prediction_details": [
@@ -132386,14 +132420,48 @@
           "correct": true,
           "away_probable_pitcher_zh": "加傑 傑優姆普",
           "home_probable_pitcher_zh": "梅 凱"
+        },
+        {
+          "game_pk": "824406",
+          "date": "2026-07-23",
+          "matchup_zh": "明尼蘇達雙城 @ 克里夫蘭守護者",
+          "away_zh": "明尼蘇達雙城",
+          "home_zh": "克里夫蘭守護者",
+          "away_score": 0,
+          "home_score": 0,
+          "pick_zh": "克里夫蘭守護者",
+          "pick_side": "home",
+          "actual_winner_zh": "明尼蘇達雙城",
+          "confidence": 0.6514,
+          "home_win_probability": 0.6514,
+          "correct": false,
+          "away_probable_pitcher_zh": "塔 布",
+          "home_probable_pitcher_zh": "加維 威"
+        },
+        {
+          "game_pk": "824893",
+          "date": "2026-07-23",
+          "matchup_zh": "聖地牙哥教士 @ 亞特蘭大勇士",
+          "away_zh": "聖地牙哥教士",
+          "home_zh": "亞特蘭大勇士",
+          "away_score": 0,
+          "home_score": 0,
+          "pick_zh": "亞特蘭大勇士",
+          "pick_side": "home",
+          "actual_winner_zh": "聖地牙哥教士",
+          "confidence": 0.615,
+          "home_win_probability": 0.615,
+          "correct": false,
+          "away_probable_pitcher_zh": "凱爾 哈",
+          "home_probable_pitcher_zh": "克里斯 塞爾"
         }
       ]
     },
     "C-ELO評分": {
-      "predictions": 3968,
+      "predictions": 3970,
       "correct": 2135,
-      "wrong": 1833,
-      "accuracy_pct": 53.81,
+      "wrong": 1835,
+      "accuracy_pct": 53.78,
       "monthly": [
         {
           "month": "2025-03",
@@ -132463,9 +132531,9 @@
         },
         {
           "month": "2026-07",
-          "predictions": 254,
+          "predictions": 256,
           "correct": 140,
-          "accuracy_pct": 55.12
+          "accuracy_pct": 54.69
         }
       ],
       "prediction_details": [
@@ -199924,14 +199992,48 @@
           "correct": true,
           "away_probable_pitcher_zh": "加傑 傑優姆普",
           "home_probable_pitcher_zh": "梅 凱"
+        },
+        {
+          "game_pk": "824406",
+          "date": "2026-07-23",
+          "matchup_zh": "明尼蘇達雙城 @ 克里夫蘭守護者",
+          "away_zh": "明尼蘇達雙城",
+          "home_zh": "克里夫蘭守護者",
+          "away_score": 0,
+          "home_score": 0,
+          "pick_zh": "克里夫蘭守護者",
+          "pick_side": "home",
+          "actual_winner_zh": "明尼蘇達雙城",
+          "confidence": 0.5593,
+          "home_win_probability": 0.5593,
+          "correct": false,
+          "away_probable_pitcher_zh": "塔 布",
+          "home_probable_pitcher_zh": "加維 威"
+        },
+        {
+          "game_pk": "824893",
+          "date": "2026-07-23",
+          "matchup_zh": "聖地牙哥教士 @ 亞特蘭大勇士",
+          "away_zh": "聖地牙哥教士",
+          "home_zh": "亞特蘭大勇士",
+          "away_score": 0,
+          "home_score": 0,
+          "pick_zh": "亞特蘭大勇士",
+          "pick_side": "home",
+          "actual_winner_zh": "聖地牙哥教士",
+          "confidence": 0.5702,
+          "home_win_probability": 0.5702,
+          "correct": false,
+          "away_probable_pitcher_zh": "凱爾 哈",
+          "home_probable_pitcher_zh": "克里斯 塞爾"
         }
       ]
     },
     "D-近期失分代理": {
-      "predictions": 3889,
-      "correct": 2026,
-      "wrong": 1863,
-      "accuracy_pct": 52.1,
+      "predictions": 3891,
+      "correct": 2027,
+      "wrong": 1864,
+      "accuracy_pct": 52.09,
       "monthly": [
         {
           "month": "2025-04",
@@ -199995,9 +200097,9 @@
         },
         {
           "month": "2026-07",
-          "predictions": 254,
-          "correct": 125,
-          "accuracy_pct": 49.21
+          "predictions": 256,
+          "correct": 126,
+          "accuracy_pct": 49.22
         }
       ],
       "prediction_details": [
@@ -266113,14 +266215,48 @@
           "correct": true,
           "away_probable_pitcher_zh": "加傑 傑優姆普",
           "home_probable_pitcher_zh": "梅 凱"
+        },
+        {
+          "game_pk": "824406",
+          "date": "2026-07-23",
+          "matchup_zh": "明尼蘇達雙城 @ 克里夫蘭守護者",
+          "away_zh": "明尼蘇達雙城",
+          "home_zh": "克里夫蘭守護者",
+          "away_score": 0,
+          "home_score": 0,
+          "pick_zh": "克里夫蘭守護者",
+          "pick_side": "home",
+          "actual_winner_zh": "明尼蘇達雙城",
+          "confidence": 0.5914,
+          "home_win_probability": 0.5914,
+          "correct": false,
+          "away_probable_pitcher_zh": "塔 布",
+          "home_probable_pitcher_zh": "加維 威"
+        },
+        {
+          "game_pk": "824893",
+          "date": "2026-07-23",
+          "matchup_zh": "聖地牙哥教士 @ 亞特蘭大勇士",
+          "away_zh": "聖地牙哥教士",
+          "home_zh": "亞特蘭大勇士",
+          "away_score": 0,
+          "home_score": 0,
+          "pick_zh": "聖地牙哥教士",
+          "pick_side": "away",
+          "actual_winner_zh": "聖地牙哥教士",
+          "confidence": 0.5514,
+          "home_win_probability": 0.4486,
+          "correct": true,
+          "away_probable_pitcher_zh": "凱爾 哈",
+          "home_probable_pitcher_zh": "克里斯 塞爾"
         }
       ]
     },
     "E-對照組(Ensemble)": {
-      "predictions": 3968,
+      "predictions": 3970,
       "correct": 2117,
-      "wrong": 1851,
-      "accuracy_pct": 53.35,
+      "wrong": 1853,
+      "accuracy_pct": 53.32,
       "monthly": [
         {
           "month": "2025-03",
@@ -266190,9 +266326,9 @@
         },
         {
           "month": "2026-07",
-          "predictions": 254,
+          "predictions": 256,
           "correct": 134,
-          "accuracy_pct": 52.76
+          "accuracy_pct": 52.34
         }
       ],
       "prediction_details": [
@@ -333651,6 +333787,40 @@
           "correct": true,
           "away_probable_pitcher_zh": "加傑 傑優姆普",
           "home_probable_pitcher_zh": "梅 凱"
+        },
+        {
+          "game_pk": "824406",
+          "date": "2026-07-23",
+          "matchup_zh": "明尼蘇達雙城 @ 克里夫蘭守護者",
+          "away_zh": "明尼蘇達雙城",
+          "home_zh": "克里夫蘭守護者",
+          "away_score": 0,
+          "home_score": 0,
+          "pick_zh": "克里夫蘭守護者",
+          "pick_side": "home",
+          "actual_winner_zh": "明尼蘇達雙城",
+          "confidence": 0.5854,
+          "home_win_probability": 0.5854,
+          "correct": false,
+          "away_probable_pitcher_zh": "塔 布",
+          "home_probable_pitcher_zh": "加維 威"
+        },
+        {
+          "game_pk": "824893",
+          "date": "2026-07-23",
+          "matchup_zh": "聖地牙哥教士 @ 亞特蘭大勇士",
+          "away_zh": "聖地牙哥教士",
+          "home_zh": "亞特蘭大勇士",
+          "away_score": 0,
+          "home_score": 0,
+          "pick_zh": "亞特蘭大勇士",
+          "pick_side": "home",
+          "actual_winner_zh": "聖地牙哥教士",
+          "confidence": 0.5284,
+          "home_win_probability": 0.5284,
+          "correct": false,
+          "away_probable_pitcher_zh": "凱爾 哈",
+          "home_probable_pitcher_zh": "克里斯 塞爾"
         }
       ]
     }
