@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-24T00:01:18",
+  "generated_at": "2026-07-24T13:50:43",
   "backtest_period": {
     "start": "2025-03-27",
     "end": "2026-07-23"
@@ -7,15 +7,15 @@
   "data_source": {
     "type": "real_mlb_final_scores",
     "games_csv": "data\\real_mlb_games.csv",
-    "games_evaluated": 3970,
+    "games_evaluated": 3973,
     "note": "Pure winner-prediction accuracy only. Odds, edge, stake, and ROI are intentionally excluded."
   },
   "models": {
     "A-畢氏勝率": {
-      "predictions": 3891,
-      "correct": 2109,
+      "predictions": 3894,
+      "correct": 2112,
       "wrong": 1782,
-      "accuracy_pct": 54.2,
+      "accuracy_pct": 54.24,
       "monthly": [
         {
           "month": "2025-04",
@@ -79,9 +79,9 @@
         },
         {
           "month": "2026-07",
-          "predictions": 256,
-          "correct": 139,
-          "accuracy_pct": 54.3
+          "predictions": 259,
+          "correct": 142,
+          "accuracy_pct": 54.83
         }
       ],
       "prediction_details": [
@@ -66199,13 +66199,64 @@
           "home_probable_pitcher_zh": "梅 凱"
         },
         {
+          "game_pk": "822785",
+          "date": "2026-07-23",
+          "matchup_zh": "坦帕灣光芒 @ 多倫多藍鳥",
+          "away_zh": "坦帕灣光芒",
+          "home_zh": "多倫多藍鳥",
+          "away_score": 1,
+          "home_score": 3,
+          "pick_zh": "多倫多藍鳥",
+          "pick_side": "home",
+          "actual_winner_zh": "多倫多藍鳥",
+          "confidence": 0.5104,
+          "home_win_probability": 0.5104,
+          "correct": true,
+          "away_probable_pitcher_zh": "卡塞 雷米納",
+          "home_probable_pitcher_zh": "謝恩 比貝"
+        },
+        {
+          "game_pk": "823042",
+          "date": "2026-07-23",
+          "matchup_zh": "亞利桑那響尾蛇 @ 聖路易紅雀",
+          "away_zh": "亞利桑那響尾蛇",
+          "home_zh": "聖路易紅雀",
+          "away_score": 10,
+          "home_score": 6,
+          "pick_zh": "聖路易紅雀",
+          "pick_side": "home",
+          "actual_winner_zh": "亞利桑那響尾蛇",
+          "confidence": 0.5066,
+          "home_win_probability": 0.5066,
+          "correct": false,
+          "away_probable_pitcher_zh": "布蘭登 普夫阿阿德特",
+          "home_probable_pitcher_zh": "麥可 麥格里維"
+        },
+        {
+          "game_pk": "824247",
+          "date": "2026-07-23",
+          "matchup_zh": "堪薩斯市皇家 @ 底特律老虎",
+          "away_zh": "堪薩斯市皇家",
+          "home_zh": "底特律老虎",
+          "away_score": 3,
+          "home_score": 4,
+          "pick_zh": "底特律老虎",
+          "pick_side": "home",
+          "actual_winner_zh": "底特律老虎",
+          "confidence": 0.5554,
+          "home_win_probability": 0.5554,
+          "correct": true,
+          "away_probable_pitcher_zh": "拉 多",
+          "home_probable_pitcher_zh": "崔 梅"
+        },
+        {
           "game_pk": "824406",
           "date": "2026-07-23",
           "matchup_zh": "明尼蘇達雙城 @ 克里夫蘭守護者",
           "away_zh": "明尼蘇達雙城",
           "home_zh": "克里夫蘭守護者",
-          "away_score": 0,
-          "home_score": 0,
+          "away_score": 3,
+          "home_score": 1,
           "pick_zh": "克里夫蘭守護者",
           "pick_side": "home",
           "actual_winner_zh": "明尼蘇達雙城",
@@ -66221,24 +66272,24 @@
           "matchup_zh": "聖地牙哥教士 @ 亞特蘭大勇士",
           "away_zh": "聖地牙哥教士",
           "home_zh": "亞特蘭大勇士",
-          "away_score": 0,
-          "home_score": 0,
+          "away_score": 5,
+          "home_score": 6,
           "pick_zh": "亞特蘭大勇士",
           "pick_side": "home",
-          "actual_winner_zh": "聖地牙哥教士",
+          "actual_winner_zh": "亞特蘭大勇士",
           "confidence": 0.5265,
           "home_win_probability": 0.5265,
-          "correct": false,
+          "correct": true,
           "away_probable_pitcher_zh": "凱爾 哈",
           "home_probable_pitcher_zh": "克里斯 塞爾"
         }
       ]
     },
     "B-近期狀態": {
-      "predictions": 3891,
-      "correct": 2079,
+      "predictions": 3894,
+      "correct": 2082,
       "wrong": 1812,
-      "accuracy_pct": 53.43,
+      "accuracy_pct": 53.47,
       "monthly": [
         {
           "month": "2025-04",
@@ -66302,9 +66353,9 @@
         },
         {
           "month": "2026-07",
-          "predictions": 256,
-          "correct": 133,
-          "accuracy_pct": 51.95
+          "predictions": 259,
+          "correct": 136,
+          "accuracy_pct": 52.51
         }
       ],
       "prediction_details": [
@@ -132422,13 +132473,64 @@
           "home_probable_pitcher_zh": "梅 凱"
         },
         {
+          "game_pk": "822785",
+          "date": "2026-07-23",
+          "matchup_zh": "坦帕灣光芒 @ 多倫多藍鳥",
+          "away_zh": "坦帕灣光芒",
+          "home_zh": "多倫多藍鳥",
+          "away_score": 1,
+          "home_score": 3,
+          "pick_zh": "坦帕灣光芒",
+          "pick_side": "away",
+          "actual_winner_zh": "多倫多藍鳥",
+          "confidence": 0.61,
+          "home_win_probability": 0.39,
+          "correct": false,
+          "away_probable_pitcher_zh": "卡塞 雷米納",
+          "home_probable_pitcher_zh": "謝恩 比貝"
+        },
+        {
+          "game_pk": "823042",
+          "date": "2026-07-23",
+          "matchup_zh": "亞利桑那響尾蛇 @ 聖路易紅雀",
+          "away_zh": "亞利桑那響尾蛇",
+          "home_zh": "聖路易紅雀",
+          "away_score": 10,
+          "home_score": 6,
+          "pick_zh": "亞利桑那響尾蛇",
+          "pick_side": "away",
+          "actual_winner_zh": "亞利桑那響尾蛇",
+          "confidence": 0.65,
+          "home_win_probability": 0.35,
+          "correct": true,
+          "away_probable_pitcher_zh": "布蘭登 普夫阿阿德特",
+          "home_probable_pitcher_zh": "麥可 麥格里維"
+        },
+        {
+          "game_pk": "824247",
+          "date": "2026-07-23",
+          "matchup_zh": "堪薩斯市皇家 @ 底特律老虎",
+          "away_zh": "堪薩斯市皇家",
+          "home_zh": "底特律老虎",
+          "away_score": 3,
+          "home_score": 4,
+          "pick_zh": "底特律老虎",
+          "pick_side": "home",
+          "actual_winner_zh": "底特律老虎",
+          "confidence": 0.5605,
+          "home_win_probability": 0.5605,
+          "correct": true,
+          "away_probable_pitcher_zh": "拉 多",
+          "home_probable_pitcher_zh": "崔 梅"
+        },
+        {
           "game_pk": "824406",
           "date": "2026-07-23",
           "matchup_zh": "明尼蘇達雙城 @ 克里夫蘭守護者",
           "away_zh": "明尼蘇達雙城",
           "home_zh": "克里夫蘭守護者",
-          "away_score": 0,
-          "home_score": 0,
+          "away_score": 3,
+          "home_score": 1,
           "pick_zh": "克里夫蘭守護者",
           "pick_side": "home",
           "actual_winner_zh": "明尼蘇達雙城",
@@ -132444,24 +132546,24 @@
           "matchup_zh": "聖地牙哥教士 @ 亞特蘭大勇士",
           "away_zh": "聖地牙哥教士",
           "home_zh": "亞特蘭大勇士",
-          "away_score": 0,
-          "home_score": 0,
+          "away_score": 5,
+          "home_score": 6,
           "pick_zh": "亞特蘭大勇士",
           "pick_side": "home",
-          "actual_winner_zh": "聖地牙哥教士",
+          "actual_winner_zh": "亞特蘭大勇士",
           "confidence": 0.615,
           "home_win_probability": 0.615,
-          "correct": false,
+          "correct": true,
           "away_probable_pitcher_zh": "凱爾 哈",
           "home_probable_pitcher_zh": "克里斯 塞爾"
         }
       ]
     },
     "C-ELO評分": {
-      "predictions": 3970,
-      "correct": 2135,
+      "predictions": 3973,
+      "correct": 2138,
       "wrong": 1835,
-      "accuracy_pct": 53.78,
+      "accuracy_pct": 53.81,
       "monthly": [
         {
           "month": "2025-03",
@@ -132531,9 +132633,9 @@
         },
         {
           "month": "2026-07",
-          "predictions": 256,
-          "correct": 140,
-          "accuracy_pct": 54.69
+          "predictions": 259,
+          "correct": 143,
+          "accuracy_pct": 55.21
         }
       ],
       "prediction_details": [
@@ -199994,13 +200096,64 @@
           "home_probable_pitcher_zh": "梅 凱"
         },
         {
+          "game_pk": "822785",
+          "date": "2026-07-23",
+          "matchup_zh": "坦帕灣光芒 @ 多倫多藍鳥",
+          "away_zh": "坦帕灣光芒",
+          "home_zh": "多倫多藍鳥",
+          "away_score": 1,
+          "home_score": 3,
+          "pick_zh": "坦帕灣光芒",
+          "pick_side": "away",
+          "actual_winner_zh": "多倫多藍鳥",
+          "confidence": 0.603,
+          "home_win_probability": 0.397,
+          "correct": false,
+          "away_probable_pitcher_zh": "卡塞 雷米納",
+          "home_probable_pitcher_zh": "謝恩 比貝"
+        },
+        {
+          "game_pk": "823042",
+          "date": "2026-07-23",
+          "matchup_zh": "亞利桑那響尾蛇 @ 聖路易紅雀",
+          "away_zh": "亞利桑那響尾蛇",
+          "home_zh": "聖路易紅雀",
+          "away_score": 10,
+          "home_score": 6,
+          "pick_zh": "亞利桑那響尾蛇",
+          "pick_side": "away",
+          "actual_winner_zh": "亞利桑那響尾蛇",
+          "confidence": 0.549,
+          "home_win_probability": 0.451,
+          "correct": true,
+          "away_probable_pitcher_zh": "布蘭登 普夫阿阿德特",
+          "home_probable_pitcher_zh": "麥可 麥格里維"
+        },
+        {
+          "game_pk": "824247",
+          "date": "2026-07-23",
+          "matchup_zh": "堪薩斯市皇家 @ 底特律老虎",
+          "away_zh": "堪薩斯市皇家",
+          "home_zh": "底特律老虎",
+          "away_score": 3,
+          "home_score": 4,
+          "pick_zh": "底特律老虎",
+          "pick_side": "home",
+          "actual_winner_zh": "底特律老虎",
+          "confidence": 0.607,
+          "home_win_probability": 0.607,
+          "correct": true,
+          "away_probable_pitcher_zh": "拉 多",
+          "home_probable_pitcher_zh": "崔 梅"
+        },
+        {
           "game_pk": "824406",
           "date": "2026-07-23",
           "matchup_zh": "明尼蘇達雙城 @ 克里夫蘭守護者",
           "away_zh": "明尼蘇達雙城",
           "home_zh": "克里夫蘭守護者",
-          "away_score": 0,
-          "home_score": 0,
+          "away_score": 3,
+          "home_score": 1,
           "pick_zh": "克里夫蘭守護者",
           "pick_side": "home",
           "actual_winner_zh": "明尼蘇達雙城",
@@ -200016,24 +200169,24 @@
           "matchup_zh": "聖地牙哥教士 @ 亞特蘭大勇士",
           "away_zh": "聖地牙哥教士",
           "home_zh": "亞特蘭大勇士",
-          "away_score": 0,
-          "home_score": 0,
+          "away_score": 5,
+          "home_score": 6,
           "pick_zh": "亞特蘭大勇士",
           "pick_side": "home",
-          "actual_winner_zh": "聖地牙哥教士",
+          "actual_winner_zh": "亞特蘭大勇士",
           "confidence": 0.5702,
           "home_win_probability": 0.5702,
-          "correct": false,
+          "correct": true,
           "away_probable_pitcher_zh": "凱爾 哈",
           "home_probable_pitcher_zh": "克里斯 塞爾"
         }
       ]
     },
     "D-近期失分代理": {
-      "predictions": 3891,
+      "predictions": 3894,
       "correct": 2027,
-      "wrong": 1864,
-      "accuracy_pct": 52.09,
+      "wrong": 1867,
+      "accuracy_pct": 52.05,
       "monthly": [
         {
           "month": "2025-04",
@@ -200097,9 +200250,9 @@
         },
         {
           "month": "2026-07",
-          "predictions": 256,
+          "predictions": 259,
           "correct": 126,
-          "accuracy_pct": 49.22
+          "accuracy_pct": 48.65
         }
       ],
       "prediction_details": [
@@ -266217,13 +266370,64 @@
           "home_probable_pitcher_zh": "梅 凱"
         },
         {
+          "game_pk": "822785",
+          "date": "2026-07-23",
+          "matchup_zh": "坦帕灣光芒 @ 多倫多藍鳥",
+          "away_zh": "坦帕灣光芒",
+          "home_zh": "多倫多藍鳥",
+          "away_score": 1,
+          "home_score": 3,
+          "pick_zh": "坦帕灣光芒",
+          "pick_side": "away",
+          "actual_winner_zh": "多倫多藍鳥",
+          "confidence": 0.5709,
+          "home_win_probability": 0.4291,
+          "correct": false,
+          "away_probable_pitcher_zh": "卡塞 雷米納",
+          "home_probable_pitcher_zh": "謝恩 比貝"
+        },
+        {
+          "game_pk": "823042",
+          "date": "2026-07-23",
+          "matchup_zh": "亞利桑那響尾蛇 @ 聖路易紅雀",
+          "away_zh": "亞利桑那響尾蛇",
+          "home_zh": "聖路易紅雀",
+          "away_score": 10,
+          "home_score": 6,
+          "pick_zh": "聖路易紅雀",
+          "pick_side": "home",
+          "actual_winner_zh": "亞利桑那響尾蛇",
+          "confidence": 0.5635,
+          "home_win_probability": 0.5635,
+          "correct": false,
+          "away_probable_pitcher_zh": "布蘭登 普夫阿阿德特",
+          "home_probable_pitcher_zh": "麥可 麥格里維"
+        },
+        {
+          "game_pk": "824247",
+          "date": "2026-07-23",
+          "matchup_zh": "堪薩斯市皇家 @ 底特律老虎",
+          "away_zh": "堪薩斯市皇家",
+          "home_zh": "底特律老虎",
+          "away_score": 3,
+          "home_score": 4,
+          "pick_zh": "底特律老虎",
+          "pick_side": "home",
+          "actual_winner_zh": "底特律老虎",
+          "confidence": 0.6,
+          "home_win_probability": 0.6,
+          "correct": true,
+          "away_probable_pitcher_zh": "拉 多",
+          "home_probable_pitcher_zh": "崔 梅"
+        },
+        {
           "game_pk": "824406",
           "date": "2026-07-23",
           "matchup_zh": "明尼蘇達雙城 @ 克里夫蘭守護者",
           "away_zh": "明尼蘇達雙城",
           "home_zh": "克里夫蘭守護者",
-          "away_score": 0,
-          "home_score": 0,
+          "away_score": 3,
+          "home_score": 1,
           "pick_zh": "克里夫蘭守護者",
           "pick_side": "home",
           "actual_winner_zh": "明尼蘇達雙城",
@@ -266239,24 +266443,24 @@
           "matchup_zh": "聖地牙哥教士 @ 亞特蘭大勇士",
           "away_zh": "聖地牙哥教士",
           "home_zh": "亞特蘭大勇士",
-          "away_score": 0,
-          "home_score": 0,
+          "away_score": 5,
+          "home_score": 6,
           "pick_zh": "聖地牙哥教士",
           "pick_side": "away",
-          "actual_winner_zh": "聖地牙哥教士",
+          "actual_winner_zh": "亞特蘭大勇士",
           "confidence": 0.5514,
           "home_win_probability": 0.4486,
-          "correct": true,
+          "correct": false,
           "away_probable_pitcher_zh": "凱爾 哈",
           "home_probable_pitcher_zh": "克里斯 塞爾"
         }
       ]
     },
     "E-對照組(Ensemble)": {
-      "predictions": 3970,
-      "correct": 2117,
+      "predictions": 3973,
+      "correct": 2120,
       "wrong": 1853,
-      "accuracy_pct": 53.32,
+      "accuracy_pct": 53.36,
       "monthly": [
         {
           "month": "2025-03",
@@ -266326,9 +266530,9 @@
         },
         {
           "month": "2026-07",
-          "predictions": 256,
-          "correct": 134,
-          "accuracy_pct": 52.34
+          "predictions": 259,
+          "correct": 137,
+          "accuracy_pct": 52.9
         }
       ],
       "prediction_details": [
@@ -333789,13 +333993,64 @@
           "home_probable_pitcher_zh": "梅 凱"
         },
         {
+          "game_pk": "822785",
+          "date": "2026-07-23",
+          "matchup_zh": "坦帕灣光芒 @ 多倫多藍鳥",
+          "away_zh": "坦帕灣光芒",
+          "home_zh": "多倫多藍鳥",
+          "away_score": 1,
+          "home_score": 3,
+          "pick_zh": "坦帕灣光芒",
+          "pick_side": "away",
+          "actual_winner_zh": "多倫多藍鳥",
+          "confidence": 0.5706,
+          "home_win_probability": 0.4294,
+          "correct": false,
+          "away_probable_pitcher_zh": "卡塞 雷米納",
+          "home_probable_pitcher_zh": "謝恩 比貝"
+        },
+        {
+          "game_pk": "823042",
+          "date": "2026-07-23",
+          "matchup_zh": "亞利桑那響尾蛇 @ 聖路易紅雀",
+          "away_zh": "亞利桑那響尾蛇",
+          "home_zh": "聖路易紅雀",
+          "away_score": 10,
+          "home_score": 6,
+          "pick_zh": "亞利桑那響尾蛇",
+          "pick_side": "away",
+          "actual_winner_zh": "亞利桑那響尾蛇",
+          "confidence": 0.5193,
+          "home_win_probability": 0.4807,
+          "correct": true,
+          "away_probable_pitcher_zh": "布蘭登 普夫阿阿德特",
+          "home_probable_pitcher_zh": "麥可 麥格里維"
+        },
+        {
+          "game_pk": "824247",
+          "date": "2026-07-23",
+          "matchup_zh": "堪薩斯市皇家 @ 底特律老虎",
+          "away_zh": "堪薩斯市皇家",
+          "home_zh": "底特律老虎",
+          "away_score": 3,
+          "home_score": 4,
+          "pick_zh": "底特律老虎",
+          "pick_side": "home",
+          "actual_winner_zh": "底特律老虎",
+          "confidence": 0.5849,
+          "home_win_probability": 0.5849,
+          "correct": true,
+          "away_probable_pitcher_zh": "拉 多",
+          "home_probable_pitcher_zh": "崔 梅"
+        },
+        {
           "game_pk": "824406",
           "date": "2026-07-23",
           "matchup_zh": "明尼蘇達雙城 @ 克里夫蘭守護者",
           "away_zh": "明尼蘇達雙城",
           "home_zh": "克里夫蘭守護者",
-          "away_score": 0,
-          "home_score": 0,
+          "away_score": 3,
+          "home_score": 1,
           "pick_zh": "克里夫蘭守護者",
           "pick_side": "home",
           "actual_winner_zh": "明尼蘇達雙城",
@@ -333811,14 +334066,14 @@
           "matchup_zh": "聖地牙哥教士 @ 亞特蘭大勇士",
           "away_zh": "聖地牙哥教士",
           "home_zh": "亞特蘭大勇士",
-          "away_score": 0,
-          "home_score": 0,
+          "away_score": 5,
+          "home_score": 6,
           "pick_zh": "亞特蘭大勇士",
           "pick_side": "home",
-          "actual_winner_zh": "聖地牙哥教士",
+          "actual_winner_zh": "亞特蘭大勇士",
           "confidence": 0.5284,
           "home_win_probability": 0.5284,
-          "correct": false,
+          "correct": true,
           "away_probable_pitcher_zh": "凱爾 哈",
           "home_probable_pitcher_zh": "克里斯 塞爾"
         }
