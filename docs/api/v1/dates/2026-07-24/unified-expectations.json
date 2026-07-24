@@ -1,44 +1,44 @@
 {
-  "generated_at": "2026-07-24T13:56:03",
+  "generated_at": "2026-07-24T21:05:23",
   "target_date": "2026-07-24",
   "model": "統一得分期望 v1",
   "postgame_calibration": {
     "source": "postgame_review",
     "days": 10,
-    "games": 106,
-    "winner_accuracy": 0.5755,
-    "low_confidence_accuracy": 0.5366,
-    "score_total_bias": 0.12,
-    "score_total_bias_applied": 0.12,
-    "totals_recent_bias": -0.844,
-    "totals_recent_bias_applied": -0.84,
-    "totals_recent_games": 17,
+    "games": 111,
+    "winner_accuracy": 0.5766,
+    "low_confidence_accuracy": 0.5349,
+    "score_total_bias": 0.137,
+    "score_total_bias_applied": 0.14,
+    "totals_recent_bias": -0.541,
+    "totals_recent_bias_applied": -0.54,
+    "totals_recent_games": 22,
     "winner_min_confidence": 0.55,
     "totals_min_edge": 0.025,
     "totals_min_prob": 0.58,
     "totals_min_line_gap": 1.0,
     "mismatch_notes": 0,
     "reason_counts": {
-      "high_confidence_hit": 17,
-      "low_confidence_hit": 44,
+      "high_confidence_hit": 18,
+      "low_confidence_hit": 46,
       "totals_miss": 52,
-      "low_confidence_miss": 19,
+      "low_confidence_miss": 20,
       "large_totals_error": 28,
-      "one_run_volatility": 29,
+      "one_run_volatility": 31,
       "high_confidence_miss": 7
     },
     "data_gaps": [
       "大小分大偏差偏多：優先補真實天氣、球場風向、先發/牛棚臨場狀態。"
     ],
     "notes": [
-      "近三天大小分模型平均高估 0.84 分，今日總分期望降溫 -0.84 分。"
+      "近三天大小分模型平均高估 0.54 分，今日總分期望降溫 -0.54 分。"
     ]
   },
   "summary": {
     "games": 15,
     "missing_weather": 0,
     "missing_lineup": 0,
-    "missing_bullpen": 1
+    "missing_bullpen": 0
   },
   "games": [
     {
@@ -49,9 +49,9 @@
       "matchup_zh": "科羅拉多洛磯 @ 密爾瓦基釀酒人",
       "away_zh": "科羅拉多洛磯",
       "home_zh": "密爾瓦基釀酒人",
-      "away_expected_runs": 4.21,
-      "home_expected_runs": 5.32,
-      "expected_total": 9.54,
+      "away_expected_runs": 4.37,
+      "home_expected_runs": 5.48,
+      "expected_total": 9.86,
       "pick_side": "home",
       "prediction_zh": "密爾瓦基釀酒人",
       "home_win_prob": 0.6458,
@@ -96,8 +96,8 @@
         "unique_recent_relievers": 8,
         "fatigue_runs": 0.0
       },
-      "score_bias_applied": 0.12,
-      "totals_recent_bias_applied": -0.84,
+      "score_bias_applied": 0.14,
+      "totals_recent_bias_applied": -0.54,
       "missing_data": [
         "injury_absence_feed"
       ],
@@ -112,9 +112,9 @@
       "matchup_zh": "洛杉磯天使 @ 舊金山巨人",
       "away_zh": "洛杉磯天使",
       "home_zh": "舊金山巨人",
-      "away_expected_runs": 3.52,
-      "home_expected_runs": 4.5,
-      "expected_total": 8.02,
+      "away_expected_runs": 3.68,
+      "home_expected_runs": 4.66,
+      "expected_total": 8.34,
       "pick_side": "home",
       "prediction_zh": "舊金山巨人",
       "home_win_prob": 0.629,
@@ -159,8 +159,8 @@
         "unique_recent_relievers": 7,
         "fatigue_runs": 0.135
       },
-      "score_bias_applied": 0.12,
-      "totals_recent_bias_applied": -0.84,
+      "score_bias_applied": 0.14,
+      "totals_recent_bias_applied": -0.54,
       "missing_data": [
         "injury_absence_feed"
       ],
@@ -175,9 +175,9 @@
       "matchup_zh": "堪薩斯市皇家 @ 底特律老虎",
       "away_zh": "堪薩斯市皇家",
       "home_zh": "底特律老虎",
-      "away_expected_runs": 3.37,
-      "home_expected_runs": 4.53,
-      "expected_total": 7.89,
+      "away_expected_runs": 3.53,
+      "home_expected_runs": 4.69,
+      "expected_total": 8.21,
       "pick_side": "home",
       "prediction_zh": "底特律老虎",
       "home_win_prob": 0.6514,
@@ -222,8 +222,8 @@
         "unique_recent_relievers": 10,
         "fatigue_runs": 0.225
       },
-      "score_bias_applied": 0.12,
-      "totals_recent_bias_applied": -0.84,
+      "score_bias_applied": 0.14,
+      "totals_recent_bias_applied": -0.54,
       "missing_data": [
         "injury_absence_feed"
       ],
@@ -238,9 +238,9 @@
       "matchup_zh": "多倫多藍鳥 @ 波士頓紅襪",
       "away_zh": "多倫多藍鳥",
       "home_zh": "波士頓紅襪",
-      "away_expected_runs": 3.37,
-      "home_expected_runs": 4.53,
-      "expected_total": 7.89,
+      "away_expected_runs": 3.53,
+      "home_expected_runs": 4.69,
+      "expected_total": 8.21,
       "pick_side": "home",
       "prediction_zh": "波士頓紅襪",
       "home_win_prob": 0.6521,
@@ -285,8 +285,8 @@
         "unique_recent_relievers": 7,
         "fatigue_runs": 0.09
       },
-      "score_bias_applied": 0.12,
-      "totals_recent_bias_applied": -0.84,
+      "score_bias_applied": 0.14,
+      "totals_recent_bias_applied": -0.54,
       "missing_data": [
         "injury_absence_feed"
       ],
@@ -301,9 +301,9 @@
       "matchup_zh": "運動家 @ 明尼蘇達雙城",
       "away_zh": "運動家",
       "home_zh": "明尼蘇達雙城",
-      "away_expected_runs": 4.29,
-      "home_expected_runs": 5.43,
-      "expected_total": 9.72,
+      "away_expected_runs": 4.45,
+      "home_expected_runs": 5.59,
+      "expected_total": 10.04,
       "pick_side": "home",
       "prediction_zh": "明尼蘇達雙城",
       "home_win_prob": 0.6489,
@@ -348,8 +348,8 @@
         "unique_recent_relievers": 10,
         "fatigue_runs": 0.135
       },
-      "score_bias_applied": 0.12,
-      "totals_recent_bias_applied": -0.84,
+      "score_bias_applied": 0.14,
+      "totals_recent_bias_applied": -0.54,
       "missing_data": [
         "injury_absence_feed"
       ],
@@ -364,9 +364,9 @@
       "matchup_zh": "克里夫蘭守護者 @ 坦帕灣光芒",
       "away_zh": "克里夫蘭守護者",
       "home_zh": "坦帕灣光芒",
-      "away_expected_runs": 3.39,
-      "home_expected_runs": 4.08,
-      "expected_total": 7.48,
+      "away_expected_runs": 3.55,
+      "home_expected_runs": 4.24,
+      "expected_total": 7.8,
       "pick_side": "home",
       "prediction_zh": "坦帕灣光芒",
       "home_win_prob": 0.5923,
@@ -411,8 +411,8 @@
         "unique_recent_relievers": 7,
         "fatigue_runs": -0.045
       },
-      "score_bias_applied": 0.12,
-      "totals_recent_bias_applied": -0.84,
+      "score_bias_applied": 0.14,
+      "totals_recent_bias_applied": -0.54,
       "missing_data": [
         "injury_absence_feed"
       ],
@@ -427,9 +427,9 @@
       "matchup_zh": "洛杉磯道奇 @ 紐約大都會",
       "away_zh": "洛杉磯道奇",
       "home_zh": "紐約大都會",
-      "away_expected_runs": 4.91,
-      "home_expected_runs": 4.04,
-      "expected_total": 8.95,
+      "away_expected_runs": 5.07,
+      "home_expected_runs": 4.2,
+      "expected_total": 9.27,
       "pick_side": "away",
       "prediction_zh": "洛杉磯道奇",
       "home_win_prob": 0.3847,
@@ -474,8 +474,8 @@
         "unique_recent_relievers": 8,
         "fatigue_runs": 0.0
       },
-      "score_bias_applied": 0.12,
-      "totals_recent_bias_applied": -0.84,
+      "score_bias_applied": 0.14,
+      "totals_recent_bias_applied": -0.54,
       "missing_data": [
         "injury_absence_feed"
       ],
@@ -490,9 +490,9 @@
       "matchup_zh": "亞特蘭大勇士 @ 巴爾的摩金鶯",
       "away_zh": "亞特蘭大勇士",
       "home_zh": "巴爾的摩金鶯",
-      "away_expected_runs": 4.44,
-      "home_expected_runs": 4.08,
-      "expected_total": 8.52,
+      "away_expected_runs": 4.6,
+      "home_expected_runs": 4.24,
+      "expected_total": 8.84,
       "pick_side": "away",
       "prediction_zh": "亞特蘭大勇士",
       "home_win_prob": 0.4512,
@@ -537,8 +537,8 @@
         "unique_recent_relievers": 4,
         "fatigue_runs": -0.1
       },
-      "score_bias_applied": 0.12,
-      "totals_recent_bias_applied": -0.84,
+      "score_bias_applied": 0.14,
+      "totals_recent_bias_applied": -0.54,
       "missing_data": [
         "injury_absence_feed"
       ],
@@ -553,9 +553,9 @@
       "matchup_zh": "芝加哥小熊 @ 匹茲堡海盜",
       "away_zh": "芝加哥小熊",
       "home_zh": "匹茲堡海盜",
-      "away_expected_runs": 4.64,
-      "home_expected_runs": 4.61,
-      "expected_total": 9.25,
+      "away_expected_runs": 4.8,
+      "home_expected_runs": 4.77,
+      "expected_total": 9.57,
       "pick_side": "away",
       "prediction_zh": "芝加哥小熊",
       "home_win_prob": 0.496,
@@ -600,8 +600,8 @@
         "unique_recent_relievers": 5,
         "fatigue_runs": -0.045
       },
-      "score_bias_applied": 0.12,
-      "totals_recent_bias_applied": -0.84,
+      "score_bias_applied": 0.14,
+      "totals_recent_bias_applied": -0.54,
       "missing_data": [
         "injury_absence_feed"
       ],
@@ -616,9 +616,9 @@
       "matchup_zh": "亞利桑那響尾蛇 @ 華盛頓國民",
       "away_zh": "亞利桑那響尾蛇",
       "home_zh": "華盛頓國民",
-      "away_expected_runs": 5.45,
-      "home_expected_runs": 4.91,
-      "expected_total": 10.36,
+      "away_expected_runs": 5.61,
+      "home_expected_runs": 5.07,
+      "expected_total": 10.68,
       "pick_side": "away",
       "prediction_zh": "亞利桑那響尾蛇",
       "home_win_prob": 0.4282,
@@ -663,8 +663,8 @@
         "unique_recent_relievers": 8,
         "fatigue_runs": 0.045
       },
-      "score_bias_applied": 0.12,
-      "totals_recent_bias_applied": -0.84,
+      "score_bias_applied": 0.14,
+      "totals_recent_bias_applied": -0.54,
       "missing_data": [
         "injury_absence_feed"
       ],
@@ -679,9 +679,9 @@
       "matchup_zh": "休士頓太空人 @ 芝加哥白襪",
       "away_zh": "休士頓太空人",
       "home_zh": "芝加哥白襪",
-      "away_expected_runs": 3.99,
-      "home_expected_runs": 4.49,
-      "expected_total": 8.48,
+      "away_expected_runs": 4.15,
+      "home_expected_runs": 4.65,
+      "expected_total": 8.8,
       "pick_side": "home",
       "prediction_zh": "芝加哥白襪",
       "home_win_prob": 0.5675,
@@ -726,8 +726,8 @@
         "unique_recent_relievers": 9,
         "fatigue_runs": 0.135
       },
-      "score_bias_applied": 0.12,
-      "totals_recent_bias_applied": -0.84,
+      "score_bias_applied": 0.14,
+      "totals_recent_bias_applied": -0.54,
       "missing_data": [
         "injury_absence_feed"
       ],
@@ -742,9 +742,9 @@
       "matchup_zh": "西雅圖水手 @ 德州遊騎兵",
       "away_zh": "西雅圖水手",
       "home_zh": "德州遊騎兵",
-      "away_expected_runs": 4.1,
-      "home_expected_runs": 3.78,
-      "expected_total": 7.88,
+      "away_expected_runs": 4.26,
+      "home_expected_runs": 3.94,
+      "expected_total": 8.2,
       "pick_side": "away",
       "prediction_zh": "西雅圖水手",
       "home_win_prob": 0.4559,
@@ -789,8 +789,8 @@
         "unique_recent_relievers": 8,
         "fatigue_runs": 0.09
       },
-      "score_bias_applied": 0.12,
-      "totals_recent_bias_applied": -0.84,
+      "score_bias_applied": 0.14,
+      "totals_recent_bias_applied": -0.54,
       "missing_data": [
         "injury_absence_feed"
       ],
@@ -805,9 +805,9 @@
       "matchup_zh": "辛辛那提紅人 @ 聖路易紅雀",
       "away_zh": "辛辛那提紅人",
       "home_zh": "聖路易紅雀",
-      "away_expected_runs": 3.82,
-      "home_expected_runs": 4.38,
-      "expected_total": 8.2,
+      "away_expected_runs": 3.98,
+      "home_expected_runs": 4.54,
+      "expected_total": 8.52,
       "pick_side": "home",
       "prediction_zh": "聖路易紅雀",
       "home_win_prob": 0.5758,
@@ -852,8 +852,8 @@
         "unique_recent_relievers": 7,
         "fatigue_runs": 0.0
       },
-      "score_bias_applied": 0.12,
-      "totals_recent_bias_applied": -0.84,
+      "score_bias_applied": 0.14,
+      "totals_recent_bias_applied": -0.54,
       "missing_data": [
         "injury_absence_feed"
       ],
@@ -868,9 +868,9 @@
       "matchup_zh": "聖地牙哥教士 @ 邁阿密馬林魚",
       "away_zh": "聖地牙哥教士",
       "home_zh": "邁阿密馬林魚",
-      "away_expected_runs": 3.92,
-      "home_expected_runs": 5.08,
-      "expected_total": 9.0,
+      "away_expected_runs": 4.08,
+      "home_expected_runs": 5.24,
+      "expected_total": 9.32,
       "pick_side": "home",
       "prediction_zh": "邁阿密馬林魚",
       "home_win_prob": 0.6507,
@@ -915,8 +915,8 @@
         "unique_recent_relievers": 6,
         "fatigue_runs": -0.09
       },
-      "score_bias_applied": 0.12,
-      "totals_recent_bias_applied": -0.84,
+      "score_bias_applied": 0.14,
+      "totals_recent_bias_applied": -0.54,
       "missing_data": [
         "injury_absence_feed"
       ],
@@ -931,13 +931,13 @@
       "matchup_zh": "紐約洋基 @ 費城費城人",
       "away_zh": "紐約洋基",
       "home_zh": "費城費城人",
-      "away_expected_runs": 3.88,
-      "home_expected_runs": 4.01,
-      "expected_total": 7.89,
-      "pick_side": "home",
-      "prediction_zh": "費城費城人",
-      "home_win_prob": 0.518,
-      "away_win_prob": 0.482,
+      "away_expected_runs": 4.17,
+      "home_expected_runs": 4.17,
+      "expected_total": 8.34,
+      "pick_side": "away",
+      "prediction_zh": "紐約洋基",
+      "home_win_prob": 0.4997,
+      "away_win_prob": 0.5003,
       "lineup_source": "projected_recent_lineup_order",
       "away_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
@@ -972,13 +972,15 @@
         "fatigue_runs": 0.18
       },
       "home_bullpen": {
-        "source": "not_connected_fast_run",
-        "fatigue_runs": 0.0
+        "source": "recent_boxscore_pitcher_usage",
+        "recent_games": 3,
+        "recent_relief_pitcher_appearances": 11,
+        "unique_recent_relievers": 8,
+        "fatigue_runs": 0.135
       },
-      "score_bias_applied": 0.12,
-      "totals_recent_bias_applied": -0.84,
+      "score_bias_applied": 0.14,
+      "totals_recent_bias_applied": -0.54,
       "missing_data": [
-        "bullpen_recent_usage",
         "injury_absence_feed"
       ],
       "data_quality": "可用",
