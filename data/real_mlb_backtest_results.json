@@ -1,7 +1,7 @@
 {
   "backtest_period": {
     "start": "2025-03-27",
-    "end": "2026-07-24"
+    "end": "2026-07-25"
   },
   "settings": {
     "unit": 100,
@@ -13,24 +13,24 @@
   "data_source": {
     "type": "real_mlb_final_scores",
     "games_csv": "data\\real_mlb_games.csv",
-    "games_evaluated": 3988,
+    "games_evaluated": 3989,
     "actual_first_game_date": "2025-03-27",
-    "actual_last_game_date": "2026-07-24",
+    "actual_last_game_date": "2026-07-25",
     "game_types": [
       "R"
     ],
     "coverage_warning": null,
-    "generated_at": "2026-07-25T21:01:31",
+    "generated_at": "2026-07-26T00:01:29",
     "note": "Backtest uses real MLB final scores from saved MLB Stats API schedule data. Odds are still the configured fixed market assumption."
   },
   "models": {
     "A-畢氏勝率": {
-      "total_bets": 1184,
+      "total_bets": 1185,
       "wins": 704,
-      "losses": 480,
-      "win_rate": 0.5946,
-      "total_pnl": 16000.64,
-      "roi_pct": 13.51,
+      "losses": 481,
+      "win_rate": 0.5941,
+      "total_pnl": 15900.64,
+      "roi_pct": 13.42,
       "daily_records": [
         {
           "date": "2025-03-27",
@@ -21674,16 +21674,41 @@
               "result": "win"
             }
           ]
+        },
+        {
+          "date": "2026-07-25",
+          "bets": 1,
+          "wins": 0,
+          "losses": 1,
+          "pnl": -100.0,
+          "bet_details": [
+            {
+              "game_pk": "824244",
+              "home": "Detroit Tigers",
+              "home_zh": "底特律老虎",
+              "away": "Kansas City Royals",
+              "away_zh": "堪薩斯市皇家",
+              "home_score": 0,
+              "away_score": 0,
+              "pick": "Detroit Tigers",
+              "pick_zh": "底特律老虎",
+              "home_probable_pitcher_zh": "卡塞 米",
+              "away_probable_pitcher_zh": "麥可 瓦查",
+              "confidence": 0.556,
+              "edge": 0.0322,
+              "result": "loss"
+            }
+          ]
         }
       ]
     },
     "B-近期狀態": {
-      "total_bets": 1442,
+      "total_bets": 1443,
       "wins": 811,
-      "losses": 631,
-      "win_rate": 0.5624,
-      "total_pnl": 10628.01,
-      "roi_pct": 7.37,
+      "losses": 632,
+      "win_rate": 0.562,
+      "total_pnl": 10528.01,
+      "roi_pct": 7.3,
       "daily_records": [
         {
           "date": "2025-03-27",
@@ -47460,16 +47485,41 @@
               "result": "win"
             }
           ]
+        },
+        {
+          "date": "2026-07-25",
+          "bets": 1,
+          "wins": 0,
+          "losses": 1,
+          "pnl": -100.0,
+          "bet_details": [
+            {
+              "game_pk": "824244",
+              "home": "Detroit Tigers",
+              "home_zh": "底特律老虎",
+              "away": "Kansas City Royals",
+              "away_zh": "堪薩斯市皇家",
+              "home_score": 0,
+              "away_score": 0,
+              "pick": "Detroit Tigers",
+              "pick_zh": "底特律老虎",
+              "home_probable_pitcher_zh": "卡塞 米",
+              "away_probable_pitcher_zh": "麥可 瓦查",
+              "confidence": 0.5605,
+              "edge": 0.0366,
+              "result": "loss"
+            }
+          ]
         }
       ]
     },
     "C-ELO評分": {
-      "total_bets": 1426,
+      "total_bets": 1427,
       "wins": 829,
-      "losses": 597,
-      "win_rate": 0.5813,
-      "total_pnl": 15664.39,
-      "roi_pct": 10.98,
+      "losses": 598,
+      "win_rate": 0.5809,
+      "total_pnl": 15564.39,
+      "roi_pct": 10.91,
       "daily_records": [
         {
           "date": "2025-03-27",
@@ -72993,16 +73043,41 @@
               "result": "win"
             }
           ]
+        },
+        {
+          "date": "2026-07-25",
+          "bets": 1,
+          "wins": 0,
+          "losses": 1,
+          "pnl": -100.0,
+          "bet_details": [
+            {
+              "game_pk": "824244",
+              "home": "Detroit Tigers",
+              "home_zh": "底特律老虎",
+              "away": "Kansas City Royals",
+              "away_zh": "堪薩斯市皇家",
+              "home_score": 0,
+              "away_score": 0,
+              "pick": "Detroit Tigers",
+              "pick_zh": "底特律老虎",
+              "home_probable_pitcher_zh": "卡塞 米",
+              "away_probable_pitcher_zh": "麥可 瓦查",
+              "confidence": 0.6503,
+              "edge": 0.1265,
+              "result": "loss"
+            }
+          ]
         }
       ]
     },
     "D-近期失分代理": {
-      "total_bets": 1425,
-      "wins": 778,
+      "total_bets": 1426,
+      "wins": 779,
       "losses": 647,
-      "win_rate": 0.546,
-      "total_pnl": 6027.98,
-      "roi_pct": 4.23,
+      "win_rate": 0.5463,
+      "total_pnl": 6118.89,
+      "roi_pct": 4.29,
       "daily_records": [
         {
           "date": "2025-03-27",
@@ -98506,16 +98581,41 @@
               "result": "loss"
             }
           ]
+        },
+        {
+          "date": "2026-07-25",
+          "bets": 1,
+          "wins": 1,
+          "losses": 0,
+          "pnl": 90.91,
+          "bet_details": [
+            {
+              "game_pk": "824244",
+              "home": "Detroit Tigers",
+              "home_zh": "底特律老虎",
+              "away": "Kansas City Royals",
+              "away_zh": "堪薩斯市皇家",
+              "home_score": 0,
+              "away_score": 0,
+              "pick": "Kansas City Royals",
+              "pick_zh": "堪薩斯市皇家",
+              "home_probable_pitcher_zh": "卡塞 米",
+              "away_probable_pitcher_zh": "麥可 瓦查",
+              "confidence": 0.5746,
+              "edge": 0.0508,
+              "result": "win"
+            }
+          ]
         }
       ]
     },
     "E-對照組(Ensemble)": {
-      "total_bets": 1390,
+      "total_bets": 1391,
       "wins": 808,
-      "losses": 582,
-      "win_rate": 0.5813,
-      "total_pnl": 15255.28,
-      "roi_pct": 10.98,
+      "losses": 583,
+      "win_rate": 0.5809,
+      "total_pnl": 15155.28,
+      "roi_pct": 10.9,
       "daily_records": [
         {
           "date": "2025-03-27",
@@ -123460,6 +123560,31 @@
               "away_probable_pitcher_zh": "史賓塞 阿",
               "confidence": 0.5704,
               "edge": 0.0466,
+              "result": "loss"
+            }
+          ]
+        },
+        {
+          "date": "2026-07-25",
+          "bets": 1,
+          "wins": 0,
+          "losses": 1,
+          "pnl": -100.0,
+          "bet_details": [
+            {
+              "game_pk": "824244",
+              "home": "Detroit Tigers",
+              "home_zh": "底特律老虎",
+              "away": "Kansas City Royals",
+              "away_zh": "堪薩斯市皇家",
+              "home_score": 0,
+              "away_score": 0,
+              "pick": "Detroit Tigers",
+              "pick_zh": "底特律老虎",
+              "home_probable_pitcher_zh": "卡塞 米",
+              "away_probable_pitcher_zh": "麥可 瓦查",
+              "confidence": 0.5598,
+              "edge": 0.036,
               "result": "loss"
             }
           ]

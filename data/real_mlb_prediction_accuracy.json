@@ -1,21 +1,21 @@
 {
-  "generated_at": "2026-07-25T21:01:31",
+  "generated_at": "2026-07-26T00:01:28",
   "backtest_period": {
     "start": "2025-03-27",
-    "end": "2026-07-24"
+    "end": "2026-07-25"
   },
   "data_source": {
     "type": "real_mlb_final_scores",
     "games_csv": "data\\real_mlb_games.csv",
-    "games_evaluated": 3988,
+    "games_evaluated": 3989,
     "note": "Pure winner-prediction accuracy only. Odds, edge, stake, and ROI are intentionally excluded."
   },
   "models": {
     "A-畢氏勝率": {
-      "predictions": 3909,
+      "predictions": 3910,
       "correct": 2123,
-      "wrong": 1786,
-      "accuracy_pct": 54.31,
+      "wrong": 1787,
+      "accuracy_pct": 54.3,
       "monthly": [
         {
           "month": "2025-04",
@@ -79,9 +79,9 @@
         },
         {
           "month": "2026-07",
-          "predictions": 274,
+          "predictions": 275,
           "correct": 153,
-          "accuracy_pct": 55.84
+          "accuracy_pct": 55.64
         }
       ],
       "prediction_details": [
@@ -66537,14 +66537,31 @@
           "correct": true,
           "away_probable_pitcher_zh": "葛 霍",
           "home_probable_pitcher_zh": "崔 羅傑"
+        },
+        {
+          "game_pk": "824244",
+          "date": "2026-07-25",
+          "matchup_zh": "堪薩斯市皇家 @ 底特律老虎",
+          "away_zh": "堪薩斯市皇家",
+          "home_zh": "底特律老虎",
+          "away_score": 0,
+          "home_score": 0,
+          "pick_zh": "底特律老虎",
+          "pick_side": "home",
+          "actual_winner_zh": "堪薩斯市皇家",
+          "confidence": 0.556,
+          "home_win_probability": 0.556,
+          "correct": false,
+          "away_probable_pitcher_zh": "麥可 瓦查",
+          "home_probable_pitcher_zh": "卡塞 米"
         }
       ]
     },
     "B-近期狀態": {
-      "predictions": 3909,
+      "predictions": 3910,
       "correct": 2091,
-      "wrong": 1818,
-      "accuracy_pct": 53.49,
+      "wrong": 1819,
+      "accuracy_pct": 53.48,
       "monthly": [
         {
           "month": "2025-04",
@@ -66608,9 +66625,9 @@
         },
         {
           "month": "2026-07",
-          "predictions": 274,
+          "predictions": 275,
           "correct": 145,
-          "accuracy_pct": 52.92
+          "accuracy_pct": 52.73
         }
       ],
       "prediction_details": [
@@ -133066,14 +133083,31 @@
           "correct": false,
           "away_probable_pitcher_zh": "葛 霍",
           "home_probable_pitcher_zh": "崔 羅傑"
+        },
+        {
+          "game_pk": "824244",
+          "date": "2026-07-25",
+          "matchup_zh": "堪薩斯市皇家 @ 底特律老虎",
+          "away_zh": "堪薩斯市皇家",
+          "home_zh": "底特律老虎",
+          "away_score": 0,
+          "home_score": 0,
+          "pick_zh": "底特律老虎",
+          "pick_side": "home",
+          "actual_winner_zh": "堪薩斯市皇家",
+          "confidence": 0.5605,
+          "home_win_probability": 0.5605,
+          "correct": false,
+          "away_probable_pitcher_zh": "麥可 瓦查",
+          "home_probable_pitcher_zh": "卡塞 米"
         }
       ]
     },
     "C-ELO評分": {
-      "predictions": 3988,
+      "predictions": 3989,
       "correct": 2146,
-      "wrong": 1842,
-      "accuracy_pct": 53.81,
+      "wrong": 1843,
+      "accuracy_pct": 53.8,
       "monthly": [
         {
           "month": "2025-03",
@@ -133143,9 +133177,9 @@
         },
         {
           "month": "2026-07",
-          "predictions": 274,
+          "predictions": 275,
           "correct": 151,
-          "accuracy_pct": 55.11
+          "accuracy_pct": 54.91
         }
       ],
       "prediction_details": [
@@ -200944,14 +200978,31 @@
           "correct": false,
           "away_probable_pitcher_zh": "葛 霍",
           "home_probable_pitcher_zh": "崔 羅傑"
+        },
+        {
+          "game_pk": "824244",
+          "date": "2026-07-25",
+          "matchup_zh": "堪薩斯市皇家 @ 底特律老虎",
+          "away_zh": "堪薩斯市皇家",
+          "home_zh": "底特律老虎",
+          "away_score": 0,
+          "home_score": 0,
+          "pick_zh": "底特律老虎",
+          "pick_side": "home",
+          "actual_winner_zh": "堪薩斯市皇家",
+          "confidence": 0.6503,
+          "home_win_probability": 0.6503,
+          "correct": false,
+          "away_probable_pitcher_zh": "麥可 瓦查",
+          "home_probable_pitcher_zh": "卡塞 米"
         }
       ]
     },
     "D-近期失分代理": {
-      "predictions": 3909,
-      "correct": 2033,
+      "predictions": 3910,
+      "correct": 2034,
       "wrong": 1876,
-      "accuracy_pct": 52.01,
+      "accuracy_pct": 52.02,
       "monthly": [
         {
           "month": "2025-04",
@@ -201015,9 +201066,9 @@
         },
         {
           "month": "2026-07",
-          "predictions": 274,
-          "correct": 132,
-          "accuracy_pct": 48.18
+          "predictions": 275,
+          "correct": 133,
+          "accuracy_pct": 48.36
         }
       ],
       "prediction_details": [
@@ -267473,14 +267524,31 @@
           "correct": false,
           "away_probable_pitcher_zh": "葛 霍",
           "home_probable_pitcher_zh": "崔 羅傑"
+        },
+        {
+          "game_pk": "824244",
+          "date": "2026-07-25",
+          "matchup_zh": "堪薩斯市皇家 @ 底特律老虎",
+          "away_zh": "堪薩斯市皇家",
+          "home_zh": "底特律老虎",
+          "away_score": 0,
+          "home_score": 0,
+          "pick_zh": "堪薩斯市皇家",
+          "pick_side": "away",
+          "actual_winner_zh": "堪薩斯市皇家",
+          "confidence": 0.5746,
+          "home_win_probability": 0.4254,
+          "correct": true,
+          "away_probable_pitcher_zh": "麥可 瓦查",
+          "home_probable_pitcher_zh": "卡塞 米"
         }
       ]
     },
     "E-對照組(Ensemble)": {
-      "predictions": 3988,
+      "predictions": 3989,
       "correct": 2127,
-      "wrong": 1861,
-      "accuracy_pct": 53.34,
+      "wrong": 1862,
+      "accuracy_pct": 53.32,
       "monthly": [
         {
           "month": "2025-03",
@@ -267550,9 +267618,9 @@
         },
         {
           "month": "2026-07",
-          "predictions": 274,
+          "predictions": 275,
           "correct": 144,
-          "accuracy_pct": 52.55
+          "accuracy_pct": 52.36
         }
       ],
       "prediction_details": [
@@ -335351,6 +335419,23 @@
           "correct": false,
           "away_probable_pitcher_zh": "葛 霍",
           "home_probable_pitcher_zh": "崔 羅傑"
+        },
+        {
+          "game_pk": "824244",
+          "date": "2026-07-25",
+          "matchup_zh": "堪薩斯市皇家 @ 底特律老虎",
+          "away_zh": "堪薩斯市皇家",
+          "home_zh": "底特律老虎",
+          "away_score": 0,
+          "home_score": 0,
+          "pick_zh": "底特律老虎",
+          "pick_side": "home",
+          "actual_winner_zh": "堪薩斯市皇家",
+          "confidence": 0.5719,
+          "home_win_probability": 0.5719,
+          "correct": false,
+          "away_probable_pitcher_zh": "麥可 瓦查",
+          "home_probable_pitcher_zh": "卡塞 米"
         }
       ]
     }
