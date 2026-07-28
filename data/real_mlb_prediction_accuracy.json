@@ -1,21 +1,21 @@
 {
-  "generated_at": "2026-07-28T21:06:36",
+  "generated_at": "2026-07-29T00:01:39",
   "backtest_period": {
     "start": "2025-03-27",
-    "end": "2026-07-27"
+    "end": "2026-07-28"
   },
   "data_source": {
     "type": "real_mlb_final_scores",
     "games_csv": "data\\real_mlb_games.csv",
-    "games_evaluated": 4029,
+    "games_evaluated": 4030,
     "note": "Pure winner-prediction accuracy only. Odds, edge, stake, and ROI are intentionally excluded."
   },
   "models": {
     "A-畢氏勝率": {
-      "predictions": 3950,
+      "predictions": 3951,
       "correct": 2148,
-      "wrong": 1802,
-      "accuracy_pct": 54.38,
+      "wrong": 1803,
+      "accuracy_pct": 54.37,
       "monthly": [
         {
           "month": "2025-04",
@@ -79,9 +79,9 @@
         },
         {
           "month": "2026-07",
-          "predictions": 315,
+          "predictions": 316,
           "correct": 178,
-          "accuracy_pct": 56.51
+          "accuracy_pct": 56.33
         }
       ],
       "prediction_details": [
@@ -67234,14 +67234,31 @@
           "correct": true,
           "away_probable_pitcher_zh": "帕托 托",
           "home_probable_pitcher_zh": "傑克 佩"
+        },
+        {
+          "game_pk": "824490",
+          "date": "2026-07-28",
+          "matchup_zh": "克里夫蘭守護者 @ 辛辛那提紅人",
+          "away_zh": "克里夫蘭守護者",
+          "home_zh": "辛辛那提紅人",
+          "away_score": 0,
+          "home_score": 0,
+          "pick_zh": "辛辛那提紅人",
+          "pick_side": "home",
+          "actual_winner_zh": "克里夫蘭守護者",
+          "confidence": 0.5186,
+          "home_win_probability": 0.5186,
+          "correct": false,
+          "away_probable_pitcher_zh": "德 塞尼",
+          "home_probable_pitcher_zh": "查塞 布優爾恩斯"
         }
       ]
     },
     "B-近期狀態": {
-      "predictions": 3950,
+      "predictions": 3951,
       "correct": 2110,
-      "wrong": 1840,
-      "accuracy_pct": 53.42,
+      "wrong": 1841,
+      "accuracy_pct": 53.4,
       "monthly": [
         {
           "month": "2025-04",
@@ -67305,9 +67322,9 @@
         },
         {
           "month": "2026-07",
-          "predictions": 315,
+          "predictions": 316,
           "correct": 164,
-          "accuracy_pct": 52.06
+          "accuracy_pct": 51.9
         }
       ],
       "prediction_details": [
@@ -134460,14 +134477,31 @@
           "correct": true,
           "away_probable_pitcher_zh": "帕托 托",
           "home_probable_pitcher_zh": "傑克 佩"
+        },
+        {
+          "game_pk": "824490",
+          "date": "2026-07-28",
+          "matchup_zh": "克里夫蘭守護者 @ 辛辛那提紅人",
+          "away_zh": "克里夫蘭守護者",
+          "home_zh": "辛辛那提紅人",
+          "away_score": 0,
+          "home_score": 0,
+          "pick_zh": "辛辛那提紅人",
+          "pick_side": "home",
+          "actual_winner_zh": "克里夫蘭守護者",
+          "confidence": 0.6817,
+          "home_win_probability": 0.6817,
+          "correct": false,
+          "away_probable_pitcher_zh": "德 塞尼",
+          "home_probable_pitcher_zh": "查塞 布優爾恩斯"
         }
       ]
     },
     "C-ELO評分": {
-      "predictions": 4029,
+      "predictions": 4030,
       "correct": 2163,
-      "wrong": 1866,
-      "accuracy_pct": 53.69,
+      "wrong": 1867,
+      "accuracy_pct": 53.67,
       "monthly": [
         {
           "month": "2025-03",
@@ -134537,9 +134571,9 @@
         },
         {
           "month": "2026-07",
-          "predictions": 315,
+          "predictions": 316,
           "correct": 168,
-          "accuracy_pct": 53.33
+          "accuracy_pct": 53.16
         }
       ],
       "prediction_details": [
@@ -203035,14 +203069,31 @@
           "correct": true,
           "away_probable_pitcher_zh": "帕托 托",
           "home_probable_pitcher_zh": "傑克 佩"
+        },
+        {
+          "game_pk": "824490",
+          "date": "2026-07-28",
+          "matchup_zh": "克里夫蘭守護者 @ 辛辛那提紅人",
+          "away_zh": "克里夫蘭守護者",
+          "home_zh": "辛辛那提紅人",
+          "away_score": 0,
+          "home_score": 0,
+          "pick_zh": "辛辛那提紅人",
+          "pick_side": "home",
+          "actual_winner_zh": "克里夫蘭守護者",
+          "confidence": 0.5046,
+          "home_win_probability": 0.5046,
+          "correct": false,
+          "away_probable_pitcher_zh": "德 塞尼",
+          "home_probable_pitcher_zh": "查塞 布優爾恩斯"
         }
       ]
     },
     "D-近期失分代理": {
-      "predictions": 3950,
+      "predictions": 3951,
       "correct": 2059,
-      "wrong": 1891,
-      "accuracy_pct": 52.13,
+      "wrong": 1892,
+      "accuracy_pct": 52.11,
       "monthly": [
         {
           "month": "2025-04",
@@ -203106,9 +203157,9 @@
         },
         {
           "month": "2026-07",
-          "predictions": 315,
+          "predictions": 316,
           "correct": 158,
-          "accuracy_pct": 50.16
+          "accuracy_pct": 50.0
         }
       ],
       "prediction_details": [
@@ -270261,14 +270312,31 @@
           "correct": true,
           "away_probable_pitcher_zh": "帕托 托",
           "home_probable_pitcher_zh": "傑克 佩"
+        },
+        {
+          "game_pk": "824490",
+          "date": "2026-07-28",
+          "matchup_zh": "克里夫蘭守護者 @ 辛辛那提紅人",
+          "away_zh": "克里夫蘭守護者",
+          "home_zh": "辛辛那提紅人",
+          "away_score": 0,
+          "home_score": 0,
+          "pick_zh": "辛辛那提紅人",
+          "pick_side": "home",
+          "actual_winner_zh": "克里夫蘭守護者",
+          "confidence": 0.6422,
+          "home_win_probability": 0.6422,
+          "correct": false,
+          "away_probable_pitcher_zh": "德 塞尼",
+          "home_probable_pitcher_zh": "查塞 布優爾恩斯"
         }
       ]
     },
     "E-對照組(Ensemble)": {
-      "predictions": 4029,
+      "predictions": 4030,
       "correct": 2149,
-      "wrong": 1880,
-      "accuracy_pct": 53.34,
+      "wrong": 1881,
+      "accuracy_pct": 53.33,
       "monthly": [
         {
           "month": "2025-03",
@@ -270338,9 +270406,9 @@
         },
         {
           "month": "2026-07",
-          "predictions": 315,
+          "predictions": 316,
           "correct": 166,
-          "accuracy_pct": 52.7
+          "accuracy_pct": 52.53
         }
       ],
       "prediction_details": [
@@ -338836,6 +338904,23 @@
           "correct": true,
           "away_probable_pitcher_zh": "帕托 托",
           "home_probable_pitcher_zh": "傑克 佩"
+        },
+        {
+          "game_pk": "824490",
+          "date": "2026-07-28",
+          "matchup_zh": "克里夫蘭守護者 @ 辛辛那提紅人",
+          "away_zh": "克里夫蘭守護者",
+          "home_zh": "辛辛那提紅人",
+          "away_score": 0,
+          "home_score": 0,
+          "pick_zh": "辛辛那提紅人",
+          "pick_side": "home",
+          "actual_winner_zh": "克里夫蘭守護者",
+          "confidence": 0.5696,
+          "home_win_probability": 0.5696,
+          "correct": false,
+          "away_probable_pitcher_zh": "德 塞尼",
+          "home_probable_pitcher_zh": "查塞 布優爾恩斯"
         }
       ]
     }

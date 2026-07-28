@@ -1,7 +1,7 @@
 {
   "backtest_period": {
     "start": "2025-03-27",
-    "end": "2026-07-27"
+    "end": "2026-07-28"
   },
   "settings": {
     "unit": 100,
@@ -13,14 +13,14 @@
   "data_source": {
     "type": "real_mlb_final_scores",
     "games_csv": "data\\real_mlb_games.csv",
-    "games_evaluated": 4029,
+    "games_evaluated": 4030,
     "actual_first_game_date": "2025-03-27",
-    "actual_last_game_date": "2026-07-27",
+    "actual_last_game_date": "2026-07-28",
     "game_types": [
       "R"
     ],
     "coverage_warning": null,
-    "generated_at": "2026-07-28T21:06:37",
+    "generated_at": "2026-07-29T00:01:39",
     "note": "Backtest uses real MLB final scores from saved MLB Stats API schedule data. Odds are still the configured fixed market assumption."
   },
   "models": {
@@ -21813,16 +21813,24 @@
               "result": "loss"
             }
           ]
+        },
+        {
+          "date": "2026-07-28",
+          "bets": 0,
+          "wins": 0,
+          "losses": 0,
+          "pnl": 0.0,
+          "bet_details": []
         }
       ]
     },
     "B-近期狀態": {
-      "total_bets": 1457,
+      "total_bets": 1458,
       "wins": 818,
-      "losses": 639,
-      "win_rate": 0.5614,
-      "total_pnl": 10464.38,
-      "roi_pct": 7.18,
+      "losses": 640,
+      "win_rate": 0.561,
+      "total_pnl": 10364.38,
+      "roi_pct": 7.11,
       "daily_records": [
         {
           "date": "2025-03-27",
@@ -47866,6 +47874,31 @@
               "result": "loss"
             }
           ]
+        },
+        {
+          "date": "2026-07-28",
+          "bets": 1,
+          "wins": 0,
+          "losses": 1,
+          "pnl": -100.0,
+          "bet_details": [
+            {
+              "game_pk": "824490",
+              "home": "Cincinnati Reds",
+              "home_zh": "辛辛那提紅人",
+              "away": "Cleveland Guardians",
+              "away_zh": "克里夫蘭守護者",
+              "home_score": 0,
+              "away_score": 0,
+              "pick": "Cincinnati Reds",
+              "pick_zh": "辛辛那提紅人",
+              "home_probable_pitcher_zh": "查塞 布優爾恩斯",
+              "away_probable_pitcher_zh": "德 塞尼",
+              "confidence": 0.6817,
+              "edge": 0.1579,
+              "result": "loss"
+            }
+          ]
         }
       ]
     },
@@ -73666,16 +73699,24 @@
               "result": "loss"
             }
           ]
+        },
+        {
+          "date": "2026-07-28",
+          "bets": 0,
+          "wins": 0,
+          "losses": 0,
+          "pnl": 0.0,
+          "bet_details": []
         }
       ]
     },
     "D-近期失分代理": {
-      "total_bets": 1440,
+      "total_bets": 1441,
       "wins": 788,
-      "losses": 652,
-      "win_rate": 0.5472,
-      "total_pnl": 6437.08,
-      "roi_pct": 4.47,
+      "losses": 653,
+      "win_rate": 0.5468,
+      "total_pnl": 6337.08,
+      "roi_pct": 4.4,
       "daily_records": [
         {
           "date": "2025-03-27",
@@ -99446,16 +99487,41 @@
               "result": "win"
             }
           ]
+        },
+        {
+          "date": "2026-07-28",
+          "bets": 1,
+          "wins": 0,
+          "losses": 1,
+          "pnl": -100.0,
+          "bet_details": [
+            {
+              "game_pk": "824490",
+              "home": "Cincinnati Reds",
+              "home_zh": "辛辛那提紅人",
+              "away": "Cleveland Guardians",
+              "away_zh": "克里夫蘭守護者",
+              "home_score": 0,
+              "away_score": 0,
+              "pick": "Cincinnati Reds",
+              "pick_zh": "辛辛那提紅人",
+              "home_probable_pitcher_zh": "查塞 布優爾恩斯",
+              "away_probable_pitcher_zh": "德 塞尼",
+              "confidence": 0.6422,
+              "edge": 0.1184,
+              "result": "loss"
+            }
+          ]
         }
       ]
     },
     "E-對照組(Ensemble)": {
-      "total_bets": 1405,
+      "total_bets": 1406,
       "wins": 816,
-      "losses": 589,
-      "win_rate": 0.5808,
-      "total_pnl": 15282.56,
-      "roi_pct": 10.88,
+      "losses": 590,
+      "win_rate": 0.5804,
+      "total_pnl": 15182.56,
+      "roi_pct": 10.8,
       "daily_records": [
         {
           "date": "2025-03-27",
@@ -124667,6 +124733,31 @@
               "away_probable_pitcher_zh": "麥斯 薛澤",
               "confidence": 0.5555,
               "edge": 0.0317,
+              "result": "loss"
+            }
+          ]
+        },
+        {
+          "date": "2026-07-28",
+          "bets": 1,
+          "wins": 0,
+          "losses": 1,
+          "pnl": -100.0,
+          "bet_details": [
+            {
+              "game_pk": "824490",
+              "home": "Cincinnati Reds",
+              "home_zh": "辛辛那提紅人",
+              "away": "Cleveland Guardians",
+              "away_zh": "克里夫蘭守護者",
+              "home_score": 0,
+              "away_score": 0,
+              "pick": "Cincinnati Reds",
+              "pick_zh": "辛辛那提紅人",
+              "home_probable_pitcher_zh": "查塞 布優爾恩斯",
+              "away_probable_pitcher_zh": "德 塞尼",
+              "confidence": 0.5753,
+              "edge": 0.0515,
               "result": "loss"
             }
           ]
