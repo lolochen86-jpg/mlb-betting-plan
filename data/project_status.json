@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-07-29T21:10:02",
+  "generated_at": "2026-07-30T00:07:53",
   "history": {
-    "games_written": 4044,
+    "games_written": 4049,
     "actual_first_game_date": "2025-03-27",
-    "actual_last_game_date": "2026-07-28"
+    "actual_last_game_date": "2026-07-29"
   },
   "accuracy": {
     "best_model": "A-畢氏勝率",
-    "predictions": 3965,
-    "correct": 2156,
-    "accuracy_pct": 54.38
+    "predictions": 3970,
+    "correct": 2158,
+    "accuracy_pct": 54.36
   },
   "daily": {
-    "target_date": "2026-07-29",
-    "predictions": 16,
+    "target_date": "2026-07-30",
+    "predictions": 10,
     "high_confidence": 0
   },
   "settlements": [
@@ -261,6 +261,13 @@
       "final_games": 0,
       "pending_games": 16,
       "accuracy_pct": 0
+    },
+    {
+      "date": "2026-07-30",
+      "predictions": 10,
+      "final_games": 0,
+      "pending_games": 10,
+      "accuracy_pct": 0
     }
   ],
   "odds": [
@@ -483,6 +490,23 @@
       "rows": 15,
       "filled": 15,
       "missing": []
+    },
+    {
+      "date": "2026-07-30",
+      "rows": 10,
+      "filled": 0,
+      "missing": [
+        "德州遊騎兵 @ 坦帕灣光芒 (Scheduled)",
+        "芝加哥小熊 @ 聖路易紅雀 (Scheduled)",
+        "舊金山巨人 @ 聖地牙哥教士 (Scheduled)",
+        "邁阿密馬林魚 @ 紐約大都會 (Scheduled)",
+        "堪薩斯市皇家 @ 明尼蘇達雙城 (Scheduled)",
+        "西雅圖水手 @ 洛杉磯道奇 (Scheduled)",
+        "匹茲堡海盜 @ 辛辛那提紅人 (Scheduled)",
+        "紐約洋基 @ 芝加哥白襪 (Scheduled)",
+        "華盛頓國民 @ 亞特蘭大勇士 (Scheduled)",
+        "波士頓紅襪 @ 運動家 (Scheduled)"
+      ]
     }
   ],
   "roi": [
@@ -765,19 +789,27 @@
       "pending_bets": 0,
       "total_pnl": 0,
       "roi_pct": 0
+    },
+    {
+      "date": "2026-07-30",
+      "bets": 0,
+      "final_bets": 0,
+      "pending_bets": 0,
+      "total_pnl": 0,
+      "roi_pct": 0
     }
   ],
   "auto_runner": {
     "mode": "running",
-    "target_date": "2026-07-29",
-    "last_started_at_tw": "2026-07-29T21:00:03+08:00",
-    "last_finished_at_tw": "2026-07-29T14:00:02+08:00",
+    "target_date": "2026-07-30",
+    "last_started_at_tw": "2026-07-30T00:00:03+08:00",
+    "last_finished_at_tw": "2026-07-29T21:10:02+08:00",
     "last_return_code": 0,
     "log": "C:\\Users\\I5-10400F\\Documents\\投注計畫\\logs\\auto_runner\\2026-07-29.workflow.log",
     "health": {
       "ok": true,
       "target_date": "2026-07-29",
-      "checked_at_tw": "2026-07-29T14:00:02+08:00",
+      "checked_at_tw": "2026-07-29T21:10:02+08:00",
       "checks": [
         {
           "name": "daily_predictions",
@@ -834,7 +866,18 @@
     "2026-07-21 尚有 2 場比賽未結算",
     "2026-07-27 尚有 1 場比賽未結算",
     "2026-07-28 尚有 1 場比賽未結算",
-    "2026-07-29 尚有 16 場比賽未結算"
+    "2026-07-29 尚有 16 場比賽未結算",
+    "2026-07-30 尚有 10 場比賽未結算",
+    "2026-07-30 德州遊騎兵 @ 坦帕灣光芒 (Scheduled) 尚未開打或來源尚未開盤",
+    "2026-07-30 芝加哥小熊 @ 聖路易紅雀 (Scheduled) 尚未開打或來源尚未開盤",
+    "2026-07-30 舊金山巨人 @ 聖地牙哥教士 (Scheduled) 尚未開打或來源尚未開盤",
+    "2026-07-30 邁阿密馬林魚 @ 紐約大都會 (Scheduled) 尚未開打或來源尚未開盤",
+    "2026-07-30 堪薩斯市皇家 @ 明尼蘇達雙城 (Scheduled) 尚未開打或來源尚未開盤",
+    "2026-07-30 西雅圖水手 @ 洛杉磯道奇 (Scheduled) 尚未開打或來源尚未開盤",
+    "2026-07-30 匹茲堡海盜 @ 辛辛那提紅人 (Scheduled) 尚未開打或來源尚未開盤",
+    "2026-07-30 紐約洋基 @ 芝加哥白襪 (Scheduled) 尚未開打或來源尚未開盤",
+    "2026-07-30 華盛頓國民 @ 亞特蘭大勇士 (Scheduled) 尚未開打或來源尚未開盤",
+    "2026-07-30 波士頓紅襪 @ 運動家 (Scheduled) 尚未開打或來源尚未開盤"
   ],
   "project_state": "系統完成，等待外部賽果/盤口"
 }
