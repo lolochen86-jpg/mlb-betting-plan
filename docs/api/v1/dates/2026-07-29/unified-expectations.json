@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-07-29T13:57:29",
+  "generated_at": "2026-07-29T21:07:31",
   "target_date": "2026-07-29",
   "model": "統一得分期望 v1",
   "postgame_calibration": {
     "source": "postgame_review",
     "days": 10,
-    "games": 106,
-    "winner_accuracy": 0.6132,
-    "low_confidence_accuracy": 0.6145,
+    "games": 121,
+    "winner_accuracy": 0.6033,
+    "low_confidence_accuracy": 0.6,
     "score_total_bias": 0.023,
     "score_total_bias_applied": 0.02,
     "totals_recent_bias": 0.67,
@@ -19,13 +19,13 @@
     "totals_min_line_gap": 1.0,
     "mismatch_notes": 0,
     "reason_counts": {
-      "low_confidence_hit": 51,
+      "low_confidence_hit": 57,
       "totals_miss": 41,
       "large_totals_error": 23,
-      "high_confidence_hit": 14,
-      "low_confidence_miss": 19,
-      "one_run_volatility": 32,
-      "high_confidence_miss": 9
+      "high_confidence_hit": 16,
+      "low_confidence_miss": 24,
+      "one_run_volatility": 41,
+      "high_confidence_miss": 10
     },
     "data_gaps": [
       "大小分大偏差偏多：優先補真實天氣、球場風向、先發/牛棚臨場狀態。",
@@ -39,7 +39,7 @@
     "games": 16,
     "missing_weather": 0,
     "missing_lineup": 0,
-    "missing_bullpen": 2
+    "missing_bullpen": 0
   },
   "games": [
     {
@@ -932,13 +932,13 @@
       "matchup_zh": "亞特蘭大勇士 @ 紐約大都會",
       "away_zh": "亞特蘭大勇士",
       "home_zh": "紐約大都會",
-      "away_expected_runs": 5.51,
+      "away_expected_runs": 5.42,
       "home_expected_runs": 5.01,
-      "expected_total": 10.53,
+      "expected_total": 10.44,
       "pick_side": "away",
       "prediction_zh": "亞特蘭大勇士",
-      "home_win_prob": 0.433,
-      "away_win_prob": 0.567,
+      "home_win_prob": 0.445,
+      "away_win_prob": 0.555,
       "lineup_source": "projected_recent_lineup_order",
       "away_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
@@ -973,13 +973,15 @@
         "fatigue_runs": -0.045
       },
       "home_bullpen": {
-        "source": "not_connected_fast_run",
-        "fatigue_runs": 0.0
+        "source": "recent_boxscore_pitcher_usage",
+        "recent_games": 3,
+        "recent_relief_pitcher_appearances": 6,
+        "unique_recent_relievers": 6,
+        "fatigue_runs": -0.09
       },
       "score_bias_applied": 0.02,
       "totals_recent_bias_applied": 0.67,
       "missing_data": [
-        "bullpen_recent_usage",
         "injury_absence_feed"
       ],
       "data_quality": "可用",
@@ -993,13 +995,13 @@
       "matchup_zh": "亞特蘭大勇士 @ 紐約大都會",
       "away_zh": "亞特蘭大勇士",
       "home_zh": "紐約大都會",
-      "away_expected_runs": 5.39,
+      "away_expected_runs": 5.3,
       "home_expected_runs": 4.8,
-      "expected_total": 10.19,
+      "expected_total": 10.1,
       "pick_side": "away",
       "prediction_zh": "亞特蘭大勇士",
-      "home_win_prob": 0.4208,
-      "away_win_prob": 0.5792,
+      "home_win_prob": 0.4327,
+      "away_win_prob": 0.5673,
       "lineup_source": "projected_recent_lineup_order",
       "away_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
@@ -1034,13 +1036,15 @@
         "fatigue_runs": -0.045
       },
       "home_bullpen": {
-        "source": "not_connected_fast_run",
-        "fatigue_runs": 0.0
+        "source": "recent_boxscore_pitcher_usage",
+        "recent_games": 3,
+        "recent_relief_pitcher_appearances": 6,
+        "unique_recent_relievers": 6,
+        "fatigue_runs": -0.09
       },
       "score_bias_applied": 0.02,
       "totals_recent_bias_applied": 0.67,
       "missing_data": [
-        "bullpen_recent_usage",
         "injury_absence_feed"
       ],
       "data_quality": "可用",
