@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-07-30T13:55:02",
+  "generated_at": "2026-07-30T21:04:12",
   "target_date": "2026-07-30",
   "model": "統一得分期望 v1",
   "postgame_calibration": {
     "source": "postgame_review",
     "days": 10,
-    "games": 106,
-    "winner_accuracy": 0.6038,
-    "low_confidence_accuracy": 0.6071,
+    "games": 122,
+    "winner_accuracy": 0.582,
+    "low_confidence_accuracy": 0.5773,
     "score_total_bias": -0.358,
     "score_total_bias_applied": -0.36,
     "totals_recent_bias": 0.0,
@@ -19,13 +19,13 @@
     "totals_min_line_gap": 1.0,
     "mismatch_notes": 0,
     "reason_counts": {
-      "low_confidence_hit": 51,
-      "one_run_volatility": 37,
+      "low_confidence_hit": 56,
+      "one_run_volatility": 42,
       "totals_miss": 35,
       "large_totals_error": 19,
-      "low_confidence_miss": 21,
-      "high_confidence_miss": 9,
-      "high_confidence_hit": 13
+      "low_confidence_miss": 26,
+      "high_confidence_miss": 10,
+      "high_confidence_hit": 15
     },
     "data_gaps": [
       "大小分大偏差偏多：優先補真實天氣、球場風向、先發/牛棚臨場狀態。",
