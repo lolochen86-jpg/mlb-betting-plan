@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-31T00:13:09",
+  "generated_at": "2026-07-31T21:08:18",
   "target_date": "2026-07-31",
   "sportsbook": "台灣運彩",
   "rules": {
@@ -10,32 +10,14 @@
     "no_market_no_recommendation": true
   },
   "summary": {
-    "official_selections": 426,
-    "market_types": 57,
-    "candidate_count": 1,
-    "watch_count": 7,
-    "official_events_matched": 4,
-    "official_game_pks_matched": 4
+    "official_selections": 720,
+    "market_types": 82,
+    "candidate_count": 5,
+    "watch_count": 25,
+    "official_events_matched": 15,
+    "official_game_pks_matched": 15
   },
   "candidates": [
-    {
-      "type": "全場大小",
-      "date": "2026-07-31",
-      "game_pk": "823593",
-      "game_time_tw": "2026-08-01 07:10",
-      "game_time_utc": "2026-07-31T23:10:00Z",
-      "matchup_zh": "邁阿密馬林魚 @ 紐約大都會",
-      "pick": "大分",
-      "line": 7.5,
-      "odds": 1.9,
-      "model_prob": 0.5905,
-      "market_prob": 0.5263,
-      "edge": 0.0642,
-      "decision": "候選",
-      "reason": "大小分模型高於台灣運彩隱含機率"
-    }
-  ],
-  "watchlist": [
     {
       "type": "全場大小",
       "date": "2026-07-31",
@@ -43,12 +25,110 @@
       "game_time_tw": "2026-08-01 06:10",
       "game_time_utc": "2026-07-31T22:10:00Z",
       "matchup_zh": "匹茲堡海盜 @ 辛辛那提紅人",
+      "pick": "大分",
+      "line": 7.5,
+      "odds": 1.7,
+      "model_prob": 0.6374,
+      "market_prob": 0.5882,
+      "edge": 0.0492,
+      "decision": "候選",
+      "reason": "大小分模型高於台灣運彩隱含機率"
+    },
+    {
+      "type": "全場大小",
+      "date": "2026-07-31",
+      "game_pk": "824164",
+      "game_time_tw": "2026-08-01 08:15",
+      "game_time_utc": "2026-08-01T00:15:00Z",
+      "matchup_zh": "德州遊騎兵 @ 休士頓太空人",
+      "pick": "大分",
+      "line": 7.5,
+      "odds": 1.73,
+      "model_prob": 0.6423,
+      "market_prob": 0.578,
+      "edge": 0.0643,
+      "decision": "候選",
+      "reason": "大小分模型高於台灣運彩隱含機率"
+    },
+    {
+      "type": "全場大小",
+      "date": "2026-07-31",
+      "game_pk": "824325",
+      "game_time_tw": "2026-08-01 08:40",
+      "game_time_utc": "2026-08-01T00:40:00Z",
+      "matchup_zh": "堪薩斯市皇家 @ 科羅拉多洛磯",
+      "pick": "小分",
+      "line": 11.5,
+      "odds": 1.63,
+      "model_prob": 0.7014,
+      "market_prob": 0.6135,
+      "edge": 0.0879,
+      "decision": "候選",
+      "reason": "大小分模型高於台灣運彩隱含機率"
+    },
+    {
+      "type": "不讓分",
+      "date": "2026-07-31",
+      "game_pk": "824975",
+      "matchup_zh": "底特律老虎 @ 運動家",
+      "pick": "底特律老虎",
+      "line": "",
+      "odds": 1.48,
+      "model_prob": 0.7276,
+      "market_prob": 0.6757,
+      "edge": 0.0519,
+      "decision": "候選",
+      "reason": "勝方模型/蒙地卡羅高於台灣運彩隱含機率",
+      "game_time_tw": "2026-08-01 09:40",
+      "game_time_utc": "2026-08-01T01:40:00Z"
+    },
+    {
+      "type": "全場大小",
+      "date": "2026-07-31",
+      "game_pk": "824975",
+      "game_time_tw": "2026-08-01 09:40",
+      "game_time_utc": "2026-08-01T01:40:00Z",
+      "matchup_zh": "底特律老虎 @ 運動家",
+      "pick": "小分",
+      "line": 10.5,
+      "odds": 1.8,
+      "model_prob": 0.5898,
+      "market_prob": 0.5556,
+      "edge": 0.0343,
+      "decision": "候選",
+      "reason": "大小分模型高於台灣運彩隱含機率"
+    }
+  ],
+  "watchlist": [
+    {
+      "type": "不讓分",
+      "date": "2026-07-31",
+      "game_pk": "824651",
+      "matchup_zh": "紐約洋基 @ 芝加哥小熊",
+      "pick": "芝加哥小熊",
+      "line": "",
+      "odds": 1.66,
+      "model_prob": 0.6291,
+      "market_prob": 0.6024,
+      "edge": 0.0267,
+      "decision": "觀察",
+      "reason": "勝方模型/蒙地卡羅高於台灣運彩隱含機率",
+      "game_time_tw": "2026-08-01 02:20",
+      "game_time_utc": "2026-07-31T18:20:00Z"
+    },
+    {
+      "type": "全場大小",
+      "date": "2026-07-31",
+      "game_pk": "824651",
+      "game_time_tw": "2026-08-01 02:20",
+      "game_time_utc": "2026-07-31T18:20:00Z",
+      "matchup_zh": "紐約洋基 @ 芝加哥小熊",
       "pick": "小分",
       "line": 9.5,
-      "odds": 1.77,
-      "model_prob": 0.5666,
-      "market_prob": 0.565,
-      "edge": 0.0017,
+      "odds": 1.65,
+      "model_prob": 0.5676,
+      "market_prob": 0.6061,
+      "edge": -0.0384,
       "decision": "觀察",
       "reason": "大小分模型高於台灣運彩隱含機率"
     },
@@ -59,10 +139,10 @@
       "matchup_zh": "匹茲堡海盜 @ 辛辛那提紅人",
       "pick": "辛辛那提紅人",
       "line": "",
-      "odds": 1.84,
-      "model_prob": 0.5175,
-      "market_prob": 0.5435,
-      "edge": -0.026,
+      "odds": 1.95,
+      "model_prob": 0.5179,
+      "market_prob": 0.5128,
+      "edge": 0.0051,
       "decision": "觀察",
       "reason": "勝方模型/蒙地卡羅高於台灣運彩隱含機率",
       "game_time_tw": "2026-08-01 06:10",
@@ -71,14 +151,158 @@
     {
       "type": "不讓分",
       "date": "2026-07-31",
+      "game_pk": "824809",
+      "matchup_zh": "費城費城人 @ 巴爾的摩金鶯",
+      "pick": "費城費城人",
+      "line": "",
+      "odds": 1.84,
+      "model_prob": 0.527,
+      "market_prob": 0.5435,
+      "edge": -0.0165,
+      "decision": "觀察",
+      "reason": "勝方模型/蒙地卡羅高於台灣運彩隱含機率",
+      "game_time_tw": "2026-08-01 07:05",
+      "game_time_utc": "2026-07-31T23:05:00Z"
+    },
+    {
+      "type": "全場大小",
+      "date": "2026-07-31",
+      "game_pk": "824809",
+      "game_time_tw": "2026-08-01 07:05",
+      "game_time_utc": "2026-07-31T23:05:00Z",
+      "matchup_zh": "費城費城人 @ 巴爾的摩金鶯",
+      "pick": "小分",
+      "line": 8.5,
+      "odds": 1.85,
+      "model_prob": 0.507,
+      "market_prob": 0.5405,
+      "edge": -0.0336,
+      "decision": "觀察",
+      "reason": "大小分模型高於台灣運彩隱含機率"
+    },
+    {
+      "type": "全場大小",
+      "date": "2026-07-31",
+      "game_pk": "822782",
+      "game_time_tw": "2026-08-01 07:07",
+      "game_time_utc": "2026-07-31T23:07:00Z",
+      "matchup_zh": "聖路易紅雀 @ 多倫多藍鳥",
+      "pick": "大分",
+      "line": 7.5,
+      "odds": 1.75,
+      "model_prob": 0.5513,
+      "market_prob": 0.5714,
+      "edge": -0.0202,
+      "decision": "觀察",
+      "reason": "大小分模型高於台灣運彩隱含機率"
+    },
+    {
+      "type": "不讓分",
+      "date": "2026-07-31",
+      "game_pk": "822782",
+      "matchup_zh": "聖路易紅雀 @ 多倫多藍鳥",
+      "pick": "多倫多藍鳥",
+      "line": "",
+      "odds": 1.42,
+      "model_prob": 0.5645,
+      "market_prob": 0.7042,
+      "edge": -0.1397,
+      "decision": "觀察",
+      "reason": "勝方模型/蒙地卡羅高於台灣運彩隱含機率",
+      "game_time_tw": "2026-08-01 07:07",
+      "game_time_utc": "2026-07-31T23:07:00Z"
+    },
+    {
+      "type": "全場大小",
+      "date": "2026-07-31",
+      "game_pk": "822945",
+      "game_time_tw": "2026-08-01 07:10",
+      "game_time_utc": "2026-07-31T23:10:00Z",
+      "matchup_zh": "芝加哥白襪 @ 坦帕灣光芒",
+      "pick": "小分",
+      "line": 8.5,
+      "odds": 1.7,
+      "model_prob": 0.52,
+      "market_prob": 0.5882,
+      "edge": -0.0682,
+      "decision": "觀察",
+      "reason": "大小分模型高於台灣運彩隱含機率"
+    },
+    {
+      "type": "不讓分",
+      "date": "2026-07-31",
+      "game_pk": "822945",
+      "matchup_zh": "芝加哥白襪 @ 坦帕灣光芒",
+      "pick": "坦帕灣光芒",
+      "line": "",
+      "odds": 1.48,
+      "model_prob": 0.5677,
+      "market_prob": 0.6757,
+      "edge": -0.108,
+      "decision": "觀察",
+      "reason": "勝方模型/蒙地卡羅高於台灣運彩隱含機率",
+      "game_time_tw": "2026-08-01 07:10",
+      "game_time_utc": "2026-07-31T23:10:00Z"
+    },
+    {
+      "type": "全場大小",
+      "date": "2026-07-31",
+      "game_pk": "823593",
+      "game_time_tw": "2026-08-01 07:10",
+      "game_time_utc": "2026-07-31T23:10:00Z",
+      "matchup_zh": "邁阿密馬林魚 @ 紐約大都會",
+      "pick": "小分",
+      "line": 8.5,
+      "odds": 1.74,
+      "model_prob": 0.5017,
+      "market_prob": 0.5747,
+      "edge": -0.073,
+      "decision": "觀察",
+      "reason": "大小分模型高於台灣運彩隱含機率"
+    },
+    {
+      "type": "不讓分",
+      "date": "2026-07-31",
       "game_pk": "823593",
       "matchup_zh": "邁阿密馬林魚 @ 紐約大都會",
       "pick": "紐約大都會",
       "line": "",
-      "odds": 1.65,
-      "model_prob": 0.5359,
-      "market_prob": 0.6061,
-      "edge": -0.0702,
+      "odds": 1.58,
+      "model_prob": 0.5472,
+      "market_prob": 0.6329,
+      "edge": -0.0857,
+      "decision": "觀察",
+      "reason": "勝方模型/蒙地卡羅高於台灣運彩隱含機率",
+      "game_time_tw": "2026-08-01 07:10",
+      "game_time_utc": "2026-07-31T23:10:00Z"
+    },
+    {
+      "type": "全場大小",
+      "date": "2026-07-31",
+      "game_pk": "824407",
+      "game_time_tw": "2026-08-01 07:10",
+      "game_time_utc": "2026-07-31T23:10:00Z",
+      "matchup_zh": "亞利桑那響尾蛇 @ 克里夫蘭守護者",
+      "pick": "大分",
+      "line": 8.5,
+      "odds": 1.7,
+      "model_prob": 0.5633,
+      "market_prob": 0.5882,
+      "edge": -0.0249,
+      "decision": "觀察",
+      "reason": "大小分模型高於台灣運彩隱含機率"
+    },
+    {
+      "type": "不讓分",
+      "date": "2026-07-31",
+      "game_pk": "824407",
+      "matchup_zh": "亞利桑那響尾蛇 @ 克里夫蘭守護者",
+      "pick": "克里夫蘭守護者",
+      "line": "",
+      "odds": 1.55,
+      "model_prob": 0.5147,
+      "market_prob": 0.6452,
+      "edge": -0.1305,
       "decision": "觀察",
       "reason": "勝方模型/蒙地卡羅高於台灣運彩隱含機率",
       "game_time_tw": "2026-08-01 07:10",
@@ -93,10 +317,10 @@
       "matchup_zh": "華盛頓國民 @ 亞特蘭大勇士",
       "pick": "大分",
       "line": 9.5,
-      "odds": 1.7,
-      "model_prob": 0.5529,
-      "market_prob": 0.5882,
-      "edge": -0.0354,
+      "odds": 1.9,
+      "model_prob": 0.5659,
+      "market_prob": 0.5263,
+      "edge": 0.0396,
       "decision": "觀察",
       "reason": "大小分模型高於台灣運彩隱含機率"
     },
@@ -107,14 +331,78 @@
       "matchup_zh": "華盛頓國民 @ 亞特蘭大勇士",
       "pick": "亞特蘭大勇士",
       "line": "",
-      "odds": 1.48,
-      "model_prob": 0.5675,
-      "market_prob": 0.6757,
-      "edge": -0.1082,
+      "odds": 1.65,
+      "model_prob": 0.5677,
+      "market_prob": 0.6061,
+      "edge": -0.0384,
       "decision": "觀察",
       "reason": "勝方模型/蒙地卡羅高於台灣運彩隱含機率",
       "game_time_tw": "2026-08-01 07:15",
       "game_time_utc": "2026-07-31T23:15:00Z"
+    },
+    {
+      "type": "不讓分",
+      "date": "2026-07-31",
+      "game_pk": "824164",
+      "matchup_zh": "德州遊騎兵 @ 休士頓太空人",
+      "pick": "休士頓太空人",
+      "line": "",
+      "odds": 1.58,
+      "model_prob": 0.5829,
+      "market_prob": 0.6329,
+      "edge": -0.05,
+      "decision": "觀察",
+      "reason": "勝方模型/蒙地卡羅高於台灣運彩隱含機率",
+      "game_time_tw": "2026-08-01 08:15",
+      "game_time_utc": "2026-08-01T00:15:00Z"
+    },
+    {
+      "type": "不讓分",
+      "date": "2026-07-31",
+      "game_pk": "824325",
+      "matchup_zh": "堪薩斯市皇家 @ 科羅拉多洛磯",
+      "pick": "堪薩斯市皇家",
+      "line": "",
+      "odds": 1.7,
+      "model_prob": 0.5687,
+      "market_prob": 0.5882,
+      "edge": -0.0195,
+      "decision": "觀察",
+      "reason": "勝方模型/蒙地卡羅高於台灣運彩隱含機率",
+      "game_time_tw": "2026-08-01 08:40",
+      "game_time_utc": "2026-08-01T00:40:00Z"
+    },
+    {
+      "type": "不讓分",
+      "date": "2026-07-31",
+      "game_pk": "823999",
+      "matchup_zh": "密爾瓦基釀酒人 @ 洛杉磯天使",
+      "pick": "密爾瓦基釀酒人",
+      "line": "",
+      "odds": 1.42,
+      "model_prob": 0.6604,
+      "market_prob": 0.7042,
+      "edge": -0.0438,
+      "decision": "觀察",
+      "reason": "勝方模型/蒙地卡羅高於台灣運彩隱含機率",
+      "game_time_tw": "2026-08-01 09:38",
+      "game_time_utc": "2026-08-01T01:38:00Z"
+    },
+    {
+      "type": "全場大小",
+      "date": "2026-07-31",
+      "game_pk": "823999",
+      "game_time_tw": "2026-08-01 09:38",
+      "game_time_utc": "2026-08-01T01:38:00Z",
+      "matchup_zh": "密爾瓦基釀酒人 @ 洛杉磯天使",
+      "pick": "小分",
+      "line": 9.5,
+      "odds": 1.62,
+      "model_prob": 0.5287,
+      "market_prob": 0.6173,
+      "edge": -0.0886,
+      "decision": "觀察",
+      "reason": "大小分模型高於台灣運彩隱含機率"
     },
     {
       "type": "全場大小",
@@ -123,12 +411,12 @@
       "game_time_tw": "2026-08-01 09:45",
       "game_time_utc": "2026-08-01T01:45:00Z",
       "matchup_zh": "舊金山巨人 @ 聖地牙哥教士",
-      "pick": "大分",
+      "pick": "小分",
       "line": 8.5,
-      "odds": 1.82,
-      "model_prob": 0.5052,
-      "market_prob": 0.5495,
-      "edge": -0.0442,
+      "odds": 1.79,
+      "model_prob": 0.5078,
+      "market_prob": 0.5587,
+      "edge": -0.0508,
       "decision": "觀察",
       "reason": "大小分模型高於台灣運彩隱含機率"
     },
@@ -139,48 +427,119 @@
       "matchup_zh": "舊金山巨人 @ 聖地牙哥教士",
       "pick": "聖地牙哥教士",
       "line": "",
-      "odds": 1.46,
-      "model_prob": 0.5366,
-      "market_prob": 0.6849,
-      "edge": -0.1483,
+      "odds": 1.5,
+      "model_prob": 0.5354,
+      "market_prob": 0.6667,
+      "edge": -0.1313,
       "decision": "觀察",
       "reason": "勝方模型/蒙地卡羅高於台灣運彩隱含機率",
       "game_time_tw": "2026-08-01 09:45",
       "game_time_utc": "2026-08-01T01:45:00Z"
+    },
+    {
+      "type": "全場大小",
+      "date": "2026-07-31",
+      "game_pk": "823111",
+      "game_time_tw": "2026-08-01 10:10",
+      "game_time_utc": "2026-08-01T02:10:00Z",
+      "matchup_zh": "明尼蘇達雙城 @ 西雅圖水手",
+      "pick": "大分",
+      "line": 7.5,
+      "odds": 1.66,
+      "model_prob": 0.5348,
+      "market_prob": 0.6024,
+      "edge": -0.0676,
+      "decision": "觀察",
+      "reason": "大小分模型高於台灣運彩隱含機率"
+    },
+    {
+      "type": "不讓分",
+      "date": "2026-07-31",
+      "game_pk": "823111",
+      "matchup_zh": "明尼蘇達雙城 @ 西雅圖水手",
+      "pick": "西雅圖水手",
+      "line": "",
+      "odds": 1.4,
+      "model_prob": 0.5575,
+      "market_prob": 0.7143,
+      "edge": -0.1568,
+      "decision": "觀察",
+      "reason": "勝方模型/蒙地卡羅高於台灣運彩隱含機率",
+      "game_time_tw": "2026-08-01 10:10",
+      "game_time_utc": "2026-08-01T02:10:00Z"
+    },
+    {
+      "type": "全場大小",
+      "date": "2026-07-31",
+      "game_pk": "823922",
+      "game_time_tw": "2026-08-01 10:10",
+      "game_time_utc": "2026-08-01T02:10:00Z",
+      "matchup_zh": "波士頓紅襪 @ 洛杉磯道奇",
+      "pick": "小分",
+      "line": 8.5,
+      "odds": 1.8,
+      "model_prob": 0.5174,
+      "market_prob": 0.5556,
+      "edge": -0.0381,
+      "decision": "觀察",
+      "reason": "大小分模型高於台灣運彩隱含機率"
+    },
+    {
+      "type": "不讓分",
+      "date": "2026-07-31",
+      "game_pk": "823922",
+      "matchup_zh": "波士頓紅襪 @ 洛杉磯道奇",
+      "pick": "洛杉磯道奇",
+      "line": "",
+      "odds": 1.62,
+      "model_prob": 0.5394,
+      "market_prob": 0.6173,
+      "edge": -0.0779,
+      "decision": "觀察",
+      "reason": "勝方模型/蒙地卡羅高於台灣運彩隱含機率",
+      "game_time_tw": "2026-08-01 10:10",
+      "game_time_utc": "2026-08-01T02:10:00Z"
     }
   ],
   "market_overview": [
     {
       "market_ti": "354",
       "market_name": "不讓分",
+      "games": 15,
+      "selections": 30,
+      "model_status": "已啟用"
+    },
+    {
+      "market_ti": "360",
+      "market_name": "[總分]大小 8.5",
+      "games": 13,
+      "selections": 26,
+      "model_status": "已啟用"
+    },
+    {
+      "market_ti": "360",
+      "market_name": "[總分]大小 7.5",
       "games": 9,
       "selections": 18,
       "model_status": "已啟用"
     },
     {
       "market_ti": "360",
-      "market_name": "[總分]大小 8.5",
-      "games": 7,
-      "selections": 14,
-      "model_status": "已啟用"
-    },
-    {
-      "market_ti": "360",
       "market_name": "[總分]大小 9.5",
-      "games": 7,
-      "selections": 14,
+      "games": 8,
+      "selections": 16,
       "model_status": "已啟用"
     },
     {
       "market_ti": "360",
-      "market_name": "[總分]大小 7.5",
+      "market_name": "[總分]大小 10.5",
       "games": 5,
       "selections": 10,
       "model_status": "已啟用"
     },
     {
       "market_ti": "360",
-      "market_name": "[總分]大小 10.5",
+      "market_name": "[總分]大小 6.5",
       "games": 4,
       "selections": 8,
       "model_status": "已啟用"
@@ -194,7 +553,7 @@
     },
     {
       "market_ti": "360",
-      "market_name": "[總分]大小 6.5",
+      "market_name": "[總分]大小 12.5",
       "games": 1,
       "selections": 2,
       "model_status": "已啟用"
@@ -202,69 +561,76 @@
     {
       "market_ti": "357",
       "market_name": "勝分差",
-      "games": 9,
-      "selections": 54,
+      "games": 15,
+      "selections": 90,
       "model_status": "觀察中"
     },
     {
       "market_ti": "366",
       "market_name": "[總分]單雙",
-      "games": 9,
-      "selections": 18,
+      "games": 15,
+      "selections": 30,
       "model_status": "可研究"
     },
     {
       "market_ti": "374",
       "market_name": "得分最高單局(不含延長賽)",
-      "games": 9,
-      "selections": 90,
+      "games": 15,
+      "selections": 150,
       "model_status": "觀察中"
     },
     {
       "market_ti": "376",
       "market_name": "[1-5局] 不讓分",
-      "games": 9,
-      "selections": 27,
+      "games": 15,
+      "selections": 45,
       "model_status": "可研究"
     },
     {
       "market_ti": "389",
       "market_name": "[第1局] 不讓分",
-      "games": 9,
-      "selections": 27,
+      "games": 15,
+      "selections": 45,
       "model_status": "可研究"
     },
     {
       "market_ti": "398",
       "market_name": "[第1局] 大小 0.5",
+      "games": 15,
+      "selections": 30,
+      "model_status": "可研究"
+    },
+    {
+      "market_ti": "358",
+      "market_name": "讓分 -1.5",
+      "games": 11,
+      "selections": 22,
+      "model_status": "可研究"
+    },
+    {
+      "market_ti": "358",
+      "market_name": "讓分 -2.5",
+      "games": 10,
+      "selections": 20,
+      "model_status": "可研究"
+    },
+    {
+      "market_ti": "378",
+      "market_name": "[1-5局] 大小 4.5",
+      "games": 10,
+      "selections": 20,
+      "model_status": "可研究"
+    },
+    {
+      "market_ti": "358",
+      "market_name": "讓分 1.5",
       "games": 9,
       "selections": 18,
       "model_status": "可研究"
     },
     {
       "market_ti": "358",
-      "market_name": "讓分 -1.5",
-      "games": 7,
-      "selections": 14,
-      "model_status": "可研究"
-    },
-    {
-      "market_ti": "358",
-      "market_name": "讓分 -2.5",
-      "games": 4,
-      "selections": 8,
-      "model_status": "可研究"
-    },
-    {
-      "market_ti": "378",
-      "market_name": "[1-5局] 大小 4.5",
-      "games": 4,
-      "selections": 8,
-      "model_status": "可研究"
-    },
-    {
-      "market_ti": "358",
-      "market_name": "讓分 1.5",
+      "market_name": "讓分 2.5",
       "games": 3,
       "selections": 6,
       "model_status": "可研究"
@@ -274,13 +640,6 @@
       "market_name": "[1-5局] 大小 5.5",
       "games": 3,
       "selections": 6,
-      "model_status": "可研究"
-    },
-    {
-      "market_ti": "358",
-      "market_name": "讓分 2.5",
-      "games": 2,
-      "selections": 4,
       "model_status": "可研究"
     },
     {
@@ -299,7 +658,42 @@
     },
     {
       "market_ti": "362",
-      "market_name": "明尼蘇達雙城 大小 4.5",
+      "market_name": "休士頓太空人 大小 3.5",
+      "games": 1,
+      "selections": 2,
+      "model_status": "可研究"
+    },
+    {
+      "market_ti": "362",
+      "market_name": "克里夫蘭守護者 大小 4.5",
+      "games": 1,
+      "selections": 2,
+      "model_status": "可研究"
+    },
+    {
+      "market_ti": "362",
+      "market_name": "坦帕灣光芒 大小 4.5",
+      "games": 1,
+      "selections": 2,
+      "model_status": "可研究"
+    },
+    {
+      "market_ti": "362",
+      "market_name": "多倫多藍鳥 大小 4.5",
+      "games": 1,
+      "selections": 2,
+      "model_status": "可研究"
+    },
+    {
+      "market_ti": "362",
+      "market_name": "巴爾的摩金鶯 大小 4.5",
+      "games": 1,
+      "selections": 2,
+      "model_status": "可研究"
+    },
+    {
+      "market_ti": "362",
+      "market_name": "洛杉磯天使 大小 3.5",
       "games": 1,
       "selections": 2,
       "model_status": "可研究"
@@ -313,7 +707,14 @@
     },
     {
       "market_ti": "362",
-      "market_name": "紐約大都會 大小 3.5",
+      "market_name": "科羅拉多落磯 大小 5.5",
+      "games": 1,
+      "selections": 2,
+      "model_status": "可研究"
+    },
+    {
+      "market_ti": "362",
+      "market_name": "紐約大都會 大小 4.5",
       "games": 1,
       "selections": 2,
       "model_status": "可研究"
@@ -327,28 +728,21 @@
     },
     {
       "market_ti": "362",
-      "market_name": "聖路易紅雀 大小 3.5",
+      "market_name": "芝加哥小熊 大小 4.5",
       "games": 1,
       "selections": 2,
       "model_status": "可研究"
     },
     {
       "market_ti": "362",
-      "market_name": "聖路易紅雀 大小 4.5",
+      "market_name": "西雅圖水手 大小 4.5",
       "games": 1,
       "selections": 2,
       "model_status": "可研究"
     },
     {
       "market_ti": "362",
-      "market_name": "芝加哥白襪 大小 3.5",
-      "games": 1,
-      "selections": 2,
-      "model_status": "可研究"
-    },
-    {
-      "market_ti": "362",
-      "market_name": "辛辛那堤紅人 大小 4.5",
+      "market_name": "辛辛那堤紅人 大小 3.5",
       "games": 1,
       "selections": 2,
       "model_status": "可研究"
@@ -362,28 +756,70 @@
     },
     {
       "market_ti": "363",
-      "market_name": "匹茲堡海盜 大小 4.5",
+      "market_name": "亞歷桑那響尾蛇 大小 3.5",
       "games": 1,
       "selections": 2,
       "model_status": "可研究"
     },
     {
       "market_ti": "363",
-      "market_name": "堪薩斯皇家 大小 4.5",
+      "market_name": "匹茲堡海盜 大小 3.5",
       "games": 1,
       "selections": 2,
       "model_status": "可研究"
     },
     {
       "market_ti": "363",
-      "market_name": "波士頓紅襪 大小 5.5",
+      "market_name": "堪薩斯皇家 大小 5.5",
       "games": 1,
       "selections": 2,
       "model_status": "可研究"
     },
     {
       "market_ti": "363",
-      "market_name": "紐約洋基 大小 3.5",
+      "market_name": "密爾瓦基釀酒人 大小 5.5",
+      "games": 1,
+      "selections": 2,
+      "model_status": "可研究"
+    },
+    {
+      "market_ti": "363",
+      "market_name": "底特律老虎 大小 5.5",
+      "games": 1,
+      "selections": 2,
+      "model_status": "可研究"
+    },
+    {
+      "market_ti": "363",
+      "market_name": "德州遊騎兵 大小 3.5",
+      "games": 1,
+      "selections": 2,
+      "model_status": "可研究"
+    },
+    {
+      "market_ti": "363",
+      "market_name": "明尼蘇達雙城 大小 3.5",
+      "games": 1,
+      "selections": 2,
+      "model_status": "可研究"
+    },
+    {
+      "market_ti": "363",
+      "market_name": "波士頓紅襪 大小 4.5",
+      "games": 1,
+      "selections": 2,
+      "model_status": "可研究"
+    },
+    {
+      "market_ti": "363",
+      "market_name": "紐約洋基 大小 4.5",
+      "games": 1,
+      "selections": 2,
+      "model_status": "可研究"
+    },
+    {
+      "market_ti": "363",
+      "market_name": "聖路易紅雀 大小 3.5",
       "games": 1,
       "selections": 2,
       "model_status": "可研究"
@@ -397,7 +833,7 @@
     },
     {
       "market_ti": "363",
-      "market_name": "芝加哥小熊 大小 3.5",
+      "market_name": "芝加哥白襪 大小 3.5",
       "games": 1,
       "selections": 2,
       "model_status": "可研究"
@@ -411,7 +847,7 @@
     },
     {
       "market_ti": "363",
-      "market_name": "西雅圖水手 大小 3.5",
+      "market_name": "費城費城人 大小 4.5",
       "games": 1,
       "selections": 2,
       "model_status": "可研究"
@@ -432,7 +868,42 @@
     },
     {
       "market_ti": "379",
-      "market_name": "[1-5局] 明尼蘇達雙城 大小 2.5",
+      "market_name": "[1-5局] 休士頓太空人 大小 1.5",
+      "games": 1,
+      "selections": 2,
+      "model_status": "可研究"
+    },
+    {
+      "market_ti": "379",
+      "market_name": "[1-5局] 克里夫蘭守護者 大小 2.5",
+      "games": 1,
+      "selections": 2,
+      "model_status": "可研究"
+    },
+    {
+      "market_ti": "379",
+      "market_name": "[1-5局] 坦帕灣光芒 大小 2.5",
+      "games": 1,
+      "selections": 2,
+      "model_status": "可研究"
+    },
+    {
+      "market_ti": "379",
+      "market_name": "[1-5局] 多倫多藍鳥 大小 2.5",
+      "games": 1,
+      "selections": 2,
+      "model_status": "可研究"
+    },
+    {
+      "market_ti": "379",
+      "market_name": "[1-5局] 巴爾的摩金鶯 大小 2.5",
+      "games": 1,
+      "selections": 2,
+      "model_status": "可研究"
+    },
+    {
+      "market_ti": "379",
+      "market_name": "[1-5局] 洛杉磯天使 大小 1.5",
       "games": 1,
       "selections": 2,
       "model_status": "可研究"
@@ -446,7 +917,14 @@
     },
     {
       "market_ti": "379",
-      "market_name": "[1-5局] 紐約大都會 大小 1.5",
+      "market_name": "[1-5局] 科羅拉多落磯 大小 2.5",
+      "games": 1,
+      "selections": 2,
+      "model_status": "可研究"
+    },
+    {
+      "market_ti": "379",
+      "market_name": "[1-5局] 紐約大都會 大小 2.5",
       "games": 1,
       "selections": 2,
       "model_status": "可研究"
@@ -460,21 +938,21 @@
     },
     {
       "market_ti": "379",
-      "market_name": "[1-5局] 聖路易紅雀 大小 1.5",
+      "market_name": "[1-5局] 芝加哥小熊 大小 2.5",
       "games": 1,
       "selections": 2,
       "model_status": "可研究"
     },
     {
       "market_ti": "379",
-      "market_name": "[1-5局] 芝加哥白襪 大小 1.5",
+      "market_name": "[1-5局] 西雅圖水手 大小 2.5",
       "games": 1,
       "selections": 2,
       "model_status": "可研究"
     },
     {
       "market_ti": "379",
-      "market_name": "[1-5局] 辛辛那堤紅人 大小 2.5",
+      "market_name": "[1-5局] 辛辛那堤紅人 大小 1.5",
       "games": 1,
       "selections": 2,
       "model_status": "可研究"
@@ -488,7 +966,14 @@
     },
     {
       "market_ti": "380",
-      "market_name": "[1-5局] 匹茲堡海盜 大小 2.5",
+      "market_name": "[1-5局] 亞歷桑那響尾蛇 大小 1.5",
+      "games": 1,
+      "selections": 2,
+      "model_status": "可研究"
+    },
+    {
+      "market_ti": "380",
+      "market_name": "[1-5局] 匹茲堡海盜 大小 1.5",
       "games": 1,
       "selections": 2,
       "model_status": "可研究"
@@ -502,7 +987,35 @@
     },
     {
       "market_ti": "380",
-      "market_name": "[1-5局] 波士頓紅襪 大小 2.5",
+      "market_name": "[1-5局] 密爾瓦基釀酒人 大小 2.5",
+      "games": 1,
+      "selections": 2,
+      "model_status": "可研究"
+    },
+    {
+      "market_ti": "380",
+      "market_name": "[1-5局] 底特律老虎 大小 3.5",
+      "games": 1,
+      "selections": 2,
+      "model_status": "可研究"
+    },
+    {
+      "market_ti": "380",
+      "market_name": "[1-5局] 德州遊騎兵 大小 1.5",
+      "games": 1,
+      "selections": 2,
+      "model_status": "可研究"
+    },
+    {
+      "market_ti": "380",
+      "market_name": "[1-5局] 明尼蘇達雙城 大小 1.5",
+      "games": 1,
+      "selections": 2,
+      "model_status": "可研究"
+    },
+    {
+      "market_ti": "380",
+      "market_name": "[1-5局] 波士頓紅襪 大小 1.5",
       "games": 1,
       "selections": 2,
       "model_status": "可研究"
@@ -516,6 +1029,20 @@
     },
     {
       "market_ti": "380",
+      "market_name": "[1-5局] 紐約洋基 大小 2.5",
+      "games": 1,
+      "selections": 2,
+      "model_status": "可研究"
+    },
+    {
+      "market_ti": "380",
+      "market_name": "[1-5局] 聖路易紅雀 大小 1.5",
+      "games": 1,
+      "selections": 2,
+      "model_status": "可研究"
+    },
+    {
+      "market_ti": "380",
       "market_name": "[1-5局] 舊金山巨人 大小 1.5",
       "games": 1,
       "selections": 2,
@@ -523,7 +1050,7 @@
     },
     {
       "market_ti": "380",
-      "market_name": "[1-5局] 芝加哥小熊 大小 2.5",
+      "market_name": "[1-5局] 芝加哥白襪 大小 1.5",
       "games": 1,
       "selections": 2,
       "model_status": "可研究"
@@ -537,7 +1064,7 @@
     },
     {
       "market_ti": "380",
-      "market_name": "[1-5局] 西雅圖水手 大小 1.5",
+      "market_name": "[1-5局] 費城費城人 大小 2.5",
       "games": 1,
       "selections": 2,
       "model_status": "可研究"
