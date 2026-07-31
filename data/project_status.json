@@ -1,18 +1,18 @@
 {
-  "generated_at": "2026-07-31T21:08:23",
+  "generated_at": "2026-08-01T00:10:28",
   "history": {
-    "games_written": 4070,
+    "games_written": 4071,
     "actual_first_game_date": "2025-03-27",
-    "actual_last_game_date": "2026-07-30"
+    "actual_last_game_date": "2026-07-31"
   },
   "accuracy": {
     "best_model": "A-畢氏勝率",
-    "predictions": 3991,
+    "predictions": 3992,
     "correct": 2171,
-    "accuracy_pct": 54.4
+    "accuracy_pct": 54.38
   },
   "daily": {
-    "target_date": "2026-07-31",
+    "target_date": "2026-08-01",
     "predictions": 15,
     "high_confidence": 0
   },
@@ -275,6 +275,13 @@
       "final_games": 0,
       "pending_games": 15,
       "accuracy_pct": 0
+    },
+    {
+      "date": "2026-08-01",
+      "predictions": 15,
+      "final_games": 0,
+      "pending_games": 15,
+      "accuracy_pct": 0
     }
   ],
   "odds": [
@@ -506,6 +513,12 @@
     },
     {
       "date": "2026-07-31",
+      "rows": 15,
+      "filled": 15,
+      "missing": []
+    },
+    {
+      "date": "2026-08-01",
       "rows": 15,
       "filled": 15,
       "missing": []
@@ -807,18 +820,58 @@
       "pending_bets": 0,
       "total_pnl": 0,
       "roi_pct": 0
+    },
+    {
+      "date": "2026-08-01",
+      "bets": 0,
+      "final_bets": 0,
+      "pending_bets": 0,
+      "total_pnl": 0,
+      "roi_pct": 0
     }
   ],
   "auto_runner": {
     "mode": "running",
-    "target_date": "2026-07-31",
-    "last_started_at_tw": "2026-07-31T21:00:02+08:00",
-    "last_finished_at_tw": "2026-07-31T13:57:12+08:00",
-    "last_return_code": 1,
+    "target_date": "2026-08-01",
+    "last_started_at_tw": "2026-08-01T00:00:02+08:00",
+    "last_finished_at_tw": "2026-07-31T21:08:23+08:00",
+    "last_return_code": 0,
     "log": "C:\\Users\\I5-10400F\\Documents\\投注計畫\\logs\\auto_runner\\2026-07-31.workflow.log",
     "health": {
-      "ok": false,
-      "message": "workflow failed before health check"
+      "ok": true,
+      "target_date": "2026-07-31",
+      "checked_at_tw": "2026-07-31T21:08:23+08:00",
+      "checks": [
+        {
+          "name": "daily_predictions",
+          "path": "C:\\Users\\I5-10400F\\Documents\\投注計畫\\docs\\daily_predictions.html",
+          "exists": true,
+          "has_target_date": true,
+          "ok": true
+        },
+        {
+          "name": "betting_ticket",
+          "path": "C:\\Users\\I5-10400F\\Documents\\投注計畫\\docs\\betting_ticket.html",
+          "exists": true,
+          "has_target_date": true,
+          "ok": true
+        },
+        {
+          "name": "postgame_review",
+          "path": "C:\\Users\\I5-10400F\\Documents\\投注計畫\\docs\\postgame_review.html",
+          "exists": true,
+          "has_target_date": true,
+          "ok": true
+        },
+        {
+          "name": "status",
+          "path": "C:\\Users\\I5-10400F\\Documents\\投注計畫\\docs\\status.html",
+          "exists": true,
+          "has_target_date": true,
+          "ok": true
+        }
+      ],
+      "message": "site pages contain target date"
     }
   },
   "next_commands": [
@@ -844,7 +897,8 @@
     "2026-07-21 尚有 2 場比賽未結算",
     "2026-07-27 尚有 1 場比賽未結算",
     "2026-07-28 尚有 1 場比賽未結算",
-    "2026-07-31 尚有 15 場比賽未結算"
+    "2026-07-31 尚有 15 場比賽未結算",
+    "2026-08-01 尚有 15 場比賽未結算"
   ],
   "project_state": "系統完成，等待外部賽果/盤口"
 }

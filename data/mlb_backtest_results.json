@@ -1,7 +1,7 @@
 {
   "backtest_period": {
     "start": "2025-03-27",
-    "end": "2026-07-30"
+    "end": "2026-07-31"
   },
   "settings": {
     "unit": 100,
@@ -13,14 +13,14 @@
   "data_source": {
     "type": "real_mlb_final_scores",
     "games_csv": "data\\real_mlb_games.csv",
-    "games_evaluated": 4070,
+    "games_evaluated": 4071,
     "actual_first_game_date": "2025-03-27",
-    "actual_last_game_date": "2026-07-30",
+    "actual_last_game_date": "2026-07-31",
     "game_types": [
       "R"
     ],
     "coverage_warning": null,
-    "generated_at": "2026-07-31T21:00:57",
+    "generated_at": "2026-08-01T00:01:49",
     "note": "Backtest uses real MLB final scores from saved MLB Stats API schedule data. Odds are still the configured fixed market assumption."
   },
   "models": {
@@ -21920,6 +21920,14 @@
               "result": "win"
             }
           ]
+        },
+        {
+          "date": "2026-07-31",
+          "bets": 0,
+          "wins": 0,
+          "losses": 0,
+          "pnl": 0.0,
+          "bet_details": []
         }
       ]
     },
@@ -48240,16 +48248,24 @@
               "result": "win"
             }
           ]
+        },
+        {
+          "date": "2026-07-31",
+          "bets": 0,
+          "wins": 0,
+          "losses": 0,
+          "pnl": 0.0,
+          "bet_details": []
         }
       ]
     },
     "C-ELO評分": {
-      "total_bets": 1456,
+      "total_bets": 1457,
       "wins": 848,
-      "losses": 608,
-      "win_rate": 0.5824,
-      "total_pnl": 16291.68,
-      "roi_pct": 11.19,
+      "losses": 609,
+      "win_rate": 0.582,
+      "total_pnl": 16191.68,
+      "roi_pct": 11.11,
       "daily_records": [
         {
           "date": "2025-03-27",
@@ -74307,16 +74323,41 @@
               "result": "win"
             }
           ]
+        },
+        {
+          "date": "2026-07-31",
+          "bets": 1,
+          "wins": 0,
+          "losses": 1,
+          "pnl": -100.0,
+          "bet_details": [
+            {
+              "game_pk": "824651",
+              "home": "Chicago Cubs",
+              "home_zh": "芝加哥小熊",
+              "away": "New York Yankees",
+              "away_zh": "紐約洋基",
+              "home_score": 0,
+              "away_score": 0,
+              "pick": "Chicago Cubs",
+              "pick_zh": "芝加哥小熊",
+              "home_probable_pitcher_zh": "今永昇太",
+              "away_probable_pitcher_zh": "威爾 瓦",
+              "confidence": 0.5595,
+              "edge": 0.0357,
+              "result": "loss"
+            }
+          ]
         }
       ]
     },
     "D-近期失分代理": {
-      "total_bets": 1455,
+      "total_bets": 1456,
       "wins": 798,
-      "losses": 657,
-      "win_rate": 0.5485,
-      "total_pnl": 6846.18,
-      "roi_pct": 4.71,
+      "losses": 658,
+      "win_rate": 0.5481,
+      "total_pnl": 6746.18,
+      "roi_pct": 4.63,
       "daily_records": [
         {
           "date": "2025-03-27",
@@ -100354,6 +100395,31 @@
               "result": "win"
             }
           ]
+        },
+        {
+          "date": "2026-07-31",
+          "bets": 1,
+          "wins": 0,
+          "losses": 1,
+          "pnl": -100.0,
+          "bet_details": [
+            {
+              "game_pk": "824651",
+              "home": "Chicago Cubs",
+              "home_zh": "芝加哥小熊",
+              "away": "New York Yankees",
+              "away_zh": "紐約洋基",
+              "home_score": 0,
+              "away_score": 0,
+              "pick": "Chicago Cubs",
+              "pick_zh": "芝加哥小熊",
+              "home_probable_pitcher_zh": "今永昇太",
+              "away_probable_pitcher_zh": "威爾 瓦",
+              "confidence": 0.6109,
+              "edge": 0.0871,
+              "result": "loss"
+            }
+          ]
         }
       ]
     },
@@ -125845,6 +125911,14 @@
               "result": "win"
             }
           ]
+        },
+        {
+          "date": "2026-07-31",
+          "bets": 0,
+          "wins": 0,
+          "losses": 0,
+          "pnl": 0.0,
+          "bet_details": []
         }
       ]
     }

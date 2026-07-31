@@ -1,21 +1,21 @@
 {
-  "generated_at": "2026-07-31T21:00:56",
+  "generated_at": "2026-08-01T00:01:48",
   "backtest_period": {
     "start": "2025-03-27",
-    "end": "2026-07-30"
+    "end": "2026-07-31"
   },
   "data_source": {
     "type": "real_mlb_final_scores",
     "games_csv": "data\\real_mlb_games.csv",
-    "games_evaluated": 4070,
+    "games_evaluated": 4071,
     "note": "Pure winner-prediction accuracy only. Odds, edge, stake, and ROI are intentionally excluded."
   },
   "models": {
     "A-畢氏勝率": {
-      "predictions": 3991,
+      "predictions": 3992,
       "correct": 2171,
-      "wrong": 1820,
-      "accuracy_pct": 54.4,
+      "wrong": 1821,
+      "accuracy_pct": 54.38,
       "monthly": [
         {
           "month": "2025-04",
@@ -79,9 +79,9 @@
         },
         {
           "month": "2026-07",
-          "predictions": 356,
+          "predictions": 357,
           "correct": 201,
-          "accuracy_pct": 56.46
+          "accuracy_pct": 56.3
         }
       ],
       "prediction_details": [
@@ -67931,14 +67931,31 @@
           "correct": true,
           "away_probable_pitcher_zh": "桑尼 葛雷",
           "home_probable_pitcher_zh": "馬索 巴"
+        },
+        {
+          "game_pk": "824651",
+          "date": "2026-07-31",
+          "matchup_zh": "紐約洋基 @ 芝加哥小熊",
+          "away_zh": "紐約洋基",
+          "home_zh": "芝加哥小熊",
+          "away_score": 0,
+          "home_score": 0,
+          "pick_zh": "芝加哥小熊",
+          "pick_side": "home",
+          "actual_winner_zh": "紐約洋基",
+          "confidence": 0.518,
+          "home_win_probability": 0.518,
+          "correct": false,
+          "away_probable_pitcher_zh": "威爾 瓦",
+          "home_probable_pitcher_zh": "今永昇太"
         }
       ]
     },
     "B-近期狀態": {
-      "predictions": 3991,
+      "predictions": 3992,
       "correct": 2133,
-      "wrong": 1858,
-      "accuracy_pct": 53.45,
+      "wrong": 1859,
+      "accuracy_pct": 53.43,
       "monthly": [
         {
           "month": "2025-04",
@@ -68002,9 +68019,9 @@
         },
         {
           "month": "2026-07",
-          "predictions": 356,
+          "predictions": 357,
           "correct": 187,
-          "accuracy_pct": 52.53
+          "accuracy_pct": 52.38
         }
       ],
       "prediction_details": [
@@ -135854,14 +135871,31 @@
           "correct": true,
           "away_probable_pitcher_zh": "桑尼 葛雷",
           "home_probable_pitcher_zh": "馬索 巴"
+        },
+        {
+          "game_pk": "824651",
+          "date": "2026-07-31",
+          "matchup_zh": "紐約洋基 @ 芝加哥小熊",
+          "away_zh": "紐約洋基",
+          "home_zh": "芝加哥小熊",
+          "away_score": 0,
+          "home_score": 0,
+          "pick_zh": "芝加哥小熊",
+          "pick_side": "home",
+          "actual_winner_zh": "紐約洋基",
+          "confidence": 0.515,
+          "home_win_probability": 0.515,
+          "correct": false,
+          "away_probable_pitcher_zh": "威爾 瓦",
+          "home_probable_pitcher_zh": "今永昇太"
         }
       ]
     },
     "C-ELO評分": {
-      "predictions": 4070,
+      "predictions": 4071,
       "correct": 2183,
-      "wrong": 1887,
-      "accuracy_pct": 53.64,
+      "wrong": 1888,
+      "accuracy_pct": 53.62,
       "monthly": [
         {
           "month": "2025-03",
@@ -135931,9 +135965,9 @@
         },
         {
           "month": "2026-07",
-          "predictions": 356,
+          "predictions": 357,
           "correct": 188,
-          "accuracy_pct": 52.81
+          "accuracy_pct": 52.66
         }
       ],
       "prediction_details": [
@@ -205126,14 +205160,31 @@
           "correct": true,
           "away_probable_pitcher_zh": "桑尼 葛雷",
           "home_probable_pitcher_zh": "馬索 巴"
+        },
+        {
+          "game_pk": "824651",
+          "date": "2026-07-31",
+          "matchup_zh": "紐約洋基 @ 芝加哥小熊",
+          "away_zh": "紐約洋基",
+          "home_zh": "芝加哥小熊",
+          "away_score": 0,
+          "home_score": 0,
+          "pick_zh": "芝加哥小熊",
+          "pick_side": "home",
+          "actual_winner_zh": "紐約洋基",
+          "confidence": 0.5595,
+          "home_win_probability": 0.5595,
+          "correct": false,
+          "away_probable_pitcher_zh": "威爾 瓦",
+          "home_probable_pitcher_zh": "今永昇太"
         }
       ]
     },
     "D-近期失分代理": {
-      "predictions": 3991,
+      "predictions": 3992,
       "correct": 2081,
-      "wrong": 1910,
-      "accuracy_pct": 52.14,
+      "wrong": 1911,
+      "accuracy_pct": 52.13,
       "monthly": [
         {
           "month": "2025-04",
@@ -205197,9 +205248,9 @@
         },
         {
           "month": "2026-07",
-          "predictions": 356,
+          "predictions": 357,
           "correct": 180,
-          "accuracy_pct": 50.56
+          "accuracy_pct": 50.42
         }
       ],
       "prediction_details": [
@@ -273049,14 +273100,31 @@
           "correct": true,
           "away_probable_pitcher_zh": "桑尼 葛雷",
           "home_probable_pitcher_zh": "馬索 巴"
+        },
+        {
+          "game_pk": "824651",
+          "date": "2026-07-31",
+          "matchup_zh": "紐約洋基 @ 芝加哥小熊",
+          "away_zh": "紐約洋基",
+          "home_zh": "芝加哥小熊",
+          "away_score": 0,
+          "home_score": 0,
+          "pick_zh": "芝加哥小熊",
+          "pick_side": "home",
+          "actual_winner_zh": "紐約洋基",
+          "confidence": 0.6109,
+          "home_win_probability": 0.6109,
+          "correct": false,
+          "away_probable_pitcher_zh": "威爾 瓦",
+          "home_probable_pitcher_zh": "今永昇太"
         }
       ]
     },
     "E-對照組(Ensemble)": {
-      "predictions": 4070,
+      "predictions": 4071,
       "correct": 2172,
-      "wrong": 1898,
-      "accuracy_pct": 53.37,
+      "wrong": 1899,
+      "accuracy_pct": 53.35,
       "monthly": [
         {
           "month": "2025-03",
@@ -273126,9 +273194,9 @@
         },
         {
           "month": "2026-07",
-          "predictions": 356,
+          "predictions": 357,
           "correct": 189,
-          "accuracy_pct": 53.09
+          "accuracy_pct": 52.94
         }
       ],
       "prediction_details": [
@@ -342321,6 +342389,23 @@
           "correct": true,
           "away_probable_pitcher_zh": "桑尼 葛雷",
           "home_probable_pitcher_zh": "馬索 巴"
+        },
+        {
+          "game_pk": "824651",
+          "date": "2026-07-31",
+          "matchup_zh": "紐約洋基 @ 芝加哥小熊",
+          "away_zh": "紐約洋基",
+          "home_zh": "芝加哥小熊",
+          "away_score": 0,
+          "home_score": 0,
+          "pick_zh": "芝加哥小熊",
+          "pick_side": "home",
+          "actual_winner_zh": "紐約洋基",
+          "confidence": 0.5363,
+          "home_win_probability": 0.5363,
+          "correct": false,
+          "away_probable_pitcher_zh": "威爾 瓦",
+          "home_probable_pitcher_zh": "今永昇太"
         }
       ]
     }
