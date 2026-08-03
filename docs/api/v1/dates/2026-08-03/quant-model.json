@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T00:06:34",
+  "generated_at": "2026-08-03T13:55:46",
   "target_date": "2026-08-03",
   "model": "Q-量化模型 XGBoost/Poisson Bundle 2026-07-16",
   "model_dir": "models\\quant_bundle_2026_07_16",
@@ -26,7 +26,7 @@
   "summary": {
     "games": 8,
     "aligned_with_existing": 6,
-    "complete_data": 0,
+    "complete_data": 5,
     "holdout_moneyline_accuracy": 0.5208333333333334,
     "holdout_total_runs_mae": 3.406075860344923
   },
@@ -51,11 +51,11 @@
       "home_zh": "費城費城人",
       "quant_prediction_zh": "費城費城人",
       "quant_pick_side": "home",
-      "quant_confidence": 0.691,
-      "home_win_probability": 0.691,
-      "away_win_probability": 0.309,
-      "predicted_away_score": 4.07,
-      "predicted_home_score": 5.43,
+      "quant_confidence": 0.6098,
+      "home_win_probability": 0.6098,
+      "away_win_probability": 0.3902,
+      "predicted_away_score": 4.37,
+      "predicted_home_score": 5.13,
       "predicted_total": 9.5,
       "total_line": 8.5,
       "totals_pick_zh": "大分",
@@ -67,8 +67,7 @@
       "model_alignment": "一致",
       "data_quality": "可用但需留意",
       "missing_features": [
-        "away_probable_pitcher_not_fully_confirmed",
-        "home_probable_pitcher_not_fully_confirmed"
+        "away_probable_pitcher_not_fully_confirmed"
       ]
     },
     {
@@ -81,25 +80,22 @@
       "home_zh": "紐約洋基",
       "quant_prediction_zh": "紐約洋基",
       "quant_pick_side": "home",
-      "quant_confidence": 0.6918,
-      "home_win_probability": 0.6918,
-      "away_win_probability": 0.3082,
-      "predicted_away_score": 4.88,
-      "predicted_home_score": 6.38,
-      "predicted_total": 11.26,
+      "quant_confidence": 0.6256,
+      "home_win_probability": 0.6256,
+      "away_win_probability": 0.3744,
+      "predicted_away_score": 4.32,
+      "predicted_home_score": 5.18,
+      "predicted_total": 9.5,
       "total_line": 8.5,
       "totals_pick_zh": "大分",
-      "totals_probability": 0.79,
-      "over_probability": 0.79,
-      "under_probability": 0.21,
+      "totals_probability": 0.6081,
+      "over_probability": 0.6081,
+      "under_probability": 0.3919,
       "official_model_pick_zh": "紐約洋基",
       "unified_model_pick_zh": "紐約洋基",
       "model_alignment": "一致",
-      "data_quality": "可用但需留意",
-      "missing_features": [
-        "away_probable_pitcher_not_fully_confirmed",
-        "home_probable_pitcher_not_fully_confirmed"
-      ]
+      "data_quality": "完整",
+      "missing_features": []
     },
     {
       "date": "2026-08-03",
@@ -111,24 +107,22 @@
       "home_zh": "密爾瓦基釀酒人",
       "quant_prediction_zh": "匹茲堡海盜",
       "quant_pick_side": "away",
-      "quant_confidence": 0.5376,
-      "home_win_probability": 0.4624,
-      "away_win_probability": 0.5376,
-      "predicted_away_score": 4.88,
-      "predicted_home_score": 4.62,
-      "predicted_total": 9.5,
+      "quant_confidence": 0.5624,
+      "home_win_probability": 0.4376,
+      "away_win_probability": 0.5624,
+      "predicted_away_score": 5.21,
+      "predicted_home_score": 4.77,
+      "predicted_total": 9.98,
       "total_line": 8.5,
       "totals_pick_zh": "大分",
-      "totals_probability": 0.6081,
-      "over_probability": 0.6081,
-      "under_probability": 0.3919,
+      "totals_probability": 0.6653,
+      "over_probability": 0.6653,
+      "under_probability": 0.3347,
       "official_model_pick_zh": "密爾瓦基釀酒人",
       "unified_model_pick_zh": "密爾瓦基釀酒人",
       "model_alignment": "分歧",
-      "data_quality": "可用但需留意",
-      "missing_features": [
-        "away_probable_pitcher_not_fully_confirmed"
-      ]
+      "data_quality": "完整",
+      "missing_features": []
     },
     {
       "date": "2026-08-03",
@@ -140,11 +134,11 @@
       "home_zh": "德州遊騎兵",
       "quant_prediction_zh": "德州遊騎兵",
       "quant_pick_side": "home",
-      "quant_confidence": 0.6019,
-      "home_win_probability": 0.6019,
-      "away_win_probability": 0.3981,
-      "predicted_away_score": 4.4,
-      "predicted_home_score": 5.1,
+      "quant_confidence": 0.6136,
+      "home_win_probability": 0.6136,
+      "away_win_probability": 0.3864,
+      "predicted_away_score": 4.36,
+      "predicted_home_score": 5.14,
       "predicted_total": 9.5,
       "total_line": 8.5,
       "totals_pick_zh": "大分",
@@ -156,7 +150,6 @@
       "model_alignment": "一致",
       "data_quality": "可用但需留意",
       "missing_features": [
-        "away_probable_pitcher_not_fully_confirmed",
         "home_probable_pitcher_not_fully_confirmed"
       ]
     },
@@ -168,13 +161,13 @@
       "matchup_zh": "洛杉磯道奇 @ 芝加哥小熊",
       "away_zh": "洛杉磯道奇",
       "home_zh": "芝加哥小熊",
-      "quant_prediction_zh": "芝加哥小熊",
-      "quant_pick_side": "home",
-      "quant_confidence": 0.5551,
-      "home_win_probability": 0.5551,
-      "away_win_probability": 0.4449,
-      "predicted_away_score": 4.56,
-      "predicted_home_score": 4.94,
+      "quant_prediction_zh": "洛杉磯道奇",
+      "quant_pick_side": "away",
+      "quant_confidence": 0.5252,
+      "home_win_probability": 0.4748,
+      "away_win_probability": 0.5252,
+      "predicted_away_score": 4.84,
+      "predicted_home_score": 4.66,
       "predicted_total": 9.5,
       "total_line": 8.5,
       "totals_pick_zh": "大分",
@@ -183,11 +176,10 @@
       "under_probability": 0.3919,
       "official_model_pick_zh": "芝加哥小熊",
       "unified_model_pick_zh": "芝加哥小熊",
-      "model_alignment": "一致",
+      "model_alignment": "分歧",
       "data_quality": "可用但需留意",
       "missing_features": [
-        "away_probable_pitcher_not_fully_confirmed",
-        "home_probable_pitcher_not_fully_confirmed"
+        "away_probable_pitcher_not_fully_confirmed"
       ]
     },
     {
@@ -200,11 +192,11 @@
       "home_zh": "休士頓太空人",
       "quant_prediction_zh": "休士頓太空人",
       "quant_pick_side": "home",
-      "quant_confidence": 0.6179,
-      "home_win_probability": 0.6179,
-      "away_win_probability": 0.3821,
-      "predicted_away_score": 7.94,
-      "predicted_home_score": 9.06,
+      "quant_confidence": 0.6692,
+      "home_win_probability": 0.6692,
+      "away_win_probability": 0.3308,
+      "predicted_away_score": 7.68,
+      "predicted_home_score": 9.32,
       "predicted_total": 17.0,
       "total_line": 8.5,
       "totals_pick_zh": "大分",
@@ -214,11 +206,8 @@
       "official_model_pick_zh": "休士頓太空人",
       "unified_model_pick_zh": "休士頓太空人",
       "model_alignment": "一致",
-      "data_quality": "可用但需留意",
-      "missing_features": [
-        "away_probable_pitcher_not_fully_confirmed",
-        "home_probable_pitcher_not_fully_confirmed"
-      ]
+      "data_quality": "完整",
+      "missing_features": []
     },
     {
       "date": "2026-08-03",
@@ -228,13 +217,13 @@
       "matchup_zh": "坦帕灣光芒 @ 科羅拉多洛磯",
       "away_zh": "坦帕灣光芒",
       "home_zh": "科羅拉多洛磯",
-      "quant_prediction_zh": "科羅拉多洛磯",
-      "quant_pick_side": "home",
-      "quant_confidence": 0.5687,
-      "home_win_probability": 0.5687,
-      "away_win_probability": 0.4313,
-      "predicted_away_score": 4.51,
-      "predicted_home_score": 4.99,
+      "quant_prediction_zh": "坦帕灣光芒",
+      "quant_pick_side": "away",
+      "quant_confidence": 0.5099,
+      "home_win_probability": 0.4901,
+      "away_win_probability": 0.5099,
+      "predicted_away_score": 4.78,
+      "predicted_home_score": 4.72,
       "predicted_total": 9.5,
       "total_line": 8.5,
       "totals_pick_zh": "大分",
@@ -243,12 +232,9 @@
       "under_probability": 0.3919,
       "official_model_pick_zh": "坦帕灣光芒",
       "unified_model_pick_zh": "坦帕灣光芒",
-      "model_alignment": "分歧",
-      "data_quality": "可用但需留意",
-      "missing_features": [
-        "away_probable_pitcher_not_fully_confirmed",
-        "home_probable_pitcher_not_fully_confirmed"
-      ]
+      "model_alignment": "一致",
+      "data_quality": "完整",
+      "missing_features": []
     },
     {
       "date": "2026-08-03",
@@ -260,11 +246,11 @@
       "home_zh": "亞利桑那響尾蛇",
       "quant_prediction_zh": "亞利桑那響尾蛇",
       "quant_pick_side": "home",
-      "quant_confidence": 0.5694,
-      "home_win_probability": 0.5694,
-      "away_win_probability": 0.4306,
-      "predicted_away_score": 4.51,
-      "predicted_home_score": 4.99,
+      "quant_confidence": 0.5148,
+      "home_win_probability": 0.5148,
+      "away_win_probability": 0.4852,
+      "predicted_away_score": 4.7,
+      "predicted_home_score": 4.8,
       "predicted_total": 9.5,
       "total_line": 8.5,
       "totals_pick_zh": "大分",
@@ -274,11 +260,8 @@
       "official_model_pick_zh": "亞利桑那響尾蛇",
       "unified_model_pick_zh": "亞利桑那響尾蛇",
       "model_alignment": "一致",
-      "data_quality": "可用但需留意",
-      "missing_features": [
-        "away_probable_pitcher_not_fully_confirmed",
-        "home_probable_pitcher_not_fully_confirmed"
-      ]
+      "data_quality": "完整",
+      "missing_features": []
     }
   ]
 }
