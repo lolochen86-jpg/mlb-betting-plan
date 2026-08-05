@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-04T21:01:00",
+  "generated_at": "2026-08-05T18:59:34",
   "target_date": "2026-08-03",
   "source_files": {
     "predictions": "data\\daily_predictions_2026-08-03.json",
@@ -9,7 +9,7 @@
   "settings": {
     "unit": 100.0,
     "min_edge": 0.0,
-    "only_high_confidence": false,
+    "only_high_confidence": true,
     "require_sportsbook": "台灣運彩"
   },
   "summary": {
@@ -353,7 +353,7 @@
       "postgame_winner_min_confidence": 0.55,
       "away_probable_pitcher_display_zh": "羅根 韋伯（官方預告）",
       "home_probable_pitcher_display_zh": "馬 戈爾（輪值推估 75%）",
-      "skip_reason": "整合方向未統一：勝方與大小分未統一"
+      "skip_reason": "非高信心預測"
     },
     {
       "date": "2026-08-03",
@@ -419,7 +419,7 @@
       "postgame_winner_min_confidence": 0.55,
       "away_probable_pitcher_display_zh": "謝恩 比貝（官方預告）",
       "home_probable_pitcher_display_zh": "史 賈維（官方預告）",
-      "skip_reason": "整合方向未統一：勝方與大小分未統一"
+      "skip_reason": "非高信心預測"
     },
     {
       "date": "2026-08-03",
@@ -485,7 +485,7 @@
       "postgame_winner_min_confidence": 0.55,
       "away_probable_pitcher_display_zh": "艾里 拉（輪值推估 70%）",
       "home_probable_pitcher_display_zh": "馬 波（官方預告）",
-      "skip_reason": "整合方向未統一：勝方與大小分未統一"
+      "skip_reason": "非高信心預測"
     },
     {
       "date": "2026-08-03",
@@ -551,7 +551,7 @@
       "postgame_winner_min_confidence": 0.55,
       "away_probable_pitcher_display_zh": "麥可 金恩（官方預告）",
       "home_probable_pitcher_display_zh": "布蘭登 普夫阿阿德特（官方預告）",
-      "skip_reason": "整合方向未統一：勝方與大小分未統一"
+      "skip_reason": "非高信心預測"
     }
   ],
   "note": "ROI uses imported real odds only. Taiwan Sports Lottery decimal odds and American moneyline are supported. Fixed -110 reference results are excluded."

@@ -36,50 +36,9 @@
     th:last-child,td:last-child { text-align:right; }
     footer { color:var(--muted); font-size:12px; line-height:1.6; padding:4px 0 24px; }
     @media (max-width:900px) { .summary,.metrics { grid-template-columns:1fr; } header { padding:22px; } main { padding:14px; } .game-head { display:block; } .pick { margin-top:12px; } }
-  
-    /* site navigation */
-    .site-shell { min-height: 100vh; display: grid; grid-template-columns: 220px minmax(0, 1fr); background: inherit; }
-    .site-sidebar { position: sticky; top: 0; align-self: start; height: 100vh; box-sizing: border-box; overflow-y: auto; border-right: 1px solid #dfe5df; background: #ffffff; padding: 22px 14px; z-index: 10; }
-    .site-brand { color: #163b34; font-size: 15px; font-weight: 900; letter-spacing: 0; margin: 0 0 14px; }
-    .site-sidebar nav { display: grid; gap: 6px; }
-    .site-nav-link { display: block; color: #40514b; text-decoration: none; border-radius: 8px; padding: 9px 10px; font-size: 14px; font-weight: 750; line-height: 1.25; }
-    .site-nav-link:hover { background: #eef4f1; color: #123d35; }
-    .site-nav-link.active { background: #165f56; color: #ffffff; }
-    .site-shell > header { grid-column: 2; min-width: 0; }
-    .site-shell > main { grid-column: 2; width: min(1180px, calc(100% - 56px)); margin-left: auto; margin-right: auto; min-width: 0; }
-    @media (max-width: 900px) {
-      .site-shell { display: block; }
-      .site-sidebar { position: static; height: auto; border-right: 0; border-bottom: 1px solid #dfe5df; }
-      .site-sidebar nav { grid-template-columns: repeat(auto-fit, minmax(112px, 1fr)); }
-      .site-shell > header { grid-column: auto; }
-      .site-shell > main { width: auto; }
-    }
   </style>
 </head>
 <body>
-  <div class="site-shell" data-site-nav="true">
-    <aside class="site-sidebar">
-      <div class="site-brand">MLB 投注計畫</div>
-      <nav aria-label="主要頁面">
-        <a class="site-nav-link" href="index.html">總覽</a>
-        <a class="site-nav-link" href="daily_predictions.html">今日預測</a>
-        <a class="site-nav-link" href="betting_ticket.html">投注單</a>
-        <a class="site-nav-link" href="totals_predictions.html">大小分</a>
-        <a class="site-nav-link" href="advanced_factors.html">進階因子</a>
-        <a class="site-nav-link" href="quant_model.html">Q-量化模型</a>
-        <a class="site-nav-link" href="game_simulator.html">逐打席模擬</a>
-        <a class="site-nav-link active" href="monte_carlo.html">蒙地卡羅</a>
-        <a class="site-nav-link" href="market_research.html">盤口研究</a>
-        <a class="site-nav-link" href="prediction_log.html">結算紀錄</a>
-        <a class="site-nav-link" href="postgame_review.html">賽後檢討</a>
-        <a class="site-nav-link" href="betting_roi.html">投注 ROI</a>
-        <a class="site-nav-link" href="lineup_fix_comparison.html">修正前後</a>
-        <a class="site-nav-link" href="winner_model_search.html">模型搜尋</a>
-        <a class="site-nav-link" href="prediction_accuracy.html">準確率</a>
-        <a class="site-nav-link" href="status.html">狀態</a>
-        <a class="site-nav-link" href="api/index.html">資料 API</a>
-      </nav>
-    </aside>
   <header>
     <nav>
       <a href="index.html">總覽</a>
@@ -89,183 +48,15 @@
       <a href="betting_ticket.html">投注單</a>
     </nav>
     <h1>蒙地卡羅模擬</h1>
-    <p>台灣顯示日期：2026-08-04 / 每場模擬 10,000 次 / 產生時間：2026-08-04T21:07:36</p>
+    <p>台灣顯示日期：2026-08-05 / 每場模擬 10,000 次 / 產生時間：2026-08-05T19:08:19</p>
   </header>
   <main>
     <section class="summary">
-      <div><span>今日與明日賽程</span><strong>23</strong></div>
-      <div><span>總模擬場次</span><strong>230,000</strong></div>
+      <div><span>今日與明日賽程</span><strong>30</strong></div>
+      <div><span>總模擬場次</span><strong>300,000</strong></div>
       <div><span>用途</span><strong>勝率 / 大小分 / 安打期望</strong></div>
     </section>
-    <h2 class="day-heading">台灣今日 2026-08-04<span>MLB 日期 2026-08-03</span></h2>
-      <section class="game-card">
-        <div class="game-head">
-          <div>
-            <h2>華盛頓國民 @ 費城費城人</h2>
-            <p>台灣開賽時間：2026-08-04 06:40</p>
-            <p>平均比分 華盛頓國民 5.20：費城費城人 5.33，平均總分 10.53</p>
-            <p>打線來源：先發未公布，使用近期固定打序預估</p>
-          </div>
-          <div class="pick">不推薦</div>
-        </div>
-        <div class="metrics">
-          <div><span>華盛頓國民 勝率</span><strong>44.4%</strong><small>公平賠率 2.25 / edge -3.2%</small></div>
-          <div><span>費城費城人 勝率</span><strong>55.6%</strong><small>公平賠率 1.80 / edge -13.4%</small></div>
-          <div><span>大小分 8.5</span><strong>大 65.6%</strong><small>小 34.4% / 大分</small></div>
-          <div><span>台灣運彩盤口</span><strong>台灣運彩</strong><small>客 2.10 / 主 1.45</small></div>
-        </div>
-        <details>
-          <summary>球員安打期望值 Top 8</summary>
-          <table><thead><tr><th>球員</th><th>球隊</th><th>守位</th><th>期望安打</th></tr></thead><tbody><tr><td>克傑 阿布</td><td>華盛頓國民</td><td>SS</td><td>1.264</td></tr><tr><td>詹姆斯 沃歐歐德</td><td>華盛頓國民</td><td>RF</td><td>1.259</td></tr><tr><td>達雷 里雷</td><td>華盛頓國民</td><td>LF</td><td>1.162</td></tr><tr><td>布萊恩 德 拉 克爾優茲</td><td>費城費城人</td><td>RF</td><td>1.111</td></tr><tr><td>迪倫 克爾伊沃斯</td><td>華盛頓國民</td><td>CF</td><td>1.044</td></tr><tr><td>布雷迪 霍塞</td><td>華盛頓國民</td><td>3B</td><td>1.005</td></tr><tr><td>荷西 特納</td><td>華盛頓國民</td><td>DH</td><td>0.987</td></tr><tr><td>崔 特優爾恩伊爾</td><td>費城費城人</td><td>SS</td><td>0.971</td></tr></tbody></table>
-        </details>
-      </section>
-      <section class="game-card">
-        <div class="game-head">
-          <div>
-            <h2>聖路易紅雀 @ 紐約洋基</h2>
-            <p>台灣開賽時間：2026-08-04 07:05</p>
-            <p>平均比分 聖路易紅雀 3.76：紐約洋基 4.63，平均總分 8.39</p>
-            <p>打線來源：先發未公布，使用近期固定打序預估</p>
-          </div>
-          <div class="pick">聖路易紅雀</div>
-        </div>
-        <div class="metrics">
-          <div><span>聖路易紅雀 勝率</span><strong>41.9%</strong><small>公平賠率 2.38 / edge 3.5%</small></div>
-          <div><span>紐約洋基 勝率</span><strong>58.1%</strong><small>公平賠率 1.72 / edge -18.9%</small></div>
-          <div><span>大小分 7.5</span><strong>大 52.4%</strong><small>小 47.6% / 大分</small></div>
-          <div><span>台灣運彩盤口</span><strong>台灣運彩</strong><small>客 2.60 / 主 1.30</small></div>
-        </div>
-        <details>
-          <summary>球員安打期望值 Top 8</summary>
-          <table><thead><tr><th>球員</th><th>球隊</th><th>守位</th><th>期望安打</th></tr></thead><tbody><tr><td>貝 里塞</td><td>紐約洋基</td><td>1B</td><td>1.153</td></tr><tr><td>喬 沃克</td><td>聖路易紅雀</td><td>DH</td><td>1.137</td></tr><tr><td>亞歷克 索</td><td>聖路易紅雀</td><td>1B</td><td>1.106</td></tr><tr><td>傑傑 韋</td><td>聖路易紅雀</td><td>2B</td><td>1.044</td></tr><tr><td>阿梅 羅薩里</td><td>紐約洋基</td><td>DH</td><td>1.016</td></tr><tr><td>崔 葛</td><td>紐約洋基</td><td>CF</td><td>1.003</td></tr><tr><td>賈 多米</td><td>紐約洋基</td><td>RF</td><td>0.960</td></tr><tr><td>瓦 赫拉</td><td>聖路易紅雀</td><td>C</td><td>0.934</td></tr></tbody></table>
-        </details>
-      </section>
-      <section class="game-card">
-        <div class="game-head">
-          <div>
-            <h2>匹茲堡海盜 @ 密爾瓦基釀酒人</h2>
-            <p>台灣開賽時間：2026-08-04 07:40</p>
-            <p>平均比分 匹茲堡海盜 4.88：密爾瓦基釀酒人 5.38，平均總分 10.26</p>
-            <p>打線來源：先發未公布，使用近期固定打序預估</p>
-          </div>
-          <div class="pick">不推薦</div>
-        </div>
-        <div class="metrics">
-          <div><span>匹茲堡海盜 勝率</span><strong>48.3%</strong><small>公平賠率 2.07 / edge -2.5%</small></div>
-          <div><span>密爾瓦基釀酒人 勝率</span><strong>51.7%</strong><small>公平賠率 1.93 / edge -13.6%</small></div>
-          <div><span>大小分 8.5</span><strong>大 60.4%</strong><small>小 39.6% / 大分</small></div>
-          <div><span>台灣運彩盤口</span><strong>台灣運彩</strong><small>客 1.97 / 主 1.53</small></div>
-        </div>
-        <details>
-          <summary>球員安打期望值 Top 8</summary>
-          <table><thead><tr><th>球員</th><th>球隊</th><th>守位</th><th>期望安打</th></tr></thead><tbody><tr><td>傑克 馬</td><td>匹茲堡海盜</td><td>LF</td><td>1.141</td></tr><tr><td>布塞 拉</td><td>密爾瓦基釀酒人</td><td>2B</td><td>1.092</td></tr><tr><td>賈 查里</td><td>密爾瓦基釀酒人</td><td>LF</td><td>1.076</td></tr><tr><td>艾 瓦德茲</td><td>匹茲堡海盜</td><td>RF</td><td>1.031</td></tr><tr><td>布蘭登 羅韋</td><td>匹茲堡海盜</td><td>2B</td><td>1.026</td></tr><tr><td>尼克 戈雷</td><td>匹茲堡海盜</td><td>3B</td><td>1.022</td></tr><tr><td>威 柯拉</td><td>密爾瓦基釀酒人</td><td>C</td><td>1.021</td></tr><tr><td>布萊恩 雷諾</td><td>匹茲堡海盜</td><td>DH</td><td>1.020</td></tr></tbody></table>
-        </details>
-      </section>
-      <section class="game-card">
-        <div class="game-head">
-          <div>
-            <h2>舊金山巨人 @ 德州遊騎兵</h2>
-            <p>台灣開賽時間：2026-08-04 08:05</p>
-            <p>平均比分 舊金山巨人 5.07：德州遊騎兵 4.56，平均總分 9.63</p>
-            <p>打線來源：先發未公布，使用近期固定打序預估</p>
-          </div>
-          <div class="pick">舊金山巨人</div>
-        </div>
-        <div class="metrics">
-          <div><span>舊金山巨人 勝率</span><strong>62.2%</strong><small>公平賠率 1.61 / edge 6.6%</small></div>
-          <div><span>德州遊騎兵 勝率</span><strong>37.8%</strong><small>公平賠率 2.64 / edge -21.0%</small></div>
-          <div><span>大小分 8.5</span><strong>大 51.5%</strong><small>小 48.5% / 大分</small></div>
-          <div><span>台灣運彩盤口</span><strong>台灣運彩</strong><small>客 1.80 / 主 1.70</small></div>
-        </div>
-        <details>
-          <summary>球員安打期望值 Top 8</summary>
-          <table><thead><tr><th>球員</th><th>球隊</th><th>守位</th><th>期望安打</th></tr></thead><tbody><tr><td>路易斯 阿</td><td>舊金山巨人</td><td>2B</td><td>1.186</td></tr><tr><td>喬 佩德</td><td>德州遊騎兵</td><td>DH</td><td>1.142</td></tr><tr><td>沃伊阿特特 拉</td><td>德州遊騎兵</td><td>LF</td><td>1.137</td></tr><tr><td>布蘭登 尼</td><td>德州遊騎兵</td><td>RF</td><td>1.055</td></tr><tr><td>傑優恩格 霍 雷</td><td>舊金山巨人</td><td>RF</td><td>1.035</td></tr><tr><td>拉法 德維</td><td>舊金山巨人</td><td>1B</td><td>0.981</td></tr><tr><td>艾 杜拉</td><td>德州遊騎兵</td><td>3B</td><td>0.967</td></tr><tr><td>傑克 布優爾格伊爾</td><td>德州遊騎兵</td><td>1B</td><td>0.943</td></tr></tbody></table>
-        </details>
-      </section>
-      <section class="game-card">
-        <div class="game-head">
-          <div>
-            <h2>洛杉磯道奇 @ 芝加哥小熊</h2>
-            <p>台灣開賽時間：2026-08-04 08:05</p>
-            <p>平均比分 洛杉磯道奇 4.55：芝加哥小熊 5.35，平均總分 9.90</p>
-            <p>打線來源：先發未公布，使用近期固定打序預估</p>
-          </div>
-          <div class="pick">芝加哥小熊</div>
-        </div>
-        <div class="metrics">
-          <div><span>洛杉磯道奇 勝率</span><strong>46.0%</strong><small>公平賠率 2.17 / edge -23.0%</small></div>
-          <div><span>芝加哥小熊 勝率</span><strong>54.0%</strong><small>公平賠率 1.85 / edge 6.4%</small></div>
-          <div><span>大小分 8.5</span><strong>大 57.9%</strong><small>小 42.1% / 大分</small></div>
-          <div><span>台灣運彩盤口</span><strong>台灣運彩</strong><small>客 1.45 / 主 2.10</small></div>
-        </div>
-        <details>
-          <summary>球員安打期望值 Top 8</summary>
-          <table><thead><tr><th>球員</th><th>球隊</th><th>守位</th><th>期望安打</th></tr></thead><tbody><tr><td>大谷翔平</td><td>洛杉磯道奇</td><td>DH</td><td>1.453</td></tr><tr><td>佩特 克爾歐沃 阿</td><td>芝加哥小熊</td><td>CF</td><td>1.407</td></tr><tr><td>夫爾伊德德伊伊 馬</td><td>洛杉磯道奇</td><td>1B</td><td>1.385</td></tr><tr><td>托 艾</td><td>洛杉磯道奇</td><td>2B</td><td>1.348</td></tr><tr><td>阿 帕傑</td><td>洛杉磯道奇</td><td>CF</td><td>1.344</td></tr><tr><td>塞 基</td><td>芝加哥小熊</td><td>RF</td><td>1.314</td></tr><tr><td>佩 拉米雷</td><td>芝加哥小熊</td><td>DH</td><td>1.235</td></tr><tr><td>莫基 貝</td><td>洛杉磯道奇</td><td>SS</td><td>1.183</td></tr></tbody></table>
-        </details>
-      </section>
-      <section class="game-card">
-        <div class="game-head">
-          <div>
-            <h2>多倫多藍鳥 @ 休士頓太空人</h2>
-            <p>台灣開賽時間：2026-08-04 08:10</p>
-            <p>平均比分 多倫多藍鳥 5.02：休士頓太空人 5.63，平均總分 10.65</p>
-            <p>打線來源：先發未公布，使用近期固定打序預估</p>
-          </div>
-          <div class="pick">休士頓太空人</div>
-        </div>
-        <div class="metrics">
-          <div><span>多倫多藍鳥 勝率</span><strong>32.9%</strong><small>公平賠率 3.04 / edge -18.7%</small></div>
-          <div><span>休士頓太空人 勝率</span><strong>67.1%</strong><small>公平賠率 1.49 / edge 3.0%</small></div>
-          <div><span>大小分 9.5</span><strong>大 64.1%</strong><small>小 35.9% / 大分</small></div>
-          <div><span>台灣運彩盤口</span><strong>台灣運彩</strong><small>客 1.94 / 主 1.56</small></div>
-        </div>
-        <details>
-          <summary>球員安打期望值 Top 8</summary>
-          <table><thead><tr><th>球員</th><th>球隊</th><th>守位</th><th>期望安打</th></tr></thead><tbody><tr><td>尤 阿雷</td><td>休士頓太空人</td><td>DH</td><td>1.272</td></tr><tr><td>傑雷 佩納</td><td>休士頓太空人</td><td>SS</td><td>1.257</td></tr><tr><td>薩 帕雷德</td><td>休士頓太空人</td><td>3B</td><td>1.005</td></tr><tr><td>查史 沃克</td><td>休士頓太空人</td><td>1B</td><td>0.963</td></tr><tr><td>亞內 迪</td><td>休士頓太空人</td><td>C</td><td>0.946</td></tr><tr><td>路易斯 里</td><td>多倫多藍鳥</td><td>2B</td><td>0.892</td></tr><tr><td>荷西 阿維</td><td>休士頓太空人</td><td>2B</td><td>0.876</td></tr><tr><td>卡 斯姆伊特赫</td><td>休士頓太空人</td><td>RF</td><td>0.836</td></tr></tbody></table>
-        </details>
-      </section>
-      <section class="game-card">
-        <div class="game-head">
-          <div>
-            <h2>坦帕灣光芒 @ 科羅拉多洛磯</h2>
-            <p>台灣開賽時間：2026-08-04 08:40</p>
-            <p>平均比分 坦帕灣光芒 5.52：科羅拉多洛磯 4.93，平均總分 10.45</p>
-            <p>打線來源：fallback_role_lineup: &lt;urlopen error _ssl.c:993: The handshake operation timed out&gt;</p>
-          </div>
-          <div class="pick">不推薦</div>
-        </div>
-        <div class="metrics">
-          <div><span>坦帕灣光芒 勝率</span><strong>59.4%</strong><small>公平賠率 1.68 / edge -10.5%</small></div>
-          <div><span>科羅拉多洛磯 勝率</span><strong>40.6%</strong><small>公平賠率 2.46 / edge -5.9%</small></div>
-          <div><span>大小分 11.5</span><strong>大 38.2%</strong><small>小 61.8% / 小分</small></div>
-          <div><span>台灣運彩盤口</span><strong>台灣運彩</strong><small>客 1.43 / 主 2.15</small></div>
-        </div>
-        <details>
-          <summary>球員安打期望值 Top 8</summary>
-          <table><thead><tr><th>球員</th><th>球隊</th><th>守位</th><th>期望安打</th></tr></thead><tbody><tr><td>科羅拉多洛磯開路先鋒</td><td>科羅拉多洛磯</td><td>CF</td><td>1.213</td></tr><tr><td>科羅拉多洛磯中心打者</td><td>科羅拉多洛磯</td><td>1B</td><td>1.166</td></tr><tr><td>科羅拉多洛磯二棒推進</td><td>科羅拉多洛磯</td><td>2B</td><td>1.151</td></tr><tr><td>科羅拉多洛磯重砲四棒</td><td>科羅拉多洛磯</td><td>C</td><td>1.135</td></tr><tr><td>科羅拉多洛磯長打火力</td><td>科羅拉多洛磯</td><td>DH</td><td>1.103</td></tr><tr><td>科羅拉多洛磯左外野手</td><td>科羅拉多洛磯</td><td>LF</td><td>1.054</td></tr><tr><td>科羅拉多洛磯三壘手</td><td>科羅拉多洛磯</td><td>3B</td><td>1.010</td></tr><tr><td>科羅拉多洛磯右外野手</td><td>科羅拉多洛磯</td><td>RF</td><td>0.971</td></tr></tbody></table>
-        </details>
-      </section>
-      <section class="game-card">
-        <div class="game-head">
-          <div>
-            <h2>聖地牙哥教士 @ 亞利桑那響尾蛇</h2>
-            <p>台灣開賽時間：2026-08-04 09:40</p>
-            <p>平均比分 聖地牙哥教士 5.12：亞利桑那響尾蛇 5.31，平均總分 10.43</p>
-            <p>打線來源：先發未公布，使用近期固定打序預估</p>
-          </div>
-          <div class="pick">不推薦</div>
-        </div>
-        <div class="metrics">
-          <div><span>聖地牙哥教士 勝率</span><strong>51.1%</strong><small>公平賠率 1.96 / edge -4.8%</small></div>
-          <div><span>亞利桑那響尾蛇 勝率</span><strong>48.9%</strong><small>公平賠率 2.04 / edge -9.5%</small></div>
-          <div><span>大小分 8.5</span><strong>大 61.9%</strong><small>小 38.1% / 大分</small></div>
-          <div><span>台灣運彩盤口</span><strong>台灣運彩</strong><small>客 1.79 / 主 1.71</small></div>
-        </div>
-        <details>
-          <summary>球員安打期望值 Top 8</summary>
-          <table><thead><tr><th>球員</th><th>球隊</th><th>守位</th><th>期望安打</th></tr></thead><tbody><tr><td>加布 莫雷諾</td><td>亞利桑那響尾蛇</td><td>C</td><td>1.467</td></tr><tr><td>柯賓 卡</td><td>亞利桑那響尾蛇</td><td>RF</td><td>1.424</td></tr><tr><td>凱特 馬</td><td>亞利桑那響尾蛇</td><td>DH</td><td>1.381</td></tr><tr><td>傑拉 佩莫</td><td>亞利桑那響尾蛇</td><td>SS</td><td>1.323</td></tr><tr><td>特伊 夫爾阿恩克伊</td><td>聖地牙哥教士</td><td>1B</td><td>1.302</td></tr><tr><td>馬羅 瓦</td><td>亞利桑那響尾蛇</td><td>2B</td><td>1.266</td></tr><tr><td>菲 塔提 傑爾</td><td>聖地牙哥教士</td><td>RF</td><td>1.261</td></tr><tr><td>路易斯 卡薩諾</td><td>聖地牙哥教士</td><td>C</td><td>1.218</td></tr></tbody></table>
-        </details>
-      </section><h2 class="day-heading">台灣明日／之後 2026-08-05<span>MLB 日期 2026-08-04</span></h2>
+    <h2 class="day-heading">台灣今日 2026-08-05<span>MLB 日期 2026-08-04</span></h2>
       <section class="game-card">
         <div class="game-head">
           <div>
@@ -580,9 +371,323 @@
           <summary>球員安打期望值 Top 8</summary>
           <table><thead><tr><th>球員</th><th>球隊</th><th>守位</th><th>期望安打</th></tr></thead><tbody><tr><td>特伊 夫爾阿恩克伊</td><td>聖地牙哥教士</td><td>1B</td><td>1.444</td></tr><tr><td>加布 莫雷諾</td><td>亞利桑那響尾蛇</td><td>C</td><td>1.435</td></tr><tr><td>菲 塔提 傑爾</td><td>聖地牙哥教士</td><td>RF</td><td>1.402</td></tr><tr><td>柯賓 卡</td><td>亞利桑那響尾蛇</td><td>RF</td><td>1.393</td></tr><tr><td>凱特 馬</td><td>亞利桑那響尾蛇</td><td>2B</td><td>1.328</td></tr><tr><td>傑拉 佩莫</td><td>亞利桑那響尾蛇</td><td>SS</td><td>1.314</td></tr><tr><td>詹姆斯 姆克克阿恩恩</td><td>亞利桑那響尾蛇</td><td>1B</td><td>1.306</td></tr><tr><td>諾拉 阿雷納多</td><td>亞利桑那響尾蛇</td><td>3B</td><td>1.242</td></tr></tbody></table>
         </details>
+      </section><h2 class="day-heading">台灣明日／之後 2026-08-06<span>MLB 日期 2026-08-05</span></h2>
+      <section class="game-card">
+        <div class="game-head">
+          <div>
+            <h2>多倫多藍鳥 @ 休士頓太空人</h2>
+            <p>台灣開賽時間：2026-08-06 02:10</p>
+            <p>平均比分 多倫多藍鳥 4.46：休士頓太空人 5.66，平均總分 10.12</p>
+            <p>打線來源：先發未公布，使用近期固定打序預估</p>
+          </div>
+          <div class="pick">不推薦</div>
+        </div>
+        <div class="metrics">
+          <div><span>多倫多藍鳥 勝率</span><strong>33.8%</strong><small>公平賠率 2.96 / edge -</small></div>
+          <div><span>休士頓太空人 勝率</span><strong>66.2%</strong><small>公平賠率 1.51 / edge -</small></div>
+          <div><span>大小分 8.5</span><strong>大 67.6%</strong><small>小 32.4% / 大分</small></div>
+          <div><span>台灣運彩盤口</span><strong>無</strong><small>客 - / 主 -</small></div>
+        </div>
+        <details>
+          <summary>球員安打期望值 Top 8</summary>
+          <table><thead><tr><th>球員</th><th>球隊</th><th>守位</th><th>期望安打</th></tr></thead><tbody><tr><td>尤 阿雷</td><td>休士頓太空人</td><td>DH</td><td>1.287</td></tr><tr><td>傑雷 佩納</td><td>休士頓太空人</td><td>SS</td><td>1.251</td></tr><tr><td>薩 帕雷德</td><td>休士頓太空人</td><td>3B</td><td>0.996</td></tr><tr><td>查史 沃克</td><td>休士頓太空人</td><td>1B</td><td>0.957</td></tr><tr><td>達 瓦</td><td>休士頓太空人</td><td>CF</td><td>0.951</td></tr><tr><td>亞內 迪</td><td>休士頓太空人</td><td>C</td><td>0.948</td></tr><tr><td>奈森 路凱</td><td>多倫多藍鳥</td><td>RF</td><td>0.933</td></tr><tr><td>荷西 阿維</td><td>休士頓太空人</td><td>2B</td><td>0.913</td></tr></tbody></table>
+        </details>
+      </section>
+      <section class="game-card">
+        <div class="game-head">
+          <div>
+            <h2>洛杉磯道奇 @ 芝加哥小熊</h2>
+            <p>台灣開賽時間：2026-08-06 02:20</p>
+            <p>平均比分 洛杉磯道奇 4.90：芝加哥小熊 5.79，平均總分 10.69</p>
+            <p>打線來源：先發未公布，使用近期固定打序預估</p>
+          </div>
+          <div class="pick">不推薦</div>
+        </div>
+        <div class="metrics">
+          <div><span>洛杉磯道奇 勝率</span><strong>38.9%</strong><small>公平賠率 2.57 / edge -</small></div>
+          <div><span>芝加哥小熊 勝率</span><strong>61.1%</strong><small>公平賠率 1.64 / edge -</small></div>
+          <div><span>大小分 9.5</span><strong>大 51.7%</strong><small>小 48.3% / 大分</small></div>
+          <div><span>台灣運彩盤口</span><strong>無</strong><small>客 - / 主 -</small></div>
+        </div>
+        <details>
+          <summary>球員安打期望值 Top 8</summary>
+          <table><thead><tr><th>球員</th><th>球隊</th><th>守位</th><th>期望安打</th></tr></thead><tbody><tr><td>大谷翔平</td><td>洛杉磯道奇</td><td>DH</td><td>1.550</td></tr><tr><td>佩特 克爾歐沃 阿</td><td>芝加哥小熊</td><td>CF</td><td>1.483</td></tr><tr><td>夫爾伊德德伊伊 馬</td><td>洛杉磯道奇</td><td>1B</td><td>1.452</td></tr><tr><td>艾 赫</td><td>洛杉磯道奇</td><td>3B</td><td>1.426</td></tr><tr><td>阿 帕傑</td><td>洛杉磯道奇</td><td>CF</td><td>1.410</td></tr><tr><td>托 艾</td><td>洛杉磯道奇</td><td>2B</td><td>1.408</td></tr><tr><td>塞 基</td><td>芝加哥小熊</td><td>RF</td><td>1.394</td></tr><tr><td>佩 拉米雷</td><td>芝加哥小熊</td><td>3B</td><td>1.279</td></tr></tbody></table>
+        </details>
+      </section>
+      <section class="game-card">
+        <div class="game-head">
+          <div>
+            <h2>舊金山巨人 @ 德州遊騎兵</h2>
+            <p>台灣開賽時間：2026-08-06 02:35</p>
+            <p>平均比分 舊金山巨人 4.92：德州遊騎兵 5.06，平均總分 9.98</p>
+            <p>打線來源：先發未公布，使用近期固定打序預估</p>
+          </div>
+          <div class="pick">不推薦</div>
+        </div>
+        <div class="metrics">
+          <div><span>舊金山巨人 勝率</span><strong>44.5%</strong><small>公平賠率 2.25 / edge -</small></div>
+          <div><span>德州遊騎兵 勝率</span><strong>55.5%</strong><small>公平賠率 1.80 / edge -</small></div>
+          <div><span>大小分 8.5</span><strong>大 58.4%</strong><small>小 41.6% / 大分</small></div>
+          <div><span>台灣運彩盤口</span><strong>無</strong><small>客 - / 主 -</small></div>
+        </div>
+        <details>
+          <summary>球員安打期望值 Top 8</summary>
+          <table><thead><tr><th>球員</th><th>球隊</th><th>守位</th><th>期望安打</th></tr></thead><tbody><tr><td>傑優恩格 霍 雷</td><td>舊金山巨人</td><td>RF</td><td>1.133</td></tr><tr><td>歐維 巴薩貝</td><td>舊金山巨人</td><td>2B</td><td>0.995</td></tr><tr><td>沃伊阿特特 拉</td><td>德州遊騎兵</td><td>LF</td><td>0.950</td></tr><tr><td>喬 佩德</td><td>德州遊騎兵</td><td>1B</td><td>0.947</td></tr><tr><td>拉法 德維</td><td>舊金山巨人</td><td>1B</td><td>0.942</td></tr><tr><td>艾 杜拉</td><td>德州遊騎兵</td><td>3B</td><td>0.905</td></tr><tr><td>達尼 薩</td><td>舊金山巨人</td><td>C</td><td>0.899</td></tr><tr><td>布蘭登 尼</td><td>德州遊騎兵</td><td>RF</td><td>0.874</td></tr></tbody></table>
+        </details>
+      </section>
+      <section class="game-card">
+        <div class="game-head">
+          <div>
+            <h2>坦帕灣光芒 @ 科羅拉多洛磯</h2>
+            <p>台灣開賽時間：2026-08-06 03:10</p>
+            <p>平均比分 坦帕灣光芒 5.60：科羅拉多洛磯 5.18，平均總分 10.78</p>
+            <p>打線來源：先發未公布，使用近期固定打序預估</p>
+          </div>
+          <div class="pick">不推薦</div>
+        </div>
+        <div class="metrics">
+          <div><span>坦帕灣光芒 勝率</span><strong>54.0%</strong><small>公平賠率 1.85 / edge -</small></div>
+          <div><span>科羅拉多洛磯 勝率</span><strong>46.0%</strong><small>公平賠率 2.17 / edge -</small></div>
+          <div><span>大小分 11.5</span><strong>大 40.4%</strong><small>小 59.7% / 小分</small></div>
+          <div><span>台灣運彩盤口</span><strong>無</strong><small>客 - / 主 -</small></div>
+        </div>
+        <details>
+          <summary>球員安打期望值 Top 8</summary>
+          <table><thead><tr><th>球員</th><th>球隊</th><th>守位</th><th>期望安打</th></tr></thead><tbody><tr><td>傑克 姆克克阿爾特赫伊</td><td>科羅拉多洛磯</td><td>DH</td><td>1.470</td></tr><tr><td>柯爾 卡</td><td>科羅拉多洛磯</td><td>CF</td><td>1.421</td></tr><tr><td>米 莫尼</td><td>科羅拉多洛磯</td><td>LF</td><td>1.327</td></tr><tr><td>凱爾 卡</td><td>科羅拉多洛磯</td><td>3B</td><td>1.313</td></tr><tr><td>杭特 戈</td><td>科羅拉多洛磯</td><td>C</td><td>1.255</td></tr><tr><td>崔 喬</td><td>科羅拉多洛磯</td><td>1B</td><td>1.134</td></tr><tr><td>威 卡史</td><td>科羅拉多洛磯</td><td>2B</td><td>1.127</td></tr><tr><td>泰勒 馬</td><td>科羅拉多洛磯</td><td>RF</td><td>1.046</td></tr></tbody></table>
+        </details>
+      </section>
+      <section class="game-card">
+        <div class="game-head">
+          <div>
+            <h2>洛杉磯天使 @ 巴爾的摩金鶯</h2>
+            <p>台灣開賽時間：2026-08-06 06:35</p>
+            <p>平均比分 洛杉磯天使 4.59：巴爾的摩金鶯 4.77，平均總分 9.36</p>
+            <p>打線來源：先發未公布，使用近期固定打序預估</p>
+          </div>
+          <div class="pick">不推薦</div>
+        </div>
+        <div class="metrics">
+          <div><span>洛杉磯天使 勝率</span><strong>42.2%</strong><small>公平賠率 2.37 / edge -</small></div>
+          <div><span>巴爾的摩金鶯 勝率</span><strong>57.8%</strong><small>公平賠率 1.73 / edge -</small></div>
+          <div><span>大小分 8.5</span><strong>大 60.3%</strong><small>小 39.7% / 大分</small></div>
+          <div><span>台灣運彩盤口</span><strong>無</strong><small>客 - / 主 -</small></div>
+        </div>
+        <details>
+          <summary>球員安打期望值 Top 8</summary>
+          <table><thead><tr><th>球員</th><th>球隊</th><th>守位</th><th>期望安打</th></tr></thead><tbody><tr><td>查史 艾西 史</td><td>巴爾的摩金鶯</td><td>3B</td><td>0.977</td></tr><tr><td>佩特 阿羅</td><td>巴爾的摩金鶯</td><td>1B</td><td>0.968</td></tr><tr><td>迪倫 貝維</td><td>巴爾的摩金鶯</td><td>LF</td><td>0.937</td></tr><tr><td>諾拉 斯克赫阿恩優伊爾</td><td>洛杉磯天使</td><td>1B</td><td>0.872</td></tr><tr><td>賈 霍達</td><td>巴爾的摩金鶯</td><td>2B</td><td>0.868</td></tr><tr><td>格優恩恩阿爾 赫</td><td>巴爾的摩金鶯</td><td>SS</td><td>0.863</td></tr><tr><td>瓦 葛</td><td>洛杉磯天使</td><td>2B</td><td>0.839</td></tr><tr><td>麥克 崔</td><td>洛杉磯天使</td><td>CF</td><td>0.820</td></tr></tbody></table>
+        </details>
+      </section>
+      <section class="game-card">
+        <div class="game-head">
+          <div>
+            <h2>華盛頓國民 @ 費城費城人</h2>
+            <p>台灣開賽時間：2026-08-06 06:40</p>
+            <p>平均比分 華盛頓國民 5.30：費城費城人 5.70，平均總分 11.00</p>
+            <p>打線來源：先發未公布，使用近期固定打序預估</p>
+          </div>
+          <div class="pick">不推薦</div>
+        </div>
+        <div class="metrics">
+          <div><span>華盛頓國民 勝率</span><strong>48.4%</strong><small>公平賠率 2.07 / edge -</small></div>
+          <div><span>費城費城人 勝率</span><strong>51.6%</strong><small>公平賠率 1.94 / edge -</small></div>
+          <div><span>大小分 9.5</span><strong>大 57.3%</strong><small>小 42.7% / 大分</small></div>
+          <div><span>台灣運彩盤口</span><strong>無</strong><small>客 - / 主 -</small></div>
+        </div>
+        <details>
+          <summary>球員安打期望值 Top 8</summary>
+          <table><thead><tr><th>球員</th><th>球隊</th><th>守位</th><th>期望安打</th></tr></thead><tbody><tr><td>克傑 阿布</td><td>華盛頓國民</td><td>SS</td><td>1.345</td></tr><tr><td>凱貝 魯</td><td>華盛頓國民</td><td>C</td><td>1.149</td></tr><tr><td>阿 查帕</td><td>華盛頓國民</td><td>1B</td><td>1.060</td></tr><tr><td>迪倫 克爾伊沃斯</td><td>華盛頓國民</td><td>RF</td><td>1.024</td></tr><tr><td>達雷 里雷</td><td>華盛頓國民</td><td>LF</td><td>1.003</td></tr><tr><td>雅各布 尤</td><td>華盛頓國民</td><td>CF</td><td>0.997</td></tr><tr><td>布萊恩 德 拉 克爾優茲</td><td>費城費城人</td><td>RF</td><td>0.996</td></tr><tr><td>納西 內</td><td>華盛頓國民</td><td>2B</td><td>0.952</td></tr></tbody></table>
+        </details>
+      </section>
+      <section class="game-card">
+        <div class="game-head">
+          <div>
+            <h2>紐約大都會 @ 克里夫蘭守護者</h2>
+            <p>台灣開賽時間：2026-08-06 06:40</p>
+            <p>平均比分 紐約大都會 4.31：克里夫蘭守護者 4.40，平均總分 8.71</p>
+            <p>打線來源：先發未公布，使用近期固定打序預估</p>
+          </div>
+          <div class="pick">不推薦</div>
+        </div>
+        <div class="metrics">
+          <div><span>紐約大都會 勝率</span><strong>46.5%</strong><small>公平賠率 2.15 / edge -</small></div>
+          <div><span>克里夫蘭守護者 勝率</span><strong>53.5%</strong><small>公平賠率 1.87 / edge -</small></div>
+          <div><span>大小分 8.5</span><strong>大 48.7%</strong><small>小 51.3% / 小分</small></div>
+          <div><span>台灣運彩盤口</span><strong>無</strong><small>客 - / 主 -</small></div>
+        </div>
+        <details>
+          <summary>球員安打期望值 Top 8</summary>
+          <table><thead><tr><th>球員</th><th>球隊</th><th>守位</th><th>期望安打</th></tr></thead><tbody><tr><td>阿 傑 艾威</td><td>紐約大都會</td><td>LF</td><td>1.054</td></tr><tr><td>查塞 德拉特</td><td>克里夫蘭守護者</td><td>DH</td><td>1.032</td></tr><tr><td>史維 克沃阿恩</td><td>克里夫蘭守護者</td><td>LF</td><td>1.009</td></tr><tr><td>波 比查</td><td>紐約大都會</td><td>3B</td><td>1.000</td></tr><tr><td>夫爾阿恩克伊斯克歐 里</td><td>紐約大都會</td><td>SS</td><td>0.990</td></tr><tr><td>卡 貝</td><td>紐約大都會</td><td>RF</td><td>0.981</td></tr><tr><td>荷西 拉米雷</td><td>克里夫蘭守護者</td><td>3B</td><td>0.974</td></tr><tr><td>阿史 赫</td><td>克里夫蘭守護者</td><td>C</td><td>0.942</td></tr></tbody></table>
+        </details>
+      </section>
+      <section class="game-card">
+        <div class="game-head">
+          <div>
+            <h2>運動家 @ 辛辛那提紅人</h2>
+            <p>台灣開賽時間：2026-08-06 06:40</p>
+            <p>平均比分 運動家 4.73：辛辛那提紅人 5.92，平均總分 10.65</p>
+            <p>打線來源：先發未公布，使用近期固定打序預估</p>
+          </div>
+          <div class="pick">不推薦</div>
+        </div>
+        <div class="metrics">
+          <div><span>運動家 勝率</span><strong>33.2%</strong><small>公平賠率 3.01 / edge -</small></div>
+          <div><span>辛辛那提紅人 勝率</span><strong>66.8%</strong><small>公平賠率 1.50 / edge -</small></div>
+          <div><span>大小分 9.5</span><strong>大 62.0%</strong><small>小 38.0% / 大分</small></div>
+          <div><span>台灣運彩盤口</span><strong>無</strong><small>客 - / 主 -</small></div>
+        </div>
+        <details>
+          <summary>球員安打期望值 Top 8</summary>
+          <table><thead><tr><th>球員</th><th>球隊</th><th>守位</th><th>期望安打</th></tr></thead><tbody><tr><td>雅各布 威</td><td>運動家</td><td>DH</td><td>0.914</td></tr><tr><td>泰勒 索德</td><td>運動家</td><td>LF</td><td>0.881</td></tr><tr><td>喬納 赫</td><td>運動家</td><td>C</td><td>0.787</td></tr><tr><td>托 特</td><td>運動家</td><td>3B</td><td>0.780</td></tr><tr><td>阿里卡 威</td><td>運動家</td><td>SS</td><td>0.763</td></tr><tr><td>艾 德 拉 克爾優茲</td><td>辛辛那提紅人</td><td>SS</td><td>0.736</td></tr><tr><td>赫 波</td><td>運動家</td><td>CF</td><td>0.735</td></tr><tr><td>傑 姆克恩伊伊爾</td><td>運動家</td><td>1B</td><td>0.731</td></tr></tbody></table>
+        </details>
+      </section>
+      <section class="game-card">
+        <div class="game-head">
+          <div>
+            <h2>聖路易紅雀 @ 紐約洋基</h2>
+            <p>台灣開賽時間：2026-08-06 07:05</p>
+            <p>平均比分 聖路易紅雀 4.58：紐約洋基 4.80，平均總分 9.38</p>
+            <p>打線來源：先發未公布，使用近期固定打序預估</p>
+          </div>
+          <div class="pick">不推薦</div>
+        </div>
+        <div class="metrics">
+          <div><span>聖路易紅雀 勝率</span><strong>47.6%</strong><small>公平賠率 2.10 / edge -</small></div>
+          <div><span>紐約洋基 勝率</span><strong>52.4%</strong><small>公平賠率 1.91 / edge -</small></div>
+          <div><span>大小分 8.5</span><strong>大 58.4%</strong><small>小 41.6% / 大分</small></div>
+          <div><span>台灣運彩盤口</span><strong>無</strong><small>客 - / 主 -</small></div>
+        </div>
+        <details>
+          <summary>球員安打期望值 Top 8</summary>
+          <table><thead><tr><th>球員</th><th>球隊</th><th>守位</th><th>期望安打</th></tr></thead><tbody><tr><td>路易斯 加 傑爾</td><td>紐約洋基</td><td>1B</td><td>1.098</td></tr><tr><td>亞歷克 索</td><td>聖路易紅雀</td><td>1B</td><td>1.065</td></tr><tr><td>喬 沃克</td><td>聖路易紅雀</td><td>RF</td><td>1.057</td></tr><tr><td>貝 里塞</td><td>紐約洋基</td><td>DH</td><td>1.036</td></tr><tr><td>傑傑 韋</td><td>聖路易紅雀</td><td>2B</td><td>0.985</td></tr><tr><td>瓦 赫拉</td><td>聖路易紅雀</td><td>DH</td><td>0.897</td></tr><tr><td>崔 葛</td><td>紐約洋基</td><td>CF</td><td>0.896</td></tr><tr><td>布爾阿茲伊 喬</td><td>聖路易紅雀</td><td>3B</td><td>0.871</td></tr></tbody></table>
+        </details>
+      </section>
+      <section class="game-card">
+        <div class="game-head">
+          <div>
+            <h2>芝加哥白襪 @ 波士頓紅襪</h2>
+            <p>台灣開賽時間：2026-08-06 07:10</p>
+            <p>平均比分 芝加哥白襪 4.78：波士頓紅襪 4.92，平均總分 9.71</p>
+            <p>打線來源：先發未公布，使用近期固定打序預估</p>
+          </div>
+          <div class="pick">不推薦</div>
+        </div>
+        <div class="metrics">
+          <div><span>芝加哥白襪 勝率</span><strong>47.0%</strong><small>公平賠率 2.13 / edge -</small></div>
+          <div><span>波士頓紅襪 勝率</span><strong>53.0%</strong><small>公平賠率 1.89 / edge -</small></div>
+          <div><span>大小分 8.5</span><strong>大 57.5%</strong><small>小 42.5% / 大分</small></div>
+          <div><span>台灣運彩盤口</span><strong>無</strong><small>客 - / 主 -</small></div>
+        </div>
+        <details>
+          <summary>球員安打期望值 Top 8</summary>
+          <table><thead><tr><th>球員</th><th>球隊</th><th>守位</th><th>期望安打</th></tr></thead><tbody><tr><td>塞 拉法拉</td><td>波士頓紅襪</td><td>CF</td><td>1.506</td></tr><tr><td>薩 阿納</td><td>芝加哥白襪</td><td>LF</td><td>1.501</td></tr><tr><td>威 柯拉</td><td>波士頓紅襪</td><td>2B</td><td>1.433</td></tr><tr><td>內塔卡 拉卡米</td><td>芝加哥白襪</td><td>1B</td><td>1.387</td></tr><tr><td>米 瓦</td><td>芝加哥白襪</td><td>3B</td><td>1.376</td></tr><tr><td>尼克 索加</td><td>波士頓紅襪</td><td>1B</td><td>1.355</td></tr><tr><td>威 阿布</td><td>波士頓紅襪</td><td>RF</td><td>1.337</td></tr><tr><td>馬薩塔卡 尤達</td><td>波士頓紅襪</td><td>DH</td><td>1.321</td></tr></tbody></table>
+        </details>
+      </section>
+      <section class="game-card">
+        <div class="game-head">
+          <div>
+            <h2>邁阿密馬林魚 @ 亞特蘭大勇士</h2>
+            <p>台灣開賽時間：2026-08-06 07:15</p>
+            <p>平均比分 邁阿密馬林魚 4.62：亞特蘭大勇士 5.29，平均總分 9.91</p>
+            <p>打線來源：先發未公布，使用近期固定打序預估</p>
+          </div>
+          <div class="pick">不推薦</div>
+        </div>
+        <div class="metrics">
+          <div><span>邁阿密馬林魚 勝率</span><strong>36.9%</strong><small>公平賠率 2.71 / edge -</small></div>
+          <div><span>亞特蘭大勇士 勝率</span><strong>63.1%</strong><small>公平賠率 1.58 / edge -</small></div>
+          <div><span>大小分 8.5</span><strong>大 55.0%</strong><small>小 45.0% / 大分</small></div>
+          <div><span>台灣運彩盤口</span><strong>無</strong><small>客 - / 主 -</small></div>
+        </div>
+        <details>
+          <summary>球員安打期望值 Top 8</summary>
+          <table><thead><tr><th>球員</th><th>球隊</th><th>守位</th><th>期望安打</th></tr></thead><tbody><tr><td>凱 巴</td><td>亞特蘭大勇士</td><td>C</td><td>1.233</td></tr><tr><td>麥可 哈 伊伊</td><td>亞特蘭大勇士</td><td>CF</td><td>1.225</td></tr><tr><td>馬 歐</td><td>亞特蘭大勇士</td><td>1B</td><td>1.215</td></tr><tr><td>歐 羅培茲</td><td>邁阿密馬林魚</td><td>SS</td><td>1.177</td></tr><tr><td>歐 阿</td><td>亞特蘭大勇士</td><td>2B</td><td>1.130</td></tr><tr><td>羅納 阿庫納 傑爾</td><td>亞特蘭大勇士</td><td>RF</td><td>1.086</td></tr><tr><td>馬里西 杜波</td><td>亞特蘭大勇士</td><td>LF</td><td>1.065</td></tr><tr><td>多米尼 斯姆伊特赫</td><td>亞特蘭大勇士</td><td>DH</td><td>1.055</td></tr></tbody></table>
+        </details>
+      </section>
+      <section class="game-card">
+        <div class="game-head">
+          <div>
+            <h2>匹茲堡海盜 @ 密爾瓦基釀酒人</h2>
+            <p>台灣開賽時間：2026-08-06 07:40</p>
+            <p>平均比分 匹茲堡海盜 4.75：密爾瓦基釀酒人 5.52，平均總分 10.27</p>
+            <p>打線來源：先發未公布，使用近期固定打序預估</p>
+          </div>
+          <div class="pick">不推薦</div>
+        </div>
+        <div class="metrics">
+          <div><span>匹茲堡海盜 勝率</span><strong>48.7%</strong><small>公平賠率 2.05 / edge -</small></div>
+          <div><span>密爾瓦基釀酒人 勝率</span><strong>51.3%</strong><small>公平賠率 1.95 / edge -</small></div>
+          <div><span>大小分 7.5</span><strong>大 68.1%</strong><small>小 31.9% / 大分</small></div>
+          <div><span>台灣運彩盤口</span><strong>無</strong><small>客 - / 主 -</small></div>
+        </div>
+        <details>
+          <summary>球員安打期望值 Top 8</summary>
+          <table><thead><tr><th>球員</th><th>球隊</th><th>守位</th><th>期望安打</th></tr></thead><tbody><tr><td>傑克 馬</td><td>匹茲堡海盜</td><td>CF</td><td>1.247</td></tr><tr><td>布蘭登 羅韋</td><td>匹茲堡海盜</td><td>2B</td><td>1.172</td></tr><tr><td>賈 查里</td><td>密爾瓦基釀酒人</td><td>LF</td><td>1.147</td></tr><tr><td>布塞 拉</td><td>密爾瓦基釀酒人</td><td>2B</td><td>1.143</td></tr><tr><td>布萊恩 雷諾</td><td>匹茲堡海盜</td><td>LF</td><td>1.142</td></tr><tr><td>艾 瓦德茲</td><td>匹茲堡海盜</td><td>RF</td><td>1.137</td></tr><tr><td>史賓塞 霍</td><td>匹茲堡海盜</td><td>1B</td><td>1.129</td></tr><tr><td>安德魯 瓦</td><td>密爾瓦基釀酒人</td><td>1B</td><td>1.119</td></tr></tbody></table>
+        </details>
+      </section>
+      <section class="game-card">
+        <div class="game-head">
+          <div>
+            <h2>明尼蘇達雙城 @ 堪薩斯市皇家</h2>
+            <p>台灣開賽時間：2026-08-06 07:40</p>
+            <p>平均比分 明尼蘇達雙城 5.11：堪薩斯市皇家 5.08，平均總分 10.19</p>
+            <p>打線來源：先發未公布，使用近期固定打序預估</p>
+          </div>
+          <div class="pick">不推薦</div>
+        </div>
+        <div class="metrics">
+          <div><span>明尼蘇達雙城 勝率</span><strong>54.9%</strong><small>公平賠率 1.82 / edge -</small></div>
+          <div><span>堪薩斯市皇家 勝率</span><strong>45.1%</strong><small>公平賠率 2.22 / edge -</small></div>
+          <div><span>大小分 9.5</span><strong>大 55.5%</strong><small>小 44.5% / 大分</small></div>
+          <div><span>台灣運彩盤口</span><strong>無</strong><small>客 - / 主 -</small></div>
+        </div>
+        <details>
+          <summary>球員安打期望值 Top 8</summary>
+          <table><thead><tr><th>球員</th><th>球隊</th><th>守位</th><th>期望安打</th></tr></thead><tbody><tr><td>萊恩 傑</td><td>明尼蘇達雙城</td><td>C</td><td>1.003</td></tr><tr><td>崔 拉查</td><td>明尼蘇達雙城</td><td>LF</td><td>0.988</td></tr><tr><td>柯 梅</td><td>明尼蘇達雙城</td><td>2B</td><td>0.856</td></tr><tr><td>喬 貝</td><td>明尼蘇達雙城</td><td>DH</td><td>0.849</td></tr><tr><td>布 雷</td><td>明尼蘇達雙城</td><td>3B</td><td>0.804</td></tr><tr><td>羅塞 雷威</td><td>明尼蘇達雙城</td><td>1B</td><td>0.774</td></tr><tr><td>波 威 傑爾</td><td>堪薩斯市皇家</td><td>SS</td><td>0.768</td></tr><tr><td>路凱 凱</td><td>明尼蘇達雙城</td><td>CF</td><td>0.748</td></tr></tbody></table>
+        </details>
+      </section>
+      <section class="game-card">
+        <div class="game-head">
+          <div>
+            <h2>底特律老虎 @ 西雅圖水手</h2>
+            <p>台灣開賽時間：2026-08-06 09:40</p>
+            <p>平均比分 底特律老虎 5.81：西雅圖水手 4.65，平均總分 10.46</p>
+            <p>打線來源：先發未公布，使用近期固定打序預估</p>
+          </div>
+          <div class="pick">不推薦</div>
+        </div>
+        <div class="metrics">
+          <div><span>底特律老虎 勝率</span><strong>66.5%</strong><small>公平賠率 1.50 / edge -</small></div>
+          <div><span>西雅圖水手 勝率</span><strong>33.5%</strong><small>公平賠率 2.99 / edge -</small></div>
+          <div><span>大小分 7.5</span><strong>大 79.0%</strong><small>小 21.0% / 大分</small></div>
+          <div><span>台灣運彩盤口</span><strong>無</strong><small>客 - / 主 -</small></div>
+        </div>
+        <details>
+          <summary>球員安打期望值 Top 8</summary>
+          <table><thead><tr><th>球員</th><th>球隊</th><th>守位</th><th>期望安打</th></tr></thead><tbody><tr><td>麥斯 克爾阿爾克</td><td>底特律老虎</td><td>CF</td><td>1.387</td></tr><tr><td>凱文 尼</td><td>底特律老虎</td><td>SS</td><td>1.363</td></tr><tr><td>迪 迪</td><td>底特律老虎</td><td>C</td><td>1.317</td></tr><tr><td>貝 托</td><td>底特律老虎</td><td>2B</td><td>1.275</td></tr><tr><td>里雷 葛林</td><td>底特律老虎</td><td>LF</td><td>1.253</td></tr><tr><td>柯 凱</td><td>底特律老虎</td><td>DH</td><td>1.224</td></tr><tr><td>賈維 巴</td><td>底特律老虎</td><td>3B</td><td>1.135</td></tr><tr><td>柯爾 尤</td><td>西雅圖水手</td><td>2B</td><td>1.042</td></tr></tbody></table>
+        </details>
+      </section>
+      <section class="game-card">
+        <div class="game-head">
+          <div>
+            <h2>聖地牙哥教士 @ 亞利桑那響尾蛇</h2>
+            <p>台灣開賽時間：2026-08-06 09:40</p>
+            <p>平均比分 聖地牙哥教士 5.31：亞利桑那響尾蛇 5.24，平均總分 10.55</p>
+            <p>打線來源：先發未公布，使用近期固定打序預估</p>
+          </div>
+          <div class="pick">不推薦</div>
+        </div>
+        <div class="metrics">
+          <div><span>聖地牙哥教士 勝率</span><strong>56.9%</strong><small>公平賠率 1.76 / edge -</small></div>
+          <div><span>亞利桑那響尾蛇 勝率</span><strong>43.1%</strong><small>公平賠率 2.32 / edge -</small></div>
+          <div><span>大小分 9.5</span><strong>大 54.9%</strong><small>小 45.1% / 大分</small></div>
+          <div><span>台灣運彩盤口</span><strong>無</strong><small>客 - / 主 -</small></div>
+        </div>
+        <details>
+          <summary>球員安打期望值 Top 8</summary>
+          <table><thead><tr><th>球員</th><th>球隊</th><th>守位</th><th>期望安打</th></tr></thead><tbody><tr><td>柯賓 卡</td><td>亞利桑那響尾蛇</td><td>RF</td><td>1.495</td></tr><tr><td>凱特 馬</td><td>亞利桑那響尾蛇</td><td>2B</td><td>1.453</td></tr><tr><td>詹姆斯 姆克克阿恩恩</td><td>亞利桑那響尾蛇</td><td>C</td><td>1.435</td></tr><tr><td>傑拉 佩莫</td><td>亞利桑那響尾蛇</td><td>SS</td><td>1.425</td></tr><tr><td>諾拉 阿雷納多</td><td>亞利桑那響尾蛇</td><td>3B</td><td>1.350</td></tr><tr><td>麥斯 凱</td><td>亞利桑那響尾蛇</td><td>LF</td><td>1.308</td></tr><tr><td>泰勒 羅</td><td>亞利桑那響尾蛇</td><td>1B</td><td>1.207</td></tr><tr><td>提 塔瓦</td><td>亞利桑那響尾蛇</td><td>CF</td><td>1.197</td></tr></tbody></table>
+        </details>
       </section>
     <footer>Monte Carlo keeps the role-based plate-appearance distribution, then calibrates team scoring means to unified_expected_runs_v1 when available. It is a probability distribution, not official MLB play-by-play or guaranteed betting profit.</footer>
   </main>
-  </div>
 </body>
 </html>
