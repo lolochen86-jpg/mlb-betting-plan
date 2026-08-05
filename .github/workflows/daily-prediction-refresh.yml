@@ -1,0 +1,50 @@
+name: Daily MLB settlement and prediction refresh
+
+on:
+  schedule:
+    # Taiwan 22:30. West-coast games have completed before settlement starts.
+    - cron: "30 14 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-mlb-prediction-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      TZ: Asia/Taipei
+      PYTHONUTF8: "1"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install daily-model dependency
+        run: python -m pip install --disable-pip-version-check pandas
+
+      - name: Settle Taiwan-today results and publish tomorrow predictions
+        run: python scripts/run_daily_workflow.py --date "$(date +%F)" --skip-backtest-refresh
+
+      - name: Commit generated public data
+        shell: bash
+        run: |
+          if git diff --quiet; then
+            echo "No generated data changes"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data docs
+          git commit -m "data: refresh Taiwan MLB settlement and predictions"
+          git pull --rebase origin main
+          git push origin HEAD:main
