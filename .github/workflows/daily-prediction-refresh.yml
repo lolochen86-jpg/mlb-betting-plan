@@ -2,9 +2,11 @@ name: Daily MLB settlement and prediction refresh
 
 on:
   schedule:
-    # GitHub cron uses UTC. Poll at Taiwan 13:30, 15:30, 17:30, 19:30, 21:30 and 22:30.
-    # Completed games are published the same Taiwan day instead of waiting until late evening.
-    - cron: "30 5,7,9,11,13,14 * * *"
+    # GitHub cron uses UTC. These runs correspond to Taiwan 03:00, 05:00, 07:00,
+    # 09:00, 11:00, 13:00, 15:00, 17:00, 19:00, 21:00 and 23:00.
+    # Each run publishes games that are already Final; unfinished games remain pending
+    # and are picked up by the next two-hour run.
+    - cron: "0 1,3,5,7,9,11,13,15,19,21,23 * * *"
   workflow_dispatch:
   push:
     branches:
@@ -38,7 +40,7 @@ jobs:
       - name: Install daily-model dependency
         run: python -m pip install --disable-pip-version-check pandas
 
-      - name: Settle Taiwan-today results and publish tomorrow predictions
+      - name: Settle completed Taiwan-today games and keep unfinished games pending
         run: python scripts/run_daily_workflow.py --date "$(date +%F)" --skip-backtest-refresh
 
       - name: Commit generated public data
