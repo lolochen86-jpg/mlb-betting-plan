@@ -48,6 +48,26 @@ def request_json(url: str, timeout: int = 30) -> list[dict]:
         return json.loads(response.read().decode("utf-8"))
 
 
+def fetch_games(target_date: str) -> tuple[list[dict], Path, str]:
+    """Fetch the official feed without blocking the rest of the daily workflow.
+
+    The sportsbook occasionally rejects GitHub-hosted runners with HTTP 403.
+    Persisting an empty snapshot lets downstream market jobs report no official
+    odds while settlement, postgame review, and public API publishing continue.
+    A later scheduled run always retries and replaces this snapshot on success.
+    """
+    source_path = Path(str(SOURCE_JSON).format(date=target_date))
+    source_path.parent.mkdir(parents=True, exist_ok=True)
+    try:
+        games = request_json(BASEBALL_GAMES_URL)
+        fetch_error = ""
+    except (OSError, ValueError) as exc:
+        games = []
+        fetch_error = f"{type(exc).__name__}: {exc}"
+    source_path.write_text(json.dumps(games, ensure_ascii=False, indent=2), encoding="utf-8")
+    return games, source_path, fetch_error
+
+
 def decimal_odds(selection: dict) -> str:
     pd = float(selection["pd"])
     pu = float(selection["pu"])
@@ -115,9 +135,7 @@ def fill_odds(target_date: str, overwrite_template: bool, overwrite_existing: bo
     elif overwrite_template:
         write_template(target_date, overwrite=True)
 
-    games = request_json(BASEBALL_GAMES_URL)
-    source_path = Path(str(SOURCE_JSON).format(date=target_date))
-    source_path.write_text(json.dumps(games, ensure_ascii=False, indent=2), encoding="utf-8")
+    games, source_path, fetch_error = fetch_games(target_date)
     official_odds = extract_official_odds(games)
 
     rows = read_rows(odds_path)
@@ -149,6 +167,7 @@ def fill_odds(target_date: str, overwrite_template: bool, overwrite_existing: bo
         "rows": len(rows),
         "missing": missing,
         "official_games": len(games),
+        "fetch_error": fetch_error,
     }
 
 
@@ -169,6 +188,8 @@ def main() -> None:
     )
     print(f"wrote {result['odds_csv']}")
     print(f"wrote {result['source_json']}")
+    if result["fetch_error"]:
+        print(f"warning: Taiwan Sports Lottery feed unavailable; kept existing odds: {result['fetch_error']}")
     print(
         f"filled={result['filled']} preserved={result['preserved']} rows={result['rows']} "
         f"official_games={result['official_games']} missing={len(result['missing'])}"
