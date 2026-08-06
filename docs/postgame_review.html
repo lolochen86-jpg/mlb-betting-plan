@@ -39,18 +39,60 @@
     .pill { display:inline-flex; width:max-content; border-radius:999px; padding:3px 8px; font-size:12px; font-weight:900; margin:0 4px 4px 0; }
     .pill.ok { color:#126048; background:#dff2ea; } .pill.bad { color:#9b2f29; background:#f9dddd; } .pill.wait { color:#7a4b12; background:#fff2d6; }
     @media(max-width:900px) { .hero,.day-head { display:block; } .kpis,.discussion { grid-template-columns:1fr; } main { padding:18px 12px 34px; } }
+  
+    /* site navigation */
+    .site-shell { min-height: 100vh; display: grid; grid-template-columns: 220px minmax(0, 1fr); background: inherit; }
+    .site-sidebar { position: sticky; top: 0; align-self: start; height: 100vh; box-sizing: border-box; overflow-y: auto; border-right: 1px solid #dfe5df; background: #ffffff; padding: 22px 14px; z-index: 10; }
+    .site-brand { color: #163b34; font-size: 15px; font-weight: 900; letter-spacing: 0; margin: 0 0 14px; }
+    .site-sidebar nav { display: grid; gap: 6px; }
+    .site-nav-link { display: block; color: #40514b; text-decoration: none; border-radius: 8px; padding: 9px 10px; font-size: 14px; font-weight: 750; line-height: 1.25; }
+    .site-nav-link:hover { background: #eef4f1; color: #123d35; }
+    .site-nav-link.active { background: #165f56; color: #ffffff; }
+    .site-shell > header { grid-column: 2; min-width: 0; }
+    .site-shell > main { grid-column: 2; width: min(1180px, calc(100% - 56px)); margin-left: auto; margin-right: auto; min-width: 0; }
+    @media (max-width: 900px) {
+      .site-shell { display: block; }
+      .site-sidebar { position: static; height: auto; border-right: 0; border-bottom: 1px solid #dfe5df; }
+      .site-sidebar nav { grid-template-columns: repeat(auto-fit, minmax(112px, 1fr)); }
+      .site-shell > header { grid-column: auto; }
+      .site-shell > main { width: auto; }
+    }
   </style>
 </head>
 <body>
+  <div class="site-shell" data-site-nav="true">
+    <aside class="site-sidebar">
+      <div class="site-brand">MLB 投注計畫</div>
+      <nav aria-label="主要頁面">
+        <a class="site-nav-link" href="index.html">總覽</a>
+        <a class="site-nav-link" href="daily_predictions.html">今日預測</a>
+        <a class="site-nav-link" href="betting_ticket.html">投注單</a>
+        <a class="site-nav-link" href="totals_predictions.html">大小分</a>
+        <a class="site-nav-link" href="advanced_factors.html">進階因子</a>
+        <a class="site-nav-link" href="quant_model.html">Q-量化模型</a>
+        <a class="site-nav-link" href="game_simulator.html">逐打席模擬</a>
+        <a class="site-nav-link" href="monte_carlo.html">蒙地卡羅</a>
+        <a class="site-nav-link" href="market_research.html">盤口研究</a>
+        <a class="site-nav-link" href="prediction_log.html">結算紀錄</a>
+        <a class="site-nav-link active" href="postgame_review.html">賽後檢討</a>
+        <a class="site-nav-link" href="betting_roi.html">投注 ROI</a>
+        <a class="site-nav-link" href="lineup_fix_comparison.html">修正前後</a>
+        <a class="site-nav-link" href="winner_model_search.html">模型搜尋</a>
+        <a class="site-nav-link" href="prediction_accuracy.html">準確率</a>
+        <a class="site-nav-link" href="status.html">狀態</a>
+        <a class="site-nav-link" href="api/index.html">資料 API</a>
+      </nav>
+    </aside>
 <main>
   <section class="hero">
     <div>
       <h1>MLB 賽後檢討</h1>
       <p>把當天賽前預測和賽後結果放在同一張表；勝方主模型、比分模型、大小分模型分開顯示，並直接標出模型是否搭得起來。</p>
     </div>
-    <p>最新MLB賽事日：2026-08-05<br />產生時間：2026-08-05T20:17:50</p>
+    <p>最新MLB賽事日：2026-08-07<br />產生時間：2026-08-07T03:29:10</p>
   </section>
-  <nav class="tabs"><a class="tab active" href="#day-2026-08-05">2026-08-05</a>
+  <nav class="tabs"><a class="tab active" href="#day-2026-08-07">2026-08-07</a>
+<a class="tab " href="#day-2026-08-05">2026-08-05</a>
 <a class="tab " href="#day-2026-08-04">2026-08-04</a>
 <a class="tab " href="#day-2026-08-03">2026-08-03</a>
 <a class="tab " href="#day-2026-08-02">2026-08-02</a>
@@ -90,27 +132,265 @@
 <a class="tab " href="#day-2026-06-26">2026-06-26</a>
 <a class="tab " href="#day-2026-06-25">2026-06-25</a></nav>
   
-            <section class="day" id="day-2026-08-05">
+            <section class="day" id="day-2026-08-07">
               <div class="day-head">
                 <div>
-                  <h2>2026-08-05 賽前預測待結算</h2>
+                  <h2>2026-08-07 賽前預測待結算</h2>
                   <p>賽前預測待比賽完成；賽後會自動補上真實比分、大小分與投注結果。</p>
                 </div>
               </div>
               
     <section class="kpis">
       <div class="kpi"><div class="label">當日勝方準確率</div><div class="value">0.00%</div><div class="hint">0 / 0 已完賽</div></div>
-      <div class="kpi"><div class="label">累積勝方準確率</div><div class="value">56.04%</div><div class="hint">283 / 505 已完賽</div></div>
+      <div class="kpi"><div class="label">累積勝方準確率</div><div class="value">56.54%</div><div class="hint">294 / 520 已完賽</div></div>
       <div class="kpi"><div class="label">當日大小分準確率</div><div class="value">0.00%</div><div class="hint">0 / 0 有盤口</div></div>
-      <div class="kpi"><div class="label">累積大小分準確率</div><div class="value">51.71%</div><div class="hint">227 / 439 有盤口</div></div>
+      <div class="kpi"><div class="label">累積大小分準確率</div><div class="value">51.32%</div><div class="hint">233 / 454 有盤口</div></div>
       <div class="kpi"><div class="label">當日投注損益</div><div class="value ">0</div><div class="hint">0 筆投注紀錄</div></div>
       <div class="kpi"><div class="label">累積投注損益</div><div class="value bad">-300</div><div class="hint">3 筆投注紀錄</div></div>
       <div class="kpi"><div class="label">當日待結算</div><div class="value muted">15</div><div class="hint">延賽或尚未完賽</div></div>
       <div class="kpi"><div class="label">累積待結算</div><div class="value muted">23</div><div class="hint">全部日期待結算</div></div>
     </section>
               <div class="discussion">
-                <div><h3>賽前重點</h3><ul><li>尚未完賽；目前有 7 場高信心賽前預測待追蹤。</li></ul></div>
+                <div><h3>賽前重點</h3><ul><li>尚未完賽；目前有 5 場高信心賽前預測待追蹤。</li></ul></div>
                 <div><h3>待結算說明</h3><ul><li>等待真實比分後，系統會自動補上勝方、大小分與投注 ROI 檢討。</li></ul></div>
+              </div>
+              <div class="table-wrap">
+                <table>
+                  <thead><tr><th>台灣開賽時間</th><th>對戰</th><th>賽前勝方</th><th>勝方比分模型</th><th>大小分模型</th><th>模型搭配</th><th>實際比分</th><th>實際勝方</th><th>勝方</th><th>大小分結果</th><th>檢討重點</th></tr></thead>
+                  <tbody>
+            <tr>
+              <td>2026-08-08 06:40</td>
+              <td>紐約大都會 @ 匹茲堡海盜<span>GamePk 823349</span></td>
+              <td>匹茲堡海盜<span>51.3%</span></td>
+              <td>紐約大都會 3.68 : 匹茲堡海盜 3.29<span>比分勝方 紐約大都會 / 總分 6.97</span></td>
+              <td>-<span>盤口 - / -</span></td>
+              <td><span class="pill bad">勝方分歧</span><span class="pill wait">無台灣運彩大小分盤口</span></td>
+              <td>-</td>
+              <td>-</td>
+              <td><span class="badge wait">待結算</span></td>
+              <td><span class="badge wait">待結算</span></td>
+              <td>尚未完賽，等待賽後自動結算真實比分。</td>
+            </tr>
+
+            <tr>
+              <td>2026-08-08 06:40</td>
+              <td>多倫多藍鳥 @ 費城費城人<span>GamePk 823428</span></td>
+              <td>費城費城人<span>54.0%</span></td>
+              <td>多倫多藍鳥 3.16 : 費城費城人 4.12<span>比分勝方 費城費城人 / 總分 7.27</span></td>
+              <td>-<span>盤口 - / -</span></td>
+              <td><span class="pill ok">勝方一致</span><span class="pill wait">無台灣運彩大小分盤口</span></td>
+              <td>-</td>
+              <td>-</td>
+              <td><span class="badge wait">待結算</span></td>
+              <td><span class="badge wait">待結算</span></td>
+              <td>尚未完賽，等待賽後自動結算真實比分。</td>
+            </tr>
+
+            <tr>
+              <td>2026-08-08 06:45</td>
+              <td>辛辛那提紅人 @ 華盛頓國民<span>GamePk 822699</span></td>
+              <td>辛辛那提紅人<span>50.9%</span></td>
+              <td>辛辛那提紅人 4.06 : 華盛頓國民 4.24<span>比分勝方 華盛頓國民 / 總分 8.3</span></td>
+              <td>-<span>盤口 - / -</span></td>
+              <td><span class="pill bad">勝方分歧</span><span class="pill wait">無台灣運彩大小分盤口</span></td>
+              <td>-</td>
+              <td>-</td>
+              <td><span class="badge wait">待結算</span></td>
+              <td><span class="badge wait">待結算</span></td>
+              <td>尚未完賽，等待賽後自動結算真實比分。</td>
+            </tr>
+
+            <tr>
+              <td>2026-08-08 07:05</td>
+              <td>亞特蘭大勇士 @ 紐約洋基<span>GamePk 823515</span></td>
+              <td>紐約洋基<span>54.3%</span></td>
+              <td>亞特蘭大勇士 4.04 : 紐約洋基 3.52<span>比分勝方 亞特蘭大勇士 / 總分 7.56</span></td>
+              <td>-<span>盤口 - / -</span></td>
+              <td><span class="pill bad">勝方分歧</span><span class="pill wait">無台灣運彩大小分盤口</span></td>
+              <td>-</td>
+              <td>-</td>
+              <td><span class="badge wait">待結算</span></td>
+              <td><span class="badge wait">待結算</span></td>
+              <td>尚未完賽，等待賽後自動結算真實比分。</td>
+            </tr>
+
+            <tr>
+              <td>2026-08-08 07:10</td>
+              <td>洛杉磯天使 @ 邁阿密馬林魚<span>GamePk 823836</span></td>
+              <td>邁阿密馬林魚<span>55.2%</span></td>
+              <td>洛杉磯天使 2.99 : 邁阿密馬林魚 3.34<span>比分勝方 邁阿密馬林魚 / 總分 6.33</span></td>
+              <td>-<span>盤口 - / -</span></td>
+              <td><span class="pill ok">勝方一致</span><span class="pill wait">無台灣運彩大小分盤口</span></td>
+              <td>-</td>
+              <td>-</td>
+              <td><span class="badge wait">待結算</span></td>
+              <td><span class="badge wait">待結算</span></td>
+              <td>尚未完賽，等待賽後自動結算真實比分。</td>
+            </tr>
+
+            <tr>
+              <td>2026-08-08 07:10</td>
+              <td>運動家 @ 波士頓紅襪<span>GamePk 824727</span></td>
+              <td>波士頓紅襪<span>59.7%</span></td>
+              <td>運動家 2.89 : 波士頓紅襪 5.53<span>比分勝方 波士頓紅襪 / 總分 8.42</span></td>
+              <td>-<span>盤口 - / -</span></td>
+              <td><span class="pill ok">勝方一致</span><span class="pill wait">無台灣運彩大小分盤口</span></td>
+              <td>-</td>
+              <td>-</td>
+              <td><span class="badge wait">待結算</span></td>
+              <td><span class="badge wait">待結算</span></td>
+              <td>尚未完賽，等待賽後自動結算真實比分。</td>
+            </tr>
+
+            <tr>
+              <td>2026-08-08 07:40</td>
+              <td>明尼蘇達雙城 @ 密爾瓦基釀酒人<span>GamePk 823750</span></td>
+              <td>密爾瓦基釀酒人<span>59.6%</span></td>
+              <td>明尼蘇達雙城 3.50 : 密爾瓦基釀酒人 4.13<span>比分勝方 密爾瓦基釀酒人 / 總分 7.63</span></td>
+              <td>-<span>盤口 - / -</span></td>
+              <td><span class="pill ok">勝方一致</span><span class="pill wait">無台灣運彩大小分盤口</span></td>
+              <td>-</td>
+              <td>-</td>
+              <td><span class="badge wait">待結算</span></td>
+              <td><span class="badge wait">待結算</span></td>
+              <td>尚未完賽，等待賽後自動結算真實比分。</td>
+            </tr>
+
+            <tr>
+              <td>2026-08-08 07:40</td>
+              <td>克里夫蘭守護者 @ 芝加哥白襪<span>GamePk 824566</span></td>
+              <td>芝加哥白襪<span>51.6%</span></td>
+              <td>克里夫蘭守護者 3.20 : 芝加哥白襪 3.68<span>比分勝方 芝加哥白襪 / 總分 6.88</span></td>
+              <td>-<span>盤口 - / -</span></td>
+              <td><span class="pill ok">勝方一致</span><span class="pill wait">無台灣運彩大小分盤口</span></td>
+              <td>-</td>
+              <td>-</td>
+              <td><span class="badge wait">待結算</span></td>
+              <td><span class="badge wait">待結算</span></td>
+              <td>尚未完賽，等待賽後自動結算真實比分。</td>
+            </tr>
+
+            <tr>
+              <td>2026-08-08 08:10</td>
+              <td>芝加哥小熊 @ 堪薩斯市皇家<span>GamePk 824081</span></td>
+              <td>芝加哥小熊<span>53.9%</span></td>
+              <td>芝加哥小熊 4.47 : 堪薩斯市皇家 3.51<span>比分勝方 芝加哥小熊 / 總分 7.98</span></td>
+              <td>-<span>盤口 - / -</span></td>
+              <td><span class="pill ok">勝方一致</span><span class="pill wait">無台灣運彩大小分盤口</span></td>
+              <td>-</td>
+              <td>-</td>
+              <td><span class="badge wait">待結算</span></td>
+              <td><span class="badge wait">待結算</span></td>
+              <td>尚未完賽，等待賽後自動結算真實比分。</td>
+            </tr>
+
+            <tr>
+              <td>2026-08-08 08:15</td>
+              <td>巴爾的摩金鶯 @ 德州遊騎兵<span>GamePk 822863</span></td>
+              <td>德州遊騎兵<span>55.6%</span></td>
+              <td>巴爾的摩金鶯 3.70 : 德州遊騎兵 3.83<span>比分勝方 德州遊騎兵 / 總分 7.53</span></td>
+              <td>-<span>盤口 - / -</span></td>
+              <td><span class="pill ok">勝方一致</span><span class="pill wait">無台灣運彩大小分盤口</span></td>
+              <td>-</td>
+              <td>-</td>
+              <td><span class="badge wait">待結算</span></td>
+              <td><span class="badge wait">待結算</span></td>
+              <td>尚未完賽，等待賽後自動結算真實比分。</td>
+            </tr>
+
+            <tr>
+              <td>2026-08-08 08:15</td>
+              <td>科羅拉多洛磯 @ 聖路易紅雀<span>GamePk 823024</span></td>
+              <td>聖路易紅雀<span>60.7%</span></td>
+              <td>科羅拉多洛磯 4.02 : 聖路易紅雀 4.28<span>比分勝方 聖路易紅雀 / 總分 8.31</span></td>
+              <td>-<span>盤口 - / -</span></td>
+              <td><span class="pill ok">勝方一致</span><span class="pill wait">無台灣運彩大小分盤口</span></td>
+              <td>-</td>
+              <td>-</td>
+              <td><span class="badge wait">待結算</span></td>
+              <td><span class="badge wait">待結算</span></td>
+              <td>尚未完賽，等待賽後自動結算真實比分。</td>
+            </tr>
+
+            <tr>
+              <td>2026-08-08 09:40</td>
+              <td>休士頓太空人 @ 聖地牙哥教士<span>GamePk 823266</span></td>
+              <td>聖地牙哥教士<span>53.3%</span></td>
+              <td>休士頓太空人 4.15 : 聖地牙哥教士 4.34<span>比分勝方 聖地牙哥教士 / 總分 8.49</span></td>
+              <td>-<span>盤口 - / -</span></td>
+              <td><span class="pill ok">勝方一致</span><span class="pill wait">無台灣運彩大小分盤口</span></td>
+              <td>-</td>
+              <td>-</td>
+              <td><span class="badge wait">待結算</span></td>
+              <td><span class="badge wait">待結算</span></td>
+              <td>尚未完賽，等待賽後自動結算真實比分。</td>
+            </tr>
+
+            <tr>
+              <td>2026-08-08 09:40</td>
+              <td>洛杉磯道奇 @ 亞利桑那響尾蛇<span>GamePk 825051</span></td>
+              <td>洛杉磯道奇<span>52.3%</span></td>
+              <td>洛杉磯道奇 4.47 : 亞利桑那響尾蛇 4.84<span>比分勝方 亞利桑那響尾蛇 / 總分 9.31</span></td>
+              <td>-<span>盤口 - / -</span></td>
+              <td><span class="pill bad">勝方分歧</span><span class="pill wait">無台灣運彩大小分盤口</span></td>
+              <td>-</td>
+              <td>-</td>
+              <td><span class="badge wait">待結算</span></td>
+              <td><span class="badge wait">待結算</span></td>
+              <td>尚未完賽，等待賽後自動結算真實比分。</td>
+            </tr>
+
+            <tr>
+              <td>2026-08-08 09:45</td>
+              <td>坦帕灣光芒 @ 西雅圖水手<span>GamePk 823103</span></td>
+              <td>西雅圖水手<span>51.9%</span></td>
+              <td>坦帕灣光芒 3.80 : 西雅圖水手 3.48<span>比分勝方 坦帕灣光芒 / 總分 7.29</span></td>
+              <td>-<span>盤口 - / -</span></td>
+              <td><span class="pill bad">勝方分歧</span><span class="pill wait">無台灣運彩大小分盤口</span></td>
+              <td>-</td>
+              <td>-</td>
+              <td><span class="badge wait">待結算</span></td>
+              <td><span class="badge wait">待結算</span></td>
+              <td>尚未完賽，等待賽後自動結算真實比分。</td>
+            </tr>
+
+            <tr>
+              <td>2026-08-08 10:15</td>
+              <td>底特律老虎 @ 舊金山巨人<span>GamePk 823191</span></td>
+              <td>底特律老虎<span>51.0%</span></td>
+              <td>底特律老虎 4.70 : 舊金山巨人 3.07<span>比分勝方 底特律老虎 / 總分 7.77</span></td>
+              <td>-<span>盤口 - / -</span></td>
+              <td><span class="pill ok">勝方一致</span><span class="pill wait">無台灣運彩大小分盤口</span></td>
+              <td>-</td>
+              <td>-</td>
+              <td><span class="badge wait">待結算</span></td>
+              <td><span class="badge wait">待結算</span></td>
+              <td>尚未完賽，等待賽後自動結算真實比分。</td>
+            </tr></tbody>
+                </table>
+              </div>
+            </section>
+            <section class="day" id="day-2026-08-05">
+              <div class="day-head">
+                <div>
+                  <h2>2026-08-05 賽後檢討</h2>
+                  <p>賽前預測與賽後結果對照，包含勝方、大小分與投注結果。</p>
+                </div>
+              </div>
+              
+    <section class="kpis">
+      <div class="kpi"><div class="label">當日勝方準確率</div><div class="value">73.33%</div><div class="hint">11 / 15 已完賽</div></div>
+      <div class="kpi"><div class="label">累積勝方準確率</div><div class="value">56.54%</div><div class="hint">294 / 520 已完賽</div></div>
+      <div class="kpi"><div class="label">當日大小分準確率</div><div class="value">40.00%</div><div class="hint">6 / 15 有盤口</div></div>
+      <div class="kpi"><div class="label">累積大小分準確率</div><div class="value">51.32%</div><div class="hint">233 / 454 有盤口</div></div>
+      <div class="kpi"><div class="label">當日投注損益</div><div class="value ">0</div><div class="hint">0 筆投注紀錄</div></div>
+      <div class="kpi"><div class="label">累積投注損益</div><div class="value bad">-300</div><div class="hint">3 筆投注紀錄</div></div>
+      <div class="kpi"><div class="label">當日待結算</div><div class="value muted">0</div><div class="hint">延賽或尚未完賽</div></div>
+      <div class="kpi"><div class="label">累積待結算</div><div class="value muted">8</div><div class="hint">全部日期待結算</div></div>
+    </section>
+              <div class="discussion">
+                <div><h3>命中重點</h3><ul><li>坦帕灣光芒 @ 科羅拉多洛磯：高信心勝方命中。</li><li>運動家 @ 辛辛那提紅人：高信心勝方命中。</li><li>芝加哥白襪 @ 波士頓紅襪：高信心勝方命中。</li></ul></div>
+                <div><h3>失準檢討</h3><ul><li>華盛頓國民 @ 費城費城人：費城費城人 未命中，比分 10-4。</li><li>聖路易紅雀 @ 紐約洋基：紐約洋基 未命中，比分 3-1。</li></ul></div>
               </div>
               <div class="table-wrap">
                 <table>
@@ -123,11 +403,11 @@
               <td>-<span>比分勝方 - / 總分 -</span></td>
               <td>10.13<span>盤口 8.5 / 大分</span></td>
               <td><span class="pill wait">無比分模型</span><span class="pill wait">無台灣運彩大小分盤口</span></td>
-              <td>-</td>
-              <td>-</td>
-              <td><span class="badge wait">待結算</span></td>
-              <td><span class="badge wait">待結算</span></td>
-              <td>尚未完賽，等待賽後自動結算真實比分。</td>
+              <td>5-4</td>
+              <td>多倫多藍鳥</td>
+              <td><span class="badge bad">錯誤</span></td>
+              <td><span class="badge ok">正確</span></td>
+              <td>信心接近五五波，賽前應降權或避免當主推。<br>一分差比賽，模型即使方向錯也屬高波動結果。</td>
             </tr>
 
             <tr>
@@ -137,11 +417,11 @@
               <td>-<span>比分勝方 - / 總分 -</span></td>
               <td>10.66<span>盤口 9.5 / 大分</span></td>
               <td><span class="pill wait">無比分模型</span><span class="pill wait">無台灣運彩大小分盤口</span></td>
-              <td>-</td>
-              <td>-</td>
-              <td><span class="badge wait">待結算</span></td>
-              <td><span class="badge wait">待結算</span></td>
-              <td>尚未完賽，等待賽後自動結算真實比分。</td>
+              <td>6-7</td>
+              <td>芝加哥小熊</td>
+              <td><span class="badge ok">正確</span></td>
+              <td><span class="badge ok">正確</span></td>
+              <td>方向正確，但信心不高，較適合作為觀察而非重注。<br>一分差比賽，模型即使方向錯也屬高波動結果。</td>
             </tr>
 
             <tr>
@@ -151,11 +431,11 @@
               <td>-<span>比分勝方 - / 總分 -</span></td>
               <td>9.98<span>盤口 8.5 / 大分</span></td>
               <td><span class="pill wait">無比分模型</span><span class="pill wait">無台灣運彩大小分盤口</span></td>
-              <td>-</td>
-              <td>-</td>
-              <td><span class="badge wait">待結算</span></td>
-              <td><span class="badge wait">待結算</span></td>
-              <td>尚未完賽，等待賽後自動結算真實比分。</td>
+              <td>0-6</td>
+              <td>德州遊騎兵</td>
+              <td><span class="badge ok">正確</span></td>
+              <td><span class="badge bad">錯誤</span></td>
+              <td>方向正確，但信心不高，較適合作為觀察而非重注。<br>大小分偏差 4.0 分，需檢查投手/天氣/打線係數。</td>
             </tr>
 
             <tr>
@@ -165,11 +445,11 @@
               <td>-<span>比分勝方 - / 總分 -</span></td>
               <td>10.78<span>盤口 11.5 / 小分</span></td>
               <td><span class="pill wait">無比分模型</span><span class="pill wait">無台灣運彩大小分盤口</span></td>
-              <td>-</td>
-              <td>-</td>
-              <td><span class="badge wait">待結算</span></td>
-              <td><span class="badge wait">待結算</span></td>
-              <td>尚未完賽，等待賽後自動結算真實比分。</td>
+              <td>4-0</td>
+              <td>坦帕灣光芒</td>
+              <td><span class="badge ok">正確</span></td>
+              <td><span class="badge ok">正確</span></td>
+              <td>高信心方向有命中，這類條件可列為穩定樣本繼續追蹤。</td>
             </tr>
 
             <tr>
@@ -179,11 +459,11 @@
               <td>-<span>比分勝方 - / 總分 -</span></td>
               <td>9.36<span>盤口 8.5 / 大分</span></td>
               <td><span class="pill wait">無比分模型</span><span class="pill wait">無台灣運彩大小分盤口</span></td>
-              <td>-</td>
-              <td>-</td>
-              <td><span class="badge wait">待結算</span></td>
-              <td><span class="badge wait">待結算</span></td>
-              <td>尚未完賽，等待賽後自動結算真實比分。</td>
+              <td>2-5</td>
+              <td>巴爾的摩金鶯</td>
+              <td><span class="badge ok">正確</span></td>
+              <td><span class="badge bad">錯誤</span></td>
+              <td>方向正確，但信心不高，較適合作為觀察而非重注。<br>大小分偏差 2.4 分，需檢查投手/天氣/打線係數。</td>
             </tr>
 
             <tr>
@@ -193,11 +473,11 @@
               <td>-<span>比分勝方 - / 總分 -</span></td>
               <td>11<span>盤口 9.5 / 大分</span></td>
               <td><span class="pill wait">無比分模型</span><span class="pill wait">無台灣運彩大小分盤口</span></td>
-              <td>-</td>
-              <td>-</td>
-              <td><span class="badge wait">待結算</span></td>
-              <td><span class="badge wait">待結算</span></td>
-              <td>尚未完賽，等待賽後自動結算真實比分。</td>
+              <td>10-4</td>
+              <td>華盛頓國民</td>
+              <td><span class="badge bad">錯誤</span></td>
+              <td><span class="badge ok">正確</span></td>
+              <td>高信心失準，需要回看先發投手、牛棚或打線是否有臨場變化。</td>
             </tr>
 
             <tr>
@@ -207,11 +487,11 @@
               <td>-<span>比分勝方 - / 總分 -</span></td>
               <td>8.71<span>盤口 8.5 / 大分</span></td>
               <td><span class="pill wait">無比分模型</span><span class="pill wait">無台灣運彩大小分盤口</span></td>
-              <td>-</td>
-              <td>-</td>
-              <td><span class="badge wait">待結算</span></td>
-              <td><span class="badge wait">待結算</span></td>
-              <td>尚未完賽，等待賽後自動結算真實比分。</td>
+              <td>6-5</td>
+              <td>紐約大都會</td>
+              <td><span class="badge bad">錯誤</span></td>
+              <td><span class="badge ok">正確</span></td>
+              <td>信心接近五五波，賽前應降權或避免當主推。<br>一分差比賽，模型即使方向錯也屬高波動結果。</td>
             </tr>
 
             <tr>
@@ -221,11 +501,11 @@
               <td>-<span>比分勝方 - / 總分 -</span></td>
               <td>10.65<span>盤口 9.5 / 大分</span></td>
               <td><span class="pill wait">無比分模型</span><span class="pill wait">無台灣運彩大小分盤口</span></td>
-              <td>-</td>
-              <td>-</td>
-              <td><span class="badge wait">待結算</span></td>
-              <td><span class="badge wait">待結算</span></td>
-              <td>尚未完賽，等待賽後自動結算真實比分。</td>
+              <td>2-3</td>
+              <td>辛辛那提紅人</td>
+              <td><span class="badge ok">正確</span></td>
+              <td><span class="badge bad">錯誤</span></td>
+              <td>高信心方向有命中，這類條件可列為穩定樣本繼續追蹤。<br>一分差比賽，模型即使方向錯也屬高波動結果。</td>
             </tr>
 
             <tr>
@@ -235,11 +515,11 @@
               <td>-<span>比分勝方 - / 總分 -</span></td>
               <td>9.38<span>盤口 8.5 / 大分</span></td>
               <td><span class="pill wait">無比分模型</span><span class="pill wait">無台灣運彩大小分盤口</span></td>
-              <td>-</td>
-              <td>-</td>
-              <td><span class="badge wait">待結算</span></td>
-              <td><span class="badge wait">待結算</span></td>
-              <td>尚未完賽，等待賽後自動結算真實比分。</td>
+              <td>3-1</td>
+              <td>聖路易紅雀</td>
+              <td><span class="badge bad">錯誤</span></td>
+              <td><span class="badge bad">錯誤</span></td>
+              <td>高信心失準，需要回看先發投手、牛棚或打線是否有臨場變化。<br>大小分偏差 5.4 分，需檢查投手/天氣/打線係數。</td>
             </tr>
 
             <tr>
@@ -249,11 +529,11 @@
               <td>-<span>比分勝方 - / 總分 -</span></td>
               <td>9.64<span>盤口 8.5 / 大分</span></td>
               <td><span class="pill wait">無比分模型</span><span class="pill wait">無台灣運彩大小分盤口</span></td>
-              <td>-</td>
-              <td>-</td>
-              <td><span class="badge wait">待結算</span></td>
-              <td><span class="badge wait">待結算</span></td>
-              <td>尚未完賽，等待賽後自動結算真實比分。</td>
+              <td>0-4</td>
+              <td>波士頓紅襪</td>
+              <td><span class="badge ok">正確</span></td>
+              <td><span class="badge bad">錯誤</span></td>
+              <td>高信心方向有命中，這類條件可列為穩定樣本繼續追蹤。<br>大小分偏差 5.6 分，需檢查投手/天氣/打線係數。</td>
             </tr>
 
             <tr>
@@ -263,11 +543,11 @@
               <td>-<span>比分勝方 - / 總分 -</span></td>
               <td>9.91<span>盤口 8.5 / 大分</span></td>
               <td><span class="pill wait">無比分模型</span><span class="pill wait">無台灣運彩大小分盤口</span></td>
-              <td>-</td>
-              <td>-</td>
-              <td><span class="badge wait">待結算</span></td>
-              <td><span class="badge wait">待結算</span></td>
-              <td>尚未完賽，等待賽後自動結算真實比分。</td>
+              <td>1-4</td>
+              <td>亞特蘭大勇士</td>
+              <td><span class="badge ok">正確</span></td>
+              <td><span class="badge bad">錯誤</span></td>
+              <td>高信心方向有命中，這類條件可列為穩定樣本繼續追蹤。<br>大小分偏差 4.9 分，需檢查投手/天氣/打線係數。</td>
             </tr>
 
             <tr>
@@ -277,11 +557,11 @@
               <td>-<span>比分勝方 - / 總分 -</span></td>
               <td>10.26<span>盤口 7.5 / 大分</span></td>
               <td><span class="pill wait">無比分模型</span><span class="pill wait">無台灣運彩大小分盤口</span></td>
-              <td>-</td>
-              <td>-</td>
-              <td><span class="badge wait">待結算</span></td>
-              <td><span class="badge wait">待結算</span></td>
-              <td>尚未完賽，等待賽後自動結算真實比分。</td>
+              <td>2-4</td>
+              <td>密爾瓦基釀酒人</td>
+              <td><span class="badge ok">正確</span></td>
+              <td><span class="badge bad">錯誤</span></td>
+              <td>高信心方向有命中，這類條件可列為穩定樣本繼續追蹤。<br>大小分偏差 4.3 分，需檢查投手/天氣/打線係數。</td>
             </tr>
 
             <tr>
@@ -291,11 +571,11 @@
               <td>-<span>比分勝方 - / 總分 -</span></td>
               <td>10.2<span>盤口 9.5 / 大分</span></td>
               <td><span class="pill wait">無比分模型</span><span class="pill wait">無台灣運彩大小分盤口</span></td>
-              <td>-</td>
-              <td>-</td>
-              <td><span class="badge wait">待結算</span></td>
-              <td><span class="badge wait">待結算</span></td>
-              <td>尚未完賽，等待賽後自動結算真實比分。</td>
+              <td>1-2</td>
+              <td>堪薩斯市皇家</td>
+              <td><span class="badge ok">正確</span></td>
+              <td><span class="badge bad">錯誤</span></td>
+              <td>方向正確，但信心不高，較適合作為觀察而非重注。<br>一分差比賽，模型即使方向錯也屬高波動結果。</td>
             </tr>
 
             <tr>
@@ -305,11 +585,11 @@
               <td>-<span>比分勝方 - / 總分 -</span></td>
               <td>10.46<span>盤口 7.5 / 大分</span></td>
               <td><span class="pill wait">無比分模型</span><span class="pill wait">無台灣運彩大小分盤口</span></td>
-              <td>-</td>
-              <td>-</td>
-              <td><span class="badge wait">待結算</span></td>
-              <td><span class="badge wait">待結算</span></td>
-              <td>尚未完賽，等待賽後自動結算真實比分。</td>
+              <td>2-4</td>
+              <td>西雅圖水手</td>
+              <td><span class="badge ok">正確</span></td>
+              <td><span class="badge bad">錯誤</span></td>
+              <td>方向正確，但信心不高，較適合作為觀察而非重注。<br>大小分偏差 4.5 分，需檢查投手/天氣/打線係數。</td>
             </tr>
 
             <tr>
@@ -319,11 +599,11 @@
               <td>-<span>比分勝方 - / 總分 -</span></td>
               <td>10.52<span>盤口 9.5 / 大分</span></td>
               <td><span class="pill wait">無比分模型</span><span class="pill wait">無台灣運彩大小分盤口</span></td>
-              <td>-</td>
-              <td>-</td>
-              <td><span class="badge wait">待結算</span></td>
-              <td><span class="badge wait">待結算</span></td>
-              <td>尚未完賽，等待賽後自動結算真實比分。</td>
+              <td>4-10</td>
+              <td>亞利桑那響尾蛇</td>
+              <td><span class="badge ok">正確</span></td>
+              <td><span class="badge ok">正確</span></td>
+              <td>方向正確，但信心不高，較適合作為觀察而非重注。</td>
             </tr></tbody>
                 </table>
               </div>
@@ -8575,5 +8855,6 @@
               </div>
             </section>
 </main>
+  </div>
 </body>
 </html>

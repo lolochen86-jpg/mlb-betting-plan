@@ -15,17 +15,58 @@
     th { color: #68736d; font-size: 12px; }
     .note { margin-top: 16px; padding: 12px 14px; border: 1px solid #dfe5df; border-radius: 8px; background: white; }
     @media (max-width: 720px) { main { padding: 18px; } table { display: block; overflow-x: auto; } }
+  
+    /* site navigation */
+    .site-shell { min-height: 100vh; display: grid; grid-template-columns: 220px minmax(0, 1fr); background: inherit; }
+    .site-sidebar { position: sticky; top: 0; align-self: start; height: 100vh; box-sizing: border-box; overflow-y: auto; border-right: 1px solid #dfe5df; background: #ffffff; padding: 22px 14px; z-index: 10; }
+    .site-brand { color: #163b34; font-size: 15px; font-weight: 900; letter-spacing: 0; margin: 0 0 14px; }
+    .site-sidebar nav { display: grid; gap: 6px; }
+    .site-nav-link { display: block; color: #40514b; text-decoration: none; border-radius: 8px; padding: 9px 10px; font-size: 14px; font-weight: 750; line-height: 1.25; }
+    .site-nav-link:hover { background: #eef4f1; color: #123d35; }
+    .site-nav-link.active { background: #165f56; color: #ffffff; }
+    .site-shell > header { grid-column: 2; min-width: 0; }
+    .site-shell > main { grid-column: 2; width: min(1180px, calc(100% - 56px)); margin-left: auto; margin-right: auto; min-width: 0; }
+    @media (max-width: 900px) {
+      .site-shell { display: block; }
+      .site-sidebar { position: static; height: auto; border-right: 0; border-bottom: 1px solid #dfe5df; }
+      .site-sidebar nav { grid-template-columns: repeat(auto-fit, minmax(112px, 1fr)); }
+      .site-shell > header { grid-column: auto; }
+      .site-shell > main { width: auto; }
+    }
   </style>
 </head>
 <body>
+  <div class="site-shell" data-site-nav="true">
+    <aside class="site-sidebar">
+      <div class="site-brand">MLB 投注計畫</div>
+      <nav aria-label="主要頁面">
+        <a class="site-nav-link" href="index.html">總覽</a>
+        <a class="site-nav-link" href="daily_predictions.html">今日預測</a>
+        <a class="site-nav-link" href="betting_ticket.html">投注單</a>
+        <a class="site-nav-link" href="totals_predictions.html">大小分</a>
+        <a class="site-nav-link active" href="advanced_factors.html">進階因子</a>
+        <a class="site-nav-link" href="quant_model.html">Q-量化模型</a>
+        <a class="site-nav-link" href="game_simulator.html">逐打席模擬</a>
+        <a class="site-nav-link" href="monte_carlo.html">蒙地卡羅</a>
+        <a class="site-nav-link" href="market_research.html">盤口研究</a>
+        <a class="site-nav-link" href="prediction_log.html">結算紀錄</a>
+        <a class="site-nav-link" href="postgame_review.html">賽後檢討</a>
+        <a class="site-nav-link" href="betting_roi.html">投注 ROI</a>
+        <a class="site-nav-link" href="lineup_fix_comparison.html">修正前後</a>
+        <a class="site-nav-link" href="winner_model_search.html">模型搜尋</a>
+        <a class="site-nav-link" href="prediction_accuracy.html">準確率</a>
+        <a class="site-nav-link" href="status.html">狀態</a>
+        <a class="site-nav-link" href="api/index.html">資料 API</a>
+      </nav>
+    </aside>
   <main>
     <h1>MLB 進階因子勝方模型</h1>
     <div class="meta">
-      MLB日期：2026-08-05<br />
+      MLB日期：2026-08-07<br />
       模型：進階因子勝方 v1<br />
       台灣運彩盤口覆蓋：0 / 15<br />
       候選：0<br />
-      產生時間：2026-08-05T19:07:05
+      產生時間：2026-08-07T03:28:04
     </div>
     <h2>進階模型候選</h2>
     <table>
@@ -37,201 +78,202 @@
       <thead><tr><th>GamePk</th><th>台灣開賽時間</th><th>對戰</th><th>預測勝方</th><th>信心</th><th>台灣運彩賠率</th><th>市場隱含</th><th>Edge</th><th>主/客分數</th><th>決策</th></tr></thead>
       <tbody>
         <tr>
-          <td>824158</td>
-          <td>2026-08-06 02:10</td>
-          <td>多倫多藍鳥 @ 休士頓太空人</td>
-          <td>休士頓太空人</td>
+          <td>823349</td>
+          <td>2026-08-08 06:40</td>
+          <td>紐約大都會 @ 匹茲堡海盜</td>
+          <td>匹茲堡海盜</td>
           <td>70.0%</td>
           <td></td>
           <td>0.0%</td>
           <td>0.0%</td>
-          <td>4.9912 / 4.0576</td>
+          <td>14.4437 / 5.2348</td>
           <td>缺台灣運彩盤口</td>
         </tr>
 
         <tr>
-          <td>824646</td>
-          <td>2026-08-06 02:20</td>
-          <td>洛杉磯道奇 @ 芝加哥小熊</td>
-          <td>芝加哥小熊</td>
-          <td>69.4%</td>
-          <td></td>
-          <td>0.0%</td>
-          <td>0.0%</td>
-          <td>5.4487 / 4.6317</td>
-          <td>缺台灣運彩盤口</td>
-        </tr>
-
-        <tr>
-          <td>822866</td>
-          <td>2026-08-06 02:35</td>
-          <td>舊金山巨人 @ 德州遊騎兵</td>
-          <td>德州遊騎兵</td>
-          <td>58.8%</td>
-          <td></td>
-          <td>0.0%</td>
-          <td>0.0%</td>
-          <td>4.4244 / 4.0694</td>
-          <td>缺台灣運彩盤口</td>
-        </tr>
-
-        <tr>
-          <td>824322</td>
-          <td>2026-08-06 03:10</td>
-          <td>坦帕灣光芒 @ 科羅拉多洛磯</td>
-          <td>坦帕灣光芒</td>
-          <td>70.0%</td>
-          <td></td>
-          <td>0.0%</td>
-          <td>0.0%</td>
-          <td>4.3613 / 5.5109</td>
-          <td>缺台灣運彩盤口</td>
-        </tr>
-
-        <tr>
-          <td>824806</td>
-          <td>2026-08-06 06:35</td>
-          <td>洛杉磯天使 @ 巴爾的摩金鶯</td>
-          <td>洛杉磯天使</td>
-          <td>52.7%</td>
-          <td></td>
-          <td>0.0%</td>
-          <td>0.0%</td>
-          <td>4.6398 / 4.7464</td>
-          <td>缺台灣運彩盤口</td>
-        </tr>
-
-        <tr>
-          <td>823429</td>
-          <td>2026-08-06 06:40</td>
-          <td>華盛頓國民 @ 費城費城人</td>
+          <td>823428</td>
+          <td>2026-08-08 06:40</td>
+          <td>多倫多藍鳥 @ 費城費城人</td>
           <td>費城費城人</td>
-          <td>53.4%</td>
+          <td>70.0%</td>
           <td></td>
           <td>0.0%</td>
           <td>0.0%</td>
-          <td>4.2897 / 4.1536</td>
+          <td>12.8565 / 4.8829</td>
           <td>缺台灣運彩盤口</td>
         </tr>
 
         <tr>
-          <td>824402</td>
-          <td>2026-08-06 06:40</td>
-          <td>紐約大都會 @ 克里夫蘭守護者</td>
-          <td>克里夫蘭守護者</td>
-          <td>51.7%</td>
-          <td></td>
-          <td>0.0%</td>
-          <td>0.0%</td>
-          <td>4.9105 / 4.8437</td>
-          <td>缺台灣運彩盤口</td>
-        </tr>
-
-        <tr>
-          <td>824482</td>
-          <td>2026-08-06 06:40</td>
-          <td>運動家 @ 辛辛那提紅人</td>
+          <td>822699</td>
+          <td>2026-08-08 06:45</td>
+          <td>辛辛那提紅人 @ 華盛頓國民</td>
           <td>辛辛那提紅人</td>
-          <td>70.0%</td>
+          <td>50.6%</td>
           <td></td>
           <td>0.0%</td>
           <td>0.0%</td>
-          <td>4.4062 / 3.5106</td>
+          <td>12.61 / 12.6337</td>
           <td>缺台灣運彩盤口</td>
         </tr>
 
         <tr>
-          <td>823516</td>
-          <td>2026-08-06 07:05</td>
-          <td>聖路易紅雀 @ 紐約洋基</td>
-          <td>紐約洋基</td>
-          <td>56.2%</td>
-          <td></td>
-          <td>0.0%</td>
-          <td>0.0%</td>
-          <td>5.0467 / 4.7959</td>
-          <td>缺台灣運彩盤口</td>
-        </tr>
-
-        <tr>
-          <td>824728</td>
-          <td>2026-08-06 07:10</td>
-          <td>芝加哥白襪 @ 波士頓紅襪</td>
-          <td>波士頓紅襪</td>
-          <td>62.5%</td>
-          <td></td>
-          <td>0.0%</td>
-          <td>0.0%</td>
-          <td>5.5838 / 5.0711</td>
-          <td>缺台灣運彩盤口</td>
-        </tr>
-
-        <tr>
-          <td>824889</td>
-          <td>2026-08-06 07:15</td>
-          <td>邁阿密馬林魚 @ 亞特蘭大勇士</td>
+          <td>823515</td>
+          <td>2026-08-08 07:05</td>
+          <td>亞特蘭大勇士 @ 紐約洋基</td>
           <td>亞特蘭大勇士</td>
-          <td>54.3%</td>
-          <td></td>
-          <td>0.0%</td>
-          <td>0.0%</td>
-          <td>5.3322 / 5.1602</td>
-          <td>缺台灣運彩盤口</td>
-        </tr>
-
-        <tr>
-          <td>823753</td>
-          <td>2026-08-06 07:40</td>
-          <td>匹茲堡海盜 @ 密爾瓦基釀酒人</td>
-          <td>密爾瓦基釀酒人</td>
-          <td>63.5%</td>
-          <td></td>
-          <td>0.0%</td>
-          <td>0.0%</td>
-          <td>5.6271 / 5.0726</td>
-          <td>缺台灣運彩盤口</td>
-        </tr>
-
-        <tr>
-          <td>824082</td>
-          <td>2026-08-06 07:40</td>
-          <td>明尼蘇達雙城 @ 堪薩斯市皇家</td>
-          <td>堪薩斯市皇家</td>
-          <td>56.9%</td>
-          <td></td>
-          <td>0.0%</td>
-          <td>0.0%</td>
-          <td>4.3805 / 4.104</td>
-          <td>缺台灣運彩盤口</td>
-        </tr>
-
-        <tr>
-          <td>823106</td>
-          <td>2026-08-06 09:40</td>
-          <td>底特律老虎 @ 西雅圖水手</td>
-          <td>底特律老虎</td>
-          <td>64.3%</td>
-          <td></td>
-          <td>0.0%</td>
-          <td>0.0%</td>
-          <td>4.7243 / 5.3121</td>
-          <td>缺台灣運彩盤口</td>
-        </tr>
-
-        <tr>
-          <td>825052</td>
-          <td>2026-08-06 09:40</td>
-          <td>聖地牙哥教士 @ 亞利桑那響尾蛇</td>
-          <td>聖地牙哥教士</td>
           <td>70.0%</td>
           <td></td>
           <td>0.0%</td>
           <td>0.0%</td>
-          <td>4.1168 / 5.084</td>
+          <td>5.3414 / 17.5499</td>
+          <td>缺台灣運彩盤口</td>
+        </tr>
+
+        <tr>
+          <td>823836</td>
+          <td>2026-08-08 07:10</td>
+          <td>洛杉磯天使 @ 邁阿密馬林魚</td>
+          <td>洛杉磯天使</td>
+          <td>70.0%</td>
+          <td></td>
+          <td>0.0%</td>
+          <td>0.0%</td>
+          <td>5.0275 / 12.2168</td>
+          <td>缺台灣運彩盤口</td>
+        </tr>
+
+        <tr>
+          <td>824727</td>
+          <td>2026-08-08 07:10</td>
+          <td>運動家 @ 波士頓紅襪</td>
+          <td>波士頓紅襪</td>
+          <td>70.0%</td>
+          <td></td>
+          <td>0.0%</td>
+          <td>0.0%</td>
+          <td>13.137 / 3.3032</td>
+          <td>缺台灣運彩盤口</td>
+        </tr>
+
+        <tr>
+          <td>823750</td>
+          <td>2026-08-08 07:40</td>
+          <td>明尼蘇達雙城 @ 密爾瓦基釀酒人</td>
+          <td>明尼蘇達雙城</td>
+          <td>70.0%</td>
+          <td></td>
+          <td>0.0%</td>
+          <td>0.0%</td>
+          <td>5.6421 / 12.029</td>
+          <td>缺台灣運彩盤口</td>
+        </tr>
+
+        <tr>
+          <td>824566</td>
+          <td>2026-08-08 07:40</td>
+          <td>克里夫蘭守護者 @ 芝加哥白襪</td>
+          <td>芝加哥白襪</td>
+          <td>70.0%</td>
+          <td></td>
+          <td>0.0%</td>
+          <td>0.0%</td>
+          <td>12.2694 / 5.0387</td>
+          <td>缺台灣運彩盤口</td>
+        </tr>
+
+        <tr>
+          <td>824081</td>
+          <td>2026-08-08 08:10</td>
+          <td>芝加哥小熊 @ 堪薩斯市皇家</td>
+          <td>芝加哥小熊</td>
+          <td>58.5%</td>
+          <td></td>
+          <td>0.0%</td>
+          <td>0.0%</td>
+          <td>12.0325 / 12.3742</td>
+          <td>缺台灣運彩盤口</td>
+        </tr>
+
+        <tr>
+          <td>822863</td>
+          <td>2026-08-08 08:15</td>
+          <td>巴爾的摩金鶯 @ 德州遊騎兵</td>
+          <td>德州遊騎兵</td>
+          <td>63.1%</td>
+          <td></td>
+          <td>0.0%</td>
+          <td>0.0%</td>
+          <td>5.0952 / 4.5593</td>
+          <td>缺台灣運彩盤口</td>
+        </tr>
+
+        <tr>
+          <td>823024</td>
+          <td>2026-08-08 08:15</td>
+          <td>科羅拉多洛磯 @ 聖路易紅雀</td>
+          <td>聖路易紅雀</td>
+          <td>70.0%</td>
+          <td></td>
+          <td>0.0%</td>
+          <td>0.0%</td>
+          <td>4.936 / 3.9334</td>
+          <td>缺台灣運彩盤口</td>
+        </tr>
+
+        <tr>
+          <td>823266</td>
+          <td>2026-08-08 09:40</td>
+          <td>休士頓太空人 @ 聖地牙哥教士</td>
+          <td>聖地牙哥教士</td>
+          <td>69.0%</td>
+          <td></td>
+          <td>0.0%</td>
+          <td>0.0%</td>
+          <td>4.7305 / 3.9322</td>
+          <td>缺台灣運彩盤口</td>
+        </tr>
+
+        <tr>
+          <td>825051</td>
+          <td>2026-08-08 09:40</td>
+          <td>洛杉磯道奇 @ 亞利桑那響尾蛇</td>
+          <td>亞利桑那響尾蛇</td>
+          <td>70.0%</td>
+          <td></td>
+          <td>0.0%</td>
+          <td>0.0%</td>
+          <td>12.1556 / 4.6964</td>
+          <td>缺台灣運彩盤口</td>
+        </tr>
+
+        <tr>
+          <td>823103</td>
+          <td>2026-08-08 09:45</td>
+          <td>坦帕灣光芒 @ 西雅圖水手</td>
+          <td>西雅圖水手</td>
+          <td>70.0%</td>
+          <td></td>
+          <td>0.0%</td>
+          <td>0.0%</td>
+          <td>14.7342 / 5.798</td>
+          <td>缺台灣運彩盤口</td>
+        </tr>
+
+        <tr>
+          <td>823191</td>
+          <td>2026-08-08 10:15</td>
+          <td>底特律老虎 @ 舊金山巨人</td>
+          <td>舊金山巨人</td>
+          <td>70.0%</td>
+          <td></td>
+          <td>0.0%</td>
+          <td>0.0%</td>
+          <td>12.0012 / 5.4168</td>
           <td>缺台灣運彩盤口</td>
         </tr></tbody>
     </table>
     <div class="note"><strong>因子說明</strong><ul><li>打擊率壘包：AVG/OBP/SLG、推估壘包率、三振率、四壞率、雙殺打率。</li><li>投手型態：ERA/WHIP、K/9、BB/9、HR/9、滾地/飛球出局比例。</li><li>牛棚深度：目前用全隊投球與近期失分代理，球員層牛棚可在 v2 加入。</li><li>代打厚度與教練調度：目前以全隊打擊深度與近期一分差/連勝連敗代理，v2 需接每日名單與用人紀錄。</li><li>場地天氣：目前用主場歷史總分代理，v2 可接球場座標與即時天氣。</li></ul></div>
   </main>
+  </div>
 </body>
 </html>
