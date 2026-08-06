@@ -2,9 +2,15 @@ name: Daily MLB settlement and prediction refresh
 
 on:
   schedule:
-    # Taiwan 22:30. West-coast games have completed before settlement starts.
-    - cron: "30 14 * * *"
+    # GitHub cron uses UTC. Poll at Taiwan 13:30, 15:30, 17:30, 19:30, 21:30 and 22:30.
+    # Completed games are published the same Taiwan day instead of waiting until late evening.
+    - cron: "30 5,7,9,11,13,14 * * *"
   workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/daily-prediction-refresh.yml"
 
 permissions:
   contents: write
