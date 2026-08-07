@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-07T22:14:37",
+  "generated_at": "2026-08-07T23:57:10",
   "target_date": "2026-08-07",
   "model": "Q-量化模型 XGBoost/Poisson Bundle 2026-07-16",
   "model_dir": "models/quant_bundle_2026_07_16",
@@ -26,7 +26,7 @@
   "summary": {
     "games": 15,
     "aligned_with_existing": 14,
-    "complete_data": 12,
+    "complete_data": 13,
     "holdout_moneyline_accuracy": 0.5208333333333334,
     "holdout_total_runs_mae": 3.406075860344923
   },
@@ -105,11 +105,11 @@
       "home_zh": "華盛頓國民",
       "quant_prediction_zh": "華盛頓國民",
       "quant_pick_side": "home",
-      "quant_confidence": 0.5423,
-      "home_win_probability": 0.5423,
-      "away_win_probability": 0.4577,
-      "predicted_away_score": 4.61,
-      "predicted_home_score": 4.89,
+      "quant_confidence": 0.5591,
+      "home_win_probability": 0.5591,
+      "away_win_probability": 0.4409,
+      "predicted_away_score": 4.55,
+      "predicted_home_score": 4.95,
       "predicted_total": 9.5,
       "total_line": 8.5,
       "totals_pick_zh": "大分",
@@ -119,10 +119,8 @@
       "official_model_pick_zh": "辛辛那提紅人",
       "unified_model_pick_zh": "華盛頓國民",
       "model_alignment": "一致",
-      "data_quality": "可用但需留意",
-      "missing_features": [
-        "away_probable_pitcher_not_fully_confirmed"
-      ]
+      "data_quality": "完整",
+      "missing_features": []
     },
     {
       "date": "2026-08-07",
