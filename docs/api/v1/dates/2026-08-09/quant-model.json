@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-09T03:31:11",
+  "generated_at": "2026-08-09T05:30:55",
   "target_date": "2026-08-09",
   "model": "Q-量化模型 XGBoost/Poisson Bundle 2026-07-16",
   "model_dir": "models/quant_bundle_2026_07_16",
@@ -26,7 +26,7 @@
   "summary": {
     "games": 15,
     "aligned_with_existing": 12,
-    "complete_data": 10,
+    "complete_data": 11,
     "holdout_moneyline_accuracy": 0.5208333333333334,
     "holdout_total_runs_mae": 3.406075860344923
   },
@@ -190,11 +190,11 @@
       "home_zh": "邁阿密馬林魚",
       "quant_prediction_zh": "邁阿密馬林魚",
       "quant_pick_side": "home",
-      "quant_confidence": 0.6197,
-      "home_win_probability": 0.6197,
-      "away_win_probability": 0.3803,
-      "predicted_away_score": 7.93,
-      "predicted_home_score": 9.07,
+      "quant_confidence": 0.6115,
+      "home_win_probability": 0.6115,
+      "away_win_probability": 0.3885,
+      "predicted_away_score": 7.97,
+      "predicted_home_score": 9.03,
       "predicted_total": 17.0,
       "total_line": 8.5,
       "totals_pick_zh": "大分",
@@ -408,11 +408,11 @@
       "home_zh": "亞利桑那響尾蛇",
       "quant_prediction_zh": "亞利桑那響尾蛇",
       "quant_pick_side": "home",
-      "quant_confidence": 0.5643,
-      "home_win_probability": 0.5643,
-      "away_win_probability": 0.4357,
-      "predicted_away_score": 4.53,
-      "predicted_home_score": 4.97,
+      "quant_confidence": 0.5847,
+      "home_win_probability": 0.5847,
+      "away_win_probability": 0.4153,
+      "predicted_away_score": 4.46,
+      "predicted_home_score": 5.04,
       "predicted_total": 9.5,
       "total_line": 8.5,
       "totals_pick_zh": "大分",
@@ -422,11 +422,8 @@
       "official_model_pick_zh": "洛杉磯道奇",
       "unified_model_pick_zh": "亞利桑那響尾蛇",
       "model_alignment": "一致",
-      "data_quality": "可用但需留意",
-      "missing_features": [
-        "weather_temperature_missing",
-        "weather_wind_missing"
-      ]
+      "data_quality": "完整",
+      "missing_features": []
     },
     {
       "date": "2026-08-09",
