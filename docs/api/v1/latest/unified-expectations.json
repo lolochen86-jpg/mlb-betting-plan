@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-08-09T13:46:37",
+  "generated_at": "2026-08-09T15:54:14",
   "target_date": "2026-08-09",
   "model": "統一得分期望 v1",
   "postgame_calibration": {
     "source": "postgame_review",
     "days": 10,
-    "games": 121,
-    "winner_accuracy": 0.6033,
-    "low_confidence_accuracy": 0.5625,
+    "games": 123,
+    "winner_accuracy": 0.6016,
+    "low_confidence_accuracy": 0.561,
     "score_total_bias": -0.663,
     "score_total_bias_applied": -0.66,
     "totals_recent_bias": 0.0,
@@ -19,12 +19,12 @@
     "totals_min_line_gap": 1.0,
     "mismatch_notes": 0,
     "reason_counts": {
-      "low_confidence_hit": 45,
-      "one_run_volatility": 33,
+      "low_confidence_hit": 46,
+      "one_run_volatility": 35,
       "totals_miss": 47,
       "large_totals_error": 33,
       "high_confidence_hit": 28,
-      "low_confidence_miss": 19,
+      "low_confidence_miss": 20,
       "high_confidence_miss": 13
     },
     "data_gaps": [
