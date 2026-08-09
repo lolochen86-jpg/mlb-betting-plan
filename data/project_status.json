@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-08-09T23:32:50",
+  "generated_at": "2026-08-10T03:33:56",
   "history": {
-    "games_written": 4194,
+    "games_written": 4208,
     "actual_first_game_date": "2025-03-27",
-    "actual_last_game_date": "2026-08-08"
+    "actual_last_game_date": "2026-08-09"
   },
   "accuracy": {
     "best_model": "A-畢氏勝率",
@@ -12,8 +12,8 @@
     "accuracy_pct": 54.4
   },
   "daily": {
-    "target_date": "2026-08-09",
-    "predictions": 15,
+    "target_date": "2026-08-10",
+    "predictions": 10,
     "high_confidence": 0
   },
   "settlements": [
@@ -328,8 +328,15 @@
     {
       "date": "2026-08-09",
       "predictions": 15,
+      "final_games": 1,
+      "pending_games": 14,
+      "accuracy_pct": 0.0
+    },
+    {
+      "date": "2026-08-10",
+      "predictions": 10,
       "final_games": 0,
-      "pending_games": 15,
+      "pending_games": 10,
       "accuracy_pct": 0
     }
   ],
@@ -629,6 +636,17 @@
       "rows": 15,
       "filled": 15,
       "missing": []
+    },
+    {
+      "date": "2026-08-10",
+      "rows": 10,
+      "filled": 6,
+      "missing": [
+        "休士頓太空人 @ 舊金山巨人 (Scheduled)",
+        "密爾瓦基釀酒人 @ 聖地牙哥教士 (Scheduled)",
+        "坦帕灣光芒 @ 運動家 (Scheduled)",
+        "科羅拉多洛磯 @ 亞利桑那響尾蛇 (Scheduled)"
+      ]
     }
   ],
   "roi": [
@@ -991,6 +1009,14 @@
       "pending_bets": 0,
       "total_pnl": 0,
       "roi_pct": 0
+    },
+    {
+      "date": "2026-08-10",
+      "bets": 0,
+      "final_bets": 0,
+      "pending_bets": 0,
+      "total_pnl": 0,
+      "roi_pct": 0
     }
   ],
   "auto_runner": {
@@ -1060,7 +1086,12 @@
     "2026-07-21 尚有 2 場比賽未結算",
     "2026-07-27 尚有 1 場比賽未結算",
     "2026-07-28 尚有 1 場比賽未結算",
-    "2026-08-09 尚有 15 場比賽未結算"
+    "2026-08-09 尚有 14 場比賽未結算",
+    "2026-08-10 尚有 10 場比賽未結算",
+    "2026-08-10 休士頓太空人 @ 舊金山巨人 (Scheduled) 尚未開打或來源尚未開盤",
+    "2026-08-10 密爾瓦基釀酒人 @ 聖地牙哥教士 (Scheduled) 尚未開打或來源尚未開盤",
+    "2026-08-10 坦帕灣光芒 @ 運動家 (Scheduled) 尚未開打或來源尚未開盤",
+    "2026-08-10 科羅拉多洛磯 @ 亞利桑那響尾蛇 (Scheduled) 尚未開打或來源尚未開盤"
   ],
   "project_state": "系統完成，等待外部賽果/盤口"
 }
