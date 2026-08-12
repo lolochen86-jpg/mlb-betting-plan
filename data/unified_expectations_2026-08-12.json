@@ -1,31 +1,31 @@
 {
-  "generated_at": "2026-08-12T14:14:04",
+  "generated_at": "2026-08-12T16:17:28",
   "target_date": "2026-08-12",
   "model": "統一得分期望 v1",
   "postgame_calibration": {
     "source": "postgame_review",
     "days": 10,
-    "games": 117,
-    "winner_accuracy": 0.5812,
-    "low_confidence_accuracy": 0.5132,
+    "games": 123,
+    "winner_accuracy": 0.5772,
+    "low_confidence_accuracy": 0.5125,
     "score_total_bias": -0.909,
     "score_total_bias_applied": -0.75,
     "totals_recent_bias": 0.0,
     "totals_recent_bias_applied": 0.0,
     "totals_recent_games": 0,
-    "winner_min_confidence": 0.56,
+    "winner_min_confidence": 0.57,
     "totals_min_edge": 0.025,
     "totals_min_prob": 0.58,
     "totals_min_line_gap": 1.0,
     "mismatch_notes": 0,
     "reason_counts": {
-      "low_confidence_hit": 39,
-      "high_confidence_hit": 29,
+      "low_confidence_hit": 41,
+      "high_confidence_hit": 30,
       "totals_miss": 29,
       "large_totals_error": 23,
-      "low_confidence_miss": 26,
-      "one_run_volatility": 32,
-      "high_confidence_miss": 12
+      "low_confidence_miss": 27,
+      "one_run_volatility": 35,
+      "high_confidence_miss": 13
     },
     "data_gaps": [
       "大小分大偏差偏多：優先補真實天氣、球場風向、先發/牛棚臨場狀態。",
@@ -33,6 +33,7 @@
     ],
     "notes": [
       "近十天低信心勝方表現偏弱，主推勝方門檻提高到 56%。",
+      "近十天高信心失準偏多，勝方主推需更嚴格確認。",
       "近十天比分模型總分平均偏差 -0.91 分，今日比分總分校正 -0.75 分。"
     ]
   },
