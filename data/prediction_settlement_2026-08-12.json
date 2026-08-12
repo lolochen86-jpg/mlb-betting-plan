@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-08-13T04:00:41",
+  "generated_at": "2026-08-13T05:43:40",
   "target_date": "2026-08-12",
   "source_prediction_file": "data/daily_predictions_2026-08-12.json",
   "summary": {
     "predictions": 15,
-    "final_games": 0,
-    "pending_games": 15,
-    "correct": 0,
-    "wrong": 0,
-    "accuracy_pct": 0,
+    "final_games": 2,
+    "pending_games": 13,
+    "correct": 1,
+    "wrong": 1,
+    "accuracy_pct": 50.0,
     "high_confidence_final": 0,
     "high_confidence_correct": 0,
     "high_confidence_accuracy_pct": 0
@@ -161,11 +161,11 @@
       "confidence": 0.5238,
       "confirmation_pick_zh": "巴爾的摩金鶯",
       "confirmation_same_direction": false,
-      "status": "In Progress",
-      "score": "",
-      "actual_winner_zh": "",
-      "settlement": "pending",
-      "is_final": false
+      "status": "Final",
+      "score": "5-7",
+      "actual_winner_zh": "明尼蘇達雙城",
+      "settlement": "correct",
+      "is_final": true
     },
     {
       "date": "2026-08-12",
@@ -195,11 +195,11 @@
       "confidence": 0.5161,
       "confirmation_pick_zh": "聖路易紅雀",
       "confirmation_same_direction": false,
-      "status": "In Progress",
-      "score": "",
-      "actual_winner_zh": "",
-      "settlement": "pending",
-      "is_final": false
+      "status": "Final",
+      "score": "1-7",
+      "actual_winner_zh": "聖路易紅雀",
+      "settlement": "wrong",
+      "is_final": true
     },
     {
       "date": "2026-08-12",
@@ -229,7 +229,7 @@
       "confidence": 0.5145,
       "confirmation_pick_zh": "聖地牙哥教士",
       "confirmation_same_direction": false,
-      "status": "Warmup",
+      "status": "In Progress",
       "score": "",
       "actual_winner_zh": "",
       "settlement": "pending",

@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-08-13T04:01:33",
+  "generated_at": "2026-08-13T05:44:05",
   "target_date": "2026-08-13",
   "model": "統一得分期望 v1",
   "postgame_calibration": {
     "source": "postgame_review",
     "days": 10,
-    "games": 123,
-    "winner_accuracy": 0.5772,
-    "low_confidence_accuracy": 0.5125,
-    "score_total_bias": -0.909,
+    "games": 108,
+    "winner_accuracy": 0.5833,
+    "low_confidence_accuracy": 0.5072,
+    "score_total_bias": -1.482,
     "score_total_bias_applied": -0.75,
     "totals_recent_bias": 0.0,
     "totals_recent_bias_applied": 0.0,
@@ -19,13 +19,13 @@
     "totals_min_line_gap": 1.0,
     "mismatch_notes": 0,
     "reason_counts": {
-      "low_confidence_hit": 41,
-      "high_confidence_hit": 30,
-      "totals_miss": 29,
-      "large_totals_error": 23,
-      "low_confidence_miss": 27,
-      "one_run_volatility": 35,
-      "high_confidence_miss": 13
+      "high_confidence_hit": 28,
+      "high_confidence_miss": 11,
+      "one_run_volatility": 32,
+      "totals_miss": 22,
+      "large_totals_error": 19,
+      "low_confidence_hit": 35,
+      "low_confidence_miss": 26
     },
     "data_gaps": [
       "大小分大偏差偏多：優先補真實天氣、球場風向、先發/牛棚臨場狀態。",
@@ -34,7 +34,7 @@
     "notes": [
       "近十天低信心勝方表現偏弱，主推勝方門檻提高到 56%。",
       "近十天高信心失準偏多，勝方主推需更嚴格確認。",
-      "近十天比分模型總分平均偏差 -0.91 分，今日比分總分校正 -0.75 分。"
+      "近十天比分模型總分平均偏差 -1.48 分，今日比分總分校正 -0.75 分。"
     ]
   },
   "summary": {
@@ -52,13 +52,13 @@
       "matchup_zh": "克里夫蘭守護者 @ 底特律老虎",
       "away_zh": "克里夫蘭守護者",
       "home_zh": "底特律老虎",
-      "away_expected_runs": 3.52,
-      "home_expected_runs": 4.84,
-      "expected_total": 8.37,
+      "away_expected_runs": 3.24,
+      "home_expected_runs": 4.74,
+      "expected_total": 7.98,
       "pick_side": "home",
       "prediction_zh": "底特律老虎",
-      "home_win_prob": 0.6711,
-      "away_win_prob": 0.3289,
+      "home_win_prob": 0.692,
+      "away_win_prob": 0.308,
       "lineup_source": "projected_recent_lineup_order",
       "away_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
@@ -66,7 +66,7 @@
       },
       "home_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
-        "factor": 1.019
+        "factor": 1.035
       },
       "away_pitcher_weight": 0.9,
       "home_pitcher_weight": 0.9,
@@ -115,13 +115,13 @@
       "matchup_zh": "芝加哥小熊 @ 華盛頓國民",
       "away_zh": "芝加哥小熊",
       "home_zh": "華盛頓國民",
-      "away_expected_runs": 4.89,
-      "home_expected_runs": 3.92,
-      "expected_total": 8.81,
+      "away_expected_runs": 4.61,
+      "home_expected_runs": 3.78,
+      "expected_total": 8.39,
       "pick_side": "away",
       "prediction_zh": "芝加哥小熊",
-      "home_win_prob": 0.3711,
-      "away_win_prob": 0.6289,
+      "home_win_prob": 0.3891,
+      "away_win_prob": 0.6109,
       "lineup_source": "projected_recent_lineup_order",
       "away_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
@@ -304,21 +304,21 @@
       "matchup_zh": "費城費城人 @ 明尼蘇達雙城",
       "away_zh": "費城費城人",
       "home_zh": "明尼蘇達雙城",
-      "away_expected_runs": 4.19,
-      "home_expected_runs": 4.15,
-      "expected_total": 8.34,
+      "away_expected_runs": 4.2,
+      "home_expected_runs": 4.12,
+      "expected_total": 8.32,
       "pick_side": "away",
       "prediction_zh": "費城費城人",
-      "home_win_prob": 0.4946,
-      "away_win_prob": 0.5054,
+      "home_win_prob": 0.4889,
+      "away_win_prob": 0.5111,
       "lineup_source": "projected_recent_lineup_order",
       "away_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
-        "factor": 1.005
+        "factor": 1.004
       },
       "home_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
-        "factor": 0.981
+        "factor": 0.967
       },
       "away_pitcher_weight": 0.9,
       "home_pitcher_weight": 0.9,
@@ -493,17 +493,17 @@
       "matchup_zh": "密爾瓦基釀酒人 @ 洛杉磯道奇",
       "away_zh": "密爾瓦基釀酒人",
       "home_zh": "洛杉磯道奇",
-      "away_expected_runs": 4.09,
-      "home_expected_runs": 4.06,
-      "expected_total": 8.16,
+      "away_expected_runs": 4.11,
+      "home_expected_runs": 4.07,
+      "expected_total": 8.19,
       "pick_side": "away",
       "prediction_zh": "密爾瓦基釀酒人",
-      "home_win_prob": 0.4955,
-      "away_win_prob": 0.5045,
+      "home_win_prob": 0.4947,
+      "away_win_prob": 0.5053,
       "lineup_source": "projected_recent_lineup_order",
       "away_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
-        "factor": 0.994
+        "factor": 0.991
       },
       "home_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
@@ -556,13 +556,13 @@
       "matchup_zh": "波士頓紅襪 @ 多倫多藍鳥",
       "away_zh": "波士頓紅襪",
       "home_zh": "多倫多藍鳥",
-      "away_expected_runs": 4.37,
+      "away_expected_runs": 4.68,
       "home_expected_runs": 3.21,
-      "expected_total": 7.58,
+      "expected_total": 7.89,
       "pick_side": "away",
       "prediction_zh": "波士頓紅襪",
-      "home_win_prob": 0.3477,
-      "away_win_prob": 0.6523,
+      "home_win_prob": 0.3106,
+      "away_win_prob": 0.6894,
       "lineup_source": "projected_recent_lineup_order",
       "away_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
