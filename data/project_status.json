@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-08-13T23:59:47",
+  "generated_at": "2026-08-14T03:57:25",
   "history": {
-    "games_written": 4249,
+    "games_written": 4256,
     "actual_first_game_date": "2025-03-27",
-    "actual_last_game_date": "2026-08-12"
+    "actual_last_game_date": "2026-08-13"
   },
   "accuracy": {
     "best_model": "A-畢氏勝率",
@@ -12,8 +12,8 @@
     "accuracy_pct": 54.4
   },
   "daily": {
-    "target_date": "2026-08-13",
-    "predictions": 9,
+    "target_date": "2026-08-14",
+    "predictions": 14,
     "high_confidence": 0
   },
   "settlements": [
@@ -356,8 +356,15 @@
     {
       "date": "2026-08-13",
       "predictions": 9,
+      "final_games": 2,
+      "pending_games": 7,
+      "accuracy_pct": 50.0
+    },
+    {
+      "date": "2026-08-14",
+      "predictions": 14,
       "final_games": 0,
-      "pending_games": 9,
+      "pending_games": 14,
       "accuracy_pct": 0
     }
   ],
@@ -681,6 +688,19 @@
       "rows": 9,
       "filled": 9,
       "missing": []
+    },
+    {
+      "date": "2026-08-14",
+      "rows": 14,
+      "filled": 8,
+      "missing": [
+        "巴爾的摩金鶯 @ 坦帕灣光芒 (Scheduled)",
+        "華盛頓國民 @ 紐約大都會 (Scheduled)",
+        "堪薩斯市皇家 @ 洛杉磯天使 (Scheduled)",
+        "芝加哥白襪 @ 底特律老虎 (Scheduled)",
+        "亞利桑那響尾蛇 @ 亞特蘭大勇士 (Scheduled)",
+        "德州遊騎兵 @ 運動家 (Scheduled)"
+      ]
     }
   ],
   "roi": [
@@ -1075,6 +1095,14 @@
       "pending_bets": 0,
       "total_pnl": 0,
       "roi_pct": 0
+    },
+    {
+      "date": "2026-08-14",
+      "bets": 0,
+      "final_bets": 0,
+      "pending_bets": 0,
+      "total_pnl": 0,
+      "roi_pct": 0
     }
   ],
   "auto_runner": {
@@ -1144,7 +1172,14 @@
     "2026-07-21 尚有 2 場比賽未結算",
     "2026-07-27 尚有 1 場比賽未結算",
     "2026-07-28 尚有 1 場比賽未結算",
-    "2026-08-13 尚有 9 場比賽未結算"
+    "2026-08-13 尚有 7 場比賽未結算",
+    "2026-08-14 尚有 14 場比賽未結算",
+    "2026-08-14 巴爾的摩金鶯 @ 坦帕灣光芒 (Scheduled) 尚未開打或來源尚未開盤",
+    "2026-08-14 華盛頓國民 @ 紐約大都會 (Scheduled) 尚未開打或來源尚未開盤",
+    "2026-08-14 堪薩斯市皇家 @ 洛杉磯天使 (Scheduled) 尚未開打或來源尚未開盤",
+    "2026-08-14 芝加哥白襪 @ 底特律老虎 (Scheduled) 尚未開打或來源尚未開盤",
+    "2026-08-14 亞利桑那響尾蛇 @ 亞特蘭大勇士 (Scheduled) 尚未開打或來源尚未開盤",
+    "2026-08-14 德州遊騎兵 @ 運動家 (Scheduled) 尚未開打或來源尚未開盤"
   ],
   "project_state": "系統完成，等待外部賽果/盤口"
 }
