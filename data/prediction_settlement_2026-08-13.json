@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-08-14T03:55:41",
+  "generated_at": "2026-08-14T05:43:26",
   "target_date": "2026-08-13",
   "source_prediction_file": "data/daily_predictions_2026-08-13.json",
   "summary": {
     "predictions": 9,
-    "final_games": 2,
-    "pending_games": 7,
+    "final_games": 4,
+    "pending_games": 5,
     "correct": 1,
-    "wrong": 1,
-    "accuracy_pct": 50.0,
+    "wrong": 3,
+    "accuracy_pct": 25.0,
     "high_confidence_final": 0,
     "high_confidence_correct": 0,
     "high_confidence_accuracy_pct": 0
@@ -25,7 +25,7 @@
       "confidence": 0.5553,
       "confirmation_pick_zh": "芝加哥小熊",
       "confirmation_same_direction": true,
-      "status": "Warmup",
+      "status": "In Progress",
       "score": "",
       "actual_winner_zh": "",
       "settlement": "pending",
@@ -59,11 +59,11 @@
       "confidence": 0.5534,
       "confirmation_pick_zh": "紐約洋基",
       "confirmation_same_direction": true,
-      "status": "In Progress",
-      "score": "",
-      "actual_winner_zh": "",
-      "settlement": "pending",
-      "is_final": false
+      "status": "Final",
+      "score": "1-0",
+      "actual_winner_zh": "西雅圖水手",
+      "settlement": "wrong",
+      "is_final": true
     },
     {
       "date": "2026-08-13",
@@ -110,11 +110,11 @@
       "confidence": 0.5185,
       "confirmation_pick_zh": "芝加哥白襪",
       "confirmation_same_direction": true,
-      "status": "In Progress",
-      "score": "",
-      "actual_winner_zh": "",
-      "settlement": "pending",
-      "is_final": false
+      "status": "Final",
+      "score": "9-8",
+      "actual_winner_zh": "辛辛那提紅人",
+      "settlement": "wrong",
+      "is_final": true
     },
     {
       "date": "2026-08-13",
@@ -161,7 +161,7 @@
       "confidence": 0.509,
       "confirmation_pick_zh": "多倫多藍鳥",
       "confirmation_same_direction": false,
-      "status": "In Progress",
+      "status": "Game Over",
       "score": "",
       "actual_winner_zh": "",
       "settlement": "pending",
