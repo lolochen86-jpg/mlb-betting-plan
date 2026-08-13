@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-08-13T11:26:42",
+  "generated_at": "2026-08-13T14:16:29",
   "target_date": "2026-08-13",
   "model": "統一得分期望 v1",
   "postgame_calibration": {
     "source": "postgame_review",
     "days": 10,
-    "games": 113,
-    "winner_accuracy": 0.5752,
-    "low_confidence_accuracy": 0.5068,
+    "games": 121,
+    "winner_accuracy": 0.5785,
+    "low_confidence_accuracy": 0.5128,
     "score_total_bias": -1.482,
     "score_total_bias_applied": -0.75,
     "totals_recent_bias": 0.0,
@@ -19,13 +19,13 @@
     "totals_min_line_gap": 1.0,
     "mismatch_notes": 0,
     "reason_counts": {
-      "high_confidence_hit": 28,
-      "high_confidence_miss": 12,
-      "one_run_volatility": 33,
+      "high_confidence_hit": 30,
+      "high_confidence_miss": 13,
+      "one_run_volatility": 34,
       "totals_miss": 22,
       "large_totals_error": 19,
-      "low_confidence_hit": 37,
-      "low_confidence_miss": 28
+      "low_confidence_hit": 40,
+      "low_confidence_miss": 30
     },
     "data_gaps": [
       "大小分大偏差偏多：優先補真實天氣、球場風向、先發/牛棚臨場狀態。",
@@ -241,21 +241,21 @@
       "matchup_zh": "德州遊騎兵 @ 洛杉磯天使",
       "away_zh": "德州遊騎兵",
       "home_zh": "洛杉磯天使",
-      "away_expected_runs": 3.7,
-      "home_expected_runs": 2.86,
-      "expected_total": 6.57,
+      "away_expected_runs": 3.66,
+      "home_expected_runs": 3.13,
+      "expected_total": 6.79,
       "pick_side": "away",
       "prediction_zh": "德州遊騎兵",
-      "home_win_prob": 0.3885,
-      "away_win_prob": 0.6115,
+      "home_win_prob": 0.4294,
+      "away_win_prob": 0.5706,
       "lineup_source": "projected_recent_lineup_order",
       "away_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
-        "factor": 0.951
+        "factor": 0.94
       },
       "home_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
-        "factor": 0.919
+        "factor": 0.964
       },
       "away_pitcher_weight": 0.9,
       "home_pitcher_weight": 0.9,
@@ -494,12 +494,12 @@
       "away_zh": "密爾瓦基釀酒人",
       "home_zh": "洛杉磯道奇",
       "away_expected_runs": 4.3,
-      "home_expected_runs": 4.05,
-      "expected_total": 8.36,
+      "home_expected_runs": 4.08,
+      "expected_total": 8.39,
       "pick_side": "away",
       "prediction_zh": "密爾瓦基釀酒人",
-      "home_win_prob": 0.4658,
-      "away_win_prob": 0.5342,
+      "home_win_prob": 0.4698,
+      "away_win_prob": 0.5302,
       "lineup_source": "projected_recent_lineup_order",
       "away_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
@@ -507,7 +507,7 @@
       },
       "home_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
-        "factor": 1.027
+        "factor": 1.029
       },
       "away_pitcher_weight": 0.9,
       "home_pitcher_weight": 0.9,
