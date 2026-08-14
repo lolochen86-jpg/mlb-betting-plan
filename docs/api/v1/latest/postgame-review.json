@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-14T11:25:21",
+  "generated_at": "2026-08-14T14:14:12",
   "latest_review_date": "2026-08-14",
   "days": [
     {
@@ -25676,10 +25676,10 @@
       "phase": "賽後檢討",
       "summary": {
         "games": 9,
-        "final_games": 7,
-        "pending_games": 2,
+        "final_games": 9,
+        "pending_games": 0,
         "winner_correct": 3,
-        "winner_accuracy_pct": 42.86,
+        "winner_accuracy_pct": 33.33,
         "totals_games": 0,
         "totals_correct": 0,
         "totals_accuracy_pct": 0.0,
@@ -25687,14 +25687,14 @@
         "pnl": 0,
         "cumulative": {
           "games": 622,
-          "final_games": 612,
-          "pending_games": 10,
+          "final_games": 614,
+          "pending_games": 8,
           "winner_correct": 341,
           "totals_games": 454,
           "totals_correct": 233,
           "roi_bets": 3,
           "pnl": -300.0,
-          "winner_accuracy_pct": 55.72,
+          "winner_accuracy_pct": 55.54,
           "totals_accuracy_pct": 51.32
         }
       },
@@ -25703,7 +25703,8 @@
       ],
       "misses": [
         "西雅圖水手 @ 紐約洋基：紐約洋基 未命中，比分 1-0。",
-        "芝加哥小熊 @ 華盛頓國民：芝加哥小熊 未命中，比分 0-7。"
+        "芝加哥小熊 @ 華盛頓國民：芝加哥小熊 未命中，比分 0-7。",
+        "德州遊騎兵 @ 洛杉磯天使：德州遊騎兵 未命中，比分 0-7。"
       ],
       "games": [
         {
@@ -25997,22 +25998,18 @@
             "勝方一致",
             "無台灣運彩大小分盤口"
           ],
-          "score": "",
-          "actual_winner_zh": "",
-          "winner_correct": null,
+          "score": "0-7",
+          "actual_winner_zh": "洛杉磯天使",
+          "winner_correct": false,
           "total_line": null,
           "predicted_total": null,
-          "actual_total": null,
+          "actual_total": 7,
           "total_pick": "",
           "total_correct": null,
           "roi_settlement": "",
           "pnl": 0.0,
-          "reason_codes": [
-            "pending"
-          ],
-          "notes": [
-            "尚未完賽，等待賽後自動結算真實比分。"
-          ]
+          "reason_codes": [],
+          "notes": []
         },
         {
           "date": "2026-08-13",
@@ -26035,21 +26032,23 @@
             "勝方分歧",
             "無台灣運彩大小分盤口"
           ],
-          "score": "",
-          "actual_winner_zh": "",
-          "winner_correct": null,
+          "score": "5-4",
+          "actual_winner_zh": "密爾瓦基釀酒人",
+          "winner_correct": false,
           "total_line": null,
           "predicted_total": null,
-          "actual_total": null,
+          "actual_total": 9,
           "total_pick": "",
           "total_correct": null,
           "roi_settlement": "",
           "pnl": 0.0,
           "reason_codes": [
-            "pending"
+            "low_confidence_miss",
+            "one_run_volatility"
           ],
           "notes": [
-            "尚未完賽，等待賽後自動結算真實比分。"
+            "信心接近五五波，賽前應降權或避免當主推。",
+            "一分差比賽，模型即使方向錯也屬高波動結果。"
           ]
         }
       ]
@@ -26070,14 +26069,14 @@
         "pnl": 0,
         "cumulative": {
           "games": 636,
-          "final_games": 612,
-          "pending_games": 24,
+          "final_games": 614,
+          "pending_games": 22,
           "winner_correct": 341,
           "totals_games": 454,
           "totals_correct": 233,
           "roi_bets": 3,
           "pnl": -300.0,
-          "winner_accuracy_pct": 55.72,
+          "winner_accuracy_pct": 55.54,
           "totals_accuracy_pct": 51.32
         }
       },
@@ -26475,11 +26474,11 @@
           "game_time_utc": "2026-08-15T01:38:00Z",
           "matchup_zh": "堪薩斯市皇家 @ 洛杉磯天使",
           "prediction_zh": "堪薩斯市皇家",
-          "confidence": 0.5089,
-          "predicted_score_zh": "堪薩斯市皇家 4.19 : 洛杉磯天使 3.42",
+          "confidence": 0.5078,
+          "predicted_score_zh": "堪薩斯市皇家 4.19 : 洛杉磯天使 3.38",
           "predicted_away_score": 4.19,
-          "predicted_home_score": 3.42,
-          "predicted_score_total": 7.61,
+          "predicted_home_score": 3.38,
+          "predicted_score_total": 7.57,
           "score_pick_zh": "堪薩斯市皇家",
           "score_alignment": "一致",
           "score_total_side": "",
@@ -26513,11 +26512,11 @@
           "game_time_utc": "2026-08-15T01:40:00Z",
           "matchup_zh": "德州遊騎兵 @ 運動家",
           "prediction_zh": "德州遊騎兵",
-          "confidence": 0.5355,
-          "predicted_score_zh": "德州遊騎兵 4.15 : 運動家 3.59",
-          "predicted_away_score": 4.15,
-          "predicted_home_score": 3.59,
-          "predicted_score_total": 7.74,
+          "confidence": 0.5345,
+          "predicted_score_zh": "德州遊騎兵 4.22 : 運動家 3.65",
+          "predicted_away_score": 4.22,
+          "predicted_home_score": 3.65,
+          "predicted_score_total": 7.87,
           "score_pick_zh": "德州遊騎兵",
           "score_alignment": "一致",
           "score_total_side": "",
@@ -26551,11 +26550,11 @@
           "game_time_utc": "2026-08-15T02:10:00Z",
           "matchup_zh": "密爾瓦基釀酒人 @ 洛杉磯道奇",
           "prediction_zh": "洛杉磯道奇",
-          "confidence": 0.5148,
-          "predicted_score_zh": "密爾瓦基釀酒人 3.87 : 洛杉磯道奇 4.06",
-          "predicted_away_score": 3.87,
+          "confidence": 0.5151,
+          "predicted_score_zh": "密爾瓦基釀酒人 4.04 : 洛杉磯道奇 4.06",
+          "predicted_away_score": 4.04,
           "predicted_home_score": 4.06,
-          "predicted_score_total": 7.93,
+          "predicted_score_total": 8.1,
           "score_pick_zh": "洛杉磯道奇",
           "score_alignment": "一致",
           "score_total_side": "",
