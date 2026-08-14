@@ -1,17 +1,17 @@
 {
-  "generated_at": "2026-08-15T03:47:47",
+  "generated_at": "2026-08-15T05:24:14",
   "target_date": "2026-08-14",
   "source_prediction_file": "data/daily_predictions_2026-08-14.json",
   "summary": {
     "predictions": 14,
-    "final_games": 0,
-    "pending_games": 14,
-    "correct": 0,
+    "final_games": 1,
+    "pending_games": 13,
+    "correct": 1,
     "wrong": 0,
-    "accuracy_pct": 0,
-    "high_confidence_final": 0,
-    "high_confidence_correct": 0,
-    "high_confidence_accuracy_pct": 0
+    "accuracy_pct": 100.0,
+    "high_confidence_final": 1,
+    "high_confidence_correct": 1,
+    "high_confidence_accuracy_pct": 100.0
   },
   "settlements": [
     {
@@ -25,7 +25,7 @@
       "confidence": 0.613,
       "confirmation_pick_zh": "舊金山巨人",
       "confirmation_same_direction": true,
-      "status": "Scheduled",
+      "status": "Pre-Game",
       "score": "",
       "actual_winner_zh": "",
       "settlement": "pending",
@@ -42,11 +42,11 @@
       "confidence": 0.5737,
       "confirmation_pick_zh": "芝加哥小熊",
       "confirmation_same_direction": true,
-      "status": "In Progress",
-      "score": "",
-      "actual_winner_zh": "",
-      "settlement": "pending",
-      "is_final": false
+      "status": "Final",
+      "score": "0-3",
+      "actual_winner_zh": "芝加哥小熊",
+      "settlement": "correct",
+      "is_final": true
     },
     {
       "date": "2026-08-14",
@@ -212,7 +212,7 @@
       "confidence": 0.5104,
       "confirmation_pick_zh": "休士頓太空人",
       "confirmation_same_direction": true,
-      "status": "Scheduled",
+      "status": "Pre-Game",
       "score": "",
       "actual_winner_zh": "",
       "settlement": "pending",
@@ -229,7 +229,7 @@
       "confidence": 0.5078,
       "confirmation_pick_zh": "洛杉磯天使",
       "confirmation_same_direction": false,
-      "status": "Scheduled",
+      "status": "Pre-Game",
       "score": "",
       "actual_winner_zh": "",
       "settlement": "pending",
