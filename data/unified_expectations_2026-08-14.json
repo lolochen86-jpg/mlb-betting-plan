@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-08-14T07:40:42",
+  "generated_at": "2026-08-14T11:24:26",
   "target_date": "2026-08-14",
   "model": "統一得分期望 v1",
   "postgame_calibration": {
     "source": "postgame_review",
     "days": 10,
-    "games": 119,
-    "winner_accuracy": 0.5714,
-    "low_confidence_accuracy": 0.4935,
+    "games": 121,
+    "winner_accuracy": 0.5702,
+    "low_confidence_accuracy": 0.5,
     "score_total_bias": -2.17,
     "score_total_bias_applied": -0.75,
     "totals_recent_bias": 0.0,
@@ -19,13 +19,13 @@
     "totals_min_line_gap": 1.0,
     "mismatch_notes": 0,
     "reason_counts": {
-      "low_confidence_hit": 38,
+      "low_confidence_hit": 39,
       "totals_miss": 17,
       "large_totals_error": 14,
       "high_confidence_hit": 30,
       "low_confidence_miss": 31,
       "one_run_volatility": 35,
-      "high_confidence_miss": 12
+      "high_confidence_miss": 13
     },
     "data_gaps": [
       "大小分大偏差偏多：優先補真實天氣、球場風向、先發/牛棚臨場狀態。",
@@ -242,8 +242,8 @@
       "away_zh": "芝加哥白襪",
       "home_zh": "底特律老虎",
       "away_expected_runs": 3.22,
-      "home_expected_runs": 5.0,
-      "expected_total": 8.21,
+      "home_expected_runs": 4.8,
+      "expected_total": 8.02,
       "pick_side": "home",
       "prediction_zh": "底特律老虎",
       "home_win_prob": 0.7,
@@ -257,7 +257,7 @@
         "source_quality": "projected_recent_lineup_order",
         "factor": 1.044
       },
-      "away_pitcher_weight": 0.632,
+      "away_pitcher_weight": 0.9,
       "home_pitcher_weight": 0.9,
       "weather": {
         "source": "open_meteo_forecast",
@@ -430,17 +430,17 @@
       "matchup_zh": "德州遊騎兵 @ 運動家",
       "away_zh": "德州遊騎兵",
       "home_zh": "運動家",
-      "away_expected_runs": 4.16,
-      "home_expected_runs": 3.57,
-      "expected_total": 7.73,
+      "away_expected_runs": 4.15,
+      "home_expected_runs": 3.59,
+      "expected_total": 7.74,
       "pick_side": "away",
       "prediction_zh": "德州遊騎兵",
-      "home_win_prob": 0.4206,
-      "away_win_prob": 0.5794,
+      "home_win_prob": 0.4251,
+      "away_win_prob": 0.5749,
       "lineup_source": "projected_recent_lineup_order",
       "away_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
-        "factor": 0.94
+        "factor": 0.938
       },
       "home_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
@@ -682,21 +682,21 @@
       "matchup_zh": "密爾瓦基釀酒人 @ 洛杉磯道奇",
       "away_zh": "密爾瓦基釀酒人",
       "home_zh": "洛杉磯道奇",
-      "away_expected_runs": 3.81,
-      "home_expected_runs": 4.07,
-      "expected_total": 7.88,
+      "away_expected_runs": 3.87,
+      "home_expected_runs": 4.06,
+      "expected_total": 7.93,
       "pick_side": "home",
       "prediction_zh": "洛杉磯道奇",
-      "home_win_prob": 0.5351,
-      "away_win_prob": 0.4649,
+      "home_win_prob": 0.5268,
+      "away_win_prob": 0.4732,
       "lineup_source": "projected_recent_lineup_order",
       "away_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
-        "factor": 1.002
+        "factor": 1.001
       },
       "home_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
-        "factor": 1.029
+        "factor": 1.028
       },
       "away_pitcher_weight": 0.9,
       "home_pitcher_weight": 0.9,
@@ -808,13 +808,13 @@
       "matchup_zh": "堪薩斯市皇家 @ 洛杉磯天使",
       "away_zh": "堪薩斯市皇家",
       "home_zh": "洛杉磯天使",
-      "away_expected_runs": 4.14,
-      "home_expected_runs": 3.39,
-      "expected_total": 7.53,
+      "away_expected_runs": 4.19,
+      "home_expected_runs": 3.42,
+      "expected_total": 7.61,
       "pick_side": "away",
       "prediction_zh": "堪薩斯市皇家",
-      "home_win_prob": 0.4002,
-      "away_win_prob": 0.5998,
+      "home_win_prob": 0.3972,
+      "away_win_prob": 0.6028,
       "lineup_source": "projected_recent_lineup_order",
       "away_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
@@ -822,10 +822,10 @@
       },
       "home_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
-        "factor": 0.964
+        "factor": 0.963
       },
       "away_pitcher_weight": 0.9,
-      "home_pitcher_weight": 0.75,
+      "home_pitcher_weight": 0.9,
       "weather": {
         "source": "open_meteo_forecast",
         "venue": "Angel Stadium",
