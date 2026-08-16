@@ -732,7 +732,7 @@
                   "name": "overall",
                   "abbreviation": "Total",
                   "type": "total",
-                  "summary": "62-61"
+                  "summary": "63-61"
                 },
                 {
                   "name": "Home",
@@ -744,7 +744,7 @@
                   "name": "Road",
                   "abbreviation": "AWAY",
                   "type": "road",
-                  "summary": "30-27"
+                  "summary": "31-27"
                 }
               ],
               "leaders": [
@@ -755,8 +755,8 @@
                   "abbreviation": "AVG",
                   "leaders": [
                     {
-                      "displayValue": ".285",
-                      "value": 0.2850970923900604,
+                      "displayValue": ".288",
+                      "value": 0.28846150636672974,
                       "athlete": {
                         "id": "4345070",
                         "fullName": "Alec Burleson",
@@ -795,8 +795,8 @@
                   "abbreviation": "HR",
                   "leaders": [
                     {
-                      "displayValue": "23",
-                      "value": 23.0,
+                      "displayValue": "24",
+                      "value": 24.0,
                       "athlete": {
                         "id": "4684778",
                         "fullName": "Jordan Walker",
@@ -835,8 +835,8 @@
                   "abbreviation": "RBI",
                   "leaders": [
                     {
-                      "displayValue": "86",
-                      "value": 86.0,
+                      "displayValue": "90",
+                      "value": 90.0,
                       "athlete": {
                         "id": "4345070",
                         "fullName": "Alec Burleson",
@@ -875,8 +875,8 @@
                   "abbreviation": "MLB",
                   "leaders": [
                     {
-                      "displayValue": "479.2",
-                      "value": 479.25,
+                      "displayValue": "494.5",
+                      "value": 494.5,
                       "athlete": {
                         "id": "4345070",
                         "fullName": "Alec Burleson",
@@ -954,8 +954,8 @@
           },
           "tickets": [
             {
-              "summary": "Tickets as low as $9",
-              "numberAvailable": 555,
+              "summary": "Tickets as low as $10",
+              "numberAvailable": 528,
               "links": [
                 {
                   "href": "https://www.vividseats.com/cincinnati-reds-tickets-great-american-ball-park-5-24-2026--sports-mlb-baseball/production/5965983?wsUser=717"
@@ -1964,8 +1964,8 @@
           },
           "tickets": [
             {
-              "summary": "Tickets as low as $14",
-              "numberAvailable": 1392,
+              "summary": "Tickets as low as $13",
+              "numberAvailable": 1344,
               "links": [
                 {
                   "href": "https://www.vividseats.com/tampa-bay-rays-tickets-tropicana-field-8-17-2026--sports-mlb-baseball/production/5966814?wsUser=717"
@@ -2050,8 +2050,8 @@
                 "displayName": "DraftKings"
               },
               "details": "TB -163",
-              "overUnder": 8.0,
-              "spread": 0.0,
+              "overUnder": 7.5,
+              "spread": -1.5,
               "awayTeamOdds": {
                 "favorite": false,
                 "underdog": true,
@@ -2076,7 +2076,7 @@
                   "displayName": "Tampa Bay Rays",
                   "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/tb.png"
                 },
-                "favoriteAtOpen": false
+                "favoriteAtOpen": true
               },
               "moneyline": {
                 "displayName": "Moneyline",
@@ -2149,22 +2149,70 @@
                 "shortDisplayName": "RL",
                 "home": {
                   "close": {
-                    "line": "OFF",
-                    "odds": "OFF"
+                    "line": "-1.5",
+                    "odds": "+139",
+                    "link": {
+                      "language": "en-US",
+                      "rel": [
+                        "homeSpread",
+                        "desktop",
+                        "bets"
+                      ],
+                      "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34529784%3Foutcomes%3D0HC85899696N150_1",
+                      "text": "Home Point Spread",
+                      "shortText": "Home Point Spread",
+                      "isExternal": true,
+                      "isPremium": false,
+                      "tracking": {
+                        "campaign": "betting-integrations",
+                        "tags": {
+                          "league": "mlb",
+                          "sport": "baseball",
+                          "gameId": 401816563,
+                          "betSide": "none",
+                          "betType": "straight",
+                          "betDetails": "Spread:TB-1.5"
+                        }
+                      }
+                    }
                   },
                   "open": {
-                    "line": "OFF",
-                    "odds": "OFF"
+                    "line": "-1.5",
+                    "odds": "+139"
                   }
                 },
                 "away": {
                   "close": {
-                    "line": "OFF",
-                    "odds": "OFF"
+                    "line": "+1.5",
+                    "odds": "-168",
+                    "link": {
+                      "language": "en-US",
+                      "rel": [
+                        "awaySpread",
+                        "desktop",
+                        "bets"
+                      ],
+                      "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34529784%3Foutcomes%3D0HC85899696P150_3",
+                      "text": "Away Point Spread",
+                      "shortText": "Away Point Spread",
+                      "isExternal": true,
+                      "isPremium": false,
+                      "tracking": {
+                        "campaign": "betting-integrations",
+                        "tags": {
+                          "league": "mlb",
+                          "sport": "baseball",
+                          "gameId": 401816563,
+                          "betSide": "none",
+                          "betType": "straight",
+                          "betDetails": "Spread:BAL+1.5"
+                        }
+                      }
+                    }
                   },
                   "open": {
-                    "line": "OFF",
-                    "odds": "OFF"
+                    "line": "+1.5",
+                    "odds": "-168"
                   }
                 }
               },
@@ -2173,8 +2221,8 @@
                 "shortDisplayName": "Total",
                 "over": {
                   "close": {
-                    "line": "o8",
-                    "odds": "+100",
+                    "line": "o7.5",
+                    "odds": "-117",
                     "link": {
                       "language": "en-US",
                       "rel": [
@@ -2182,7 +2230,7 @@
                         "desktop",
                         "bets"
                       ],
-                      "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34529784%3Foutcomes%3D0OU85899696O800_1",
+                      "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34529784%3Foutcomes%3D0OU85899696O750_1",
                       "text": "Over Odds",
                       "shortText": "Over Odds",
                       "isExternal": true,
@@ -2195,7 +2243,7 @@
                           "gameId": 401816563,
                           "betSide": "over",
                           "betType": "straight",
-                          "betDetails": "Over:8"
+                          "betDetails": "Over:7.5"
                         }
                       }
                     }
@@ -2207,8 +2255,8 @@
                 },
                 "under": {
                   "close": {
-                    "line": "u8",
-                    "odds": "-120",
+                    "line": "u7.5",
+                    "odds": "-102",
                     "link": {
                       "language": "en-US",
                       "rel": [
@@ -2216,7 +2264,7 @@
                         "desktop",
                         "bets"
                       ],
-                      "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34529784%3Foutcomes%3D0OU85899696U800_3",
+                      "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34529784%3Foutcomes%3D0OU85899696U750_3",
                       "text": "Under Odds",
                       "shortText": "Under Odds",
                       "isExternal": true,
@@ -2229,7 +2277,7 @@
                           "gameId": 401816563,
                           "betSide": "under",
                           "betType": "straight",
-                          "betDetails": "Under:8"
+                          "betDetails": "Under:7.5"
                         }
                       }
                     }
@@ -3209,7 +3257,7 @@
           "tickets": [
             {
               "summary": "Tickets as low as $34",
-              "numberAvailable": 1611,
+              "numberAvailable": 1754,
               "links": [
                 {
                   "href": "https://www.vividseats.com/philadelphia-phillies-tickets-citizens-bank-park-8-17-2026--sports-mlb-baseball/production/5966752?wsUser=717"
@@ -3588,8 +3636,8 @@
       ],
       "weather": {
         "displayValue": "Partly sunny",
-        "temperature": 88,
-        "highTemperature": 88,
+        "temperature": 85,
+        "highTemperature": 85,
         "conditionId": "3",
         "link": {
           "language": "en-US",
@@ -4151,7 +4199,7 @@
                   "name": "overall",
                   "abbreviation": "Total",
                   "type": "total",
-                  "summary": "62-61"
+                  "summary": "63-61"
                 },
                 {
                   "name": "Home",
@@ -4163,7 +4211,7 @@
                   "name": "Road",
                   "abbreviation": "AWAY",
                   "type": "road",
-                  "summary": "30-27"
+                  "summary": "31-27"
                 }
               ],
               "leaders": [
@@ -4174,8 +4222,8 @@
                   "abbreviation": "AVG",
                   "leaders": [
                     {
-                      "displayValue": ".285",
-                      "value": 0.2850970923900604,
+                      "displayValue": ".288",
+                      "value": 0.28846150636672974,
                       "athlete": {
                         "id": "4345070",
                         "fullName": "Alec Burleson",
@@ -4214,8 +4262,8 @@
                   "abbreviation": "HR",
                   "leaders": [
                     {
-                      "displayValue": "23",
-                      "value": 23.0,
+                      "displayValue": "24",
+                      "value": 24.0,
                       "athlete": {
                         "id": "4684778",
                         "fullName": "Jordan Walker",
@@ -4254,8 +4302,8 @@
                   "abbreviation": "RBI",
                   "leaders": [
                     {
-                      "displayValue": "86",
-                      "value": 86.0,
+                      "displayValue": "90",
+                      "value": 90.0,
                       "athlete": {
                         "id": "4345070",
                         "fullName": "Alec Burleson",
@@ -4294,8 +4342,8 @@
                   "abbreviation": "MLB",
                   "leaders": [
                     {
-                      "displayValue": "479.2",
-                      "value": 479.25,
+                      "displayValue": "494.5",
+                      "value": 494.5,
                       "athlete": {
                         "id": "4345070",
                         "fullName": "Alec Burleson",
@@ -4378,7 +4426,7 @@
           "tickets": [
             {
               "summary": "Tickets as low as $8",
-              "numberAvailable": 2489,
+              "numberAvailable": 2460,
               "links": [
                 {
                   "href": "https://www.vividseats.com/cincinnati-reds-tickets-great-american-ball-park-8-17-2026--sports-mlb-baseball/production/5966513?wsUser=717"
@@ -4460,8 +4508,8 @@
       ],
       "weather": {
         "displayValue": "Cloudy",
-        "temperature": 82,
-        "highTemperature": 82,
+        "temperature": 80,
+        "highTemperature": 80,
         "conditionId": "7",
         "link": {
           "language": "en-US",
@@ -4749,13 +4797,13 @@
                   "name": "overall",
                   "abbreviation": "Total",
                   "type": "total",
-                  "summary": "60-65"
+                  "summary": "61-65"
                 },
                 {
                   "name": "Home",
                   "abbreviation": "Home",
                   "type": "home",
-                  "summary": "31-31"
+                  "summary": "32-31"
                 },
                 {
                   "name": "Road",
@@ -4852,8 +4900,8 @@
                   "abbreviation": "RBI",
                   "leaders": [
                     {
-                      "displayValue": "77",
-                      "value": 77.0,
+                      "displayValue": "79",
+                      "value": 79.0,
                       "athlete": {
                         "id": "39961",
                         "fullName": "Brandon Lowe",
@@ -4892,8 +4940,8 @@
                   "abbreviation": "MLB",
                   "leaders": [
                     {
-                      "displayValue": "434.2",
-                      "value": 434.25,
+                      "displayValue": "440.2",
+                      "value": 440.25,
                       "athlete": {
                         "id": "39961",
                         "fullName": "Brandon Lowe",
@@ -5360,7 +5408,7 @@
           "tickets": [
             {
               "summary": "Tickets as low as $19",
-              "numberAvailable": 2050,
+              "numberAvailable": 2016,
               "links": [
                 {
                   "href": "https://www.vividseats.com/pittsburgh-pirates-tickets-pnc-park-8-17-2026--sports-mlb-baseball/production/5965996?wsUser=717"
@@ -5415,7 +5463,7 @@
               },
               "details": "DET -120",
               "overUnder": 8.0,
-              "spread": 0.0,
+              "spread": 1.5,
               "awayTeamOdds": {
                 "favorite": true,
                 "underdog": false,
@@ -5427,7 +5475,7 @@
                   "displayName": "Detroit Tigers",
                   "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/det.png"
                 },
-                "favoriteAtOpen": false
+                "favoriteAtOpen": true
               },
               "homeTeamOdds": {
                 "favorite": false,
@@ -5513,22 +5561,70 @@
                 "shortDisplayName": "RL",
                 "home": {
                   "close": {
-                    "line": "OFF",
-                    "odds": "OFF"
+                    "line": "+1.5",
+                    "odds": "-168",
+                    "link": {
+                      "language": "en-US",
+                      "rel": [
+                        "homeSpread",
+                        "desktop",
+                        "bets"
+                      ],
+                      "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34529787%3Foutcomes%3D0HC85899699P150_1",
+                      "text": "Home Point Spread",
+                      "shortText": "Home Point Spread",
+                      "isExternal": true,
+                      "isPremium": false,
+                      "tracking": {
+                        "campaign": "betting-integrations",
+                        "tags": {
+                          "league": "mlb",
+                          "sport": "baseball",
+                          "gameId": 401816564,
+                          "betSide": "none",
+                          "betType": "straight",
+                          "betDetails": "Spread:PIT+1.5"
+                        }
+                      }
+                    }
                   },
                   "open": {
-                    "line": "OFF",
-                    "odds": "OFF"
+                    "line": "+1.5",
+                    "odds": "-168"
                   }
                 },
                 "away": {
                   "close": {
-                    "line": "OFF",
-                    "odds": "OFF"
+                    "line": "-1.5",
+                    "odds": "+139",
+                    "link": {
+                      "language": "en-US",
+                      "rel": [
+                        "awaySpread",
+                        "desktop",
+                        "bets"
+                      ],
+                      "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34529787%3Foutcomes%3D0HC85899699N150_3",
+                      "text": "Away Point Spread",
+                      "shortText": "Away Point Spread",
+                      "isExternal": true,
+                      "isPremium": false,
+                      "tracking": {
+                        "campaign": "betting-integrations",
+                        "tags": {
+                          "league": "mlb",
+                          "sport": "baseball",
+                          "gameId": 401816564,
+                          "betSide": "none",
+                          "betType": "straight",
+                          "betDetails": "Spread:DET-1.5"
+                        }
+                      }
+                    }
                   },
                   "open": {
-                    "line": "OFF",
-                    "odds": "OFF"
+                    "line": "-1.5",
+                    "odds": "+139"
                   }
                 }
               },
@@ -5887,7 +5983,7 @@
                   "name": "overall",
                   "abbreviation": "Total",
                   "type": "total",
-                  "summary": "66-57"
+                  "summary": "66-58"
                 },
                 {
                   "name": "Home",
@@ -5899,7 +5995,7 @@
                   "name": "Road",
                   "abbreviation": "AWAY",
                   "type": "road",
-                  "summary": "37-26"
+                  "summary": "37-27"
                 }
               ],
               "leaders": [
@@ -5910,8 +6006,8 @@
                   "abbreviation": "AVG",
                   "leaders": [
                     {
-                      "displayValue": ".287",
-                      "value": 0.28725698590278625,
+                      "displayValue": ".285",
+                      "value": 0.28479650616645813,
                       "athlete": {
                         "id": "4987382",
                         "fullName": "Ceddanne Rafaela",
@@ -6030,8 +6126,8 @@
                   "abbreviation": "MLB",
                   "leaders": [
                     {
-                      "displayValue": "436.5",
-                      "value": 436.5,
+                      "displayValue": "435.0",
+                      "value": 435.0,
                       "athlete": {
                         "id": "4987382",
                         "fullName": "Ceddanne Rafaela",
@@ -6509,7 +6605,7 @@
           "tickets": [
             {
               "summary": "Tickets as low as $45",
-              "numberAvailable": 2297,
+              "numberAvailable": 2202,
               "links": [
                 {
                   "href": "https://www.vividseats.com/boston-red-sox-tickets-fenway-park-8-17-2026--sports-mlb-baseball/production/5966833?wsUser=717"
@@ -6591,8 +6687,8 @@
       ],
       "weather": {
         "displayValue": "Cloudy",
-        "temperature": 72,
-        "highTemperature": 72,
+        "temperature": 71,
+        "highTemperature": 71,
         "conditionId": "7",
         "link": {
           "language": "en-US",
@@ -7503,7 +7599,7 @@
           "tickets": [
             {
               "summary": "Tickets as low as $11",
-              "numberAvailable": 3940,
+              "numberAvailable": 3804,
               "links": [
                 {
                   "href": "https://www.vividseats.com/new-york-mets-tickets-citi-field-8-17-2026--sports-mlb-baseball/production/5965196?wsUser=717"
@@ -7586,7 +7682,7 @@
                   }
                 ]
               },
-              "details": "NYM -127",
+              "details": "NYM -121",
               "overUnder": 8.5,
               "spread": -1.5,
               "awayTeamOdds": {
@@ -7620,7 +7716,7 @@
                 "shortDisplayName": "ML",
                 "home": {
                   "close": {
-                    "odds": "-127",
+                    "odds": "-121",
                     "link": {
                       "language": "en-US",
                       "rel": [
@@ -7651,7 +7747,7 @@
                 },
                 "away": {
                   "close": {
-                    "odds": "+105",
+                    "odds": "+101",
                     "link": {
                       "language": "en-US",
                       "rel": [
@@ -8172,7 +8268,7 @@
                   "name": "overall",
                   "abbreviation": "Total",
                   "type": "total",
-                  "summary": "50-74"
+                  "summary": "51-74"
                 },
                 {
                   "name": "Home",
@@ -8184,7 +8280,7 @@
                   "name": "Road",
                   "abbreviation": "AWAY",
                   "type": "road",
-                  "summary": "21-44"
+                  "summary": "22-44"
                 }
               ],
               "leaders": [
@@ -8195,8 +8291,8 @@
                   "abbreviation": "AVG",
                   "leaders": [
                     {
-                      "displayValue": ".283",
-                      "value": 0.2829267978668213,
+                      "displayValue": ".282",
+                      "value": 0.2819277048110962,
                       "athlete": {
                         "id": "42403",
                         "fullName": "Bobby Witt Jr.",
@@ -8315,8 +8411,8 @@
                   "abbreviation": "MLB",
                   "leaders": [
                     {
-                      "displayValue": "395.2",
-                      "value": 395.25,
+                      "displayValue": "394.5",
+                      "value": 394.5,
                       "athlete": {
                         "id": "4926296",
                         "fullName": "Jac Caglianone",
@@ -8571,13 +8667,13 @@
                   "name": "overall",
                   "abbreviation": "Total",
                   "type": "total",
-                  "summary": "48-75"
+                  "summary": "49-75"
                 },
                 {
                   "name": "Home",
                   "abbreviation": "Home",
                   "type": "home",
-                  "summary": "22-40"
+                  "summary": "23-40"
                 },
                 {
                   "name": "Road",
@@ -8632,8 +8728,8 @@
                   "abbreviation": "HR",
                   "leaders": [
                     {
-                      "displayValue": "13",
-                      "value": 13.0,
+                      "displayValue": "14",
+                      "value": 14.0,
                       "athlete": {
                         "id": "4414531",
                         "fullName": "Zack Gelof",
@@ -8788,8 +8884,8 @@
           },
           "tickets": [
             {
-              "summary": "Tickets as low as $9",
-              "numberAvailable": 1620,
+              "summary": "Tickets as low as $8",
+              "numberAvailable": 1584,
               "links": [
                 {
                   "href": "https://www.vividseats.com/kansas-city-royals-tickets-kauffman-stadium-8-17-2026--sports-mlb-baseball/production/5965352?wsUser=717"
@@ -8871,8 +8967,8 @@
       ],
       "weather": {
         "displayValue": "Mostly sunny",
-        "temperature": 84,
-        "highTemperature": 84,
+        "temperature": 83,
+        "highTemperature": 83,
         "conditionId": "2",
         "link": {
           "language": "en-US",
@@ -9782,7 +9878,7 @@
           "tickets": [
             {
               "summary": "Tickets as low as $24",
-              "numberAvailable": 1269,
+              "numberAvailable": 1267,
               "links": [
                 {
                   "href": "https://www.vividseats.com/minnesota-twins-tickets-target-field-8-18-2026--sports-mlb-baseball/production/5966510?wsUser=717"
@@ -9877,7 +9973,7 @@
                   }
                 ]
               },
-              "details": "ATL -123",
+              "details": "ATL -125",
               "overUnder": 8.5,
               "spread": 1.5,
               "awayTeamOdds": {
@@ -9911,7 +10007,7 @@
                 "shortDisplayName": "ML",
                 "home": {
                   "close": {
-                    "odds": "+102",
+                    "odds": "+104",
                     "link": {
                       "language": "en-US",
                       "rel": [
@@ -9942,7 +10038,7 @@
                 },
                 "away": {
                   "close": {
-                    "odds": "-123",
+                    "odds": "-125",
                     "link": {
                       "language": "en-US",
                       "rel": [
@@ -9978,7 +10074,7 @@
                 "home": {
                   "close": {
                     "line": "+1.5",
-                    "odds": "-168",
+                    "odds": "-163",
                     "link": {
                       "language": "en-US",
                       "rel": [
@@ -10012,7 +10108,7 @@
                 "away": {
                   "close": {
                     "line": "-1.5",
-                    "odds": "+139",
+                    "odds": "+135",
                     "link": {
                       "language": "en-US",
                       "rel": [
@@ -10050,7 +10146,7 @@
                 "over": {
                   "close": {
                     "line": "o8.5",
-                    "odds": "-119",
+                    "odds": "-121",
                     "link": {
                       "language": "en-US",
                       "rel": [
@@ -10084,7 +10180,7 @@
                 "under": {
                   "close": {
                     "line": "u8.5",
-                    "odds": "-101",
+                    "odds": "+101",
                     "link": {
                       "language": "en-US",
                       "rel": [
@@ -10458,26 +10554,6 @@
               ],
               "hits": 0,
               "errors": 0,
-              "records": [
-                {
-                  "name": "overall",
-                  "abbreviation": "Total",
-                  "type": "total",
-                  "summary": "72-52"
-                },
-                {
-                  "name": "Home",
-                  "abbreviation": "Home",
-                  "type": "home",
-                  "summary": "36-25"
-                },
-                {
-                  "name": "Road",
-                  "abbreviation": "AWAY",
-                  "type": "road",
-                  "summary": "36-27"
-                }
-              ],
               "leaders": [
                 {
                   "name": "avg",
@@ -10486,8 +10562,8 @@
                   "abbreviation": "AVG",
                   "leaders": [
                     {
-                      "displayValue": ".277",
-                      "value": 0.27659571170806885,
+                      "displayValue": ".276",
+                      "value": 0.27578940987586975,
                       "athlete": {
                         "id": "4717833",
                         "fullName": "Pete Crow-Armstrong",
@@ -10526,8 +10602,8 @@
                   "abbreviation": "HR",
                   "leaders": [
                     {
-                      "displayValue": "27",
-                      "value": 27.0,
+                      "displayValue": "28",
+                      "value": 28.0,
                       "athlete": {
                         "id": "4717833",
                         "fullName": "Pete Crow-Armstrong",
@@ -10566,48 +10642,8 @@
                   "abbreviation": "RBI",
                   "leaders": [
                     {
-                      "displayValue": "73",
-                      "value": 73.0,
-                      "athlete": {
-                        "id": "4142424",
-                        "fullName": "Seiya Suzuki",
-                        "displayName": "Seiya Suzuki",
-                        "shortName": "S. Suzuki",
-                        "links": [
-                          {
-                            "rel": [
-                              "playercard",
-                              "desktop",
-                              "athlete"
-                            ],
-                            "href": "https://www.espn.com/mlb/player/_/id/4142424"
-                          }
-                        ],
-                        "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/4142424.png",
-                        "jersey": "27",
-                        "position": {
-                          "abbreviation": "RF"
-                        },
-                        "team": {
-                          "id": "16"
-                        },
-                        "active": true
-                      },
-                      "team": {
-                        "id": "16"
-                      }
-                    }
-                  ]
-                },
-                {
-                  "name": "MLBRating",
-                  "displayName": "MLB Rating",
-                  "shortDisplayName": "MLB",
-                  "abbreviation": "MLB",
-                  "leaders": [
-                    {
-                      "displayValue": "500.8",
-                      "value": 500.75,
+                      "displayValue": "75",
+                      "value": 75.0,
                       "athlete": {
                         "id": "4717833",
                         "fullName": "Pete Crow-Armstrong",
@@ -10638,6 +10674,66 @@
                       }
                     }
                   ]
+                },
+                {
+                  "name": "MLBRating",
+                  "displayName": "MLB Rating",
+                  "shortDisplayName": "MLB",
+                  "abbreviation": "MLB",
+                  "leaders": [
+                    {
+                      "displayValue": "507.0",
+                      "value": 507.0,
+                      "athlete": {
+                        "id": "4717833",
+                        "fullName": "Pete Crow-Armstrong",
+                        "displayName": "Pete Crow-Armstrong",
+                        "shortName": "P. Crow-Armstrong",
+                        "links": [
+                          {
+                            "rel": [
+                              "playercard",
+                              "desktop",
+                              "athlete"
+                            ],
+                            "href": "https://www.espn.com/mlb/player/_/id/4717833"
+                          }
+                        ],
+                        "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/4717833.png",
+                        "jersey": "4",
+                        "position": {
+                          "abbreviation": "CF"
+                        },
+                        "team": {
+                          "id": "16"
+                        },
+                        "active": true
+                      },
+                      "team": {
+                        "id": "16"
+                      }
+                    }
+                  ]
+                }
+              ],
+              "records": [
+                {
+                  "name": "overall",
+                  "abbreviation": "Total",
+                  "type": "total",
+                  "summary": "72-53"
+                },
+                {
+                  "name": "Home",
+                  "abbreviation": "Home",
+                  "type": "home",
+                  "summary": "36-26"
+                },
+                {
+                  "name": "Road",
+                  "abbreviation": "AWAY",
+                  "type": "road",
+                  "summary": "36-27"
                 }
               ]
             },
@@ -11085,8 +11181,8 @@
           },
           "tickets": [
             {
-              "summary": "Tickets as low as $89",
-              "numberAvailable": 2317,
+              "summary": "Tickets as low as $92",
+              "numberAvailable": 2232,
               "links": [
                 {
                   "href": "https://www.vividseats.com/chicago-cubs-tickets-wrigley-field-8-17-2026--sports-mlb-baseball/production/5965388?wsUser=717"
@@ -11673,7 +11769,7 @@
                   "name": "overall",
                   "abbreviation": "Total",
                   "type": "total",
-                  "summary": "49-74"
+                  "summary": "50-74"
                 },
                 {
                   "name": "Home",
@@ -11685,7 +11781,7 @@
                   "name": "Road",
                   "abbreviation": "AWAY",
                   "type": "road",
-                  "summary": "22-42"
+                  "summary": "23-42"
                 }
               ],
               "leaders": [
@@ -11697,7 +11793,7 @@
                   "leaders": [
                     {
                       "displayValue": ".296",
-                      "value": 0.2956297993659973,
+                      "value": 0.2959182858467102,
                       "athlete": {
                         "id": "41197",
                         "fullName": "Jake McCarthy",
@@ -12073,13 +12169,13 @@
                   "name": "overall",
                   "abbreviation": "Total",
                   "type": "total",
-                  "summary": "74-50"
+                  "summary": "74-51"
                 },
                 {
                   "name": "Home",
                   "abbreviation": "Home",
                   "type": "home",
-                  "summary": "37-25"
+                  "summary": "37-26"
                 },
                 {
                   "name": "Road",
@@ -12096,8 +12192,8 @@
                   "abbreviation": "AVG",
                   "leaders": [
                     {
-                      "displayValue": ".301",
-                      "value": 0.3008849024772644,
+                      "displayValue": ".298",
+                      "value": 0.2982456088066101,
                       "athlete": {
                         "id": "30193",
                         "fullName": "Freddie Freeman",
@@ -12176,8 +12272,8 @@
                   "abbreviation": "RBI",
                   "leaders": [
                     {
-                      "displayValue": "77",
-                      "value": 77.0,
+                      "displayValue": "78",
+                      "value": 78.0,
                       "athlete": {
                         "id": "42468",
                         "fullName": "Andy Pages",
@@ -12216,8 +12312,8 @@
                   "abbreviation": "MLB",
                   "leaders": [
                     {
-                      "displayValue": "488.8",
-                      "value": 488.75,
+                      "displayValue": "490.0",
+                      "value": 490.0,
                       "athlete": {
                         "id": "39832",
                         "fullName": "Shohei Ohtani",
@@ -12294,8 +12390,8 @@
           },
           "tickets": [
             {
-              "summary": "Tickets as low as $24",
-              "numberAvailable": 2713,
+              "summary": "Tickets as low as $27",
+              "numberAvailable": 2616,
               "links": [
                 {
                   "href": "https://www.vividseats.com/colorado-rockies-tickets-coors-field-8-17-2026--sports-mlb-baseball/production/5966594?wsUser=717"
@@ -12380,7 +12476,7 @@
               },
               "details": "LAD -245",
               "overUnder": 11.0,
-              "spread": 0.0,
+              "spread": 1.5,
               "awayTeamOdds": {
                 "favorite": true,
                 "underdog": false,
@@ -12392,7 +12488,7 @@
                   "displayName": "Los Angeles Dodgers",
                   "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/lad.png"
                 },
-                "favoriteAtOpen": false
+                "favoriteAtOpen": true
               },
               "homeTeamOdds": {
                 "favorite": false,
@@ -12478,22 +12574,70 @@
                 "shortDisplayName": "RL",
                 "home": {
                   "close": {
-                    "line": "OFF",
-                    "odds": "OFF"
+                    "line": "+1.5",
+                    "odds": "+135",
+                    "link": {
+                      "language": "en-US",
+                      "rel": [
+                        "homeSpread",
+                        "desktop",
+                        "bets"
+                      ],
+                      "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34529793%3Foutcomes%3D0HC85899705P150_1",
+                      "text": "Home Point Spread",
+                      "shortText": "Home Point Spread",
+                      "isExternal": true,
+                      "isPremium": false,
+                      "tracking": {
+                        "campaign": "betting-integrations",
+                        "tags": {
+                          "league": "mlb",
+                          "sport": "baseball",
+                          "gameId": 401816570,
+                          "betSide": "none",
+                          "betType": "straight",
+                          "betDetails": "Spread:COL+1.5"
+                        }
+                      }
+                    }
                   },
                   "open": {
-                    "line": "OFF",
-                    "odds": "OFF"
+                    "line": "+1.5",
+                    "odds": "+129"
                   }
                 },
                 "away": {
                   "close": {
-                    "line": "OFF",
-                    "odds": "OFF"
+                    "line": "-1.5",
+                    "odds": "-163",
+                    "link": {
+                      "language": "en-US",
+                      "rel": [
+                        "awaySpread",
+                        "desktop",
+                        "bets"
+                      ],
+                      "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34529793%3Foutcomes%3D0HC85899705N150_3",
+                      "text": "Away Point Spread",
+                      "shortText": "Away Point Spread",
+                      "isExternal": true,
+                      "isPremium": false,
+                      "tracking": {
+                        "campaign": "betting-integrations",
+                        "tags": {
+                          "league": "mlb",
+                          "sport": "baseball",
+                          "gameId": 401816570,
+                          "betSide": "none",
+                          "betType": "straight",
+                          "betDetails": "Spread:LAD-1.5"
+                        }
+                      }
+                    }
                   },
                   "open": {
-                    "line": "OFF",
-                    "odds": "OFF"
+                    "line": "-1.5",
+                    "odds": "-156"
                   }
                 }
               },
