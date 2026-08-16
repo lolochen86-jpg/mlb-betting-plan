@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-08-16T23:22:54",
+  "generated_at": "2026-08-17T03:21:34",
   "history": {
-    "games_written": 4287,
+    "games_written": 4301,
     "actual_first_game_date": "2025-03-27",
-    "actual_last_game_date": "2026-08-15"
+    "actual_last_game_date": "2026-08-16"
   },
   "accuracy": {
     "best_model": "A-畢氏勝率",
@@ -12,8 +12,8 @@
     "accuracy_pct": 54.4
   },
   "daily": {
-    "target_date": "2026-08-16",
-    "predictions": 15,
+    "target_date": "2026-08-17",
+    "predictions": 11,
     "high_confidence": 0
   },
   "settlements": [
@@ -377,8 +377,15 @@
     {
       "date": "2026-08-16",
       "predictions": 15,
+      "final_games": 1,
+      "pending_games": 14,
+      "accuracy_pct": 0.0
+    },
+    {
+      "date": "2026-08-17",
+      "predictions": 11,
       "final_games": 0,
-      "pending_games": 15,
+      "pending_games": 11,
       "accuracy_pct": 0
     }
   ],
@@ -720,6 +727,20 @@
       "rows": 15,
       "filled": 15,
       "missing": []
+    },
+    {
+      "date": "2026-08-17",
+      "rows": 11,
+      "filled": 4,
+      "missing": [
+        "巴爾的摩金鶯 @ 坦帕灣光芒 (Scheduled)",
+        "底特律老虎 @ 匹茲堡海盜 (Scheduled)",
+        "運動家 @ 堪薩斯市皇家 (Scheduled)",
+        "洛杉磯道奇 @ 科羅拉多洛磯 (Scheduled)",
+        "聖路易紅雀 @ 辛辛那提紅人 (Scheduled)",
+        "聖路易紅雀 @ 辛辛那提紅人 (Scheduled)",
+        "亞利桑那響尾蛇 @ 波士頓紅襪 (Scheduled)"
+      ]
     }
   ],
   "roi": [
@@ -1138,6 +1159,14 @@
       "pending_bets": 0,
       "total_pnl": 0,
       "roi_pct": 0
+    },
+    {
+      "date": "2026-08-17",
+      "bets": 0,
+      "final_bets": 0,
+      "pending_bets": 0,
+      "total_pnl": 0,
+      "roi_pct": 0
     }
   ],
   "auto_runner": {
@@ -1207,7 +1236,15 @@
     "2026-07-21 尚有 2 場比賽未結算",
     "2026-07-27 尚有 1 場比賽未結算",
     "2026-07-28 尚有 1 場比賽未結算",
-    "2026-08-16 尚有 15 場比賽未結算"
+    "2026-08-16 尚有 14 場比賽未結算",
+    "2026-08-17 尚有 11 場比賽未結算",
+    "2026-08-17 巴爾的摩金鶯 @ 坦帕灣光芒 (Scheduled) 尚未開打或來源尚未開盤",
+    "2026-08-17 底特律老虎 @ 匹茲堡海盜 (Scheduled) 尚未開打或來源尚未開盤",
+    "2026-08-17 運動家 @ 堪薩斯市皇家 (Scheduled) 尚未開打或來源尚未開盤",
+    "2026-08-17 洛杉磯道奇 @ 科羅拉多洛磯 (Scheduled) 尚未開打或來源尚未開盤",
+    "2026-08-17 聖路易紅雀 @ 辛辛那提紅人 (Scheduled) 尚未開打或來源尚未開盤",
+    "2026-08-17 聖路易紅雀 @ 辛辛那提紅人 (Scheduled) 尚未開打或來源尚未開盤",
+    "2026-08-17 亞利桑那響尾蛇 @ 波士頓紅襪 (Scheduled) 尚未開打或來源尚未開盤"
   ],
   "project_state": "系統完成，等待外部賽果/盤口"
 }
