@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-16T11:48:46",
+  "generated_at": "2026-08-16T13:28:48",
   "latest_review_date": "2026-08-16",
   "days": [
     {
@@ -26628,10 +26628,10 @@
       "phase": "賽後檢討",
       "summary": {
         "games": 15,
-        "final_games": 13,
-        "pending_games": 2,
-        "winner_correct": 4,
-        "winner_accuracy_pct": 30.77,
+        "final_games": 15,
+        "pending_games": 0,
+        "winner_correct": 5,
+        "winner_accuracy_pct": 33.33,
         "totals_games": 0,
         "totals_correct": 0,
         "totals_accuracy_pct": 0.0,
@@ -26639,14 +26639,14 @@
         "pnl": 0,
         "cumulative": {
           "games": 651,
-          "final_games": 641,
-          "pending_games": 10,
-          "winner_correct": 352,
+          "final_games": 643,
+          "pending_games": 8,
+          "winner_correct": 353,
           "totals_games": 454,
           "totals_correct": 233,
           "roi_bets": 3,
           "pnl": -300.0,
-          "winner_accuracy_pct": 54.91,
+          "winner_accuracy_pct": 54.9,
           "totals_accuracy_pct": 51.32
         }
       },
@@ -27178,21 +27178,23 @@
             "勝方一致",
             "無台灣運彩大小分盤口"
           ],
-          "score": "",
-          "actual_winner_zh": "",
-          "winner_correct": null,
+          "score": "0-1",
+          "actual_winner_zh": "洛杉磯天使",
+          "winner_correct": false,
           "total_line": null,
           "predicted_total": null,
-          "actual_total": null,
+          "actual_total": 1,
           "total_pick": "",
           "total_correct": null,
           "roi_settlement": "",
           "pnl": 0.0,
           "reason_codes": [
-            "pending"
+            "low_confidence_miss",
+            "one_run_volatility"
           ],
           "notes": [
-            "尚未完賽，等待賽後自動結算真實比分。"
+            "信心接近五五波，賽前應降權或避免當主推。",
+            "一分差比賽，模型即使方向錯也屬高波動結果。"
           ]
         },
         {
@@ -27216,21 +27218,21 @@
             "勝方一致",
             "無台灣運彩大小分盤口"
           ],
-          "score": "",
-          "actual_winner_zh": "",
-          "winner_correct": null,
+          "score": "5-3",
+          "actual_winner_zh": "德州遊騎兵",
+          "winner_correct": true,
           "total_line": null,
           "predicted_total": null,
-          "actual_total": null,
+          "actual_total": 8,
           "total_pick": "",
           "total_correct": null,
           "roi_settlement": "",
           "pnl": 0.0,
           "reason_codes": [
-            "pending"
+            "low_confidence_hit"
           ],
           "notes": [
-            "尚未完賽，等待賽後自動結算真實比分。"
+            "方向正確，但信心不高，較適合作為觀察而非重注。"
           ]
         }
       ]
@@ -27251,14 +27253,14 @@
         "pnl": 0,
         "cumulative": {
           "games": 666,
-          "final_games": 641,
-          "pending_games": 25,
-          "winner_correct": 352,
+          "final_games": 643,
+          "pending_games": 23,
+          "winner_correct": 353,
           "totals_games": 454,
           "totals_correct": 233,
           "roi_bets": 3,
           "pnl": -300.0,
-          "winner_accuracy_pct": 54.91,
+          "winner_accuracy_pct": 54.9,
           "totals_accuracy_pct": 51.32
         }
       },
@@ -27694,11 +27696,11 @@
           "game_time_utc": "2026-08-16T20:05:00Z",
           "matchup_zh": "德州遊騎兵 @ 運動家",
           "prediction_zh": "德州遊騎兵",
-          "confidence": 0.5326,
-          "predicted_score_zh": "德州遊騎兵 4.61 : 運動家 4.14",
-          "predicted_away_score": 4.61,
-          "predicted_home_score": 4.14,
-          "predicted_score_total": 8.75,
+          "confidence": 0.533,
+          "predicted_score_zh": "德州遊騎兵 4.75 : 運動家 4.12",
+          "predicted_away_score": 4.75,
+          "predicted_home_score": 4.12,
+          "predicted_score_total": 8.87,
           "score_pick_zh": "德州遊騎兵",
           "score_alignment": "一致",
           "score_total_side": "",
