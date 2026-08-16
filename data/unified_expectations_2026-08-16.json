@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-08-16T10:21:16",
+  "generated_at": "2026-08-16T11:47:36",
   "target_date": "2026-08-16",
   "model": "統一得分期望 v1",
   "postgame_calibration": {
     "source": "postgame_review",
     "days": 10,
-    "games": 113,
-    "winner_accuracy": 0.4956,
-    "low_confidence_accuracy": 0.4533,
+    "games": 121,
+    "winner_accuracy": 0.4793,
+    "low_confidence_accuracy": 0.439,
     "score_total_bias": 0.0,
     "score_total_bias_applied": 0.0,
     "totals_recent_bias": 0.0,
@@ -19,10 +19,10 @@
     "totals_min_line_gap": 1.0,
     "mismatch_notes": 0,
     "reason_counts": {
-      "low_confidence_miss": 30,
-      "one_run_volatility": 34,
-      "low_confidence_hit": 34,
-      "high_confidence_miss": 16,
+      "low_confidence_miss": 34,
+      "one_run_volatility": 35,
+      "low_confidence_hit": 36,
+      "high_confidence_miss": 17,
       "high_confidence_hit": 22
     },
     "data_gaps": [
@@ -426,21 +426,21 @@
       "matchup_zh": "德州遊騎兵 @ 運動家",
       "away_zh": "德州遊騎兵",
       "home_zh": "運動家",
-      "away_expected_runs": 4.51,
-      "home_expected_runs": 4.07,
-      "expected_total": 8.58,
+      "away_expected_runs": 4.61,
+      "home_expected_runs": 4.14,
+      "expected_total": 8.75,
       "pick_side": "away",
       "prediction_zh": "德州遊騎兵",
-      "home_win_prob": 0.4405,
-      "away_win_prob": 0.5595,
+      "home_win_prob": 0.4362,
+      "away_win_prob": 0.5638,
       "lineup_source": "projected_recent_lineup_order",
       "away_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
-        "factor": 0.94
+        "factor": 0.938
       },
       "home_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
-        "factor": 0.968
+        "factor": 0.964
       },
       "away_pitcher_weight": 0.9,
       "home_pitcher_weight": 0.9,
@@ -867,21 +867,21 @@
       "matchup_zh": "堪薩斯市皇家 @ 洛杉磯天使",
       "away_zh": "堪薩斯市皇家",
       "home_zh": "洛杉磯天使",
-      "away_expected_runs": 4.39,
-      "home_expected_runs": 3.73,
-      "expected_total": 8.11,
+      "away_expected_runs": 4.27,
+      "home_expected_runs": 3.7,
+      "expected_total": 7.97,
       "pick_side": "away",
       "prediction_zh": "堪薩斯市皇家",
-      "home_win_prob": 0.412,
-      "away_win_prob": 0.588,
+      "home_win_prob": 0.4245,
+      "away_win_prob": 0.5755,
       "lineup_source": "projected_recent_lineup_order",
       "away_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
-        "factor": 0.981
+        "factor": 0.952
       },
       "home_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
-        "factor": 0.947
+        "factor": 0.934
       },
       "away_pitcher_weight": 0.9,
       "home_pitcher_weight": 0.9,
