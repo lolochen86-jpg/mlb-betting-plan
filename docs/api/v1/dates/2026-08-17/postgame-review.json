@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-17T10:20:16",
+  "generated_at": "2026-08-17T11:51:03",
   "latest_review_date": "2026-08-17",
   "days": [
     {
@@ -27242,10 +27242,10 @@
       "phase": "賽後檢討",
       "summary": {
         "games": 15,
-        "final_games": 14,
-        "pending_games": 1,
+        "final_games": 15,
+        "pending_games": 0,
         "winner_correct": 6,
-        "winner_accuracy_pct": 42.86,
+        "winner_accuracy_pct": 40.0,
         "totals_games": 0,
         "totals_correct": 0,
         "totals_accuracy_pct": 0.0,
@@ -27253,14 +27253,14 @@
         "pnl": 0,
         "cumulative": {
           "games": 666,
-          "final_games": 657,
-          "pending_games": 9,
+          "final_games": 658,
+          "pending_games": 8,
           "winner_correct": 359,
           "totals_games": 454,
           "totals_correct": 233,
           "roi_bets": 3,
           "pnl": -300.0,
-          "winner_accuracy_pct": 54.64,
+          "winner_accuracy_pct": 54.56,
           "totals_accuracy_pct": 51.32
         }
       },
@@ -27827,21 +27827,23 @@
             "勝方一致",
             "無台灣運彩大小分盤口"
           ],
-          "score": "",
-          "actual_winner_zh": "",
-          "winner_correct": null,
+          "score": "3-2",
+          "actual_winner_zh": "西雅圖水手",
+          "winner_correct": false,
           "total_line": null,
           "predicted_total": null,
-          "actual_total": null,
+          "actual_total": 5,
           "total_pick": "",
           "total_correct": null,
           "roi_settlement": "",
           "pnl": 0.0,
           "reason_codes": [
-            "pending"
+            "low_confidence_miss",
+            "one_run_volatility"
           ],
           "notes": [
-            "尚未完賽，等待賽後自動結算真實比分。"
+            "信心接近五五波，賽前應降權或避免當主推。",
+            "一分差比賽，模型即使方向錯也屬高波動結果。"
           ]
         }
       ]
@@ -27862,14 +27864,14 @@
         "pnl": 0,
         "cumulative": {
           "games": 677,
-          "final_games": 657,
-          "pending_games": 20,
+          "final_games": 658,
+          "pending_games": 19,
           "winner_correct": 359,
           "totals_games": 454,
           "totals_correct": 233,
           "roi_bets": 3,
           "pnl": -300.0,
-          "winner_accuracy_pct": 54.64,
+          "winner_accuracy_pct": 54.56,
           "totals_accuracy_pct": 51.32
         }
       },
