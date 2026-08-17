@@ -1,15 +1,15 @@
 {
-  "generated_at": "2026-08-17T07:18:58",
+  "generated_at": "2026-08-17T10:19:20",
   "target_date": "2026-08-16",
   "source_prediction_file": "data/daily_predictions_2026-08-16.json",
   "summary": {
     "predictions": 15,
-    "final_games": 12,
-    "pending_games": 3,
-    "correct": 5,
-    "wrong": 7,
-    "accuracy_pct": 41.67,
-    "high_confidence_final": 1,
+    "final_games": 14,
+    "pending_games": 1,
+    "correct": 6,
+    "wrong": 8,
+    "accuracy_pct": 42.86,
+    "high_confidence_final": 2,
     "high_confidence_correct": 0,
     "high_confidence_accuracy_pct": 0.0
   },
@@ -25,11 +25,11 @@
       "confidence": 0.6136,
       "confirmation_pick_zh": "舊金山巨人",
       "confirmation_same_direction": true,
-      "status": "Game Over",
-      "score": "",
-      "actual_winner_zh": "",
-      "settlement": "pending",
-      "is_final": false
+      "status": "Final",
+      "score": "13-7",
+      "actual_winner_zh": "科羅拉多洛磯",
+      "settlement": "wrong",
+      "is_final": true
     },
     {
       "date": "2026-08-16",
@@ -229,7 +229,7 @@
       "confidence": 0.5098,
       "confirmation_pick_zh": "休士頓太空人",
       "confirmation_same_direction": true,
-      "status": "Warmup",
+      "status": "Game Over",
       "score": "",
       "actual_winner_zh": "",
       "settlement": "pending",
@@ -263,11 +263,11 @@
       "confidence": 0.5015,
       "confirmation_pick_zh": "聖地牙哥教士",
       "confirmation_same_direction": true,
-      "status": "In Progress",
-      "score": "",
-      "actual_winner_zh": "",
-      "settlement": "pending",
-      "is_final": false
+      "status": "Final",
+      "score": "5-0",
+      "actual_winner_zh": "聖地牙哥教士",
+      "settlement": "correct",
+      "is_final": true
     }
   ],
   "note": "Accuracy settlement only. Odds and betting ROI are not calculated here."
