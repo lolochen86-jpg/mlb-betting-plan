@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-17T21:39:49",
+  "generated_at": "2026-08-17T23:25:25",
   "target_date": "2026-08-17",
   "model": "Q-量化模型 XGBoost/Poisson Bundle 2026-07-16",
   "model_dir": "models/quant_bundle_2026_07_16",
@@ -25,8 +25,8 @@
   },
   "summary": {
     "games": 11,
-    "aligned_with_existing": 7,
-    "complete_data": 8,
+    "aligned_with_existing": 8,
+    "complete_data": 11,
     "holdout_moneyline_accuracy": 0.5208333333333334,
     "holdout_total_runs_mae": 3.406075860344923
   },
@@ -45,31 +45,28 @@
       "date": "2026-08-17",
       "game_pk": "824514",
       "game_time_tw": "2026-08-18 01:40",
-      "status": "Scheduled",
+      "status": "Pre-Game",
       "matchup_zh": "聖路易紅雀 @ 辛辛那提紅人",
       "away_zh": "聖路易紅雀",
       "home_zh": "辛辛那提紅人",
       "quant_prediction_zh": "辛辛那提紅人",
       "quant_pick_side": "home",
-      "quant_confidence": 0.5522,
-      "home_win_probability": 0.5522,
-      "away_win_probability": 0.4478,
-      "predicted_away_score": 8.25,
-      "predicted_home_score": 8.75,
-      "predicted_total": 17.0,
+      "quant_confidence": 0.5859,
+      "home_win_probability": 0.5859,
+      "away_win_probability": 0.4141,
+      "predicted_away_score": 4.46,
+      "predicted_home_score": 5.04,
+      "predicted_total": 9.5,
       "total_line": 8.5,
       "totals_pick_zh": "大分",
-      "totals_probability": 0.9874,
-      "over_probability": 0.9874,
-      "under_probability": 0.0126,
+      "totals_probability": 0.6081,
+      "over_probability": 0.6081,
+      "under_probability": 0.3919,
       "official_model_pick_zh": "辛辛那提紅人",
       "unified_model_pick_zh": "聖路易紅雀",
       "model_alignment": "一致",
-      "data_quality": "可用但需留意",
-      "missing_features": [
-        "away_probable_pitcher_not_fully_confirmed",
-        "home_probable_pitcher_not_fully_confirmed"
-      ]
+      "data_quality": "完整",
+      "missing_features": []
     },
     {
       "date": "2026-08-17",
@@ -135,11 +132,11 @@
       "home_zh": "辛辛那提紅人",
       "quant_prediction_zh": "辛辛那提紅人",
       "quant_pick_side": "home",
-      "quant_confidence": 0.5775,
-      "home_win_probability": 0.5775,
-      "away_win_probability": 0.4225,
-      "predicted_away_score": 4.48,
-      "predicted_home_score": 5.02,
+      "quant_confidence": 0.5519,
+      "home_win_probability": 0.5519,
+      "away_win_probability": 0.4481,
+      "predicted_away_score": 4.57,
+      "predicted_home_score": 4.93,
       "predicted_total": 9.5,
       "total_line": 8.5,
       "totals_pick_zh": "大分",
@@ -149,10 +146,8 @@
       "official_model_pick_zh": "辛辛那提紅人",
       "unified_model_pick_zh": "聖路易紅雀",
       "model_alignment": "一致",
-      "data_quality": "可用但需留意",
-      "missing_features": [
-        "away_probable_pitcher_not_fully_confirmed"
-      ]
+      "data_quality": "完整",
+      "missing_features": []
     },
     {
       "date": "2026-08-17",
@@ -216,13 +211,13 @@
       "matchup_zh": "亞利桑那響尾蛇 @ 波士頓紅襪",
       "away_zh": "亞利桑那響尾蛇",
       "home_zh": "波士頓紅襪",
-      "quant_prediction_zh": "亞利桑那響尾蛇",
-      "quant_pick_side": "away",
-      "quant_confidence": 0.5296,
-      "home_win_probability": 0.4704,
-      "away_win_probability": 0.5296,
-      "predicted_away_score": 4.85,
-      "predicted_home_score": 4.65,
+      "quant_prediction_zh": "波士頓紅襪",
+      "quant_pick_side": "home",
+      "quant_confidence": 0.6331,
+      "home_win_probability": 0.6331,
+      "away_win_probability": 0.3669,
+      "predicted_away_score": 4.29,
+      "predicted_home_score": 5.21,
       "predicted_total": 9.5,
       "total_line": 8.5,
       "totals_pick_zh": "大分",
@@ -231,11 +226,9 @@
       "under_probability": 0.3919,
       "official_model_pick_zh": "波士頓紅襪",
       "unified_model_pick_zh": "波士頓紅襪",
-      "model_alignment": "分歧",
-      "data_quality": "可用但需留意",
-      "missing_features": [
-        "home_probable_pitcher_not_fully_confirmed"
-      ]
+      "model_alignment": "一致",
+      "data_quality": "完整",
+      "missing_features": []
     },
     {
       "date": "2026-08-17",
