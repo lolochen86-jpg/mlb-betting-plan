@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-08-18T10:15:42",
+  "generated_at": "2026-08-18T11:43:26",
   "target_date": "2026-08-18",
   "model": "統一得分期望 v1",
   "postgame_calibration": {
     "source": "postgame_review",
     "days": 10,
-    "games": 109,
-    "winner_accuracy": 0.4679,
-    "low_confidence_accuracy": 0.4459,
+    "games": 113,
+    "winner_accuracy": 0.4867,
+    "low_confidence_accuracy": 0.4605,
     "score_total_bias": 0.0,
     "score_total_bias_applied": 0.0,
     "totals_recent_bias": 0.0,
@@ -20,10 +20,10 @@
     "mismatch_notes": 0,
     "reason_counts": {
       "low_confidence_miss": 32,
-      "low_confidence_hit": 33,
-      "one_run_volatility": 28,
+      "low_confidence_hit": 35,
+      "one_run_volatility": 32,
       "high_confidence_miss": 17,
-      "high_confidence_hit": 18
+      "high_confidence_hit": 20
     },
     "data_gaps": [
       "高信心勝方失準偏多：優先補官方先發打線、牛棚可用性、傷兵/輪休。"
@@ -48,21 +48,21 @@
       "matchup_zh": "洛杉磯道奇 @ 科羅拉多洛磯",
       "away_zh": "洛杉磯道奇",
       "home_zh": "科羅拉多洛磯",
-      "away_expected_runs": 5.37,
-      "home_expected_runs": 4.77,
-      "expected_total": 10.15,
+      "away_expected_runs": 5.51,
+      "home_expected_runs": 4.92,
+      "expected_total": 10.43,
       "pick_side": "away",
       "prediction_zh": "洛杉磯道奇",
-      "home_win_prob": 0.4195,
-      "away_win_prob": 0.5805,
+      "home_win_prob": 0.4214,
+      "away_win_prob": 0.5786,
       "lineup_source": "projected_recent_lineup_order",
       "away_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
-        "factor": 1.023
+        "factor": 1.026
       },
       "home_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
-        "factor": 1.031
+        "factor": 1.037
       },
       "away_pitcher_weight": 0.9,
       "home_pitcher_weight": 0.9,
@@ -111,21 +111,21 @@
       "matchup_zh": "芝加哥白襪 @ 芝加哥小熊",
       "away_zh": "芝加哥白襪",
       "home_zh": "芝加哥小熊",
-      "away_expected_runs": 4.48,
-      "home_expected_runs": 5.17,
-      "expected_total": 9.64,
+      "away_expected_runs": 4.54,
+      "home_expected_runs": 5.24,
+      "expected_total": 9.78,
       "pick_side": "home",
       "prediction_zh": "芝加哥小熊",
-      "home_win_prob": 0.5921,
-      "away_win_prob": 0.4079,
+      "home_win_prob": 0.5939,
+      "away_win_prob": 0.4061,
       "lineup_source": "projected_recent_lineup_order",
       "away_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
-        "factor": 0.988
+        "factor": 0.989
       },
       "home_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
-        "factor": 1.016
+        "factor": 1.014
       },
       "away_pitcher_weight": 0.75,
       "home_pitcher_weight": 0.9,
@@ -364,12 +364,12 @@
       "away_zh": "邁阿密馬林魚",
       "home_zh": "費城費城人",
       "away_expected_runs": 3.96,
-      "home_expected_runs": 4.78,
-      "expected_total": 8.74,
+      "home_expected_runs": 5.02,
+      "expected_total": 8.98,
       "pick_side": "home",
       "prediction_zh": "費城費城人",
-      "home_win_prob": 0.6092,
-      "away_win_prob": 0.3908,
+      "home_win_prob": 0.6397,
+      "away_win_prob": 0.3603,
       "lineup_source": "projected_recent_lineup_order",
       "away_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
@@ -379,7 +379,7 @@
         "source_quality": "projected_recent_lineup_order",
         "factor": 1.01
       },
-      "away_pitcher_weight": 0.75,
+      "away_pitcher_weight": 0.9,
       "home_pitcher_weight": 0.9,
       "weather": {
         "source": "open_meteo_forecast",
@@ -489,21 +489,21 @@
       "matchup_zh": "運動家 @ 堪薩斯市皇家",
       "away_zh": "運動家",
       "home_zh": "堪薩斯市皇家",
-      "away_expected_runs": 3.92,
-      "home_expected_runs": 5.11,
-      "expected_total": 9.04,
+      "away_expected_runs": 3.98,
+      "home_expected_runs": 5.18,
+      "expected_total": 9.16,
       "pick_side": "home",
       "prediction_zh": "堪薩斯市皇家",
-      "home_win_prob": 0.6559,
-      "away_win_prob": 0.3441,
+      "home_win_prob": 0.6576,
+      "away_win_prob": 0.3424,
       "lineup_source": "projected_recent_lineup_order",
       "away_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
-        "factor": 0.936
+        "factor": 0.943
       },
       "home_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
-        "factor": 0.96
+        "factor": 0.974
       },
       "away_pitcher_weight": 0.9,
       "home_pitcher_weight": 0.632,
@@ -678,21 +678,21 @@
       "matchup_zh": "亞特蘭大勇士 @ 明尼蘇達雙城",
       "away_zh": "亞特蘭大勇士",
       "home_zh": "明尼蘇達雙城",
-      "away_expected_runs": 4.62,
-      "home_expected_runs": 4.24,
-      "expected_total": 8.86,
+      "away_expected_runs": 4.54,
+      "home_expected_runs": 4.31,
+      "expected_total": 8.85,
       "pick_side": "away",
       "prediction_zh": "亞特蘭大勇士",
-      "home_win_prob": 0.4493,
-      "away_win_prob": 0.5507,
+      "home_win_prob": 0.4697,
+      "away_win_prob": 0.5303,
       "lineup_source": "projected_recent_lineup_order",
       "away_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
-        "factor": 0.989
+        "factor": 0.972
       },
       "home_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
-        "factor": 0.99
+        "factor": 1.008
       },
       "away_pitcher_weight": 0.9,
       "home_pitcher_weight": 0.9,
@@ -867,21 +867,21 @@
       "matchup_zh": "底特律老虎 @ 匹茲堡海盜",
       "away_zh": "底特律老虎",
       "home_zh": "匹茲堡海盜",
-      "away_expected_runs": 5.53,
-      "home_expected_runs": 3.98,
-      "expected_total": 9.51,
+      "away_expected_runs": 5.41,
+      "home_expected_runs": 4.0,
+      "expected_total": 9.41,
       "pick_side": "away",
       "prediction_zh": "底特律老虎",
-      "home_win_prob": 0.3029,
-      "away_win_prob": 0.6971,
+      "home_win_prob": 0.3176,
+      "away_win_prob": 0.6824,
       "lineup_source": "projected_recent_lineup_order",
       "away_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
-        "factor": 1.038
+        "factor": 1.017
       },
       "home_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
-        "factor": 0.994
+        "factor": 0.998
       },
       "away_pitcher_weight": 0.9,
       "home_pitcher_weight": 0.9,
