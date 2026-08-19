@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-08-19T13:29:53",
+  "generated_at": "2026-08-19T15:38:25",
   "target_date": "2026-08-19",
   "model": "統一得分期望 v1",
   "postgame_calibration": {
     "source": "postgame_review",
     "days": 10,
-    "games": 117,
-    "winner_accuracy": 0.5043,
+    "games": 119,
+    "winner_accuracy": 0.5126,
     "low_confidence_accuracy": 0.4615,
     "score_total_bias": 0.0,
     "score_total_bias_applied": 0.0,
@@ -20,9 +20,9 @@
     "mismatch_notes": 0,
     "reason_counts": {
       "low_confidence_miss": 33,
-      "one_run_volatility": 29,
+      "one_run_volatility": 31,
       "low_confidence_hit": 36,
-      "high_confidence_hit": 23,
+      "high_confidence_hit": 25,
       "high_confidence_miss": 16
     },
     "data_gaps": [
@@ -111,12 +111,12 @@
       "away_zh": "芝加哥白襪",
       "home_zh": "芝加哥小熊",
       "away_expected_runs": 4.33,
-      "home_expected_runs": 4.93,
-      "expected_total": 9.26,
+      "home_expected_runs": 4.86,
+      "expected_total": 9.19,
       "pick_side": "home",
       "prediction_zh": "芝加哥小熊",
-      "home_win_prob": 0.5801,
-      "away_win_prob": 0.4199,
+      "home_win_prob": 0.5714,
+      "away_win_prob": 0.4286,
       "lineup_source": "projected_recent_lineup_order",
       "away_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
@@ -126,7 +126,7 @@
         "source_quality": "projected_recent_lineup_order",
         "factor": 1.013
       },
-      "away_pitcher_weight": 0.65,
+      "away_pitcher_weight": 0.9,
       "home_pitcher_weight": 0.9,
       "weather": {
         "source": "open_meteo_forecast",

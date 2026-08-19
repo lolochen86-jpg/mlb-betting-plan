@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-19T13:31:12",
+  "generated_at": "2026-08-19T15:39:16",
   "target_date": "2026-08-19",
   "model": "Q-量化模型 XGBoost/Poisson Bundle 2026-07-16",
   "model_dir": "models/quant_bundle_2026_07_16",
@@ -26,7 +26,7 @@
   "summary": {
     "games": 15,
     "aligned_with_existing": 9,
-    "complete_data": 13,
+    "complete_data": 14,
     "holdout_moneyline_accuracy": 0.5208333333333334,
     "holdout_total_runs_mae": 3.406075860344923
   },
@@ -132,11 +132,11 @@
       "home_zh": "芝加哥小熊",
       "quant_prediction_zh": "芝加哥小熊",
       "quant_pick_side": "home",
-      "quant_confidence": 0.5453,
-      "home_win_probability": 0.5453,
-      "away_win_probability": 0.4547,
-      "predicted_away_score": 4.6,
-      "predicted_home_score": 4.9,
+      "quant_confidence": 0.5321,
+      "home_win_probability": 0.5321,
+      "away_win_probability": 0.4679,
+      "predicted_away_score": 4.64,
+      "predicted_home_score": 4.86,
       "predicted_total": 9.5,
       "total_line": 8.5,
       "totals_pick_zh": "大分",
@@ -146,10 +146,8 @@
       "official_model_pick_zh": "芝加哥小熊",
       "unified_model_pick_zh": "芝加哥小熊",
       "model_alignment": "一致",
-      "data_quality": "可用但需留意",
-      "missing_features": [
-        "away_probable_pitcher_not_fully_confirmed"
-      ]
+      "data_quality": "完整",
+      "missing_features": []
     },
     {
       "date": "2026-08-19",
