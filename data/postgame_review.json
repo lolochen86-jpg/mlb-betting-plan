@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-19T11:46:44",
+  "generated_at": "2026-08-19T13:31:12",
   "latest_review_date": "2026-08-19",
   "days": [
     {
@@ -28319,10 +28319,10 @@
       "phase": "賽後檢討",
       "summary": {
         "games": 15,
-        "final_games": 13,
-        "pending_games": 2,
-        "winner_correct": 7,
-        "winner_accuracy_pct": 53.85,
+        "final_games": 15,
+        "pending_games": 0,
+        "winner_correct": 9,
+        "winner_accuracy_pct": 60.0,
         "totals_games": 0,
         "totals_correct": 0,
         "totals_accuracy_pct": 0.0,
@@ -28330,14 +28330,14 @@
         "pnl": 0,
         "cumulative": {
           "games": 692,
-          "final_games": 682,
-          "pending_games": 10,
-          "winner_correct": 375,
+          "final_games": 684,
+          "pending_games": 8,
+          "winner_correct": 377,
           "totals_games": 454,
           "totals_correct": 233,
           "roi_bets": 3,
           "pnl": -300.0,
-          "winner_accuracy_pct": 54.99,
+          "winner_accuracy_pct": 55.12,
           "totals_accuracy_pct": 51.32
         }
       },
@@ -28826,21 +28826,23 @@
             "勝方一致",
             "無台灣運彩大小分盤口"
           ],
-          "score": "",
-          "actual_winner_zh": "",
-          "winner_correct": null,
+          "score": "3-4",
+          "actual_winner_zh": "芝加哥小熊",
+          "winner_correct": true,
           "total_line": null,
           "predicted_total": null,
-          "actual_total": null,
+          "actual_total": 7,
           "total_pick": "",
           "total_correct": null,
           "roi_settlement": "",
           "pnl": 0.0,
           "reason_codes": [
-            "pending"
+            "high_confidence_hit",
+            "one_run_volatility"
           ],
           "notes": [
-            "尚未完賽，等待賽後自動結算真實比分。"
+            "高信心方向有命中，這類條件可列為穩定樣本繼續追蹤。",
+            "一分差比賽，模型即使方向錯也屬高波動結果。"
           ]
         },
         {
@@ -28902,21 +28904,23 @@
             "勝方一致",
             "無台灣運彩大小分盤口"
           ],
-          "score": "",
-          "actual_winner_zh": "",
-          "winner_correct": null,
+          "score": "7-6",
+          "actual_winner_zh": "洛杉磯道奇",
+          "winner_correct": true,
           "total_line": null,
           "predicted_total": null,
-          "actual_total": null,
+          "actual_total": 13,
           "total_pick": "",
           "total_correct": null,
           "roi_settlement": "",
           "pnl": 0.0,
           "reason_codes": [
-            "pending"
+            "high_confidence_hit",
+            "one_run_volatility"
           ],
           "notes": [
-            "尚未完賽，等待賽後自動結算真實比分。"
+            "高信心方向有命中，這類條件可列為穩定樣本繼續追蹤。",
+            "一分差比賽，模型即使方向錯也屬高波動結果。"
           ]
         }
       ]
@@ -28937,14 +28941,14 @@
         "pnl": 0,
         "cumulative": {
           "games": 707,
-          "final_games": 682,
-          "pending_games": 25,
-          "winner_correct": 375,
+          "final_games": 684,
+          "pending_games": 23,
+          "winner_correct": 377,
           "totals_games": 454,
           "totals_correct": 233,
           "roi_bets": 3,
           "pnl": -300.0,
-          "winner_accuracy_pct": 54.99,
+          "winner_accuracy_pct": 55.12,
           "totals_accuracy_pct": 51.32
         }
       },
@@ -29076,11 +29080,11 @@
           "game_time_utc": "2026-08-19T18:20:00Z",
           "matchup_zh": "芝加哥白襪 @ 芝加哥小熊",
           "prediction_zh": "芝加哥小熊",
-          "confidence": 0.569,
-          "predicted_score_zh": "芝加哥白襪 4.33 : 芝加哥小熊 4.90",
+          "confidence": 0.5693,
+          "predicted_score_zh": "芝加哥白襪 4.33 : 芝加哥小熊 4.93",
           "predicted_away_score": 4.33,
-          "predicted_home_score": 4.9,
-          "predicted_score_total": 9.23,
+          "predicted_home_score": 4.93,
+          "predicted_score_total": 9.26,
           "score_pick_zh": "芝加哥小熊",
           "score_alignment": "一致",
           "score_total_side": "",
