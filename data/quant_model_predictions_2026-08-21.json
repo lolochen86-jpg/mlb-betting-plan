@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-21T05:28:11",
+  "generated_at": "2026-08-21T07:26:42",
   "target_date": "2026-08-21",
   "model": "Q-量化模型 XGBoost/Poisson Bundle 2026-07-16",
   "model_dir": "models/quant_bundle_2026_07_16",
@@ -26,7 +26,7 @@
   "summary": {
     "games": 15,
     "aligned_with_existing": 12,
-    "complete_data": 9,
+    "complete_data": 11,
     "holdout_moneyline_accuracy": 0.5208333333333334,
     "holdout_total_runs_mae": 3.406075860344923
   },
@@ -273,11 +273,11 @@
       "home_zh": "休士頓太空人",
       "quant_prediction_zh": "休士頓太空人",
       "quant_pick_side": "home",
-      "quant_confidence": 0.5763,
-      "home_win_probability": 0.5763,
-      "away_win_probability": 0.4237,
-      "predicted_away_score": 4.49,
-      "predicted_home_score": 5.01,
+      "quant_confidence": 0.6249,
+      "home_win_probability": 0.6249,
+      "away_win_probability": 0.3751,
+      "predicted_away_score": 4.32,
+      "predicted_home_score": 5.18,
       "predicted_total": 9.5,
       "total_line": 8.5,
       "totals_pick_zh": "大分",
@@ -287,10 +287,8 @@
       "official_model_pick_zh": "休士頓太空人",
       "unified_model_pick_zh": "休士頓太空人",
       "model_alignment": "一致",
-      "data_quality": "可用但需留意",
-      "missing_features": [
-        "home_probable_pitcher_not_fully_confirmed"
-      ]
+      "data_quality": "完整",
+      "missing_features": []
     },
     {
       "date": "2026-08-21",
@@ -302,25 +300,22 @@
       "home_zh": "德州遊騎兵",
       "quant_prediction_zh": "德州遊騎兵",
       "quant_pick_side": "home",
-      "quant_confidence": 0.6184,
-      "home_win_probability": 0.6184,
-      "away_win_probability": 0.3816,
-      "predicted_away_score": 5.49,
-      "predicted_home_score": 6.42,
-      "predicted_total": 11.91,
+      "quant_confidence": 0.5624,
+      "home_win_probability": 0.5624,
+      "away_win_probability": 0.4376,
+      "predicted_away_score": 4.54,
+      "predicted_home_score": 4.96,
+      "predicted_total": 9.5,
       "total_line": 8.5,
       "totals_pick_zh": "大分",
-      "totals_probability": 0.8389,
-      "over_probability": 0.8389,
-      "under_probability": 0.1611,
+      "totals_probability": 0.6081,
+      "over_probability": 0.6081,
+      "under_probability": 0.3919,
       "official_model_pick_zh": "德州遊騎兵",
       "unified_model_pick_zh": "德州遊騎兵",
       "model_alignment": "一致",
-      "data_quality": "可用但需留意",
-      "missing_features": [
-        "away_probable_pitcher_not_fully_confirmed",
-        "home_probable_pitcher_not_fully_confirmed"
-      ]
+      "data_quality": "完整",
+      "missing_features": []
     },
     {
       "date": "2026-08-21",

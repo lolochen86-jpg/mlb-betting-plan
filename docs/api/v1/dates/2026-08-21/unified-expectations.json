@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-08-21T05:26:58",
+  "generated_at": "2026-08-21T07:25:24",
   "target_date": "2026-08-21",
   "model": "統一得分期望 v1",
   "postgame_calibration": {
     "source": "postgame_review",
     "days": 10,
-    "games": 109,
-    "winner_accuracy": 0.5046,
-    "low_confidence_accuracy": 0.4853,
+    "games": 115,
+    "winner_accuracy": 0.513,
+    "low_confidence_accuracy": 0.4932,
     "score_total_bias": 0.0,
     "score_total_bias_applied": 0.0,
     "totals_recent_bias": 0.0,
@@ -19,11 +19,11 @@
     "totals_min_line_gap": 1.0,
     "mismatch_notes": 0,
     "reason_counts": {
-      "low_confidence_hit": 33,
-      "low_confidence_miss": 28,
+      "low_confidence_hit": 36,
+      "low_confidence_miss": 29,
       "high_confidence_miss": 19,
-      "one_run_volatility": 29,
-      "high_confidence_hit": 22
+      "one_run_volatility": 30,
+      "high_confidence_hit": 23
     },
     "data_gaps": [
       "高信心勝方失準偏多：優先補官方先發打線、牛棚可用性、傷兵/輪休。"
@@ -173,13 +173,13 @@
       "matchup_zh": "運動家 @ 休士頓太空人",
       "away_zh": "運動家",
       "home_zh": "休士頓太空人",
-      "away_expected_runs": 3.93,
+      "away_expected_runs": 4.08,
       "home_expected_runs": 5.3,
-      "expected_total": 9.23,
+      "expected_total": 9.38,
       "pick_side": "home",
       "prediction_zh": "休士頓太空人",
-      "home_win_prob": 0.6779,
-      "away_win_prob": 0.3221,
+      "home_win_prob": 0.6602,
+      "away_win_prob": 0.3398,
       "lineup_source": "projected_recent_lineup_order",
       "away_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
@@ -190,7 +190,7 @@
         "factor": 0.999
       },
       "away_pitcher_weight": 0.9,
-      "home_pitcher_weight": 0.75,
+      "home_pitcher_weight": 0.9,
       "weather": {
         "source": "open_meteo_forecast",
         "venue": "Daikin Park",
@@ -299,13 +299,13 @@
       "matchup_zh": "洛杉磯天使 @ 德州遊騎兵",
       "away_zh": "洛杉磯天使",
       "home_zh": "德州遊騎兵",
-      "away_expected_runs": 3.21,
-      "home_expected_runs": 3.74,
-      "expected_total": 6.95,
+      "away_expected_runs": 3.3,
+      "home_expected_runs": 3.39,
+      "expected_total": 6.69,
       "pick_side": "home",
       "prediction_zh": "德州遊騎兵",
-      "home_win_prob": 0.5713,
-      "away_win_prob": 0.4287,
+      "home_win_prob": 0.5116,
+      "away_win_prob": 0.4884,
       "lineup_source": "projected_recent_lineup_order",
       "away_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
@@ -315,8 +315,8 @@
         "source_quality": "projected_recent_lineup_order",
         "factor": 0.929
       },
-      "away_pitcher_weight": 0.75,
-      "home_pitcher_weight": 0.75,
+      "away_pitcher_weight": 0.9,
+      "home_pitcher_weight": 0.9,
       "weather": {
         "source": "open_meteo_forecast",
         "venue": "Globe Life Field",
@@ -427,11 +427,11 @@
       "home_zh": "紐約洋基",
       "away_expected_runs": 3.59,
       "home_expected_runs": 3.55,
-      "expected_total": 7.15,
+      "expected_total": 7.14,
       "pick_side": "away",
       "prediction_zh": "多倫多藍鳥",
-      "home_win_prob": 0.4942,
-      "away_win_prob": 0.5058,
+      "home_win_prob": 0.4937,
+      "away_win_prob": 0.5063,
       "lineup_source": "projected_recent_lineup_order",
       "away_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
@@ -808,8 +808,8 @@
       "expected_total": 9.33,
       "pick_side": "away",
       "prediction_zh": "坦帕灣光芒",
-      "home_win_prob": 0.4388,
-      "away_win_prob": 0.5612,
+      "home_win_prob": 0.4382,
+      "away_win_prob": 0.5618,
       "lineup_source": "projected_recent_lineup_order",
       "away_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
@@ -817,7 +817,7 @@
       },
       "home_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
-        "factor": 0.93
+        "factor": 0.929
       },
       "away_pitcher_weight": 0.9,
       "home_pitcher_weight": 0.9,
@@ -930,12 +930,12 @@
       "away_zh": "紐約大都會",
       "home_zh": "芝加哥白襪",
       "away_expected_runs": 4.09,
-      "home_expected_runs": 4.44,
+      "home_expected_runs": 4.43,
       "expected_total": 8.52,
       "pick_side": "home",
       "prediction_zh": "芝加哥白襪",
-      "home_win_prob": 0.5475,
-      "away_win_prob": 0.4525,
+      "home_win_prob": 0.5471,
+      "away_win_prob": 0.4529,
       "lineup_source": "projected_recent_lineup_order",
       "away_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
@@ -943,7 +943,7 @@
       },
       "home_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
-        "factor": 0.984
+        "factor": 0.983
       },
       "away_pitcher_weight": 0.9,
       "home_pitcher_weight": 0.9,
