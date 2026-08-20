@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-20T10:17:29",
+  "generated_at": "2026-08-20T11:46:56",
   "latest_review_date": "2026-08-20",
   "days": [
     {
@@ -28930,9 +28930,9 @@
       "phase": "賽後檢討",
       "summary": {
         "games": 15,
-        "final_games": 10,
-        "pending_games": 5,
-        "winner_correct": 5,
+        "final_games": 14,
+        "pending_games": 1,
+        "winner_correct": 7,
         "winner_accuracy_pct": 50.0,
         "totals_games": 0,
         "totals_correct": 0,
@@ -28941,23 +28941,26 @@
         "pnl": 0,
         "cumulative": {
           "games": 707,
-          "final_games": 694,
-          "pending_games": 13,
-          "winner_correct": 382,
+          "final_games": 698,
+          "pending_games": 9,
+          "winner_correct": 384,
           "totals_games": 454,
           "totals_correct": 233,
           "roi_bets": 3,
           "pnl": -300.0,
-          "winner_accuracy_pct": 55.04,
+          "winner_accuracy_pct": 55.01,
           "totals_accuracy_pct": 51.32
         }
       },
       "highlights": [
-        "邁阿密馬林魚 @ 費城費城人：高信心勝方命中。"
+        "邁阿密馬林魚 @ 費城費城人：高信心勝方命中。",
+        "洛杉磯天使 @ 休士頓太空人：高信心勝方命中。"
       ],
       "misses": [
         "芝加哥白襪 @ 芝加哥小熊：芝加哥小熊 未命中，比分 3-0。",
-        "亞利桑那響尾蛇 @ 波士頓紅襪：波士頓紅襪 未命中，比分 7-6。"
+        "亞利桑那響尾蛇 @ 波士頓紅襪：波士頓紅襪 未命中，比分 7-6。",
+        "西雅圖水手 @ 密爾瓦基釀酒人：密爾瓦基釀酒人 未命中，比分 7-5。",
+        "華盛頓國民 @ 德州遊騎兵：德州遊騎兵 未命中，比分 6-0。"
       ],
       "games": [
         {
@@ -29371,21 +29374,21 @@
             "勝方一致",
             "無台灣運彩大小分盤口"
           ],
-          "score": "",
-          "actual_winner_zh": "",
-          "winner_correct": null,
+          "score": "7-5",
+          "actual_winner_zh": "西雅圖水手",
+          "winner_correct": false,
           "total_line": null,
           "predicted_total": null,
-          "actual_total": null,
+          "actual_total": 12,
           "total_pick": "",
           "total_correct": null,
           "roi_settlement": "",
           "pnl": 0.0,
           "reason_codes": [
-            "pending"
+            "high_confidence_miss"
           ],
           "notes": [
-            "尚未完賽，等待賽後自動結算真實比分。"
+            "高信心失準，需要回看先發投手、牛棚或打線是否有臨場變化。"
           ]
         },
         {
@@ -29409,21 +29412,21 @@
             "勝方一致",
             "無台灣運彩大小分盤口"
           ],
-          "score": "",
-          "actual_winner_zh": "",
-          "winner_correct": null,
+          "score": "7-9",
+          "actual_winner_zh": "堪薩斯市皇家",
+          "winner_correct": true,
           "total_line": null,
           "predicted_total": null,
-          "actual_total": null,
+          "actual_total": 16,
           "total_pick": "",
           "total_correct": null,
           "roi_settlement": "",
           "pnl": 0.0,
           "reason_codes": [
-            "pending"
+            "low_confidence_hit"
           ],
           "notes": [
-            "尚未完賽，等待賽後自動結算真實比分。"
+            "方向正確，但信心不高，較適合作為觀察而非重注。"
           ]
         },
         {
@@ -29447,21 +29450,21 @@
             "勝方分歧",
             "無台灣運彩大小分盤口"
           ],
-          "score": "",
-          "actual_winner_zh": "",
-          "winner_correct": null,
+          "score": "6-0",
+          "actual_winner_zh": "華盛頓國民",
+          "winner_correct": false,
           "total_line": null,
           "predicted_total": null,
-          "actual_total": null,
+          "actual_total": 6,
           "total_pick": "",
           "total_correct": null,
           "roi_settlement": "",
           "pnl": 0.0,
           "reason_codes": [
-            "pending"
+            "high_confidence_miss"
           ],
           "notes": [
-            "尚未完賽，等待賽後自動結算真實比分。"
+            "高信心失準，需要回看先發投手、牛棚或打線是否有臨場變化。"
           ]
         },
         {
@@ -29485,21 +29488,23 @@
             "勝方一致",
             "無台灣運彩大小分盤口"
           ],
-          "score": "",
-          "actual_winner_zh": "",
-          "winner_correct": null,
+          "score": "2-3",
+          "actual_winner_zh": "休士頓太空人",
+          "winner_correct": true,
           "total_line": null,
           "predicted_total": null,
-          "actual_total": null,
+          "actual_total": 5,
           "total_pick": "",
           "total_correct": null,
           "roi_settlement": "",
           "pnl": 0.0,
           "reason_codes": [
-            "pending"
+            "high_confidence_hit",
+            "one_run_volatility"
           ],
           "notes": [
-            "尚未完賽，等待賽後自動結算真實比分。"
+            "高信心方向有命中，這類條件可列為穩定樣本繼續追蹤。",
+            "一分差比賽，模型即使方向錯也屬高波動結果。"
           ]
         },
         {
@@ -29558,14 +29563,14 @@
         "pnl": 0,
         "cumulative": {
           "games": 716,
-          "final_games": 694,
-          "pending_games": 22,
-          "winner_correct": 382,
+          "final_games": 698,
+          "pending_games": 18,
+          "winner_correct": 384,
           "totals_games": 454,
           "totals_correct": 233,
           "roi_bets": 3,
           "pnl": -300.0,
-          "winner_accuracy_pct": 55.04,
+          "winner_accuracy_pct": 55.01,
           "totals_accuracy_pct": 51.32
         }
       },
@@ -29697,11 +29702,11 @@
           "game_time_utc": "2026-08-20T18:10:00Z",
           "matchup_zh": "西雅圖水手 @ 密爾瓦基釀酒人",
           "prediction_zh": "密爾瓦基釀酒人",
-          "confidence": 0.5662,
-          "predicted_score_zh": "西雅圖水手 3.77 : 密爾瓦基釀酒人 4.91",
-          "predicted_away_score": 3.77,
-          "predicted_home_score": 4.91,
-          "predicted_score_total": 8.67,
+          "confidence": 0.5668,
+          "predicted_score_zh": "西雅圖水手 3.78 : 密爾瓦基釀酒人 4.94",
+          "predicted_away_score": 3.78,
+          "predicted_home_score": 4.94,
+          "predicted_score_total": 8.72,
           "score_pick_zh": "密爾瓦基釀酒人",
           "score_alignment": "一致",
           "score_total_side": "",
@@ -29850,10 +29855,10 @@
           "matchup_zh": "華盛頓國民 @ 德州遊騎兵",
           "prediction_zh": "德州遊騎兵",
           "confidence": 0.558,
-          "predicted_score_zh": "華盛頓國民 4.23 : 德州遊騎兵 3.86",
-          "predicted_away_score": 4.23,
-          "predicted_home_score": 3.86,
-          "predicted_score_total": 8.09,
+          "predicted_score_zh": "華盛頓國民 4.20 : 德州遊騎兵 3.79",
+          "predicted_away_score": 4.2,
+          "predicted_home_score": 3.79,
+          "predicted_score_total": 7.99,
           "score_pick_zh": "華盛頓國民",
           "score_alignment": "模型分歧",
           "score_total_side": "",
@@ -29888,10 +29893,10 @@
           "matchup_zh": "洛杉磯天使 @ 休士頓太空人",
           "prediction_zh": "休士頓太空人",
           "confidence": 0.5655,
-          "predicted_score_zh": "洛杉磯天使 3.23 : 休士頓太空人 4.71",
-          "predicted_away_score": 3.23,
+          "predicted_score_zh": "洛杉磯天使 3.22 : 休士頓太空人 4.71",
+          "predicted_away_score": 3.22,
           "predicted_home_score": 4.71,
-          "predicted_score_total": 7.94,
+          "predicted_score_total": 7.93,
           "score_pick_zh": "休士頓太空人",
           "score_alignment": "一致",
           "score_total_side": "",

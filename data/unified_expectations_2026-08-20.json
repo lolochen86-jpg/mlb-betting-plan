@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-08-20T10:16:44",
+  "generated_at": "2026-08-20T11:46:11",
   "target_date": "2026-08-20",
   "model": "統一得分期望 v1",
   "postgame_calibration": {
     "source": "postgame_review",
     "days": 10,
-    "games": 113,
-    "winner_accuracy": 0.4956,
-    "low_confidence_accuracy": 0.4521,
+    "games": 119,
+    "winner_accuracy": 0.5042,
+    "low_confidence_accuracy": 0.4675,
     "score_total_bias": 0.0,
     "score_total_bias_applied": 0.0,
     "totals_recent_bias": 0.0,
@@ -19,11 +19,11 @@
     "totals_min_line_gap": 1.0,
     "mismatch_notes": 0,
     "reason_counts": {
-      "low_confidence_hit": 33,
-      "high_confidence_hit": 23,
-      "low_confidence_miss": 32,
-      "one_run_volatility": 28,
-      "high_confidence_miss": 17
+      "low_confidence_hit": 36,
+      "high_confidence_hit": 24,
+      "low_confidence_miss": 33,
+      "one_run_volatility": 32,
+      "high_confidence_miss": 18
     },
     "data_gaps": [
       "高信心勝方失準偏多：優先補官方先發打線、牛棚可用性、傷兵/輪休。"
@@ -47,21 +47,21 @@
       "matchup_zh": "西雅圖水手 @ 密爾瓦基釀酒人",
       "away_zh": "西雅圖水手",
       "home_zh": "密爾瓦基釀酒人",
-      "away_expected_runs": 3.77,
-      "home_expected_runs": 4.91,
-      "expected_total": 8.67,
+      "away_expected_runs": 3.78,
+      "home_expected_runs": 4.94,
+      "expected_total": 8.72,
       "pick_side": "home",
       "prediction_zh": "密爾瓦基釀酒人",
-      "home_win_prob": 0.6492,
-      "away_win_prob": 0.3508,
+      "home_win_prob": 0.6516,
+      "away_win_prob": 0.3484,
       "lineup_source": "projected_recent_lineup_order",
       "away_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
-        "factor": 0.994
+        "factor": 0.997
       },
       "home_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
-        "factor": 1.002
+        "factor": 0.997
       },
       "away_pitcher_weight": 0.9,
       "home_pitcher_weight": 0.9,
@@ -110,21 +110,21 @@
       "matchup_zh": "洛杉磯天使 @ 休士頓太空人",
       "away_zh": "洛杉磯天使",
       "home_zh": "休士頓太空人",
-      "away_expected_runs": 3.23,
+      "away_expected_runs": 3.22,
       "home_expected_runs": 4.71,
-      "expected_total": 7.94,
+      "expected_total": 7.93,
       "pick_side": "home",
       "prediction_zh": "休士頓太空人",
-      "home_win_prob": 0.6907,
-      "away_win_prob": 0.3093,
+      "home_win_prob": 0.6906,
+      "away_win_prob": 0.3094,
       "lineup_source": "projected_recent_lineup_order",
       "away_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
-        "factor": 0.926
+        "factor": 0.924
       },
       "home_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
-        "factor": 1.001
+        "factor": 0.999
       },
       "away_pitcher_weight": 0.9,
       "home_pitcher_weight": 0.9,
@@ -173,21 +173,21 @@
       "matchup_zh": "華盛頓國民 @ 德州遊騎兵",
       "away_zh": "華盛頓國民",
       "home_zh": "德州遊騎兵",
-      "away_expected_runs": 4.23,
-      "home_expected_runs": 3.86,
-      "expected_total": 8.09,
+      "away_expected_runs": 4.2,
+      "home_expected_runs": 3.79,
+      "expected_total": 7.99,
       "pick_side": "away",
       "prediction_zh": "華盛頓國民",
-      "home_win_prob": 0.4506,
-      "away_win_prob": 0.5494,
+      "home_win_prob": 0.4442,
+      "away_win_prob": 0.5558,
       "lineup_source": "projected_recent_lineup_order",
       "away_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
-        "factor": 0.99
+        "factor": 0.985
       },
       "home_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
-        "factor": 0.947
+        "factor": 0.929
       },
       "away_pitcher_weight": 0.9,
       "home_pitcher_weight": 0.9,
