@@ -40,7 +40,7 @@
             "full",
             "dark"
           ],
-          "lastUpdated": "2026-08-20T20:21Z"
+          "lastUpdated": "2026-08-20T10:53Z"
         }
       ],
       "calendarType": "day",
@@ -955,8 +955,8 @@
           },
           "tickets": [
             {
-              "summary": "Tickets as low as $16",
-              "numberAvailable": 634,
+              "summary": "Tickets as low as $17",
+              "numberAvailable": 555,
               "links": [
                 {
                   "href": "https://www.vividseats.com/milwaukee-brewers-tickets-american-family-field-5-18-2026--sports-mlb-baseball/production/5965430?wsUser=717"
@@ -1158,7 +1158,7 @@
                 "home": {
                   "close": {
                     "line": "-1.5",
-                    "odds": "+162",
+                    "odds": "+159",
                     "link": {
                       "language": "en-US",
                       "rel": [
@@ -1192,7 +1192,7 @@
                 "away": {
                   "close": {
                     "line": "+1.5",
-                    "odds": "-198",
+                    "odds": "-194",
                     "link": {
                       "language": "en-US",
                       "rel": [
@@ -1230,7 +1230,7 @@
                 "over": {
                   "close": {
                     "line": "o6",
-                    "odds": "-108",
+                    "odds": "-112",
                     "link": {
                       "language": "en-US",
                       "rel": [
@@ -1264,7 +1264,7 @@
                 "under": {
                   "close": {
                     "line": "u6",
-                    "odds": "-111",
+                    "odds": "-107",
                     "link": {
                       "language": "en-US",
                       "rel": [
@@ -2285,7 +2285,7 @@
           "tickets": [
             {
               "summary": "Tickets as low as $61",
-              "numberAvailable": 1726,
+              "numberAvailable": 1682,
               "links": [
                 {
                   "href": "https://www.vividseats.com/philadelphia-phillies-tickets-citizens-bank-park-8-21-2026--sports-mlb-baseball/production/5966784?wsUser=717"
@@ -2347,14 +2347,311 @@
               "region": "us"
             }
           ],
-          "highlights": [],
+          "odds": [
+            {
+              "provider": {
+                "id": "100",
+                "name": "DraftKings",
+                "priority": 1,
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/betting/Draftkings_Light.svg",
+                    "rel": [
+                      "light"
+                    ]
+                  },
+                  {
+                    "href": "https://a.espncdn.com/i/betting/Draftkings_Dark.svg",
+                    "rel": [
+                      "dark"
+                    ]
+                  }
+                ]
+              },
+              "details": "PHI -206",
+              "overUnder": 8.5,
+              "spread": -1.5,
+              "awayTeamOdds": {
+                "favorite": false,
+                "underdog": true,
+                "team": {
+                  "id": "24",
+                  "uid": "s:1~l:10~t:24",
+                  "abbreviation": "STL",
+                  "name": "Cardinals",
+                  "displayName": "St. Louis Cardinals",
+                  "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/stl.png"
+                },
+                "favoriteAtOpen": false
+              },
+              "homeTeamOdds": {
+                "favorite": true,
+                "underdog": false,
+                "team": {
+                  "id": "22",
+                  "uid": "s:1~l:10~t:22",
+                  "abbreviation": "PHI",
+                  "name": "Phillies",
+                  "displayName": "Philadelphia Phillies",
+                  "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/phi.png"
+                },
+                "favoriteAtOpen": true
+              },
+              "moneyline": {
+                "displayName": "Moneyline",
+                "shortDisplayName": "ML",
+                "home": {
+                  "close": {
+                    "odds": "-206",
+                    "link": {
+                      "language": "en-US",
+                      "rel": [
+                        "home",
+                        "desktop",
+                        "bets"
+                      ],
+                      "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34547407%3Foutcomes%3D0ML85950502_1",
+                      "text": "Home Bet",
+                      "shortText": "Home Bet",
+                      "isExternal": true,
+                      "isPremium": false,
+                      "tracking": {
+                        "campaign": "betting-integrations",
+                        "tags": {
+                          "league": "mlb",
+                          "sport": "baseball",
+                          "gameId": 401816611,
+                          "betSide": "home",
+                          "betType": "straight"
+                        }
+                      }
+                    }
+                  },
+                  "open": {
+                    "odds": "-206"
+                  }
+                },
+                "away": {
+                  "close": {
+                    "odds": "+191",
+                    "link": {
+                      "language": "en-US",
+                      "rel": [
+                        "away",
+                        "desktop",
+                        "bets"
+                      ],
+                      "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34547407%3Foutcomes%3D0ML85950502_3",
+                      "text": "Away Bet",
+                      "shortText": "Away Bet",
+                      "isExternal": true,
+                      "isPremium": false,
+                      "tracking": {
+                        "campaign": "betting-integrations",
+                        "tags": {
+                          "league": "mlb",
+                          "sport": "baseball",
+                          "gameId": 401816611,
+                          "betSide": "away",
+                          "betType": "straight"
+                        }
+                      }
+                    }
+                  },
+                  "open": {
+                    "odds": "+169"
+                  }
+                }
+              },
+              "pointSpread": {
+                "displayName": "Runline",
+                "shortDisplayName": "RL",
+                "home": {
+                  "close": {
+                    "line": "-1.5",
+                    "odds": "+109",
+                    "link": {
+                      "language": "en-US",
+                      "rel": [
+                        "homeSpread",
+                        "desktop",
+                        "bets"
+                      ],
+                      "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34547407%3Foutcomes%3D0HC85950502N150_1",
+                      "text": "Home Point Spread",
+                      "shortText": "Home Point Spread",
+                      "isExternal": true,
+                      "isPremium": false,
+                      "tracking": {
+                        "campaign": "betting-integrations",
+                        "tags": {
+                          "league": "mlb",
+                          "sport": "baseball",
+                          "gameId": 401816611,
+                          "betSide": "none",
+                          "betType": "straight",
+                          "betDetails": "Spread:PHI-1.5"
+                        }
+                      }
+                    }
+                  },
+                  "open": {
+                    "line": "-1.5",
+                    "odds": "+109"
+                  }
+                },
+                "away": {
+                  "close": {
+                    "line": "+1.5",
+                    "odds": "-131",
+                    "link": {
+                      "language": "en-US",
+                      "rel": [
+                        "awaySpread",
+                        "desktop",
+                        "bets"
+                      ],
+                      "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34547407%3Foutcomes%3D0HC85950502P150_3",
+                      "text": "Away Point Spread",
+                      "shortText": "Away Point Spread",
+                      "isExternal": true,
+                      "isPremium": false,
+                      "tracking": {
+                        "campaign": "betting-integrations",
+                        "tags": {
+                          "league": "mlb",
+                          "sport": "baseball",
+                          "gameId": 401816611,
+                          "betSide": "none",
+                          "betType": "straight",
+                          "betDetails": "Spread:STL+1.5"
+                        }
+                      }
+                    }
+                  },
+                  "open": {
+                    "line": "+1.5",
+                    "odds": "-132"
+                  }
+                }
+              },
+              "total": {
+                "displayName": "Total Runs",
+                "shortDisplayName": "Total",
+                "over": {
+                  "close": {
+                    "line": "o8.5",
+                    "odds": "-102",
+                    "link": {
+                      "language": "en-US",
+                      "rel": [
+                        "over",
+                        "desktop",
+                        "bets"
+                      ],
+                      "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34547407%3Foutcomes%3D0OU85950502O850_1",
+                      "text": "Over Odds",
+                      "shortText": "Over Odds",
+                      "isExternal": true,
+                      "isPremium": false,
+                      "tracking": {
+                        "campaign": "betting-integrations",
+                        "tags": {
+                          "league": "mlb",
+                          "sport": "baseball",
+                          "gameId": 401816611,
+                          "betSide": "over",
+                          "betType": "straight",
+                          "betDetails": "Over:8.5"
+                        }
+                      }
+                    }
+                  },
+                  "open": {
+                    "line": "o8",
+                    "odds": "-102"
+                  }
+                },
+                "under": {
+                  "close": {
+                    "line": "u8.5",
+                    "odds": "-118",
+                    "link": {
+                      "language": "en-US",
+                      "rel": [
+                        "under",
+                        "desktop",
+                        "bets"
+                      ],
+                      "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34547407%3Foutcomes%3D0OU85950502U850_3",
+                      "text": "Under Odds",
+                      "shortText": "Under Odds",
+                      "isExternal": true,
+                      "isPremium": false,
+                      "tracking": {
+                        "campaign": "betting-integrations",
+                        "tags": {
+                          "league": "mlb",
+                          "sport": "baseball",
+                          "gameId": 401816611,
+                          "betSide": "under",
+                          "betType": "straight",
+                          "betDetails": "Under:8.5"
+                        }
+                      }
+                    }
+                  },
+                  "open": {
+                    "line": "u8",
+                    "odds": "-118"
+                  }
+                }
+              },
+              "link": {
+                "language": "en-US",
+                "rel": [
+                  "game",
+                  "desktop",
+                  "bets"
+                ],
+                "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34547407",
+                "text": "See More Odds",
+                "shortText": "Game",
+                "isExternal": true,
+                "isPremium": false,
+                "tracking": {
+                  "campaign": "betting-integrations",
+                  "tags": {
+                    "league": "mlb",
+                    "sport": "baseball",
+                    "gameId": 401816611,
+                    "betSide": "none",
+                    "betType": "straight"
+                  }
+                }
+              },
+              "header": {
+                "logo": {
+                  "dark": "https://a.espncdn.com/i/espnbet/dark/espn-bet-square-off.svg",
+                  "light": "https://a.espncdn.com/i/espnbet/espn-bet-square-off.svg",
+                  "exclusivesLogoDark": "https://a.espncdn.com/i/espnbet/espn-bet-square-mint.svg",
+                  "exclusivesLogoLight": "https://a.espncdn.com/i/espnbet/espn-bet-square-mint.svg"
+                },
+                "text": "Game Odds"
+              },
+              "footer": {
+                "disclaimer": "GAMBLING PROBLEM? CALL 1-800-GAMBLER or 1-800-MY-RESET, (800) 327-5050 or visit gamblinghelplinema.org (MA). Call 877-8-HOPENY/text HOPENY (467369) (NY). Call 888-789-7777/visit ccpg.org (CT), or visit www.mdgamblinghelp.org (MD), 1-800-981-0023 (PR). 21+ and present in most states. (18+ DC/KY/NH/PR/WY). Void in ONT. Eligibility restrictions apply. Terms: draftkings.com/sportsbook. On behalf of Boot Hill Casino (KS). Pass-thru of per wager tax may apply in IL."
+              }
+            }
+          ],
           "headlines": [
             {
               "type": "Preview",
               "description": "St. Louis Cardinals (66-63, third in the NL Central) vs. Philadelphia Phillies (70-58, second in the NL East)",
               "shortLinkText": "Phillies host the Cardinals on 4-game home win streak"
             }
-          ]
+          ],
+          "highlights": []
         }
       ],
       "links": [
@@ -3237,7 +3534,7 @@
           "tickets": [
             {
               "summary": "Tickets as low as $34",
-              "numberAvailable": 2157,
+              "numberAvailable": 2098,
               "links": [
                 {
                   "href": "https://www.vividseats.com/new-york-yankees-tickets-yankee-stadium-8-21-2026--sports-mlb-baseball/production/5965612?wsUser=717"
@@ -3335,7 +3632,7 @@
                   }
                 ]
               },
-              "details": "NYY -259",
+              "details": "NYY -249",
               "overUnder": 7.5,
               "spread": -1.5,
               "awayTeamOdds": {
@@ -3369,7 +3666,7 @@
                 "shortDisplayName": "ML",
                 "home": {
                   "close": {
-                    "odds": "-259",
+                    "odds": "-249",
                     "link": {
                       "language": "en-US",
                       "rel": [
@@ -3400,7 +3697,7 @@
                 },
                 "away": {
                   "close": {
-                    "odds": "+209",
+                    "odds": "+230",
                     "link": {
                       "language": "en-US",
                       "rel": [
@@ -3436,7 +3733,7 @@
                 "home": {
                   "close": {
                     "line": "-1.5",
-                    "odds": "+104",
+                    "odds": "+100",
                     "link": {
                       "language": "en-US",
                       "rel": [
@@ -3470,7 +3767,7 @@
                 "away": {
                   "close": {
                     "line": "+1.5",
-                    "odds": "-126",
+                    "odds": "-120",
                     "link": {
                       "language": "en-US",
                       "rel": [
@@ -4564,7 +4861,7 @@
           "tickets": [
             {
               "summary": "Tickets as low as $97",
-              "numberAvailable": 1799,
+              "numberAvailable": 1791,
               "links": [
                 {
                   "href": "https://www.vividseats.com/boston-red-sox-tickets-fenway-park-8-21-2026--sports-mlb-baseball/production/5966858?wsUser=717"
@@ -4647,7 +4944,7 @@
                   }
                 ]
               },
-              "details": "BOS -186",
+              "details": "BOS -176",
               "overUnder": 7.5,
               "spread": -1.5,
               "awayTeamOdds": {
@@ -4681,7 +4978,7 @@
                 "shortDisplayName": "ML",
                 "home": {
                   "close": {
-                    "odds": "-186",
+                    "odds": "-176",
                     "link": {
                       "language": "en-US",
                       "rel": [
@@ -4712,7 +5009,7 @@
                 },
                 "away": {
                   "close": {
-                    "odds": "+153",
+                    "odds": "+163",
                     "link": {
                       "language": "en-US",
                       "rel": [
@@ -4748,7 +5045,7 @@
                 "home": {
                   "close": {
                     "line": "-1.5",
-                    "odds": "+119",
+                    "odds": "+118",
                     "link": {
                       "language": "en-US",
                       "rel": [
@@ -4782,7 +5079,7 @@
                 "away": {
                   "close": {
                     "line": "+1.5",
-                    "odds": "-143",
+                    "odds": "-142",
                     "link": {
                       "language": "en-US",
                       "rel": [
@@ -5874,7 +6171,7 @@
           "tickets": [
             {
               "summary": "Tickets as low as $7",
-              "numberAvailable": 1870,
+              "numberAvailable": 1656,
               "links": [
                 {
                   "href": "https://www.vividseats.com/miami-marlins-tickets-loandepot-park-8-21-2026--sports-mlb-baseball/production/5966135?wsUser=717"
@@ -5957,7 +6254,7 @@
                   }
                 ]
               },
-              "details": "MIA -150",
+              "details": "MIA -141",
               "overUnder": 8.0,
               "spread": -1.5,
               "awayTeamOdds": {
@@ -5991,7 +6288,7 @@
                 "shortDisplayName": "ML",
                 "home": {
                   "close": {
-                    "odds": "-150",
+                    "odds": "-141",
                     "link": {
                       "language": "en-US",
                       "rel": [
@@ -6022,7 +6319,7 @@
                 },
                 "away": {
                   "close": {
-                    "odds": "+124",
+                    "odds": "+131",
                     "link": {
                       "language": "en-US",
                       "rel": [
@@ -7173,7 +7470,7 @@
           "tickets": [
             {
               "summary": "Tickets as low as $14",
-              "numberAvailable": 2194,
+              "numberAvailable": 2005,
               "links": [
                 {
                   "href": "https://www.vividseats.com/baltimore-orioles-tickets-oriole-park-at-camden-yards-8-21-2026--sports-mlb-baseball/production/5965832?wsUser=717"
@@ -7224,7 +7521,7 @@
                   }
                 ]
               },
-              "details": "BAL -131",
+              "details": "BAL -124",
               "overUnder": 8.5,
               "spread": -1.5,
               "awayTeamOdds": {
@@ -7258,7 +7555,7 @@
                 "shortDisplayName": "ML",
                 "home": {
                   "close": {
-                    "odds": "-131",
+                    "odds": "-124",
                     "link": {
                       "language": "en-US",
                       "rel": [
@@ -7289,7 +7586,7 @@
                 },
                 "away": {
                   "close": {
-                    "odds": "+109",
+                    "odds": "+116",
                     "link": {
                       "language": "en-US",
                       "rel": [
@@ -7500,14 +7797,14 @@
               }
             }
           ],
-          "highlights": [],
           "headlines": [
             {
               "type": "Preview",
               "description": "Tampa Bay Rays (76-51, first in the AL East) vs. Baltimore Orioles (61-67, fifth in the AL East)",
               "shortLinkText": "Orioles host the Rays to start 3-game series"
             }
-          ]
+          ],
+          "highlights": []
         }
       ],
       "links": [
@@ -8452,7 +8749,7 @@
           "tickets": [
             {
               "summary": "Tickets as low as $20",
-              "numberAvailable": 2279,
+              "numberAvailable": 2229,
               "links": [
                 {
                   "href": "https://www.vividseats.com/chicago-white-sox-tickets-rate-field-8-21-2026--sports-mlb-baseball/production/5965318?wsUser=717"
@@ -9758,7 +10055,7 @@
           "tickets": [
             {
               "summary": "Tickets as low as $14",
-              "numberAvailable": 2891,
+              "numberAvailable": 2867,
               "links": [
                 {
                   "href": "https://www.vividseats.com/houston-astros-tickets-daikin-park-8-21-2026--sports-mlb-baseball/production/5966409?wsUser=717"
@@ -9841,7 +10138,7 @@
                   }
                 ]
               },
-              "details": "HOU -194",
+              "details": "HOU -193",
               "overUnder": 8.0,
               "spread": -1.5,
               "awayTeamOdds": {
@@ -9875,7 +10172,7 @@
                 "shortDisplayName": "ML",
                 "home": {
                   "close": {
-                    "odds": "-194",
+                    "odds": "-193",
                     "link": {
                       "language": "en-US",
                       "rel": [
@@ -9906,7 +10203,7 @@
                 },
                 "away": {
                   "close": {
-                    "odds": "+159",
+                    "odds": "+158",
                     "link": {
                       "language": "en-US",
                       "rel": [
@@ -9942,7 +10239,7 @@
                 "home": {
                   "close": {
                     "line": "-1.5",
-                    "odds": "+112",
+                    "odds": "+113",
                     "link": {
                       "language": "en-US",
                       "rel": [
@@ -9976,7 +10273,7 @@
                 "away": {
                   "close": {
                     "line": "+1.5",
-                    "odds": "-135",
+                    "odds": "-136",
                     "link": {
                       "language": "en-US",
                       "rel": [
@@ -10014,7 +10311,7 @@
                 "over": {
                   "close": {
                     "line": "o8",
-                    "odds": "-119",
+                    "odds": "-117",
                     "link": {
                       "language": "en-US",
                       "rel": [
@@ -10048,7 +10345,7 @@
                 "under": {
                   "close": {
                     "line": "u8",
-                    "odds": "-101",
+                    "odds": "-103",
                     "link": {
                       "language": "en-US",
                       "rel": [
@@ -11070,7 +11367,7 @@
           "tickets": [
             {
               "summary": "Tickets as low as $24",
-              "numberAvailable": 1079,
+              "numberAvailable": 908,
               "links": [
                 {
                   "href": "https://www.vividseats.com/kansas-city-royals-tickets-kauffman-stadium-8-21-2026--sports-mlb-baseball/production/5965391?wsUser=717"
@@ -11269,7 +11566,7 @@
                 "home": {
                   "close": {
                     "line": "+1.5",
-                    "odds": "-173",
+                    "odds": "-172",
                     "link": {
                       "language": "en-US",
                       "rel": [
@@ -11303,7 +11600,7 @@
                 "away": {
                   "close": {
                     "line": "-1.5",
-                    "odds": "+143",
+                    "odds": "+142",
                     "link": {
                       "language": "en-US",
                       "rel": [
@@ -11341,7 +11638,7 @@
                 "over": {
                   "close": {
                     "line": "o8.5",
-                    "odds": "-102",
+                    "odds": "-103",
                     "link": {
                       "language": "en-US",
                       "rel": [
@@ -11375,7 +11672,7 @@
                 "under": {
                   "close": {
                     "line": "u8.5",
-                    "odds": "-118",
+                    "odds": "-117",
                     "link": {
                       "language": "en-US",
                       "rel": [
@@ -12385,7 +12682,7 @@
           "tickets": [
             {
               "summary": "Tickets as low as $9",
-              "numberAvailable": 2408,
+              "numberAvailable": 2052,
               "links": [
                 {
                   "href": "https://www.vividseats.com/texas-rangers-tickets-globe-life-field-8-21-2026--sports-mlb-baseball/production/5967568?wsUser=717"
@@ -12712,14 +13009,14 @@
               }
             }
           ],
+          "highlights": [],
           "headlines": [
             {
               "type": "Preview",
               "description": "Los Angeles Angels (51-77, fourth in the AL West) vs. Texas Rangers (63-65, second in the AL West)",
               "shortLinkText": "Neto leads Angels against the Rangers after 5-hit performance"
             }
-          ],
-          "highlights": []
+          ]
         }
       ],
       "links": [
@@ -12752,8 +13049,8 @@
       ],
       "weather": {
         "displayValue": "35",
-        "temperature": 86,
-        "highTemperature": 86,
+        "temperature": 83,
+        "highTemperature": 83,
         "conditionId": "Partly cloudy",
         "link": {
           "language": "en-US",
@@ -13663,7 +13960,7 @@
           "tickets": [
             {
               "summary": "Tickets as low as $12",
-              "numberAvailable": 2701,
+              "numberAvailable": 2671,
               "links": [
                 {
                   "href": "https://www.vividseats.com/colorado-rockies-tickets-coors-field-8-21-2026--sports-mlb-baseball/production/5966637?wsUser=717"
@@ -13847,7 +14144,7 @@
                 "home": {
                   "close": {
                     "line": "+1.5",
-                    "odds": "-120",
+                    "odds": "-118",
                     "link": {
                       "language": "en-US",
                       "rel": [
@@ -13881,7 +14178,7 @@
                 "away": {
                   "close": {
                     "line": "-1.5",
-                    "odds": "+100",
+                    "odds": "-102",
                     "link": {
                       "language": "en-US",
                       "rel": [
@@ -13919,7 +14216,7 @@
                 "over": {
                   "close": {
                     "line": "o10.5",
-                    "odds": "-118",
+                    "odds": "-112",
                     "link": {
                       "language": "en-US",
                       "rel": [
@@ -13953,7 +14250,7 @@
                 "under": {
                   "close": {
                     "line": "u10.5",
-                    "odds": "-102",
+                    "odds": "-108",
                     "link": {
                       "language": "en-US",
                       "rel": [
@@ -14974,7 +15271,7 @@
           "tickets": [
             {
               "summary": "Tickets as low as $22",
-              "numberAvailable": 1802,
+              "numberAvailable": 1265,
               "links": [
                 {
                   "href": "https://www.vividseats.com/arizona-diamondbacks-tickets-chase-field-8-21-2026--sports-mlb-baseball/production/5965543?wsUser=717"
@@ -15333,14 +15630,14 @@
               }
             }
           ],
-          "highlights": [],
           "headlines": [
             {
               "type": "Preview",
               "description": "Cincinnati Reds (61-67, fifth in the NL Central) vs. Arizona Diamondbacks (67-61, third in the NL West)",
               "shortLinkText": "Reds visit the Diamondbacks to start 3-game series"
             }
-          ]
+          ],
+          "highlights": []
         }
       ],
       "links": [
@@ -16300,8 +16597,8 @@
           },
           "tickets": [
             {
-              "summary": "Tickets as low as $35",
-              "numberAvailable": 1764,
+              "summary": "Tickets as low as $36",
+              "numberAvailable": 1776,
               "links": [
                 {
                   "href": "https://www.vividseats.com/san-diego-padres-tickets-petco-park-8-21-2026--sports-mlb-baseball/production/5966621?wsUser=717"
@@ -16363,14 +16660,311 @@
               "region": "us"
             }
           ],
+          "odds": [
+            {
+              "provider": {
+                "id": "100",
+                "name": "DraftKings",
+                "priority": 1,
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/betting/Draftkings_Light.svg",
+                    "rel": [
+                      "light"
+                    ]
+                  },
+                  {
+                    "href": "https://a.espncdn.com/i/betting/Draftkings_Dark.svg",
+                    "rel": [
+                      "dark"
+                    ]
+                  }
+                ]
+              },
+              "details": "SD -149",
+              "overUnder": 8.0,
+              "spread": -1.5,
+              "awayTeamOdds": {
+                "favorite": false,
+                "underdog": true,
+                "team": {
+                  "id": "9",
+                  "uid": "s:1~l:10~t:9",
+                  "abbreviation": "MIN",
+                  "name": "Twins",
+                  "displayName": "Minnesota Twins",
+                  "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/min.png"
+                },
+                "favoriteAtOpen": false
+              },
+              "homeTeamOdds": {
+                "favorite": true,
+                "underdog": false,
+                "team": {
+                  "id": "25",
+                  "uid": "s:1~l:10~t:25",
+                  "abbreviation": "SD",
+                  "name": "Padres",
+                  "displayName": "San Diego Padres",
+                  "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/sd.png"
+                },
+                "favoriteAtOpen": true
+              },
+              "moneyline": {
+                "displayName": "Moneyline",
+                "shortDisplayName": "ML",
+                "home": {
+                  "close": {
+                    "odds": "-149",
+                    "link": {
+                      "language": "en-US",
+                      "rel": [
+                        "home",
+                        "desktop",
+                        "bets"
+                      ],
+                      "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34547456%3Foutcomes%3D0ML85950631_1",
+                      "text": "Home Bet",
+                      "shortText": "Home Bet",
+                      "isExternal": true,
+                      "isPremium": false,
+                      "tracking": {
+                        "campaign": "betting-integrations",
+                        "tags": {
+                          "league": "mlb",
+                          "sport": "baseball",
+                          "gameId": 401816623,
+                          "betSide": "home",
+                          "betType": "straight"
+                        }
+                      }
+                    }
+                  },
+                  "open": {
+                    "odds": "-143"
+                  }
+                },
+                "away": {
+                  "close": {
+                    "odds": "+123",
+                    "link": {
+                      "language": "en-US",
+                      "rel": [
+                        "away",
+                        "desktop",
+                        "bets"
+                      ],
+                      "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34547456%3Foutcomes%3D0ML85950631_3",
+                      "text": "Away Bet",
+                      "shortText": "Away Bet",
+                      "isExternal": true,
+                      "isPremium": false,
+                      "tracking": {
+                        "campaign": "betting-integrations",
+                        "tags": {
+                          "league": "mlb",
+                          "sport": "baseball",
+                          "gameId": 401816623,
+                          "betSide": "away",
+                          "betType": "straight"
+                        }
+                      }
+                    }
+                  },
+                  "open": {
+                    "odds": "+118"
+                  }
+                }
+              },
+              "pointSpread": {
+                "displayName": "Runline",
+                "shortDisplayName": "RL",
+                "home": {
+                  "close": {
+                    "line": "-1.5",
+                    "odds": "+159",
+                    "link": {
+                      "language": "en-US",
+                      "rel": [
+                        "homeSpread",
+                        "desktop",
+                        "bets"
+                      ],
+                      "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34547456%3Foutcomes%3D0HC85950631N150_1",
+                      "text": "Home Point Spread",
+                      "shortText": "Home Point Spread",
+                      "isExternal": true,
+                      "isPremium": false,
+                      "tracking": {
+                        "campaign": "betting-integrations",
+                        "tags": {
+                          "league": "mlb",
+                          "sport": "baseball",
+                          "gameId": 401816623,
+                          "betSide": "none",
+                          "betType": "straight",
+                          "betDetails": "Spread:SD-1.5"
+                        }
+                      }
+                    }
+                  },
+                  "open": {
+                    "line": "-1.5",
+                    "odds": "+154"
+                  }
+                },
+                "away": {
+                  "close": {
+                    "line": "+1.5",
+                    "odds": "-193",
+                    "link": {
+                      "language": "en-US",
+                      "rel": [
+                        "awaySpread",
+                        "desktop",
+                        "bets"
+                      ],
+                      "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34547456%3Foutcomes%3D0HC85950631P150_3",
+                      "text": "Away Point Spread",
+                      "shortText": "Away Point Spread",
+                      "isExternal": true,
+                      "isPremium": false,
+                      "tracking": {
+                        "campaign": "betting-integrations",
+                        "tags": {
+                          "league": "mlb",
+                          "sport": "baseball",
+                          "gameId": 401816623,
+                          "betSide": "none",
+                          "betType": "straight",
+                          "betDetails": "Spread:MIN+1.5"
+                        }
+                      }
+                    }
+                  },
+                  "open": {
+                    "line": "+1.5",
+                    "odds": "-187"
+                  }
+                }
+              },
+              "total": {
+                "displayName": "Total Runs",
+                "shortDisplayName": "Total",
+                "over": {
+                  "close": {
+                    "line": "o8",
+                    "odds": "-115",
+                    "link": {
+                      "language": "en-US",
+                      "rel": [
+                        "over",
+                        "desktop",
+                        "bets"
+                      ],
+                      "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34547456%3Foutcomes%3D0OU85950631O800_1",
+                      "text": "Over Odds",
+                      "shortText": "Over Odds",
+                      "isExternal": true,
+                      "isPremium": false,
+                      "tracking": {
+                        "campaign": "betting-integrations",
+                        "tags": {
+                          "league": "mlb",
+                          "sport": "baseball",
+                          "gameId": 401816623,
+                          "betSide": "over",
+                          "betType": "straight",
+                          "betDetails": "Over:8"
+                        }
+                      }
+                    }
+                  },
+                  "open": {
+                    "line": "o8",
+                    "odds": "-118"
+                  }
+                },
+                "under": {
+                  "close": {
+                    "line": "u8",
+                    "odds": "-105",
+                    "link": {
+                      "language": "en-US",
+                      "rel": [
+                        "under",
+                        "desktop",
+                        "bets"
+                      ],
+                      "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34547456%3Foutcomes%3D0OU85950631U800_3",
+                      "text": "Under Odds",
+                      "shortText": "Under Odds",
+                      "isExternal": true,
+                      "isPremium": false,
+                      "tracking": {
+                        "campaign": "betting-integrations",
+                        "tags": {
+                          "league": "mlb",
+                          "sport": "baseball",
+                          "gameId": 401816623,
+                          "betSide": "under",
+                          "betType": "straight",
+                          "betDetails": "Under:8"
+                        }
+                      }
+                    }
+                  },
+                  "open": {
+                    "line": "u8",
+                    "odds": "-102"
+                  }
+                }
+              },
+              "link": {
+                "language": "en-US",
+                "rel": [
+                  "game",
+                  "desktop",
+                  "bets"
+                ],
+                "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34547456",
+                "text": "See More Odds",
+                "shortText": "Game",
+                "isExternal": true,
+                "isPremium": false,
+                "tracking": {
+                  "campaign": "betting-integrations",
+                  "tags": {
+                    "league": "mlb",
+                    "sport": "baseball",
+                    "gameId": 401816623,
+                    "betSide": "none",
+                    "betType": "straight"
+                  }
+                }
+              },
+              "header": {
+                "logo": {
+                  "dark": "https://a.espncdn.com/i/espnbet/dark/espn-bet-square-off.svg",
+                  "light": "https://a.espncdn.com/i/espnbet/espn-bet-square-off.svg",
+                  "exclusivesLogoDark": "https://a.espncdn.com/i/espnbet/espn-bet-square-mint.svg",
+                  "exclusivesLogoLight": "https://a.espncdn.com/i/espnbet/espn-bet-square-mint.svg"
+                },
+                "text": "Game Odds"
+              },
+              "footer": {
+                "disclaimer": "GAMBLING PROBLEM? CALL 1-800-GAMBLER or 1-800-MY-RESET, (800) 327-5050 or visit gamblinghelplinema.org (MA). Call 877-8-HOPENY/text HOPENY (467369) (NY). Call 888-789-7777/visit ccpg.org (CT), or visit www.mdgamblinghelp.org (MD), 1-800-981-0023 (PR). 21+ and present in most states. (18+ DC/KY/NH/PR/WY). Void in ONT. Eligibility restrictions apply. Terms: draftkings.com/sportsbook. On behalf of Boot Hill Casino (KS). Pass-thru of per wager tax may apply in IL."
+              }
+            }
+          ],
+          "highlights": [],
           "headlines": [
             {
               "type": "Preview",
               "description": "Minnesota Twins (63-65, second in the AL Central) vs. San Diego Padres (68-60, second in the NL West)",
               "shortLinkText": "Twins take win streak into game against the Padres"
             }
-          ],
-          "highlights": []
+          ]
         }
       ],
       "links": [
@@ -17315,8 +17909,8 @@
           },
           "tickets": [
             {
-              "summary": "Tickets as low as $40",
-              "numberAvailable": 1593,
+              "summary": "Tickets as low as $44",
+              "numberAvailable": 1581,
               "links": [
                 {
                   "href": "https://www.vividseats.com/seattle-mariners-tickets-t-mobile-park-8-21-2026--sports-mlb-baseball/production/5965709?wsUser=717"
@@ -17515,7 +18109,7 @@
                 "home": {
                   "close": {
                     "line": "+1.5",
-                    "odds": "-197",
+                    "odds": "-195",
                     "link": {
                       "language": "en-US",
                       "rel": [
@@ -17549,7 +18143,7 @@
                 "away": {
                   "close": {
                     "line": "-1.5",
-                    "odds": "+161",
+                    "odds": "+160",
                     "link": {
                       "language": "en-US",
                       "rel": [
@@ -17690,14 +18284,14 @@
               }
             }
           ],
-          "highlights": [],
           "headlines": [
             {
               "type": "Preview",
               "description": "Chicago Cubs (74-54, second in the NL Central) vs. Seattle Mariners (60-68, third in the AL West)",
               "shortLinkText": "Mariners open 3-game series against the Cubs"
             }
-          ]
+          ],
+          "highlights": []
         }
       ],
       "links": [
@@ -18636,7 +19230,7 @@
           "tickets": [
             {
               "summary": "Tickets as low as $38",
-              "numberAvailable": 3849,
+              "numberAvailable": 3843,
               "links": [
                 {
                   "href": "https://www.vividseats.com/los-angeles-dodgers-tickets-dodger-stadium-8-21-2026--sports-mlb-baseball/production/5964776?wsUser=717"
