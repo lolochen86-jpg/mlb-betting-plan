@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-08-21T11:50:21",
+  "generated_at": "2026-08-21T13:32:28",
   "target_date": "2026-08-21",
   "model": "統一得分期望 v1",
   "postgame_calibration": {
     "source": "postgame_review",
     "days": 10,
-    "games": 116,
-    "winner_accuracy": 0.5172,
+    "games": 118,
+    "winner_accuracy": 0.5169,
     "low_confidence_accuracy": 0.5,
     "score_total_bias": 0.0,
     "score_total_bias_applied": 0.0,
@@ -21,9 +21,9 @@
     "reason_counts": {
       "low_confidence_hit": 37,
       "low_confidence_miss": 29,
-      "high_confidence_miss": 19,
+      "high_confidence_miss": 20,
       "one_run_volatility": 30,
-      "high_confidence_hit": 23
+      "high_confidence_hit": 24
     },
     "data_gaps": [
       "高信心勝方失準偏多：優先補官方先發打線、牛棚可用性、傷兵/輪休。"
