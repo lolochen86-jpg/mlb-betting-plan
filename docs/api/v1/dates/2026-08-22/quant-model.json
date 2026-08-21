@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-22T03:27:48",
+  "generated_at": "2026-08-22T05:25:25",
   "target_date": "2026-08-22",
   "model": "Q-量化模型 XGBoost/Poisson Bundle 2026-07-16",
   "model_dir": "models/quant_bundle_2026_07_16",
@@ -25,8 +25,8 @@
   },
   "summary": {
     "games": 15,
-    "aligned_with_existing": 12,
-    "complete_data": 9,
+    "aligned_with_existing": 11,
+    "complete_data": 11,
     "holdout_moneyline_accuracy": 0.5208333333333334,
     "holdout_total_runs_mae": 3.406075860344923
   },
@@ -51,11 +51,11 @@
       "home_zh": "紐約洋基",
       "quant_prediction_zh": "紐約洋基",
       "quant_pick_side": "home",
-      "quant_confidence": 0.5912,
-      "home_win_probability": 0.5912,
-      "away_win_probability": 0.4088,
-      "predicted_away_score": 4.44,
-      "predicted_home_score": 5.06,
+      "quant_confidence": 0.5814,
+      "home_win_probability": 0.5814,
+      "away_win_probability": 0.4186,
+      "predicted_away_score": 4.47,
+      "predicted_home_score": 5.03,
       "predicted_total": 9.5,
       "total_line": 8.5,
       "totals_pick_zh": "大分",
@@ -63,7 +63,7 @@
       "over_probability": 0.6081,
       "under_probability": 0.3919,
       "official_model_pick_zh": "紐約洋基",
-      "unified_model_pick_zh": "多倫多藍鳥",
+      "unified_model_pick_zh": "紐約洋基",
       "model_alignment": "一致",
       "data_quality": "完整",
       "missing_features": []
@@ -78,11 +78,11 @@
       "home_zh": "密爾瓦基釀酒人",
       "quant_prediction_zh": "密爾瓦基釀酒人",
       "quant_pick_side": "home",
-      "quant_confidence": 0.5658,
-      "home_win_probability": 0.5658,
-      "away_win_probability": 0.4342,
-      "predicted_away_score": 4.53,
-      "predicted_home_score": 4.97,
+      "quant_confidence": 0.5601,
+      "home_win_probability": 0.5601,
+      "away_win_probability": 0.4399,
+      "predicted_away_score": 4.54,
+      "predicted_home_score": 4.96,
       "predicted_total": 9.5,
       "total_line": 8.5,
       "totals_pick_zh": "大分",
@@ -92,10 +92,8 @@
       "official_model_pick_zh": "密爾瓦基釀酒人",
       "unified_model_pick_zh": "密爾瓦基釀酒人",
       "model_alignment": "一致",
-      "data_quality": "可用但需留意",
-      "missing_features": [
-        "away_probable_pitcher_not_fully_confirmed"
-      ]
+      "data_quality": "完整",
+      "missing_features": []
     },
     {
       "date": "2026-08-22",
@@ -327,13 +325,13 @@
       "matchup_zh": "底特律老虎 @ 堪薩斯市皇家",
       "away_zh": "底特律老虎",
       "home_zh": "堪薩斯市皇家",
-      "quant_prediction_zh": "底特律老虎",
-      "quant_pick_side": "away",
-      "quant_confidence": 0.5023,
-      "home_win_probability": 0.4977,
-      "away_win_probability": 0.5023,
-      "predicted_away_score": 4.76,
-      "predicted_home_score": 4.74,
+      "quant_prediction_zh": "堪薩斯市皇家",
+      "quant_pick_side": "home",
+      "quant_confidence": 0.5053,
+      "home_win_probability": 0.5053,
+      "away_win_probability": 0.4947,
+      "predicted_away_score": 4.73,
+      "predicted_home_score": 4.77,
       "predicted_total": 9.5,
       "total_line": 8.5,
       "totals_pick_zh": "大分",
@@ -342,12 +340,9 @@
       "under_probability": 0.3919,
       "official_model_pick_zh": "底特律老虎",
       "unified_model_pick_zh": "底特律老虎",
-      "model_alignment": "一致",
-      "data_quality": "可用但需留意",
-      "missing_features": [
-        "weather_temperature_missing",
-        "weather_wind_missing"
-      ]
+      "model_alignment": "分歧",
+      "data_quality": "完整",
+      "missing_features": []
     },
     {
       "date": "2026-08-22",
