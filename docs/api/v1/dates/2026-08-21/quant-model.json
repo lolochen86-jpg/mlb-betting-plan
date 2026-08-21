@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-21T19:27:03",
+  "generated_at": "2026-08-21T21:45:36",
   "target_date": "2026-08-21",
   "model": "Q-量化模型 XGBoost/Poisson Bundle 2026-07-16",
   "model_dir": "models/quant_bundle_2026_07_16",
@@ -26,7 +26,7 @@
   "summary": {
     "games": 15,
     "aligned_with_existing": 12,
-    "complete_data": 12,
+    "complete_data": 13,
     "holdout_moneyline_accuracy": 0.5208333333333334,
     "holdout_total_runs_mae": 3.406075860344923
   },
@@ -107,11 +107,11 @@
       "home_zh": "紐約洋基",
       "quant_prediction_zh": "紐約洋基",
       "quant_pick_side": "home",
-      "quant_confidence": 0.6432,
-      "home_win_probability": 0.6432,
-      "away_win_probability": 0.3568,
-      "predicted_away_score": 4.25,
-      "predicted_home_score": 5.25,
+      "quant_confidence": 0.6384,
+      "home_win_probability": 0.6384,
+      "away_win_probability": 0.3616,
+      "predicted_away_score": 4.27,
+      "predicted_home_score": 5.23,
       "predicted_total": 9.5,
       "total_line": 8.5,
       "totals_pick_zh": "大分",
@@ -121,10 +121,8 @@
       "official_model_pick_zh": "紐約洋基",
       "unified_model_pick_zh": "紐約洋基",
       "model_alignment": "一致",
-      "data_quality": "可用但需留意",
-      "missing_features": [
-        "away_probable_pitcher_not_fully_confirmed"
-      ]
+      "data_quality": "完整",
+      "missing_features": []
     },
     {
       "date": "2026-08-21",
