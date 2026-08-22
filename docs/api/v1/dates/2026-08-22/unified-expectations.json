@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-22T21:31:23",
+  "generated_at": "2026-08-22T23:20:09",
   "target_date": "2026-08-22",
   "model": "統一得分期望 v1",
   "postgame_calibration": {
@@ -425,21 +425,21 @@
       "matchup_zh": "多倫多藍鳥 @ 紐約洋基",
       "away_zh": "多倫多藍鳥",
       "home_zh": "紐約洋基",
-      "away_expected_runs": 3.77,
-      "home_expected_runs": 3.7,
-      "expected_total": 7.48,
-      "pick_side": "away",
-      "prediction_zh": "多倫多藍鳥",
-      "home_win_prob": 0.4907,
-      "away_win_prob": 0.5093,
-      "lineup_source": "projected_recent_lineup_order",
+      "away_expected_runs": 3.94,
+      "home_expected_runs": 3.96,
+      "expected_total": 7.89,
+      "pick_side": "home",
+      "prediction_zh": "紐約洋基",
+      "home_win_prob": 0.5024,
+      "away_win_prob": 0.4976,
+      "lineup_source": "fallback_role_lineup: The read operation timed out",
       "away_lineup_factor": {
-        "source_quality": "projected_recent_lineup_order",
-        "factor": 0.971
+        "source_quality": "fallback_role_lineup",
+        "factor": 1.014
       },
       "home_lineup_factor": {
-        "source_quality": "projected_recent_lineup_order",
-        "factor": 0.951
+        "source_quality": "fallback_role_lineup",
+        "factor": 1.014
       },
       "away_pitcher_weight": 0.9,
       "home_pitcher_weight": 0.9,
