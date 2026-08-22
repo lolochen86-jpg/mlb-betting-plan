@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-08-22T11:40:58",
+  "generated_at": "2026-08-22T13:26:57",
   "target_date": "2026-08-22",
   "model": "統一得分期望 v1",
   "postgame_calibration": {
     "source": "postgame_review",
     "days": 10,
-    "games": 108,
-    "winner_accuracy": 0.5278,
-    "low_confidence_accuracy": 0.4923,
+    "games": 113,
+    "winner_accuracy": 0.5398,
+    "low_confidence_accuracy": 0.5,
     "score_total_bias": 0.0,
     "score_total_bias_applied": 0.0,
     "totals_recent_bias": 0.0,
@@ -19,11 +19,11 @@
     "totals_min_line_gap": 1.0,
     "mismatch_notes": 0,
     "reason_counts": {
-      "low_confidence_miss": 26,
-      "high_confidence_hit": 25,
-      "one_run_volatility": 30,
+      "low_confidence_miss": 27,
+      "high_confidence_hit": 27,
+      "one_run_volatility": 32,
       "high_confidence_miss": 18,
-      "low_confidence_hit": 32
+      "low_confidence_hit": 34
     },
     "data_gaps": [
       "高信心勝方失準偏多：優先補官方先發打線、牛棚可用性、傷兵/輪休。"
@@ -173,21 +173,21 @@
       "matchup_zh": "匹茲堡海盜 @ 洛杉磯道奇",
       "away_zh": "匹茲堡海盜",
       "home_zh": "洛杉磯道奇",
-      "away_expected_runs": 4.15,
-      "home_expected_runs": 4.71,
-      "expected_total": 8.86,
+      "away_expected_runs": 4.21,
+      "home_expected_runs": 4.7,
+      "expected_total": 8.91,
       "pick_side": "home",
       "prediction_zh": "洛杉磯道奇",
-      "home_win_prob": 0.5745,
-      "away_win_prob": 0.4255,
+      "home_win_prob": 0.5662,
+      "away_win_prob": 0.4338,
       "lineup_source": "projected_recent_lineup_order",
       "away_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
-        "factor": 0.996
+        "factor": 0.995
       },
       "home_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
-        "factor": 1.029
+        "factor": 1.027
       },
       "away_pitcher_weight": 0.9,
       "home_pitcher_weight": 0.9,
@@ -367,16 +367,16 @@
       "expected_total": 8.37,
       "pick_side": "home",
       "prediction_zh": "聖地牙哥教士",
-      "home_win_prob": 0.6428,
-      "away_win_prob": 0.3572,
+      "home_win_prob": 0.6441,
+      "away_win_prob": 0.3559,
       "lineup_source": "projected_recent_lineup_order",
       "away_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
-        "factor": 0.992
+        "factor": 0.991
       },
       "home_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
-        "factor": 0.967
+        "factor": 0.969
       },
       "away_pitcher_weight": 0.9,
       "home_pitcher_weight": 0.9,
@@ -677,21 +677,21 @@
       "matchup_zh": "辛辛那提紅人 @ 亞利桑那響尾蛇",
       "away_zh": "辛辛那提紅人",
       "home_zh": "亞利桑那響尾蛇",
-      "away_expected_runs": 3.55,
-      "home_expected_runs": 5.05,
-      "expected_total": 8.6,
+      "away_expected_runs": 3.48,
+      "home_expected_runs": 5.14,
+      "expected_total": 8.61,
       "pick_side": "home",
       "prediction_zh": "亞利桑那響尾蛇",
-      "home_win_prob": 0.6923,
-      "away_win_prob": 0.3077,
+      "home_win_prob": 0.7,
+      "away_win_prob": 0.3,
       "lineup_source": "projected_recent_lineup_order",
       "away_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
-        "factor": 0.907
+        "factor": 0.889
       },
       "home_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
-        "factor": 1.008
+        "factor": 1.007
       },
       "away_pitcher_weight": 0.9,
       "home_pitcher_weight": 0.9,
@@ -867,16 +867,16 @@
       "away_zh": "芝加哥小熊",
       "home_zh": "西雅圖水手",
       "away_expected_runs": 5.24,
-      "home_expected_runs": 4.12,
-      "expected_total": 9.36,
+      "home_expected_runs": 4.15,
+      "expected_total": 9.39,
       "pick_side": "away",
       "prediction_zh": "芝加哥小熊",
-      "home_win_prob": 0.3532,
-      "away_win_prob": 0.6468,
+      "home_win_prob": 0.3562,
+      "away_win_prob": 0.6438,
       "lineup_source": "projected_recent_lineup_order",
       "away_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
-        "factor": 1.022
+        "factor": 1.011
       },
       "home_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
