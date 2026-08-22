@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-08-22T13:26:57",
+  "generated_at": "2026-08-22T15:31:25",
   "target_date": "2026-08-22",
   "model": "統一得分期望 v1",
   "postgame_calibration": {
     "source": "postgame_review",
     "days": 10,
-    "games": 113,
-    "winner_accuracy": 0.5398,
+    "games": 117,
+    "winner_accuracy": 0.547,
     "low_confidence_accuracy": 0.5,
     "score_total_bias": 0.0,
     "score_total_bias_applied": 0.0,
@@ -19,11 +19,11 @@
     "totals_min_line_gap": 1.0,
     "mismatch_notes": 0,
     "reason_counts": {
-      "low_confidence_miss": 27,
-      "high_confidence_hit": 27,
-      "one_run_volatility": 32,
+      "low_confidence_miss": 28,
+      "high_confidence_hit": 29,
+      "one_run_volatility": 33,
       "high_confidence_miss": 18,
-      "low_confidence_hit": 34
+      "low_confidence_hit": 35
     },
     "data_gaps": [
       "高信心勝方失準偏多：優先補官方先發打線、牛棚可用性、傷兵/輪休。"
@@ -173,17 +173,17 @@
       "matchup_zh": "匹茲堡海盜 @ 洛杉磯道奇",
       "away_zh": "匹茲堡海盜",
       "home_zh": "洛杉磯道奇",
-      "away_expected_runs": 4.21,
-      "home_expected_runs": 4.7,
-      "expected_total": 8.91,
+      "away_expected_runs": 4.33,
+      "home_expected_runs": 4.73,
+      "expected_total": 9.06,
       "pick_side": "home",
       "prediction_zh": "洛杉磯道奇",
-      "home_win_prob": 0.5662,
-      "away_win_prob": 0.4338,
+      "home_win_prob": 0.5537,
+      "away_win_prob": 0.4463,
       "lineup_source": "projected_recent_lineup_order",
       "away_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
-        "factor": 0.995
+        "factor": 1.023
       },
       "home_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
