@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-24T21:52:25",
+  "generated_at": "2026-08-24T23:39:54",
   "target_date": "2026-08-24",
   "model": "Q-量化模型 XGBoost/Poisson Bundle 2026-07-16",
   "model_dir": "models/quant_bundle_2026_07_16",
@@ -26,7 +26,7 @@
   "summary": {
     "games": 10,
     "aligned_with_existing": 6,
-    "complete_data": 8,
+    "complete_data": 9,
     "holdout_moneyline_accuracy": 0.5208333333333334,
     "holdout_total_runs_mae": 3.406075860344923
   },
@@ -132,24 +132,22 @@
       "home_zh": "芝加哥白襪",
       "quant_prediction_zh": "芝加哥白襪",
       "quant_pick_side": "home",
-      "quant_confidence": 0.588,
-      "home_win_probability": 0.588,
-      "away_win_probability": 0.412,
-      "predicted_away_score": 5.27,
-      "predicted_home_score": 5.93,
-      "predicted_total": 11.2,
+      "quant_confidence": 0.6154,
+      "home_win_probability": 0.6154,
+      "away_win_probability": 0.3846,
+      "predicted_away_score": 4.35,
+      "predicted_home_score": 5.15,
+      "predicted_total": 9.5,
       "total_line": 8.5,
       "totals_pick_zh": "大分",
-      "totals_probability": 0.7847,
-      "over_probability": 0.7847,
-      "under_probability": 0.2153,
+      "totals_probability": 0.6081,
+      "over_probability": 0.6081,
+      "under_probability": 0.3919,
       "official_model_pick_zh": "芝加哥白襪",
       "unified_model_pick_zh": "芝加哥白襪",
       "model_alignment": "一致",
-      "data_quality": "可用但需留意",
-      "missing_features": [
-        "home_probable_pitcher_not_fully_confirmed"
-      ]
+      "data_quality": "完整",
+      "missing_features": []
     },
     {
       "date": "2026-08-24",
