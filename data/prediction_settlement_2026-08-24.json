@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-08-25T11:48:06",
+  "generated_at": "2026-08-25T13:31:01",
   "target_date": "2026-08-24",
   "source_prediction_file": "data/daily_predictions_2026-08-24.json",
   "summary": {
     "predictions": 10,
-    "final_games": 4,
-    "pending_games": 6,
-    "correct": 2,
-    "wrong": 2,
-    "accuracy_pct": 50.0,
+    "final_games": 9,
+    "pending_games": 1,
+    "correct": 6,
+    "wrong": 3,
+    "accuracy_pct": 66.67,
     "high_confidence_final": 1,
     "high_confidence_correct": 1,
     "high_confidence_accuracy_pct": 100.0
@@ -93,11 +93,11 @@
       "confidence": 0.5212,
       "confirmation_pick_zh": "辛辛那提紅人",
       "confirmation_same_direction": false,
-      "status": "In Progress",
-      "score": "",
-      "actual_winner_zh": "",
-      "settlement": "pending",
-      "is_final": false
+      "status": "Final",
+      "score": "0-5",
+      "actual_winner_zh": "舊金山巨人",
+      "settlement": "correct",
+      "is_final": true
     },
     {
       "date": "2026-08-24",
@@ -110,11 +110,11 @@
       "confidence": 0.5205,
       "confirmation_pick_zh": "克里夫蘭守護者",
       "confirmation_same_direction": true,
-      "status": "In Progress",
-      "score": "",
-      "actual_winner_zh": "",
-      "settlement": "pending",
-      "is_final": false
+      "status": "Final",
+      "score": "4-2",
+      "actual_winner_zh": "克里夫蘭守護者",
+      "settlement": "correct",
+      "is_final": true
     },
     {
       "date": "2026-08-24",
@@ -127,11 +127,11 @@
       "confidence": 0.5189,
       "confirmation_pick_zh": "芝加哥小熊",
       "confirmation_same_direction": true,
-      "status": "In Progress",
-      "score": "",
-      "actual_winner_zh": "",
-      "settlement": "pending",
-      "is_final": false
+      "status": "Final",
+      "score": "7-0",
+      "actual_winner_zh": "芝加哥小熊",
+      "settlement": "correct",
+      "is_final": true
     },
     {
       "date": "2026-08-24",
@@ -161,11 +161,11 @@
       "confidence": 0.5042,
       "confirmation_pick_zh": "費城費城人",
       "confirmation_same_direction": true,
-      "status": "In Progress",
-      "score": "",
-      "actual_winner_zh": "",
-      "settlement": "pending",
-      "is_final": false
+      "status": "Final",
+      "score": "2-9",
+      "actual_winner_zh": "西雅圖水手",
+      "settlement": "wrong",
+      "is_final": true
     },
     {
       "date": "2026-08-24",
@@ -178,11 +178,11 @@
       "confidence": 0.5008,
       "confirmation_pick_zh": "明尼蘇達雙城",
       "confirmation_same_direction": true,
-      "status": "In Progress",
-      "score": "",
-      "actual_winner_zh": "",
-      "settlement": "pending",
-      "is_final": false
+      "status": "Final",
+      "score": "9-6",
+      "actual_winner_zh": "明尼蘇達雙城",
+      "settlement": "correct",
+      "is_final": true
     }
   ],
   "note": "Accuracy settlement only. Odds and betting ROI are not calculated here."
