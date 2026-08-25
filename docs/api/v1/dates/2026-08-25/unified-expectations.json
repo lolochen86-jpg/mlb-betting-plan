@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-08-25T13:31:25",
+  "generated_at": "2026-08-25T15:42:50",
   "target_date": "2026-08-25",
   "model": "統一得分期望 v1",
   "postgame_calibration": {
     "source": "postgame_review",
     "days": 10,
-    "games": 114,
-    "winner_accuracy": 0.6228,
-    "low_confidence_accuracy": 0.5333,
+    "games": 119,
+    "winner_accuracy": 0.6303,
+    "low_confidence_accuracy": 0.5538,
     "score_total_bias": 0.0,
     "score_total_bias_applied": 0.0,
     "totals_recent_bias": 0.0,
@@ -20,8 +20,8 @@
     "mismatch_notes": 0,
     "reason_counts": {
       "high_confidence_miss": 15,
-      "low_confidence_miss": 23,
-      "low_confidence_hit": 32,
+      "low_confidence_miss": 24,
+      "low_confidence_hit": 36,
       "one_run_volatility": 34,
       "high_confidence_hit": 39
     },
@@ -173,21 +173,21 @@
       "matchup_zh": "匹茲堡海盜 @ 聖地牙哥教士",
       "away_zh": "匹茲堡海盜",
       "home_zh": "聖地牙哥教士",
-      "away_expected_runs": 3.63,
-      "home_expected_runs": 4.37,
-      "expected_total": 7.99,
+      "away_expected_runs": 3.78,
+      "home_expected_runs": 4.36,
+      "expected_total": 8.15,
       "pick_side": "home",
       "prediction_zh": "聖地牙哥教士",
-      "home_win_prob": 0.5987,
-      "away_win_prob": 0.4013,
+      "home_win_prob": 0.5775,
+      "away_win_prob": 0.4225,
       "lineup_source": "projected_recent_lineup_order",
       "away_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
-        "factor": 0.979
+        "factor": 1.012
       },
       "home_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
-        "factor": 0.949
+        "factor": 0.948
       },
       "away_pitcher_weight": 0.9,
       "home_pitcher_weight": 0.9,
