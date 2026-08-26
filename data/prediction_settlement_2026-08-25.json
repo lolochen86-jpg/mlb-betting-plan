@@ -1,15 +1,15 @@
 {
-  "generated_at": "2026-08-26T10:24:16",
+  "generated_at": "2026-08-26T11:53:10",
   "target_date": "2026-08-25",
   "source_prediction_file": "data/daily_predictions_2026-08-25.json",
   "summary": {
     "predictions": 15,
-    "final_games": 6,
-    "pending_games": 9,
-    "correct": 2,
-    "wrong": 4,
+    "final_games": 9,
+    "pending_games": 6,
+    "correct": 3,
+    "wrong": 6,
     "accuracy_pct": 33.33,
-    "high_confidence_final": 1,
+    "high_confidence_final": 2,
     "high_confidence_correct": 0,
     "high_confidence_accuracy_pct": 0.0
   },
@@ -42,11 +42,11 @@
       "confidence": 0.5664,
       "confirmation_pick_zh": "紐約洋基",
       "confirmation_same_direction": true,
-      "status": "Game Over",
-      "score": "",
-      "actual_winner_zh": "",
-      "settlement": "pending",
-      "is_final": false
+      "status": "Final",
+      "score": "9-7",
+      "actual_winner_zh": "休士頓太空人",
+      "settlement": "wrong",
+      "is_final": true
     },
     {
       "date": "2026-08-25",
@@ -93,11 +93,11 @@
       "confidence": 0.5343,
       "confirmation_pick_zh": "巴爾的摩金鶯",
       "confirmation_same_direction": false,
-      "status": "In Progress",
-      "score": "",
-      "actual_winner_zh": "",
-      "settlement": "pending",
-      "is_final": false
+      "status": "Final",
+      "score": "13-1",
+      "actual_winner_zh": "巴爾的摩金鶯",
+      "settlement": "wrong",
+      "is_final": true
     },
     {
       "date": "2026-08-25",
@@ -229,7 +229,7 @@
       "confidence": 0.5018,
       "confirmation_pick_zh": "明尼蘇達雙城",
       "confirmation_same_direction": true,
-      "status": "In Progress",
+      "status": "Player challenge",
       "score": "",
       "actual_winner_zh": "",
       "settlement": "pending",
@@ -263,11 +263,11 @@
       "confidence": 0.5011,
       "confirmation_pick_zh": "德州遊騎兵",
       "confirmation_same_direction": false,
-      "status": "In Progress",
-      "score": "",
-      "actual_winner_zh": "",
-      "settlement": "pending",
-      "is_final": false
+      "status": "Final",
+      "score": "7-11",
+      "actual_winner_zh": "芝加哥白襪",
+      "settlement": "correct",
+      "is_final": true
     }
   ],
   "note": "Accuracy settlement only. Odds and betting ROI are not calculated here."
