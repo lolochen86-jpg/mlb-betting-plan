@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-28T10:27:46",
+  "generated_at": "2026-08-28T22:57:32",
   "target_date": "2026-08-28",
   "model": "Q-量化模型 XGBoost/Poisson Bundle 2026-07-16",
   "model_dir": "models/quant_bundle_2026_07_16",
@@ -26,7 +26,7 @@
   "summary": {
     "games": 15,
     "aligned_with_existing": 12,
-    "complete_data": 12,
+    "complete_data": 13,
     "holdout_moneyline_accuracy": 0.5208333333333334,
     "holdout_total_runs_mae": 3.406075860344923
   },
@@ -433,11 +433,11 @@
       "home_zh": "舊金山巨人",
       "quant_prediction_zh": "舊金山巨人",
       "quant_pick_side": "home",
-      "quant_confidence": 0.6315,
-      "home_win_probability": 0.6315,
-      "away_win_probability": 0.3685,
-      "predicted_away_score": 4.29,
-      "predicted_home_score": 5.21,
+      "quant_confidence": 0.6934,
+      "home_win_probability": 0.6934,
+      "away_win_probability": 0.3066,
+      "predicted_away_score": 4.06,
+      "predicted_home_score": 5.44,
       "predicted_total": 9.5,
       "total_line": 8.5,
       "totals_pick_zh": "大分",
@@ -447,10 +447,8 @@
       "official_model_pick_zh": "舊金山巨人",
       "unified_model_pick_zh": "亞利桑那響尾蛇",
       "model_alignment": "一致",
-      "data_quality": "可用但需留意",
-      "missing_features": [
-        "away_probable_pitcher_not_fully_confirmed"
-      ]
+      "data_quality": "完整",
+      "missing_features": []
     }
   ]
 }

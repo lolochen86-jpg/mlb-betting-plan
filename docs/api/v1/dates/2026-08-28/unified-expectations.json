@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-08-28T10:26:25",
+  "generated_at": "2026-08-28T22:56:21",
   "target_date": "2026-08-28",
   "model": "統一得分期望 v1",
   "postgame_calibration": {
     "source": "postgame_review",
     "days": 10,
-    "games": 109,
-    "winner_accuracy": 0.578,
-    "low_confidence_accuracy": 0.5075,
+    "games": 115,
+    "winner_accuracy": 0.5739,
+    "low_confidence_accuracy": 0.507,
     "score_total_bias": 0.0,
     "score_total_bias_applied": 0.0,
     "totals_recent_bias": 0.0,
@@ -19,11 +19,11 @@
     "totals_min_line_gap": 1.0,
     "mismatch_notes": 0,
     "reason_counts": {
-      "low_confidence_miss": 24,
-      "one_run_volatility": 32,
-      "low_confidence_hit": 34,
-      "high_confidence_miss": 13,
-      "high_confidence_hit": 29
+      "low_confidence_miss": 25,
+      "one_run_volatility": 33,
+      "low_confidence_hit": 36,
+      "high_confidence_miss": 14,
+      "high_confidence_hit": 30
     },
     "data_gaps": [
       "高信心勝方失準偏多：優先補官方先發打線、牛棚可用性、傷兵/輪休。"
@@ -677,23 +677,23 @@
       "matchup_zh": "亞利桑那響尾蛇 @ 舊金山巨人",
       "away_zh": "亞利桑那響尾蛇",
       "home_zh": "舊金山巨人",
-      "away_expected_runs": 4.45,
-      "home_expected_runs": 3.76,
-      "expected_total": 8.21,
+      "away_expected_runs": 4.39,
+      "home_expected_runs": 4.06,
+      "expected_total": 8.45,
       "pick_side": "away",
       "prediction_zh": "亞利桑那響尾蛇",
-      "home_win_prob": 0.4084,
-      "away_win_prob": 0.5916,
+      "home_win_prob": 0.4563,
+      "away_win_prob": 0.5437,
       "lineup_source": "projected_recent_lineup_order",
       "away_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
-        "factor": 0.998
+        "factor": 0.977
       },
       "home_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
-        "factor": 0.924
+        "factor": 0.94
       },
-      "away_pitcher_weight": 0.75,
+      "away_pitcher_weight": 0.9,
       "home_pitcher_weight": 0.9,
       "weather": {
         "source": "open_meteo_forecast",
