@@ -1,17 +1,17 @@
 {
-  "generated_at": "2026-08-28T00:06:52",
+  "generated_at": "2026-08-28T10:25:53",
   "target_date": "2026-08-27",
   "source_prediction_file": "data/daily_predictions_2026-08-27.json",
   "summary": {
     "predictions": 7,
-    "final_games": 0,
-    "pending_games": 7,
-    "correct": 0,
-    "wrong": 0,
-    "accuracy_pct": 0,
-    "high_confidence_final": 0,
+    "final_games": 6,
+    "pending_games": 1,
+    "correct": 3,
+    "wrong": 3,
+    "accuracy_pct": 50.0,
+    "high_confidence_final": 1,
     "high_confidence_correct": 0,
-    "high_confidence_accuracy_pct": 0
+    "high_confidence_accuracy_pct": 0.0
   },
   "settlements": [
     {
@@ -25,11 +25,11 @@
       "confidence": 0.5672,
       "confirmation_pick_zh": "紐約洋基",
       "confirmation_same_direction": true,
-      "status": "Scheduled",
-      "score": "",
-      "actual_winner_zh": "",
-      "settlement": "pending",
-      "is_final": false
+      "status": "Final",
+      "score": "5-1",
+      "actual_winner_zh": "休士頓太空人",
+      "settlement": "wrong",
+      "is_final": true
     },
     {
       "date": "2026-08-27",
@@ -42,11 +42,11 @@
       "confidence": 0.5852,
       "confirmation_pick_zh": "科羅拉多洛磯",
       "confirmation_same_direction": false,
-      "status": "Pre-Game",
-      "score": "",
-      "actual_winner_zh": "",
-      "settlement": "pending",
-      "is_final": false
+      "status": "Final",
+      "score": "1-7",
+      "actual_winner_zh": "華盛頓國民",
+      "settlement": "correct",
+      "is_final": true
     },
     {
       "date": "2026-08-27",
@@ -59,11 +59,11 @@
       "confidence": 0.5386,
       "confirmation_pick_zh": "堪薩斯市皇家",
       "confirmation_same_direction": false,
-      "status": "Scheduled",
-      "score": "",
-      "actual_winner_zh": "",
-      "settlement": "pending",
-      "is_final": false
+      "status": "Final",
+      "score": "13-2",
+      "actual_winner_zh": "堪薩斯市皇家",
+      "settlement": "wrong",
+      "is_final": true
     },
     {
       "date": "2026-08-27",
@@ -76,11 +76,11 @@
       "confidence": 0.5319,
       "confirmation_pick_zh": "密爾瓦基釀酒人",
       "confirmation_same_direction": true,
-      "status": "Scheduled",
-      "score": "",
-      "actual_winner_zh": "",
-      "settlement": "pending",
-      "is_final": false
+      "status": "Final",
+      "score": "8-2",
+      "actual_winner_zh": "密爾瓦基釀酒人",
+      "settlement": "correct",
+      "is_final": true
     },
     {
       "date": "2026-08-27",
@@ -93,11 +93,11 @@
       "confidence": 0.5294,
       "confirmation_pick_zh": "巴爾的摩金鶯",
       "confirmation_same_direction": false,
-      "status": "Pre-Game",
-      "score": "",
-      "actual_winner_zh": "",
-      "settlement": "pending",
-      "is_final": false
+      "status": "Final",
+      "score": "5-7",
+      "actual_winner_zh": "聖路易紅雀",
+      "settlement": "correct",
+      "is_final": true
     },
     {
       "date": "2026-08-27",
@@ -110,7 +110,7 @@
       "confidence": 0.5096,
       "confirmation_pick_zh": "亞利桑那響尾蛇",
       "confirmation_same_direction": false,
-      "status": "Scheduled",
+      "status": "In Progress",
       "score": "",
       "actual_winner_zh": "",
       "settlement": "pending",
@@ -127,11 +127,11 @@
       "confidence": 0.5075,
       "confirmation_pick_zh": "亞特蘭大勇士",
       "confirmation_same_direction": false,
-      "status": "Scheduled",
-      "score": "",
-      "actual_winner_zh": "",
-      "settlement": "pending",
-      "is_final": false
+      "status": "Final",
+      "score": "0-1",
+      "actual_winner_zh": "亞特蘭大勇士",
+      "settlement": "wrong",
+      "is_final": true
     }
   ],
   "note": "Accuracy settlement only. Odds and betting ROI are not calculated here."
