@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-08-29T15:40:52",
+  "generated_at": "2026-08-29T22:10:57",
   "target_date": "2026-08-29",
   "model": "統一得分期望 v1",
   "postgame_calibration": {
     "source": "postgame_review",
     "days": 10,
-    "games": 102,
-    "winner_accuracy": 0.5784,
-    "low_confidence_accuracy": 0.5,
+    "games": 116,
+    "winner_accuracy": 0.5862,
+    "low_confidence_accuracy": 0.5132,
     "score_total_bias": 0.0,
     "score_total_bias_applied": 0.0,
     "totals_recent_bias": 0.0,
@@ -19,10 +19,10 @@
     "totals_min_line_gap": 1.0,
     "mismatch_notes": 0,
     "reason_counts": {
-      "low_confidence_miss": 22,
-      "one_run_volatility": 27,
-      "low_confidence_hit": 32,
-      "high_confidence_hit": 27,
+      "low_confidence_miss": 26,
+      "one_run_volatility": 30,
+      "low_confidence_hit": 39,
+      "high_confidence_hit": 29,
       "high_confidence_miss": 11
     },
     "data_gaps": [
@@ -1055,21 +1055,21 @@
       "matchup_zh": "洛杉磯道奇 @ 底特律老虎",
       "away_zh": "洛杉磯道奇",
       "home_zh": "底特律老虎",
-      "away_expected_runs": 3.94,
-      "home_expected_runs": 4.0,
-      "expected_total": 7.94,
+      "away_expected_runs": 3.95,
+      "home_expected_runs": 4.04,
+      "expected_total": 7.99,
       "pick_side": "home",
       "prediction_zh": "底特律老虎",
-      "home_win_prob": 0.5082,
-      "away_win_prob": 0.4918,
-      "lineup_source": "projected_recent_lineup_order",
+      "home_win_prob": 0.5115,
+      "away_win_prob": 0.4885,
+      "lineup_source": "official_mlb_boxscore",
       "away_lineup_factor": {
-        "source_quality": "projected_recent_lineup_order",
-        "factor": 0.992
+        "source_quality": "official_lineup",
+        "factor": 0.995
       },
       "home_lineup_factor": {
-        "source_quality": "projected_recent_lineup_order",
-        "factor": 1.001
+        "source_quality": "official_lineup",
+        "factor": 1.009
       },
       "away_pitcher_weight": 0.9,
       "home_pitcher_weight": 0.9,
