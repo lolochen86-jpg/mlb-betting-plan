@@ -165,10 +165,19 @@
     "factor": 0.15
   },
   "823177": {
-    "source": "missing",
-    "factor": 0.0,
-    "note": "open-meteo unavailable: <urlopen error _ssl.c:999: The handshake operation timed out>",
-    "venue": "Oracle Park"
+    "source": "open_meteo_forecast",
+    "venue": "Oracle Park",
+    "home_team": "舊金山巨人",
+    "roof": false,
+    "latitude": 37.7786,
+    "longitude": -122.3893,
+    "forecast_time_utc": "2026-08-29T20:00",
+    "temperature_c": 20.7,
+    "humidity_pct": 61.0,
+    "precipitation_probability_pct": 1.0,
+    "wind_speed_kmh": 27.7,
+    "wind_direction_deg": 286.0,
+    "factor": 0.04
   },
   "823176": {
     "source": "open_meteo_forecast",
