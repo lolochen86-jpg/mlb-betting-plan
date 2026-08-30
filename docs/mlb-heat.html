@@ -1,27 +1,30 @@
+
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>MLB 熱度與球星資料查詢</title>
+<title>MLB 熱度與球卡行情雷達 · 2026-08-24</title>
 <style>
-  :root{--navy:#0b1f33;--accent:#0d7ae8;--red:#e03a3a;--gold:#ffca28;--line:#e3eaf2;--soft:#f4f8fc;}
+  :root{--navy:#0b1f33;--accent:#0d7ae8;--red:#e03a3a;--gold:#e8a30c;--line:#e3eaf2;--soft:#f4f8fc;}
   *{box-sizing:border-box;margin:0;padding:0;}
   body{font-family:"PingFang TC","Microsoft JhengHei",sans-serif;background:#eef3f8;color:#152c43;line-height:1.55;padding:24px;}
   .wrap{max-width:1000px;margin:0 auto;}
   .hero{background:linear-gradient(120deg,#0b1f33,#12375e);color:#fff;border-radius:16px;padding:24px;margin-bottom:20px;}
   .hero h1{font-size:24px;} .hero .date{opacity:.8;font-size:13px;margin-top:6px;}
-  h2{font-size:19px;margin:26px 0 12px;color:#0b1f33;border-left:5px solid var(--gold);padding-left:10px;}
+  h2{font-size:19px;margin:26px 0 12px;color:#0b1f33;border-left:5px solid #ffca28;padding-left:10px;}
   table{width:100%;border-collapse:collapse;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 4px 14px rgba(0,0,0,.06);}
   th,td{padding:10px 12px;text-align:center;border-bottom:1px solid var(--line);font-size:13.5px;}
   th{background:var(--soft);}
-  .player-link{cursor:pointer;color:#0d7ae8;font-weight:600;text-decoration:underline dotted;}
-  .player-link:hover{color:#e03a3a;}
+  .up{color:#1f9d55;font-weight:700;}.down{color:#d03838;font-weight:700;}
+  .card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px;margin-bottom:12px;box-shadow:0 4px 12px rgba(0,0,0,.05);}
   .chip{display:inline-block;padding:2px 9px;border-radius:999px;font-size:11px;font-weight:700;}
   .c-al{background:#e7f1fd;color:#0d7ae6;}.c-nl{background:#fdeaea;color:#e03a3a;}
   .badge{display:inline-block;padding:2px 8px;border-radius:6px;font-size:11px;font-weight:700;color:#fff;}
   .b-hot{background:#1f9d55;}.b-spike{background:#d03838;}
-  .card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px;margin-bottom:12px;box-shadow:0 4px 12px rgba(0,0,0,.05);}
-  /* Modal */
+  footer{margin-top:26px;font-size:12px;color:#5d7488;text-align:center;}
+
+  .player-link{cursor:pointer;color:#0d7ae8;font-weight:600;text-decoration:underline dotted;}
+  .player-link:hover{color:#e03a3a;}
   .modal{display:none;position:fixed;inset:0;background:rgba(11,31,51,.55);z-index:50;overflow-y:auto;padding:40px 16px;}
   .modal.show{display:block;}
   .modal-card{background:#fff;max-width:640px;margin:0 auto;border-radius:16px;padding:24px;box-shadow:0 10px 40px rgba(0,0,0,.25);position:relative;}
@@ -36,74 +39,65 @@
   .stat-title{font-size:14px;color:var(--navy);font-weight:700;margin:12px 0 6px;}
   .stats{width:100%;border-collapse:collapse;font-size:12.5px;}
   .stats th,.stats td{padding:5px 8px;border:1px solid var(--line);text-align:center;}
-  .stats th{background:var(--soft);color:var(--navy);}
-  footer{margin-top:26px;font-size:12px;color:#5d7488;text-align:center;}
+  .stats th{background:var(--soft);}
 </style>
 </head>
 <body>
 <div class="wrap">
-  <div class="hero"><h1>⚾ MLB 熱度與球星資料查詢</h1><p class="date">報告 2026-08-24 ｜ 點擊球星姓名可查看基本資料與生涯數據</p></div>
+  <div class="hero"><h1>⚾ MLB 熱度與球卡行情雷達</h1><p class="date">報告 2026-08-24 ｜ 來源：MLB.com / ESPN / Beckett / Sportscards Pro / 拍賣(2026-07~08)</p></div>
 
-  <h2>🔥 當日熱門球星與新人</h2>
-  <table id="hotlist">
-    <tr><th>聯盟</th><th>球星(點擊查資料)</th><th>隊</th><th>熱度分</th><th>狀態</th></tr>
+  <h2>🔥 當日熱門球星與新人（討論＋行情）</h2>
+  <table>
+    <tr><th>聯盟</th><th>球員</th><th>隊</th><th>熱度分</th><th>狀態</th></tr>
+    <tr><td><span class="chip c-al">美聯</span></td><td><span class="player-link" onclick="showP('39832')">大谷翔平</span></td><td>道奇</td><td><b>99</b></td><td><span class="badge b-hot">最熱</span></td></tr>
+    <tr><td><span class="chip c-al">美聯</span></td><td><span class="player-link" onclick="showP('4719507')">Paul Skenes</span></td><td>海盜</td><td>96</td><td><span class="badge b-hot">爆漲</span></td></tr>
+    <tr><td><span class="chip c-al">美聯</span></td><td><span class="player-link" onclick="showP('4872595')">Munetaka Murakami</span></td><td>白襁</td><td>90</td><td><span class="badge b-spike">上升</span></td></tr>
+    <tr><td><span class="chip c-al">美聯</span></td><td><span class="player-link" onclick="showP('5080771')">Sal Stewart</span></td><td>紅人</td><td>88</td><td><span class="badge b-spike">100RBI</span></td></tr>
+    <tr><td><span class="chip c-nl">國聯</span></td><td><span class="player-link" onclick="showP('5080767')">Roman Anthony</span></td><td>紅襪</td><td>94</td><td><span class="badge b-hot">#1新秀</span></td></tr>
+    <tr><td><span class="chip c-nl">國聯</span></td><td><span class="player-link" onclick="showP('5080761')">Jacob Misiorowski</span></td><td>釀酒人</td><td>85</td><td><span class="badge b-spike">上升</span></td></tr>
+    <tr><td><span class="chip c-nl">國聯</span></td><td><span class="player-link" onclick="showP('4905921')">Junior Caminero</span></td><td>光芒</td><td>83</td><td><span class="badge b-spike">熱門</span></td></tr>
   </table>
 
-  <div class="card" style="margin-top:16px;background:#eaf3ff;">
-    <b>💡 使用說明：</b>點擊上表任一「球星姓名」，即彈出該員的<b>基本資料</b>（身高/體重/年齡/位置/背號/投打）與<b>生涯數據</b>。資料來源：ESPN。
-  </div>
-
   <h2>🎴 球卡行情漲幅（近期成交）</h2>
-  <div class="card"><b>大谷翔平 Shohei Ohtani</b> — 2018 Topps Chrome SuperFractor RC 1/1 成交 <b>$2,562,229</b>；2026 All Kings 1/1 $207,400<br><span class="chip c-al">美聯</span></div>
-  <div class="card"><b>Paul Skenes</b> — 新秀卡 $75 ~ $7,000+；Rookie Patch 1/1 PSA10 <b>$38,400</b></div>
-  <div class="card"><b>Roman Anthony（紅襪）#1 新秀</b> — 2026 Topps Collectors Kit RC：PSA10 $56、SGC10 $34</div>
+  <div class="card"><b>大谷翔平 Shohei Ohtani</b> — 2018 Topps Chrome SuperFractor RC 1/1 成交 <b>$2,562,229</b>；2026 All Kings 1/1 $207,400；紀錄卡 <b>$3,365,000</b><br><span class="chip c-al">美聯</span> <span class="badge b-hot">史上最貴RC</span></div>
+  <div class="card"><b>Paul Skenes</b> — 新秀卡 $75 ~ $7,000+；Rookie Patch 1/1 PSA10 <b>$38,400</b>；2026 Topps Chrome Auto 1/1 PSA10 全篇<br><span class="chip c-al">美聯</span> <span class="badge b-hot">新投領頭</span></div>
+  <div class="card"><b>Roman Anthony（紅襪）#1 新秀</b> — 2026 Topps Collectors Kit RC：PSA10 $56、SGC10 $34、BGS10 $74，行情持續上揚<br><span class="chip c-nl">國聯</span> <span class="badge b-spike">#1</span></div>
+  <div class="card"><b>Munetaka Murakami（白襁）</b> — 新秀卡熱度上升，20+ 轟話題帶動<br><span class="chip c-al">美聯</span></div>
 
-  <h2>⚠️ 冷門警訊</h2>
-  <div class="card">部分季初新秀話題熱度高、但單卡成交仍低於 $25 門檻，屬「觀察單」。</div>
+  <h2>⚠️ 冷門警訊（話題熱但卡價平）</h2>
+  <div class="card">部分季初新秀話題熱度高、但單卡成交仍低於 $25 門檻，屬「觀察單」，暫不列入開團主力。</div>
 
-  <footer>MLB 球星資料查詢 · 2026-08-24 ｜ 生涯數據來源 ESPN，示意整理自公開來源</footer>
+  <footer>MLB 熱度與球卡行情雷達 · 2026-08-24 ｜ 示意整理自公開拍賣/行情來源，實際請以交易平台為準</footer>
 </div>
 
 <!-- Modal -->
 <div id="modal"><div class="modal-card" id="mcard"></div></div>
-
 <script>
-const DATA=[{"id": "39832", "name": "大谷翔平", "en": "Shohei Ohtani", "team": "道奇", "pos": "Designated Hitter", "jersey": "17", "age": "32", "dob": "1994-07-05", "debut": "2018", "height": "6' 4\"", "weight": "210 lbs", "bats": "L", "throws": "R", "birthplace": "Oshu", "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/39832.png", "batsArr": {}, "pitchArr": {}}, {"id": "4719507", "name": "Paul Skenes", "en": "Paul Skenes", "team": "海盜", "pos": "Starting Pitcher", "jersey": "30", "age": "24", "dob": "2002-05-29", "debut": "2024", "height": "6' 6\"", "weight": "260 lbs", "bats": "R", "throws": "R", "birthplace": "Fullerton", "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/4719507.png", "batsArr": {}, "pitchArr": {}}, {"id": "4872595", "name": "村上宗隆", "en": "Munetaka Murakami", "team": "白襁", "pos": "First Baseman", "jersey": "5", "age": "26", "dob": "2000-02-02", "debut": "2026", "height": "6' 2\"", "weight": "213 lbs", "bats": "L", "throws": "R", "birthplace": "Kumamoto", "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/4872595.png", "batsArr": {}, "pitchArr": {}}, {"id": "5080771", "name": "Sal Stewart", "en": "Sal Stewart", "team": "紅人", "pos": "First Baseman", "jersey": "27", "age": "22", "dob": "2003-12-07", "debut": "2025", "height": "6' 1\"", "weight": "224 lbs", "bats": "R", "throws": "R", "birthplace": "Miami", "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/5080771.png", "batsArr": {}, "pitchArr": {}}, {"id": "5080767", "name": "Roman Anthony", "en": "Roman Anthony", "team": "紅襪", "pos": "Left Fielder", "jersey": "19", "age": "22", "dob": "2004-05-13", "debut": "2025", "height": "6' 3\"", "weight": "200 lbs", "bats": "L", "throws": "R", "birthplace": "West Palm Beach", "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/5080767.png", "batsArr": {}, "pitchArr": {}}, {"id": "5080761", "name": "Jacob Misiorowski", "en": "Jacob Misiorowski", "team": "釀酒人", "pos": "Starting Pitcher", "jersey": "32", "age": "24", "dob": "2002-04-03", "debut": "2025", "height": "6' 7\"", "weight": "201 lbs", "bats": "R", "throws": "R", "birthplace": "Blue Springs", "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/5080761.png", "batsArr": {}, "pitchArr": {}}, {"id": "4905921", "name": "Junior Caminero", "en": "Junior Caminero", "team": "光芒", "pos": "Third Baseman", "jersey": "13", "age": "23", "dob": "2003-07-05", "debut": "2023", "height": "6' 1\"", "weight": "220 lbs", "bats": "R", "throws": "R", "birthplace": "Santo Domingo", "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/4905921.png", "batsArr": {}, "pitchArr": {}}];
+const DATA=[{"id": "39832", "name": "大谷翔平", "en": "Shohei Ohtani", "team": "道奇", "pos": "Designated Hitter", "jersey": "17", "age": "32", "dob": "", "debut": "2018", "height": "—", "weight": "—", "bats": "L", "throws": "R", "birthplace": "Oshu", "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/39832.png", "batsArr": {"出賽": "1144", "打擊率": ".282", "全壘打": "310", "打點": "749", "安打": "1188", "得分": "794", "二壘打": "217", "三壘打": "49", "盜壘": "175", "四壞": "618", "三振": "1240", "上壘率": ".375", "長打率": ".577", "OPS": ".952", "ISO": ".295"}, "pitchArr": {"出賽": "114", "勝": "47", "敗": "22", "後援": "0", "局數": "614.1", "ERA": "2.83", "WHIP": "1.06", "三振": "765", "四壞": "208", "K/9": "11.2", "K/BB": "3.7"}}, {"id": "4719507", "name": "Paul Skenes", "en": "Paul Skenes", "team": "海盜", "pos": "Starting Pitcher", "jersey": "30", "age": "24", "dob": "", "debut": "2024", "height": "—", "weight": "—", "bats": "R", "throws": "R", "birthplace": "Fullerton", "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/4719507.png", "batsArr": {}, "pitchArr": {"出賽": "82", "勝": "30", "敗": "24", "後援": "0", "局數": "465.2", "ERA": "2.53", "WHIP": "1.00", "三振": "561", "四壞": "115", "K/9": "10.8", "K/BB": "4.9"}}, {"id": "4872595", "name": "村上宗隆", "en": "Munetaka Murakami", "team": "白襁", "pos": "First Baseman", "jersey": "5", "age": "26", "dob": "", "debut": "2026", "height": "—", "weight": "—", "bats": "L", "throws": "R", "birthplace": "Kumamoto", "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/4872595.png", "batsArr": {"出賽": "100", "打擊率": ".221", "全壘打": "29", "打點": "58", "安打": "79", "得分": "71", "二壘打": "14", "三壘打": "0", "盜壘": "1", "四壞": "77", "三振": "148", "上壘率": ".361", "長打率": ".503", "OPS": ".864", "ISO": ".282"}, "pitchArr": {}}, {"id": "5080771", "name": "Sal Stewart", "en": "Sal Stewart", "team": "紅人", "pos": "First Baseman", "jersey": "27", "age": "22", "dob": "", "debut": "2025", "height": "—", "weight": "—", "bats": "R", "throws": "R", "birthplace": "Miami", "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/5080771.png", "batsArr": {"出賽": "154", "打擊率": ".264", "全壘打": "35", "打點": "112", "安打": "152", "得分": "89", "二壘打": "25", "三壘打": "0", "盜壘": "12", "四壞": "60", "三振": "144", "上壘率": ".333", "長打率": ".490", "OPS": ".823", "ISO": ".226"}, "pitchArr": {}}, {"id": "5080767", "name": "Roman Anthony", "en": "Roman Anthony", "team": "紅襪", "pos": "Left Fielder", "jersey": "19", "age": "22", "dob": "", "debut": "2025", "height": "—", "weight": "—", "bats": "L", "throws": "R", "birthplace": "West Palm Beach", "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/5080767.png", "batsArr": {"出賽": "101", "打擊率": ".273", "全壘打": "9", "打點": "37", "安打": "100", "得分": "60", "二壘打": "23", "三壘打": "2", "盜壘": "6", "四壞": "60", "三振": "117", "上壘率": ".383", "長打率": ".421", "OPS": ".804", "ISO": ".148"}, "pitchArr": {}}, {"id": "5080761", "name": "Jacob Misiorowski", "en": "Jacob Misiorowski", "team": "釀酒人", "pos": "Starting Pitcher", "jersey": "32", "age": "24", "dob": "", "debut": "2025", "height": "—", "weight": "—", "bats": "R", "throws": "R", "birthplace": "Blue Springs", "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/5080761.png", "batsArr": {}, "pitchArr": {"出賽": "40", "勝": "19", "敗": "8", "後援": "0", "局數": "217.0", "ERA": "2.53", "WHIP": "0.90", "三振": "309", "四壞": "66", "K/9": "12.8", "K/BB": "4.7"}}, {"id": "4905921", "name": "Junior Caminero", "en": "Junior Caminero", "team": "光芒", "pos": "Third Baseman", "jersey": "13", "age": "23", "dob": "", "debut": "2023", "height": "—", "weight": "—", "bats": "R", "throws": "R", "birthplace": "Santo Domingo", "headshot": "https://a.espncdn.com/i/headshots/mlb/players/full/4905921.png", "batsArr": {"出賽": "339", "打擊率": ".268", "全壘打": "88", "打點": "221", "安打": "352", "得分": "195", "二壘打": "58", "三壘打": "2", "盜壘": "12", "四壞": "123", "三振": "277", "上壘率": ".331", "長打率": ".516", "OPS": ".847", "ISO": ".248"}, "pitchArr": {}}];
 function esc(s){return s==null?'—':String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+function showP(id){const d=DATA.find(x=>x.id===id);if(!d)return;modal(d);}
 function modal(d){
-  const al=d.bats||d.throws?(d.bats+'/'+d.throws):'—';
   let bt='';
   if(Object.keys(d.batsArr||{}).length){
-    bt='<div class="stat-title">打擊生涯</div><table class="stats"><tr>'+Object.keys(d.batsArr).map(k=>'<th>'+k+'</th>').join('')+'</tr><tr>'+Object.values(d.batsArr).map(v=>'<td>'+esc(v)+'</td>').join('')+'</tr></table>';
+    bt='<div class="stat-title">打擊生涯數據</div><table class="stats"><tr>'+Object.keys(d.batsArr).map(k=>'<th>'+k+'</th>').join('')+'</tr><tr>'+Object.values(d.batsArr).map(v=>'<td>'+esc(v)+'</td>').join('')+'</tr></table>';
   }
   let pt='';
   if(Object.keys(d.pitchArr||{}).length){
-    pt='<div class="stat-title">投球生涯</div><table class="stats"><tr>'+Object.keys(d.pitchArr).map(k=>'<th>'+k+'</th>').join('')+'</tr><tr>'+Object.values(d.pitchArr).map(v=>'<td>'+esc(v)+'</td>').join('')+'</tr></table>';
+    pt='<div class="stat-title">投球生涯數據</div><table class="stats"><tr>'+Object.keys(d.pitchArr).map(k=>'<th>'+k+'</th>').join('')+'</tr><tr>'+Object.values(d.pitchArr).map(v=>'<td>'+esc(v)+'</td>').join('')+'</tr></table>';
   }
   const meta=[
     ['位置',d.pos],['背號',d.jersey],['年齡',d.age],['身高',d.height],
-    ['體重',d.weight],['投/打',al],['初登場',d.debut],['出生地',d.birthplace]
+    ['體重',d.weight],['投/打',(d.bats||'—')+'/'+(d.throws||'—')],['初登場',d.debut],['出生地',d.birthplace]
   ].map(m=>'<div>'+m[0]+'<b>'+esc(m[1])+'</b></div>').join('');
   document.getElementById('mcard').innerHTML=
-    '<button class="modal-close" onclick="closeM()">✕</button>'+
+    '<button class="modal-close" onclick="document.getElementById('modal').classList.remove('show')">✕</button>'+
     '<div class="modal-head"><img class="avatar" src="'+esc(d.headshot)+'" onerror="this.style.display='none'">'+
     '<div><h3>'+esc(d.name)+'</h3><div class="en">'+esc(d.en)+' · '+esc(d.team)+'</div></div></div>'+
     '<div class="meta">'+meta+'</div>'+bt+pt;
   document.getElementById('modal').classList.add('show');
 }
-function closeM(){document.getElementById('modal').classList.remove('show');}
-document.getElementById('modal').addEventListener('click',e=>{if(e.target.id==='modal')closeM();});
-(function(){
-  const tb=document.querySelector('#hotlist');
-  DATA.forEach(p=>{
-    const tr=document.createElement('tr');
-    const lg=(p.team==='白襁'||p.team==='道奇'||p.team==='海盜'||p.team==='紅人'||p.team==='光芒'||p.team==='釀酒人')?'國聯':'美聯';
-    tr.innerHTML='<td><span class="chip c-'+lg+'" >'+lg+'</span></td>'+
-      '<td><span class="player-link" onclick="modal(DATA.find(x=>x.id===''+p.id+''))">'+p.name+'</span></td>'+
-      '<td>'+p.team+'</td><td><b>'+p.score+'</b></td><td><span class="badge b-'+ (p.hot==='爆漲'||p.hot==='#1新秀'?'hot':'spike') +'">'+p.hot+'</span></td>';
-    tb.appendChild(tr);
-  });
-})();
+document.getElementById('modal').addEventListener('click',e=>{if(e.target.id==='modal')document.getElementById('modal').classList.remove('show');});
 </script>
+
 </body>
 </html>
