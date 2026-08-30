@@ -37,7 +37,48 @@ footer{margin-top:24px;font-size:12px;color:#5d7488;text-align:center;}
 .top{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-bottom:14px;}
 .top .t{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px;text-align:center;box-shadow:0 4px 12px rgba(0,0,0,.05);}
 .top .t b{font-size:18px;display:block;margin-bottom:4px;}
-</style></head><body><div class="wrap">
+
+    /* site navigation */
+    .site-shell { min-height: 100vh; display: grid; grid-template-columns: 220px minmax(0, 1fr); background: inherit; }
+    .site-sidebar { position: sticky; top: 0; align-self: start; height: 100vh; box-sizing: border-box; overflow-y: auto; border-right: 1px solid #dfe5df; background: #ffffff; padding: 22px 14px; z-index: 10; }
+    .site-brand { color: #163b34; font-size: 15px; font-weight: 900; letter-spacing: 0; margin: 0 0 14px; }
+    .site-sidebar nav { display: grid; gap: 6px; }
+    .site-nav-link { display: block; color: #40514b; text-decoration: none; border-radius: 8px; padding: 9px 10px; font-size: 14px; font-weight: 750; line-height: 1.25; }
+    .site-nav-link:hover { background: #eef4f1; color: #123d35; }
+    .site-nav-link.active { background: #165f56; color: #ffffff; }
+    .site-shell > header { grid-column: 2; min-width: 0; }
+    .site-shell > main { grid-column: 2; width: min(1180px, calc(100% - 56px)); margin-left: auto; margin-right: auto; min-width: 0; }
+    @media (max-width: 900px) {
+      .site-shell { display: block; }
+      .site-sidebar { position: static; height: auto; border-right: 0; border-bottom: 1px solid #dfe5df; }
+      .site-sidebar nav { grid-template-columns: repeat(auto-fit, minmax(112px, 1fr)); }
+      .site-shell > header { grid-column: auto; }
+      .site-shell > main { width: auto; }
+    }
+  </style></head><body>
+  <div class="site-shell" data-site-nav="true">
+    <aside class="site-sidebar">
+      <div class="site-brand">MLB 投注計畫</div>
+      <nav aria-label="主要頁面">
+        <a class="site-nav-link" href="index.html">總覽</a>
+        <a class="site-nav-link" href="daily_predictions.html">今日預測</a>
+        <a class="site-nav-link" href="betting_ticket.html">投注單</a>
+        <a class="site-nav-link" href="totals_predictions.html">大小分</a>
+        <a class="site-nav-link" href="advanced_factors.html">進階因子</a>
+        <a class="site-nav-link" href="quant_model.html">Q-量化模型</a>
+        <a class="site-nav-link" href="game_simulator.html">逐打席模擬</a>
+        <a class="site-nav-link" href="monte_carlo.html">蒙地卡羅</a>
+        <a class="site-nav-link" href="market_research.html">盤口研究</a>
+        <a class="site-nav-link" href="prediction_log.html">結算紀錄</a>
+        <a class="site-nav-link" href="postgame_review.html">賽後檢討</a>
+        <a class="site-nav-link" href="betting_roi.html">投注 ROI</a>
+        <a class="site-nav-link" href="lineup_fix_comparison.html">修正前後</a>
+        <a class="site-nav-link" href="winner_model_search.html">模型搜尋</a>
+        <a class="site-nav-link" href="prediction_accuracy.html">準確率</a>
+        <a class="site-nav-link" href="status.html">狀態</a>
+        <a class="site-nav-link" href="api/index.html">資料 API</a>
+      </nav>
+    </aside><div class="wrap">
 <div class="hero"><h1>⚾ MLB 每日球星與新人評分站</h1>
 <p class="date">報告 2026-08-30 ｜ 分析 2026-08-29 賽果 ｜ 來源：MLB.com / ESPN / AP ｜ 無資料標 N/A</p></div>
 
@@ -217,4 +258,5 @@ footer{margin-top:24px;font-size:12px;color:#5d7488;text-align:center;}
 
 
 <footer>MLB 每日球星與新人評分站 · 2026-08-30 ｜ 已寫入 files/MLB每日快報/2026-08-30.html ｜ 並同步部署到 https://lolochen86-jpg.github.io/mlb-betting-plan/mlb-daily.html ｜ 資料無法取得處標 N/A</footer>
-</div></body></html>
+</div>  </div>
+</body></html>
