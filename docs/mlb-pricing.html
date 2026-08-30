@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>MLB Hit 期望值 + 定價計算機</title>
+<style>
+  :root{--navy:#0b1f33;--accent:#0d7ae8;--red:#e03a3a;--gold:#e8a30c;--line:#e3eaf2;--soft:#f4f8fc;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:"PingFang TC","Microsoft JhengHei",sans-serif;background:var(--soft);color:var(--navy);}
+  header{background:linear-gradient(135deg,#0b1f33,#14375e);color:#fff;padding:26px 24px;text-align:center;}
+  header h1{font-size:24px;letter-spacing:1px;}
+  header p{font-size:13px;opacity:.85;margin-top:6px;}
+  .wrap{max-width:960px;margin:22px auto;padding:0 16px;}
+  .card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:22px;margin-bottom:18px;box-shadow:0 2px 10px rgba(11,31,51,.05);}
+  .card h2{font-size:17px;color:var(--navy);margin-bottom:14px;border-left:4px solid var(--accent);padding-left:10px;}
+  table{width:100%;border-collapse:collapse;font-size:13px;}
+  th,td{padding:10px 8px;border-bottom:1px solid var(--line);text-align:center;}
+  th{background:var(--soft);color:var(--navy);font-weight:600;}
+  .badge{display:inline-block;padding:3px 10px;border-radius:20px;font-size:12px;font-weight:600;color:#fff;}
+  .tag-ok{background:#2e9e5b;}.tag-warn{background:#e8a30c;}.tag-risk{background:#e03a3a;}
+  .empty{text-align:center;color:#7a8aa0;padding:40px 0;}
+  footer{text-align:center;font-size:12px;color:#7a8aa0;padding:22px 0;}
+</style>
+</head>
+<body>
+<header>
+  <h1>⚾ MLB Hit 期望值 + 定價計算機</h1>
+  <p>台灣團拆主每盒 EV 試算 · 成本毛利 · 每隊/每碼定價 · 風險評估</p>
+</header>
+<div class="wrap">
+  <div class="card">
+    <h2>開團建議</h2>
+    <p style="font-size:14px;line-height:1.8;">
+      此頁面為範例佔位。填入卡系列（series）、每盒成本（box_cost_twd）、開盒數（box_count）、主要 Hit（hits_aut）與保底（auto_relic）後，本智能體將產出完整 EV 試算、期望總值、毛利、每隊/每碼訂價、早鳥分級價與風險等級。
+    </p>
+  </div>
+  <div class="card">
+    <h2>EV 試算摘要（範例）</h2>
+    <table>
+      <tr><th>項目</th><th>數值</th><th>說明</th></tr>
+      <tr><td>每盒 EV</td><td>—</td><td>Σ(卡種機率 × 市場中位價)</td></tr>
+      <tr><td>期望總值</td><td>—</td><td>EV × 開盒數</td></tr>
+      <tr><td>總成本</td><td>—</td><td>box_cost_twd × box_count</td></tr>
+      <tr><td>毛利 / 毛利率</td><td>—</td><td>目標 8~15%</td></tr>
+      <tr><td>風險等級</td><td class="empty" style="padding:0">—</td><td>高 / 中 / 低</td></tr>
+    </table>
+  </div>
+  <div class="card">
+    <h2>每隊 / 每碼訂價（範例）</h2>
+    <p style="font-size:13px;color:#7a8aa0;margin-bottom:10px;">依熱門度（道奇 / 洋基 / 教士高，重建隊低）建議早鳥分級價。</p>
+    <div class="empty">待輸入系列後依卡單與熱門度自動產出訂價表</div>
+  </div>
+</div>
+<footer>MLB 商業鏈 · Hit 定價智能體自動更新頁面 · 離線自包含單檔</footer>
+</body>
+</html>
