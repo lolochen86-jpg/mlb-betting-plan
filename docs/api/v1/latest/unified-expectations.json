@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-08-30T09:05:58",
+  "generated_at": "2026-08-30T16:57:08",
   "target_date": "2026-08-30",
   "model": "統一得分期望 v1",
   "postgame_calibration": {
     "source": "postgame_review",
     "days": 10,
-    "games": 112,
-    "winner_accuracy": 0.5625,
-    "low_confidence_accuracy": 0.473,
+    "games": 119,
+    "winner_accuracy": 0.5714,
+    "low_confidence_accuracy": 0.4875,
     "score_total_bias": 0.0,
     "score_total_bias_applied": 0.0,
     "totals_recent_bias": 0.0,
@@ -19,10 +19,10 @@
     "totals_min_line_gap": 1.0,
     "mismatch_notes": 0,
     "reason_counts": {
-      "high_confidence_hit": 28,
-      "one_run_volatility": 31,
-      "low_confidence_hit": 35,
-      "low_confidence_miss": 29,
+      "high_confidence_hit": 29,
+      "one_run_volatility": 35,
+      "low_confidence_hit": 39,
+      "low_confidence_miss": 31,
       "high_confidence_miss": 10
     },
     "data_gaps": [
@@ -173,21 +173,21 @@
       "matchup_zh": "德州遊騎兵 @ 密爾瓦基釀酒人",
       "away_zh": "德州遊騎兵",
       "home_zh": "密爾瓦基釀酒人",
-      "away_expected_runs": 3.45,
-      "home_expected_runs": 4.85,
-      "expected_total": 8.31,
+      "away_expected_runs": 3.5,
+      "home_expected_runs": 4.88,
+      "expected_total": 8.39,
       "pick_side": "home",
       "prediction_zh": "密爾瓦基釀酒人",
-      "home_win_prob": 0.6808,
-      "away_win_prob": 0.3192,
+      "home_win_prob": 0.6782,
+      "away_win_prob": 0.3218,
       "lineup_source": "projected_recent_lineup_order",
       "away_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
-        "factor": 0.962
+        "factor": 0.961
       },
       "home_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
-        "factor": 1.012
+        "factor": 1.005
       },
       "away_pitcher_weight": 0.9,
       "home_pitcher_weight": 0.9,
@@ -236,21 +236,21 @@
       "matchup_zh": "費城費城人 @ 洛杉磯天使",
       "away_zh": "費城費城人",
       "home_zh": "洛杉磯天使",
-      "away_expected_runs": 4.98,
-      "home_expected_runs": 3.44,
-      "expected_total": 8.42,
+      "away_expected_runs": 5.09,
+      "home_expected_runs": 3.46,
+      "expected_total": 8.55,
       "pick_side": "away",
       "prediction_zh": "費城費城人",
-      "home_win_prob": 0.3038,
-      "away_win_prob": 0.6962,
+      "home_win_prob": 0.3,
+      "away_win_prob": 0.7,
       "lineup_source": "projected_recent_lineup_order",
       "away_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
-        "factor": 1.008
+        "factor": 1.007
       },
       "home_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
-        "factor": 0.908
+        "factor": 0.898
       },
       "away_pitcher_weight": 0.9,
       "home_pitcher_weight": 0.9,
@@ -281,6 +281,69 @@
         "recent_games": 2,
         "recent_relief_pitcher_appearances": 8,
         "unique_recent_relievers": 6,
+        "fatigue_runs": 0.0
+      },
+      "score_bias_applied": 0.0,
+      "totals_recent_bias_applied": 0.0,
+      "missing_data": [
+        "injury_absence_feed"
+      ],
+      "data_quality": "可用",
+      "model_version": "unified_expected_runs_v1"
+    },
+    {
+      "date": "2026-08-30",
+      "game_pk": "823502",
+      "game_time_tw": "2026-08-31 01:35",
+      "game_time_utc": "2026-08-30T17:35:00Z",
+      "matchup_zh": "波士頓紅襪 @ 紐約洋基",
+      "away_zh": "波士頓紅襪",
+      "home_zh": "紐約洋基",
+      "away_expected_runs": 4.17,
+      "home_expected_runs": 3.81,
+      "expected_total": 7.98,
+      "pick_side": "away",
+      "prediction_zh": "波士頓紅襪",
+      "home_win_prob": 0.4522,
+      "away_win_prob": 0.5478,
+      "lineup_source": "projected_recent_lineup_order",
+      "away_lineup_factor": {
+        "source_quality": "projected_recent_lineup_order",
+        "factor": 1.011
+      },
+      "home_lineup_factor": {
+        "source_quality": "projected_recent_lineup_order",
+        "factor": 0.944
+      },
+      "away_pitcher_weight": 0.9,
+      "home_pitcher_weight": 0.9,
+      "weather": {
+        "source": "open_meteo_forecast",
+        "venue": "Yankee Stadium",
+        "home_team": "紐約洋基",
+        "roof": false,
+        "latitude": 40.8296,
+        "longitude": -73.9262,
+        "forecast_time_utc": "2026-08-30T18:00",
+        "temperature_c": 22.4,
+        "humidity_pct": 85.0,
+        "precipitation_probability_pct": 15.0,
+        "wind_speed_kmh": 12.4,
+        "wind_direction_deg": 210.0,
+        "factor": 0.0
+      },
+      "away_bullpen": {
+        "source": "recent_boxscore_pitcher_usage",
+        "recent_games": 2,
+        "recent_relief_pitcher_appearances": 5,
+        "unique_recent_relievers": 4,
+        "fatigue_runs": -0.1
+      },
+      "home_bullpen": {
+        "source": "recent_boxscore_pitcher_usage",
+        "recent_games": 3,
+        "recent_relief_pitcher_appearances": 8,
+        "unique_recent_relievers": 7,
         "fatigue_runs": 0.0
       },
       "score_bias_applied": 0.0,
@@ -345,69 +408,6 @@
         "recent_relief_pitcher_appearances": 5,
         "unique_recent_relievers": 4,
         "fatigue_runs": -0.1
-      },
-      "score_bias_applied": 0.0,
-      "totals_recent_bias_applied": 0.0,
-      "missing_data": [
-        "injury_absence_feed"
-      ],
-      "data_quality": "可用",
-      "model_version": "unified_expected_runs_v1"
-    },
-    {
-      "date": "2026-08-30",
-      "game_pk": "823502",
-      "game_time_tw": "2026-08-31 01:35",
-      "game_time_utc": "2026-08-30T17:35:00Z",
-      "matchup_zh": "波士頓紅襪 @ 紐約洋基",
-      "away_zh": "波士頓紅襪",
-      "home_zh": "紐約洋基",
-      "away_expected_runs": 4.16,
-      "home_expected_runs": 3.73,
-      "expected_total": 7.89,
-      "pick_side": "away",
-      "prediction_zh": "波士頓紅襪",
-      "home_win_prob": 0.4417,
-      "away_win_prob": 0.5583,
-      "lineup_source": "projected_recent_lineup_order",
-      "away_lineup_factor": {
-        "source_quality": "projected_recent_lineup_order",
-        "factor": 1.017
-      },
-      "home_lineup_factor": {
-        "source_quality": "projected_recent_lineup_order",
-        "factor": 0.964
-      },
-      "away_pitcher_weight": 0.9,
-      "home_pitcher_weight": 0.9,
-      "weather": {
-        "source": "open_meteo_forecast",
-        "venue": "Yankee Stadium",
-        "home_team": "紐約洋基",
-        "roof": false,
-        "latitude": 40.8296,
-        "longitude": -73.9262,
-        "forecast_time_utc": "2026-08-30T18:00",
-        "temperature_c": 22.4,
-        "humidity_pct": 85.0,
-        "precipitation_probability_pct": 15.0,
-        "wind_speed_kmh": 12.4,
-        "wind_direction_deg": 210.0,
-        "factor": 0.0
-      },
-      "away_bullpen": {
-        "source": "recent_boxscore_pitcher_usage",
-        "recent_games": 2,
-        "recent_relief_pitcher_appearances": 5,
-        "unique_recent_relievers": 4,
-        "fatigue_runs": -0.1
-      },
-      "home_bullpen": {
-        "source": "recent_boxscore_pitcher_usage",
-        "recent_games": 3,
-        "recent_relief_pitcher_appearances": 8,
-        "unique_recent_relievers": 7,
-        "fatigue_runs": 0.0
       },
       "score_bias_applied": 0.0,
       "totals_recent_bias_applied": 0.0,
@@ -671,6 +671,69 @@
     },
     {
       "date": "2026-08-30",
+      "game_pk": "824959",
+      "game_time_tw": "2026-08-31 04:05",
+      "game_time_utc": "2026-08-30T20:05:00Z",
+      "matchup_zh": "巴爾的摩金鶯 @ 運動家",
+      "away_zh": "巴爾的摩金鶯",
+      "home_zh": "運動家",
+      "away_expected_runs": 4.99,
+      "home_expected_runs": 4.68,
+      "expected_total": 9.67,
+      "pick_side": "away",
+      "prediction_zh": "巴爾的摩金鶯",
+      "home_win_prob": 0.4586,
+      "away_win_prob": 0.5414,
+      "lineup_source": "projected_recent_lineup_order",
+      "away_lineup_factor": {
+        "source_quality": "projected_recent_lineup_order",
+        "factor": 0.961
+      },
+      "home_lineup_factor": {
+        "source_quality": "projected_recent_lineup_order",
+        "factor": 0.953
+      },
+      "away_pitcher_weight": 0.9,
+      "home_pitcher_weight": 0.9,
+      "weather": {
+        "source": "open_meteo_forecast",
+        "venue": "Sutter Health Park",
+        "home_team": "運動家",
+        "roof": false,
+        "latitude": 38.5802,
+        "longitude": -121.513,
+        "forecast_time_utc": "2026-08-30T20:00",
+        "temperature_c": 27.9,
+        "humidity_pct": 34.0,
+        "precipitation_probability_pct": 0.0,
+        "wind_speed_kmh": 12.0,
+        "wind_direction_deg": 231.0,
+        "factor": 0.0
+      },
+      "away_bullpen": {
+        "source": "recent_boxscore_pitcher_usage",
+        "recent_games": 3,
+        "recent_relief_pitcher_appearances": 11,
+        "unique_recent_relievers": 8,
+        "fatigue_runs": 0.135
+      },
+      "home_bullpen": {
+        "source": "recent_boxscore_pitcher_usage",
+        "recent_games": 2,
+        "recent_relief_pitcher_appearances": 6,
+        "unique_recent_relievers": 5,
+        "fatigue_runs": -0.09
+      },
+      "score_bias_applied": 0.0,
+      "totals_recent_bias_applied": 0.0,
+      "missing_data": [
+        "injury_absence_feed"
+      ],
+      "data_quality": "可用",
+      "model_version": "unified_expected_runs_v1"
+    },
+    {
+      "date": "2026-08-30",
       "game_pk": "822688",
       "game_time_tw": "2026-08-31 00:15",
       "game_time_utc": "2026-08-30T16:15:00Z",
@@ -723,69 +786,6 @@
         "recent_relief_pitcher_appearances": 10,
         "unique_recent_relievers": 8,
         "fatigue_runs": 0.09
-      },
-      "score_bias_applied": 0.0,
-      "totals_recent_bias_applied": 0.0,
-      "missing_data": [
-        "injury_absence_feed"
-      ],
-      "data_quality": "可用",
-      "model_version": "unified_expected_runs_v1"
-    },
-    {
-      "date": "2026-08-30",
-      "game_pk": "824959",
-      "game_time_tw": "2026-08-31 04:05",
-      "game_time_utc": "2026-08-30T20:05:00Z",
-      "matchup_zh": "巴爾的摩金鶯 @ 運動家",
-      "away_zh": "巴爾的摩金鶯",
-      "home_zh": "運動家",
-      "away_expected_runs": 4.53,
-      "home_expected_runs": 4.6,
-      "expected_total": 9.13,
-      "pick_side": "home",
-      "prediction_zh": "運動家",
-      "home_win_prob": 0.5088,
-      "away_win_prob": 0.4912,
-      "lineup_source": "projected_recent_lineup_order",
-      "away_lineup_factor": {
-        "source_quality": "projected_recent_lineup_order",
-        "factor": 0.931
-      },
-      "home_lineup_factor": {
-        "source_quality": "projected_recent_lineup_order",
-        "factor": 0.953
-      },
-      "away_pitcher_weight": 0.9,
-      "home_pitcher_weight": 0.75,
-      "weather": {
-        "source": "open_meteo_forecast",
-        "venue": "Sutter Health Park",
-        "home_team": "運動家",
-        "roof": false,
-        "latitude": 38.5802,
-        "longitude": -121.513,
-        "forecast_time_utc": "2026-08-30T20:00",
-        "temperature_c": 27.9,
-        "humidity_pct": 34.0,
-        "precipitation_probability_pct": 0.0,
-        "wind_speed_kmh": 12.0,
-        "wind_direction_deg": 231.0,
-        "factor": 0.0
-      },
-      "away_bullpen": {
-        "source": "recent_boxscore_pitcher_usage",
-        "recent_games": 3,
-        "recent_relief_pitcher_appearances": 11,
-        "unique_recent_relievers": 8,
-        "fatigue_runs": 0.135
-      },
-      "home_bullpen": {
-        "source": "recent_boxscore_pitcher_usage",
-        "recent_games": 2,
-        "recent_relief_pitcher_appearances": 6,
-        "unique_recent_relievers": 5,
-        "fatigue_runs": -0.09
       },
       "score_bias_applied": 0.0,
       "totals_recent_bias_applied": 0.0,
