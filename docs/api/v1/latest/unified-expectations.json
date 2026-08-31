@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-08-31T09:06:53",
+  "generated_at": "2026-08-31T17:23:02",
   "target_date": "2026-08-31",
   "model": "統一得分期望 v1",
   "postgame_calibration": {
     "source": "postgame_review",
     "days": 10,
-    "games": 118,
-    "winner_accuracy": 0.5763,
-    "low_confidence_accuracy": 0.5349,
+    "games": 122,
+    "winner_accuracy": 0.5738,
+    "low_confidence_accuracy": 0.5341,
     "score_total_bias": 0.0,
     "score_total_bias_applied": 0.0,
     "totals_recent_bias": 0.0,
@@ -19,11 +19,11 @@
     "totals_min_line_gap": 1.0,
     "mismatch_notes": 0,
     "reason_counts": {
-      "high_confidence_miss": 10,
+      "high_confidence_miss": 11,
       "one_run_volatility": 32,
-      "high_confidence_hit": 22,
-      "low_confidence_hit": 46,
-      "low_confidence_miss": 30
+      "high_confidence_hit": 23,
+      "low_confidence_hit": 47,
+      "low_confidence_miss": 31
     },
     "data_gaps": [
       "高信心勝方失準偏多：優先補官方先發打線、牛棚可用性、傷兵/輪休。"
@@ -551,13 +551,13 @@
       "matchup_zh": "聖地牙哥教士 @ 辛辛那提紅人",
       "away_zh": "聖地牙哥教士",
       "home_zh": "辛辛那提紅人",
-      "away_expected_runs": 4.74,
+      "away_expected_runs": 4.76,
       "home_expected_runs": 3.83,
-      "expected_total": 8.57,
+      "expected_total": 8.59,
       "pick_side": "away",
       "prediction_zh": "聖地牙哥教士",
-      "home_win_prob": 0.3797,
-      "away_win_prob": 0.6203,
+      "home_win_prob": 0.3762,
+      "away_win_prob": 0.6238,
       "lineup_source": "projected_recent_lineup_order",
       "away_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
@@ -565,7 +565,7 @@
       },
       "home_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
-        "factor": 0.972
+        "factor": 0.959
       },
       "away_pitcher_weight": 0.9,
       "home_pitcher_weight": 0.9,
@@ -614,13 +614,13 @@
       "matchup_zh": "密爾瓦基釀酒人 @ 芝加哥小熊",
       "away_zh": "密爾瓦基釀酒人",
       "home_zh": "芝加哥小熊",
-      "away_expected_runs": 4.51,
+      "away_expected_runs": 4.55,
       "home_expected_runs": 4.88,
-      "expected_total": 9.39,
+      "expected_total": 9.43,
       "pick_side": "home",
       "prediction_zh": "芝加哥小熊",
-      "home_win_prob": 0.5495,
-      "away_win_prob": 0.4505,
+      "home_win_prob": 0.5446,
+      "away_win_prob": 0.4554,
       "lineup_source": "projected_recent_lineup_order",
       "away_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
@@ -628,7 +628,7 @@
       },
       "home_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
-        "factor": 1.034
+        "factor": 1.027
       },
       "away_pitcher_weight": 0.9,
       "home_pitcher_weight": 0.9,
