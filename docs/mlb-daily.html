@@ -83,7 +83,7 @@ function modal(d){
   const body = (d.batsArr?statTable(d.batsArr):'')+(d.pitchArr?statTable(d.pitchArr):'');
   document.getElementById('mcard').innerHTML=
     '<button class="modal-close" onclick="closeModal()">✕</button>'+
-    '<div class="modal-head"><img class="avatar" src="'+esc(d.headshot)+'" onerror="this.style.display='none'">'+
+    '<div class="modal-head"><img class="avatar" src="'+esc(d.headshot)+'" onerror="this.style.visibility=hidden">'+
     '<div><h3>'+esc(d.name)+'</h3><div class="en">'+esc(d.en)+' · '+esc(d.team)+'</div></div></div>'+
     '<div class="meta">'+meta+'</div>'+
     (body?body:'<div class="stat-title">生涯/數據</div><p style="color:#8a9cb0;font-size:13px;">詳細生涯數據待補入。</p>');
