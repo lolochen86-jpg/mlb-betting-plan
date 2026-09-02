@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-09-02T13:29:18",
+  "generated_at": "2026-09-02T19:58:35",
   "target_date": "2026-09-02",
   "model": "統一得分期望 v1",
   "postgame_calibration": {
     "source": "postgame_review",
     "days": 10,
-    "games": 105,
-    "winner_accuracy": 0.5619,
-    "low_confidence_accuracy": 0.5476,
+    "games": 120,
+    "winner_accuracy": 0.5417,
+    "low_confidence_accuracy": 0.5319,
     "score_total_bias": 0.0,
     "score_total_bias_applied": 0.0,
     "totals_recent_bias": 0.0,
@@ -19,11 +19,11 @@
     "totals_min_line_gap": 1.0,
     "mismatch_notes": 0,
     "reason_counts": {
-      "low_confidence_hit": 46,
-      "high_confidence_hit": 13,
-      "low_confidence_miss": 27,
-      "one_run_volatility": 26,
-      "high_confidence_miss": 8
+      "low_confidence_hit": 50,
+      "high_confidence_hit": 15,
+      "low_confidence_miss": 33,
+      "one_run_volatility": 28,
+      "high_confidence_miss": 11
     },
     "data_gaps": [
       "高信心勝方失準偏多：優先補官方先發打線、牛棚可用性、傷兵/輪休。"
