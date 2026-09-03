@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MLB Q-量化模型</title>
+  <style>
+    body { margin: 0; background: #f5f7f4; color: #14211d; font-family: "Noto Sans TC", "Microsoft JhengHei", Arial, sans-serif; }
+    main { width: min(1180px, calc(100% - 48px)); margin: 0 auto; padding: 28px 0 48px; }
+    header { display: flex; justify-content: space-between; gap: 18px; align-items: end; border-bottom: 1px solid #dfe6df; padding-bottom: 18px; margin-bottom: 22px; }
+    h1 { margin: 0 0 8px; font-size: 30px; letter-spacing: 0; }
+    p { margin: 0; color: #65736d; line-height: 1.65; }
+    .cards { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin: 18px 0; }
+    .card { background: #fff; border: 1px solid #dfe6df; border-radius: 8px; padding: 15px; }
+    .card span, td span { display: block; color: #66756f; font-size: 12px; margin-top: 5px; line-height: 1.45; }
+    .card strong { display: block; font-size: 26px; margin-top: 6px; }
+    section { background: #fff; border: 1px solid #dfe6df; border-radius: 8px; padding: 16px; margin-top: 14px; }
+    h2 { margin: 0 0 10px; font-size: 20px; }
+    table { width: 100%; border-collapse: collapse; background: #fff; margin-top: 12px; }
+    th, td { text-align: left; border-bottom: 1px solid #e4e9e4; padding: 10px 9px; vertical-align: top; font-size: 14px; }
+    th { background: #eef5f1; color: #40514b; font-size: 12px; }
+    .pill { display: inline-block; border-radius: 999px; padding: 4px 8px; font-size: 12px; }
+    .ok { background: #dff3ea; color: #12634f; }
+    .warn { background: #fde7e7; color: #993c3c; }
+    @media (max-width: 900px) { .cards { grid-template-columns: 1fr 1fr; } header { display: block; } table { min-width: 980px; } section.table-wrap { overflow-x: auto; } }
+  
+    /* site navigation */
+    .site-shell { min-height: 100vh; display: grid; grid-template-columns: 220px minmax(0, 1fr); background: inherit; }
+    .site-sidebar { position: sticky; top: 0; align-self: start; height: 100vh; box-sizing: border-box; overflow-y: auto; border-right: 1px solid #dfe5df; background: #ffffff; padding: 22px 14px; z-index: 10; }
+    .site-brand { color: #163b34; font-size: 15px; font-weight: 900; letter-spacing: 0; margin: 0 0 14px; }
+    .site-sidebar nav { display: grid; gap: 6px; }
+    .site-nav-link { display: block; color: #40514b; text-decoration: none; border-radius: 8px; padding: 9px 10px; font-size: 14px; font-weight: 750; line-height: 1.25; }
+    .site-nav-link:hover { background: #eef4f1; color: #123d35; }
+    .site-nav-link.active { background: #165f56; color: #ffffff; }
+    .site-shell > header { grid-column: 2; min-width: 0; }
+    .site-shell > main { grid-column: 2; width: min(1180px, calc(100% - 56px)); margin-left: auto; margin-right: auto; min-width: 0; }
+    @media (max-width: 900px) {
+      .site-shell { display: block; }
+      .site-sidebar { position: static; height: auto; border-right: 0; border-bottom: 1px solid #dfe5df; }
+      .site-sidebar nav { grid-template-columns: repeat(auto-fit, minmax(112px, 1fr)); }
+      .site-shell > header { grid-column: auto; }
+      .site-shell > main { width: auto; }
+    }
+  </style>
+</head>
+<body>
+  <div class="site-shell" data-site-nav="true">
+    <aside class="site-sidebar">
+      <div class="site-brand">MLB 投注計畫</div>
+      <nav aria-label="主要頁面">
+        <a class="site-nav-link" href="index.html">總覽</a>
+        <a class="site-nav-link" href="daily_predictions.html">今日預測</a>
+        <a class="site-nav-link" href="betting_ticket.html">投注單</a>
+        <a class="site-nav-link" href="totals_predictions.html">大小分</a>
+        <a class="site-nav-link" href="advanced_factors.html">進階因子</a>
+        <a class="site-nav-link active" href="quant_model.html">Q-量化模型</a>
+        <a class="site-nav-link" href="game_simulator.html">逐打席模擬</a>
+        <a class="site-nav-link" href="monte_carlo.html">蒙地卡羅</a>
+        <a class="site-nav-link" href="market_research.html">盤口研究</a>
+        <a class="site-nav-link" href="prediction_log.html">結算紀錄</a>
+        <a class="site-nav-link" href="postgame_review.html">賽後檢討</a>
+        <a class="site-nav-link" href="betting_roi.html">投注 ROI</a>
+        <a class="site-nav-link" href="lineup_fix_comparison.html">修正前後</a>
+        <a class="site-nav-link" href="winner_model_search.html">模型搜尋</a>
+        <a class="site-nav-link" href="prediction_accuracy.html">準確率</a>
+        <a class="site-nav-link" href="status.html">狀態</a>
+        <a class="site-nav-link" href="api/index.html">資料 API</a>
+      </nav>
+    </aside>
+<main>
+  <header>
+    <div>
+      <h1>MLB Q-量化模型</h1>
+      <p>新增桌面模型包：XGBoost 獨贏 + Poisson 大小分。先作為候選模型，和現有正式模型同場對比。</p>
+    </div>
+    <p>目標日期：2026-09-03<br>產生時間：2026-09-03T08:59:03</p>
+  </header>
+  <div class="cards">
+    <div class="card"><span>今日賽事</span><strong>9</strong></div>
+    <div class="card"><span>與現有模型同向</span><strong>7</strong></div>
+    <div class="card"><span>Bundle holdout 勝率</span><strong>52.1%</strong></div>
+    <div class="card"><span>Bundle 總分 MAE</span><strong>3.41</strong></div>
+  </div>
+  <section>
+    <h2>是否更完美</h2>
+    <p>目前不能判定更完美。此 bundle holdout 獨贏準確率約 52.08%；先列為 Q-量化候選，累積實戰結算後再調整權重。</p>
+    <p>先作為候選確認模型；只有在同場實戰準確率連續優於 A-畢氏勝率與統一得分模型後，才提高為主模型權重。</p>
+    <p>訓練列數：2687 / holdout：240 / 訓練時間：2026-07-01T14:27:27.682622+00:00</p>
+  </section>
+  <section class="table-wrap">
+    <h2>今日 Q 模型預測</h2>
+    <table>
+      <thead><tr><th>台灣時間</th><th>狀態</th><th>對戰</th><th>Q 勝方</th><th>Q 比分</th><th>Q 大小分</th><th>搭配</th><th>資料品質</th></tr></thead>
+      <tbody>
+            <tr>
+              <td>2026-09-04 00:35</td>
+              <td>Scheduled</td>
+              <td>舊金山巨人 @ 匹茲堡海盜<span>GamePk 823337</span></td>
+              <td>匹茲堡海盜<span>55.8%</span></td>
+              <td>舊金山巨人 4.55 : 匹茲堡海盜 4.95</td>
+              <td>9.5<span>盤口 8.5 / 大分 60.8%</span></td>
+              <td><b class="pill ok">一致</b></td>
+              <td>可用但需留意<span>home_probable_pitcher_not_fully_confirmed</span></td>
+            </tr>
+            
+
+            <tr>
+              <td>2026-09-04 01:10</td>
+              <td>Scheduled</td>
+              <td>多倫多藍鳥 @ 克里夫蘭守護者<span>GamePk 824388</span></td>
+              <td>克里夫蘭守護者<span>50.4%</span></td>
+              <td>多倫多藍鳥 4.74 : 克里夫蘭守護者 4.76</td>
+              <td>9.5<span>盤口 8.5 / 大分 60.8%</span></td>
+              <td><b class="pill ok">一致</b></td>
+              <td>完整<span>-</span></td>
+            </tr>
+            
+
+            <tr>
+              <td>2026-09-04 02:10</td>
+              <td>Scheduled</td>
+              <td>芝加哥白襪 @ 休士頓太空人<span>GamePk 824144</span></td>
+              <td>休士頓太空人<span>63.1%</span></td>
+              <td>芝加哥白襪 4.3 : 休士頓太空人 5.2</td>
+              <td>9.5<span>盤口 8.5 / 大分 60.8%</span></td>
+              <td><b class="pill ok">一致</b></td>
+              <td>完整<span>-</span></td>
+            </tr>
+            
+
+            <tr>
+              <td>2026-09-04 07:15</td>
+              <td>Scheduled</td>
+              <td>密爾瓦基釀酒人 @ 芝加哥小熊<span>GamePk 824632</span></td>
+              <td>密爾瓦基釀酒人<span>52.7%</span></td>
+              <td>密爾瓦基釀酒人 1.21 : 芝加哥小熊 1.13</td>
+              <td>2.34<span>盤口 8.5 / 小分 99.9%</span></td>
+              <td><b class="pill ok">一致</b></td>
+              <td>完整<span>-</span></td>
+            </tr>
+            
+
+            <tr>
+              <td>2026-09-04 07:15</td>
+              <td>Scheduled</td>
+              <td>波士頓紅襪 @ 巴爾的摩金鶯<span>GamePk 824796</span></td>
+              <td>巴爾的摩金鶯<span>56.2%</span></td>
+              <td>波士頓紅襪 2.64 : 巴爾的摩金鶯 2.95</td>
+              <td>5.59<span>盤口 8.5 / 小分 88.6%</span></td>
+              <td><b class="pill warn">分歧</b></td>
+              <td>可用但需留意<span>home_probable_pitcher_not_fully_confirmed</span></td>
+            </tr>
+            
+
+            <tr>
+              <td>2026-09-04 07:40</td>
+              <td>Scheduled</td>
+              <td>邁阿密馬林魚 @ 堪薩斯市皇家<span>GamePk 824069</span></td>
+              <td>邁阿密馬林魚<span>50.1%</span></td>
+              <td>邁阿密馬林魚 4.75 : 堪薩斯市皇家 4.75</td>
+              <td>9.5<span>盤口 8.5 / 大分 60.8%</span></td>
+              <td><b class="pill warn">分歧</b></td>
+              <td>完整<span>-</span></td>
+            </tr>
+            
+
+            <tr>
+              <td>2026-09-04 08:05</td>
+              <td>Scheduled</td>
+              <td>坦帕灣光芒 @ 德州遊騎兵<span>GamePk 822853</span></td>
+              <td>德州遊騎兵<span>56.9%</span></td>
+              <td>坦帕灣光芒 4.51 : 德州遊騎兵 4.99</td>
+              <td>9.5<span>盤口 8.5 / 大分 60.8%</span></td>
+              <td><b class="pill ok">一致</b></td>
+              <td>完整<span>-</span></td>
+            </tr>
+            
+
+            <tr>
+              <td>2026-09-04 09:40</td>
+              <td>Scheduled</td>
+              <td>運動家 @ 西雅圖水手<span>GamePk 823095</span></td>
+              <td>西雅圖水手<span>68.1%</span></td>
+              <td>運動家 7.62 : 西雅圖水手 9.38</td>
+              <td>17.0<span>盤口 8.5 / 大分 98.7%</span></td>
+              <td><b class="pill ok">一致</b></td>
+              <td>完整<span>-</span></td>
+            </tr>
+            
+
+            <tr>
+              <td>2026-09-04 10:10</td>
+              <td>Scheduled</td>
+              <td>聖路易紅雀 @ 洛杉磯道奇<span>GamePk 823907</span></td>
+              <td>洛杉磯道奇<span>59.7%</span></td>
+              <td>聖路易紅雀 4.42 : 洛杉磯道奇 5.08</td>
+              <td>9.5<span>盤口 8.5 / 大分 60.8%</span></td>
+              <td><b class="pill ok">一致</b></td>
+              <td>完整<span>-</span></td>
+            </tr>
+            </tbody>
+    </table>
+  </section>
+</main>
+  </div>
+</body>
+</html>

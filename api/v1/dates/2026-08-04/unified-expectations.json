@@ -1,0 +1,991 @@
+{
+  "generated_at": "2026-08-04T21:05:13",
+  "target_date": "2026-08-04",
+  "model": "統一得分期望 v1",
+  "postgame_calibration": {
+    "source": "postgame_review",
+    "days": 10,
+    "games": 120,
+    "winner_accuracy": 0.5583,
+    "low_confidence_accuracy": 0.5543,
+    "score_total_bias": 0.556,
+    "score_total_bias_applied": 0.56,
+    "totals_recent_bias": 0.736,
+    "totals_recent_bias_applied": 0.74,
+    "totals_recent_games": 23,
+    "winner_min_confidence": 0.55,
+    "totals_min_edge": 0.025,
+    "totals_min_prob": 0.58,
+    "totals_min_line_gap": 1.0,
+    "mismatch_notes": 0,
+    "reason_counts": {
+      "low_confidence_hit": 51,
+      "one_run_volatility": 38,
+      "low_confidence_miss": 23,
+      "totals_miss": 37,
+      "large_totals_error": 23,
+      "high_confidence_miss": 12,
+      "high_confidence_hit": 16
+    },
+    "data_gaps": [
+      "大小分大偏差偏多：優先補真實天氣、球場風向、先發/牛棚臨場狀態。",
+      "高信心勝方失準偏多：優先補官方先發打線、牛棚可用性、傷兵/輪休。"
+    ],
+    "notes": [
+      "近十天比分模型總分平均偏差 +0.56 分，今日比分總分校正 +0.56 分。"
+    ]
+  },
+  "summary": {
+    "games": 15,
+    "missing_weather": 0,
+    "missing_lineup": 0,
+    "missing_bullpen": 0
+  },
+  "games": [
+    {
+      "date": "2026-08-04",
+      "game_pk": "823432",
+      "game_time_tw": "2026-08-05 06:40",
+      "game_time_utc": "2026-08-04T22:40:00Z",
+      "matchup_zh": "華盛頓國民 @ 費城費城人",
+      "away_zh": "華盛頓國民",
+      "home_zh": "費城費城人",
+      "away_expected_runs": 5.31,
+      "home_expected_runs": 5.59,
+      "expected_total": 10.9,
+      "pick_side": "home",
+      "prediction_zh": "費城費城人",
+      "home_win_prob": 0.5371,
+      "away_win_prob": 0.4629,
+      "lineup_source": "projected_recent_lineup_order",
+      "away_lineup_factor": {
+        "source_quality": "projected_recent_lineup_order",
+        "factor": 1.042
+      },
+      "home_lineup_factor": {
+        "source_quality": "projected_recent_lineup_order",
+        "factor": 1.017
+      },
+      "away_pitcher_weight": 0.9,
+      "home_pitcher_weight": 0.9,
+      "weather": {
+        "source": "open_meteo_forecast",
+        "venue": "Citizens Bank Park",
+        "home_team": "費城費城人",
+        "roof": false,
+        "latitude": 39.9061,
+        "longitude": -75.1665,
+        "forecast_time_utc": "2026-08-04T23:00",
+        "temperature_c": 25.7,
+        "humidity_pct": 77.0,
+        "precipitation_probability_pct": 0.0,
+        "wind_speed_kmh": 6.2,
+        "wind_direction_deg": 83.0,
+        "factor": 0.05
+      },
+      "away_bullpen": {
+        "source": "recent_boxscore_pitcher_usage",
+        "recent_games": 3,
+        "recent_relief_pitcher_appearances": 5,
+        "unique_recent_relievers": 5,
+        "fatigue_runs": -0.1
+      },
+      "home_bullpen": {
+        "source": "recent_boxscore_pitcher_usage",
+        "recent_games": 3,
+        "recent_relief_pitcher_appearances": 9,
+        "unique_recent_relievers": 7,
+        "fatigue_runs": 0.045
+      },
+      "score_bias_applied": 0.56,
+      "totals_recent_bias_applied": 0.74,
+      "missing_data": [
+        "injury_absence_feed"
+      ],
+      "data_quality": "可用",
+      "model_version": "unified_expected_runs_v1"
+    },
+    {
+      "date": "2026-08-04",
+      "game_pk": "823756",
+      "game_time_tw": "2026-08-05 07:40",
+      "game_time_utc": "2026-08-04T23:40:00Z",
+      "matchup_zh": "匹茲堡海盜 @ 密爾瓦基釀酒人",
+      "away_zh": "匹茲堡海盜",
+      "home_zh": "密爾瓦基釀酒人",
+      "away_expected_runs": 4.77,
+      "home_expected_runs": 5.37,
+      "expected_total": 10.14,
+      "pick_side": "home",
+      "prediction_zh": "密爾瓦基釀酒人",
+      "home_win_prob": 0.5794,
+      "away_win_prob": 0.4206,
+      "lineup_source": "projected_recent_lineup_order",
+      "away_lineup_factor": {
+        "source_quality": "projected_recent_lineup_order",
+        "factor": 1.025
+      },
+      "home_lineup_factor": {
+        "source_quality": "projected_recent_lineup_order",
+        "factor": 1.011
+      },
+      "away_pitcher_weight": 0.9,
+      "home_pitcher_weight": 0.9,
+      "weather": {
+        "source": "open_meteo_forecast",
+        "venue": "American Family Field",
+        "home_team": "密爾瓦基釀酒人",
+        "roof": true,
+        "latitude": 43.028,
+        "longitude": -87.9712,
+        "forecast_time_utc": "2026-08-04T23:00",
+        "temperature_c": 29.9,
+        "humidity_pct": 47.0,
+        "precipitation_probability_pct": 4.0,
+        "wind_speed_kmh": 11.8,
+        "wind_direction_deg": 243.0,
+        "factor": 0.052
+      },
+      "away_bullpen": {
+        "source": "recent_boxscore_pitcher_usage",
+        "recent_games": 3,
+        "recent_relief_pitcher_appearances": 9,
+        "unique_recent_relievers": 9,
+        "fatigue_runs": 0.045
+      },
+      "home_bullpen": {
+        "source": "recent_boxscore_pitcher_usage",
+        "recent_games": 3,
+        "recent_relief_pitcher_appearances": 7,
+        "unique_recent_relievers": 5,
+        "fatigue_runs": -0.045
+      },
+      "score_bias_applied": 0.56,
+      "totals_recent_bias_applied": 0.74,
+      "missing_data": [
+        "injury_absence_feed"
+      ],
+      "data_quality": "可用",
+      "model_version": "unified_expected_runs_v1"
+    },
+    {
+      "date": "2026-08-04",
+      "game_pk": "823517",
+      "game_time_tw": "2026-08-05 07:05",
+      "game_time_utc": "2026-08-04T23:05:00Z",
+      "matchup_zh": "聖路易紅雀 @ 紐約洋基",
+      "away_zh": "聖路易紅雀",
+      "home_zh": "紐約洋基",
+      "away_expected_runs": 4.48,
+      "home_expected_runs": 4.85,
+      "expected_total": 9.32,
+      "pick_side": "home",
+      "prediction_zh": "紐約洋基",
+      "home_win_prob": 0.5496,
+      "away_win_prob": 0.4504,
+      "lineup_source": "projected_recent_lineup_order",
+      "away_lineup_factor": {
+        "source_quality": "projected_recent_lineup_order",
+        "factor": 0.971
+      },
+      "home_lineup_factor": {
+        "source_quality": "projected_recent_lineup_order",
+        "factor": 0.961
+      },
+      "away_pitcher_weight": 0.9,
+      "home_pitcher_weight": 0.9,
+      "weather": {
+        "source": "open_meteo_forecast",
+        "venue": "Yankee Stadium",
+        "home_team": "紐約洋基",
+        "roof": false,
+        "latitude": 40.8296,
+        "longitude": -73.9262,
+        "forecast_time_utc": "2026-08-04T23:00",
+        "temperature_c": 23.5,
+        "humidity_pct": 78.0,
+        "precipitation_probability_pct": 0.0,
+        "wind_speed_kmh": 7.8,
+        "wind_direction_deg": 158.0,
+        "factor": 0.0
+      },
+      "away_bullpen": {
+        "source": "recent_boxscore_pitcher_usage",
+        "recent_games": 3,
+        "recent_relief_pitcher_appearances": 8,
+        "unique_recent_relievers": 7,
+        "fatigue_runs": 0.0
+      },
+      "home_bullpen": {
+        "source": "recent_boxscore_pitcher_usage",
+        "recent_games": 3,
+        "recent_relief_pitcher_appearances": 9,
+        "unique_recent_relievers": 6,
+        "fatigue_runs": 0.045
+      },
+      "score_bias_applied": 0.56,
+      "totals_recent_bias_applied": 0.74,
+      "missing_data": [
+        "injury_absence_feed"
+      ],
+      "data_quality": "可用",
+      "model_version": "unified_expected_runs_v1"
+    },
+    {
+      "date": "2026-08-04",
+      "game_pk": "824731",
+      "game_time_tw": "2026-08-05 07:10",
+      "game_time_utc": "2026-08-04T23:10:00Z",
+      "matchup_zh": "芝加哥白襪 @ 波士頓紅襪",
+      "away_zh": "芝加哥白襪",
+      "home_zh": "波士頓紅襪",
+      "away_expected_runs": 4.87,
+      "home_expected_runs": 4.98,
+      "expected_total": 9.85,
+      "pick_side": "home",
+      "prediction_zh": "波士頓紅襪",
+      "home_win_prob": 0.5153,
+      "away_win_prob": 0.4847,
+      "lineup_source": "projected_recent_lineup_order",
+      "away_lineup_factor": {
+        "source_quality": "projected_recent_lineup_order",
+        "factor": 0.99
+      },
+      "home_lineup_factor": {
+        "source_quality": "projected_recent_lineup_order",
+        "factor": 0.995
+      },
+      "away_pitcher_weight": 0.9,
+      "home_pitcher_weight": 0.9,
+      "weather": {
+        "source": "open_meteo_forecast",
+        "venue": "Fenway Park",
+        "home_team": "波士頓紅襪",
+        "roof": false,
+        "latitude": 42.3467,
+        "longitude": -71.0972,
+        "forecast_time_utc": "2026-08-04T23:00",
+        "temperature_c": 25.8,
+        "humidity_pct": 55.0,
+        "precipitation_probability_pct": 0.0,
+        "wind_speed_kmh": 6.4,
+        "wind_direction_deg": 227.0,
+        "factor": 0.0
+      },
+      "away_bullpen": {
+        "source": "recent_boxscore_pitcher_usage",
+        "recent_games": 3,
+        "recent_relief_pitcher_appearances": 7,
+        "unique_recent_relievers": 6,
+        "fatigue_runs": -0.045
+      },
+      "home_bullpen": {
+        "source": "recent_boxscore_pitcher_usage",
+        "recent_games": 3,
+        "recent_relief_pitcher_appearances": 10,
+        "unique_recent_relievers": 7,
+        "fatigue_runs": 0.09
+      },
+      "score_bias_applied": 0.56,
+      "totals_recent_bias_applied": 0.74,
+      "missing_data": [
+        "injury_absence_feed"
+      ],
+      "data_quality": "可用",
+      "model_version": "unified_expected_runs_v1"
+    },
+    {
+      "date": "2026-08-04",
+      "game_pk": "824484",
+      "game_time_tw": "2026-08-05 06:40",
+      "game_time_utc": "2026-08-04T22:40:00Z",
+      "matchup_zh": "運動家 @ 辛辛那提紅人",
+      "away_zh": "運動家",
+      "home_zh": "辛辛那提紅人",
+      "away_expected_runs": 4.77,
+      "home_expected_runs": 5.57,
+      "expected_total": 10.34,
+      "pick_side": "home",
+      "prediction_zh": "辛辛那提紅人",
+      "home_win_prob": 0.606,
+      "away_win_prob": 0.394,
+      "lineup_source": "projected_recent_lineup_order",
+      "away_lineup_factor": {
+        "source_quality": "projected_recent_lineup_order",
+        "factor": 0.946
+      },
+      "home_lineup_factor": {
+        "source_quality": "projected_recent_lineup_order",
+        "factor": 0.944
+      },
+      "away_pitcher_weight": 0.9,
+      "home_pitcher_weight": 0.9,
+      "weather": {
+        "source": "open_meteo_forecast",
+        "venue": "Great American Ball Park",
+        "home_team": "辛辛那提紅人",
+        "roof": false,
+        "latitude": 39.0979,
+        "longitude": -84.5082,
+        "forecast_time_utc": "2026-08-04T23:00",
+        "temperature_c": 31.3,
+        "humidity_pct": 34.0,
+        "precipitation_probability_pct": 0.0,
+        "wind_speed_kmh": 2.3,
+        "wind_direction_deg": 39.0,
+        "factor": 0.15
+      },
+      "away_bullpen": {
+        "source": "recent_boxscore_pitcher_usage",
+        "recent_games": 3,
+        "recent_relief_pitcher_appearances": 11,
+        "unique_recent_relievers": 10,
+        "fatigue_runs": 0.135
+      },
+      "home_bullpen": {
+        "source": "recent_boxscore_pitcher_usage",
+        "recent_games": 3,
+        "recent_relief_pitcher_appearances": 12,
+        "unique_recent_relievers": 8,
+        "fatigue_runs": 0.18
+      },
+      "score_bias_applied": 0.56,
+      "totals_recent_bias_applied": 0.74,
+      "missing_data": [
+        "injury_absence_feed"
+      ],
+      "data_quality": "可用",
+      "model_version": "unified_expected_runs_v1"
+    },
+    {
+      "date": "2026-08-04",
+      "game_pk": "824888",
+      "game_time_tw": "2026-08-05 07:15",
+      "game_time_utc": "2026-08-04T23:15:00Z",
+      "matchup_zh": "邁阿密馬林魚 @ 亞特蘭大勇士",
+      "away_zh": "邁阿密馬林魚",
+      "home_zh": "亞特蘭大勇士",
+      "away_expected_runs": 4.66,
+      "home_expected_runs": 5.56,
+      "expected_total": 10.22,
+      "pick_side": "home",
+      "prediction_zh": "亞特蘭大勇士",
+      "home_win_prob": 0.6201,
+      "away_win_prob": 0.3799,
+      "lineup_source": "projected_recent_lineup_order",
+      "away_lineup_factor": {
+        "source_quality": "projected_recent_lineup_order",
+        "factor": 1.016
+      },
+      "home_lineup_factor": {
+        "source_quality": "projected_recent_lineup_order",
+        "factor": 1.012
+      },
+      "away_pitcher_weight": 0.9,
+      "home_pitcher_weight": 0.9,
+      "weather": {
+        "source": "open_meteo_forecast",
+        "venue": "Truist Park",
+        "home_team": "亞特蘭大勇士",
+        "roof": false,
+        "latitude": 33.8908,
+        "longitude": -84.4678,
+        "forecast_time_utc": "2026-08-04T23:00",
+        "temperature_c": 26.8,
+        "humidity_pct": 70.0,
+        "precipitation_probability_pct": 19.0,
+        "wind_speed_kmh": 3.6,
+        "wind_direction_deg": 143.0,
+        "factor": 0.0
+      },
+      "away_bullpen": {
+        "source": "recent_boxscore_pitcher_usage",
+        "recent_games": 3,
+        "recent_relief_pitcher_appearances": 9,
+        "unique_recent_relievers": 7,
+        "fatigue_runs": 0.045
+      },
+      "home_bullpen": {
+        "source": "recent_boxscore_pitcher_usage",
+        "recent_games": 3,
+        "recent_relief_pitcher_appearances": 7,
+        "unique_recent_relievers": 7,
+        "fatigue_runs": -0.045
+      },
+      "score_bias_applied": 0.56,
+      "totals_recent_bias_applied": 0.74,
+      "missing_data": [
+        "injury_absence_feed"
+      ],
+      "data_quality": "可用",
+      "model_version": "unified_expected_runs_v1"
+    },
+    {
+      "date": "2026-08-04",
+      "game_pk": "824321",
+      "game_time_tw": "2026-08-05 08:40",
+      "game_time_utc": "2026-08-05T00:40:00Z",
+      "matchup_zh": "坦帕灣光芒 @ 科羅拉多洛磯",
+      "away_zh": "坦帕灣光芒",
+      "home_zh": "科羅拉多洛磯",
+      "away_expected_runs": 5.34,
+      "home_expected_runs": 5.38,
+      "expected_total": 10.72,
+      "pick_side": "home",
+      "prediction_zh": "科羅拉多洛磯",
+      "home_win_prob": 0.5045,
+      "away_win_prob": 0.4955,
+      "lineup_source": "projected_recent_lineup_order",
+      "away_lineup_factor": {
+        "source_quality": "projected_recent_lineup_order",
+        "factor": 0.999
+      },
+      "home_lineup_factor": {
+        "source_quality": "projected_recent_lineup_order",
+        "factor": 1.037
+      },
+      "away_pitcher_weight": 0.9,
+      "home_pitcher_weight": 0.9,
+      "weather": {
+        "source": "open_meteo_forecast",
+        "venue": "Coors Field",
+        "home_team": "科羅拉多洛磯",
+        "roof": false,
+        "latitude": 39.7561,
+        "longitude": -104.9942,
+        "forecast_time_utc": "2026-08-05T01:00",
+        "temperature_c": 26.8,
+        "humidity_pct": 31.0,
+        "precipitation_probability_pct": 7.0,
+        "wind_speed_kmh": 13.8,
+        "wind_direction_deg": 70.0,
+        "factor": 0.0
+      },
+      "away_bullpen": {
+        "source": "recent_boxscore_pitcher_usage",
+        "recent_games": 3,
+        "recent_relief_pitcher_appearances": 10,
+        "unique_recent_relievers": 8,
+        "fatigue_runs": 0.09
+      },
+      "home_bullpen": {
+        "source": "recent_boxscore_pitcher_usage",
+        "recent_games": 3,
+        "recent_relief_pitcher_appearances": 6,
+        "unique_recent_relievers": 6,
+        "fatigue_runs": -0.09
+      },
+      "score_bias_applied": 0.56,
+      "totals_recent_bias_applied": 0.74,
+      "missing_data": [
+        "injury_absence_feed"
+      ],
+      "data_quality": "可用",
+      "model_version": "unified_expected_runs_v1"
+    },
+    {
+      "date": "2026-08-04",
+      "game_pk": "824805",
+      "game_time_tw": "2026-08-05 06:35",
+      "game_time_utc": "2026-08-04T22:35:00Z",
+      "matchup_zh": "洛杉磯天使 @ 巴爾的摩金鶯",
+      "away_zh": "洛杉磯天使",
+      "home_zh": "巴爾的摩金鶯",
+      "away_expected_runs": 4.73,
+      "home_expected_runs": 5.34,
+      "expected_total": 10.06,
+      "pick_side": "home",
+      "prediction_zh": "巴爾的摩金鶯",
+      "home_win_prob": 0.5822,
+      "away_win_prob": 0.4178,
+      "lineup_source": "projected_recent_lineup_order",
+      "away_lineup_factor": {
+        "source_quality": "projected_recent_lineup_order",
+        "factor": 0.929
+      },
+      "home_lineup_factor": {
+        "source_quality": "projected_recent_lineup_order",
+        "factor": 0.942
+      },
+      "away_pitcher_weight": 0.9,
+      "home_pitcher_weight": 0.632,
+      "weather": {
+        "source": "open_meteo_forecast",
+        "venue": "Oriole Park at Camden Yards",
+        "home_team": "巴爾的摩金鶯",
+        "roof": false,
+        "latitude": 39.2839,
+        "longitude": -76.6217,
+        "forecast_time_utc": "2026-08-04T23:00",
+        "temperature_c": 28.0,
+        "humidity_pct": 50.0,
+        "precipitation_probability_pct": 0.0,
+        "wind_speed_kmh": 8.3,
+        "wind_direction_deg": 85.0,
+        "factor": 0.15
+      },
+      "away_bullpen": {
+        "source": "recent_boxscore_pitcher_usage",
+        "recent_games": 3,
+        "recent_relief_pitcher_appearances": 9,
+        "unique_recent_relievers": 7,
+        "fatigue_runs": 0.045
+      },
+      "home_bullpen": {
+        "source": "recent_boxscore_pitcher_usage",
+        "recent_games": 3,
+        "recent_relief_pitcher_appearances": 11,
+        "unique_recent_relievers": 9,
+        "fatigue_runs": 0.135
+      },
+      "score_bias_applied": 0.56,
+      "totals_recent_bias_applied": 0.74,
+      "missing_data": [
+        "injury_absence_feed"
+      ],
+      "data_quality": "可用",
+      "model_version": "unified_expected_runs_v1"
+    },
+    {
+      "date": "2026-08-04",
+      "game_pk": "822865",
+      "game_time_tw": "2026-08-05 08:05",
+      "game_time_utc": "2026-08-05T00:05:00Z",
+      "matchup_zh": "舊金山巨人 @ 德州遊騎兵",
+      "away_zh": "舊金山巨人",
+      "home_zh": "德州遊騎兵",
+      "away_expected_runs": 4.98,
+      "home_expected_runs": 4.69,
+      "expected_total": 9.67,
+      "pick_side": "away",
+      "prediction_zh": "舊金山巨人",
+      "home_win_prob": 0.4618,
+      "away_win_prob": 0.5382,
+      "lineup_source": "projected_recent_lineup_order",
+      "away_lineup_factor": {
+        "source_quality": "projected_recent_lineup_order",
+        "factor": 0.901
+      },
+      "home_lineup_factor": {
+        "source_quality": "projected_recent_lineup_order",
+        "factor": 0.975
+      },
+      "away_pitcher_weight": 0.9,
+      "home_pitcher_weight": 0.9,
+      "weather": {
+        "source": "open_meteo_forecast",
+        "venue": "Globe Life Field",
+        "home_team": "德州遊騎兵",
+        "roof": true,
+        "latitude": 32.7473,
+        "longitude": -97.0842,
+        "forecast_time_utc": "2026-08-05T00:00",
+        "temperature_c": 37.1,
+        "humidity_pct": 27.0,
+        "precipitation_probability_pct": 0.0,
+        "wind_speed_kmh": 14.8,
+        "wind_direction_deg": 180.0,
+        "factor": 0.052
+      },
+      "away_bullpen": {
+        "source": "recent_boxscore_pitcher_usage",
+        "recent_games": 3,
+        "recent_relief_pitcher_appearances": 11,
+        "unique_recent_relievers": 8,
+        "fatigue_runs": 0.135
+      },
+      "home_bullpen": {
+        "source": "recent_boxscore_pitcher_usage",
+        "recent_games": 3,
+        "recent_relief_pitcher_appearances": 11,
+        "unique_recent_relievers": 7,
+        "fatigue_runs": 0.135
+      },
+      "score_bias_applied": 0.56,
+      "totals_recent_bias_applied": 0.74,
+      "missing_data": [
+        "injury_absence_feed"
+      ],
+      "data_quality": "可用",
+      "model_version": "unified_expected_runs_v1"
+    },
+    {
+      "date": "2026-08-04",
+      "game_pk": "824084",
+      "game_time_tw": "2026-08-05 07:40",
+      "game_time_utc": "2026-08-04T23:40:00Z",
+      "matchup_zh": "明尼蘇達雙城 @ 堪薩斯市皇家",
+      "away_zh": "明尼蘇達雙城",
+      "home_zh": "堪薩斯市皇家",
+      "away_expected_runs": 4.87,
+      "home_expected_runs": 4.97,
+      "expected_total": 9.84,
+      "pick_side": "home",
+      "prediction_zh": "堪薩斯市皇家",
+      "home_win_prob": 0.5127,
+      "away_win_prob": 0.4873,
+      "lineup_source": "projected_recent_lineup_order",
+      "away_lineup_factor": {
+        "source_quality": "projected_recent_lineup_order",
+        "factor": 0.998
+      },
+      "home_lineup_factor": {
+        "source_quality": "projected_recent_lineup_order",
+        "factor": 0.998
+      },
+      "away_pitcher_weight": 0.9,
+      "home_pitcher_weight": 0.9,
+      "weather": {
+        "source": "open_meteo_forecast",
+        "venue": "Kauffman Stadium",
+        "home_team": "堪薩斯市皇家",
+        "roof": false,
+        "latitude": 39.0517,
+        "longitude": -94.4803,
+        "forecast_time_utc": "2026-08-04T23:00",
+        "temperature_c": 36.4,
+        "humidity_pct": 26.0,
+        "precipitation_probability_pct": 2.0,
+        "wind_speed_kmh": 9.4,
+        "wind_direction_deg": 148.0,
+        "factor": 0.15
+      },
+      "away_bullpen": {
+        "source": "recent_boxscore_pitcher_usage",
+        "recent_games": 3,
+        "recent_relief_pitcher_appearances": 13,
+        "unique_recent_relievers": 8,
+        "fatigue_runs": 0.225
+      },
+      "home_bullpen": {
+        "source": "recent_boxscore_pitcher_usage",
+        "recent_games": 3,
+        "recent_relief_pitcher_appearances": 9,
+        "unique_recent_relievers": 7,
+        "fatigue_runs": 0.045
+      },
+      "score_bias_applied": 0.56,
+      "totals_recent_bias_applied": 0.74,
+      "missing_data": [
+        "injury_absence_feed"
+      ],
+      "data_quality": "可用",
+      "model_version": "unified_expected_runs_v1"
+    },
+    {
+      "date": "2026-08-04",
+      "game_pk": "824403",
+      "game_time_tw": "2026-08-05 06:40",
+      "game_time_utc": "2026-08-04T22:40:00Z",
+      "matchup_zh": "紐約大都會 @ 克里夫蘭守護者",
+      "away_zh": "紐約大都會",
+      "home_zh": "克里夫蘭守護者",
+      "away_expected_runs": 4.51,
+      "home_expected_runs": 4.44,
+      "expected_total": 8.95,
+      "pick_side": "away",
+      "prediction_zh": "紐約大都會",
+      "home_win_prob": 0.4903,
+      "away_win_prob": 0.5097,
+      "lineup_source": "projected_recent_lineup_order",
+      "away_lineup_factor": {
+        "source_quality": "projected_recent_lineup_order",
+        "factor": 0.924
+      },
+      "home_lineup_factor": {
+        "source_quality": "projected_recent_lineup_order",
+        "factor": 0.938
+      },
+      "away_pitcher_weight": 0.9,
+      "home_pitcher_weight": 0.9,
+      "weather": {
+        "source": "open_meteo_forecast",
+        "venue": "Progressive Field",
+        "home_team": "克里夫蘭守護者",
+        "roof": false,
+        "latitude": 41.4962,
+        "longitude": -81.6852,
+        "forecast_time_utc": "2026-08-04T23:00",
+        "temperature_c": 26.2,
+        "humidity_pct": 43.0,
+        "precipitation_probability_pct": 0.0,
+        "wind_speed_kmh": 10.5,
+        "wind_direction_deg": 22.0,
+        "factor": 0.0
+      },
+      "away_bullpen": {
+        "source": "recent_boxscore_pitcher_usage",
+        "recent_games": 3,
+        "recent_relief_pitcher_appearances": 8,
+        "unique_recent_relievers": 8,
+        "fatigue_runs": 0.0
+      },
+      "home_bullpen": {
+        "source": "recent_boxscore_pitcher_usage",
+        "recent_games": 3,
+        "recent_relief_pitcher_appearances": 12,
+        "unique_recent_relievers": 9,
+        "fatigue_runs": 0.18
+      },
+      "score_bias_applied": 0.56,
+      "totals_recent_bias_applied": 0.74,
+      "missing_data": [
+        "injury_absence_feed"
+      ],
+      "data_quality": "可用",
+      "model_version": "unified_expected_runs_v1"
+    },
+    {
+      "date": "2026-08-04",
+      "game_pk": "824645",
+      "game_time_tw": "2026-08-05 08:05",
+      "game_time_utc": "2026-08-05T00:05:00Z",
+      "matchup_zh": "洛杉磯道奇 @ 芝加哥小熊",
+      "away_zh": "洛杉磯道奇",
+      "home_zh": "芝加哥小熊",
+      "away_expected_runs": 4.86,
+      "home_expected_runs": 5.51,
+      "expected_total": 10.37,
+      "pick_side": "home",
+      "prediction_zh": "芝加哥小熊",
+      "home_win_prob": 0.5862,
+      "away_win_prob": 0.4138,
+      "lineup_source": "projected_recent_lineup_order",
+      "away_lineup_factor": {
+        "source_quality": "projected_recent_lineup_order",
+        "factor": 1.04
+      },
+      "home_lineup_factor": {
+        "source_quality": "projected_recent_lineup_order",
+        "factor": 1.007
+      },
+      "away_pitcher_weight": 0.9,
+      "home_pitcher_weight": 0.9,
+      "weather": {
+        "source": "open_meteo_forecast",
+        "venue": "Wrigley Field",
+        "home_team": "芝加哥小熊",
+        "roof": false,
+        "latitude": 41.9484,
+        "longitude": -87.6553,
+        "forecast_time_utc": "2026-08-05T00:00",
+        "temperature_c": 23.5,
+        "humidity_pct": 76.0,
+        "precipitation_probability_pct": 0.0,
+        "wind_speed_kmh": 9.2,
+        "wind_direction_deg": 132.0,
+        "factor": 0.0
+      },
+      "away_bullpen": {
+        "source": "recent_boxscore_pitcher_usage",
+        "recent_games": 3,
+        "recent_relief_pitcher_appearances": 8,
+        "unique_recent_relievers": 8,
+        "fatigue_runs": 0.0
+      },
+      "home_bullpen": {
+        "source": "recent_boxscore_pitcher_usage",
+        "recent_games": 3,
+        "recent_relief_pitcher_appearances": 7,
+        "unique_recent_relievers": 6,
+        "fatigue_runs": -0.045
+      },
+      "score_bias_applied": 0.56,
+      "totals_recent_bias_applied": 0.74,
+      "missing_data": [
+        "injury_absence_feed"
+      ],
+      "data_quality": "可用",
+      "model_version": "unified_expected_runs_v1"
+    },
+    {
+      "date": "2026-08-04",
+      "game_pk": "824161",
+      "game_time_tw": "2026-08-05 08:10",
+      "game_time_utc": "2026-08-05T00:10:00Z",
+      "matchup_zh": "多倫多藍鳥 @ 休士頓太空人",
+      "away_zh": "多倫多藍鳥",
+      "home_zh": "休士頓太空人",
+      "away_expected_runs": 4.79,
+      "home_expected_runs": 5.42,
+      "expected_total": 10.21,
+      "pick_side": "home",
+      "prediction_zh": "休士頓太空人",
+      "home_win_prob": 0.5846,
+      "away_win_prob": 0.4154,
+      "lineup_source": "projected_recent_lineup_order",
+      "away_lineup_factor": {
+        "source_quality": "projected_recent_lineup_order",
+        "factor": 0.965
+      },
+      "home_lineup_factor": {
+        "source_quality": "projected_recent_lineup_order",
+        "factor": 1.021
+      },
+      "away_pitcher_weight": 0.9,
+      "home_pitcher_weight": 0.9,
+      "weather": {
+        "source": "open_meteo_forecast",
+        "venue": "Daikin Park",
+        "home_team": "休士頓太空人",
+        "roof": true,
+        "latitude": 29.7573,
+        "longitude": -95.3555,
+        "forecast_time_utc": "2026-08-05T00:00",
+        "temperature_c": 26.1,
+        "humidity_pct": 82.0,
+        "precipitation_probability_pct": 5.0,
+        "wind_speed_kmh": 7.6,
+        "wind_direction_deg": 65.0,
+        "factor": 0.017
+      },
+      "away_bullpen": {
+        "source": "recent_boxscore_pitcher_usage",
+        "recent_games": 3,
+        "recent_relief_pitcher_appearances": 10,
+        "unique_recent_relievers": 7,
+        "fatigue_runs": 0.09
+      },
+      "home_bullpen": {
+        "source": "recent_boxscore_pitcher_usage",
+        "recent_games": 3,
+        "recent_relief_pitcher_appearances": 10,
+        "unique_recent_relievers": 8,
+        "fatigue_runs": 0.09
+      },
+      "score_bias_applied": 0.56,
+      "totals_recent_bias_applied": 0.74,
+      "missing_data": [
+        "injury_absence_feed"
+      ],
+      "data_quality": "可用",
+      "model_version": "unified_expected_runs_v1"
+    },
+    {
+      "date": "2026-08-04",
+      "game_pk": "823108",
+      "game_time_tw": "2026-08-05 09:40",
+      "game_time_utc": "2026-08-05T01:40:00Z",
+      "matchup_zh": "底特律老虎 @ 西雅圖水手",
+      "away_zh": "底特律老虎",
+      "home_zh": "西雅圖水手",
+      "away_expected_runs": 5.73,
+      "home_expected_runs": 4.37,
+      "expected_total": 10.1,
+      "pick_side": "away",
+      "prediction_zh": "底特律老虎",
+      "home_win_prob": 0.3241,
+      "away_win_prob": 0.6759,
+      "lineup_source": "projected_recent_lineup_order",
+      "away_lineup_factor": {
+        "source_quality": "projected_recent_lineup_order",
+        "factor": 1.063
+      },
+      "home_lineup_factor": {
+        "source_quality": "projected_recent_lineup_order",
+        "factor": 0.942
+      },
+      "away_pitcher_weight": 0.632,
+      "home_pitcher_weight": 0.9,
+      "weather": {
+        "source": "open_meteo_forecast",
+        "venue": "T-Mobile Park",
+        "home_team": "西雅圖水手",
+        "roof": true,
+        "latitude": 47.5914,
+        "longitude": -122.3325,
+        "forecast_time_utc": "2026-08-05T02:00",
+        "temperature_c": 26.0,
+        "humidity_pct": 36.0,
+        "precipitation_probability_pct": 0.0,
+        "wind_speed_kmh": 10.9,
+        "wind_direction_deg": 9.0,
+        "factor": 0.0
+      },
+      "away_bullpen": {
+        "source": "recent_boxscore_pitcher_usage",
+        "recent_games": 3,
+        "recent_relief_pitcher_appearances": 9,
+        "unique_recent_relievers": 8,
+        "fatigue_runs": 0.045
+      },
+      "home_bullpen": {
+        "source": "recent_boxscore_pitcher_usage",
+        "recent_games": 3,
+        "recent_relief_pitcher_appearances": 8,
+        "unique_recent_relievers": 5,
+        "fatigue_runs": 0.0
+      },
+      "score_bias_applied": 0.56,
+      "totals_recent_bias_applied": 0.74,
+      "missing_data": [
+        "injury_absence_feed"
+      ],
+      "data_quality": "可用",
+      "model_version": "unified_expected_runs_v1"
+    },
+    {
+      "date": "2026-08-04",
+      "game_pk": "825054",
+      "game_time_tw": "2026-08-05 09:40",
+      "game_time_utc": "2026-08-05T01:40:00Z",
+      "matchup_zh": "聖地牙哥教士 @ 亞利桑那響尾蛇",
+      "away_zh": "聖地牙哥教士",
+      "home_zh": "亞利桑那響尾蛇",
+      "away_expected_runs": 4.94,
+      "home_expected_runs": 5.83,
+      "expected_total": 10.77,
+      "pick_side": "home",
+      "prediction_zh": "亞利桑那響尾蛇",
+      "home_win_prob": 0.6182,
+      "away_win_prob": 0.3818,
+      "lineup_source": "projected_recent_lineup_order",
+      "away_lineup_factor": {
+        "source_quality": "projected_recent_lineup_order",
+        "factor": 0.933
+      },
+      "home_lineup_factor": {
+        "source_quality": "projected_recent_lineup_order",
+        "factor": 0.989
+      },
+      "away_pitcher_weight": 0.9,
+      "home_pitcher_weight": 0.9,
+      "weather": {
+        "source": "open_meteo_forecast",
+        "venue": "Chase Field",
+        "home_team": "亞利桑那響尾蛇",
+        "roof": true,
+        "latitude": 33.4455,
+        "longitude": -112.0667,
+        "forecast_time_utc": "2026-08-05T02:00",
+        "temperature_c": 40.6,
+        "humidity_pct": 23.0,
+        "precipitation_probability_pct": 3.0,
+        "wind_speed_kmh": 17.3,
+        "wind_direction_deg": 268.0,
+        "factor": 0.052
+      },
+      "away_bullpen": {
+        "source": "recent_boxscore_pitcher_usage",
+        "recent_games": 3,
+        "recent_relief_pitcher_appearances": 12,
+        "unique_recent_relievers": 8,
+        "fatigue_runs": 0.18
+      },
+      "home_bullpen": {
+        "source": "recent_boxscore_pitcher_usage",
+        "recent_games": 3,
+        "recent_relief_pitcher_appearances": 9,
+        "unique_recent_relievers": 8,
+        "fatigue_runs": 0.045
+      },
+      "score_bias_applied": 0.56,
+      "totals_recent_bias_applied": 0.74,
+      "missing_data": [
+        "injury_absence_feed"
+      ],
+      "data_quality": "可用",
+      "model_version": "unified_expected_runs_v1"
+    }
+  ]
+}

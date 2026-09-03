@@ -1,0 +1,63 @@
+{
+  "api_version": "v1",
+  "taiwan_display_date": "2026-07-15",
+  "generated_at": "2026-07-15T21:01:26+08:00",
+  "models": {
+    "production": "A-畢氏勝率",
+    "confirmation": "E-對照組(Ensemble)"
+  },
+  "data_source": {
+    "history_csv": "data\\real_mlb_games.csv",
+    "training_games": 3877,
+    "last_training_date": "2026-07-12",
+    "expected_training_cutoff": "2026-07-14",
+    "schedule_source": "MLB Stats API schedule endpoint",
+    "schedule_games": 0,
+    "warning": "模型訓練資料只到 2026-07-12，低於目標日前一天 2026-07-14；請先重抓歷史比分。",
+    "freshness_note": ""
+  },
+  "postgame_calibration": {
+    "source": "postgame_review",
+    "days": 10,
+    "games": 140,
+    "winner_accuracy": 0.5429,
+    "low_confidence_accuracy": 0.5321,
+    "score_total_bias": -0.174,
+    "score_total_bias_applied": -0.17,
+    "totals_recent_bias": -1.401,
+    "totals_recent_bias_applied": -1.0,
+    "totals_recent_games": 44,
+    "winner_min_confidence": 0.57,
+    "totals_min_edge": 0.03,
+    "totals_min_prob": 0.59,
+    "totals_min_line_gap": 1.25,
+    "mismatch_notes": 58,
+    "reason_counts": {
+      "high_confidence_miss": 13,
+      "totals_miss": 74,
+      "large_totals_error": 50,
+      "score_totals_model_gap": 58,
+      "low_confidence_miss": 34,
+      "roi_loss": 2,
+      "high_confidence_hit": 18,
+      "low_confidence_hit": 58,
+      "one_run_volatility": 34
+    },
+    "data_gaps": [
+      "大小分大偏差偏多：優先補真實天氣、球場風向、先發/牛棚臨場狀態。",
+      "高信心勝方失準偏多：優先補官方先發打線、牛棚可用性、傷兵/輪休。",
+      "勝方比分模型與大小分模型長期分歧：需要建立同一套得分期望，不應兩套模型各算各的。"
+    ],
+    "notes": [
+      "近十天高信心失準偏多，勝方主推需更嚴格確認。",
+      "近三天大小分模型平均高估 1.40 分，今日總分期望降溫 -1.00 分。",
+      "近十天大小分與比分模型分歧頻繁，大小分需方向一致且離盤更遠才推薦。"
+    ]
+  },
+  "taiwan_today": [],
+  "taiwan_future": [],
+  "taiwan_today_pending": [],
+  "taiwan_future_pending": [],
+  "all_predictions": [],
+  "high_confidence_predictions": []
+}

@@ -1,0 +1,735 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>每日 MLB 勝方預測</title>
+  <style>
+    body { margin: 0; background: #f7f8f6; color: #202421; font-family: "Microsoft JhengHei", "Noto Sans TC", system-ui, sans-serif; }
+    main { max-width: 1180px; margin: 0 auto; padding: 28px; }
+    h1 { margin: 0 0 6px; font-size: 30px; }
+    h2 { margin: 24px 0 12px; font-size: 18px; }
+    .meta { color: #68736d; line-height: 1.6; font-size: 14px; }
+    .warning { margin-top: 16px; padding: 12px 14px; border: 1px solid #e2c47a; background: #fff8e6; border-radius: 8px; color: #765315; }
+    .calibration { margin: 18px 0; padding: 16px; background: #fff; border: 1px solid #dfe5df; border-radius: 8px; }
+    .calibration h2 { margin-top: 0; }
+    .calibration-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+    .calibration-grid div { border: 1px solid #e3e8e4; border-radius: 8px; padding: 10px; }
+    .calibration-grid span { display: block; color: #68736d; font-size: 12px; }
+    .calibration-grid strong { display: block; margin-top: 4px; font-size: 18px; }
+    .calibration ul { margin: 12px 0 0; color: #43504a; line-height: 1.7; }
+    .toolbar { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin: 14px 0 10px; }
+    .toolbar span { color: #68736d; font-size: 13px; font-weight: 700; }
+    .sort-btn { border: 1px solid #dfe5df; border-radius: 8px; background: white; color: #24433b; padding: 8px 10px; font: inherit; font-weight: 800; cursor: pointer; }
+    .sort-btn.active { background: #165f56; border-color: #165f56; color: white; }
+    table { width: 100%; border-collapse: collapse; background: white; border: 1px solid #dfe5df; border-radius: 8px; overflow: hidden; }
+    th, td { text-align: left; border-bottom: 1px solid #dfe5df; padding: 12px 10px; white-space: nowrap; font-size: 14px; }
+    th { color: #68736d; font-size: 12px; }
+    .date-group td { background: #e8f1ed; color: #164f47; font-weight: 900; font-size: 14px; }
+    @media (max-width: 720px) { main { padding: 18px; } table { display: block; overflow-x: auto; } h1 { font-size: 25px; } .calibration-grid { grid-template-columns: 1fr; } }
+  
+    /* site navigation */
+    .site-shell { min-height: 100vh; display: grid; grid-template-columns: 220px minmax(0, 1fr); background: inherit; }
+    .site-sidebar { position: sticky; top: 0; align-self: start; height: 100vh; box-sizing: border-box; overflow-y: auto; border-right: 1px solid #dfe5df; background: #ffffff; padding: 22px 14px; z-index: 10; }
+    .site-brand { color: #163b34; font-size: 15px; font-weight: 900; letter-spacing: 0; margin: 0 0 14px; }
+    .site-sidebar nav { display: grid; gap: 6px; }
+    .site-nav-link { display: block; color: #40514b; text-decoration: none; border-radius: 8px; padding: 9px 10px; font-size: 14px; font-weight: 750; line-height: 1.25; }
+    .site-nav-link:hover { background: #eef4f1; color: #123d35; }
+    .site-nav-link.active { background: #165f56; color: #ffffff; }
+    .site-shell > header { grid-column: 2; min-width: 0; }
+    .site-shell > main { grid-column: 2; width: min(1180px, calc(100% - 56px)); margin-left: auto; margin-right: auto; min-width: 0; }
+    @media (max-width: 900px) {
+      .site-shell { display: block; }
+      .site-sidebar { position: static; height: auto; border-right: 0; border-bottom: 1px solid #dfe5df; }
+      .site-sidebar nav { grid-template-columns: repeat(auto-fit, minmax(112px, 1fr)); }
+      .site-shell > header { grid-column: auto; }
+      .site-shell > main { width: auto; }
+    }
+  </style>
+</head>
+<body>
+  <div class="site-shell" data-site-nav="true">
+    <aside class="site-sidebar">
+      <div class="site-brand">MLB 投注計畫</div>
+      <nav aria-label="主要頁面">
+        <a class="site-nav-link" href="index.html">總覽</a>
+        <a class="site-nav-link active" href="daily_predictions.html">今日預測</a>
+        <a class="site-nav-link" href="betting_ticket.html">投注單</a>
+        <a class="site-nav-link" href="totals_predictions.html">大小分</a>
+        <a class="site-nav-link" href="advanced_factors.html">進階因子</a>
+        <a class="site-nav-link" href="quant_model.html">Q-量化模型</a>
+        <a class="site-nav-link" href="game_simulator.html">逐打席模擬</a>
+        <a class="site-nav-link" href="monte_carlo.html">蒙地卡羅</a>
+        <a class="site-nav-link" href="market_research.html">盤口研究</a>
+        <a class="site-nav-link" href="prediction_log.html">結算紀錄</a>
+        <a class="site-nav-link" href="postgame_review.html">賽後檢討</a>
+        <a class="site-nav-link" href="betting_roi.html">投注 ROI</a>
+        <a class="site-nav-link" href="lineup_fix_comparison.html">修正前後</a>
+        <a class="site-nav-link" href="winner_model_search.html">模型搜尋</a>
+        <a class="site-nav-link" href="prediction_accuracy.html">準確率</a>
+        <a class="site-nav-link" href="status.html">狀態</a>
+        <a class="site-nav-link" href="api/index.html">資料 API</a>
+      </nav>
+    </aside>
+  <main>
+    <h1>每日 MLB 勝方預測</h1>
+    <div class="meta">
+      MLB日期：2026-09-03<br />
+      主模型：A-畢氏勝率 / 確認模型：E-對照組(Ensemble)<br />
+      訓練場數：4532 / 訓練截止：2026-09-02 / 賽程場數：9<br />
+      產生時間：2026-09-03T08:59:02<br />
+      訓練資料已更新到目標日前一天 2026-09-02。
+    </div>
+    
+    <section class="calibration">
+      <h2>近十天檢討校正</h2>
+      <div class="calibration-grid">
+        <div><span>檢討樣本</span><strong>10 天 / 113 場</strong></div>
+        <div><span>近十天勝方準確率</span><strong>53.1%</strong></div>
+        <div><span>勝方主推門檻</span><strong>55.0%</strong></div>
+        <div><span>比分總分校正</span><strong>+0.00</strong></div>
+        <div><span>大小分最低機率</span><strong>58.0%</strong></div>
+        <div><span>大小分離盤門檻</span><strong>1.00 分</strong></div>
+      </div>
+      <ul><li>近十天檢討未觸發額外校正，維持原門檻。</li></ul>
+      <h3>資料補強重點</h3><ul><li>高信心勝方失準偏多：優先補官方先發打線、牛棚可用性、傷兵/輪休。</li></ul>
+    </section>
+    <h2>今日與之前未結算預測追蹤</h2>
+    <table>
+      <thead><tr><th>MLB日期</th><th>台灣開賽時間</th><th>狀態</th><th>對戰</th><th>預測勝方</th><th>整合方向</th><th>預測比分</th><th>大小分預測</th><th>模型搭配</th><th>信心</th><th>結算</th></tr></thead>
+      <tbody><tr class="date-group"><td colspan="11">台灣今日 2026-09-03</td></tr>
+
+            <tr>
+              <td>2026-09-02</td>
+              <td>2026-09-03 06:40</td>
+              <td>In Progress</td>
+              <td>紐約大都會 @ 坦帕灣光芒</td>
+              <td>坦帕灣光芒</td>
+              <td>不推薦<span>勝方與大小分未統一</span></td>
+              <td>紐約大都會 4.00 : 坦帕灣光芒 4.80</td>
+              <td>預測總分 8.80</td>
+              <td>一致 / 無台灣運彩大小分盤口</td>
+              <td>53.6%</td>
+              <td>待結算</td>
+            </tr>
+
+            <tr>
+              <td>2026-09-02</td>
+              <td>2026-09-03 06:40</td>
+              <td>In Progress</td>
+              <td>舊金山巨人 @ 匹茲堡海盜</td>
+              <td>匹茲堡海盜</td>
+              <td>不推薦<span>勝方與大小分未統一</span></td>
+              <td>舊金山巨人 4.35 : 匹茲堡海盜 4.54</td>
+              <td>預測總分 8.90</td>
+              <td>一致 / 無台灣運彩大小分盤口</td>
+              <td>52.2%</td>
+              <td>待結算</td>
+            </tr>
+
+            <tr>
+              <td>2026-09-02</td>
+              <td>2026-09-03 06:40</td>
+              <td>In Progress</td>
+              <td>多倫多藍鳥 @ 克里夫蘭守護者</td>
+              <td>克里夫蘭守護者</td>
+              <td>不推薦<span>勝方與大小分未統一</span></td>
+              <td>多倫多藍鳥 3.88 : 克里夫蘭守護者 4.01</td>
+              <td>預測總分 7.89</td>
+              <td>一致 / 無台灣運彩大小分盤口</td>
+              <td>51.5%</td>
+              <td>待結算</td>
+            </tr>
+
+            <tr>
+              <td>2026-09-02</td>
+              <td>2026-09-03 07:40</td>
+              <td>In Progress</td>
+              <td>底特律老虎 @ 明尼蘇達雙城</td>
+              <td>底特律老虎</td>
+              <td>不推薦<span>勝方與大小分未統一</span></td>
+              <td>底特律老虎 4.09 : 明尼蘇達雙城 5.00</td>
+              <td>預測總分 9.08</td>
+              <td>模型分歧 / 無台灣運彩大小分盤口</td>
+              <td>52.0%</td>
+              <td>待結算</td>
+            </tr>
+
+            <tr>
+              <td>2026-09-02</td>
+              <td>2026-09-03 07:40</td>
+              <td>In Progress</td>
+              <td>邁阿密馬林魚 @ 堪薩斯市皇家</td>
+              <td>堪薩斯市皇家</td>
+              <td>不推薦<span>勝方與大小分未統一</span></td>
+              <td>邁阿密馬林魚 3.90 : 堪薩斯市皇家 4.55</td>
+              <td>預測總分 8.45</td>
+              <td>一致 / 無台灣運彩大小分盤口</td>
+              <td>52.0%</td>
+              <td>待結算</td>
+            </tr>
+
+            <tr>
+              <td>2026-09-02</td>
+              <td>2026-09-03 07:40</td>
+              <td>In Progress</td>
+              <td>密爾瓦基釀酒人 @ 芝加哥小熊</td>
+              <td>芝加哥小熊</td>
+              <td>不推薦<span>勝方與大小分未統一</span></td>
+              <td>密爾瓦基釀酒人 5.33 : 芝加哥小熊 5.21</td>
+              <td>預測總分 10.54</td>
+              <td>模型分歧 / 無台灣運彩大小分盤口</td>
+              <td>51.1%</td>
+              <td>待結算</td>
+            </tr>
+
+            <tr>
+              <td>2026-09-02</td>
+              <td>2026-09-03 08:10</td>
+              <td>In Progress</td>
+              <td>芝加哥白襪 @ 休士頓太空人</td>
+              <td>休士頓太空人</td>
+              <td>不推薦<span>勝方與大小分未統一</span></td>
+              <td>芝加哥白襪 4.56 : 休士頓太空人 4.41</td>
+              <td>預測總分 8.97</td>
+              <td>模型分歧 / 無台灣運彩大小分盤口</td>
+              <td>52.5%</td>
+              <td>待結算</td>
+            </tr>
+
+            <tr>
+              <td>2026-09-02</td>
+              <td>2026-09-03 09:38</td>
+              <td>Pre-Game</td>
+              <td>紐約洋基 @ 洛杉磯天使</td>
+              <td>紐約洋基</td>
+              <td>不推薦<span>大小分未統一</span></td>
+              <td>紐約洋基 4.28 : 洛杉磯天使 3.50</td>
+              <td>預測總分 7.78</td>
+              <td>一致 / 無台灣運彩大小分盤口</td>
+              <td>56.6%</td>
+              <td>待結算</td>
+            </tr>
+
+            <tr>
+              <td>2026-09-02</td>
+              <td>2026-09-03 10:10</td>
+              <td>Pre-Game</td>
+              <td>聖路易紅雀 @ 洛杉磯道奇</td>
+              <td>洛杉磯道奇</td>
+              <td>不推薦<span>大小分未統一</span></td>
+              <td>聖路易紅雀 3.89 : 洛杉磯道奇 4.90</td>
+              <td>預測總分 8.79</td>
+              <td>一致 / 無台灣運彩大小分盤口</td>
+              <td>57.6%</td>
+              <td>待結算</td>
+            </tr>
+<tr class="date-group"><td colspan="11">台灣明日／之後 2026-09-04</td></tr>
+
+            <tr>
+              <td>2026-09-03</td>
+              <td>2026-09-04 00:35</td>
+              <td>Scheduled</td>
+              <td>舊金山巨人 @ 匹茲堡海盜</td>
+              <td>匹茲堡海盜</td>
+              <td>不推薦<span>勝方與大小分未統一</span></td>
+              <td>舊金山巨人 4.06 : 匹茲堡海盜 4.38</td>
+              <td>預測總分 8.45</td>
+              <td>一致 / 無台灣運彩大小分盤口</td>
+              <td>52.1%</td>
+              <td>待結算</td>
+            </tr>
+
+            <tr>
+              <td>2026-09-03</td>
+              <td>2026-09-04 01:10</td>
+              <td>Scheduled</td>
+              <td>多倫多藍鳥 @ 克里夫蘭守護者</td>
+              <td>克里夫蘭守護者</td>
+              <td>不推薦<span>勝方與大小分未統一</span></td>
+              <td>多倫多藍鳥 3.67 : 克里夫蘭守護者 4.12</td>
+              <td>預測總分 7.79</td>
+              <td>一致 / 無台灣運彩大小分盤口</td>
+              <td>51.2%</td>
+              <td>待結算</td>
+            </tr>
+
+            <tr>
+              <td>2026-09-03</td>
+              <td>2026-09-04 02:10</td>
+              <td>Scheduled</td>
+              <td>芝加哥白襪 @ 休士頓太空人</td>
+              <td>休士頓太空人</td>
+              <td>不推薦<span>勝方與大小分未統一</span></td>
+              <td>芝加哥白襪 4.38 : 休士頓太空人 4.49</td>
+              <td>預測總分 8.87</td>
+              <td>一致 / 無台灣運彩大小分盤口</td>
+              <td>52.5%</td>
+              <td>待結算</td>
+            </tr>
+
+            <tr>
+              <td>2026-09-03</td>
+              <td>2026-09-04 07:15</td>
+              <td>Scheduled</td>
+              <td>密爾瓦基釀酒人 @ 芝加哥小熊</td>
+              <td>芝加哥小熊</td>
+              <td>不推薦<span>勝方與大小分未統一</span></td>
+              <td>密爾瓦基釀酒人 5.06 : 芝加哥小熊 4.96</td>
+              <td>預測總分 10.02</td>
+              <td>模型分歧 / 無台灣運彩大小分盤口</td>
+              <td>51.1%</td>
+              <td>待結算</td>
+            </tr>
+
+            <tr>
+              <td>2026-09-03</td>
+              <td>2026-09-04 07:15</td>
+              <td>Scheduled</td>
+              <td>波士頓紅襪 @ 巴爾的摩金鶯</td>
+              <td>波士頓紅襪</td>
+              <td>不推薦<span>勝方與大小分未統一</span></td>
+              <td>波士頓紅襪 4.63 : 巴爾的摩金鶯 4.41</td>
+              <td>預測總分 9.03</td>
+              <td>一致 / 無台灣運彩大小分盤口</td>
+              <td>53.3%</td>
+              <td>待結算</td>
+            </tr>
+
+            <tr>
+              <td>2026-09-03</td>
+              <td>2026-09-04 07:40</td>
+              <td>Scheduled</td>
+              <td>邁阿密馬林魚 @ 堪薩斯市皇家</td>
+              <td>堪薩斯市皇家</td>
+              <td>不推薦<span>勝方與大小分未統一</span></td>
+              <td>邁阿密馬林魚 3.61 : 堪薩斯市皇家 4.49</td>
+              <td>預測總分 8.10</td>
+              <td>一致 / 無台灣運彩大小分盤口</td>
+              <td>52.1%</td>
+              <td>待結算</td>
+            </tr>
+
+            <tr>
+              <td>2026-09-03</td>
+              <td>2026-09-04 08:05</td>
+              <td>Scheduled</td>
+              <td>坦帕灣光芒 @ 德州遊騎兵</td>
+              <td>德州遊騎兵</td>
+              <td>不推薦<span>勝方與大小分未統一</span></td>
+              <td>坦帕灣光芒 4.41 : 德州遊騎兵 4.08</td>
+              <td>預測總分 8.48</td>
+              <td>模型分歧 / 無台灣運彩大小分盤口</td>
+              <td>51.1%</td>
+              <td>待結算</td>
+            </tr>
+
+            <tr>
+              <td>2026-09-03</td>
+              <td>2026-09-04 09:40</td>
+              <td>Scheduled</td>
+              <td>運動家 @ 西雅圖水手</td>
+              <td>西雅圖水手</td>
+              <td>不推薦<span>大小分未統一</span></td>
+              <td>運動家 5.00 : 西雅圖水手 5.21</td>
+              <td>預測總分 10.21</td>
+              <td>一致 / 無台灣運彩大小分盤口</td>
+              <td>56.8%</td>
+              <td>待結算</td>
+            </tr>
+
+            <tr>
+              <td>2026-09-03</td>
+              <td>2026-09-04 10:10</td>
+              <td>Scheduled</td>
+              <td>聖路易紅雀 @ 洛杉磯道奇</td>
+              <td>洛杉磯道奇</td>
+              <td>不推薦<span>大小分未統一</span></td>
+              <td>聖路易紅雀 3.94 : 洛杉磯道奇 4.97</td>
+              <td>預測總分 8.91</td>
+              <td>一致 / 無台灣運彩大小分盤口</td>
+              <td>57.6%</td>
+              <td>待結算</td>
+            </tr></tbody>
+    </table>
+    <h2>完整賽程表</h2>
+    <div class="toolbar">
+      <span>排序方式</span>
+      <button class="sort-btn active" id="sortRecommendation" type="button">推薦高低</button>
+      <button class="sort-btn" id="sortTime" type="button">比賽時間</button>
+    </div>
+    <table>
+      <thead><tr><th>GamePk</th><th>台灣開賽時間</th><th>狀態</th><th>對戰</th><th>先發投手</th><th>模型預測</th><th>整合方向</th><th>預測比分</th><th>預測總分</th><th>比分模型</th><th>勝方一致性</th><th>蒙地卡羅大小</th><th>台灣運彩大小</th><th>大小分一致性</th><th>信心</th><th>確認模型</th><th>分類</th></tr></thead>
+      <tbody id="scheduleRows">
+            <tr>
+              <td>823907</td>
+              <td>2026-09-04 10:10</td>
+              <td>Scheduled</td>
+              <td>聖路易紅雀 @ 洛杉磯道奇</td>
+              <td>丘優伊恩恩 馬（官方預告） / 塔里克 史庫柏（官方預告）</td>
+              <td>洛杉磯道奇</td>
+              <td>不推薦<span>大小分未統一</span></td>
+              <td>聖路易紅雀 3.85 : 洛杉磯道奇 4.87</td>
+              <td>8.72</td>
+              <td>洛杉磯道奇</td>
+              <td>一致</td>
+              <td>無大小分盤口</td>
+              <td>- <span>比分總分方向 -</span></td>
+              <td>無台灣運彩大小分盤口</td>
+              <td>57.6%</td>
+              <td>洛杉磯道奇</td>
+              <td>高信心預測</td>
+            </tr>
+
+            <tr>
+              <td>823095</td>
+              <td>2026-09-04 09:40</td>
+              <td>Scheduled</td>
+              <td>運動家 @ 西雅圖水手</td>
+              <td>傑克 佩（官方預告） / 卡德 阿（官方預告）</td>
+              <td>西雅圖水手</td>
+              <td>不推薦<span>勝方與大小分未統一</span></td>
+              <td>運動家 5.03 : 西雅圖水手 5.02</td>
+              <td>10.05</td>
+              <td>運動家</td>
+              <td>模型分歧</td>
+              <td>無大小分盤口</td>
+              <td>- <span>比分總分方向 -</span></td>
+              <td>無台灣運彩大小分盤口</td>
+              <td>56.8%</td>
+              <td>西雅圖水手</td>
+              <td>模型分歧</td>
+            </tr>
+
+            <tr>
+              <td>824796</td>
+              <td>2026-09-04 07:15</td>
+              <td>Scheduled</td>
+              <td>波士頓紅襪 @ 巴爾的摩金鶯</td>
+              <td>傑克 貝（官方預告） / 謝恩 巴（輪值推估 75%）</td>
+              <td>波士頓紅襪</td>
+              <td>不推薦<span>勝方與大小分未統一</span></td>
+              <td>波士頓紅襪 4.73 : 巴爾的摩金鶯 4.48</td>
+              <td>9.21</td>
+              <td>波士頓紅襪</td>
+              <td>一致</td>
+              <td>無大小分盤口</td>
+              <td>- <span>比分總分方向 -</span></td>
+              <td>無台灣運彩大小分盤口</td>
+              <td>53.3%</td>
+              <td>巴爾的摩金鶯</td>
+              <td>一般預測</td>
+            </tr>
+
+            <tr>
+              <td>824144</td>
+              <td>2026-09-04 02:10</td>
+              <td>Scheduled</td>
+              <td>芝加哥白襪 @ 休士頓太空人</td>
+              <td>路易斯 卡史（官方預告） / 杭特 布朗（官方預告）</td>
+              <td>休士頓太空人</td>
+              <td>不推薦<span>勝方與大小分未統一</span></td>
+              <td>芝加哥白襪 4.37 : 休士頓太空人 4.49</td>
+              <td>8.86</td>
+              <td>休士頓太空人</td>
+              <td>一致</td>
+              <td>無大小分盤口</td>
+              <td>- <span>比分總分方向 -</span></td>
+              <td>無台灣運彩大小分盤口</td>
+              <td>52.5%</td>
+              <td>芝加哥白襪</td>
+              <td>一般預測</td>
+            </tr>
+
+            <tr>
+              <td>823337</td>
+              <td>2026-09-04 00:35</td>
+              <td>Scheduled</td>
+              <td>舊金山巨人 @ 匹茲堡海盜</td>
+              <td>德 提（官方預告） / 拉凱 巴查（輪值推估 75%）</td>
+              <td>匹茲堡海盜</td>
+              <td>不推薦<span>勝方與大小分未統一</span></td>
+              <td>舊金山巨人 4.15 : 匹茲堡海盜 4.43</td>
+              <td>8.58</td>
+              <td>匹茲堡海盜</td>
+              <td>一致</td>
+              <td>無大小分盤口</td>
+              <td>- <span>比分總分方向 -</span></td>
+              <td>無台灣運彩大小分盤口</td>
+              <td>52.1%</td>
+              <td>匹茲堡海盜</td>
+              <td>一般預測</td>
+            </tr>
+
+            <tr>
+              <td>824069</td>
+              <td>2026-09-04 07:40</td>
+              <td>Scheduled</td>
+              <td>邁阿密馬林魚 @ 堪薩斯市皇家</td>
+              <td>桑迪 阿爾坎塔拉（官方預告） / 麥可 瓦查（官方預告）</td>
+              <td>堪薩斯市皇家</td>
+              <td>不推薦<span>勝方與大小分未統一</span></td>
+              <td>邁阿密馬林魚 3.68 : 堪薩斯市皇家 4.67</td>
+              <td>8.35</td>
+              <td>堪薩斯市皇家</td>
+              <td>一致</td>
+              <td>無大小分盤口</td>
+              <td>- <span>比分總分方向 -</span></td>
+              <td>無台灣運彩大小分盤口</td>
+              <td>52.1%</td>
+              <td>堪薩斯市皇家</td>
+              <td>一般預測</td>
+            </tr>
+
+            <tr>
+              <td>824388</td>
+              <td>2026-09-04 01:10</td>
+              <td>Scheduled</td>
+              <td>多倫多藍鳥 @ 克里夫蘭守護者</td>
+              <td>荷西 索里諾（官方預告） / 坦納 比貝（官方預告）</td>
+              <td>克里夫蘭守護者</td>
+              <td>不推薦<span>勝方與大小分未統一</span></td>
+              <td>多倫多藍鳥 3.95 : 克里夫蘭守護者 4.11</td>
+              <td>8.06</td>
+              <td>克里夫蘭守護者</td>
+              <td>一致</td>
+              <td>無大小分盤口</td>
+              <td>- <span>比分總分方向 -</span></td>
+              <td>無台灣運彩大小分盤口</td>
+              <td>51.2%</td>
+              <td>多倫多藍鳥</td>
+              <td>一般預測</td>
+            </tr>
+
+            <tr>
+              <td>822853</td>
+              <td>2026-09-04 08:05</td>
+              <td>Scheduled</td>
+              <td>坦帕灣光芒 @ 德州遊騎兵</td>
+              <td>謝恩 納哈（官方預告） / 卡 丘優阿恩特爾伊爾爾（官方預告）</td>
+              <td>德州遊騎兵</td>
+              <td>不推薦<span>勝方與大小分未統一</span></td>
+              <td>坦帕灣光芒 4.48 : 德州遊騎兵 4.18</td>
+              <td>8.66</td>
+              <td>坦帕灣光芒</td>
+              <td>模型分歧</td>
+              <td>無大小分盤口</td>
+              <td>- <span>比分總分方向 -</span></td>
+              <td>無台灣運彩大小分盤口</td>
+              <td>51.1%</td>
+              <td>坦帕灣光芒</td>
+              <td>模型分歧</td>
+            </tr>
+
+            <tr>
+              <td>824632</td>
+              <td>2026-09-04 07:15</td>
+              <td>Scheduled</td>
+              <td>密爾瓦基釀酒人 @ 芝加哥小熊</td>
+              <td>羅根 赫（官方預告） / 凱文 高斯曼（官方預告）</td>
+              <td>芝加哥小熊</td>
+              <td>不推薦<span>勝方與大小分未統一</span></td>
+              <td>密爾瓦基釀酒人 5.15 : 芝加哥小熊 5.12</td>
+              <td>10.27</td>
+              <td>密爾瓦基釀酒人</td>
+              <td>模型分歧</td>
+              <td>無大小分盤口</td>
+              <td>- <span>比分總分方向 -</span></td>
+              <td>無台灣運彩大小分盤口</td>
+              <td>51.1%</td>
+              <td>芝加哥小熊</td>
+              <td>模型分歧</td>
+            </tr></tbody>
+    </table>
+    <div class="warning">投注單請看 <a href="betting_ticket.html">今日投注單</a>。該頁只列入真實盤口與 edge 條件通過的場次。</div>
+    <h2>高信心預測</h2>
+    <table>
+      <thead><tr><th>決策</th><th>台灣開賽時間</th><th>對戰</th><th>先發投手</th><th>預測勝方</th><th>整合方向</th><th>預測比分</th><th>預測總分</th><th>比分模型</th><th>勝方一致性</th><th>蒙地卡羅大小</th><th>台灣運彩大小</th><th>大小分一致性</th><th>信心</th><th>確認模型</th></tr></thead>
+      <tbody><tr><td colspan="15">目前沒有符合條件的預測。</td></tr></tbody>
+    </table>
+    <h2>一般預測</h2>
+    <table>
+      <thead><tr><th>決策</th><th>台灣開賽時間</th><th>對戰</th><th>先發投手</th><th>預測勝方</th><th>整合方向</th><th>預測比分</th><th>預測總分</th><th>比分模型</th><th>勝方一致性</th><th>蒙地卡羅大小</th><th>台灣運彩大小</th><th>大小分一致性</th><th>信心</th><th>確認模型</th></tr></thead>
+      <tbody>
+            <tr>
+              <td>高信心預測</td>
+              <td>2026-09-04 10:10</td>
+              <td>聖路易紅雀 @ 洛杉磯道奇</td>
+              <td>丘優伊恩恩 馬（官方預告） / 塔里克 史庫柏（官方預告）</td>
+              <td>洛杉磯道奇</td>
+              <td>不推薦<span>大小分未統一</span></td>
+              <td>聖路易紅雀 3.85 : 洛杉磯道奇 4.87</td>
+              <td>8.72</td>
+              <td>洛杉磯道奇</td>
+              <td>一致</td>
+              <td>無大小分盤口</td>
+              <td>- <span>比分總分方向 -</span></td>
+              <td>無台灣運彩大小分盤口</td>
+              <td>57.6%</td>
+              <td>洛杉磯道奇</td>
+            </tr>
+
+            <tr>
+              <td>模型分歧</td>
+              <td>2026-09-04 09:40</td>
+              <td>運動家 @ 西雅圖水手</td>
+              <td>傑克 佩（官方預告） / 卡德 阿（官方預告）</td>
+              <td>西雅圖水手</td>
+              <td>不推薦<span>勝方與大小分未統一</span></td>
+              <td>運動家 5.03 : 西雅圖水手 5.02</td>
+              <td>10.05</td>
+              <td>運動家</td>
+              <td>模型分歧</td>
+              <td>無大小分盤口</td>
+              <td>- <span>比分總分方向 -</span></td>
+              <td>無台灣運彩大小分盤口</td>
+              <td>56.8%</td>
+              <td>西雅圖水手</td>
+            </tr>
+
+            <tr>
+              <td>一般預測</td>
+              <td>2026-09-04 07:15</td>
+              <td>波士頓紅襪 @ 巴爾的摩金鶯</td>
+              <td>傑克 貝（官方預告） / 謝恩 巴（輪值推估 75%）</td>
+              <td>波士頓紅襪</td>
+              <td>不推薦<span>勝方與大小分未統一</span></td>
+              <td>波士頓紅襪 4.73 : 巴爾的摩金鶯 4.48</td>
+              <td>9.21</td>
+              <td>波士頓紅襪</td>
+              <td>一致</td>
+              <td>無大小分盤口</td>
+              <td>- <span>比分總分方向 -</span></td>
+              <td>無台灣運彩大小分盤口</td>
+              <td>53.3%</td>
+              <td>巴爾的摩金鶯</td>
+            </tr>
+
+            <tr>
+              <td>一般預測</td>
+              <td>2026-09-04 02:10</td>
+              <td>芝加哥白襪 @ 休士頓太空人</td>
+              <td>路易斯 卡史（官方預告） / 杭特 布朗（官方預告）</td>
+              <td>休士頓太空人</td>
+              <td>不推薦<span>勝方與大小分未統一</span></td>
+              <td>芝加哥白襪 4.37 : 休士頓太空人 4.49</td>
+              <td>8.86</td>
+              <td>休士頓太空人</td>
+              <td>一致</td>
+              <td>無大小分盤口</td>
+              <td>- <span>比分總分方向 -</span></td>
+              <td>無台灣運彩大小分盤口</td>
+              <td>52.5%</td>
+              <td>芝加哥白襪</td>
+            </tr>
+
+            <tr>
+              <td>一般預測</td>
+              <td>2026-09-04 00:35</td>
+              <td>舊金山巨人 @ 匹茲堡海盜</td>
+              <td>德 提（官方預告） / 拉凱 巴查（輪值推估 75%）</td>
+              <td>匹茲堡海盜</td>
+              <td>不推薦<span>勝方與大小分未統一</span></td>
+              <td>舊金山巨人 4.15 : 匹茲堡海盜 4.43</td>
+              <td>8.58</td>
+              <td>匹茲堡海盜</td>
+              <td>一致</td>
+              <td>無大小分盤口</td>
+              <td>- <span>比分總分方向 -</span></td>
+              <td>無台灣運彩大小分盤口</td>
+              <td>52.1%</td>
+              <td>匹茲堡海盜</td>
+            </tr>
+
+            <tr>
+              <td>一般預測</td>
+              <td>2026-09-04 07:40</td>
+              <td>邁阿密馬林魚 @ 堪薩斯市皇家</td>
+              <td>桑迪 阿爾坎塔拉（官方預告） / 麥可 瓦查（官方預告）</td>
+              <td>堪薩斯市皇家</td>
+              <td>不推薦<span>勝方與大小分未統一</span></td>
+              <td>邁阿密馬林魚 3.68 : 堪薩斯市皇家 4.67</td>
+              <td>8.35</td>
+              <td>堪薩斯市皇家</td>
+              <td>一致</td>
+              <td>無大小分盤口</td>
+              <td>- <span>比分總分方向 -</span></td>
+              <td>無台灣運彩大小分盤口</td>
+              <td>52.1%</td>
+              <td>堪薩斯市皇家</td>
+            </tr>
+
+            <tr>
+              <td>一般預測</td>
+              <td>2026-09-04 01:10</td>
+              <td>多倫多藍鳥 @ 克里夫蘭守護者</td>
+              <td>荷西 索里諾（官方預告） / 坦納 比貝（官方預告）</td>
+              <td>克里夫蘭守護者</td>
+              <td>不推薦<span>勝方與大小分未統一</span></td>
+              <td>多倫多藍鳥 3.95 : 克里夫蘭守護者 4.11</td>
+              <td>8.06</td>
+              <td>克里夫蘭守護者</td>
+              <td>一致</td>
+              <td>無大小分盤口</td>
+              <td>- <span>比分總分方向 -</span></td>
+              <td>無台灣運彩大小分盤口</td>
+              <td>51.2%</td>
+              <td>多倫多藍鳥</td>
+            </tr>
+
+            <tr>
+              <td>模型分歧</td>
+              <td>2026-09-04 08:05</td>
+              <td>坦帕灣光芒 @ 德州遊騎兵</td>
+              <td>謝恩 納哈（官方預告） / 卡 丘優阿恩特爾伊爾爾（官方預告）</td>
+              <td>德州遊騎兵</td>
+              <td>不推薦<span>勝方與大小分未統一</span></td>
+              <td>坦帕灣光芒 4.48 : 德州遊騎兵 4.18</td>
+              <td>8.66</td>
+              <td>坦帕灣光芒</td>
+              <td>模型分歧</td>
+              <td>無大小分盤口</td>
+              <td>- <span>比分總分方向 -</span></td>
+              <td>無台灣運彩大小分盤口</td>
+              <td>51.1%</td>
+              <td>坦帕灣光芒</td>
+            </tr>
+
+            <tr>
+              <td>模型分歧</td>
+              <td>2026-09-04 07:15</td>
+              <td>密爾瓦基釀酒人 @ 芝加哥小熊</td>
+              <td>羅根 赫（官方預告） / 凱文 高斯曼（官方預告）</td>
+              <td>芝加哥小熊</td>
+              <td>不推薦<span>勝方與大小分未統一</span></td>
+              <td>密爾瓦基釀酒人 5.15 : 芝加哥小熊 5.12</td>
+              <td>10.27</td>
+              <td>密爾瓦基釀酒人</td>
+              <td>模型分歧</td>
+              <td>無大小分盤口</td>
+              <td>- <span>比分總分方向 -</span></td>
+              <td>無台灣運彩大小分盤口</td>
+              <td>51.1%</td>
+              <td>芝加哥小熊</td>
+            </tr></tbody>
+    </table>
+    <div class="warning">比分預測取自統一得分期望模型；蒙地卡羅會用同一份得分期望校準分布。完整模擬分布請看 <a href="monte_carlo.html">蒙地卡羅模擬</a>。投注單請看 <a href="betting_ticket.html">今日投注單</a>。該頁只列入真實盤口與 edge 條件通過的場次。</div>
+    <div class="warning">之前做的預測驗證：<a href="prediction_log.html">結算紀錄</a> 看每場命中/錯誤；<a href="postgame_review.html">賽後檢討</a> 看每日總結；<a href="winner_model_search.html">模型搜尋</a> 看歷史模型驗證。</div>
+  </main>
+  <script>
+    const SCHEDULE_ROWS = {"recommendation": "\n            <tr>\n              <td>823907</td>\n              <td>2026-09-04 10:10</td>\n              <td>Scheduled</td>\n              <td>聖路易紅雀 @ 洛杉磯道奇</td>\n              <td>丘優伊恩恩 馬（官方預告） / 塔里克 史庫柏（官方預告）</td>\n              <td>洛杉磯道奇</td>\n              <td>不推薦<span>大小分未統一</span></td>\n              <td>聖路易紅雀 3.85 : 洛杉磯道奇 4.87</td>\n              <td>8.72</td>\n              <td>洛杉磯道奇</td>\n              <td>一致</td>\n              <td>無大小分盤口</td>\n              <td>- <span>比分總分方向 -</span></td>\n              <td>無台灣運彩大小分盤口</td>\n              <td>57.6%</td>\n              <td>洛杉磯道奇</td>\n              <td>高信心預測</td>\n            </tr>\n\n            <tr>\n              <td>823095</td>\n              <td>2026-09-04 09:40</td>\n              <td>Scheduled</td>\n              <td>運動家 @ 西雅圖水手</td>\n              <td>傑克 佩（官方預告） / 卡德 阿（官方預告）</td>\n              <td>西雅圖水手</td>\n              <td>不推薦<span>勝方與大小分未統一</span></td>\n              <td>運動家 5.03 : 西雅圖水手 5.02</td>\n              <td>10.05</td>\n              <td>運動家</td>\n              <td>模型分歧</td>\n              <td>無大小分盤口</td>\n              <td>- <span>比分總分方向 -</span></td>\n              <td>無台灣運彩大小分盤口</td>\n              <td>56.8%</td>\n              <td>西雅圖水手</td>\n              <td>模型分歧</td>\n            </tr>\n\n            <tr>\n              <td>824796</td>\n              <td>2026-09-04 07:15</td>\n              <td>Scheduled</td>\n              <td>波士頓紅襪 @ 巴爾的摩金鶯</td>\n              <td>傑克 貝（官方預告） / 謝恩 巴（輪值推估 75%）</td>\n              <td>波士頓紅襪</td>\n              <td>不推薦<span>勝方與大小分未統一</span></td>\n              <td>波士頓紅襪 4.73 : 巴爾的摩金鶯 4.48</td>\n              <td>9.21</td>\n              <td>波士頓紅襪</td>\n              <td>一致</td>\n              <td>無大小分盤口</td>\n              <td>- <span>比分總分方向 -</span></td>\n              <td>無台灣運彩大小分盤口</td>\n              <td>53.3%</td>\n              <td>巴爾的摩金鶯</td>\n              <td>一般預測</td>\n            </tr>\n\n            <tr>\n              <td>824144</td>\n              <td>2026-09-04 02:10</td>\n              <td>Scheduled</td>\n              <td>芝加哥白襪 @ 休士頓太空人</td>\n              <td>路易斯 卡史（官方預告） / 杭特 布朗（官方預告）</td>\n              <td>休士頓太空人</td>\n              <td>不推薦<span>勝方與大小分未統一</span></td>\n              <td>芝加哥白襪 4.37 : 休士頓太空人 4.49</td>\n              <td>8.86</td>\n              <td>休士頓太空人</td>\n              <td>一致</td>\n              <td>無大小分盤口</td>\n              <td>- <span>比分總分方向 -</span></td>\n              <td>無台灣運彩大小分盤口</td>\n              <td>52.5%</td>\n              <td>芝加哥白襪</td>\n              <td>一般預測</td>\n            </tr>\n\n            <tr>\n              <td>823337</td>\n              <td>2026-09-04 00:35</td>\n              <td>Scheduled</td>\n              <td>舊金山巨人 @ 匹茲堡海盜</td>\n              <td>德 提（官方預告） / 拉凱 巴查（輪值推估 75%）</td>\n              <td>匹茲堡海盜</td>\n              <td>不推薦<span>勝方與大小分未統一</span></td>\n              <td>舊金山巨人 4.15 : 匹茲堡海盜 4.43</td>\n              <td>8.58</td>\n              <td>匹茲堡海盜</td>\n              <td>一致</td>\n              <td>無大小分盤口</td>\n              <td>- <span>比分總分方向 -</span></td>\n              <td>無台灣運彩大小分盤口</td>\n              <td>52.1%</td>\n              <td>匹茲堡海盜</td>\n              <td>一般預測</td>\n            </tr>\n\n            <tr>\n              <td>824069</td>\n              <td>2026-09-04 07:40</td>\n              <td>Scheduled</td>\n              <td>邁阿密馬林魚 @ 堪薩斯市皇家</td>\n              <td>桑迪 阿爾坎塔拉（官方預告） / 麥可 瓦查（官方預告）</td>\n              <td>堪薩斯市皇家</td>\n              <td>不推薦<span>勝方與大小分未統一</span></td>\n              <td>邁阿密馬林魚 3.68 : 堪薩斯市皇家 4.67</td>\n              <td>8.35</td>\n              <td>堪薩斯市皇家</td>\n              <td>一致</td>\n              <td>無大小分盤口</td>\n              <td>- <span>比分總分方向 -</span></td>\n              <td>無台灣運彩大小分盤口</td>\n              <td>52.1%</td>\n              <td>堪薩斯市皇家</td>\n              <td>一般預測</td>\n            </tr>\n\n            <tr>\n              <td>824388</td>\n              <td>2026-09-04 01:10</td>\n              <td>Scheduled</td>\n              <td>多倫多藍鳥 @ 克里夫蘭守護者</td>\n              <td>荷西 索里諾（官方預告） / 坦納 比貝（官方預告）</td>\n              <td>克里夫蘭守護者</td>\n              <td>不推薦<span>勝方與大小分未統一</span></td>\n              <td>多倫多藍鳥 3.95 : 克里夫蘭守護者 4.11</td>\n              <td>8.06</td>\n              <td>克里夫蘭守護者</td>\n              <td>一致</td>\n              <td>無大小分盤口</td>\n              <td>- <span>比分總分方向 -</span></td>\n              <td>無台灣運彩大小分盤口</td>\n              <td>51.2%</td>\n              <td>多倫多藍鳥</td>\n              <td>一般預測</td>\n            </tr>\n\n            <tr>\n              <td>822853</td>\n              <td>2026-09-04 08:05</td>\n              <td>Scheduled</td>\n              <td>坦帕灣光芒 @ 德州遊騎兵</td>\n              <td>謝恩 納哈（官方預告） / 卡 丘優阿恩特爾伊爾爾（官方預告）</td>\n              <td>德州遊騎兵</td>\n              <td>不推薦<span>勝方與大小分未統一</span></td>\n              <td>坦帕灣光芒 4.48 : 德州遊騎兵 4.18</td>\n              <td>8.66</td>\n              <td>坦帕灣光芒</td>\n              <td>模型分歧</td>\n              <td>無大小分盤口</td>\n              <td>- <span>比分總分方向 -</span></td>\n              <td>無台灣運彩大小分盤口</td>\n              <td>51.1%</td>\n              <td>坦帕灣光芒</td>\n              <td>模型分歧</td>\n            </tr>\n\n            <tr>\n              <td>824632</td>\n              <td>2026-09-04 07:15</td>\n              <td>Scheduled</td>\n              <td>密爾瓦基釀酒人 @ 芝加哥小熊</td>\n              <td>羅根 赫（官方預告） / 凱文 高斯曼（官方預告）</td>\n              <td>芝加哥小熊</td>\n              <td>不推薦<span>勝方與大小分未統一</span></td>\n              <td>密爾瓦基釀酒人 5.15 : 芝加哥小熊 5.12</td>\n              <td>10.27</td>\n              <td>密爾瓦基釀酒人</td>\n              <td>模型分歧</td>\n              <td>無大小分盤口</td>\n              <td>- <span>比分總分方向 -</span></td>\n              <td>無台灣運彩大小分盤口</td>\n              <td>51.1%</td>\n              <td>芝加哥小熊</td>\n              <td>模型分歧</td>\n            </tr>", "time": "\n            <tr>\n              <td>823337</td>\n              <td>2026-09-04 00:35</td>\n              <td>Scheduled</td>\n              <td>舊金山巨人 @ 匹茲堡海盜</td>\n              <td>德 提（官方預告） / 拉凱 巴查（輪值推估 75%）</td>\n              <td>匹茲堡海盜</td>\n              <td>不推薦<span>勝方與大小分未統一</span></td>\n              <td>舊金山巨人 4.15 : 匹茲堡海盜 4.43</td>\n              <td>8.58</td>\n              <td>匹茲堡海盜</td>\n              <td>一致</td>\n              <td>無大小分盤口</td>\n              <td>- <span>比分總分方向 -</span></td>\n              <td>無台灣運彩大小分盤口</td>\n              <td>52.1%</td>\n              <td>匹茲堡海盜</td>\n              <td>一般預測</td>\n            </tr>\n\n            <tr>\n              <td>824388</td>\n              <td>2026-09-04 01:10</td>\n              <td>Scheduled</td>\n              <td>多倫多藍鳥 @ 克里夫蘭守護者</td>\n              <td>荷西 索里諾（官方預告） / 坦納 比貝（官方預告）</td>\n              <td>克里夫蘭守護者</td>\n              <td>不推薦<span>勝方與大小分未統一</span></td>\n              <td>多倫多藍鳥 3.95 : 克里夫蘭守護者 4.11</td>\n              <td>8.06</td>\n              <td>克里夫蘭守護者</td>\n              <td>一致</td>\n              <td>無大小分盤口</td>\n              <td>- <span>比分總分方向 -</span></td>\n              <td>無台灣運彩大小分盤口</td>\n              <td>51.2%</td>\n              <td>多倫多藍鳥</td>\n              <td>一般預測</td>\n            </tr>\n\n            <tr>\n              <td>824144</td>\n              <td>2026-09-04 02:10</td>\n              <td>Scheduled</td>\n              <td>芝加哥白襪 @ 休士頓太空人</td>\n              <td>路易斯 卡史（官方預告） / 杭特 布朗（官方預告）</td>\n              <td>休士頓太空人</td>\n              <td>不推薦<span>勝方與大小分未統一</span></td>\n              <td>芝加哥白襪 4.37 : 休士頓太空人 4.49</td>\n              <td>8.86</td>\n              <td>休士頓太空人</td>\n              <td>一致</td>\n              <td>無大小分盤口</td>\n              <td>- <span>比分總分方向 -</span></td>\n              <td>無台灣運彩大小分盤口</td>\n              <td>52.5%</td>\n              <td>芝加哥白襪</td>\n              <td>一般預測</td>\n            </tr>\n\n            <tr>\n              <td>824632</td>\n              <td>2026-09-04 07:15</td>\n              <td>Scheduled</td>\n              <td>密爾瓦基釀酒人 @ 芝加哥小熊</td>\n              <td>羅根 赫（官方預告） / 凱文 高斯曼（官方預告）</td>\n              <td>芝加哥小熊</td>\n              <td>不推薦<span>勝方與大小分未統一</span></td>\n              <td>密爾瓦基釀酒人 5.15 : 芝加哥小熊 5.12</td>\n              <td>10.27</td>\n              <td>密爾瓦基釀酒人</td>\n              <td>模型分歧</td>\n              <td>無大小分盤口</td>\n              <td>- <span>比分總分方向 -</span></td>\n              <td>無台灣運彩大小分盤口</td>\n              <td>51.1%</td>\n              <td>芝加哥小熊</td>\n              <td>模型分歧</td>\n            </tr>\n\n            <tr>\n              <td>824796</td>\n              <td>2026-09-04 07:15</td>\n              <td>Scheduled</td>\n              <td>波士頓紅襪 @ 巴爾的摩金鶯</td>\n              <td>傑克 貝（官方預告） / 謝恩 巴（輪值推估 75%）</td>\n              <td>波士頓紅襪</td>\n              <td>不推薦<span>勝方與大小分未統一</span></td>\n              <td>波士頓紅襪 4.73 : 巴爾的摩金鶯 4.48</td>\n              <td>9.21</td>\n              <td>波士頓紅襪</td>\n              <td>一致</td>\n              <td>無大小分盤口</td>\n              <td>- <span>比分總分方向 -</span></td>\n              <td>無台灣運彩大小分盤口</td>\n              <td>53.3%</td>\n              <td>巴爾的摩金鶯</td>\n              <td>一般預測</td>\n            </tr>\n\n            <tr>\n              <td>824069</td>\n              <td>2026-09-04 07:40</td>\n              <td>Scheduled</td>\n              <td>邁阿密馬林魚 @ 堪薩斯市皇家</td>\n              <td>桑迪 阿爾坎塔拉（官方預告） / 麥可 瓦查（官方預告）</td>\n              <td>堪薩斯市皇家</td>\n              <td>不推薦<span>勝方與大小分未統一</span></td>\n              <td>邁阿密馬林魚 3.68 : 堪薩斯市皇家 4.67</td>\n              <td>8.35</td>\n              <td>堪薩斯市皇家</td>\n              <td>一致</td>\n              <td>無大小分盤口</td>\n              <td>- <span>比分總分方向 -</span></td>\n              <td>無台灣運彩大小分盤口</td>\n              <td>52.1%</td>\n              <td>堪薩斯市皇家</td>\n              <td>一般預測</td>\n            </tr>\n\n            <tr>\n              <td>822853</td>\n              <td>2026-09-04 08:05</td>\n              <td>Scheduled</td>\n              <td>坦帕灣光芒 @ 德州遊騎兵</td>\n              <td>謝恩 納哈（官方預告） / 卡 丘優阿恩特爾伊爾爾（官方預告）</td>\n              <td>德州遊騎兵</td>\n              <td>不推薦<span>勝方與大小分未統一</span></td>\n              <td>坦帕灣光芒 4.48 : 德州遊騎兵 4.18</td>\n              <td>8.66</td>\n              <td>坦帕灣光芒</td>\n              <td>模型分歧</td>\n              <td>無大小分盤口</td>\n              <td>- <span>比分總分方向 -</span></td>\n              <td>無台灣運彩大小分盤口</td>\n              <td>51.1%</td>\n              <td>坦帕灣光芒</td>\n              <td>模型分歧</td>\n            </tr>\n\n            <tr>\n              <td>823095</td>\n              <td>2026-09-04 09:40</td>\n              <td>Scheduled</td>\n              <td>運動家 @ 西雅圖水手</td>\n              <td>傑克 佩（官方預告） / 卡德 阿（官方預告）</td>\n              <td>西雅圖水手</td>\n              <td>不推薦<span>勝方與大小分未統一</span></td>\n              <td>運動家 5.03 : 西雅圖水手 5.02</td>\n              <td>10.05</td>\n              <td>運動家</td>\n              <td>模型分歧</td>\n              <td>無大小分盤口</td>\n              <td>- <span>比分總分方向 -</span></td>\n              <td>無台灣運彩大小分盤口</td>\n              <td>56.8%</td>\n              <td>西雅圖水手</td>\n              <td>模型分歧</td>\n            </tr>\n\n            <tr>\n              <td>823907</td>\n              <td>2026-09-04 10:10</td>\n              <td>Scheduled</td>\n              <td>聖路易紅雀 @ 洛杉磯道奇</td>\n              <td>丘優伊恩恩 馬（官方預告） / 塔里克 史庫柏（官方預告）</td>\n              <td>洛杉磯道奇</td>\n              <td>不推薦<span>大小分未統一</span></td>\n              <td>聖路易紅雀 3.85 : 洛杉磯道奇 4.87</td>\n              <td>8.72</td>\n              <td>洛杉磯道奇</td>\n              <td>一致</td>\n              <td>無大小分盤口</td>\n              <td>- <span>比分總分方向 -</span></td>\n              <td>無台灣運彩大小分盤口</td>\n              <td>57.6%</td>\n              <td>洛杉磯道奇</td>\n              <td>高信心預測</td>\n            </tr>"};
+    const buttons = {
+      recommendation: document.getElementById('sortRecommendation'),
+      time: document.getElementById('sortTime')
+    };
+    function setScheduleSort(mode) {
+      document.getElementById('scheduleRows').innerHTML = SCHEDULE_ROWS[mode];
+      buttons.recommendation.classList.toggle('active', mode === 'recommendation');
+      buttons.time.classList.toggle('active', mode === 'time');
+    }
+    buttons.recommendation.addEventListener('click', () => setScheduleSort('recommendation'));
+    buttons.time.addEventListener('click', () => setScheduleSort('time'));
+  </script>
+  </div>
+</body>
+</html>
