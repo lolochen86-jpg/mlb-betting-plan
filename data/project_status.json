@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-09-07T00:01:51",
+  "generated_at": "2026-09-07T05:05:12",
   "history": {
-    "games_written": 4572,
+    "games_written": 4586,
     "actual_first_game_date": "2025-03-27",
-    "actual_last_game_date": "2026-09-05"
+    "actual_last_game_date": "2026-09-06"
   },
   "accuracy": {
     "best_model": "A-畢氏勝率",
@@ -12,8 +12,8 @@
     "accuracy_pct": 54.4
   },
   "daily": {
-    "target_date": "2026-09-06",
-    "predictions": 15,
+    "target_date": "2026-09-07",
+    "predictions": 11,
     "high_confidence": 0
   },
   "settlements": [
@@ -524,8 +524,15 @@
     {
       "date": "2026-09-06",
       "predictions": 15,
+      "final_games": 7,
+      "pending_games": 8,
+      "accuracy_pct": 42.86
+    },
+    {
+      "date": "2026-09-07",
+      "predictions": 11,
       "final_games": 0,
-      "pending_games": 15,
+      "pending_games": 11,
       "accuracy_pct": 0
     }
   ],
@@ -995,6 +1002,19 @@
       "rows": 15,
       "filled": 15,
       "missing": []
+    },
+    {
+      "date": "2026-09-07",
+      "rows": 11,
+      "filled": 5,
+      "missing": [
+        "聖路易紅雀 @ 舊金山巨人 (Scheduled)",
+        "華盛頓國民 @ 聖地牙哥教士 (Scheduled)",
+        "辛辛那提紅人 @ 洛杉磯道奇 (Scheduled)",
+        "亞利桑那響尾蛇 @ 堪薩斯市皇家 (Scheduled)",
+        "明尼蘇達雙城 @ 底特律老虎 (Scheduled)",
+        "洛杉磯天使 @ 波士頓紅襪 (Scheduled)"
+      ]
     }
   ],
   "roi": [
@@ -1581,6 +1601,14 @@
       "pending_bets": 0,
       "total_pnl": 0,
       "roi_pct": 0
+    },
+    {
+      "date": "2026-09-07",
+      "bets": 0,
+      "final_bets": 0,
+      "pending_bets": 0,
+      "total_pnl": 0,
+      "roi_pct": 0
     }
   ],
   "auto_runner": {
@@ -1650,7 +1678,14 @@
     "2026-07-21 尚有 2 場比賽未結算",
     "2026-07-27 尚有 1 場比賽未結算",
     "2026-07-28 尚有 1 場比賽未結算",
-    "2026-09-06 尚有 15 場比賽未結算"
+    "2026-09-06 尚有 8 場比賽未結算",
+    "2026-09-07 尚有 11 場比賽未結算",
+    "2026-09-07 聖路易紅雀 @ 舊金山巨人 (Scheduled) 尚未開打或來源尚未開盤",
+    "2026-09-07 華盛頓國民 @ 聖地牙哥教士 (Scheduled) 尚未開打或來源尚未開盤",
+    "2026-09-07 辛辛那提紅人 @ 洛杉磯道奇 (Scheduled) 尚未開打或來源尚未開盤",
+    "2026-09-07 亞利桑那響尾蛇 @ 堪薩斯市皇家 (Scheduled) 尚未開打或來源尚未開盤",
+    "2026-09-07 明尼蘇達雙城 @ 底特律老虎 (Scheduled) 尚未開打或來源尚未開盤",
+    "2026-09-07 洛杉磯天使 @ 波士頓紅襪 (Scheduled) 尚未開打或來源尚未開盤"
   ],
   "project_state": "系統完成，等待外部賽果/盤口"
 }
