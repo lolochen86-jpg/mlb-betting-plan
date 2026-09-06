@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-06T06:43:25",
+  "generated_at": "2026-09-06T08:36:03",
   "target_date": "2026-09-06",
   "model": "統一得分期望 v1",
   "postgame_calibration": {
@@ -104,6 +104,69 @@
     },
     {
       "date": "2026-09-06",
+      "game_pk": "824309",
+      "game_time_tw": "2026-09-07 03:10",
+      "game_time_utc": "2026-09-06T19:10:00Z",
+      "matchup_zh": "聖路易紅雀 @ 科羅拉多洛磯",
+      "away_zh": "聖路易紅雀",
+      "home_zh": "科羅拉多洛磯",
+      "away_expected_runs": 5.44,
+      "home_expected_runs": 5.07,
+      "expected_total": 10.51,
+      "pick_side": "away",
+      "prediction_zh": "聖路易紅雀",
+      "home_win_prob": 0.4493,
+      "away_win_prob": 0.5507,
+      "lineup_source": "projected_recent_lineup_order",
+      "away_lineup_factor": {
+        "source_quality": "projected_recent_lineup_order",
+        "factor": 1.006
+      },
+      "home_lineup_factor": {
+        "source_quality": "projected_recent_lineup_order",
+        "factor": 1.046
+      },
+      "away_pitcher_weight": 0.9,
+      "home_pitcher_weight": 0.9,
+      "weather": {
+        "source": "open_meteo_forecast",
+        "venue": "Coors Field",
+        "home_team": "科羅拉多洛磯",
+        "roof": false,
+        "latitude": 39.7561,
+        "longitude": -104.9942,
+        "forecast_time_utc": "2026-09-06T19:00",
+        "temperature_c": 30.5,
+        "humidity_pct": 33.0,
+        "precipitation_probability_pct": 1.0,
+        "wind_speed_kmh": 8.7,
+        "wind_direction_deg": 83.0,
+        "factor": 0.15
+      },
+      "away_bullpen": {
+        "source": "recent_boxscore_pitcher_usage",
+        "recent_games": 3,
+        "recent_relief_pitcher_appearances": 15,
+        "unique_recent_relievers": 9,
+        "fatigue_runs": 0.315
+      },
+      "home_bullpen": {
+        "source": "recent_boxscore_pitcher_usage",
+        "recent_games": 2,
+        "recent_relief_pitcher_appearances": 9,
+        "unique_recent_relievers": 8,
+        "fatigue_runs": 0.045
+      },
+      "score_bias_applied": 0.0,
+      "totals_recent_bias_applied": 0.0,
+      "missing_data": [
+        "injury_absence_feed"
+      ],
+      "data_quality": "可用",
+      "model_version": "unified_expected_runs_v1"
+    },
+    {
+      "date": "2026-09-06",
       "game_pk": "823091",
       "game_time_tw": "2026-09-07 04:10",
       "game_time_utc": "2026-09-06T20:10:00Z",
@@ -167,86 +230,23 @@
     },
     {
       "date": "2026-09-06",
-      "game_pk": "824309",
-      "game_time_tw": "2026-09-07 03:10",
-      "game_time_utc": "2026-09-06T19:10:00Z",
-      "matchup_zh": "聖路易紅雀 @ 科羅拉多洛磯",
-      "away_zh": "聖路易紅雀",
-      "home_zh": "科羅拉多洛磯",
-      "away_expected_runs": 5.42,
-      "home_expected_runs": 5.07,
-      "expected_total": 10.49,
-      "pick_side": "away",
-      "prediction_zh": "聖路易紅雀",
-      "home_win_prob": 0.4528,
-      "away_win_prob": 0.5472,
-      "lineup_source": "projected_recent_lineup_order",
-      "away_lineup_factor": {
-        "source_quality": "projected_recent_lineup_order",
-        "factor": 1.007
-      },
-      "home_lineup_factor": {
-        "source_quality": "projected_recent_lineup_order",
-        "factor": 1.046
-      },
-      "away_pitcher_weight": 0.9,
-      "home_pitcher_weight": 0.9,
-      "weather": {
-        "source": "open_meteo_forecast",
-        "venue": "Coors Field",
-        "home_team": "科羅拉多洛磯",
-        "roof": false,
-        "latitude": 39.7561,
-        "longitude": -104.9942,
-        "forecast_time_utc": "2026-09-06T19:00",
-        "temperature_c": 30.5,
-        "humidity_pct": 33.0,
-        "precipitation_probability_pct": 1.0,
-        "wind_speed_kmh": 8.7,
-        "wind_direction_deg": 83.0,
-        "factor": 0.15
-      },
-      "away_bullpen": {
-        "source": "recent_boxscore_pitcher_usage",
-        "recent_games": 3,
-        "recent_relief_pitcher_appearances": 15,
-        "unique_recent_relievers": 9,
-        "fatigue_runs": 0.315
-      },
-      "home_bullpen": {
-        "source": "recent_boxscore_pitcher_usage",
-        "recent_games": 2,
-        "recent_relief_pitcher_appearances": 9,
-        "unique_recent_relievers": 8,
-        "fatigue_runs": 0.045
-      },
-      "score_bias_applied": 0.0,
-      "totals_recent_bias_applied": 0.0,
-      "missing_data": [
-        "injury_absence_feed"
-      ],
-      "data_quality": "可用",
-      "model_version": "unified_expected_runs_v1"
-    },
-    {
-      "date": "2026-09-06",
       "game_pk": "823336",
       "game_time_tw": "2026-09-07 01:35",
       "game_time_utc": "2026-09-06T17:35:00Z",
       "matchup_zh": "洛杉磯天使 @ 匹茲堡海盜",
       "away_zh": "洛杉磯天使",
       "home_zh": "匹茲堡海盜",
-      "away_expected_runs": 3.45,
+      "away_expected_runs": 3.61,
       "home_expected_runs": 3.81,
-      "expected_total": 7.26,
+      "expected_total": 7.42,
       "pick_side": "home",
       "prediction_zh": "匹茲堡海盜",
-      "home_win_prob": 0.5491,
-      "away_win_prob": 0.4509,
+      "home_win_prob": 0.5273,
+      "away_win_prob": 0.4727,
       "lineup_source": "projected_recent_lineup_order",
       "away_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
-        "factor": 0.897
+        "factor": 0.899
       },
       "home_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
@@ -299,9 +299,9 @@
       "matchup_zh": "密爾瓦基釀酒人 @ 辛辛那提紅人",
       "away_zh": "密爾瓦基釀酒人",
       "home_zh": "辛辛那提紅人",
-      "away_expected_runs": 5.67,
-      "home_expected_runs": 3.9,
-      "expected_total": 9.58,
+      "away_expected_runs": 5.73,
+      "home_expected_runs": 3.93,
+      "expected_total": 9.67,
       "pick_side": "away",
       "prediction_zh": "密爾瓦基釀酒人",
       "home_win_prob": 0.3,
@@ -313,7 +313,7 @@
       },
       "home_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
-        "factor": 0.941
+        "factor": 0.942
       },
       "away_pitcher_weight": 0.9,
       "home_pitcher_weight": 0.9,
@@ -363,20 +363,20 @@
       "away_zh": "芝加哥小熊",
       "home_zh": "邁阿密馬林魚",
       "away_expected_runs": 5.5,
-      "home_expected_runs": 4.31,
-      "expected_total": 9.82,
+      "home_expected_runs": 4.14,
+      "expected_total": 9.64,
       "pick_side": "away",
       "prediction_zh": "芝加哥小熊",
-      "home_win_prob": 0.3441,
-      "away_win_prob": 0.6559,
+      "home_win_prob": 0.3246,
+      "away_win_prob": 0.6754,
       "lineup_source": "projected_recent_lineup_order",
       "away_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
-        "factor": 1.028
+        "factor": 1.026
       },
       "home_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
-        "factor": 0.992
+        "factor": 0.948
       },
       "away_pitcher_weight": 0.9,
       "home_pitcher_weight": 0.9,
@@ -419,90 +419,27 @@
     },
     {
       "date": "2026-09-06",
-      "game_pk": "824552",
-      "game_time_tw": "2026-09-07 06:20",
-      "game_time_utc": "2026-09-06T22:20:00Z",
-      "matchup_zh": "明尼蘇達雙城 @ 芝加哥白襪",
-      "away_zh": "明尼蘇達雙城",
-      "home_zh": "芝加哥白襪",
-      "away_expected_runs": 4.25,
-      "home_expected_runs": 4.54,
-      "expected_total": 8.79,
-      "pick_side": "home",
-      "prediction_zh": "芝加哥白襪",
-      "home_win_prob": 0.5402,
-      "away_win_prob": 0.4598,
-      "lineup_source": "projected_recent_lineup_order",
-      "away_lineup_factor": {
-        "source_quality": "projected_recent_lineup_order",
-        "factor": 1.006
-      },
-      "home_lineup_factor": {
-        "source_quality": "projected_recent_lineup_order",
-        "factor": 0.996
-      },
-      "away_pitcher_weight": 0.9,
-      "home_pitcher_weight": 0.75,
-      "weather": {
-        "source": "open_meteo_forecast",
-        "venue": "Rate Field",
-        "home_team": "芝加哥白襪",
-        "roof": false,
-        "latitude": 41.83,
-        "longitude": -87.6339,
-        "forecast_time_utc": "2026-09-06T22:00",
-        "temperature_c": 23.4,
-        "humidity_pct": 59.0,
-        "precipitation_probability_pct": 0.0,
-        "wind_speed_kmh": 18.5,
-        "wind_direction_deg": 33.0,
-        "factor": 0.0
-      },
-      "away_bullpen": {
-        "source": "recent_boxscore_pitcher_usage",
-        "recent_games": 2,
-        "recent_relief_pitcher_appearances": 9,
-        "unique_recent_relievers": 8,
-        "fatigue_runs": 0.045
-      },
-      "home_bullpen": {
-        "source": "recent_boxscore_pitcher_usage",
-        "recent_games": 3,
-        "recent_relief_pitcher_appearances": 8,
-        "unique_recent_relievers": 8,
-        "fatigue_runs": 0.0
-      },
-      "score_bias_applied": 0.0,
-      "totals_recent_bias_applied": 0.0,
-      "missing_data": [
-        "injury_absence_feed"
-      ],
-      "data_quality": "可用",
-      "model_version": "unified_expected_runs_v1"
-    },
-    {
-      "date": "2026-09-06",
       "game_pk": "824794",
       "game_time_tw": "2026-09-07 01:35",
       "game_time_utc": "2026-09-06T17:35:00Z",
       "matchup_zh": "波士頓紅襪 @ 巴爾的摩金鶯",
       "away_zh": "波士頓紅襪",
       "home_zh": "巴爾的摩金鶯",
-      "away_expected_runs": 4.56,
-      "home_expected_runs": 3.99,
-      "expected_total": 8.56,
+      "away_expected_runs": 4.55,
+      "home_expected_runs": 3.98,
+      "expected_total": 8.53,
       "pick_side": "away",
       "prediction_zh": "波士頓紅襪",
-      "home_win_prob": 0.4239,
-      "away_win_prob": 0.5761,
+      "home_win_prob": 0.4242,
+      "away_win_prob": 0.5758,
       "lineup_source": "projected_recent_lineup_order",
       "away_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
-        "factor": 0.989
+        "factor": 0.986
       },
       "home_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
-        "factor": 0.938
+        "factor": 0.935
       },
       "away_pitcher_weight": 0.9,
       "home_pitcher_weight": 0.9,
@@ -545,6 +482,69 @@
     },
     {
       "date": "2026-09-06",
+      "game_pk": "824552",
+      "game_time_tw": "2026-09-07 06:20",
+      "game_time_utc": "2026-09-06T22:20:00Z",
+      "matchup_zh": "明尼蘇達雙城 @ 芝加哥白襪",
+      "away_zh": "明尼蘇達雙城",
+      "home_zh": "芝加哥白襪",
+      "away_expected_runs": 4.4,
+      "home_expected_runs": 4.63,
+      "expected_total": 9.03,
+      "pick_side": "home",
+      "prediction_zh": "芝加哥白襪",
+      "home_win_prob": 0.532,
+      "away_win_prob": 0.468,
+      "lineup_source": "projected_recent_lineup_order",
+      "away_lineup_factor": {
+        "source_quality": "projected_recent_lineup_order",
+        "factor": 1.007
+      },
+      "home_lineup_factor": {
+        "source_quality": "projected_recent_lineup_order",
+        "factor": 0.997
+      },
+      "away_pitcher_weight": 0.9,
+      "home_pitcher_weight": 0.75,
+      "weather": {
+        "source": "open_meteo_forecast",
+        "venue": "Rate Field",
+        "home_team": "芝加哥白襪",
+        "roof": false,
+        "latitude": 41.83,
+        "longitude": -87.6339,
+        "forecast_time_utc": "2026-09-06T22:00",
+        "temperature_c": 23.4,
+        "humidity_pct": 59.0,
+        "precipitation_probability_pct": 0.0,
+        "wind_speed_kmh": 18.5,
+        "wind_direction_deg": 33.0,
+        "factor": 0.0
+      },
+      "away_bullpen": {
+        "source": "recent_boxscore_pitcher_usage",
+        "recent_games": 2,
+        "recent_relief_pitcher_appearances": 9,
+        "unique_recent_relievers": 8,
+        "fatigue_runs": 0.045
+      },
+      "home_bullpen": {
+        "source": "recent_boxscore_pitcher_usage",
+        "recent_games": 3,
+        "recent_relief_pitcher_appearances": 8,
+        "unique_recent_relievers": 8,
+        "fatigue_runs": 0.0
+      },
+      "score_bias_applied": 0.0,
+      "totals_recent_bias_applied": 0.0,
+      "missing_data": [
+        "injury_absence_feed"
+      ],
+      "data_quality": "可用",
+      "model_version": "unified_expected_runs_v1"
+    },
+    {
+      "date": "2026-09-06",
       "game_pk": "823417",
       "game_time_tw": "2026-09-07 01:10",
       "game_time_utc": "2026-09-06T17:10:00Z",
@@ -552,16 +552,16 @@
       "away_zh": "亞特蘭大勇士",
       "home_zh": "費城費城人",
       "away_expected_runs": 3.7,
-      "home_expected_runs": 4.4,
-      "expected_total": 8.1,
+      "home_expected_runs": 4.43,
+      "expected_total": 8.13,
       "pick_side": "home",
       "prediction_zh": "費城費城人",
-      "home_win_prob": 0.5942,
-      "away_win_prob": 0.4058,
+      "home_win_prob": 0.5979,
+      "away_win_prob": 0.4021,
       "lineup_source": "projected_recent_lineup_order",
       "away_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
-        "factor": 1.003
+        "factor": 0.986
       },
       "home_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
@@ -614,21 +614,21 @@
       "matchup_zh": "舊金山巨人 @ 紐約大都會",
       "away_zh": "舊金山巨人",
       "home_zh": "紐約大都會",
-      "away_expected_runs": 4.31,
-      "home_expected_runs": 4.28,
-      "expected_total": 8.59,
-      "pick_side": "away",
-      "prediction_zh": "舊金山巨人",
-      "home_win_prob": 0.4959,
-      "away_win_prob": 0.5041,
+      "away_expected_runs": 4.2,
+      "home_expected_runs": 4.34,
+      "expected_total": 8.54,
+      "pick_side": "home",
+      "prediction_zh": "紐約大都會",
+      "home_win_prob": 0.5184,
+      "away_win_prob": 0.4816,
       "lineup_source": "projected_recent_lineup_order",
       "away_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
-        "factor": 0.953
+        "factor": 0.93
       },
       "home_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
-        "factor": 0.968
+        "factor": 0.969
       },
       "away_pitcher_weight": 0.9,
       "home_pitcher_weight": 0.9,
@@ -678,12 +678,12 @@
       "away_zh": "亞利桑那響尾蛇",
       "home_zh": "休士頓太空人",
       "away_expected_runs": 4.2,
-      "home_expected_runs": 4.16,
-      "expected_total": 8.35,
-      "pick_side": "away",
-      "prediction_zh": "亞利桑那響尾蛇",
-      "home_win_prob": 0.4951,
-      "away_win_prob": 0.5049,
+      "home_expected_runs": 4.22,
+      "expected_total": 8.41,
+      "pick_side": "home",
+      "prediction_zh": "休士頓太空人",
+      "home_win_prob": 0.5025,
+      "away_win_prob": 0.4975,
       "lineup_source": "projected_recent_lineup_order",
       "away_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
@@ -740,13 +740,13 @@
       "matchup_zh": "坦帕灣光芒 @ 德州遊騎兵",
       "away_zh": "坦帕灣光芒",
       "home_zh": "德州遊騎兵",
-      "away_expected_runs": 4.26,
-      "home_expected_runs": 4.46,
-      "expected_total": 8.72,
+      "away_expected_runs": 4.32,
+      "home_expected_runs": 4.47,
+      "expected_total": 8.79,
       "pick_side": "home",
       "prediction_zh": "德州遊騎兵",
-      "home_win_prob": 0.5262,
-      "away_win_prob": 0.4738,
+      "home_win_prob": 0.5209,
+      "away_win_prob": 0.4791,
       "lineup_source": "projected_recent_lineup_order",
       "away_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
@@ -754,7 +754,7 @@
       },
       "home_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
-        "factor": 0.974
+        "factor": 0.972
       },
       "away_pitcher_weight": 0.75,
       "home_pitcher_weight": 0.9,
@@ -803,21 +803,21 @@
       "matchup_zh": "紐約洋基 @ 聖地牙哥教士",
       "away_zh": "紐約洋基",
       "home_zh": "聖地牙哥教士",
-      "away_expected_runs": 4.07,
-      "home_expected_runs": 3.65,
-      "expected_total": 7.72,
+      "away_expected_runs": 4.22,
+      "home_expected_runs": 3.67,
+      "expected_total": 7.89,
       "pick_side": "away",
       "prediction_zh": "紐約洋基",
-      "home_win_prob": 0.4427,
-      "away_win_prob": 0.5573,
+      "home_win_prob": 0.4263,
+      "away_win_prob": 0.5737,
       "lineup_source": "projected_recent_lineup_order",
       "away_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
-        "factor": 0.979
+        "factor": 0.98
       },
       "home_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
-        "factor": 0.977
+        "factor": 0.975
       },
       "away_pitcher_weight": 0.9,
       "home_pitcher_weight": 0.9,
@@ -866,21 +866,21 @@
       "matchup_zh": "底特律老虎 @ 克里夫蘭守護者",
       "away_zh": "底特律老虎",
       "home_zh": "克里夫蘭守護者",
-      "away_expected_runs": 3.7,
-      "home_expected_runs": 4.68,
-      "expected_total": 8.38,
+      "away_expected_runs": 3.89,
+      "home_expected_runs": 4.71,
+      "expected_total": 8.6,
       "pick_side": "home",
       "prediction_zh": "克里夫蘭守護者",
-      "home_win_prob": 0.6298,
-      "away_win_prob": 0.3702,
+      "home_win_prob": 0.6099,
+      "away_win_prob": 0.3901,
       "lineup_source": "projected_recent_lineup_order",
       "away_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
-        "factor": 0.971
+        "factor": 0.984
       },
       "home_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
-        "factor": 0.974
+        "factor": 0.981
       },
       "away_pitcher_weight": 0.9,
       "home_pitcher_weight": 0.9,
@@ -929,21 +929,21 @@
       "matchup_zh": "多倫多藍鳥 @ 堪薩斯市皇家",
       "away_zh": "多倫多藍鳥",
       "home_zh": "堪薩斯市皇家",
-      "away_expected_runs": 4.31,
-      "home_expected_runs": 4.28,
-      "expected_total": 8.59,
+      "away_expected_runs": 4.41,
+      "home_expected_runs": 4.36,
+      "expected_total": 8.77,
       "pick_side": "away",
       "prediction_zh": "多倫多藍鳥",
-      "home_win_prob": 0.4961,
-      "away_win_prob": 0.5039,
+      "home_win_prob": 0.494,
+      "away_win_prob": 0.506,
       "lineup_source": "projected_recent_lineup_order",
       "away_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
-        "factor": 0.981
+        "factor": 0.983
       },
       "home_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
-        "factor": 0.978
+        "factor": 0.977
       },
       "away_pitcher_weight": 0.7,
       "home_pitcher_weight": 0.9,
