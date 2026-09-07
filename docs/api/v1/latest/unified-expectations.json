@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-09-07T08:42:54",
+  "generated_at": "2026-09-07T13:43:08",
   "target_date": "2026-09-07",
   "model": "統一得分期望 v1",
   "postgame_calibration": {
     "source": "postgame_review",
     "days": 10,
-    "games": 120,
-    "winner_accuracy": 0.5333,
-    "low_confidence_accuracy": 0.5341,
+    "games": 126,
+    "winner_accuracy": 0.5317,
+    "low_confidence_accuracy": 0.5217,
     "score_total_bias": 0.0,
     "score_total_bias_applied": 0.0,
     "totals_recent_bias": 0.0,
@@ -19,10 +19,10 @@
     "totals_min_line_gap": 1.0,
     "mismatch_notes": 0,
     "reason_counts": {
-      "low_confidence_miss": 34,
-      "one_run_volatility": 36,
-      "high_confidence_hit": 17,
-      "low_confidence_hit": 47,
+      "low_confidence_miss": 37,
+      "one_run_volatility": 38,
+      "high_confidence_hit": 19,
+      "low_confidence_hit": 48,
       "high_confidence_miss": 15
     },
     "data_gaps": [
@@ -110,13 +110,13 @@
       "matchup_zh": "辛辛那提紅人 @ 洛杉磯道奇",
       "away_zh": "辛辛那提紅人",
       "home_zh": "洛杉磯道奇",
-      "away_expected_runs": 4.31,
-      "home_expected_runs": 5.09,
-      "expected_total": 9.4,
+      "away_expected_runs": 4.37,
+      "home_expected_runs": 5.17,
+      "expected_total": 9.54,
       "pick_side": "home",
       "prediction_zh": "洛杉磯道奇",
-      "home_win_prob": 0.604,
-      "away_win_prob": 0.396,
+      "home_win_prob": 0.606,
+      "away_win_prob": 0.394,
       "lineup_source": "projected_recent_lineup_order",
       "away_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
@@ -124,7 +124,7 @@
       },
       "home_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
-        "factor": 0.973
+        "factor": 0.965
       },
       "away_pitcher_weight": 0.9,
       "home_pitcher_weight": 0.75,
@@ -173,23 +173,23 @@
       "matchup_zh": "華盛頓國民 @ 聖地牙哥教士",
       "away_zh": "華盛頓國民",
       "home_zh": "聖地牙哥教士",
-      "away_expected_runs": 4.09,
-      "home_expected_runs": 4.16,
-      "expected_total": 8.25,
+      "away_expected_runs": 4.06,
+      "home_expected_runs": 4.47,
+      "expected_total": 8.53,
       "pick_side": "home",
       "prediction_zh": "聖地牙哥教士",
-      "home_win_prob": 0.5084,
-      "away_win_prob": 0.4916,
+      "home_win_prob": 0.556,
+      "away_win_prob": 0.444,
       "lineup_source": "projected_recent_lineup_order",
       "away_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
-        "factor": 1.019
+        "factor": 0.989
       },
       "home_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
         "factor": 0.977
       },
-      "away_pitcher_weight": 0.65,
+      "away_pitcher_weight": 0.9,
       "home_pitcher_weight": 0.9,
       "weather": {
         "source": "open_meteo_forecast",
@@ -236,17 +236,17 @@
       "matchup_zh": "明尼蘇達雙城 @ 底特律老虎",
       "away_zh": "明尼蘇達雙城",
       "home_zh": "底特律老虎",
-      "away_expected_runs": 4.45,
-      "home_expected_runs": 4.23,
-      "expected_total": 8.68,
+      "away_expected_runs": 4.35,
+      "home_expected_runs": 4.28,
+      "expected_total": 8.63,
       "pick_side": "away",
       "prediction_zh": "明尼蘇達雙城",
-      "home_win_prob": 0.47,
-      "away_win_prob": 0.53,
+      "home_win_prob": 0.4916,
+      "away_win_prob": 0.5084,
       "lineup_source": "projected_recent_lineup_order",
       "away_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
-        "factor": 1.001
+        "factor": 0.979
       },
       "home_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
