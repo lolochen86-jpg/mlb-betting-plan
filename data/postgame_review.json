@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-08T07:19:04",
+  "generated_at": "2026-09-08T13:40:03",
   "latest_review_date": "2026-09-08",
   "days": [
     {
@@ -39587,10 +39587,10 @@
       "phase": "賽後檢討",
       "summary": {
         "games": 11,
-        "final_games": 7,
-        "pending_games": 4,
-        "winner_correct": 4,
-        "winner_accuracy_pct": 57.14,
+        "final_games": 11,
+        "pending_games": 0,
+        "winner_correct": 7,
+        "winner_accuracy_pct": 63.64,
         "totals_games": 0,
         "totals_correct": 0,
         "totals_accuracy_pct": 0.0,
@@ -39598,23 +39598,24 @@
         "pnl": 0,
         "cumulative": {
           "games": 962,
-          "final_games": 950,
-          "pending_games": 12,
-          "winner_correct": 526,
+          "final_games": 954,
+          "pending_games": 8,
+          "winner_correct": 529,
           "totals_games": 454,
           "totals_correct": 233,
           "roi_bets": 3,
           "pnl": -300.0,
-          "winner_accuracy_pct": 55.37,
+          "winner_accuracy_pct": 55.45,
           "totals_accuracy_pct": 51.32
         }
       },
       "highlights": [
         "洛杉磯天使 @ 波士頓紅襪：高信心勝方命中。",
-        "明尼蘇達雙城 @ 底特律老虎：高信心勝方命中。"
+        "明尼蘇達雙城 @ 底特律老虎：高信心勝方命中。",
+        "華盛頓國民 @ 聖地牙哥教士：高信心勝方命中。"
       ],
       "misses": [
-        "沒有明顯高信心失準場。"
+        "多倫多藍鳥 @ 運動家：多倫多藍鳥 未命中，比分 5-6。"
       ],
       "games": [
         {
@@ -39912,21 +39913,23 @@
             "勝方一致",
             "無台灣運彩大小分盤口"
           ],
-          "score": "",
-          "actual_winner_zh": "",
-          "winner_correct": null,
+          "score": "2-3",
+          "actual_winner_zh": "聖地牙哥教士",
+          "winner_correct": true,
           "total_line": null,
           "predicted_total": null,
-          "actual_total": null,
+          "actual_total": 5,
           "total_pick": "",
           "total_correct": null,
           "roi_settlement": "",
           "pnl": 0.0,
           "reason_codes": [
-            "pending"
+            "high_confidence_hit",
+            "one_run_volatility"
           ],
           "notes": [
-            "尚未完賽，等待賽後自動結算真實比分。"
+            "高信心方向有命中，這類條件可列為穩定樣本繼續追蹤。",
+            "一分差比賽，模型即使方向錯也屬高波動結果。"
           ]
         },
         {
@@ -39950,21 +39953,23 @@
             "勝方分歧",
             "無台灣運彩大小分盤口"
           ],
-          "score": "",
-          "actual_winner_zh": "",
-          "winner_correct": null,
+          "score": "4-5",
+          "actual_winner_zh": "舊金山巨人",
+          "winner_correct": true,
           "total_line": null,
           "predicted_total": null,
-          "actual_total": null,
+          "actual_total": 9,
           "total_pick": "",
           "total_correct": null,
           "roi_settlement": "",
           "pnl": 0.0,
           "reason_codes": [
-            "pending"
+            "low_confidence_hit",
+            "one_run_volatility"
           ],
           "notes": [
-            "尚未完賽，等待賽後自動結算真實比分。"
+            "方向正確，但信心不高，較適合作為觀察而非重注。",
+            "一分差比賽，模型即使方向錯也屬高波動結果。"
           ]
         },
         {
@@ -39988,21 +39993,21 @@
             "勝方一致",
             "無台灣運彩大小分盤口"
           ],
-          "score": "",
-          "actual_winner_zh": "",
-          "winner_correct": null,
+          "score": "3-6",
+          "actual_winner_zh": "洛杉磯道奇",
+          "winner_correct": true,
           "total_line": null,
           "predicted_total": null,
-          "actual_total": null,
+          "actual_total": 9,
           "total_pick": "",
           "total_correct": null,
           "roi_settlement": "",
           "pnl": 0.0,
           "reason_codes": [
-            "pending"
+            "high_confidence_hit"
           ],
           "notes": [
-            "尚未完賽，等待賽後自動結算真實比分。"
+            "高信心方向有命中，這類條件可列為穩定樣本繼續追蹤。"
           ]
         },
         {
@@ -40026,21 +40031,21 @@
             "勝方一致",
             "無台灣運彩大小分盤口"
           ],
-          "score": "",
-          "actual_winner_zh": "",
-          "winner_correct": null,
+          "score": "5-6",
+          "actual_winner_zh": "運動家",
+          "winner_correct": false,
           "total_line": null,
           "predicted_total": null,
-          "actual_total": null,
+          "actual_total": 11,
           "total_pick": "",
           "total_correct": null,
           "roi_settlement": "",
           "pnl": 0.0,
           "reason_codes": [
-            "pending"
+            "one_run_volatility"
           ],
           "notes": [
-            "尚未完賽，等待賽後自動結算真實比分。"
+            "一分差比賽，模型即使方向錯也屬高波動結果。"
           ]
         }
       ]
@@ -40061,14 +40066,14 @@
         "pnl": 0,
         "cumulative": {
           "games": 977,
-          "final_games": 950,
-          "pending_games": 27,
-          "winner_correct": 526,
+          "final_games": 954,
+          "pending_games": 23,
+          "winner_correct": 529,
           "totals_games": 454,
           "totals_correct": 233,
           "roi_bets": 3,
           "pnl": -300.0,
-          "winner_accuracy_pct": 55.37,
+          "winner_accuracy_pct": 55.45,
           "totals_accuracy_pct": 51.32
         }
       },
@@ -40505,10 +40510,10 @@
           "matchup_zh": "華盛頓國民 @ 聖地牙哥教士",
           "prediction_zh": "聖地牙哥教士",
           "confidence": 0.5678,
-          "predicted_score_zh": "華盛頓國民 4.03 : 聖地牙哥教士 4.55",
-          "predicted_away_score": 4.03,
-          "predicted_home_score": 4.55,
-          "predicted_score_total": 8.57,
+          "predicted_score_zh": "華盛頓國民 3.91 : 聖地牙哥教士 4.61",
+          "predicted_away_score": 3.91,
+          "predicted_home_score": 4.61,
+          "predicted_score_total": 8.52,
           "score_pick_zh": "聖地牙哥教士",
           "score_alignment": "一致",
           "score_total_side": "",
@@ -40542,11 +40547,11 @@
           "game_time_utc": "2026-09-09T01:40:00Z",
           "matchup_zh": "多倫多藍鳥 @ 運動家",
           "prediction_zh": "多倫多藍鳥",
-          "confidence": 0.5313,
-          "predicted_score_zh": "多倫多藍鳥 5.18 : 運動家 4.41",
-          "predicted_away_score": 5.18,
-          "predicted_home_score": 4.41,
-          "predicted_score_total": 9.59,
+          "confidence": 0.5308,
+          "predicted_score_zh": "多倫多藍鳥 5.23 : 運動家 4.46",
+          "predicted_away_score": 5.23,
+          "predicted_home_score": 4.46,
+          "predicted_score_total": 9.69,
           "score_pick_zh": "多倫多藍鳥",
           "score_alignment": "一致",
           "score_total_side": "",
@@ -40580,11 +40585,11 @@
           "game_time_utc": "2026-09-09T01:45:00Z",
           "matchup_zh": "聖路易紅雀 @ 舊金山巨人",
           "prediction_zh": "舊金山巨人",
-          "confidence": 0.524,
-          "predicted_score_zh": "聖路易紅雀 4.81 : 舊金山巨人 4.89",
-          "predicted_away_score": 4.81,
-          "predicted_home_score": 4.89,
-          "predicted_score_total": 9.7,
+          "confidence": 0.5244,
+          "predicted_score_zh": "聖路易紅雀 4.87 : 舊金山巨人 5.05",
+          "predicted_away_score": 4.87,
+          "predicted_home_score": 5.05,
+          "predicted_score_total": 9.92,
           "score_pick_zh": "舊金山巨人",
           "score_alignment": "一致",
           "score_total_side": "",
@@ -40618,11 +40623,11 @@
           "game_time_utc": "2026-09-09T02:10:00Z",
           "matchup_zh": "辛辛那提紅人 @ 洛杉磯道奇",
           "prediction_zh": "洛杉磯道奇",
-          "confidence": 0.5758,
-          "predicted_score_zh": "辛辛那提紅人 4.28 : 洛杉磯道奇 5.42",
-          "predicted_away_score": 4.28,
-          "predicted_home_score": 5.42,
-          "predicted_score_total": 9.7,
+          "confidence": 0.5765,
+          "predicted_score_zh": "辛辛那提紅人 4.24 : 洛杉磯道奇 5.62",
+          "predicted_away_score": 4.24,
+          "predicted_home_score": 5.62,
+          "predicted_score_total": 9.86,
           "score_pick_zh": "洛杉磯道奇",
           "score_alignment": "一致",
           "score_total_side": "",
