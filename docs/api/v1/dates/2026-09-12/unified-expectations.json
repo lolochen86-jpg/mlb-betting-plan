@@ -1,35 +1,35 @@
 {
-  "generated_at": "2026-09-12T13:26:53",
+  "generated_at": "2026-09-12T19:29:31",
   "target_date": "2026-09-12",
   "model": "統一得分期望 v1",
   "postgame_calibration": {
     "source": "postgame_review",
     "days": 10,
-    "games": 102,
-    "winner_accuracy": 0.5588,
-    "low_confidence_accuracy": 0.493,
+    "games": 116,
+    "winner_accuracy": 0.5862,
+    "low_confidence_accuracy": 0.5309,
     "score_total_bias": 0.0,
     "score_total_bias_applied": 0.0,
     "totals_recent_bias": 0.0,
     "totals_recent_bias_applied": 0.0,
     "totals_recent_games": 0,
-    "winner_min_confidence": 0.56,
+    "winner_min_confidence": 0.55,
     "totals_min_edge": 0.025,
     "totals_min_prob": 0.58,
     "totals_min_line_gap": 1.0,
     "mismatch_notes": 0,
     "reason_counts": {
-      "low_confidence_hit": 35,
-      "low_confidence_miss": 29,
-      "one_run_volatility": 38,
-      "high_confidence_miss": 9,
-      "high_confidence_hit": 22
+      "low_confidence_hit": 43,
+      "low_confidence_miss": 30,
+      "one_run_volatility": 42,
+      "high_confidence_miss": 10,
+      "high_confidence_hit": 25
     },
     "data_gaps": [
       "高信心勝方失準偏多：優先補官方先發打線、牛棚可用性、傷兵/輪休。"
     ],
     "notes": [
-      "近十天低信心勝方表現偏弱，主推勝方門檻提高到 56%。"
+      "近十天檢討未觸發額外校正，維持原門檻。"
     ]
   },
   "summary": {
@@ -167,69 +167,6 @@
     },
     {
       "date": "2026-09-12",
-      "game_pk": "824712",
-      "game_time_tw": "2026-09-13 04:10",
-      "game_time_utc": "2026-09-12T20:10:00Z",
-      "matchup_zh": "堪薩斯市皇家 @ 波士頓紅襪",
-      "away_zh": "堪薩斯市皇家",
-      "home_zh": "波士頓紅襪",
-      "away_expected_runs": 4.06,
-      "home_expected_runs": 3.98,
-      "expected_total": 8.04,
-      "pick_side": "away",
-      "prediction_zh": "堪薩斯市皇家",
-      "home_win_prob": 0.4892,
-      "away_win_prob": 0.5108,
-      "lineup_source": "projected_recent_lineup_order",
-      "away_lineup_factor": {
-        "source_quality": "projected_recent_lineup_order",
-        "factor": 0.967
-      },
-      "home_lineup_factor": {
-        "source_quality": "projected_recent_lineup_order",
-        "factor": 0.961
-      },
-      "away_pitcher_weight": 0.9,
-      "home_pitcher_weight": 0.9,
-      "weather": {
-        "source": "open_meteo_forecast",
-        "venue": "Fenway Park",
-        "home_team": "波士頓紅襪",
-        "roof": false,
-        "latitude": 42.3467,
-        "longitude": -71.0972,
-        "forecast_time_utc": "2026-09-12T20:00",
-        "temperature_c": 21.7,
-        "humidity_pct": 56.0,
-        "precipitation_probability_pct": 0.0,
-        "wind_speed_kmh": 17.7,
-        "wind_direction_deg": 78.0,
-        "factor": 0.0
-      },
-      "away_bullpen": {
-        "source": "recent_boxscore_pitcher_usage",
-        "recent_games": 2,
-        "recent_relief_pitcher_appearances": 10,
-        "unique_recent_relievers": 8,
-        "fatigue_runs": 0.09
-      },
-      "home_bullpen": {
-        "source": "recent_boxscore_pitcher_usage",
-        "recent_games": 2,
-        "recent_relief_pitcher_appearances": 5,
-        "unique_recent_relievers": 5,
-        "fatigue_runs": -0.1
-      },
-      "score_bias_applied": 0.0,
-      "totals_recent_bias_applied": 0.0,
-      "missing_data": [
-        "injury_absence_feed"
-      ],
-      "data_quality": "可用",
-      "model_version": "unified_expected_runs_v1"
-    },
-    {
-      "date": "2026-09-12",
       "game_pk": "823496",
       "game_time_tw": "2026-09-13 01:35",
       "game_time_utc": "2026-09-12T17:35:00Z",
@@ -345,6 +282,69 @@
         "recent_relief_pitcher_appearances": 9,
         "unique_recent_relievers": 7,
         "fatigue_runs": 0.045
+      },
+      "score_bias_applied": 0.0,
+      "totals_recent_bias_applied": 0.0,
+      "missing_data": [
+        "injury_absence_feed"
+      ],
+      "data_quality": "可用",
+      "model_version": "unified_expected_runs_v1"
+    },
+    {
+      "date": "2026-09-12",
+      "game_pk": "824712",
+      "game_time_tw": "2026-09-13 04:10",
+      "game_time_utc": "2026-09-12T20:10:00Z",
+      "matchup_zh": "堪薩斯市皇家 @ 波士頓紅襪",
+      "away_zh": "堪薩斯市皇家",
+      "home_zh": "波士頓紅襪",
+      "away_expected_runs": 4.06,
+      "home_expected_runs": 3.98,
+      "expected_total": 8.04,
+      "pick_side": "away",
+      "prediction_zh": "堪薩斯市皇家",
+      "home_win_prob": 0.4892,
+      "away_win_prob": 0.5108,
+      "lineup_source": "projected_recent_lineup_order",
+      "away_lineup_factor": {
+        "source_quality": "projected_recent_lineup_order",
+        "factor": 0.967
+      },
+      "home_lineup_factor": {
+        "source_quality": "projected_recent_lineup_order",
+        "factor": 0.961
+      },
+      "away_pitcher_weight": 0.9,
+      "home_pitcher_weight": 0.9,
+      "weather": {
+        "source": "open_meteo_forecast",
+        "venue": "Fenway Park",
+        "home_team": "波士頓紅襪",
+        "roof": false,
+        "latitude": 42.3467,
+        "longitude": -71.0972,
+        "forecast_time_utc": "2026-09-12T20:00",
+        "temperature_c": 21.7,
+        "humidity_pct": 56.0,
+        "precipitation_probability_pct": 0.0,
+        "wind_speed_kmh": 17.7,
+        "wind_direction_deg": 78.0,
+        "factor": 0.0
+      },
+      "away_bullpen": {
+        "source": "recent_boxscore_pitcher_usage",
+        "recent_games": 2,
+        "recent_relief_pitcher_appearances": 10,
+        "unique_recent_relievers": 8,
+        "fatigue_runs": 0.09
+      },
+      "home_bullpen": {
+        "source": "recent_boxscore_pitcher_usage",
+        "recent_games": 2,
+        "recent_relief_pitcher_appearances": 5,
+        "unique_recent_relievers": 5,
+        "fatigue_runs": -0.1
       },
       "score_bias_applied": 0.0,
       "totals_recent_bias_applied": 0.0,
@@ -678,12 +678,12 @@
       "away_zh": "芝加哥白襪",
       "home_zh": "聖路易紅雀",
       "away_expected_runs": 4.62,
-      "home_expected_runs": 5.25,
-      "expected_total": 9.87,
+      "home_expected_runs": 4.86,
+      "expected_total": 9.49,
       "pick_side": "home",
       "prediction_zh": "聖路易紅雀",
-      "home_win_prob": 0.5835,
-      "away_win_prob": 0.4165,
+      "home_win_prob": 0.5326,
+      "away_win_prob": 0.4674,
       "lineup_source": "projected_recent_lineup_order",
       "away_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
