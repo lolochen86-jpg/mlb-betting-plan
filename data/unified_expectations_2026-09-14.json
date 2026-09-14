@@ -1,35 +1,35 @@
 {
-  "generated_at": "2026-09-14T08:46:20",
+  "generated_at": "2026-09-14T13:50:18",
   "target_date": "2026-09-14",
   "model": "統一得分期望 v1",
   "postgame_calibration": {
     "source": "postgame_review",
     "days": 10,
-    "games": 117,
-    "winner_accuracy": 0.5897,
-    "low_confidence_accuracy": 0.5316,
+    "games": 120,
+    "winner_accuracy": 0.5833,
+    "low_confidence_accuracy": 0.5185,
     "score_total_bias": 0.0,
     "score_total_bias_applied": 0.0,
     "totals_recent_bias": 0.0,
     "totals_recent_bias_applied": 0.0,
     "totals_recent_games": 0,
-    "winner_min_confidence": 0.55,
+    "winner_min_confidence": 0.56,
     "totals_min_edge": 0.025,
     "totals_min_prob": 0.58,
     "totals_min_line_gap": 1.0,
     "mismatch_notes": 0,
     "reason_counts": {
-      "low_confidence_miss": 27,
+      "low_confidence_miss": 29,
       "low_confidence_hit": 42,
-      "one_run_volatility": 41,
+      "one_run_volatility": 43,
       "high_confidence_miss": 11,
-      "high_confidence_hit": 27
+      "high_confidence_hit": 28
     },
     "data_gaps": [
       "高信心勝方失準偏多：優先補官方先發打線、牛棚可用性、傷兵/輪休。"
     ],
     "notes": [
-      "近十天檢討未觸發額外校正，維持原門檻。"
+      "近十天低信心勝方表現偏弱，主推勝方門檻提高到 56%。"
     ]
   },
   "summary": {
@@ -47,17 +47,17 @@
       "matchup_zh": "聖地牙哥教士 @ 科羅拉多洛磯",
       "away_zh": "聖地牙哥教士",
       "home_zh": "科羅拉多洛磯",
-      "away_expected_runs": 5.0,
-      "home_expected_runs": 3.97,
-      "expected_total": 8.97,
+      "away_expected_runs": 5.07,
+      "home_expected_runs": 3.99,
+      "expected_total": 9.06,
       "pick_side": "away",
       "prediction_zh": "聖地牙哥教士",
-      "home_win_prob": 0.3633,
-      "away_win_prob": 0.6367,
+      "home_win_prob": 0.3579,
+      "away_win_prob": 0.6421,
       "lineup_source": "projected_recent_lineup_order",
       "away_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
-        "factor": 0.953
+        "factor": 0.967
       },
       "home_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
@@ -551,17 +551,17 @@
       "matchup_zh": "舊金山巨人 @ 聖路易紅雀",
       "away_zh": "舊金山巨人",
       "home_zh": "聖路易紅雀",
-      "away_expected_runs": 4.96,
+      "away_expected_runs": 4.9,
       "home_expected_runs": 4.88,
-      "expected_total": 9.84,
+      "expected_total": 9.78,
       "pick_side": "away",
       "prediction_zh": "舊金山巨人",
-      "home_win_prob": 0.4883,
-      "away_win_prob": 0.5117,
+      "home_win_prob": 0.4963,
+      "away_win_prob": 0.5037,
       "lineup_source": "projected_recent_lineup_order",
       "away_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
-        "factor": 0.926
+        "factor": 0.908
       },
       "home_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
