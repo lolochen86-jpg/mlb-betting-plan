@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-14T13:51:09",
+  "generated_at": "2026-09-14T21:40:51",
   "target_date": "2026-09-14",
   "models": {
     "production": "A-畢氏勝率",
@@ -7,28 +7,28 @@
   },
   "settings": {
     "min_confidence": 0.55,
-    "effective_min_confidence": 0.56,
+    "effective_min_confidence": 0.55,
     "odds_status": "not_used_for_accuracy_first"
   },
   "postgame_calibration": {
     "source": "postgame_review",
     "days": 10,
-    "games": 120,
-    "winner_accuracy": 0.5833,
-    "low_confidence_accuracy": 0.5185,
+    "games": 121,
+    "winner_accuracy": 0.5868,
+    "low_confidence_accuracy": 0.5244,
     "score_total_bias": 0.0,
     "score_total_bias_applied": 0.0,
     "totals_recent_bias": 0.0,
     "totals_recent_bias_applied": 0.0,
     "totals_recent_games": 0,
-    "winner_min_confidence": 0.56,
+    "winner_min_confidence": 0.55,
     "totals_min_edge": 0.025,
     "totals_min_prob": 0.58,
     "totals_min_line_gap": 1.0,
     "mismatch_notes": 0,
     "reason_counts": {
       "low_confidence_miss": 29,
-      "low_confidence_hit": 42,
+      "low_confidence_hit": 43,
       "one_run_volatility": 43,
       "high_confidence_miss": 11,
       "high_confidence_hit": 28
@@ -37,7 +37,7 @@
       "高信心勝方失準偏多：優先補官方先發打線、牛棚可用性、傷兵/輪休。"
     ],
     "notes": [
-      "近十天低信心勝方表現偏弱，主推勝方門檻提高到 56%。"
+      "近十天檢討未觸發額外校正，維持原門檻。"
     ]
   },
   "data_source": {
@@ -101,7 +101,7 @@
       "score_alignment": "一致",
       "official_totals_pick_zh": "-",
       "official_totals_line": null,
-      "official_totals_predicted": 8.97,
+      "official_totals_predicted": 9.06,
       "official_totals_prob": null,
       "official_totals_edge": null,
       "score_totals_pick_zh": "",
@@ -113,7 +113,7 @@
       "unified_totals_pick_zh": "不推薦大小分",
       "unified_direction": "不推薦",
       "unified_decision": "大小分未統一",
-      "postgame_winner_min_confidence": 0.56,
+      "postgame_winner_min_confidence": 0.55,
       "away_probable_pitcher_display_zh": "卡塞 米（官方預告）",
       "home_probable_pitcher_display_zh": "托莫基 加諾（官方預告）"
     },
@@ -178,7 +178,7 @@
       "unified_totals_pick_zh": "不推薦大小分",
       "unified_direction": "不推薦",
       "unified_decision": "勝方與大小分未統一",
-      "postgame_winner_min_confidence": 0.56,
+      "postgame_winner_min_confidence": 0.55,
       "away_probable_pitcher_display_zh": "威爾 瓦（官方預告）",
       "home_probable_pitcher_display_zh": "德 梅（官方預告）"
     },
@@ -243,7 +243,7 @@
       "unified_totals_pick_zh": "不推薦大小分",
       "unified_direction": "不推薦",
       "unified_decision": "勝方與大小分未統一",
-      "postgame_winner_min_confidence": 0.56,
+      "postgame_winner_min_confidence": 0.55,
       "away_probable_pitcher_display_zh": "布蘭登 尤（官方預告）",
       "home_probable_pitcher_display_zh": "喬納 托（官方預告）"
     },
@@ -308,7 +308,7 @@
       "unified_totals_pick_zh": "不推薦大小分",
       "unified_direction": "不推薦",
       "unified_decision": "勝方與大小分未統一",
-      "postgame_winner_min_confidence": 0.56,
+      "postgame_winner_min_confidence": 0.55,
       "away_probable_pitcher_display_zh": "雷納 羅培茲（官方預告）",
       "home_probable_pitcher_display_zh": "達維 佩特（官方預告）"
     },
@@ -373,7 +373,7 @@
       "unified_totals_pick_zh": "不推薦大小分",
       "unified_direction": "不推薦",
       "unified_decision": "勝方與大小分未統一",
-      "postgame_winner_min_confidence": 0.56,
+      "postgame_winner_min_confidence": 0.55,
       "away_probable_pitcher_display_zh": "塔里克 史庫柏（官方預告）",
       "home_probable_pitcher_display_zh": "尼克 羅多羅（官方預告）"
     },
@@ -438,7 +438,7 @@
       "unified_totals_pick_zh": "不推薦大小分",
       "unified_direction": "不推薦",
       "unified_decision": "勝方與大小分未統一",
-      "postgame_winner_min_confidence": 0.56,
+      "postgame_winner_min_confidence": 0.55,
       "away_probable_pitcher_display_zh": "桑迪 阿爾坎塔拉（官方預告）",
       "home_probable_pitcher_display_zh": "柯賓 伯恩斯（官方預告）"
     },
@@ -503,7 +503,7 @@
       "unified_totals_pick_zh": "不推薦大小分",
       "unified_direction": "不推薦",
       "unified_decision": "勝方與大小分未統一",
-      "postgame_winner_min_confidence": 0.56,
+      "postgame_winner_min_confidence": 0.55,
       "away_probable_pitcher_display_zh": "西恩 內（官方預告）",
       "home_probable_pitcher_display_zh": "加維 威（官方預告）"
     },
@@ -568,7 +568,7 @@
       "unified_totals_pick_zh": "不推薦大小分",
       "unified_direction": "不推薦",
       "unified_decision": "勝方與大小分未統一",
-      "postgame_winner_min_confidence": 0.56,
+      "postgame_winner_min_confidence": 0.55,
       "away_probable_pitcher_display_zh": "卡德 阿（官方預告）",
       "home_probable_pitcher_display_zh": "里德 德（官方預告）"
     },
@@ -621,7 +621,7 @@
       "score_alignment": "模型分歧",
       "official_totals_pick_zh": "-",
       "official_totals_line": null,
-      "official_totals_predicted": 9.84,
+      "official_totals_predicted": 9.78,
       "official_totals_prob": null,
       "official_totals_edge": null,
       "score_totals_pick_zh": "",
@@ -633,7 +633,7 @@
       "unified_totals_pick_zh": "不推薦大小分",
       "unified_direction": "不推薦",
       "unified_decision": "勝方與大小分未統一",
-      "postgame_winner_min_confidence": 0.56,
+      "postgame_winner_min_confidence": 0.55,
       "away_probable_pitcher_display_zh": "拉 羅（官方預告）",
       "home_probable_pitcher_display_zh": "丘優伊恩恩 馬（官方預告）"
     },
@@ -698,7 +698,7 @@
       "unified_totals_pick_zh": "不推薦大小分",
       "unified_direction": "不推薦",
       "unified_decision": "勝方與大小分未統一",
-      "postgame_winner_min_confidence": 0.56,
+      "postgame_winner_min_confidence": 0.55,
       "away_probable_pitcher_display_zh": "崔 梅（官方預告）",
       "home_probable_pitcher_display_zh": "荷西 索里諾（官方預告）"
     }
@@ -753,7 +753,7 @@
       "score_alignment": "一致",
       "official_totals_pick_zh": "-",
       "official_totals_line": null,
-      "official_totals_predicted": 8.97,
+      "official_totals_predicted": 9.06,
       "official_totals_prob": null,
       "official_totals_edge": null,
       "score_totals_pick_zh": "",
@@ -765,7 +765,7 @@
       "unified_totals_pick_zh": "不推薦大小分",
       "unified_direction": "不推薦",
       "unified_decision": "大小分未統一",
-      "postgame_winner_min_confidence": 0.56,
+      "postgame_winner_min_confidence": 0.55,
       "away_probable_pitcher_display_zh": "卡塞 米（官方預告）",
       "home_probable_pitcher_display_zh": "托莫基 加諾（官方預告）"
     },
@@ -830,7 +830,7 @@
       "unified_totals_pick_zh": "不推薦大小分",
       "unified_direction": "不推薦",
       "unified_decision": "勝方與大小分未統一",
-      "postgame_winner_min_confidence": 0.56,
+      "postgame_winner_min_confidence": 0.55,
       "away_probable_pitcher_display_zh": "威爾 瓦（官方預告）",
       "home_probable_pitcher_display_zh": "德 梅（官方預告）"
     },
@@ -895,7 +895,7 @@
       "unified_totals_pick_zh": "不推薦大小分",
       "unified_direction": "不推薦",
       "unified_decision": "勝方與大小分未統一",
-      "postgame_winner_min_confidence": 0.56,
+      "postgame_winner_min_confidence": 0.55,
       "away_probable_pitcher_display_zh": "布蘭登 尤（官方預告）",
       "home_probable_pitcher_display_zh": "喬納 托（官方預告）"
     },
@@ -960,7 +960,7 @@
       "unified_totals_pick_zh": "不推薦大小分",
       "unified_direction": "不推薦",
       "unified_decision": "勝方與大小分未統一",
-      "postgame_winner_min_confidence": 0.56,
+      "postgame_winner_min_confidence": 0.55,
       "away_probable_pitcher_display_zh": "雷納 羅培茲（官方預告）",
       "home_probable_pitcher_display_zh": "達維 佩特（官方預告）"
     },
@@ -1025,7 +1025,7 @@
       "unified_totals_pick_zh": "不推薦大小分",
       "unified_direction": "不推薦",
       "unified_decision": "勝方與大小分未統一",
-      "postgame_winner_min_confidence": 0.56,
+      "postgame_winner_min_confidence": 0.55,
       "away_probable_pitcher_display_zh": "塔里克 史庫柏（官方預告）",
       "home_probable_pitcher_display_zh": "尼克 羅多羅（官方預告）"
     },
@@ -1090,7 +1090,7 @@
       "unified_totals_pick_zh": "不推薦大小分",
       "unified_direction": "不推薦",
       "unified_decision": "勝方與大小分未統一",
-      "postgame_winner_min_confidence": 0.56,
+      "postgame_winner_min_confidence": 0.55,
       "away_probable_pitcher_display_zh": "桑迪 阿爾坎塔拉（官方預告）",
       "home_probable_pitcher_display_zh": "柯賓 伯恩斯（官方預告）"
     },
@@ -1155,7 +1155,7 @@
       "unified_totals_pick_zh": "不推薦大小分",
       "unified_direction": "不推薦",
       "unified_decision": "勝方與大小分未統一",
-      "postgame_winner_min_confidence": 0.56,
+      "postgame_winner_min_confidence": 0.55,
       "away_probable_pitcher_display_zh": "西恩 內（官方預告）",
       "home_probable_pitcher_display_zh": "加維 威（官方預告）"
     },
@@ -1220,7 +1220,7 @@
       "unified_totals_pick_zh": "不推薦大小分",
       "unified_direction": "不推薦",
       "unified_decision": "勝方與大小分未統一",
-      "postgame_winner_min_confidence": 0.56,
+      "postgame_winner_min_confidence": 0.55,
       "away_probable_pitcher_display_zh": "卡德 阿（官方預告）",
       "home_probable_pitcher_display_zh": "里德 德（官方預告）"
     },
@@ -1273,7 +1273,7 @@
       "score_alignment": "模型分歧",
       "official_totals_pick_zh": "-",
       "official_totals_line": null,
-      "official_totals_predicted": 9.84,
+      "official_totals_predicted": 9.78,
       "official_totals_prob": null,
       "official_totals_edge": null,
       "score_totals_pick_zh": "",
@@ -1285,7 +1285,7 @@
       "unified_totals_pick_zh": "不推薦大小分",
       "unified_direction": "不推薦",
       "unified_decision": "勝方與大小分未統一",
-      "postgame_winner_min_confidence": 0.56,
+      "postgame_winner_min_confidence": 0.55,
       "away_probable_pitcher_display_zh": "拉 羅（官方預告）",
       "home_probable_pitcher_display_zh": "丘優伊恩恩 馬（官方預告）"
     },
@@ -1350,7 +1350,7 @@
       "unified_totals_pick_zh": "不推薦大小分",
       "unified_direction": "不推薦",
       "unified_decision": "勝方與大小分未統一",
-      "postgame_winner_min_confidence": 0.56,
+      "postgame_winner_min_confidence": 0.55,
       "away_probable_pitcher_display_zh": "崔 梅（官方預告）",
       "home_probable_pitcher_display_zh": "荷西 索里諾（官方預告）"
     }
@@ -1510,8 +1510,8 @@
       "actual_winner_zh": "",
       "settlement": "pending",
       "is_final": false,
-      "score_prediction_zh": "舊金山巨人 4.96 : 聖路易紅雀 4.88",
-      "totals_prediction_zh": "預測總分 9.84",
+      "score_prediction_zh": "舊金山巨人 4.90 : 聖路易紅雀 4.88",
+      "totals_prediction_zh": "預測總分 9.78",
       "unified_direction": "不推薦",
       "unified_decision": "勝方與大小分未統一",
       "score_alignment": "模型分歧",
@@ -1533,8 +1533,8 @@
       "actual_winner_zh": "",
       "settlement": "pending",
       "is_final": false,
-      "score_prediction_zh": "聖地牙哥教士 5.00 : 科羅拉多洛磯 3.97",
-      "totals_prediction_zh": "預測總分 8.97",
+      "score_prediction_zh": "聖地牙哥教士 5.07 : 科羅拉多洛磯 3.99",
+      "totals_prediction_zh": "預測總分 9.06",
       "unified_direction": "不推薦",
       "unified_decision": "大小分未統一",
       "score_alignment": "一致",

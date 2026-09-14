@@ -1,26 +1,26 @@
 {
-  "generated_at": "2026-09-14T13:50:18",
+  "generated_at": "2026-09-14T21:40:04",
   "target_date": "2026-09-14",
   "model": "統一得分期望 v1",
   "postgame_calibration": {
     "source": "postgame_review",
     "days": 10,
-    "games": 120,
-    "winner_accuracy": 0.5833,
-    "low_confidence_accuracy": 0.5185,
+    "games": 121,
+    "winner_accuracy": 0.5868,
+    "low_confidence_accuracy": 0.5244,
     "score_total_bias": 0.0,
     "score_total_bias_applied": 0.0,
     "totals_recent_bias": 0.0,
     "totals_recent_bias_applied": 0.0,
     "totals_recent_games": 0,
-    "winner_min_confidence": 0.56,
+    "winner_min_confidence": 0.55,
     "totals_min_edge": 0.025,
     "totals_min_prob": 0.58,
     "totals_min_line_gap": 1.0,
     "mismatch_notes": 0,
     "reason_counts": {
       "low_confidence_miss": 29,
-      "low_confidence_hit": 42,
+      "low_confidence_hit": 43,
       "one_run_volatility": 43,
       "high_confidence_miss": 11,
       "high_confidence_hit": 28
@@ -29,7 +29,7 @@
       "高信心勝方失準偏多：優先補官方先發打線、牛棚可用性、傷兵/輪休。"
     ],
     "notes": [
-      "近十天低信心勝方表現偏弱，主推勝方門檻提高到 56%。"
+      "近十天檢討未觸發額外校正，維持原門檻。"
     ]
   },
   "summary": {
