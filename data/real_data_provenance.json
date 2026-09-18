@@ -3,14 +3,14 @@
   "url": "https://statsapi.mlb.com/api/v1/schedule",
   "sport_id": 1,
   "start_date": "2025-03-27",
-  "end_date": "2026-09-17",
+  "end_date": "2026-09-18",
   "game_types": [
     "R"
   ],
   "actual_first_game_date": "2025-03-27",
   "actual_last_game_date": "2026-09-17",
-  "fetched_at": "2026-09-18T21:24:44",
-  "raw_dates": 417,
+  "fetched_at": "2026-09-19T02:05:43",
+  "raw_dates": 418,
   "fetch_chunks": [
     {
       "start": "2025-03-27",
@@ -99,11 +99,11 @@
     },
     {
       "start": "2026-09-05",
-      "end": "2026-09-17",
-      "dates": 13
+      "end": "2026-09-18",
+      "dates": 14
     }
   ],
   "games_written": 4727,
-  "coverage_warning": null,
+  "coverage_warning": "Requested through 2026-09-18, but MLB Stats API returned saved final-score rows only through 2026-09-17.",
   "note": "Scores, teams, game ids, statuses, and probable pitcher names are fetched from MLB Stats API. Odds remain configured separately."
 }
