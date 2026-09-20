@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-09-21T00:41:50",
+  "generated_at": "2026-09-21T05:10:53",
   "target_date": "2026-09-21",
   "model": "統一得分期望 v1",
   "postgame_calibration": {
     "source": "postgame_review",
     "days": 10,
-    "games": 124,
-    "winner_accuracy": 0.629,
-    "low_confidence_accuracy": 0.5667,
+    "games": 109,
+    "winner_accuracy": 0.6055,
+    "low_confidence_accuracy": 0.5375,
     "score_total_bias": 0.0,
     "score_total_bias_applied": 0.0,
     "totals_recent_bias": 0.0,
@@ -19,11 +19,11 @@
     "totals_min_line_gap": 1.0,
     "mismatch_notes": 0,
     "reason_counts": {
-      "high_confidence_hit": 27,
-      "low_confidence_hit": 51,
-      "one_run_volatility": 38,
-      "high_confidence_miss": 7,
-      "low_confidence_miss": 24
+      "high_confidence_hit": 23,
+      "high_confidence_miss": 6,
+      "one_run_volatility": 34,
+      "low_confidence_hit": 43,
+      "low_confidence_miss": 23
     },
     "data_gaps": [],
     "notes": [
@@ -45,24 +45,24 @@
       "matchup_zh": "華盛頓國民 @ 底特律老虎",
       "away_zh": "華盛頓國民",
       "home_zh": "底特律老虎",
-      "away_expected_runs": 4.39,
-      "home_expected_runs": 5.12,
-      "expected_total": 9.5,
+      "away_expected_runs": 4.37,
+      "home_expected_runs": 5.18,
+      "expected_total": 9.55,
       "pick_side": "home",
       "prediction_zh": "底特律老虎",
-      "home_win_prob": 0.5973,
-      "away_win_prob": 0.4027,
+      "home_win_prob": 0.6071,
+      "away_win_prob": 0.3929,
       "lineup_source": "projected_recent_lineup_order",
       "away_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
-        "factor": 1.002
+        "factor": 0.963
       },
       "home_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
         "factor": 0.986
       },
       "away_pitcher_weight": 0.65,
-      "home_pitcher_weight": 0.7,
+      "home_pitcher_weight": 0.9,
       "weather": {
         "source": "open_meteo_forecast",
         "venue": "Comerica Park",
@@ -108,13 +108,13 @@
       "matchup_zh": "明尼蘇達雙城 @ 舊金山巨人",
       "away_zh": "明尼蘇達雙城",
       "home_zh": "舊金山巨人",
-      "away_expected_runs": 4.15,
-      "home_expected_runs": 4.74,
-      "expected_total": 8.89,
+      "away_expected_runs": 4.17,
+      "home_expected_runs": 4.58,
+      "expected_total": 8.75,
       "pick_side": "home",
       "prediction_zh": "舊金山巨人",
-      "home_win_prob": 0.5787,
-      "away_win_prob": 0.4213,
+      "home_win_prob": 0.5539,
+      "away_win_prob": 0.4461,
       "lineup_source": "projected_recent_lineup_order",
       "away_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
@@ -122,10 +122,10 @@
       },
       "home_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
-        "factor": 0.91
+        "factor": 0.908
       },
-      "away_pitcher_weight": 0.75,
-      "home_pitcher_weight": 0.75,
+      "away_pitcher_weight": 0.9,
+      "home_pitcher_weight": 0.9,
       "weather": {
         "source": "open_meteo_forecast",
         "venue": "Oracle Park",
@@ -171,17 +171,17 @@
       "matchup_zh": "多倫多藍鳥 @ 巴爾的摩金鶯",
       "away_zh": "多倫多藍鳥",
       "home_zh": "巴爾的摩金鶯",
-      "away_expected_runs": 4.41,
-      "home_expected_runs": 3.84,
-      "expected_total": 8.25,
+      "away_expected_runs": 4.49,
+      "home_expected_runs": 3.78,
+      "expected_total": 8.28,
       "pick_side": "away",
       "prediction_zh": "多倫多藍鳥",
-      "home_win_prob": 0.4241,
-      "away_win_prob": 0.5759,
+      "home_win_prob": 0.4057,
+      "away_win_prob": 0.5943,
       "lineup_source": "projected_recent_lineup_order",
       "away_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
-        "factor": 0.982
+        "factor": 0.983
       },
       "home_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
