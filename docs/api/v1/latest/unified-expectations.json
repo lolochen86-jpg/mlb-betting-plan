@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-09-21T08:51:53",
+  "generated_at": "2026-09-21T13:56:05",
   "target_date": "2026-09-21",
   "model": "統一得分期望 v1",
   "postgame_calibration": {
     "source": "postgame_review",
     "days": 10,
-    "games": 114,
-    "winner_accuracy": 0.6228,
-    "low_confidence_accuracy": 0.5647,
+    "games": 122,
+    "winner_accuracy": 0.623,
+    "low_confidence_accuracy": 0.5506,
     "score_total_bias": 0.0,
     "score_total_bias_applied": 0.0,
     "totals_recent_bias": 0.0,
@@ -19,11 +19,11 @@
     "totals_min_line_gap": 1.0,
     "mismatch_notes": 0,
     "reason_counts": {
-      "high_confidence_hit": 23,
+      "high_confidence_hit": 27,
       "high_confidence_miss": 6,
-      "one_run_volatility": 35,
-      "low_confidence_hit": 48,
-      "low_confidence_miss": 23
+      "one_run_volatility": 37,
+      "low_confidence_hit": 49,
+      "low_confidence_miss": 26
     },
     "data_gaps": [],
     "notes": [
@@ -46,12 +46,12 @@
       "away_zh": "華盛頓國民",
       "home_zh": "底特律老虎",
       "away_expected_runs": 4.46,
-      "home_expected_runs": 5.16,
-      "expected_total": 9.63,
+      "home_expected_runs": 4.94,
+      "expected_total": 9.4,
       "pick_side": "home",
       "prediction_zh": "底特律老虎",
-      "home_win_prob": 0.5935,
-      "away_win_prob": 0.4065,
+      "home_win_prob": 0.5639,
+      "away_win_prob": 0.4361,
       "lineup_source": "projected_recent_lineup_order",
       "away_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
@@ -61,7 +61,7 @@
         "source_quality": "projected_recent_lineup_order",
         "factor": 0.98
       },
-      "away_pitcher_weight": 0.65,
+      "away_pitcher_weight": 0.9,
       "home_pitcher_weight": 0.9,
       "weather": {
         "source": "open_meteo_forecast",
@@ -171,13 +171,13 @@
       "matchup_zh": "多倫多藍鳥 @ 巴爾的摩金鶯",
       "away_zh": "多倫多藍鳥",
       "home_zh": "巴爾的摩金鶯",
-      "away_expected_runs": 4.36,
-      "home_expected_runs": 3.78,
-      "expected_total": 8.14,
+      "away_expected_runs": 4.37,
+      "home_expected_runs": 3.69,
+      "expected_total": 8.06,
       "pick_side": "away",
       "prediction_zh": "多倫多藍鳥",
-      "home_win_prob": 0.4221,
-      "away_win_prob": 0.5779,
+      "home_win_prob": 0.4089,
+      "away_win_prob": 0.5911,
       "lineup_source": "projected_recent_lineup_order",
       "away_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
@@ -185,7 +185,7 @@
       },
       "home_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
-        "factor": 0.941
+        "factor": 0.919
       },
       "away_pitcher_weight": 0.9,
       "home_pitcher_weight": 0.9,
