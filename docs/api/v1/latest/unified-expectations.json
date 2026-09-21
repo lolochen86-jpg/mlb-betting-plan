@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-09-21T05:10:53",
+  "generated_at": "2026-09-21T08:51:53",
   "target_date": "2026-09-21",
   "model": "統一得分期望 v1",
   "postgame_calibration": {
     "source": "postgame_review",
     "days": 10,
-    "games": 109,
-    "winner_accuracy": 0.6055,
-    "low_confidence_accuracy": 0.5375,
+    "games": 114,
+    "winner_accuracy": 0.6228,
+    "low_confidence_accuracy": 0.5647,
     "score_total_bias": 0.0,
     "score_total_bias_applied": 0.0,
     "totals_recent_bias": 0.0,
@@ -21,8 +21,8 @@
     "reason_counts": {
       "high_confidence_hit": 23,
       "high_confidence_miss": 6,
-      "one_run_volatility": 34,
-      "low_confidence_hit": 43,
+      "one_run_volatility": 35,
+      "low_confidence_hit": 48,
       "low_confidence_miss": 23
     },
     "data_gaps": [],
@@ -45,13 +45,13 @@
       "matchup_zh": "華盛頓國民 @ 底特律老虎",
       "away_zh": "華盛頓國民",
       "home_zh": "底特律老虎",
-      "away_expected_runs": 4.37,
-      "home_expected_runs": 5.18,
-      "expected_total": 9.55,
+      "away_expected_runs": 4.46,
+      "home_expected_runs": 5.16,
+      "expected_total": 9.63,
       "pick_side": "home",
       "prediction_zh": "底特律老虎",
-      "home_win_prob": 0.6071,
-      "away_win_prob": 0.3929,
+      "home_win_prob": 0.5935,
+      "away_win_prob": 0.4065,
       "lineup_source": "projected_recent_lineup_order",
       "away_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
@@ -59,7 +59,7 @@
       },
       "home_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
-        "factor": 0.986
+        "factor": 0.98
       },
       "away_pitcher_weight": 0.65,
       "home_pitcher_weight": 0.9,
@@ -108,21 +108,21 @@
       "matchup_zh": "明尼蘇達雙城 @ 舊金山巨人",
       "away_zh": "明尼蘇達雙城",
       "home_zh": "舊金山巨人",
-      "away_expected_runs": 4.17,
-      "home_expected_runs": 4.58,
-      "expected_total": 8.75,
+      "away_expected_runs": 4.39,
+      "home_expected_runs": 4.52,
+      "expected_total": 8.92,
       "pick_side": "home",
       "prediction_zh": "舊金山巨人",
-      "home_win_prob": 0.5539,
-      "away_win_prob": 0.4461,
+      "home_win_prob": 0.5176,
+      "away_win_prob": 0.4824,
       "lineup_source": "projected_recent_lineup_order",
       "away_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
-        "factor": 0.926
+        "factor": 0.945
       },
       "home_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
-        "factor": 0.908
+        "factor": 0.89
       },
       "away_pitcher_weight": 0.9,
       "home_pitcher_weight": 0.9,
@@ -171,24 +171,24 @@
       "matchup_zh": "多倫多藍鳥 @ 巴爾的摩金鶯",
       "away_zh": "多倫多藍鳥",
       "home_zh": "巴爾的摩金鶯",
-      "away_expected_runs": 4.49,
+      "away_expected_runs": 4.36,
       "home_expected_runs": 3.78,
-      "expected_total": 8.28,
+      "expected_total": 8.14,
       "pick_side": "away",
       "prediction_zh": "多倫多藍鳥",
-      "home_win_prob": 0.4057,
-      "away_win_prob": 0.5943,
+      "home_win_prob": 0.4221,
+      "away_win_prob": 0.5779,
       "lineup_source": "projected_recent_lineup_order",
       "away_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
-        "factor": 0.983
+        "factor": 0.969
       },
       "home_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
-        "factor": 0.942
+        "factor": 0.941
       },
       "away_pitcher_weight": 0.9,
-      "home_pitcher_weight": 0.75,
+      "home_pitcher_weight": 0.9,
       "weather": {
         "source": "open_meteo_forecast",
         "venue": "Oriole Park at Camden Yards",
