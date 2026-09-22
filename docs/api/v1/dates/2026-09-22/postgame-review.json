@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-22T07:52:14",
+  "generated_at": "2026-09-22T13:54:40",
   "latest_review_date": "2026-09-22",
   "days": [
     {
@@ -47210,13 +47210,13 @@
     },
     {
       "date": "2026-09-21",
-      "phase": "賽前預測待結算",
+      "phase": "賽後檢討",
       "summary": {
         "games": 3,
-        "final_games": 0,
-        "pending_games": 3,
-        "winner_correct": 0,
-        "winner_accuracy_pct": 0.0,
+        "final_games": 3,
+        "pending_games": 0,
+        "winner_correct": 2,
+        "winner_accuracy_pct": 66.67,
         "totals_games": 0,
         "totals_correct": 0,
         "totals_accuracy_pct": 0.0,
@@ -47224,22 +47224,22 @@
         "pnl": 0,
         "cumulative": {
           "games": 1139,
-          "final_games": 1128,
-          "pending_games": 11,
-          "winner_correct": 636,
+          "final_games": 1131,
+          "pending_games": 8,
+          "winner_correct": 638,
           "totals_games": 454,
           "totals_correct": 233,
           "roi_bets": 3,
           "pnl": -300.0,
-          "winner_accuracy_pct": 56.38,
+          "winner_accuracy_pct": 56.41,
           "totals_accuracy_pct": 51.32
         }
       },
       "highlights": [
-        "尚未完賽；目前有 1 場高信心賽前預測待追蹤。"
+        "華盛頓國民 @ 底特律老虎：高信心勝方命中。"
       ],
       "misses": [
-        "等待真實比分後，系統會自動補上勝方、大小分與投注 ROI 檢討。"
+        "沒有明顯高信心失準場。"
       ],
       "games": [
         {
@@ -47263,21 +47263,23 @@
             "勝方一致",
             "無台灣運彩大小分盤口"
           ],
-          "score": "",
-          "actual_winner_zh": "",
-          "winner_correct": null,
+          "score": "3-4",
+          "actual_winner_zh": "巴爾的摩金鶯",
+          "winner_correct": false,
           "total_line": null,
           "predicted_total": null,
-          "actual_total": null,
+          "actual_total": 7,
           "total_pick": "",
           "total_correct": null,
           "roi_settlement": "",
           "pnl": 0.0,
           "reason_codes": [
-            "pending"
+            "low_confidence_miss",
+            "one_run_volatility"
           ],
           "notes": [
-            "尚未完賽，等待賽後自動結算真實比分。"
+            "信心接近五五波，賽前應降權或避免當主推。",
+            "一分差比賽，模型即使方向錯也屬高波動結果。"
           ]
         },
         {
@@ -47301,21 +47303,21 @@
             "勝方一致",
             "無台灣運彩大小分盤口"
           ],
-          "score": "",
-          "actual_winner_zh": "",
-          "winner_correct": null,
+          "score": "2-9",
+          "actual_winner_zh": "底特律老虎",
+          "winner_correct": true,
           "total_line": null,
           "predicted_total": null,
-          "actual_total": null,
+          "actual_total": 11,
           "total_pick": "",
           "total_correct": null,
           "roi_settlement": "",
           "pnl": 0.0,
           "reason_codes": [
-            "pending"
+            "high_confidence_hit"
           ],
           "notes": [
-            "尚未完賽，等待賽後自動結算真實比分。"
+            "高信心方向有命中，這類條件可列為穩定樣本繼續追蹤。"
           ]
         },
         {
@@ -47339,21 +47341,21 @@
             "勝方一致",
             "無台灣運彩大小分盤口"
           ],
-          "score": "",
-          "actual_winner_zh": "",
-          "winner_correct": null,
+          "score": "2-5",
+          "actual_winner_zh": "舊金山巨人",
+          "winner_correct": true,
           "total_line": null,
           "predicted_total": null,
-          "actual_total": null,
+          "actual_total": 7,
           "total_pick": "",
           "total_correct": null,
           "roi_settlement": "",
           "pnl": 0.0,
           "reason_codes": [
-            "pending"
+            "low_confidence_hit"
           ],
           "notes": [
-            "尚未完賽，等待賽後自動結算真實比分。"
+            "方向正確，但信心不高，較適合作為觀察而非重注。"
           ]
         }
       ]
@@ -47374,14 +47376,14 @@
         "pnl": 0,
         "cumulative": {
           "games": 1155,
-          "final_games": 1128,
-          "pending_games": 27,
-          "winner_correct": 636,
+          "final_games": 1131,
+          "pending_games": 24,
+          "winner_correct": 638,
           "totals_games": 454,
           "totals_correct": 233,
           "roi_bets": 3,
           "pnl": -300.0,
-          "winner_accuracy_pct": 56.38,
+          "winner_accuracy_pct": 56.41,
           "totals_accuracy_pct": 51.32
         }
       },
@@ -47437,11 +47439,11 @@
           "game_time_utc": "2026-09-22T22:35:00Z",
           "matchup_zh": "多倫多藍鳥 @ 巴爾的摩金鶯",
           "prediction_zh": "多倫多藍鳥",
-          "confidence": 0.5098,
-          "predicted_score_zh": "多倫多藍鳥 4.52 : 巴爾的摩金鶯 4.08",
-          "predicted_away_score": 4.52,
-          "predicted_home_score": 4.08,
-          "predicted_score_total": 8.6,
+          "confidence": 0.5088,
+          "predicted_score_zh": "多倫多藍鳥 4.46 : 巴爾的摩金鶯 4.27",
+          "predicted_away_score": 4.46,
+          "predicted_home_score": 4.27,
+          "predicted_score_total": 8.73,
           "score_pick_zh": "多倫多藍鳥",
           "score_alignment": "一致",
           "score_total_side": "",
@@ -47551,11 +47553,11 @@
           "game_time_utc": "2026-09-22T22:40:00Z",
           "matchup_zh": "華盛頓國民 @ 底特律老虎",
           "prediction_zh": "底特律老虎",
-          "confidence": 0.5728,
-          "predicted_score_zh": "華盛頓國民 4.17 : 底特律老虎 5.45",
-          "predicted_away_score": 4.17,
-          "predicted_home_score": 5.45,
-          "predicted_score_total": 9.61,
+          "confidence": 0.5736,
+          "predicted_score_zh": "華盛頓國民 4.28 : 底特律老虎 5.75",
+          "predicted_away_score": 4.28,
+          "predicted_home_score": 5.75,
+          "predicted_score_total": 10.03,
           "score_pick_zh": "底特律老虎",
           "score_alignment": "一致",
           "score_total_side": "",
@@ -47931,11 +47933,11 @@
           "game_time_utc": "2026-09-23T01:45:00Z",
           "matchup_zh": "明尼蘇達雙城 @ 舊金山巨人",
           "prediction_zh": "舊金山巨人",
-          "confidence": 0.536,
-          "predicted_score_zh": "明尼蘇達雙城 4.35 : 舊金山巨人 4.09",
-          "predicted_away_score": 4.35,
-          "predicted_home_score": 4.09,
-          "predicted_score_total": 8.45,
+          "confidence": 0.537,
+          "predicted_score_zh": "明尼蘇達雙城 4.34 : 舊金山巨人 4.22",
+          "predicted_away_score": 4.34,
+          "predicted_home_score": 4.22,
+          "predicted_score_total": 8.56,
           "score_pick_zh": "明尼蘇達雙城",
           "score_alignment": "模型分歧",
           "score_total_side": "",
