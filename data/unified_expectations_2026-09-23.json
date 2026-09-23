@@ -1,33 +1,33 @@
 {
-  "generated_at": "2026-09-23T16:19:13",
+  "generated_at": "2026-09-23T22:06:13",
   "target_date": "2026-09-23",
   "model": "統一得分期望 v1",
   "postgame_calibration": {
     "source": "postgame_review",
     "days": 10,
-    "games": 98,
-    "winner_accuracy": 0.6224,
-    "low_confidence_accuracy": 0.5342,
+    "games": 112,
+    "winner_accuracy": 0.5804,
+    "low_confidence_accuracy": 0.5122,
     "score_total_bias": 0.0,
     "score_total_bias_applied": 0.0,
     "totals_recent_bias": 0.0,
     "totals_recent_bias_applied": 0.0,
     "totals_recent_games": 0,
-    "winner_min_confidence": 0.55,
+    "winner_min_confidence": 0.56,
     "totals_min_edge": 0.025,
     "totals_min_prob": 0.58,
     "totals_min_line_gap": 1.0,
     "mismatch_notes": 0,
     "reason_counts": {
-      "low_confidence_miss": 22,
-      "low_confidence_hit": 39,
-      "one_run_volatility": 26,
-      "high_confidence_hit": 22,
-      "high_confidence_miss": 3
+      "low_confidence_miss": 26,
+      "low_confidence_hit": 42,
+      "one_run_volatility": 28,
+      "high_confidence_hit": 23,
+      "high_confidence_miss": 7
     },
     "data_gaps": [],
     "notes": [
-      "近十天檢討未觸發額外校正，維持原門檻。"
+      "近十天低信心勝方表現偏弱，主推勝方門檻提高到 56%。"
     ]
   },
   "summary": {
@@ -864,9 +864,9 @@
       "matchup_zh": "多倫多藍鳥 @ 巴爾的摩金鶯",
       "away_zh": "多倫多藍鳥",
       "home_zh": "巴爾的摩金鶯",
-      "away_expected_runs": 4.24,
-      "home_expected_runs": 4.25,
-      "expected_total": 8.49,
+      "away_expected_runs": 4.18,
+      "home_expected_runs": 4.19,
+      "expected_total": 8.37,
       "pick_side": "home",
       "prediction_zh": "巴爾的摩金鶯",
       "home_win_prob": 0.5013,
@@ -889,13 +889,13 @@
         "roof": false,
         "latitude": 39.2839,
         "longitude": -76.6217,
-        "forecast_time_utc": "2026-09-23T18:00",
-        "temperature_c": 14.0,
-        "humidity_pct": 84.0,
-        "precipitation_probability_pct": 17.0,
-        "wind_speed_kmh": 15.0,
-        "wind_direction_deg": 24.0,
-        "factor": 0.0
+        "forecast_time_utc": "2026-09-22T23:00",
+        "temperature_c": 16.0,
+        "humidity_pct": 87.0,
+        "precipitation_probability_pct": 61.0,
+        "wind_speed_kmh": 16.4,
+        "wind_direction_deg": 40.0,
+        "factor": -0.12
       },
       "away_bullpen": {
         "source": "recent_boxscore_pitcher_usage",
