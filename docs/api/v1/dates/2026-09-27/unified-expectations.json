@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-09-27T16:58:35",
+  "generated_at": "2026-09-27T22:39:12",
   "target_date": "2026-09-27",
   "model": "統一得分期望 v1",
   "postgame_calibration": {
     "source": "postgame_review",
     "days": 10,
-    "games": 113,
-    "winner_accuracy": 0.5752,
-    "low_confidence_accuracy": 0.5325,
+    "games": 121,
+    "winner_accuracy": 0.5785,
+    "low_confidence_accuracy": 0.5366,
     "score_total_bias": 0.0,
     "score_total_bias_applied": 0.0,
     "totals_recent_bias": 0.0,
@@ -19,11 +19,11 @@
     "totals_min_line_gap": 1.0,
     "mismatch_notes": 0,
     "reason_counts": {
-      "low_confidence_hit": 41,
-      "high_confidence_hit": 24,
-      "one_run_volatility": 29,
-      "low_confidence_miss": 26,
-      "high_confidence_miss": 12
+      "low_confidence_hit": 44,
+      "high_confidence_hit": 26,
+      "one_run_volatility": 30,
+      "low_confidence_miss": 28,
+      "high_confidence_miss": 13
     },
     "data_gaps": [
       "高信心勝方失準偏多：優先補官方先發打線、牛棚可用性、傷兵/輪休。"
@@ -867,12 +867,12 @@
       "away_zh": "芝加哥小熊",
       "home_zh": "波士頓紅襪",
       "away_expected_runs": 3.89,
-      "home_expected_runs": 3.58,
-      "expected_total": 7.47,
+      "home_expected_runs": 3.56,
+      "expected_total": 7.45,
       "pick_side": "away",
       "prediction_zh": "芝加哥小熊",
-      "home_win_prob": 0.4578,
-      "away_win_prob": 0.5422,
+      "home_win_prob": 0.4553,
+      "away_win_prob": 0.5447,
       "lineup_source": "projected_recent_lineup_order",
       "away_lineup_factor": {
         "source_quality": "projected_recent_lineup_order",
@@ -882,7 +882,7 @@
         "source_quality": "projected_recent_lineup_order",
         "factor": 0.967
       },
-      "away_pitcher_weight": 0.75,
+      "away_pitcher_weight": 0.9,
       "home_pitcher_weight": 0.7,
       "weather": {
         "source": "open_meteo_forecast",
