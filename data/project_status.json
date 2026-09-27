@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-09-27T22:40:26",
+  "generated_at": "2026-09-28T02:54:42",
   "history": {
-    "games_written": 4848,
+    "games_written": 4862,
     "actual_first_game_date": "2025-03-27",
-    "actual_last_game_date": "2026-09-26"
+    "actual_last_game_date": "2026-09-27"
   },
   "accuracy": {
     "best_model": "A-畢氏勝率",
@@ -12,8 +12,8 @@
     "accuracy_pct": 54.4
   },
   "daily": {
-    "target_date": "2026-09-27",
-    "predictions": 15,
+    "target_date": "2026-09-28",
+    "predictions": 0,
     "high_confidence": 0
   },
   "settlements": [
@@ -674,6 +674,13 @@
       "final_games": 0,
       "pending_games": 15,
       "accuracy_pct": 0
+    },
+    {
+      "date": "2026-09-28",
+      "predictions": 0,
+      "final_games": 0,
+      "pending_games": 0,
+      "accuracy_pct": 0
     }
   ],
   "odds": [
@@ -1262,13 +1269,19 @@
       "rows": 14,
       "filled": 13,
       "missing": [
-        "芝加哥小熊 @ 波士頓紅襪 (Scheduled)"
+        "芝加哥小熊 @ 波士頓紅襪 (Warmup)"
       ]
     },
     {
       "date": "2026-09-27",
       "rows": 15,
       "filled": 15,
+      "missing": []
+    },
+    {
+      "date": "2026-09-28",
+      "rows": 0,
+      "filled": 0,
       "missing": []
     }
   ],
@@ -2024,6 +2037,14 @@
       "pending_bets": 0,
       "total_pnl": 0,
       "roi_pct": 0
+    },
+    {
+      "date": "2026-09-28",
+      "bets": 0,
+      "final_bets": 0,
+      "pending_bets": 0,
+      "total_pnl": 0,
+      "roi_pct": 0
     }
   ],
   "auto_runner": {
@@ -2084,7 +2105,7 @@
     "python scripts\\run_daily_workflow.py --date YYYY-MM-DD --all-predictions --skip-backtest-refresh",
     "python scripts\\run_daily_workflow.py --date YYYY-MM-DD --all-predictions"
   ],
-  "system_completion_pct": 100,
+  "system_completion_pct": 90,
   "external_waiting_items": [
     "2026-06-25 尚有 1 場比賽未結算",
     "2026-07-10 尚有 1 場比賽未結算",
@@ -2095,7 +2116,7 @@
     "2026-07-28 尚有 1 場比賽未結算",
     "2026-09-22 尚有 1 場比賽未結算",
     "2026-09-27 尚有 15 場比賽未結算",
-    "2026-09-26 芝加哥小熊 @ 波士頓紅襪 (Scheduled) 尚未開打或來源尚未開盤"
+    "2026-09-26 芝加哥小熊 @ 波士頓紅襪 (Warmup) 尚未取得真實盤口"
   ],
   "project_state": "系統完成，等待外部賽果/盤口"
 }
