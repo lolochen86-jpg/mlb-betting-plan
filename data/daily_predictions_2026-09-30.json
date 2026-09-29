@@ -1,7 +1,15 @@
 {
-  "generated_at": "2026-09-30T03:48:14",
+  "generated_at": "2026-09-30T03:48:19",
   "target_date": "2026-09-30",
-  "model": "統一得分期望 v1",
+  "models": {
+    "production": "A-畢氏勝率",
+    "confirmation": "E-對照組(Ensemble)"
+  },
+  "settings": {
+    "min_confidence": 0.55,
+    "effective_min_confidence": 0.55,
+    "odds_status": "not_used_for_accuracy_first"
+  },
   "postgame_calibration": {
     "source": "postgame_review",
     "days": 10,
@@ -32,11 +40,18 @@
       "近十天檢討未觸發額外校正，維持原門檻。"
     ]
   },
-  "summary": {
-    "games": 0,
-    "missing_weather": 0,
-    "missing_lineup": 0,
-    "missing_bullpen": 0
+  "data_source": {
+    "history_csv": "data/real_mlb_games.csv",
+    "training_games": 4862,
+    "last_training_date": "2026-09-27",
+    "expected_training_cutoff": "2026-09-29",
+    "schedule_source": "MLB Stats API schedule endpoint",
+    "schedule_games": 0,
+    "warning": "模型訓練資料只到 2026-09-27，低於目標日前一天 2026-09-29；請先重抓歷史比分。",
+    "freshness_note": ""
   },
-  "games": []
+  "high_confidence_predictions": [],
+  "all_predictions": [],
+  "watchlist": [],
+  "pending_unsettled_predictions": []
 }
