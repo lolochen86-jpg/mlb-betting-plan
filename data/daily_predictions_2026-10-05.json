@@ -1,20 +1,14 @@
 {
-  "api_version": "v1",
-  "taiwan_display_date": "2026-10-05",
-  "generated_at": "2026-10-05T06:12:48+08:00",
+  "generated_at": "2026-10-05T06:12:47",
+  "target_date": "2026-10-05",
   "models": {
     "production": "A-畢氏勝率",
     "confirmation": "E-對照組(Ensemble)"
   },
-  "data_source": {
-    "history_csv": "data/real_mlb_games.csv",
-    "training_games": 4862,
-    "last_training_date": "2026-09-27",
-    "expected_training_cutoff": "2026-10-04",
-    "schedule_source": "MLB Stats API schedule endpoint",
-    "schedule_games": 0,
-    "warning": "模型訓練資料只到 2026-09-27，低於目標日前一天 2026-10-04；請先重抓歷史比分。",
-    "freshness_note": ""
+  "settings": {
+    "min_confidence": 0.55,
+    "effective_min_confidence": 0.55,
+    "odds_status": "not_used_for_accuracy_first"
   },
   "postgame_calibration": {
     "source": "postgame_review",
@@ -46,10 +40,18 @@
       "近十天檢討未觸發額外校正，維持原門檻。"
     ]
   },
-  "taiwan_today": [],
-  "taiwan_future": [],
-  "taiwan_today_pending": [],
-  "taiwan_future_pending": [],
+  "data_source": {
+    "history_csv": "data/real_mlb_games.csv",
+    "training_games": 4862,
+    "last_training_date": "2026-09-27",
+    "expected_training_cutoff": "2026-10-04",
+    "schedule_source": "MLB Stats API schedule endpoint",
+    "schedule_games": 0,
+    "warning": "模型訓練資料只到 2026-09-27，低於目標日前一天 2026-10-04；請先重抓歷史比分。",
+    "freshness_note": ""
+  },
+  "high_confidence_predictions": [],
   "all_predictions": [],
-  "high_confidence_predictions": []
+  "watchlist": [],
+  "pending_unsettled_predictions": []
 }
